@@ -1,0 +1,9 @@
+name = "posthog-proxy"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# Add your custom domain here after setting it up in Cloudflare dashboard
+# routes = [
+#   { pattern = "e.yourdomain.com", custom_domain = true }
+# ]
+

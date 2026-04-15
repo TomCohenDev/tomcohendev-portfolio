@@ -1,0 +1,196 @@
+{
+  "name": "Contact Form Handler - End2End Startup",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "d91a2aaf-c1c5-42d7-a0a5-b21a63c3099e",
+        "options": {
+          "noResponseBody": false
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "id": "53cb1a42-c8b7-4569-bb65-04f8dedee5a8",
+      "name": "Webhook",
+      "webhookId": "d91a2aaf-c1c5-42d7-a0a5-b21a63c3099e"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validation for contact form submission\nconst items = $input.all();\nconst validatedItems = [];\n\nfor (const item of items) {\n  const body = item.json.body || item.json;\n  \n  // Initialize validation results\n  const validation = {\n    isValid: true,\n    errors: [],\n    data: body\n  };\n  \n  // Check required fields\n  if (!body.name || typeof body.name !== 'string' || body.name.trim().length === 0) {\n    validation.isValid = false;\n    validation.errors.push('Name is required');\n  }\n  \n  if (!body.email || typeof body.email !== 'string' || body.email.trim().length === 0) {\n    validation.isValid = false;\n    validation.errors.push('Email is required');\n  } else {\n    // Email format validation\n    const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;\n    if (!emailRegex.test(body.email.trim())) {\n      validation.isValid = false;\n      validation.errors.push('Invalid email format');\n    }\n  }\n  \n  if (!body.message || typeof body.message !== 'string' || body.message.trim().length === 0) {\n    validation.isValid = false;\n    validation.errors.push('Message is required');\n  }\n  \n  // Check message length (prevent spam)\n  if (body.message && body.message.length > 5000) {\n    validation.isValid = false;\n    validation.errors.push('Message too long (max 5000 characters)');\n  }\n  \n  // Sanitize data\n  if (validation.isValid) {\n    validation.sanitizedData = {\n      name: body.name.trim(),\n      email: body.email.trim().toLowerCase(),\n      message: body.message.trim(),\n      timestamp: new Date().toISOString(),\n      ip: item.json.headers['x-forwarded-for'] || \n          item.json.headers['x-real-ip'] || \n          item.json.headers['cf-connecting-ip'] || \n          'unknown'\n    };\n  }\n  \n  // Add validation results to item\n  item.json.validation = validation;\n  \n  // Only pass valid items to next node\n  if (validation.isValid) {\n    item.json.formData = validation.sanitizedData;\n    validatedItems.push(item);\n  } else {\n    // For invalid data, we'll handle this in error response\n    throw new Error(`Validation failed: ${validation.errors.join(', ')}`);\n  }\n}\n\nreturn validatedItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 0],
+      "id": "87a310bf-6105-4874-9c74-0c61bdd32e56",
+      "name": "Code-validation"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Simple rate limiting implementation\nconst items = $input.all();\nconst processedItems = [];\n\nfor (const item of items) {\n  const formData = item.json.formData;\n  const currentTime = Date.now();\n  const timeWindow = 15 * 60 * 1000; // 15 minutes\n  const maxRequests = 3; // Max 3 requests per IP per 15 minutes\n  \n  // In a production environment, you'd store this in a database\n  // For now, we'll implement basic checks and logging\n  \n  const rateLimitInfo = {\n    ip: formData.ip,\n    timestamp: currentTime,\n    timeWindow: timeWindow,\n    maxRequests: maxRequests\n  };\n  \n  // Log the submission attempt\n  console.log(`Contact form submission from IP: ${formData.ip} at ${new Date(currentTime).toISOString()}`);\n  \n  // Basic spam detection\n  const suspiciousPatterns = [\n    /viagra|cialis|pharmacy/i,\n    /\\$\\$\\$|\\$\\d+/g,\n    /click here|visit now/i,\n    /free money|make money fast/i\n  ];\n  \n  const isSpam = suspiciousPatterns.some(pattern => \n    pattern.test(formData.message) || pattern.test(formData.name)\n  );\n  \n  if (isSpam) {\n    console.log(`Potential spam detected from IP: ${formData.ip}`);\n    throw new Error('Message appears to be spam');\n  }\n  \n  // Add rate limit info to the item\n  item.json.rateLimitInfo = rateLimitInfo;\n  item.json.isValidSubmission = true;\n  \n  processedItems.push(item);\n}\n\nreturn processedItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 0],
+      "id": "f02d13d6-c598-4046-bc3f-88e8a4e1e74a",
+      "name": "Code-rate limiting"
+    },
+    {
+      "parameters": {
+        "fromEmail": "contact@end2endstartup.com",
+        "toEmail": "contact@end2endstartup.com",
+        "subject": "=New Contact Form Submission - {{ $json.formData.name }}",
+        "emailType": "html",
+        "message": "=<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <h2 style=\"color: #7c77c6; border-bottom: 2px solid #7c77c6; padding-bottom: 10px;\">\n    New Contact Form Submission\n  </h2>\n  \n  <div style=\"background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;\">\n    <p><strong>Name:</strong> {{ $json.formData.name }}</p>\n    <p><strong>Email:</strong> {{ $json.formData.email }}</p>\n    <p><strong>Submitted:</strong> {{ $json.formData.timestamp }}</p>\n    <p><strong>IP Address:</strong> {{ $json.formData.ip }}</p>\n  </div>\n  \n  <div style=\"margin: 20px 0;\">\n    <h3>Message:</h3>\n    <div style=\"background: #ffffff; padding: 15px; border-left: 4px solid #7c77c6; border-radius: 4px;\">\n      {{ $json.formData.message }}\n    </div>\n  </div>\n  \n  <hr style=\"margin: 30px 0; border: none; border-top: 1px solid #dee2e6;\">\n  \n  <p style=\"color: #6c757d; font-size: 14px;\">\n    <em>This email was sent from the End2End Startup contact form.<br>\n    Reply directly to this email to respond to the inquiry.</em>\n  </p>\n</div>",
+        "options": {
+          "replyTo": "={{ $json.formData.email }}"
+        }
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [660, 0],
+      "id": "a8d9866b-9523-4bb7-b897-090b26aaa85e",
+      "name": "Send Email",
+      "webhookId": "08b65255-6e13-4a47-b93f-8a445fd55255"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.\",\n  \"timestamp\": \"{{ $json.formData.timestamp }}\"\n}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [880, 0],
+      "id": "7bc51168-686b-45b1-8cbf-aee04abcdb76",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": false,\n  \"message\": \"{{ $json.error.message || 'An error occurred while processing your request. Please try again or contact us directly.' }}\",\n  \"timestamp\": \"{{ new Date().toISOString() }}\"\n}",
+        "responseCode": 400,
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [660, 200],
+      "id": "error-response-node",
+      "name": "Error Response"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code-validation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code-validation": {
+      "main": [
+        [
+          {
+            "node": "Code-rate limiting",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code-rate limiting": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": {
+      "errorWorkflow": "",
+      "useWorkflow": false
+    },
+    "timezone": "America/New_York"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-01-26T17:00:00.000Z",
+      "updatedAt": "2025-01-26T17:00:00.000Z",
+      "id": "client-contact-form",
+      "name": "client-contact-form"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-26T17:00:00.000Z",
+  "versionId": "1",
+  "meta": {
+    "instanceId": "89b9ab529ea14839dca82f43e1530a0480bda89e8aa98b84295fc07564669b96"
+  }
+}
