@@ -7,7 +7,7 @@ import { Mail, Phone } from "lucide-react";
 
 const PHONE_DISPLAY = "+972 54-555-2149";
 const PHONE_TEL = "+972545552149";
-const EMAIL = "tom.cohen9@gmail.com";
+const EMAIL = "tom.cohen99@gmail.com";
 
 const Contact = () => {
   const [borderAnimation, setBorderAnimation] = useState({
