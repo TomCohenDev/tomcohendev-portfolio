@@ -8,6 +8,7 @@
     "sync-assets": "node scripts/sync-case-study-assets.mjs",
     "build": "npm run sync-assets && vite build",
     "build:dev": "vite build --mode development",
+    "deploy:pages": "wrangler pages deploy dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -90,6 +91,7 @@
     "to-ico": "^1.1.5",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
-    "vite": "^5.4.19"
+    "vite": "^5.4.19",
+    "wrangler": "^4.83.0"
   }
 }
