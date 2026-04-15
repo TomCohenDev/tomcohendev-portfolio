@@ -178,13 +178,6 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* My work */}
-        <div className="max-w-4xl mx-auto text-center mt-16 mb-8 px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-            My work
-          </h2>
-        </div>
-
         {/* Bottom padding for reviews section */}
         <div className="pb-16"></div>
       </div>
