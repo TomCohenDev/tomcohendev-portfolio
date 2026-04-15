@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import HandwritingMVP from "./HandwritingMVP";
 import DynamicVisual from "./DynamicVisual";
 
@@ -52,6 +53,7 @@ const AnimatedStars = () => {
 };
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const [currentSvgIndex, setCurrentSvgIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -115,9 +117,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-6 w-full max-w-md sm:max-w-none">
               <button
                 className="btn-hero text-xl px-8 py-4 w-full sm:w-auto"
-                onClick={() => {
-                  window.location.href = "/contact";
-                }}
+                onClick={() => navigate("/contact")}
               >
                 Build Your Product
               </button>
