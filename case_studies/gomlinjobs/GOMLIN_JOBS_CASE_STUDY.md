@@ -1,4 +1,4 @@
-End2End Startup — Case Study & Review Template
+Tom Cohen — Case Study & Review Template
 Instructions: Copy this template for each project. Fill in the blanks with raw data—don't worry about polish. You'll paste the completed version into AI to generate website-ready content.
 
 Goal: Capture 3-5 case studies to establish credibility and attract similar clients.
@@ -12,7 +12,7 @@ Answer
 Project Name
 Gomlin (Gomlin Jobs)
 Client Name/Company
-End2End Startup privately owned product
+Tom Cohen privately owned product
 Client Industry
 Job Matching / Freelance Platform / HR Tech
 Client Size
@@ -54,11 +54,11 @@ High - dealing with overwhelming information and underwhelming results
 
 What had they tried before?
 
-This is End2End startup internat product
+This is Tom Cohen's internal product
 
-How did they find End2End?
+How did they find you?
 
-This is End2End startup internat product
+This is Tom Cohen's internal product
 
 
 

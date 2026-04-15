@@ -1,4 +1,4 @@
-# End2End Startup — Case Study & Review
+# Tom Cohen — Case Study & Review
 
 > **Project:** Mintkola - Psychology-Driven Habit Building Platform  
 > **Date:** [NEEDS INPUT]  
@@ -70,7 +70,7 @@ Examples to explore:
 - Previous development attempts that didn't meet requirements
 ```
 
-**How did they find End2End?**
+**How did they find you?**
 
 ```
 [NEEDS INPUT - Referral? LinkedIn? Cold outreach? Existing relationship?]
@@ -681,7 +681,7 @@ SCREENSHOT: Available from mintkola.com, n8n workflow files
 - What metrics are most important to track success?
 - What surprised you most about the development process?
 - How has the platform performed since launch?
-- Would you recommend End2End to others? Why?
+- Would you recommend Tom to others? Why?
 ```
 
 ---

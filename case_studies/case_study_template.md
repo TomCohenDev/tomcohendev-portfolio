@@ -1,4 +1,4 @@
-# End2End Startup — Case Study & Review Template
+# Tom Cohen — Case Study & Review Template
 
 > **Instructions:** Copy this template for each project. Fill in the blanks with raw data—don't worry about polish. You'll paste the completed version into AI to generate website-ready content.
 >
@@ -54,7 +54,7 @@
 [e.g., "Hired a freelancer who ghosted" / "Tried Zapier but hit limits" / "Nothing"]
 ```
 
-**How did they find End2End?**
+**How did they find you?**
 
 ```
 [Referral? LinkedIn? Cold outreach? Existing relationship?]
@@ -371,7 +371,7 @@
 ```
 ```
 
-**How did they find End2End?**
+**How did they find you?**
 
 ```
 ```
@@ -668,7 +668,7 @@
 ```
 ```
 
-**How did they find End2End?**
+**How did they find you?**
 
 ```
 ```
@@ -975,7 +975,7 @@ Copy this prompt and paste your filled templates below it:
 ---
 
 ```
-**Context:** I run End2End Startup, a boutique product studio (3-person team) that builds MVPs, n8n automations, and AI integrations for founders and startups. I'm creating case studies for my website.
+**Context:** I run Tom Cohen, a boutique product studio (3-person team) that builds MVPs, n8n automations, and AI integrations for founders and startups. I'm creating case studies for my website.
 
 **Task:** Write a case study based on the raw data below.
 

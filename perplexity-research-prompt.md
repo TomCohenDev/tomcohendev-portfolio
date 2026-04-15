@@ -9,7 +9,7 @@ Use this prompt in Perplexity to research the best positioning strategy:
 **Context:**
 
 - Current situation: Solo practitioner (Tom) with proven track record ($5K/month freelance income)
-- Team: 3 friends/members who can work under the End2End Startup brand
+- Team: 3 friends/members who can work under the Tom Cohen brand
 - Goal: Scale to a full product studio with a dedicated team
 - Target market: B2B startups, founders, indie hackers
 - Services: App development (Flutter, React), n8n automation, AI integration
@@ -75,7 +75,7 @@ Use this prompt in Perplexity to research the best positioning strategy:
 
 - Industry: B2B tech services (app development, automation, AI)
 - Geographic market: Israel (high-tech hub) + global
-- Current brand: "End2End Startup" (sounds like studio but no team page)
+- Current brand: "Tom Cohen" (sounds like studio but no team page)
 - Challenge: Site currently feels like "agency costume" - generic, no faces, no personal story
 
 ---

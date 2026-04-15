@@ -131,7 +131,7 @@ Based on case study mentioning web platform features:
 Once you've confirmed the names, you can use this script template:
 
 ```bash
-cd /Users/tomcohen/github/end2end-startup/case_studies/gomlinjobs/assets
+cd /Users/tomcohen/github/Tom-startup/case_studies/gomlinjobs/assets
 
 # Mobile App Screenshots
 mv "Screenshot 2025-12-20 at 23.17.47.png" "mobile-app-onboarding.png"

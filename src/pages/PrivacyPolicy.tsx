@@ -29,7 +29,7 @@ const PrivacyPolicy = () => {
                   Introduction
                 </h2>
                 <p className="text-lg">
-                  At End2End Startup, we respect your privacy and are committed
+                  Tom Cohen respects your privacy and is committed
                   to protecting your personal data. This privacy policy explains
                   how we collect, use, and safeguard your information when you
                   visit our website or use our services.
@@ -193,26 +193,26 @@ const PrivacyPolicy = () => {
                 </p>
               </div>
 
-              {/* Contact Us */}
+              {/* Contact */}
               <div className="space-y-4 pb-12">
                 <h2 className="text-3xl font-bold text-white mb-4">
-                  Contact Us
+                  Contact
                 </h2>
                 <p className="text-lg">
                   If you have any questions about this privacy policy or our
-                  data practices, please contact us at:
+                  data practices, you can reach me at:
                 </p>
                 <div className="mt-4 p-6 bg-[#161918] border border-white/10 rounded-xl">
                   <p className="text-lg text-white font-semibold mb-2">
-                    End2End Startup
+                    Tom Cohen
                   </p>
                   <p className="text-lg text-[#B9BBBE]">
                     Email:{" "}
                     <a
-                      href="mailto:privacy@end2endstartup.com"
+                      href="mailto:tom@tomcohendev.com"
                       className="text-primary hover:text-primary/80 transition-colors"
                     >
-                      privacy@end2endstartup.com
+                      tom@tomcohendev.com
                     </a>
                   </p>
                 </div>

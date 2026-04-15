@@ -215,7 +215,7 @@ const HandwritingMVP: React.FC<HandwritingMVPProps> = ({ currentSvgIndex }) => {
   const height = "165";
 
   return (
-    <div className="w-full flex items-center justify-center md:justify-start mt-2 min-h-[6rem] md:min-h-[8rem] lg:min-h-[10rem] overflow-hidden px-2 md:px-0">
+    <div className="w-full flex items-center justify-center mt-2 min-h-[6rem] md:min-h-[8rem] lg:min-h-[10rem] overflow-hidden px-2 md:px-0">
       {/* Mobile wrapper with centering transform */}
       <div className="w-full md:hidden flex justify-center">
         <AnimatePresence mode="wait">
@@ -251,8 +251,8 @@ const HandwritingMVP: React.FC<HandwritingMVPProps> = ({ currentSvgIndex }) => {
           </motion.svg>
         </AnimatePresence>
       </div>
-      {/* Desktop wrapper without transform (left-aligned) */}
-      <div className="hidden md:block w-auto">
+      {/* Desktop — centered to match mobile */}
+      <div className="hidden md:flex w-full justify-center">
         <AnimatePresence mode="wait">
           <motion.svg
             key={`${currentSvgIndex}-desktop`}
@@ -266,7 +266,7 @@ const HandwritingMVP: React.FC<HandwritingMVPProps> = ({ currentSvgIndex }) => {
             animate="visible"
             exit="hidden"
           >
-            <g>
+            <g transform={`translate(${centerOffset}, 0)`}>
               {currentPaths.map((path, index) => (
                 <motion.path
                   key={`${currentSvgIndex}-desktop-${index}`}

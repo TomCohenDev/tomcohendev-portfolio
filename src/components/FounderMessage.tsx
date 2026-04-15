@@ -78,7 +78,7 @@ const FounderMessage = () => {
                       Founder & Lead Developer
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      End2End Startup Team
+                      Portfolio &amp; product work
                     </p>
                   </div>
                 </div>

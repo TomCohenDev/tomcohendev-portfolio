@@ -1,8 +1,8 @@
-# End2End Startup Design System
+# Tom Cohen Design System
 
 ## Overview
 
-The End2End Startup design system is built on a **Discord-inspired dark theme** that creates a modern, professional, and developer-friendly aesthetic. The design emphasizes clarity, consistency, and a cohesive visual language across all components and pages.
+The Tom Cohen design system is built on a **Discord-inspired dark theme** that creates a modern, professional, and developer-friendly aesthetic. The design emphasizes clarity, consistency, and a cohesive visual language across all components and pages.
 
 ### Design Philosophy
 
@@ -17,7 +17,7 @@ The End2End Startup design system is built on a **Discord-inspired dark theme** 
 
 ### Primary Colors
 
-The End2End design system uses a Discord-inspired color palette with semantic naming.
+The Tom design system uses a Discord-inspired color palette with semantic naming.
 
 #### Base Colors
 
@@ -403,7 +403,7 @@ For case study showcases and product demos:
 - Top bar: `bg-gray-800/50` with `border-white/5`
 - Traffic lights: Use `/60` opacity
 - Address bar: `bg-gray-900/50` with subtle border
-- Screen: `bg-[#1D201F]` (matches End2End background)
+- Screen: `bg-[#1D201F]` (matches Tom background)
 
 ---
 

@@ -42,7 +42,7 @@
 Copy and paste these commands one by one (review each screenshot first):
 
 ```bash
-cd /Users/tomcohen/github/end2end-startup/case_studies/gomlinjobs/assets
+cd /Users/tomcohen/github/Tom-startup/case_studies/gomlinjobs/assets
 
 # Mobile App
 mv "Screenshot 2025-12-20 at 23.17.47.png" "mobile-app-onboarding.png"

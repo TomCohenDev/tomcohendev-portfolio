@@ -1,4 +1,4 @@
-# End2End Startup — Case Study: ITA (Interactive Teaching Assistant)
+# Tom Cohen — Case Study: ITA (Interactive Teaching Assistant)
 
 ## 📋 PROJECT 1: ITA - AI-Powered Teaching Assistant
 
@@ -9,7 +9,7 @@
 | Field                   | Answer                                                                                                                           |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | **Project Name**        | ITA (Interactive Teaching Assistant)                                                                                             |
-| **Client Name/Company** | End2End Startup (Internal Product)                                                                                               |
+| **Client Name/Company** | Tom Cohen (Internal Product)                                                                                               |
 | **Client Industry**     | Product Studio / SaaS Tools                                                                                                      |
 | **Client Size**         | ☐ Solo founder ☐ 2-10 employees ☑ 11-50 ☐ 50+                                                                                    |
 | **Client Location**     | Internal Project                                                                                                                 |
@@ -24,7 +24,7 @@
 **What was the client trying to do?**
 
 ```
-End2End wanted to build an internal demonstration of our AI integration and automation capabilities. We needed a real-world project that showcases:
+Tom wanted to build an internal demonstration of our AI integration and automation capabilities. We needed a real-world project that showcases:
 1. Complex AI prompt engineering (GPT-5 with reasoning)
 2. Multi-platform integration (Windows desktop + web app + backend)
 3. Advanced n8n workflow orchestration
@@ -64,10 +64,10 @@ This was an opportunity cost - we couldn't effectively demonstrate these advance
 - Generic demos that didn't solve real problems
 ```
 
-**How did they find End2End?**
+**How did they find you?**
 
 ```
-Internal project - built by End2End team to showcase capabilities
+Internal project - built by Tom to showcase capabilities
 ```
 
 ---
@@ -285,8 +285,8 @@ Built a sophisticated AI-powered visual annotation system with 5000+ token promp
 | Field                 | Answer               |
 | --------------------- | -------------------- |
 | **Client name**       | Internal Project     |
-| **Client role/title** | End2End Startup Team |
-| **Company**           | End2End Startup      |
+| **Client role/title** | Tom Cohen Team |
+| **Company**           | Tom Cohen      |
 
 **What they said (raw/paraphrased):**
 
@@ -458,7 +458,7 @@ Yes - several content opportunities:
 ### Quick Case Study: ITA
 
 ```
-CLIENT: End2End Startup (Internal Product)
+CLIENT: Tom Cohen (Internal Product)
 SIZE: 11-50 employees
 PROBLEM: Needed to showcase advanced AI integration, multi-platform development, and n8n automation capabilities to potential clients - couldn't effectively demonstrate these complex capabilities
 SOLUTION: Built ITA (Interactive Teaching Assistant) - a multi-platform AI-powered visual annotation system with sophisticated GPT-5 prompt engineering (5000+ tokens), Windows WPF overlay, React webapp, and complex n8n workflow orchestration

@@ -353,7 +353,7 @@ const Contact = () => {
 
                   <img
                     src="/icon.svg"
-                    alt="End2End Startup"
+                    alt="Tom Cohen"
                     className="h-40 w-auto mx-auto mb-0"
                   />
                 </div>
@@ -582,7 +582,7 @@ const Contact = () => {
                     {/* Contribution Section */}
                     <div className="space-y-4">
                       <label className="text-xl font-medium text-primary block">
-                        How can End2End Startup contribute to the project?
+                        How can Tom help contribute to the project?
                       </label>
                       <RadioGroup
                         value={formData.contribution}
@@ -661,7 +661,7 @@ const Contact = () => {
                     {/* Referral Section */}
                     <div className="space-y-4">
                       <label className="text-xl font-medium text-primary block">
-                        How did you find out about End2End Startup?
+                        How did you find out about Tom Cohen?
                       </label>
                       <RadioGroup
                         value={formData.referralSource}
@@ -794,10 +794,10 @@ const Contact = () => {
                             In case you hate forms
                           </p>
                           <a
-                            href="mailto:contact@end2endstartup.com"
+                            href="mailto:tom@tomcohendev.com"
                             className="text-base font-bold text-primary hover:underline"
                           >
-                            contact@end2endstartup.com
+                            tom@tomcohendev.com
                           </a>
                         </div>
                       </div>

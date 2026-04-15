@@ -4,12 +4,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { ConsentProvider } from "./contexts/ConsentContext";
-import { CookieConsent } from "./components/CookieConsent";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Products from "./pages/Products";
-import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NavigationalPolicy from "./pages/NavigationalPolicy";
@@ -25,13 +22,12 @@ import PortfolioWebsites from "./pages/case-studies/PortfolioWebsites";
 import ITA from "./pages/case-studies/ITA";
 import FullstackApps from "./pages/case-studies/FullstackApps";
 import Dronebag from "./pages/case-studies/Dronebag";
-import CaseStudies from "./pages/CaseStudies";
 
 const queryClient = new QueryClient();
 
 // Scroll to top on route change (but not for sub-routes within the same section)
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const prevPathRef = useRef(pathname);
 
   useEffect(() => {
@@ -44,48 +40,51 @@ const ScrollToTop = () => {
       return;
     }
 
+    if (pathname === "/" && hash === "#case-studies") {
+      const el = document.getElementById("case-studies");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
+
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 };
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ConsentProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/services/:serviceId" element={<Services />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/navigational-policy" element={<NavigationalPolicy />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/case-studies/gomlin-jobs" element={<GomlinJobs />} />
-            <Route path="/case-studies/nightwing" element={<Nightwing />} />
-            <Route path="/case-studies/ai-social-media-strategist" element={<AISocialMediaStrategist />} />
-            <Route path="/case-studies/blog-automation" element={<BlogAutomation />} />
-            <Route path="/case-studies/mintkola" element={<Mintkola />} />
-            <Route path="/case-studies/spidclass" element={<Spidclass />} />
-            <Route path="/case-studies/yellow-candle" element={<YellowCandle />} />
-            <Route path="/case-studies/portfolio-websites" element={<PortfolioWebsites />} />
-            <Route path="/case-studies/ita" element={<ITA />} />
-            <Route path="/case-studies/fullstack-apps" element={<FullstackApps />} />
-            <Route path="/case-studies/dronebag" element={<Dronebag />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <CookieConsent />
-        </BrowserRouter>
-      </TooltipProvider>
-    </ConsentProvider>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:serviceId" element={<Services />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/navigational-policy" element={<NavigationalPolicy />} />
+          <Route path="/case-studies/gomlin-jobs" element={<GomlinJobs />} />
+          <Route path="/case-studies/nightwing" element={<Nightwing />} />
+          <Route path="/case-studies/ai-social-media-strategist" element={<AISocialMediaStrategist />} />
+          <Route path="/case-studies/blog-automation" element={<BlogAutomation />} />
+          <Route path="/case-studies/mintkola" element={<Mintkola />} />
+          <Route path="/case-studies/spidclass" element={<Spidclass />} />
+          <Route path="/case-studies/yellow-candle" element={<YellowCandle />} />
+          <Route path="/case-studies/portfolio-websites" element={<PortfolioWebsites />} />
+          <Route path="/case-studies/ita" element={<ITA />} />
+          <Route path="/case-studies/fullstack-apps" element={<FullstackApps />} />
+          <Route path="/case-studies/dronebag" element={<Dronebag />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
   </QueryClientProvider>
 );
 

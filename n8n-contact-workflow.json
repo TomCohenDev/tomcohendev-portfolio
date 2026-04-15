@@ -6,7 +6,7 @@
         "httpMethod": "POST",
         "path": "client-contact-form",
         "options": {
-          "allowedOrigins": "https://end2end-startup.pages.dev,http://localhost:5173,http://localhost:3000"
+          "allowedOrigins": "https://tomcohendev.com,https://tomcohendev-portfolio.pages.dev,http://localhost:5173,http://localhost:8080,http://localhost:3000"
         }
       },
       "id": "webhook-trigger",
@@ -69,8 +69,8 @@
       "parameters": {
         "subject": "New Contact Form Submission - {{ $json.body.name }}",
         "emailType": "html",
-        "toEmail": "contact@end2endstartup.com",
-        "message": "=<h2>New Contact Form Submission</h2>\n<p><strong>Name:</strong> {{ $json.body.name }}</p>\n<p><strong>Email:</strong> {{ $json.body.email }}</p>\n<p><strong>Message:</strong></p>\n<div style=\"background: #f5f5f5; padding: 15px; border-left: 4px solid #7c77c6;\">\n{{ $json.body.message }}\n</div>\n<hr>\n<p><em>Sent from End2End Startup Contact Form</em></p>",
+        "toEmail": "tom@tomcohendev.com",
+        "message": "=<h2>New Contact Form Submission</h2>\n<p><strong>Name:</strong> {{ $json.body.name }}</p>\n<p><strong>Email:</strong> {{ $json.body.email }}</p>\n<p><strong>Message:</strong></p>\n<div style=\"background: #f5f5f5; padding: 15px; border-left: 4px solid #7c77c6;\">\n{{ $json.body.message }}\n</div>\n<hr>\n<p><em>Sent from Tom Cohen contact form</em></p>",
         "options": {
           "replyTo": "={{ $json.body.email }}"
         }

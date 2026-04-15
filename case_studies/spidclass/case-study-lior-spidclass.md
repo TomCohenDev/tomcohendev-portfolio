@@ -1,4 +1,4 @@
-# End2End Startup — Case Study & Review Template
+# Tom Cohen — Case Study & Review Template
 
 > **Project:** Spidclass - Classroom Management Mobile App  
 > **Client:** Lior  
@@ -62,10 +62,10 @@ Lior runs a tutoring/education business with multiple classes and students. They
 [Possible answers: "Nothing - was using paper notebooks" / "Excel spreadsheets but it was too slow" / "Tried other apps but they were too complex"]
 ```
 
-**How did they find End2End?**
+**How did they find you?**
 
 ```
-Existing relationship - Lior had worked with End2End before or was referred through an existing connection.
+Existing relationship - Lior had worked with Tom before or was referred through an existing connection.
 ```
 
 ---

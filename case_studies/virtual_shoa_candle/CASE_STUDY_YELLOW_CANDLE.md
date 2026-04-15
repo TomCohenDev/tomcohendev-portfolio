@@ -55,7 +55,7 @@ FJMC International needed a mobile app to help their 14,000+ members worldwide c
 - No other digital solutions attempted
 ```
 
-**How did they find End2End?**
+**How did they find you?**
 
 ```
 Existing relationship - Tom Cohen was the developer who built the initial app in 2023. Client reached out directly for the update work.
@@ -141,7 +141,7 @@ The 2025 update specifically addressed:
 
 | Role | Name/Description |
 |------|------------------|
-| Developer/Project Lead | Tom Cohen (End2End Startup) |
+| Developer/Project Lead | Tom Cohen (Tom Cohen) |
 | Client Contact | Allan Kahan (Past International President, FJMC) |
 | Technical Advisor | Jonathan Brody (initial project) |
 

@@ -150,8 +150,8 @@ Configure these settings in the Send Email node:
 - **Password**: Your email password or app password
 
 ### **Email Content**
-- **From Email**: contact@end2endstartup.com
-- **To Email**: contact@end2endstartup.com
+- **From Email**: contact@tomcohendev.com
+- **To Email**: contact@tomcohendev.com
 - **Subject**: `New Contact Form Submission - {{ $json.formData.name }}`
 - **Email Type**: HTML
 - **Reply To**: `{{ $json.formData.email }}`
@@ -180,7 +180,7 @@ Configure these settings in the Send Email node:
   <hr style="margin: 30px 0; border: none; border-top: 1px solid #dee2e6;">
   
   <p style="color: #6c757d; font-size: 14px;">
-    <em>This email was sent from the End2End Startup contact form.<br>
+    <em>This email was sent from the Tom Cohen contact form.<br>
     Reply directly to this email to respond to the inquiry.</em>
   </p>
 </div>

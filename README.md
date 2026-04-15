@@ -1,4 +1,4 @@
-# End2End Startup Website
+# Tom Cohen Website
 
 Damn good at building products. We help founders, businesses, and individuals launch faster, scale better, and automate more — from full-scale platforms to small essential apps.
 
@@ -81,7 +81,7 @@ The form automatically uses the correct endpoint based on the `VITE_ENVIRONMENT`
 
 ## License
 
-© 2025 End2End Startup. All rights reserved.
+© 2025 Tom Cohen. All rights reserved.
 
 
 

@@ -559,7 +559,7 @@ const Dronebag = () => {
                       Start Your Project <ArrowRight className="ml-2 w-5 h-5" />
                     </button>
                     <button
-                      onClick={() => navigate("/case-studies")}
+                      onClick={() => navigate({ pathname: "/", hash: "case-studies" })}
                       className="px-8 py-4 text-lg text-[#B9BBBE] hover:text-[#E0D0C1] transition-colors"
                     >
                       View Other Case Studies

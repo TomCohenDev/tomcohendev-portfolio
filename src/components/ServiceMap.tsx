@@ -974,7 +974,7 @@ const ServiceMap = ({ activeServiceId }: ServiceMapProps) => {
             >
               <img
                 src="/logo-no-bg.png"
-                alt="End2End"
+                alt="Tom Cohen"
                 className={`w-14 h-14 md:w-28 md:h-28 object-contain transition-transform duration-300 group-hover/icon:scale-110 ${
                   isIconClicked ? "scale-125" : ""
                 }`}

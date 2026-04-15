@@ -1,4 +1,4 @@
-# End2End Startup: Copywriting & Strategic Context
+# Tom Cohen: Copywriting & Strategic Context
 
 ## 1. Business Identity: The "Product Studio" Model
 You are not just a traditional dev agency. You are a **Product Studio** (similar to Thoughtbot, Railsware, or betaworks). 
@@ -19,7 +19,7 @@ You are not just a traditional dev agency. You are a **Product Studio** (similar
 
 ## 3. Key Value Propositions (UVPs)
 1.  **Founder-to-Founder Mindset:** You aren't a hired gun; you're a fellow founder. You optimize for *ROI* and *Growth*, not just billable hours.
-2.  **Full "End2End" Journey:** From the first napkin sketch (Strategy) to the first 10k users (Scale/Automation).
+2.  **End-to-end product journey:** From the first napkin sketch (Strategy) to the first 10k users (Scale/Automation).
 3.  **Speed + Quality:** You use modern stacks (React, Supabase, n8n) to ship fast without breaking things.
 
 ## 4. Tone of Voice

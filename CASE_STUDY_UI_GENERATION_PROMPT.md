@@ -1,13 +1,13 @@
 # AI Prompt: Case Study UI Page Generation
 
-## Context: End2End Startup
+## Context: Tom Cohen
 
-You are creating a React/TypeScript case study page for **End2End Startup**, a boutique product studio that builds MVPs, n8n automations, and AI integrations for founders and startups.
+You are creating a React/TypeScript case study page for **Tom Cohen**, a boutique product studio that builds MVPs, n8n automations, and AI integrations for founders and startups.
 
 ### Brand Identity
 - **Positioning**: Product Studio (not just a dev agency) - we build our own products AND client products
 - **Tone**: Confident, direct, pragmatic, partner-oriented
-- **Value Props**: Founder-to-founder mindset, full End2End journey, speed + quality
+- **Value Props**: Founder-to-founder mindset, end-to-end product journey, speed + quality
 - **Target Audience**: Early-stage founders and scale-ups
 
 ### Design System: Discord-Inspired Dark Theme

@@ -1,4 +1,4 @@
-# End2End Startup — Case Study & Review Template
+# Tom Cohen — Case Study & Review Template
 
 > **Instructions:** This template has been pre-filled with information gathered from the Dronebag codebase. Complete the sections marked with **[TO BE FILLED]** or **[?]** before generating the final case study.
 
@@ -58,7 +58,7 @@
 [TO BE FILLED - e.g., "Excel spreadsheets", "Paper logs", "Generic task management tools", "Nothing - first attempt", "Other software solutions that didn't fit military requirements"]
 ```
 
-**How did they find End2End?**
+**How did they find you?**
 
 ```
 [TO BE FILLED - Referral? LinkedIn? Cold outreach? Existing relationship?]
@@ -393,7 +393,7 @@ Copy this prompt and paste your filled template below it:
 ---
 
 ```
-**Context:** I run End2End Startup, a boutique product studio (3-person team) that builds MVPs, n8n automations, and AI integrations for founders and startups. I'm creating a case study for Dronebag, a drone fleet management mobile app we built for the IDF (Israeli Defense Forces) with client Roi Hammer.
+**Context:** I run Tom Cohen, a boutique product studio (3-person team) that builds MVPs, n8n automations, and AI integrations for founders and startups. I'm creating a case study for Dronebag, a drone fleet management mobile app we built for the IDF (Israeli Defense Forces) with client Roi Hammer.
 
 **Task:** Write a case study based on the raw data below.
 

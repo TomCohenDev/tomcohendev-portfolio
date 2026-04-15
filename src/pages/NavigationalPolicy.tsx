@@ -30,7 +30,7 @@ const NavigationalPolicy = () => {
                 </h2>
                 <p className="text-lg">
                   This Navigational Policy outlines how users can access and
-                  navigate the End2End Startup website. We are committed to
+                  navigate Tom Cohen&apos;s website. We are committed to
                   providing a clear, accessible, and user-friendly experience
                   for all visitors.
                 </p>
@@ -50,36 +50,19 @@ const NavigationalPolicy = () => {
                       Home
                     </h3>
                     <p className="text-lg">
-                      The homepage provides an overview of our services,
-                      featured case studies, and a direct path to contact us.
+                      The homepage provides an overview of our services, a case
+                      studies section with project highlights, links to detailed
+                      project pages, and clear ways to get in touch.
                     </p>
                   </div>
                   <div className="p-6 bg-[#161918] border border-white/10 rounded-xl">
                     <h3 className="text-xl font-semibold text-white mb-2">
-                      Services
+                      My Services
                     </h3>
                     <p className="text-lg">
                       Detailed information about our service offerings,
                       including MVP development, web applications, mobile apps,
                       AI integration, and automation solutions.
-                    </p>
-                  </div>
-                  <div className="p-6 bg-[#161918] border border-white/10 rounded-xl">
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      Case Studies
-                    </h3>
-                    <p className="text-lg">
-                      Comprehensive case studies showcasing our past projects,
-                      technologies used, and outcomes achieved.
-                    </p>
-                  </div>
-                  <div className="p-6 bg-[#161918] border border-white/10 rounded-xl">
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      About
-                    </h3>
-                    <p className="text-lg">
-                      Information about our company, team, processes, and
-                      approach to building products.
                     </p>
                   </div>
                   <div className="p-6 bg-[#161918] border border-white/10 rounded-xl">
@@ -110,9 +93,7 @@ const NavigationalPolicy = () => {
                     </p>
                     <ul className="list-disc list-inside space-y-2 ml-4">
                       <li>Home</li>
-                      <li>Services</li>
-                      <li>Case Studies</li>
-                      <li>About</li>
+                      <li>My Services</li>
                       <li>Contact</li>
                     </ul>
                   </div>
@@ -125,7 +106,6 @@ const NavigationalPolicy = () => {
                     </p>
                     <ul className="list-disc list-inside space-y-2 ml-4">
                       <li>Service categories and offerings</li>
-                      <li>About us and company information</li>
                       <li>Individual case study links</li>
                       <li>Legal pages (Privacy Policy, Navigational Policy)</li>
                       <li>Social media links</li>
@@ -229,7 +209,7 @@ const NavigationalPolicy = () => {
                     href="/contact"
                     className="text-primary hover:text-primary/80 transition-colors"
                   >
-                    contact us
+                    contact
                   </a>
                   .
                 </p>

@@ -66,16 +66,16 @@ After deploying and setting up the custom domain:
 1. Update `wrangler.jsonc` in the root directory:
 
    ```jsonc
-   "VITE_PUBLIC_POSTHOG_PROXY": "https://e.end2endstartup.com"
+   "VITE_PUBLIC_POSTHOG_PROXY": "https://e.tomcohendev.com"
    ```
 
 2. Update `.env.local` for local development:
 
    ```
-   VITE_PUBLIC_POSTHOG_PROXY=https://e.end2endstartup.com
+   VITE_PUBLIC_POSTHOG_PROXY=https://e.tomcohendev.com
    ```
 
-   ✅ **Already configured!** Your domain `e.end2endstartup.com` is set up.
+   ✅ **Already configured!** Your domain `e.tomcohendev.com` is set up.
 
 3. Commit and deploy your main app
 
@@ -83,7 +83,7 @@ After deploying and setting up the custom domain:
 
 1. Open your site in a browser
 2. Open DevTools → Network tab
-3. Filter by your proxy domain (e.g., `e.end2endstartup.com`)
+3. Filter by your proxy domain (e.g., `e.tomcohendev.com`)
 4. Navigate around - you should see requests to your proxy
 5. Check PostHog dashboard - events should appear
 

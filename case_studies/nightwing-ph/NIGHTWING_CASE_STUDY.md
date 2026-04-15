@@ -1,4 +1,4 @@
-# End2End Startup — Case Study & Review Template
+# Tom Cohen — Case Study & Review Template
 
 > **Instructions:** Copy this template for each project. Fill in the blanks with raw data—don't worry about polish. You'll paste the completed version into AI to generate website-ready content.
 >
@@ -59,7 +59,7 @@ As a new restaurant company, Nightwing needed a cost-effective way to handle ord
 [TO FILL: Did they try other solutions? Wix/WordPress? Other ordering platforms? Nothing?]
 ```
 
-**How did they find End2End?**
+**How did they find you?**
 
 ```
 [TO FILL: Referral? LinkedIn? Cold outreach? Existing relationship?]
@@ -482,7 +482,7 @@ For this case study, confirm you have:
 1. ~~Specific metrics (orders/day, error reduction %, revenue impact)~~ ✅ DONE - 200% order increase, $15K-$25K saved, 135 hours/month saved
 2. ~~Client testimonial/quote~~ ✅ DONE - Permission granted
 3. ~~Permission to use name/logo~~ ✅ DONE - Permission granted
-4. How they found End2End
+4. How they found you
 5. What they tried before
 6. Discovery/kickoff process details
 7. Communication method/frequency

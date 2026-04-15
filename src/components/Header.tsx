@@ -301,10 +301,10 @@ const Header = () => {
             >
               <AnimatedLogo shouldAnimate={shouldAnimate} />
               <h1 className="text-2xl font-bold text-foreground hidden lg:block">
-                End2End Startup
+                Tom Cohen
               </h1>
               <h1 className="text-2xl font-bold text-foreground hidden md:block lg:hidden">
-                E2E Startup
+                Tom Cohen
               </h1>
             </Link>
 
@@ -319,37 +319,9 @@ const Header = () => {
                       : "text-muted-foreground"
                   }`}
                 >
-                  Services
+                  My Services
                 </Link>
                 {isActive("/services") && <ChalkCircle />}
-              </div>
-
-              <div className="relative">
-                <Link
-                  to="/case-studies"
-                  className={`hover:text-primary font-semibold transition-colors text-lg relative z-10 ${
-                    isActive("/case-studies")
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  }`}
-                >
-                  Case Studies
-                </Link>
-                {isActive("/case-studies") && <ChalkCircle />}
-              </div>
-
-              <div className="relative">
-                <Link
-                  to="/about"
-                  className={`hover:text-primary font-semibold transition-colors text-lg relative z-10 ${
-                    isActive("/about")
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  }`}
-                >
-                  About
-                </Link>
-                {isActive("/about") && <ChalkCircle />}
               </div>
             </nav>
 
@@ -365,7 +337,7 @@ const Header = () => {
                     : "bg-transparent text-primary hover:bg-primary hover:text-purple-900 hover:scale-105"
                 )}
               >
-                Contact Us
+                Contact
               </Link>
 
               {/* Mobile Menu Button */}
@@ -392,33 +364,9 @@ const Header = () => {
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Services
+                  My Services
                 </Link>
                 <ScrappyUnderline index={0} isVisible={isMenuOpen} />
-              </div>
-              <div className="relative">
-                <Link
-                  to="/case-studies"
-                  className={`block text-xl font-semibold hover:text-primary transition-colors px-4 py-3 rounded-lg hover:bg-muted/50 ${
-                    isActive("/case-studies") ? "text-primary" : "text-foreground"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Case Studies
-                </Link>
-                <ScrappyUnderline index={1} isVisible={isMenuOpen} />
-              </div>
-              <div className="relative">
-                <Link
-                  to="/about"
-                  className={`block text-xl font-semibold hover:text-primary transition-colors px-4 py-3 rounded-lg hover:bg-muted/50 ${
-                    isActive("/about") ? "text-primary" : "text-foreground"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About
-                </Link>
-                <ScrappyUnderline index={2} isVisible={isMenuOpen} />
               </div>
               <div className="relative">
                 <Link
@@ -426,9 +374,9 @@ const Header = () => {
                   className="block text-xl font-semibold text-foreground hover:text-primary transition-colors px-4 py-3 rounded-lg hover:bg-muted/50"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Contact Us
+                  Contact
                 </Link>
-                <ScrappyUnderline index={3} isVisible={isMenuOpen} />
+                <ScrappyUnderline index={1} isVisible={isMenuOpen} />
               </div>
             </nav>
           </div>

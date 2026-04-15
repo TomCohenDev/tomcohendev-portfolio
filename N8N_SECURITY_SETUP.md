@@ -134,7 +134,7 @@ curl -X POST http://localhost:5678/webhook/client-contact-form \
 ### Production Testing:
 
 - Test form submission from your live site
-- Verify email delivery to contact@end2endstartup.com
+- Verify email delivery to contact@tomcohendev.com
 - Check error handling with invalid data
 - Test CORS restrictions
 
