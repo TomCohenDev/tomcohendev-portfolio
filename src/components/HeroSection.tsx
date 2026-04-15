@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import _Marquee from "react-fast-marquee";
 import HandwritingMVP from "./HandwritingMVP";
 import DynamicVisual from "./DynamicVisual";
 
@@ -56,6 +57,99 @@ const HeroSection = () => {
   const navigate = useNavigate();
   const [currentSvgIndex, setCurrentSvgIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const clientProjectReviews = [
+    {
+      text: "From kickoff to launch, Tom ran this like a real product partner, not just a developer. Weekly progress was clear, feedback loops were fast, and he kept improving the UX without us asking. End result: better than the original scope and ready to ship.",
+      name: "David",
+      project: "Luxcal",
+    },
+    {
+      text: "I picked Tom because he was the only one who gave me a real timeline instead of vague promises. He communicated constantly, pushed smart suggestions, and actually listened. The whole thing felt structured and calm, which made a stressful project feel manageable.",
+      name: "Jonathan",
+      project: "Client Review",
+    },
+    {
+      text: "Launch week was smooth, no drama. Everything landed on time, and every decision felt professional. Tom gave us confidence because he always had a plan and executed it.",
+      name: "Yuval",
+      project: "Original Review",
+    },
+    {
+      text: "Dronebag had to work in real conditions, not in a demo. Tom got that immediately. He translated operational needs into a stable app, kept communication tight, and delivered on schedule. Day-to-day work is now faster and far less messy.",
+      name: "Roi",
+      project: "Dronebag",
+    },
+    {
+      text: "On ITA, Tom was the bridge between concept and execution. Strong architecture choices, practical trade-offs, and fast iteration. We did not just get code, we got a product that feels stable and useful. I would absolutely team up with him again.",
+      name: "Avishay",
+      project: "ITA",
+    },
+    {
+      text: "I came in with references and a vibe, Tom turned that into an actual site that feels like me. He was quick, direct, and had a great eye for what to keep simple. Super happy with both the look and the speed.",
+      name: "Lior",
+      project: "Lior Site",
+    },
+    {
+      text: "Tom understood our business constraints fast and built around them. No overengineering, just the right system shipped quickly. We saw value immediately in daily operations, and the process stayed clear the whole way.",
+      name: "Noam",
+      project: "Nightwing",
+    },
+    {
+      text: "Best part of working with Tom: details. He cared about typography, spacing, load speed, animation timing, everything. The process felt collaborative, and the final portfolio looks premium without feeling overdesigned.",
+      name: "Rotem",
+      project: "Rotem Portfolio",
+    },
+    {
+      text: "Spidclass started as a complicated flow and Tom simplified it in a way users understood right away. Progress was fast, check-ins were clear, and we always knew what was next. Great execution.",
+      name: "Liran",
+      project: "Spidclass",
+    },
+    {
+      text: "For the course site, I needed something practical, not flashy. Tom delivered exactly that: cleaner content management, better student flow, and fewer manual headaches. Responsive, professional, and easy to work with.",
+      name: "Yuval",
+      project: "Yuval Course Site",
+    },
+    {
+      text: "I barely had to over-explain anything. Tom understood the direction quickly, organized the build, and shipped fast. The final site is sharp, smooth, and gives me the exact online presence I wanted.",
+      name: "Adoalm",
+      project: "Adoalm Portfolio",
+    },
+  ];
+  const googleReviews = [
+    {
+      text: "Would work with them again. Fast delivery and good people.",
+      name: "Scott",
+      details: "Google Review",
+    },
+    {
+      text: "Understood what I wanted, gave honest advice, and delivered on time. The site looks great, thanks!",
+      name: "Gal Ashiri",
+      details: "Google Review",
+    },
+    {
+      text: "This guy is the best. Definitely recommended!",
+      name: "LIOZ DAYAN",
+      details: "Google Review",
+    },
+    {
+      text: "Working with Tom was and is awesome, highly professional, and really good at drilling down into what is actually needed and making it happen.",
+      name: "yarden zamir",
+      details: "Google Local Guide",
+    },
+  ];
+  const allReviews = [
+    ...clientProjectReviews.map((review) => ({
+      key: `${review.name}-${review.project}`,
+      text: review.text,
+      name: review.name,
+      subtitle: review.project,
+    })),
+    ...googleReviews.map((review) => ({
+      key: `${review.name}-google`,
+      text: review.text,
+      name: review.name,
+      subtitle: review.details,
+    })),
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -126,56 +220,28 @@ const HeroSection = () => {
         </div>
 
         {/* Reviews Section */}
-        <div className="max-w-6xl mx-auto mt-20 sm:mt-8 px-4">
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Review 1 */}
-            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 text-center">
-              <div className="mb-3">
-                <AnimatedStars />
+        <div className="max-w-7xl mx-auto mt-20 sm:mt-8 px-4">
+          <_Marquee speed={24} gradient={false} pauseOnHover>
+            {allReviews.map((review) => (
+              <div
+                key={review.key}
+                className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 text-center mx-3 w-[320px] md:w-[360px] h-[320px] flex flex-col"
+              >
+                <div className="mb-3">
+                  <AnimatedStars />
+                </div>
+                <p className="text-muted-foreground text-sm mb-4 flex-1 overflow-y-auto">
+                  {review.text}
+                </p>
+                <div className="font-medium text-foreground text-sm">
+                  {review.name}
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  {review.subtitle}
+                </div>
               </div>
-              <p className="text-muted-foreground text-sm mb-4">
-                Working with Tom to build our custom app was an outstanding
-                experience. The process was smooth, from onboarding to delivery.
-                Tom was responsive, detail-oriented, and always found ways to
-                improve the product beyond what we imagined. Highly recommended
-                for anyone who wants a complete product build.
-              </p>
-              <div className="font-medium text-foreground text-sm">David</div>
-              <div className="text-xs text-muted-foreground">Luxcal</div>
-            </div>
-
-            {/* Review 2 */}
-            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 text-center">
-              <div className="mb-3">
-                <AnimatedStars />
-              </div>
-              <p className="text-muted-foreground text-sm mb-4">
-                I want to start by saying what a pleasure it was working with
-                Tom. He stayed in constant communication, made suggestions based
-                on our needs. I decided to work with Tom because he was the only
-                one to lay out a clear timeline for my project based on my
-                correspondence.
-              </p>
-              <div className="font-medium text-foreground text-sm">
-                Jonathan
-              </div>
-              <div className="text-xs text-muted-foreground"></div>
-            </div>
-
-            {/* Review 3 */}
-            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 text-center">
-              <div className="mb-3">
-                <AnimatedStars />
-              </div>
-              <p className="text-muted-foreground text-sm mb-4">
-                Tom made launching our project much easier. Everything was on
-                time, the experience felt truly professional from start to
-                finish. Having Tom help us gave us confidence that our product
-                was in good hands.
-              </p>
-              <div className="font-medium text-foreground text-sm">Yuval</div>
-            </div>
-          </div>
+            ))}
+          </_Marquee>
         </div>
 
         {/* Bottom padding for reviews section */}
