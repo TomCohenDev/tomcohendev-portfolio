@@ -107,12 +107,9 @@ const Contact = () => {
               style={{ transform: "rotate(0.3deg)" }}
             >
               <div className="text-center mb-10 md:mb-12 max-w-2xl mx-auto">
-                <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2 tracking-tight">
+                <h1 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
                   Contact
                 </h1>
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  Reach out directly — I&apos;ll get back to you as soon as I can.
-                </p>
               </div>
 
               <div className="flex flex-col items-center gap-8 md:gap-10 max-w-md mx-auto text-center">
