@@ -1,6 +1,6 @@
 {
     "$schema": "./node_modules/wrangler/config-schema.json",
-    "name": "tomcohendev-portfolio",
+    "name": "tomcohendev-portfolio-2",
     "compatibility_date": "2026-04-15",
     "assets": {
         "directory": "./dist"
