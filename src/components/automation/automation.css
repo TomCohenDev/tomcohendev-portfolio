@@ -1,0 +1,164 @@
+/* Styles for the Hebrew /automation landing page. Everything is scoped under .automation-page. */
+
+.automation-page {
+  --a-ink: #e0d0c1;
+  --a-muted: #b9bbbe;
+  --a-accent: #bf95f9;
+  --a-human: #f2c46d;
+  --a-ok: #43b581;
+  --a-line: rgba(224, 208, 193, 0.13);
+  font-family: "Rubik", "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #1d201f;
+  color: var(--a-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.automation-page h1,
+.automation-page h2,
+.automation-page h3,
+.automation-page h4 {
+  font-family: inherit;
+}
+
+.automation-page [id] {
+  scroll-margin-top: 88px;
+}
+
+.automation-page :focus-visible {
+  outline: 2px solid var(--a-accent);
+  outline-offset: 3px;
+}
+
+html:has(.automation-page) {
+  scroll-behavior: smooth;
+}
+
+.automation-page .a-hand {
+  font-family: "Amatic SC", "Rubik", cursive;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.automation-page .a-kicker {
+  font-family: "Amatic SC", "Rubik", cursive;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--a-accent);
+  margin-bottom: 0.75rem;
+}
+
+.automation-page .a-h2 {
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--a-ink);
+}
+
+.automation-page .a-card {
+  position: relative;
+  border: 1px solid var(--a-line);
+  border-radius: 1.25rem;
+  background: #222524;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .automation-page .a-card {
+    padding: 1.75rem;
+  }
+}
+
+.automation-page .a-grid-bg {
+  background-image: radial-gradient(rgba(224, 208, 193, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.automation-page .a-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.85rem;
+  padding: 0.95rem 1.6rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.automation-page .a-btn-solid {
+  background: var(--a-accent);
+  color: #1d201f;
+}
+
+.automation-page .a-btn-solid:hover:not(:disabled) {
+  background: #cfaefb;
+  transform: rotate(-1deg);
+}
+
+.automation-page .a-btn-ghost {
+  border: 2px solid rgba(191, 149, 249, 0.55);
+  color: var(--a-ink);
+}
+
+.automation-page .a-btn-ghost:hover {
+  border-color: var(--a-accent);
+  color: var(--a-accent);
+  transform: rotate(1deg);
+}
+
+/* Chalk-style stroke drawing, as on the rest of the site. */
+.automation-page .a-draw {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: a-draw 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards;
+}
+
+@keyframes a-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.automation-page .a-step {
+  animation: a-step 0.35s ease-out both;
+}
+
+@keyframes a-step {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.automation-page .a-pulse {
+  animation: a-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes a-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(242, 196, 109, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(242, 196, 109, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.automation-page) {
+    scroll-behavior: auto;
+  }
+  .automation-page .a-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .automation-page .a-pulse,
+  .automation-page .a-step {
+    animation: none;
+  }
+  .automation-page .a-btn:hover {
+    transform: none;
+  }
+}

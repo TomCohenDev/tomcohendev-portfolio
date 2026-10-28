@@ -26,3 +26,5 @@ dist-ssr
 bun.lockb
 
 .env.local
+# Wrangler local state
+.wrangler

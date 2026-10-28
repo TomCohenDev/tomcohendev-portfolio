@@ -10,7 +10,9 @@
     "build:dev": "vite build --mode development",
     "deploy:pages": "wrangler pages deploy dist",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types edge/worker-configuration.d.ts --env-interface WorkerEnv"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

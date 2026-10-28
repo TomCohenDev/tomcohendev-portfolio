@@ -9,6 +9,15 @@ export default defineConfig(() => ({
     port: 8080,
   },
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      // automation.html is the same app with Hebrew metadata, served for /automation.
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        automation: path.resolve(__dirname, "automation.html"),
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
