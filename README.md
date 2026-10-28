@@ -85,3 +85,14 @@ The form automatically uses the correct endpoint based on the `VITE_ENVIRONMENT`
 
 
 
+
+## Hebrew automation page (`/automation`)
+
+- Page: `src/pages/Automation.tsx`, sections and all copy in `src/components/automation/` (`content.ts` holds the facts and the open `TODO(tom)` items).
+- `automation.html` is a second Vite entry with Hebrew metadata (`lang="he" dir="rtl"`, Open Graph, JSON-LD). Workers Assets serves it for `/automation`; all other deep links fall back to `index.html`.
+- Lead form → `POST /api/automation-lead`, handled by the Worker in `edge/index.ts`:
+  - saves the inquiry in D1 (`tomcohendev-leads`, table `automation_leads`, schema in `migrations/`),
+  - emails it to tom.cohen99@gmail.com through Cloudflare Email Routing (`send_email` binding, sender `automation@tomcohen.dev`),
+  - rate limit 5 requests/minute per IP, origin check, honeypot field. IP addresses are not stored.
+- Read leads: `npx wrangler d1 execute tomcohendev-leads --remote --command "SELECT * FROM automation_leads ORDER BY created_at DESC"`
+- Deploy: `npm run deploy`. After changing bindings in `wrangler.jsonc`, run `npm run cf-typegen`.

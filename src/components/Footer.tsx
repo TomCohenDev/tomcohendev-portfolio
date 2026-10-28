@@ -93,6 +93,16 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/automation"
+                  lang="he"
+                  dir="rtl"
+                  className="hover:text-primary transition-colors"
+                >
+                  אוטומציה לעסקים (עברית)
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/services/backend"
                   className="hover:text-primary transition-colors"
                 >

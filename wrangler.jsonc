@@ -1,11 +1,48 @@
 {
     "$schema": "./node_modules/wrangler/config-schema.json",
     "name": "tomcohendev-portfolio",
+    "account_id": "0190d74990bca0aacde75809935dc721",
     "compatibility_date": "2026-04-15",
+    // The Worker only runs for /api/*; everything else is served straight from ./dist.
+    "main": "./edge/index.ts",
     "assets": {
-        "directory": "./dist"
+        "directory": "./dist",
+        "binding": "ASSETS",
+        // Deep links such as /contact and /case-studies/* fall back to index.html.
+        // /automation is matched first by dist/automation.html (Hebrew metadata).
+        "not_found_handling": "single-page-application",
+        "run_worker_first": ["/api/*"]
     },
+    "observability": {
+        "enabled": true
+    },
+    "d1_databases": [
+        {
+            "binding": "LEADS_DB",
+            "database_name": "tomcohendev-leads",
+            "database_id": "640f6182-c942-45ae-8097-378a4ff401d5",
+            "migrations_dir": "./migrations"
+        }
+    ],
+    // Cloudflare Email Routing on tomcohen.dev. The destination must stay verified in Email Routing.
+    "send_email": [
+        {
+            "name": "LEAD_EMAIL",
+            "destination_address": "tom.cohen99@gmail.com"
+        }
+    ],
+    "ratelimits": [
+        {
+            "name": "LEAD_RATE_LIMITER",
+            "namespace_id": "4101",
+            "simple": {
+                "limit": 5,
+                "period": 60
+            }
+        }
+    ],
     "vars": {
+        "LEAD_EMAIL_FROM": "automation@tomcohen.dev",
         "VITE_PUBLIC_POSTHOG_KEY": "phc_8Wvs9ObH9ZsDocGYuY3oHD26bnVKEWCYUXfeiOKV8Pz",
         "VITE_PUBLIC_POSTHOG_HOST": "https://eu.i.posthog.com",
         "VITE_PUBLIC_POSTHOG_PROXY": "https://e.tomcohendev.com"

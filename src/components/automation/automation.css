@@ -1,0 +1,338 @@
+/* Styles for the Hebrew /automation landing page. Everything is scoped under .automation-page. */
+
+.automation-page {
+  --a-ink: #e0d0c1;
+  --a-muted: #b9bbbe;
+  --a-accent: #bf95f9;
+  --a-human: #f2c46d;
+  --a-ok: #43b581;
+  --a-line: rgba(224, 208, 193, 0.13);
+  /* Nunito has no Hebrew glyphs: Latin text keeps the main site's font, Hebrew falls through to Fredoka. */
+  font-family: "Nunito", "Fredoka", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #1d201f;
+  color: var(--a-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.automation-page h1,
+.automation-page h2,
+.automation-page h3,
+.automation-page h4 {
+  font-family: inherit;
+}
+
+.automation-page [id] {
+  scroll-margin-top: 88px;
+}
+
+.automation-page :focus-visible {
+  outline: 2px solid var(--a-accent);
+  outline-offset: 3px;
+}
+
+html:has(.automation-page) {
+  scroll-behavior: smooth;
+}
+
+/* Same idea for the handwritten notes: Excalifont for Latin, Playpen Sans Hebrew for Hebrew.
+   Excalifont has a single weight, so don't let the browser fake a bold one. */
+.automation-page .a-hand {
+  font-family: "Excalifont", "Playpen Sans Hebrew", cursive;
+  font-weight: 500;
+  font-synthesis-weight: none;
+}
+
+.automation-page .a-kicker {
+  font-family: "Excalifont", "Playpen Sans Hebrew", cursive;
+  font-weight: 600;
+  font-synthesis-weight: none;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--a-accent);
+  margin-bottom: 0.75rem;
+}
+
+.automation-page .a-h2 {
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 500;
+  line-height: 1.12;
+  color: var(--a-ink);
+}
+
+.automation-page .a-card {
+  position: relative;
+  border: 1px solid var(--a-line);
+  border-radius: 1.25rem;
+  background: #222524;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .automation-page .a-card {
+    padding: 1.75rem;
+  }
+}
+
+.automation-page .a-grid-bg {
+  background-image: radial-gradient(rgba(224, 208, 193, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.automation-page .a-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.85rem;
+  padding: 0.95rem 1.35rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.2;
+  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.automation-page .a-btn-solid {
+  background: var(--a-accent);
+  color: #1d201f;
+}
+
+.automation-page .a-btn-solid:hover:not(:disabled) {
+  background: #cfaefb;
+  transform: rotate(-1deg);
+}
+
+.automation-page .a-btn-ghost {
+  border: 2px solid rgba(191, 149, 249, 0.55);
+  color: var(--a-ink);
+}
+
+.automation-page .a-btn-ghost:hover {
+  border-color: var(--a-accent);
+  color: var(--a-accent);
+  transform: rotate(1deg);
+}
+
+/* Chalk-style stroke drawing, as on the rest of the site. */
+.automation-page .a-draw {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: a-draw 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards;
+}
+
+@keyframes a-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.automation-page .a-step {
+  animation: a-step 0.35s ease-out both;
+}
+
+@keyframes a-step {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* Dashes flowing along the active connector in the hero canvas. */
+.automation-page .a-flow {
+  animation: a-flow 0.8s linear infinite;
+}
+
+@keyframes a-flow {
+  to {
+    stroke-dashoffset: -3.3;
+  }
+}
+
+/* Chalk lines drawing themselves in (the paths use pathLength="1"). */
+.automation-page .a-chalk-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: a-chalk-draw 1.1s ease-out forwards;
+}
+
+@keyframes a-chalk-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.automation-page .a-pulse {
+  animation: a-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes a-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(242, 196, 109, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(242, 196, 109, 0);
+  }
+}
+
+/* "Sent" doodle in the form's success state (SentDoodle.tsx). Only applied while it plays.
+   0–0.7s sketch the envelope · 0.55–1.6s flight along the loop · 1.6–1.95s dive into the slot ·
+   1.95–2.3s flap closes · 2.3s thump · 2.45s check badge · 2.8s burst · then a gentle float. */
+.automation-page .a-sent-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: a-sent-draw 0.75s ease-out forwards;
+}
+.automation-page .a-sent-draw-late {
+  animation-delay: 0.3s;
+}
+.automation-page .a-sent-trail {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: a-sent-draw 1.05s cubic-bezier(0.45, 0, 0.35, 1) 0.55s forwards;
+}
+.automation-page .a-sent-plane {
+  animation: a-sent-show 0.12s linear 0.55s both;
+}
+.automation-page .a-sent-dive {
+  animation: a-sent-dive 0.35s cubic-bezier(0.55, 0, 0.9, 0.4) 1.6s forwards;
+}
+.automation-page .a-sent-openflap {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: a-sent-flap-away 0.18s ease-in 1.95s forwards;
+}
+.automation-page .a-sent-closeflap {
+  transform-box: fill-box;
+  transform-origin: center top;
+  animation: a-sent-flap-in 0.22s cubic-bezier(0.3, 1.5, 0.6, 1) 2.13s both;
+}
+.automation-page .a-sent-thump {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: a-sent-thump 0.35s ease-out 2.3s both;
+}
+.automation-page .a-sent-badge {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: a-sent-pop 0.5s cubic-bezier(0.3, 1.7, 0.5, 1) 2.45s both;
+}
+.automation-page .a-sent-check {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: a-sent-draw 0.3s ease-out 2.7s forwards;
+}
+.automation-page .a-sent-burst {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: a-sent-burst 0.4s ease-out 2.85s both;
+}
+.automation-page .a-sent-float {
+  animation: a-sent-float 3.2s ease-in-out 3.4s infinite;
+}
+
+@keyframes a-sent-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes a-sent-show {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes a-sent-dive {
+  70% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(78px);
+  }
+}
+@keyframes a-sent-flap-away {
+  to {
+    transform: scaleY(0);
+  }
+}
+@keyframes a-sent-flap-in {
+  from {
+    transform: scaleY(0);
+  }
+}
+@keyframes a-sent-thump {
+  40% {
+    transform: scale(1.06, 0.94);
+  }
+  70% {
+    transform: scale(0.98, 1.02);
+  }
+}
+@keyframes a-sent-pop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.3);
+  }
+}
+@keyframes a-sent-burst {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+@keyframes a-sent-float {
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Projects carousel: moved by useMarquee. Vertical swipes still scroll the page on phones. */
+.automation-page .a-marquee {
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.automation-page .a-marquee.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.automation-page .a-marquee img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* Phones: everything centred. Rows (buttons, chips, badges, node chains) centre their items;
+   text fields keep their normal alignment so typing feels natural. */
+@media (max-width: 767px) {
+  /* :where() keeps these at zero specificity, so any explicit alignment class still wins. */
+  :where(.automation-page main, .automation-page footer) {
+    text-align: center;
+  }
+  :where(.automation-page main .flex, .automation-page footer .flex) {
+    justify-content: center;
+  }
+  :where(.automation-page main) :is(input, textarea, select) {
+    text-align: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.automation-page) {
+    scroll-behavior: auto;
+  }
+  .automation-page .a-draw,
+  .automation-page .a-chalk-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .automation-page .a-pulse,
+  .automation-page .a-flow,
+  .automation-page .a-step {
+    animation: none;
+  }
+  .automation-page .a-btn:hover {
+    transform: none;
+  }
+}
