@@ -4,7 +4,7 @@ import { track } from "@/lib/analytics";
 import { CONTACT } from "./content";
 
 const NAV = [
-  { href: "#work", label: "עסקים שכבר חסכו" },
+  { href: "#work", label: "עבודות והמלצות" },
   { href: "#process", label: "איך עובדים" },
   { href: "#faq", label: "שאלות" },
 ];

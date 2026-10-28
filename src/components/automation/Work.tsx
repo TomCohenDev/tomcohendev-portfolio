@@ -45,13 +45,21 @@ const QuoteCard = ({ item }: { item: Testimonial }) => (
 
 type Slide = { key: string; node: JSX.Element };
 
+// Carousel order: client projects mixed in with Tom's own tools; the tool still in development comes last.
+const ORDER = ["nightwing", "ita", "social", "cicd", "gomlin", "luxcal", "blog", "mintkola", "eldritch", "n8nchat", "mcp", "helix"];
+const ordered = [...caseStudies].sort((x, y) => {
+  const ix = ORDER.indexOf(x.id);
+  const iy = ORDER.indexOf(y.id);
+  return (ix < 0 ? ORDER.length : ix) - (iy < 0 ? ORDER.length : iy);
+});
+
 /** Projects with the reviews spread evenly between them, so screens and quotes alternate. */
 const buildSlides = (): Slide[] => {
   const slides: Slide[] = [];
-  const base = Math.floor(testimonials.length / caseStudies.length);
-  const extra = testimonials.length % caseStudies.length;
+  const base = Math.floor(testimonials.length / ordered.length);
+  const extra = testimonials.length % ordered.length;
   let q = 0;
-  caseStudies.forEach((study, gap) => {
+  ordered.forEach((study, gap) => {
     slides.push({ key: study.id, node: <ProjectCard study={study} /> });
     const count = base + (gap < extra ? 1 : 0);
     for (let i = 0; i < count; i++, q++) {
@@ -87,9 +95,9 @@ export const WorkSection = () => {
   return (
     <section id="work" aria-labelledby="work-title" className="border-t border-[var(--a-line)]">
       <div className="mx-auto max-w-6xl px-5 pt-24 text-center md:px-8">
-        <p className="a-kicker">עסקים שכבר חסכו</p>
+        <p className="a-kicker">עבודות והמלצות</p>
         <h2 id="work-title" className="a-h2">
-          אוטומציות שבניתי ועובדות
+          תהליכים שכבר רצים לבד
         </h2>
       </div>
       <div

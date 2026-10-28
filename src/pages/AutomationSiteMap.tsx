@@ -5,7 +5,7 @@ import { CONTACT } from "@/components/automation/content";
 const PAGE_SECTIONS = [
   { href: "/automation", label: "פתיחה: מה אפשר לחבר לעסק שלכם" },
   { href: "/automation#problem", label: "איפה הזמן נעלם?" },
-  { href: "/automation#work", label: "עסקים שכבר חסכו" },
+  { href: "/automation#work", label: "עבודות והמלצות" },
   { href: "/automation#process", label: "איך עובדים" },
   { href: "/automation#contact", label: "יצירת קשר וטופס פנייה" },
   { href: "/automation#faq", label: "שאלות נפוצות" },

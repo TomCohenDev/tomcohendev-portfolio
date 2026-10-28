@@ -169,6 +169,91 @@ export const caseStudies: CaseStudy[] = [
     human: "בירורים מול לקוחות ומקרים חריגים.",
     result: "מצב המנוי במערכת מתעדכן לפי אירוע התשלום, בלי העתקה ידנית בין לוח הסליקה לבסיס הנתונים.",
   },
+  // Source: ~/github/ita/AITeacherBackend/ITA-session-{start,screenshot,chat}.json + case_studies/ita-ai-teacher-assistent.
+  {
+    id: "ita",
+    name: "ITA: עוזר הוראה עם AI",
+    kind: "client",
+    context: "כלי הוראה למורים",
+    audience: "מורים ומרצים",
+    challenge: "להסביר מה שמוצג על המסך, תרגיל, קוד או מסמך, דורש לסמן ולכתוב ידנית תוך כדי שיעור.",
+    solution:
+      "אפליקציה שמצלמת את המסך, ושלושה תהליכים ב־n8n: חיבור לשיעור עם קוד, בקשת צילום מסך, ושליחת הצילום עם השאלה ל־GPT, שמחזיר סימונים מדויקים שמוצגים מעל המסך. הכול נשמר ב־Supabase.",
+    systems: ["אפליקציית Windows", "n8n", "GPT", "Supabase"],
+    human: "המורה שואל, בוחר מה להציג ומסביר.",
+    result: "שואלים שאלה על מה שמוצג במסך, והתשובה מופיעה כסימונים וחיצים ישר על המסך.",
+    link: { href: "/case-studies/ita", label: "לתיאור המלא (באנגלית)" },
+  },
+  // Source: ~/github/adolam-portfolio/.github/workflows/deploy.yml (push to main → build → Cloudflare),
+  // ~/github/luxcal and ~/github/portfolio-sofia firebase-hosting-{pull-request,merge}.yml (PR preview, deploy on merge).
+  {
+    id: "cicd",
+    name: "עלייה לאוויר אוטומטית",
+    kind: "client",
+    context: "אתרים של לקוחות",
+    audience: "בעלי אתרים שמעדכנים תוכן ועיצוב",
+    challenge: "כל עדכון באתר דרש בנייה והעלאה ידנית, וקשה היה לבדוק שינוי לפני שהוא עולה.",
+    solution:
+      "תהליכי GitHub Actions: כל הצעה לשינוי מקבלת קישור תצוגה מקדימה לבדיקה, וכל שינוי שמאושר נבנה ועולה לאוויר לבד, ל־Cloudflare או ל־Firebase Hosting.",
+    systems: ["GitHub Actions", "Cloudflare", "Firebase Hosting"],
+    human: "אישור השינוי לפני שהוא עולה.",
+    result: "כל שינוי שמאושר עולה לאתר לבד, וכל הצעה לשינוי מקבלת קודם קישור לבדיקה.",
+    link: { href: "/case-studies/portfolio-websites", label: "לתיאור המלא (באנגלית)" },
+  },
+  // Source: ~/github/luxcal_scripts/create_shabbat.js (creates Friday 17:00 – Saturday 21:00 events for the next 4 weeks in Firestore).
+  {
+    id: "luxcal",
+    name: "Luxcal: אירועי שבת שנוצרים לבד",
+    kind: "client",
+    context: "אפליקציית יומן",
+    audience: "משתמשי היומן",
+    challenge: "את אירועי השבת היה צריך להוסיף ליומן ידנית, שבוע אחרי שבוע.",
+    solution: "סקריפט שמחשב את השבתות הקרובות ויוצר ביומן את האירועים לארבעת השבועות הבאים, משישי בערב עד מוצאי שבת.",
+    systems: ["Node.js", "Firebase", "Firestore"],
+    human: "תכנון שאר האירועים ביומן.",
+    result: "אירועי השבת לחודש הקרוב מופיעים ביומן לבד, בלי להזין אותם כל שבוע.",
+  },
+  // Source: ~/github/eldritch-endless/scripts/{encounter_workflow,generate_narration_workflow}.json (Claude + ElevenLabs).
+  {
+    id: "eldritch",
+    name: "Eldritch Endless: קריינות ומוזיקה למשחק",
+    kind: "own",
+    context: "אפליקציית ליווי למשחק קופסה",
+    audience: "אני והחברים שאיתם אני משחק",
+    challenge: "להקריא ולהכין אווירה לכל מפגש במשחק לקח זמן ושבר את הרצף.",
+    solution:
+      "שני תהליכים ב־n8n: Claude כותב את המפגש בפורמט מובנה, ו־ElevenLabs הופך אותו לקריינות קולית ומפיק מוזיקת רקע שמתאימה לו.",
+    systems: ["n8n", "Claude", "ElevenLabs", "Flutter"],
+    human: "השחקנים מחליטים מה לעשות במפגש.",
+    result: "כל מפגש במשחק נכתב, מוקרא ומלווה במוזיקה, בלי הכנה מראש.",
+  },
+  // Source: ~/github/n8n-chatbot (README + n8n-workflow.json: webhook → Claude → response).
+  {
+    id: "n8nchat",
+    name: "עוזר לבניית תהליכי n8n",
+    kind: "own",
+    context: "כלי פנימי",
+    audience: "אני, ומי שבונה תהליכים ב־n8n",
+    challenge: "לבנות תהליך חדש ב־n8n מאפס לוקח זמן, במיוחד כשיודעים מה רוצים אבל לא איך.",
+    solution: "אפליקציית צ'אט שבה מתארים במילים מה צריך לקרות, ו־Claude מחזיר תהליך n8n מוכן לייבוא.",
+    systems: ["Next.js", "Claude", "n8n"],
+    human: "בדיקה והתאמה של התהליך לפני שמפעילים אותו.",
+    result: "מתארים במילים מה רוצים שיקרה, ומקבלים תהליך n8n מוכן לייבוא.",
+  },
+  // Source: ~/github/vulnerability-registry-mcp (README + .github/workflows/ci.yml: typecheck, test, build).
+  {
+    id: "mcp",
+    name: "מאגר פגיעויות שמדבר עם AI",
+    kind: "own",
+    context: "כלי לאנליסטים של אבטחת מידע",
+    audience: "אנליסטים שעובדים מול מאגר קבצים ישן",
+    challenge: "כדי לענות על שאלה פשוטה היה צריך לפתוח ולסרוק ידנית קבצי טקסט גולמיים.",
+    solution:
+      "שרת MCP שקורא את קבצי המאגר וחושף אותם ככלים מובנים ל־Claude: חיפוש, שליפה, סיכומים וספקים. בדיקות ובנייה רצות אוטומטית על כל שינוי.",
+    systems: ["MCP", "TypeScript", "Claude", "GitHub Actions"],
+    human: "האנליסט מחליט מה לעשות עם הממצאים.",
+    result: "שואלים שאלה בשפה חופשית ומקבלים תשובה מבוססת מתוך המאגר, בלי לפתוח קבצים.",
+  },
 ];
 
 export type Testimonial = { quote: string; name: string; source?: string };

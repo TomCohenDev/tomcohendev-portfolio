@@ -1,5 +1,20 @@
 import type { ReactNode } from "react";
-import { Bot, Check, CreditCard, Hand, MessageCircle, Send, Sparkles } from "lucide-react";
+import {
+  Bot,
+  Check,
+  CircleCheck,
+  CreditCard,
+  GitBranch,
+  Hand,
+  MessageCircle,
+  Music,
+  Play,
+  Send,
+  ShieldAlert,
+  Sparkles,
+  Workflow,
+  Wrench,
+} from "lucide-react";
 
 /**
  * Small, non-interactive product screens for the projects carousel: what the automation looks like
@@ -236,6 +251,199 @@ const MintkolaScene = () => (
   </Frame>
 );
 
+/* --------------------------------------------------------------------- ITA */
+const ItaScene = () => (
+  <Frame>
+    {/* Shared screen with an exercise and the AI's marks drawn on top */}
+    <div className="absolute inset-x-3 top-3 bottom-12 rounded-lg border border-white/10 bg-[#f4f1ea] px-4 py-3" dir="ltr">
+      <div className="flex items-center gap-2 font-mono text-[19px] font-semibold text-[#1d201f]">
+        <span>2x</span>
+        <span className="rounded-[50%] px-2 ring-2 ring-[#a855f7]">+ 6</span>
+        <span>= 14</span>
+      </div>
+      <div className="mt-2 font-mono text-[13px] text-[#a855f7]">2x = 8 → x = 4</div>
+      <svg viewBox="0 0 60 30" className="absolute left-[44%] top-[14%] w-12" fill="none">
+        <path d="M4 22C18 6 34 4 50 10" stroke="#a855f7" strokeWidth="2.4" strokeLinecap="round" />
+        <path d="M44 4L51 10L44 16" stroke="#a855f7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      <div dir="rtl" className="absolute right-3 top-3 rounded-md bg-[#a855f7] px-1.5 py-0.5 text-[9px] font-medium text-white">
+        מחסירים 6 משני הצדדים
+      </div>
+    </div>
+    {/* The teacher's question */}
+    <div className="absolute bottom-2.5 right-3 flex items-center gap-1.5 rounded-full bg-[#2c5674] px-3 py-1 text-[10px] text-white">
+      <MessageCircle className="h-3 w-3" /> איך פותרים את זה?
+    </div>
+    <div className="absolute bottom-2.5 left-3 flex items-center gap-1 rounded-full border border-[var(--a-accent)]/40 px-2 py-0.5 text-[9px] text-[var(--a-accent)]">
+      <Sparkles className="h-3 w-3" /> GPT סימן על המסך
+    </div>
+  </Frame>
+);
+
+/* ------------------------------------------------------------------- CI/CD */
+const CheckRow = ({ label, time }: { label: string; time: string }) => (
+  <div className="flex items-center gap-2 text-[10px] text-[var(--a-ink)]">
+    <CircleCheck className="h-3.5 w-3.5 shrink-0 text-[#3fb950]" />
+    <span className="flex-1">{label}</span>
+    <span dir="ltr" className="font-mono text-[9px] text-[var(--a-muted)]">{time}</span>
+  </div>
+);
+
+const CicdScene = () => (
+  <Frame>
+    <div className="absolute right-3 top-3 w-[56%] rounded-xl border border-white/10 bg-[#0d1117] p-2.5 shadow-xl">
+      <div className="flex items-center gap-1.5 text-[10px] text-[var(--a-muted)]">
+        <GitBranch className="h-3 w-3" />
+        <span dir="ltr" className="font-mono">main</span>
+        <span>· עדכון טקסט בדף הבית</span>
+      </div>
+      <div className="mt-2 space-y-1.5">
+        <CheckRow label="התקנה" time="12s" />
+        <CheckRow label="בנייה" time="41s" />
+        <CheckRow label="עלייה לאוויר" time="9s" />
+      </div>
+    </div>
+    <Arrow className="absolute bottom-[30%] left-[38%] w-10 rotate-[200deg]" />
+    <div className="absolute bottom-3 left-3 w-[40%] rounded-xl border border-[#3fb950]/40 bg-[#3fb950]/10 p-2 text-[10px] text-[var(--a-ink)]">
+      <div className="flex items-center gap-1 font-medium text-[#3fb950]">
+        <Check className="h-3 w-3" /> האתר עודכן
+      </div>
+      <div className="mt-1 text-[9px] text-[var(--a-muted)]">בלי העלאה ידנית</div>
+    </div>
+    <div className="absolute bottom-3 right-3 flex items-center gap-1 rounded-full border border-[var(--a-human)]/50 px-2 py-0.5 text-[9px] text-[var(--a-human)]">
+      הצעה לשינוי · קישור לתצוגה מקדימה
+    </div>
+  </Frame>
+);
+
+/* ------------------------------------------------------------------ Luxcal */
+const DAYS = ["א", "ב", "ג", "ד", "ה", "ו", "ש"];
+
+const LuxcalScene = () => (
+  <Frame>
+    <div className="absolute inset-3">
+      <div className="mb-1.5 flex items-center justify-between text-[10px] text-[var(--a-muted)]">
+        <span className="text-[var(--a-ink)]">היומן · החודש הקרוב</span>
+        <span className="flex items-center gap-1 text-[var(--a-accent)]">
+          <Sparkles className="h-3 w-3" /> נוצר אוטומטית
+        </span>
+      </div>
+      <div className="grid grid-cols-7 gap-1 text-center text-[9px] text-[var(--a-muted)]">
+        {DAYS.map((d) => (
+          <span key={d}>{d}</span>
+        ))}
+      </div>
+      <div className="mt-1 grid grid-cols-7 gap-1">
+        {Array.from({ length: 28 }, (_, i) => {
+          const day = i % 7;
+          const shabbat = day === 5 || day === 6;
+          return (
+            <span
+              key={i}
+              className={`flex h-6 items-center justify-center rounded text-[8px] ${
+                shabbat ? "bg-[var(--a-accent)]/25 text-[var(--a-accent)] ring-1 ring-[var(--a-accent)]/40" : "bg-white/[0.04]"
+              }`}
+            >
+              {day === 5 ? "17:00" : day === 6 ? "21:00" : ""}
+            </span>
+          );
+        })}
+      </div>
+      <div className="mt-1.5 text-[9px] text-[var(--a-muted)]">שבת · משישי 17:00 עד מוצאי שבת 21:00</div>
+    </div>
+  </Frame>
+);
+
+/* ---------------------------------------------------------------- Eldritch */
+const BARS = [6, 12, 9, 16, 11, 18, 8, 14, 10, 17, 7, 13, 9, 15, 6, 11, 16, 8, 12, 10];
+
+const EldritchScene = () => (
+  <Frame>
+    <div className="absolute inset-3 rounded-xl border border-[#2f6f5e]/40 bg-gradient-to-br from-[#0f1d1a] to-[#141216] p-3">
+      <div className="text-[9px] uppercase tracking-wider text-[#5fb39a]">מפגש חדש</div>
+      <div className="mt-1 text-[13px] font-medium text-[var(--a-ink)]">המגדלור בערפל</div>
+      <div className="mt-1.5 space-y-1">
+        <div className="h-1 rounded bg-white/10" />
+        <div className="h-1 w-5/6 rounded bg-white/10" />
+      </div>
+      {/* Narration player */}
+      <div className="mt-3 flex items-center gap-2 rounded-lg bg-black/30 px-2 py-1.5">
+        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#5fb39a] text-[#0f1d1a]">
+          <Play className="h-3 w-3 fill-current" />
+        </span>
+        <div className="flex h-5 flex-1 items-center gap-[2px]" dir="ltr">
+          {BARS.map((h, i) => (
+            <span key={i} className={`w-[3px] rounded-full ${i < 8 ? "bg-[#5fb39a]" : "bg-white/20"}`} style={{ height: h }} />
+          ))}
+        </div>
+        <span className="text-[9px] text-[var(--a-muted)]">קריינות</span>
+      </div>
+      <div className="mt-2 inline-flex items-center gap-1 rounded-full border border-[var(--a-accent)]/40 px-2 py-0.5 text-[9px] text-[var(--a-accent)]">
+        <Music className="h-3 w-3" /> מוזיקת רקע נוצרה
+      </div>
+    </div>
+  </Frame>
+);
+
+/* ---------------------------------------------------- n8n chat assistant */
+const MiniNode = ({ label }: { label: string }) => (
+  <span className="rounded-md border border-white/15 bg-[#1d201f] px-1.5 py-0.5 text-[9px] text-[var(--a-ink)]">{label}</span>
+);
+
+const N8nChatScene = () => (
+  <Frame>
+    <div className="flex h-full flex-col">
+      <ChatHeader icon={<Workflow className="h-3.5 w-3.5 text-white" />} name="עוזר n8n" status="Claude" color="bg-[#ea4b71]" />
+      <div className="flex flex-1 flex-col gap-1.5 px-3 py-2">
+        <Bubble out>כל ליד מהטופס באתר שייכנס לגיליון וישלח לי הודעה</Bubble>
+        <Bubble className="w-[86%]">
+          <div className="mb-1.5">הנה תהליך מוכן:</div>
+          <div className="flex flex-wrap items-center gap-1">
+            <MiniNode label="טופס" />
+            <span className="text-[var(--a-accent)]">←</span>
+            <MiniNode label="גיליון" />
+            <span className="text-[var(--a-accent)]">←</span>
+            <MiniNode label="וואטסאפ" />
+          </div>
+          <div className="mt-1.5 inline-block rounded bg-[#ea4b71]/20 px-1.5 py-0.5 text-[9px] text-[#ff8aa5]">ייבוא ל־n8n</div>
+        </Bubble>
+      </div>
+    </div>
+  </Frame>
+);
+
+/* ------------------------------------------------------- Vulnerability MCP */
+const SevRow = ({ label, n, w, color }: { label: string; n: number; w: string; color: string }) => (
+  <div className="flex items-center gap-2 text-[9px] text-[var(--a-muted)]">
+    <span className="w-10 shrink-0">{label}</span>
+    <span className="h-1.5 rounded-full" style={{ width: w, background: color }} />
+    <span className="text-[var(--a-ink)]">{n}</span>
+  </div>
+);
+
+const McpScene = () => (
+  <Frame>
+    <div className="flex h-full flex-col gap-1.5 px-3 py-2.5">
+      <Bubble out>אילו פגיעויות קריטיות יש לספק הזה?</Bubble>
+      <div className="flex items-center gap-1.5 self-start rounded-md border border-white/10 bg-black/30 px-2 py-1 text-[9px] text-[var(--a-muted)]">
+        <Wrench className="h-3 w-3 text-[var(--a-accent)]" />
+        <span dir="ltr" className="font-mono text-[var(--a-ink)]">search_vulnerabilities</span>
+        <span>· מתוך המאגר</span>
+      </div>
+      <Bubble className="w-[80%]">
+        <div className="mb-1 flex items-center gap-1 font-medium">
+          <ShieldAlert className="h-3 w-3 text-[#f87171]" /> מה נמצא במאגר
+        </div>
+        <div className="space-y-1">
+          <SevRow label="קריטית" n={2} w="30%" color="#f87171" />
+          <SevRow label="גבוהה" n={5} w="60%" color="#fb923c" />
+          <SevRow label="בינונית" n={3} w="40%" color="#facc15" />
+        </div>
+      </Bubble>
+    </div>
+  </Frame>
+);
+
 const SCENES: Record<string, () => JSX.Element> = {
   nightwing: NightwingScene,
   social: SocialScene,
@@ -243,6 +451,12 @@ const SCENES: Record<string, () => JSX.Element> = {
   helix: HelixScene,
   gomlin: GomlinScene,
   mintkola: MintkolaScene,
+  ita: ItaScene,
+  cicd: CicdScene,
+  luxcal: LuxcalScene,
+  eldritch: EldritchScene,
+  n8nchat: N8nChatScene,
+  mcp: McpScene,
 };
 
 /** The product screen for one project, or nothing if it has none. */
