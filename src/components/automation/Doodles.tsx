@@ -9,9 +9,10 @@ type Props = { className?: string };
 
 const stroke = { stroke: "currentColor", strokeWidth: 2.5, strokeLinecap: "round", strokeLinejoin: "round" } as const;
 
+/** A loose, gently wavy underline. */
 export const Squiggle = ({ className = "" }: Props) => (
-  <svg viewBox="0 0 120 16" fill="none" preserveAspectRatio="none" aria-hidden="true" className={className}>
-    <path d="M3 9C11 2 17 2 23 9C29 15 36 15 42 8C48 2 55 2 61 9C67 15 74 15 80 8C86 2 93 2 99 9C105 15 111 14 117 7" {...stroke} />
+  <svg viewBox="0 0 300 14" fill="none" preserveAspectRatio="none" aria-hidden="true" className={className}>
+    <path d="M3 8C30 3 55 3 80 7.5S130 12 155 7.5S205 3 230 7S275 11.5 297 6.5" {...stroke} strokeWidth={4} />
   </svg>
 );
 

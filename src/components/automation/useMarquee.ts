@@ -8,7 +8,9 @@ const DRAG_THRESHOLD = 6; // px before a press counts as a drag (and the click i
  * Endless, draggable carousel. The track holds two identical copies of the list; its offset is kept
  * within one copy width, so it loops without a seam in either direction.
  *
- * - Glides on its own, and pauses while hovered, focused or being dragged.
+ * - Glides on its own. It stops only while a mouse is over it, a card is open, a card has keyboard
+ *   focus, or it is being dragged. Taps on touch screens don't count as hovering, and a card that was
+ *   clicked or tapped doesn't keep it stopped after it closes.
  * - Mouse and touch drag with pointer events. `touch-action: pan-y` (in CSS) keeps vertical page
  *   scrolling on phones; horizontal swipes move the carousel.
  * - A drag doesn't trigger the link it started on.
@@ -28,7 +30,7 @@ export const useMarquee = () => {
 
     let copyWidth = copy.offsetWidth;
     let offset = 0;
-    let paused = false;
+    let hovered = false;
     let drag: { id: number; startX: number; startOffset: number; moved: boolean } | null = null;
     let suppressClick = false;
     let last = performance.now();
@@ -43,7 +45,9 @@ export const useMarquee = () => {
     const tick = (now: number) => {
       const dt = Math.min(now - last, 64) / 1000;
       last = now;
-      if (!reduced && !paused && !drag && copyWidth > 0) {
+      // Hold still while a card is open, so it doesn't slide away while someone reads it.
+      const holding = !!viewport.querySelector('[aria-expanded="true"]') || !!viewport.querySelector(":focus-visible");
+      if (!reduced && !hovered && !drag && !holding && copyWidth > 0) {
         offset = wrap(offset + SPEED * dt);
         paint();
       }
@@ -93,19 +97,21 @@ export const useMarquee = () => {
         suppressClick = false;
       }
     };
-    const pause = () => (paused = true);
-    const resume = () => (paused = viewport.matches(":focus-within"));
-    const onFocusOut = () => requestAnimationFrame(() => (paused = viewport.matches(":hover, :focus-within")));
+    // Only a real mouse counts as hovering; touch and pen taps would otherwise leave it stuck.
+    const onEnter = (e: PointerEvent) => {
+      if (e.pointerType === "mouse") hovered = true;
+    };
+    const onLeave = (e: PointerEvent) => {
+      if (e.pointerType === "mouse") hovered = false;
+    };
 
     viewport.addEventListener("pointerdown", onDown);
     viewport.addEventListener("pointermove", onMove);
     viewport.addEventListener("pointerup", onUp);
     viewport.addEventListener("pointercancel", onUp);
     viewport.addEventListener("click", onClick, true);
-    viewport.addEventListener("mouseenter", pause);
-    viewport.addEventListener("mouseleave", resume);
-    viewport.addEventListener("focusin", pause);
-    viewport.addEventListener("focusout", onFocusOut);
+    viewport.addEventListener("pointerenter", onEnter);
+    viewport.addEventListener("pointerleave", onLeave);
 
     return () => {
       cancelAnimationFrame(frame);
@@ -115,10 +121,8 @@ export const useMarquee = () => {
       viewport.removeEventListener("pointerup", onUp);
       viewport.removeEventListener("pointercancel", onUp);
       viewport.removeEventListener("click", onClick, true);
-      viewport.removeEventListener("mouseenter", pause);
-      viewport.removeEventListener("mouseleave", resume);
-      viewport.removeEventListener("focusin", pause);
-      viewport.removeEventListener("focusout", onFocusOut);
+      viewport.removeEventListener("pointerenter", onEnter);
+      viewport.removeEventListener("pointerleave", onLeave);
     };
   }, [reduced]);
 

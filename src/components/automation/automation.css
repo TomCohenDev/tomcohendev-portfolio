@@ -30,6 +30,11 @@
   outline-offset: 3px;
 }
 
+/* Text fields show focus with their own purple border, so they skip the outline. */
+.automation-page :is(input:not([type="checkbox"]):not([type="radio"]), textarea, select):focus-visible {
+  outline: none;
+}
+
 html:has(.automation-page) {
   scroll-behavior: smooth;
 }

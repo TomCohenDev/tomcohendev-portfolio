@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Loader2, Mail, MessageCircle, Phone } from "lucide-react";
+import { Loader2, Mail, MessageCircle, Phone, Quote } from "lucide-react";
 import { track } from "@/lib/analytics";
 import { Squiggle } from "./Doodles";
 import { SentDoodle } from "./SentDoodle";
@@ -140,7 +140,7 @@ export const LeadForm = ({ seed, onSent }: { seed: string[]; onSent?: () => void
   }
 
   const inputBase =
-    "mt-2 block w-full rounded-xl border bg-[#141716] px-4 py-3 text-[16px] text-[var(--a-ink)] placeholder:text-[var(--a-muted)]/60 transition-colors focus:border-[var(--a-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--a-accent)]/40";
+    "mt-2 block w-full rounded-xl border bg-[#141716] px-4 py-3 text-[16px] text-[var(--a-ink)] placeholder:text-[var(--a-muted)]/60 transition-colors focus:border-[var(--a-accent)] focus:shadow-[0_0_0_4px_rgba(191,149,249,0.12)]";
   const border = (name: FieldName) => (errors[name] ? "border-red-400/80" : "border-[var(--a-line)]");
   const describedBy = (name: FieldName, hint?: boolean) =>
     [hint ? id(`${name}-hint`) : "", errors[name] ? id(`${name}-error`) : ""].filter(Boolean).join(" ") || undefined;
@@ -354,65 +354,84 @@ export const ContactSection = ({ seed }: { seed: string[] }) => {
   const [sent, setSent] = useState(false);
   return (
     <section id="contact" aria-labelledby="contact-title" className="a-grid-bg isolate border-t border-[var(--a-line)]">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 md:px-8 lg:grid-cols-[1fr_1.25fr] lg:gap-16">
-        {/* Right-aligned, and centred vertically against the form. */}
-        <div className="lg:self-center">
-          <p className="a-kicker">בואו נדבר</p>
-          <h2 id="contact-title" className="a-h2 relative">
-            יש תהליך שחוזר על עצמו{" "}
-            <span className="relative inline-block">
-              שוב ושוב?
-              <Squiggle className="absolute -bottom-3 start-0 h-3 w-full text-[var(--a-human)]" />
-            </span>
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-[var(--a-muted)]">
-            כתבו לי מה קורה היום, באילו כלים אתם משתמשים ואיפה התהליך נתקע, ונבדוק אם אוטומציה יכולה לעזור. הצטרפו
-            לאלפי עסקים בישראל שכבר משתמשים בבינה מלאכותית.
-          </p>
-          <ul className="mt-8 space-y-3 text-[16px]">
-            <li>
-              <a
-                href={`tel:${CONTACT.phoneTel}`}
-                onClick={() => track("automation_contact_click", { method: "phone", location: "contact" })}
-                className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
-              >
-                <Phone className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
-                <span className="sr-only">טלפון: </span>
-                <span dir="ltr">{CONTACT.phoneDisplay}</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href={CONTACT.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => track("automation_contact_click", { method: "whatsapp", location: "contact" })}
-                className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
-              >
-                <MessageCircle className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
-                וואטסאפ<span className="sr-only"> (נפתח בחלון חדש)</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href={`mailto:${CONTACT.email}`}
-                onClick={() => track("automation_contact_click", { method: "email", location: "contact" })}
-                className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
-              >
-                <Mail className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
-                <span className="sr-only">דואר אלקטרוני: </span>
-                <span dir="ltr">{CONTACT.email}</span>
-              </a>
-            </li>
-          </ul>
+      {/* On desktop the portrait is pinned to the bottom of this box, so it stands on the section's bottom edge.
+          After sending, the form shrinks to a short message, so extra bottom room keeps the portrait clear of the text. */}
+      <div
+        className={`relative mx-auto grid max-w-6xl gap-12 px-5 py-24 md:px-8 lg:grid-cols-[1fr_1.25fr] lg:gap-16 ${
+          sent ? "lg:pb-[20rem]" : ""
+        }`}
+      >
+        {/* Desktop: the quote lines up with the top of the form; the rest is centred in the space below it,
+            above the room reserved for the portrait at the bottom. */}
+        <div className="lg:flex lg:flex-col lg:self-stretch lg:pb-[13rem]">
+          {/* Quote from Noam (Nightwing); Noam approved this exact wording. */}
+          <figure className="mb-12 rounded-2xl border border-[var(--a-accent)]/30 bg-[#222524] p-6 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.9)] lg:max-w-[25rem]">
+            <Quote className="h-7 w-7 text-[var(--a-accent)] max-md:mx-auto" aria-hidden="true" />
+            <blockquote className="mt-3 text-xl font-medium leading-relaxed text-[var(--a-ink)] md:text-2xl">
+              תום הבין מהר את המגבלות של העסק שלנו ואת הצרכים שלנו. בזכות המערכת שהוא בנה לנו חסכנו אלפי שקלים, ויכולנו
+              לקבל ולעקוב אחרי הזמנות בלי מאמץ בכלל.
+            </blockquote>
+            <figcaption className="mt-3 text-[15px] text-[var(--a-muted)]">
+              <span className="text-[var(--a-ink)]">נועם</span> · <bdi>Nightwing</bdi>, מסעדה בפרדס חנה
+            </figcaption>
+          </figure>
+          <div className="lg:my-auto">
+            <h2 id="contact-title" className="a-h2 relative">
+              בואו נמצא איפה העסק שלכם{" "}
+              <span className="relative inline-block">
+                מאבד זמן וכסף
+                <Squiggle className="absolute -bottom-3 start-0 h-3 w-full text-[#f49ac1]" />
+              </span>
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-[var(--a-muted)]">
+              מה קורה היום, באילו כלים אתם משתמשים ואיפה התהליך נתקע? נבדוק יחד אם אוטומציה יכולה לעזור. הצטרפו
+              לאלפי עסקים בישראל שכבר משתמשים בבינה מלאכותית.
+            </p>
+            <ul className="mt-8 space-y-3 text-[16px]">
+              <li>
+                <a
+                  href={`tel:${CONTACT.phoneTel}`}
+                  onClick={() => track("automation_contact_click", { method: "phone", location: "contact" })}
+                  className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
+                >
+                  <Phone className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
+                  <span className="sr-only">טלפון: </span>
+                  <span dir="ltr">{CONTACT.phoneDisplay}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={CONTACT.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track("automation_contact_click", { method: "whatsapp", location: "contact" })}
+                  className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
+                >
+                  <MessageCircle className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
+                  וואטסאפ<span className="sr-only"> (נפתח בחלון חדש)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${CONTACT.email}`}
+                  onClick={() => track("automation_contact_click", { method: "email", location: "contact" })}
+                  className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
+                >
+                  <Mail className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
+                  <span className="sr-only">דואר אלקטרוני: </span>
+                  <span dir="ltr">{CONTACT.email}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
           <img
-            src="/automation/tom.svg"
+            src="/automation/tom.png"
             alt="איור של תום כהן מנופף לשלום"
-            width={1328}
-            height={1077}
+            width={1402}
+            height={1122}
             loading="lazy"
-            className="mt-10 w-56 drop-shadow-[0_18px_30px_rgba(0,0,0,0.55)] max-md:mx-auto sm:w-64"
-            />
+            className="mt-10 w-56 translate-y-[2.32%] drop-shadow-[0_18px_30px_rgba(0,0,0,0.55)] max-lg:-mb-12 max-md:mx-auto sm:w-64 lg:absolute lg:bottom-0 lg:right-8 lg:mt-0 lg:w-[22rem]"
+          />
         </div>
         {/* The doodle sits behind the form without moving it: the phone and the dotted trail rise into the empty
             space above the form (the top padding of this section plus the bottom padding of the one before), then
