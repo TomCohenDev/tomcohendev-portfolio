@@ -152,7 +152,7 @@ export const caseStudies: CaseStudy[] = [
         wide: true,
       },
     ],
-    link: { href: "/case-studies/nightwing", label: "לתיאור המלא של הפרויקט (באנגלית)" },
+    link: { href: "/en/case-studies/nightwing", label: "לתיאור המלא של הפרויקט (באנגלית)" },
   },
   // Source: src/pages/case-studies/AISocialMediaStrategist.tsx (Tom's own tool, Telegram approval step).
   {
@@ -168,7 +168,7 @@ export const caseStudies: CaseStudy[] = [
     systems: ["מקורות חדשות", "Google Sheets", "Claude", "Telegram"],
     human: "שום פוסט לא מתפרסם בלי אישור שלי בטלגרם.",
     result: "הכתיבה הפכה לעריכה: אני מקבל טיוטה מוכנה ומחליט מה לעשות איתה, במקום להתחיל מדף ריק.",
-    link: { href: "/case-studies/ai-social-media-strategist", label: "לתיאור המלא (באנגלית)" },
+    link: { href: "/en/case-studies/ai-social-media-strategist", label: "לתיאור המלא (באנגלית)" },
   },
   // Source: src/pages/case-studies/BlogAutomation.tsx (Tom's own n8n pipeline).
   // TODO(tom): confirm drafts are reviewed before publishing (the source page also shows post.publish()).
@@ -185,7 +185,7 @@ export const caseStudies: CaseStudy[] = [
     systems: ["Telegram", "n8n", "מודל שפה", "מערכת התוכן"],
     human: "עריכה ואישור של הטקסט לפני פרסום.",
     result: "העבודה הטכנית סביב המאמר נעשית לבד, והזמן שלי הולך לתוכן עצמו.",
-    link: { href: "/case-studies/blog-automation", label: "לתיאור המלא (באנגלית)" },
+    link: { href: "/en/case-studies/blog-automation", label: "לתיאור המלא (באנגלית)" },
   },
   // Source: ~/github/ai-ad-and-video-maker (Helix: AGENTS.md non-negotiables, README campaign flow).
   {
@@ -218,7 +218,7 @@ export const caseStudies: CaseStudy[] = [
     systems: ["BigQuery", "n8n", "OpenAI", "WhatsApp", "Firestore"],
     human: "ההחלטות שמתקבלות על סמך הנתונים, וכל מה שנוגע למשתמשים עצמם.",
     result: "תמונת מצב יומית מגיעה לבד לטלפון, ושאלה על הנתונים לא דורשת לפתוח מערכת.",
-    link: { href: "/case-studies/gomlin-jobs", label: "לתיאור המוצר המלא (באנגלית)" },
+    link: { href: "/en/case-studies/gomlin-jobs", label: "לתיאור המוצר המלא (באנגלית)" },
   },
   // Source: ~/github/mintkola/mintkola-web/n8n-workflows/*.json (webhook handler: verify signature → event type → Firestore).
   // TODO(tom): Mintkola's client/owner is still "[NEEDS INPUT]" in the case-study draft. Confirm it may be shown.
@@ -249,7 +249,7 @@ export const caseStudies: CaseStudy[] = [
     systems: ["אפליקציית Windows", "n8n", "GPT", "Supabase"],
     human: "המורה שואל, בוחר מה להציג ומסביר.",
     result: "שואלים שאלה על מה שמוצג במסך, והתשובה מופיעה כסימונים וחיצים ישר על המסך.",
-    link: { href: "/case-studies/ita", label: "לתיאור המלא (באנגלית)" },
+    link: { href: "/en/case-studies/ita", label: "לתיאור המלא (באנגלית)" },
   },
   // Source: ~/github/adolam-portfolio/.github/workflows/deploy.yml (push to main → build → Cloudflare),
   // ~/github/luxcal and ~/github/portfolio-sofia firebase-hosting-{pull-request,merge}.yml (PR preview, deploy on merge).
@@ -265,7 +265,7 @@ export const caseStudies: CaseStudy[] = [
     systems: ["GitHub Actions", "Cloudflare", "Firebase Hosting"],
     human: "אישור השינוי לפני שהוא עולה.",
     result: "כל שינוי שמאושר עולה לאתר לבד, וכל הצעה לשינוי מקבלת קודם קישור לבדיקה.",
-    link: { href: "/case-studies/portfolio-websites", label: "לתיאור המלא (באנגלית)" },
+    link: { href: "/en/case-studies/portfolio-websites", label: "לתיאור המלא (באנגלית)" },
   },
   // Source: ~/github/luxcal_scripts/create_shabbat.js (creates Friday 17:00 – Saturday 21:00 events for the next 4 weeks in Firestore).
   {

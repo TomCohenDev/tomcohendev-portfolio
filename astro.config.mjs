@@ -2,21 +2,16 @@ import { fileURLToPath } from "node:url";
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 
-// Static site. Hebrew pages are pre-rendered HTML (src/pages/*.astro). The English site is still the
-// React Router app: dist/index.html, which Workers Assets also serves for every unknown path
-// (not_found_handling in wrangler.jsonc). The Worker (edge/index.ts) only handles /api/*.
-// Dev only: like not_found_handling in production, send English deep links (/services, /case-studies/...)
-// to the English app at "/". Hebrew pages, files and Vite's own paths pass through.
-const HEBREW_PAGES = ["/automation", "/mobile"];
+// Static site: every page is pre-rendered HTML (src/pages/). The Hebrew site is at the root; the English site
+// is one React Router app at /en (src/pages/en.astro), and the Worker (edge/index.ts) serves it for /en/* in
+// production. Dev only: do the same here, so English deep links such as /en/services work with `npm run dev`.
 const englishFallback = {
   name: "english-spa-fallback",
   configureServer(server) {
     server.middlewares.use((req, _res, next) => {
       const path = (req.url || "/").split("?")[0];
       const isPage = req.method === "GET" && (req.headers.accept || "").includes("text/html") && !path.includes(".");
-      const internal = path.startsWith("/@") || path.startsWith("/_") || path.startsWith("/src/") || path.startsWith("/node_modules/");
-      const hebrew = HEBREW_PAGES.some((p) => path === p || path.startsWith(`${p}/`));
-      if (isPage && !internal && !hebrew && path !== "/") req.url = "/";
+      if (isPage && path.startsWith("/en/")) req.url = "/en";
       next();
     });
   },

@@ -2,7 +2,7 @@ import { LegalPage, LegalSection } from "@/components/automation/Legal";
 import { CONTACT } from "@/components/automation/content";
 
 /**
- * Hebrew privacy notice for the Hebrew pages (/automation and /mobile). It describes only what the pages and
+ * Hebrew privacy notice for the Hebrew pages (/, /automation and /mobile). It describes only what the pages and
  * the lead form actually do (edge/index.ts, src/layouts/HebrewLayout.astro, src/lib/analytics.ts). Keep it in sync with them.
  */
 // Page title and description; src/pages/*.astro puts them in the HTML head.
@@ -16,9 +16,10 @@ const AutomationPrivacy = () => (
   >
     <LegalSection title="על מה המדיניות הזו">
       <p>
-        העמוד הזה מסביר איזה מידע נאסף כשאתם גולשים בעמודים בעברית של תום כהן (<bdi>tomcohen.dev/automation</bdi>{" "}
-        ו־<bdi>tomcohen.dev/mobile</bdi>) או משאירים בהם פנייה, למה הוא משמש ומה אפשר לבקש לגביו. לשאר האתר יש{" "}
-        <a href="/privacy-policy">מדיניות פרטיות נפרדת, באנגלית</a>.
+        העמוד הזה מסביר איזה מידע נאסף כשאתם גולשים בעמודים בעברית של תום כהן (<bdi>tomcohen.dev</bdi>,{" "}
+        <bdi>tomcohen.dev/automation</bdi> ו־<bdi>tomcohen.dev/mobile</bdi>) או משאירים בהם פנייה, למה הוא משמש ומה אפשר
+        לבקש לגביו. לאתר באנגלית (<bdi>tomcohen.dev/en</bdi>) יש{" "}
+        <a href="/en/privacy-policy">מדיניות פרטיות נפרדת, באנגלית</a>.
       </p>
     </LegalSection>
 

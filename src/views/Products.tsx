@@ -58,7 +58,7 @@ const Products = () => {
                     
                     <button 
                       className="inline-flex items-center font-semibold text-foreground group-hover:text-primary transition-colors"
-                      onClick={() => window.location.href = "/#contact"}
+                      onClick={() => window.location.href = "/en#contact"}
                     >
                       Learn More <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                     </button>

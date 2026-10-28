@@ -59,7 +59,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      {/* The English site lives under /en; the Hebrew site is at the root. */}
+      <BrowserRouter basename="/en">
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />

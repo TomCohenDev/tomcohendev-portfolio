@@ -14,6 +14,15 @@ export const person = {
   sameAs: ["https://www.linkedin.com/in/tom-cohen-07778585/", "https://github.com/TomCohenDev", "https://x.com/Tom_Ends"],
 };
 
+export const website = {
+  "@type": "WebSite",
+  "@id": `${SITE}/#website`,
+  url: `${SITE}/`,
+  name: "תום כהן",
+  inLanguage: "he",
+  publisher: { "@id": `${SITE}/#tom` },
+};
+
 export const service = (path: string, name: string, serviceType: string, description: string) => ({
   "@type": "Service",
   "@id": `${SITE}${path}#service`,
