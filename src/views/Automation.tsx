@@ -6,14 +6,13 @@ import { MarketContext, PainBoard } from "@/components/automation/Problem";
 import { WorkSection } from "@/components/automation/Work";
 import { ApproachSection, FaqSection, ProcessSection } from "@/components/automation/Approach";
 import { ContactSection } from "@/components/automation/LeadForm";
-import { useHebrewDocument } from "@/components/automation/useHebrewDocument";
 
-const TITLE = "אוטומציה לעסקים וליחידים | תום כהן";
-const DESCRIPTION =
+// Page title and description; src/pages/*.astro puts them in the HTML head.
+export const TITLE = "אוטומציה לעסקים וליחידים | תום כהן";
+export const DESCRIPTION =
   "אפיון ובניית אוטומציות, חיבור בין מערכות וכלים פנימיים שמצמצמים עבודה ידנית. מתחילים מתהליך ממוקד, בודקים ומטמיעים בצורה ברורה.";
 
 const Automation = () => {
-  useHebrewDocument(TITLE, DESCRIPTION);
   const [seed, setSeed] = useState<string[]>([]);
 
   return (

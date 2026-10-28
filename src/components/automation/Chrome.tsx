@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { MessageCircle } from "lucide-react";
 import { track } from "@/lib/analytics";
 import { CONTACT } from "./content";
@@ -17,11 +16,11 @@ export const AutomationHeader = ({ onLanding = true, site = "automation" }: { on
         דילוג לתוכן
       </a>
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-3 px-4 sm:gap-6 sm:px-5 md:px-8 xl:px-12">
-        <Link to="/" className="flex shrink-0 items-center gap-2 whitespace-nowrap sm:gap-2.5" aria-label="תום כהן, לעמוד הבית">
+        <a href="/" className="flex shrink-0 items-center gap-2 whitespace-nowrap sm:gap-2.5" aria-label="תום כהן, לעמוד הבית">
           <img src="/icon.svg" alt="" className="h-7 w-auto" />
           <span className="text-lg font-medium text-[var(--a-ink)] max-[359px]:text-base">תום כהן</span>
           <span className="text-base font-normal text-[var(--a-accent)] max-[359px]:text-sm sm:text-lg">· {s.label}</span>
-        </Link>
+        </a>
         <nav aria-label="ניווט בעמוד" className="hidden lg:block">
           <ul className="flex items-center gap-7 text-[15px] text-[var(--a-muted)]">
             {s.nav.map((item) => (
@@ -118,24 +117,24 @@ export const AutomationFooter = ({ site = "automation" }: { site?: SiteKey }) =>
           <p className="font-semibold text-[var(--a-ink)]">עוד באתר</p>
           <ul className="space-y-2 text-[var(--a-muted)]">
             <li>
-              <Link to="/" className="hover:text-[var(--a-ink)]">
+              <a href="/" className="hover:text-[var(--a-ink)]">
                 האתר הראשי (באנגלית)
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to={s.other.to} className="hover:text-[var(--a-ink)]">
+              <a href={s.other.to} className="hover:text-[var(--a-ink)]">
                 {s.other.label}
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/automation/privacy" className="hover:text-[var(--a-ink)]">
+              <a href="/automation/privacy" className="hover:text-[var(--a-ink)]">
                 מדיניות פרטיות
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/automation/site-map" className="hover:text-[var(--a-ink)]">
+              <a href="/automation/site-map" className="hover:text-[var(--a-ink)]">
                 מפת האתר
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

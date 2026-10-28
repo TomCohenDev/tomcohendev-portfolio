@@ -1,21 +1,17 @@
 import type { ReactNode } from "react";
 import "./automation.css";
 import { AutomationFooter, AutomationHeader } from "./Chrome";
-import { useHebrewDocument } from "./useHebrewDocument";
 
 /** Shared layout for the Hebrew privacy policy and site map. */
 export const LegalPage = ({
   title,
-  description,
   updated,
   children,
 }: {
   title: string;
-  description: string;
   updated?: string;
   children: ReactNode;
 }) => {
-  useHebrewDocument(`${title} | תום כהן`, description);
   return (
     <div className="automation-page min-h-screen" dir="rtl" lang="he">
       <AutomationHeader onLanding={false} />

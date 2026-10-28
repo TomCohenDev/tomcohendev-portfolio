@@ -32,9 +32,9 @@ const draw = {
       opacity: 1,
       strokeWidth: 80,
       transition: {
-        pathLength: { delay, type: "spring", duration: 0.8, bounce: 0.4 },
+        pathLength: { delay, type: "spring" as const, duration: 0.8, bounce: 0.4 },
         opacity: { delay, duration: 0.01 },
-        strokeWidth: { delay, type: "spring", duration: 0.8, bounce: 0.4 }
+        strokeWidth: { delay, type: "spring" as const, duration: 0.8, bounce: 0.4 }
       }
     };
   }

@@ -1,0 +1,8 @@
+---
+import HebrewLayout from "../../layouts/HebrewLayout.astro";
+import AutomationSiteMap, { DESCRIPTION, TITLE } from "../../views/AutomationSiteMap";
+---
+
+<HebrewLayout title={`${TITLE} | תום כהן`} description={DESCRIPTION} path="/automation/site-map">
+  <AutomationSiteMap client:load />
+</HebrewLayout>

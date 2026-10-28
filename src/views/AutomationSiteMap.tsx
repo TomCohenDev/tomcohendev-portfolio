@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { LegalPage, LegalSection } from "@/components/automation/Legal";
 import { CONTACT } from "@/components/automation/content";
 
@@ -35,8 +34,12 @@ const MAIN_SITE = [
   { to: "/contact", label: "יצירת קשר" },
 ];
 
+// Page title and description; src/pages/*.astro puts them in the HTML head.
+export const TITLE = "מפת האתר";
+export const DESCRIPTION = "כל העמודים והחלקים בעמודים בעברית של תום כהן, במקום אחד.";
+
 const AutomationSiteMap = () => (
-  <LegalPage title="מפת האתר" description="כל העמודים והחלקים בעמודים בעברית של תום כהן, במקום אחד.">
+  <LegalPage title={TITLE}>
     <LegalSection title="עמוד האוטומציה">
       <ul>
         {PAGE_SECTIONS.map((s) => (
@@ -61,9 +64,9 @@ const AutomationSiteMap = () => (
       <ul>
         {CASE_STUDIES.map((c) => (
           <li key={c.to}>
-            <Link to={c.to}>
+            <a href={c.to}>
               <bdi>{c.label}</bdi>
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
@@ -73,7 +76,7 @@ const AutomationSiteMap = () => (
       <ul>
         {MAIN_SITE.map((m) => (
           <li key={m.to}>
-            <Link to={m.to}>{m.label}</Link>
+            <a href={m.to}>{m.label}</a>
           </li>
         ))}
       </ul>
@@ -82,10 +85,10 @@ const AutomationSiteMap = () => (
     <LegalSection title="מסמכים">
       <ul>
         <li>
-          <Link to="/automation/privacy">מדיניות פרטיות</Link>
+          <a href="/automation/privacy">מדיניות פרטיות</a>
         </li>
         <li>
-          <Link to="/privacy-policy">מדיניות הפרטיות של האתר הראשי (באנגלית)</Link>
+          <a href="/privacy-policy">מדיניות הפרטיות של האתר הראשי (באנגלית)</a>
         </li>
       </ul>
     </LegalSection>

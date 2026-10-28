@@ -4,18 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "astro dev",
     "dev:api": "wrangler dev --port 8787",
     "sync-assets": "node scripts/sync-case-study-assets.mjs",
-    "build": "npm run sync-assets && vite build",
-    "build:dev": "vite build --mode development",
-    "deploy:pages": "wrangler pages deploy dist",
+    "build": "npm run sync-assets && astro build",
     "lint": "eslint .",
-    "preview": "vite preview",
+    "preview": "astro preview",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types edge/worker-configuration.d.ts --env-interface WorkerEnv"
   },
   "dependencies": {
+    "@astrojs/react": "^5.0.7",
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
@@ -46,6 +45,7 @@
     "@radix-ui/react-tooltip": "^1.2.7",
     "@studio-freight/lenis": "^1.0.42",
     "@tanstack/react-query": "^5.83.0",
+    "astro": "^6.4.8",
     "baseline-browser-mapping": "^2.9.7",
     "caniuse-lite": "^1.0.30001760",
     "class-variance-authority": "^0.7.1",
@@ -83,7 +83,6 @@
     "@types/node": "^22.16.5",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
-    "@vitejs/plugin-react-swc": "^3.11.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.32.0",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -95,7 +94,6 @@
     "to-ico": "^1.1.5",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
-    "vite": "^5.4.19",
     "wrangler": "^4.83.0"
   }
 }

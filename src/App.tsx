@@ -4,28 +4,24 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import Index from "./pages/Index";
-import Services from "./pages/Services";
-import Products from "./pages/Products";
-import Contact from "./pages/Contact";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import NavigationalPolicy from "./pages/NavigationalPolicy";
-import NotFound from "./pages/NotFound";
-import Automation from "./pages/Automation";
-import AutomationPrivacy from "./pages/AutomationPrivacy";
-import AutomationSiteMap from "./pages/AutomationSiteMap";
-import Mobile from "./pages/Mobile";
-import GomlinJobs from "./pages/case-studies/GomlinJobs";
-import Nightwing from "./pages/case-studies/Nightwing";
-import AISocialMediaStrategist from "./pages/case-studies/AISocialMediaStrategist";
-import BlogAutomation from "./pages/case-studies/BlogAutomation";
-import Mintkola from "./pages/case-studies/Mintkola";
-import Spidclass from "./pages/case-studies/Spidclass";
-import YellowCandle from "./pages/case-studies/YellowCandle";
-import PortfolioWebsites from "./pages/case-studies/PortfolioWebsites";
-import ITA from "./pages/case-studies/ITA";
-import FullstackApps from "./pages/case-studies/FullstackApps";
-import Dronebag from "./pages/case-studies/Dronebag";
+import Index from "./views/Index";
+import Services from "./views/Services";
+import Products from "./views/Products";
+import Contact from "./views/Contact";
+import PrivacyPolicy from "./views/PrivacyPolicy";
+import NavigationalPolicy from "./views/NavigationalPolicy";
+import NotFound from "./views/NotFound";
+import GomlinJobs from "./views/case-studies/GomlinJobs";
+import Nightwing from "./views/case-studies/Nightwing";
+import AISocialMediaStrategist from "./views/case-studies/AISocialMediaStrategist";
+import BlogAutomation from "./views/case-studies/BlogAutomation";
+import Mintkola from "./views/case-studies/Mintkola";
+import Spidclass from "./views/case-studies/Spidclass";
+import YellowCandle from "./views/case-studies/YellowCandle";
+import PortfolioWebsites from "./views/case-studies/PortfolioWebsites";
+import ITA from "./views/case-studies/ITA";
+import FullstackApps from "./views/case-studies/FullstackApps";
+import Dronebag from "./views/case-studies/Dronebag";
 
 const queryClient = new QueryClient();
 
@@ -71,10 +67,6 @@ const App = () => (
           <Route path="/services/:serviceId" element={<Services />} />
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/automation" element={<Automation />} />
-          <Route path="/automation/privacy" element={<AutomationPrivacy />} />
-          <Route path="/automation/site-map" element={<AutomationSiteMap />} />
-          <Route path="/mobile" element={<Mobile />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/navigational-policy" element={<NavigationalPolicy />} />
           <Route path="/case-studies/gomlin-jobs" element={<GomlinJobs />} />

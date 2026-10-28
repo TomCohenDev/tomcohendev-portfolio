@@ -68,16 +68,17 @@ edge/index.ts            the lead API (unchanged)
 Each phase ships on its own.
 
 1. **Ship `/mobile`.** It is built and tested locally. Before it goes live Tom confirms: "4 years of Flutter", the Yellow Candle wording, and the reviews.
-2. **Foundation.**
+2. **Foundation.** No URL changes.
    - Astro in this repository, with the shared Hebrew design, header, footer and metadata.
    - `/automation` and `/mobile` move across with the same URLs and behaviour.
-   - The current English site moves to `/en`. Old URLs redirect or keep working.
+   - The English site stays where it is, as the fallback for every other path.
    - CI/CD:
      - Pull requests: types, lint, build, broken links, Hebrew metadata, and a preview link on the PR.
      - `main`: deploy, then a check of the live site.
      - Daily: a rebuild for scheduled posts.
    - Needs: a Cloudflare API token and the account ID as GitHub secrets.
 3. **Homepage.**
+   - The current English site moves to `/en`, and its old URLs redirect there.
    - The Hebrew handwriting hero with the changing visual.
    - The radial services map with two branches.
    - Work and reviews (the existing carousel, shorter).

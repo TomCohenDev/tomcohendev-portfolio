@@ -26,5 +26,8 @@ dist-ssr
 bun.lockb
 
 .env.local
+# Astro generated types
+.astro
+
 # Wrangler local state
 .wrangler

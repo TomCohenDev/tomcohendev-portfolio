@@ -92,14 +92,14 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/automation"
+                <a
+                  href="/automation"
                   lang="he"
                   dir="rtl"
                   className="hover:text-primary transition-colors"
                 >
                   אוטומציה לעסקים (עברית)
-                </Link>
+                </a>
               </li>
               <li>
                 <Link

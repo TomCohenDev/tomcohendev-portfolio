@@ -121,7 +121,7 @@ export const mobileProcess = [
   { title: "משיקים", body: "הגשה לחנויות, ואחר כך עדכונים ושיפורים לפי שימוש אמיתי." },
 ] as const;
 
-// Each answer points at something on the page. Keep mobile.html's FAQPage JSON-LD identical to this list.
+// Each answer points at something on the page. src/pages/mobile.astro builds the FAQPage JSON-LD from this list.
 export const mobileFaqs = [
   {
     q: "צריך לבנות בנפרד לאייפון ולאנדרואיד?",

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import type { LucideIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -56,7 +57,7 @@ const MissionNode = ({
   desc,
   active = false,
 }: {
-  icon: any;
+  icon: LucideIcon;
   title: string;
   desc: string;
   active?: boolean;

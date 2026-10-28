@@ -4,19 +4,17 @@ import { AutomationFooter, AutomationHeader } from "@/components/automation/Chro
 import { FaqSection, ProcessSection } from "@/components/automation/Approach";
 import { Squiggle } from "@/components/automation/Doodles";
 import { ContactSection } from "@/components/automation/LeadForm";
-import { useHebrewDocument } from "@/components/automation/useHebrewDocument";
 import { Capabilities } from "@/components/mobile/Capabilities";
 import { MobileHero } from "@/components/mobile/MobileHero";
 import { PhoneStory } from "@/components/mobile/PhoneStory";
 import { mobileFaqs, mobileProcess, mobileQuote } from "@/components/mobile/content";
 
-const TITLE = "פיתוח אפליקציות לאייפון ולאנדרואיד | תום כהן";
-const DESCRIPTION =
+// Page title and description; src/pages/*.astro puts them in the HTML head.
+export const TITLE = "פיתוח אפליקציות לאייפון ולאנדרואיד | תום כהן";
+export const DESCRIPTION =
   "פיתוח אפליקציות ב־Flutter מקוד אחד לאייפון ולאנדרואיד: עיצוב, צד שרת, תשלומים, התראות והעלאה ל־App Store ול־Google Play.";
 
 const Mobile = () => {
-  useHebrewDocument(TITLE, DESCRIPTION);
-
   return (
     <div className="automation-page min-h-screen" dir="rtl" lang="he">
       <AutomationHeader site="mobile" />

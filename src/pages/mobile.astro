@@ -1,0 +1,26 @@
+---
+import HebrewLayout from "../layouts/HebrewLayout.astro";
+import Mobile, { DESCRIPTION, TITLE } from "../views/Mobile";
+import { mobileFaqs } from "../components/mobile/content";
+import { faqPage, graph, person, service } from "../lib/structuredData";
+
+const jsonLd = graph(
+  person,
+  service("/mobile", "פיתוח אפליקציות לאייפון ולאנדרואיד", "פיתוח אפליקציות מובייל", DESCRIPTION),
+  faqPage("/mobile", mobileFaqs)
+);
+---
+
+<HebrewLayout
+  title={TITLE}
+  description={DESCRIPTION}
+  path="/mobile"
+  ogTitle="האפליקציה שלכם באייפון ובאנדרואיד, מהרעיון ועד החנויות"
+  ogDescription="פיתוח אפליקציות ב־Flutter: קוד אחד לאייפון ולאנדרואיד, צד שרת, תשלומים, התראות והעלאה לחנויות."
+  ogImage="/og-mobile.png"
+  ogImageAlt="תום כהן: פיתוח אפליקציות לאייפון ולאנדרואיד"
+  twitterDescription="פיתוח אפליקציות ב־Flutter מקוד אחד לאייפון ולאנדרואיד, מהרעיון ועד החנויות."
+  jsonLd={jsonLd}
+>
+  <Mobile client:load />
+</HebrewLayout>

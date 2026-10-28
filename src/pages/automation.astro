@@ -1,0 +1,32 @@
+---
+import HebrewLayout from "../layouts/HebrewLayout.astro";
+import Automation, { DESCRIPTION, TITLE } from "../views/Automation";
+import { faqs } from "../components/automation/content";
+import { faqPage, graph, person, service } from "../lib/structuredData";
+
+const jsonLd = graph(
+  person,
+  service(
+    "/automation",
+    "אפיון ובניית אוטומציות לעסקים וליחידים",
+    "אוטומציה של תהליכים עסקיים",
+    "אפיון ובניית אוטומציות, חיבור בין מערכות וכלים פנימיים שמצמצמים עבודה ידנית."
+  ),
+  faqPage("/automation", faqs)
+);
+---
+
+<HebrewLayout
+  title={TITLE}
+  description={DESCRIPTION}
+  path="/automation"
+  ogTitle="פחות עבודה ידנית. אוטומציה לעסקים וליחידים"
+  ogDescription="אוטומציות, חיבורים בין מערכות וכלים פנימיים לעסקים וליחידים. מתחילים מתהליך אחד, בונים פיילוט ובודקים שזה באמת עובד."
+  ogImage="/og-automation.png"
+  ogImageAlt="תום כהן: אוטומציה לעסקים וליחידים"
+  twitterTitle={TITLE}
+  twitterDescription="אפיון ובניית אוטומציות, חיבור בין מערכות וכלים פנימיים שמצמצמים עבודה ידנית."
+  jsonLd={jsonLd}
+>
+  <Automation client:load />
+</HebrewLayout>

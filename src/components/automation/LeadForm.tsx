@@ -1,5 +1,4 @@
 import { type ReactNode, useEffect, useId, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { Loader2, Mail, MessageCircle, Phone, Quote } from "lucide-react";
 import { track } from "@/lib/analytics";
 import { Squiggle } from "./Doodles";
@@ -310,9 +309,9 @@ export const LeadForm = ({ seed = [], onSent, site = "automation" }: { seed?: st
             אני מאשר/ת שתום כהן יחזור אליי בנוגע לפנייה הזו. <span aria-hidden="true">*</span>
             <span className="mt-1 block text-[14px] text-[var(--a-muted)]">
               הפרטים משמשים רק לטיפול בפנייה.{" "}
-              <Link to="/automation/privacy" className="underline underline-offset-2 hover:text-[var(--a-ink)]">
+              <a href="/automation/privacy" className="underline underline-offset-2 hover:text-[var(--a-ink)]">
                 מדיניות הפרטיות
-              </Link>
+              </a>
             </span>
           </span>
         </label>
