@@ -3,19 +3,19 @@ import { LegalPage, LegalSection } from "@/components/automation/Legal";
 import { CONTACT } from "@/components/automation/content";
 
 /**
- * Hebrew privacy notice for the /automation pages. It describes only what the page and the lead
- * form actually do (edge/index.ts, automation.html, src/lib/analytics.ts). Keep it in sync with them.
+ * Hebrew privacy notice for the Hebrew pages (/automation and /mobile). It describes only what the pages and
+ * the lead form actually do (edge/index.ts, automation.html, mobile.html, src/lib/analytics.ts). Keep it in sync with them.
  */
 const AutomationPrivacy = () => (
   <LegalPage
     title="מדיניות פרטיות"
-    description="איזה מידע נאסף בעמודי האוטומציה של תום כהן, למה הוא משמש, איפה הוא נשמר ומה אפשר לבקש לגביו."
+    description="איזה מידע נאסף בעמודים בעברית של תום כהן, למה הוא משמש, איפה הוא נשמר ומה אפשר לבקש לגביו."
     updated="אוקטובר 2026"
   >
     <LegalSection title="על מה המדיניות הזו">
       <p>
-        העמוד הזה מסביר איזה מידע נאסף כשאתם גולשים בעמודי האוטומציה של תום כהן (
-        <bdi>tomcohen.dev/automation</bdi>) או משאירים בהם פנייה, למה הוא משמש ומה אפשר לבקש לגביו. לשאר האתר יש{" "}
+        העמוד הזה מסביר איזה מידע נאסף כשאתם גולשים בעמודים בעברית של תום כהן (<bdi>tomcohen.dev/automation</bdi>{" "}
+        ו־<bdi>tomcohen.dev/mobile</bdi>) או משאירים בהם פנייה, למה הוא משמש ומה אפשר לבקש לגביו. לשאר האתר יש{" "}
         <Link to="/privacy-policy">מדיניות פרטיות נפרדת, באנגלית</Link>.
       </p>
     </LegalSection>
@@ -25,13 +25,16 @@ const AutomationPrivacy = () => (
         <li>שם מלא</li>
         <li>שם העסק או תחום הפעילות, אם מילאתם</li>
         <li>טלפון או דואר אלקטרוני</li>
-        <li>תיאור התהליך שתרצו לשפר, הכלים שאתם משתמשים בהם וכמה פעמים התהליך קורה, אם מילאתם</li>
+        <li>
+          מה שכתבתם על הצורך שלכם, אם מילאתם: התהליך שתרצו לשפר או האפליקציה שתרצו לבנות, מה כבר קיים אצלכם, ובעמוד
+          האוטומציה גם כמה פעמים התהליך קורה
+        </li>
         <li>האישור שלכם לכך שאחזור אליכם</li>
         <li>מועד הפנייה והעמוד שממנו נשלחה</li>
       </ul>
       <p>
-        אין צורך לכתוב בטופס מידע רגיש, כמו פרטים של לקוחות שלכם או מידע רפואי או פיננסי. מספיק לתאר את התהליך
-        במילים כלליות.
+        אין צורך לכתוב בטופס מידע רגיש, כמו פרטים של לקוחות שלכם או מידע רפואי או פיננסי. מספיק לתאר את מה שאתם
+        צריכים במילים כלליות.
       </p>
     </LegalSection>
 

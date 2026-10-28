@@ -15,10 +15,11 @@ export default defineConfig(() => ({
   plugins: [react()],
   build: {
     rollupOptions: {
-      // automation.html is the same app with Hebrew metadata, served for /automation.
+      // automation.html and mobile.html are the same app with Hebrew metadata, served for /automation and /mobile.
       input: {
         main: path.resolve(__dirname, "index.html"),
         automation: path.resolve(__dirname, "automation.html"),
+        mobile: path.resolve(__dirname, "mobile.html"),
       },
     },
   },

@@ -3,20 +3,31 @@ import { Fragment } from "react";
 import { experience, faqs, fields, principles, processSteps } from "./content";
 import { SketchArrow, SketchCircle } from "./Doodles";
 
-export const ProcessSection = () => (
+type Step = { readonly title: string; readonly body: string };
+type Faq = { readonly q: string; readonly a: string };
+
+const PROCESS_TITLE = "חמישה שלבים, מהתהליך הידני ועד פתרון שעובד בשגרה";
+const PROCESS_INTRO =
+  "אני מאפיין ובונה אוטומציות וכלים שמחברים בין המערכות שכבר יש לכם, חוסכים פעולות חוזרות והופכים תהליך מסורבל לדרך עבודה ברורה. מתחילים מתהליך אחד שאפשר למדוד, בונים פתרון ממוקד ובודקים שהוא באמת מתאים לעבודה היומיומית.";
+
+export const ProcessSection = ({
+  title = PROCESS_TITLE,
+  intro = PROCESS_INTRO,
+  steps = processSteps,
+}: {
+  title?: string;
+  intro?: string;
+  steps?: readonly Step[];
+}) => (
   <section id="process" aria-labelledby="process-title" className="border-t border-[var(--a-line)] bg-[#171a19]">
     <div className="mx-auto max-w-6xl px-5 py-24 md:px-8">
       <div className="flex flex-wrap items-end justify-between gap-8 max-md:justify-center">
         <div>
           <p className="a-kicker">איך עובדים</p>
           <h2 id="process-title" className="a-h2 max-w-2xl max-md:mx-auto">
-            חמישה שלבים, מהתהליך הידני ועד פתרון שעובד בשגרה
+            {title}
           </h2>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--a-muted)] max-md:mx-auto">
-            אני מאפיין ובונה אוטומציות וכלים שמחברים בין המערכות שכבר יש לכם, חוסכים פעולות חוזרות והופכים תהליך
-            מסורבל לדרך עבודה ברורה. מתחילים מתהליך אחד שאפשר למדוד, בונים פתרון ממוקד ובודקים שהוא באמת מתאים לעבודה
-            היומיומית.
-          </p>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--a-muted)] max-md:mx-auto">{intro}</p>
         </div>
         <img
             src="/automation/process.svg"
@@ -31,7 +42,7 @@ export const ProcessSection = () => (
           Phones: a compact zigzag. Each step is a row (number beside the text) and the number swaps sides
           from step to step, with a small diagonal arrow leading to the next one. */}
       <ol className="mt-12 flex flex-col gap-1 md:mt-16 md:flex-row md:items-start md:gap-1">
-        {processSteps.map((step, i) => {
+        {steps.map((step, i) => {
           const flip = i % 2 === 1;
           return (
             <Fragment key={step.title}>
@@ -49,7 +60,7 @@ export const ProcessSection = () => (
                   <p className="mt-1 text-[14px] leading-relaxed text-[var(--a-muted)] md:mt-2 md:text-[15px]">{step.body}</p>
                 </div>
               </li>
-              {i < processSteps.length - 1 && (
+              {i < steps.length - 1 && (
                 <li aria-hidden="true" className="flex shrink-0 items-center justify-center md:mt-1 md:w-16 lg:w-20">
                   <SketchArrow dip={i % 2 === 1} className="hidden w-16 text-[var(--a-human)] md:block lg:w-20" />
                   <SketchArrow
@@ -119,14 +130,14 @@ export const ApproachSection = () => (
   </section>
 );
 
-export const FaqSection = () => (
+export const FaqSection = ({ items = faqs }: { items?: readonly Faq[] }) => (
   <section id="faq" aria-labelledby="faq-title" className="border-t border-[var(--a-line)]">
     <div className="mx-auto max-w-3xl px-5 py-24 md:px-8">
       <h2 id="faq-title" className="a-h2">
         שאלות שעולות בדרך כלל
       </h2>
       <Accordion type="single" collapsible dir="rtl" className="mt-10">
-        {faqs.map((f, i) => (
+        {items.map((f, i) => (
           <AccordionItem key={f.q} value={`faq-${i}`} className="border-[var(--a-line)]">
             <AccordionTrigger className="gap-4 py-5 text-start text-lg max-md:text-center font-semibold text-[var(--a-ink)] hover:no-underline [&>svg]:text-[var(--a-accent)]">
               {f.q}

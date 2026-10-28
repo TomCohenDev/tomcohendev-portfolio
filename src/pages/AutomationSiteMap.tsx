@@ -11,11 +11,22 @@ const PAGE_SECTIONS = [
   { href: "/automation#faq", label: "שאלות נפוצות" },
 ];
 
+const MOBILE_SECTIONS = [
+  { href: "/mobile", label: "פתיחה: האפליקציה שלכם באייפון ובאנדרואיד" },
+  { href: "/mobile#apps", label: "אפליקציות שבניתי" },
+  { href: "/mobile#process", label: "איך עובדים" },
+  { href: "/mobile#contact", label: "יצירת קשר וטופס פנייה" },
+  { href: "/mobile#faq", label: "שאלות נפוצות" },
+];
+
 const CASE_STUDIES = [
   { to: "/case-studies/nightwing", label: "Nightwing: הזמנות שמגיעות למטבח לבד" },
   { to: "/case-studies/ai-social-media-strategist", label: "סוכן תוכן לרשתות" },
   { to: "/case-studies/blog-automation", label: "מהודעה לטיוטת מאמר" },
   { to: "/case-studies/gomlin-jobs", label: "Gomlin: נתונים שמגיעים לוואטסאפ" },
+  { to: "/case-studies/dronebag", label: "Dronebag: ניהול צי רחפנים" },
+  { to: "/case-studies/spidclass", label: "Spidclass: נוכחות ותשלומים" },
+  { to: "/case-studies/yellow-candle", label: "Yellow Candle: אפליקציית הנצחה" },
 ];
 
 const MAIN_SITE = [
@@ -25,10 +36,20 @@ const MAIN_SITE = [
 ];
 
 const AutomationSiteMap = () => (
-  <LegalPage title="מפת האתר" description="כל העמודים והחלקים בעמודי האוטומציה של תום כהן, במקום אחד.">
+  <LegalPage title="מפת האתר" description="כל העמודים והחלקים בעמודים בעברית של תום כהן, במקום אחד.">
     <LegalSection title="עמוד האוטומציה">
       <ul>
         {PAGE_SECTIONS.map((s) => (
+          <li key={s.href}>
+            <a href={s.href}>{s.label}</a>
+          </li>
+        ))}
+      </ul>
+    </LegalSection>
+
+    <LegalSection title="עמוד פיתוח האפליקציות">
+      <ul>
+        {MOBILE_SECTIONS.map((s) => (
           <li key={s.href}>
             <a href={s.href}>{s.label}</a>
           </li>
