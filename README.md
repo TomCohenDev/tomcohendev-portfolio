@@ -107,6 +107,7 @@ The plan for the Hebrew site is in [`docs/site-plan.md`](docs/site-plan.md).
 
 - `npm run dev` (Astro, port 8080) and `npm run dev:api` (the Worker, port 8787) for the lead form.
 - `npm run build`, then `node scripts/check-site.mjs`: metadata of the Hebrew pages and internal links.
-- Pull requests (`.github/workflows/ci.yml`): lint, type check, build, site check, and a preview version of the Worker with its link in a PR comment. The preview uses the production leads database and email.
-- `main` (`.github/workflows/deploy.yml`): build, deploy, then `check-site.mjs --live`. Also runs daily at 04:00 UTC and by hand; to roll back, run it by hand on an earlier commit.
-- The workflows need the repository secret `CLOUDFLARE_API_TOKEN` (a Cloudflare API token with the "Edit Cloudflare Workers" template). `npm run deploy` from a computer still works.
+- Deploys: Cloudflare Workers Builds is connected to this repository (Cloudflare dashboard → the Worker → Settings → Builds). A push to `main` builds and deploys; other branches get a preview version. Roll back from the dashboard (Deployments) or with `npx wrangler rollback`. Previews use the production leads database and email.
+- Pull requests (`.github/workflows/ci.yml`): lint, type check, build, site check, then the site check on the Workers Builds preview.
+- `main` (`.github/workflows/live-check.yml`): waits for the Workers Builds deploy, then runs `check-site.mjs --live https://tomcohen.dev`.
+- `npm run deploy` from a computer still works, but a push to `main` deploys again on top of it.

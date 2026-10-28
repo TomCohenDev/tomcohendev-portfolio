@@ -1,0 +1,29 @@
+# Cloudflare Workers Builds deploys every push to main. This waits for that build, then checks the live
+# site. The daily news run pushes to main each morning, which also publishes posts dated for that day.
+name: Live check
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  checks: read
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Wait for the Workers Builds deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/wait-for-cloudflare-build.mjs "${{ github.sha }}"
+      - name: Check the live site
+        run: |
+          sleep 15
+          node scripts/check-site.mjs --live https://tomcohen.dev || (sleep 60 && node scripts/check-site.mjs --live https://tomcohen.dev)

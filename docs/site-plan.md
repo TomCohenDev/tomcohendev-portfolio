@@ -15,7 +15,7 @@ The homepage leads to the two services, `/automation` and `/mobile`. Work and re
 | Framework | Astro, in this repository. React components (hero, phone story, forms) stay as islands. Static HTML per page. |
 | Hosting | Cloudflare Workers static assets, as today. `edge/index.ts` keeps the lead API. |
 | Content | Files in this repository: blog posts, news issues, Tom's updates, courses and meetings. No CMS. |
-| Releases | Merge to `main` deploys. A pull request gets checks and a private preview. A daily rebuild publishes posts dated in the future on their date. Each deploy is recorded in the GitHub `production` environment; rolling back means redeploying an earlier commit. No version tags. |
+| Releases | Cloudflare Workers Builds (already connected to the repository) deploys every merge to `main` and builds other branches as previews. GitHub Actions run the checks on pull requests and check the live site after each deploy. The daily news commit also publishes posts dated for that day. Roll back from the Cloudflare dashboard or with `wrangler rollback`. No version tags. |
 | Services | Only automation and mobile. A Hebrew version of the radial "My Services" map (`src/components/ServiceMap.tsx`), with Tom in the centre and two branches. |
 | Hero | Hebrew words that write themselves, with the visual that changes with each word (as in `HandwritingMVP.tsx` and `DynamicVisual.tsx`). Claude draws a stroke path for each Hebrew letter. |
 | News | Daily, in Hebrew, for business owners. Built by an agent with the same flow as Yarden Zamir's paper (github.com/Yarden-zamir/news), but on Tom's own code and sources only. Published automatically from day one. |
@@ -73,10 +73,9 @@ Each phase ships on its own.
    - `/automation` and `/mobile` move across with the same URLs and behaviour.
    - The English site stays where it is, as the fallback for every other path.
    - CI/CD:
-     - Pull requests: types, lint, build, broken links, Hebrew metadata, and a preview link on the PR.
-     - `main`: deploy, then a check of the live site.
-     - Daily: a rebuild for scheduled posts.
-   - Needs: a Cloudflare API token and the account ID as GitHub secrets.
+     - Pull requests: types, lint, build, broken links and Hebrew metadata, then the same check on the Workers Builds preview.
+     - `main`: Workers Builds deploys; a GitHub workflow waits for it and checks the live site.
+     - No secrets are needed: deploys run in Cloudflare.
 3. **Homepage.**
    - The current English site moves to `/en`, and its old URLs redirect there.
    - The Hebrew handwriting hero with the changing visual.
