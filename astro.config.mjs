@@ -36,6 +36,10 @@ export default defineConfig({
     envPrefix: ["PUBLIC_", "VITE_"],
     plugins: [englishFallback],
     resolve: { alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) } },
+    // Dev only: scan the React code at startup. The English app is client:only, so otherwise Vite finds its
+    // packages (posthog-js, react-router, ...) on the first page load, rebuilds its cache, and the page
+    // fails with "Failed to fetch dynamically imported module" (504 Outdated Optimize Dep).
+    optimizeDeps: { entries: ["src/**/*.tsx"], include: ["posthog-js", "posthog-js/react"] },
     // The lead form posts to the Worker; run `npm run dev:api` alongside `npm run dev`.
     server: { proxy: { "/api": "http://127.0.0.1:8787" } },
   },
