@@ -209,10 +209,10 @@ const PrivacyPolicy = () => {
                   <p className="text-lg text-[#B9BBBE]">
                     Email:{" "}
                     <a
-                      href="mailto:tom@tomcohendev.com"
+                      href="mailto:contact@tomcohen.dev"
                       className="text-primary hover:text-primary/80 transition-colors"
                     >
-                      tom@tomcohendev.com
+                      contact@tomcohen.dev
                     </a>
                   </p>
                 </div>

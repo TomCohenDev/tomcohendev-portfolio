@@ -12,6 +12,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NavigationalPolicy from "./pages/NavigationalPolicy";
 import NotFound from "./pages/NotFound";
 import Automation from "./pages/Automation";
+import AutomationPrivacy from "./pages/AutomationPrivacy";
+import AutomationSiteMap from "./pages/AutomationSiteMap";
 import GomlinJobs from "./pages/case-studies/GomlinJobs";
 import Nightwing from "./pages/case-studies/Nightwing";
 import AISocialMediaStrategist from "./pages/case-studies/AISocialMediaStrategist";
@@ -69,6 +71,8 @@ const App = () => (
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/automation" element={<Automation />} />
+          <Route path="/automation/privacy" element={<AutomationPrivacy />} />
+          <Route path="/automation/site-map" element={<AutomationSiteMap />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/navigational-policy" element={<NavigationalPolicy />} />
           <Route path="/case-studies/gomlin-jobs" element={<GomlinJobs />} />

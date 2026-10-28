@@ -7,6 +7,10 @@ export default defineConfig(() => ({
   server: {
     host: "::",
     port: 8080,
+    // The lead form posts to the Worker; run `npm run dev:api` alongside `npm run dev`.
+    proxy: {
+      "/api": "http://127.0.0.1:8787",
+    },
   },
   plugins: [react()],
   build: {

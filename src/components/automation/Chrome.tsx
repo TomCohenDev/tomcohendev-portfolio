@@ -1,49 +1,66 @@
 import { Link } from "react-router-dom";
+import { MessageCircle } from "lucide-react";
 import { track } from "@/lib/analytics";
 import { CONTACT } from "./content";
 
 const NAV = [
-  { href: "#build", label: "מה אפשר לבנות" },
-  { href: "#work", label: "עבודות" },
+  { href: "#work", label: "עסקים שכבר חסכו" },
   { href: "#process", label: "איך עובדים" },
   { href: "#faq", label: "שאלות" },
 ];
 
-export const AutomationHeader = () => (
-  <header className="sticky top-0 z-40 border-b border-[var(--a-line)] bg-[#1D201F]/85 backdrop-blur-md">
-    <a
-      href="#main"
-      className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-3 focus:z-50 focus:rounded-md focus:bg-[var(--a-accent)] focus:px-4 focus:py-2 focus:text-[#1D201F]"
-    >
-      דילוג לתוכן
-    </a>
-    <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5 md:px-8">
-      <Link to="/" className="flex items-center gap-2.5" aria-label="תום כהן, לעמוד הבית">
-        <img src="/icon.svg" alt="" className="h-7 w-auto" />
-        <span className="text-lg font-bold text-[var(--a-ink)]">תום כהן</span>
-        <span className="hidden text-sm text-[var(--a-muted)] sm:inline">· אוטומציה</span>
-      </Link>
-      <nav aria-label="ניווט בעמוד" className="hidden lg:block">
-        <ul className="flex items-center gap-7 text-[15px] text-[var(--a-muted)]">
-          {NAV.map((item) => (
-            <li key={item.href}>
-              <a href={item.href} className="transition-colors hover:text-[var(--a-ink)]">
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+/** `onLanding` is false on the other Hebrew pages, where in-page links lead back to /automation. */
+export const AutomationHeader = ({ onLanding = true }: { onLanding?: boolean }) => {
+  const base = onLanding ? "" : "/automation";
+  return (
+    <header className="sticky top-0 z-40 border-b border-[var(--a-line)] bg-[#1D201F]/85 backdrop-blur-md">
       <a
-        href="#contact"
-        onClick={() => track("automation_cta_click", { location: "header" })}
-        className="a-btn a-btn-solid !px-4 !py-2 text-[15px]"
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-3 focus:z-50 focus:rounded-md focus:bg-[var(--a-accent)] focus:px-4 focus:py-2 focus:text-[#1D201F]"
       >
-        לשיחת היכרות
+        דילוג לתוכן
       </a>
-    </div>
-  </header>
-);
+      <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-3 px-4 sm:gap-6 sm:px-5 md:px-8 xl:px-12">
+        <Link to="/" className="flex shrink-0 items-center gap-2 whitespace-nowrap sm:gap-2.5" aria-label="תום כהן, לעמוד הבית">
+          <img src="/icon.svg" alt="" className="h-7 w-auto" />
+          <span className="text-lg font-medium text-[var(--a-ink)] max-[359px]:text-base">תום כהן</span>
+          <span className="text-base font-normal text-[var(--a-accent)] max-[359px]:text-sm sm:text-lg">· אוטומציה</span>
+        </Link>
+        <nav aria-label="ניווט בעמוד" className="hidden lg:block">
+          <ul className="flex items-center gap-7 text-[15px] text-[var(--a-muted)]">
+            {NAV.map((item) => (
+              <li key={item.href}>
+                <a href={base + item.href} className="transition-colors hover:text-[var(--a-ink)]">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="flex shrink-0 items-center gap-2">
+          {/* Hidden on narrow phones to make room; the hero has a WhatsApp button right below. */}
+          <a
+            href={CONTACT.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="וואטסאפ (נפתח בחלון חדש)"
+            onClick={() => track("automation_contact_click", { method: "whatsapp", location: "header" })}
+            className="hidden h-10 w-10 items-center justify-center rounded-full border border-[var(--a-line)] text-[var(--a-ink)] transition-colors hover:border-[var(--a-accent)] hover:text-[var(--a-accent)] min-[420px]:flex"
+          >
+            <MessageCircle className="h-5 w-5" aria-hidden="true" />
+          </a>
+          <a
+            href={`${base}#contact`}
+            onClick={() => track("automation_cta_click", { location: "header" })}
+            className="a-btn a-btn-solid whitespace-nowrap !px-3 !py-2 text-[14px] max-[359px]:text-[13px] sm:!px-4 sm:text-[15px]"
+          >
+            לשיחת היכרות
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+};
 
 export const AutomationFooter = () => (
   <footer className="border-t border-[var(--a-line)] bg-[#171a19]">
@@ -64,6 +81,17 @@ export const AutomationFooter = () => (
               className="hover:text-[var(--a-ink)]"
             >
               טלפון: <span dir="ltr">{CONTACT.phoneDisplay}</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href={CONTACT.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => track("automation_contact_click", { method: "whatsapp", location: "footer" })}
+              className="hover:text-[var(--a-ink)]"
+            >
+              וואטסאפ<span className="sr-only"> (נפתח בחלון חדש)</span>
             </a>
           </li>
           <li>
@@ -97,13 +125,13 @@ export const AutomationFooter = () => (
             </Link>
           </li>
           <li>
-            <Link to="/privacy-policy" className="hover:text-[var(--a-ink)]">
-              מדיניות פרטיות (באנגלית)
+            <Link to="/automation/privacy" className="hover:text-[var(--a-ink)]">
+              מדיניות פרטיות
             </Link>
           </li>
           <li>
-            <Link to="/navigational-policy" className="hover:text-[var(--a-ink)]">
-              מפת האתר (באנגלית)
+            <Link to="/automation/site-map" className="hover:text-[var(--a-ink)]">
+              מפת האתר
             </Link>
           </li>
         </ul>

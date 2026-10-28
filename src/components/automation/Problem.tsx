@@ -27,10 +27,18 @@ export const PainBoard = ({ onUse }: { onUse: (selected: string[]) => void }) =>
             שעוברת בין כמה אנשים, או מערכת שלא מדברת עם המערכת שלידה. כשזה קורה כל יום, זה עולה בזמן, יוצר טעויות
             ומקשה להבין מה באמת קורה.
           </p>
-          <p className="mt-6 border-s-2 border-[var(--a-accent)] ps-4 text-lg font-medium leading-relaxed text-[var(--a-ink)]">
+          <p className="mt-6 border-s-2 border-[var(--a-accent)] ps-4 text-lg max-md:border-s-0 max-md:ps-0 font-medium leading-relaxed text-[var(--a-ink)]">
             המטרה היא לא להפוך הכול לאוטומטי. המטרה היא למצוא את הצעד החוזר שבו פתרון קטן יכול לעשות שינוי מועיל
             ומדיד.
           </p>
+          <img
+            src="/automation/pain.svg"
+            alt=""
+            width={1053}
+            height={579}
+            loading="lazy"
+            className="mt-10 hidden w-full max-w-md lg:block"
+          />
         </div>
 
         <div>
@@ -93,34 +101,22 @@ export const PainBoard = ({ onUse }: { onUse: (selected: string[]) => void }) =>
 export const MarketContext = () => (
   <section aria-labelledby="market-title" className="border-t border-[var(--a-line)]">
     <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
-      <h2 id="market-title" className="max-w-3xl text-2xl font-bold leading-snug text-[var(--a-ink)] md:text-[2rem]">
+      <h2 id="market-title" className="mx-auto max-w-3xl text-center text-2xl font-medium leading-snug text-[var(--a-ink)] md:text-[2rem]">
         הרבה עסקים כבר משתמשים בבינה מלאכותית. רובם, בינתיים, בעיקר לכתיבה.
       </h2>
       <ul className="mt-10 grid gap-4 md:grid-cols-3">
         {marketStats.map((stat) => (
-          <li key={stat.label} className="a-card flex flex-col">
-            <p className="flex items-center gap-2 text-4xl font-extrabold tracking-tight text-[var(--a-ink)] md:text-[2.75rem]">
-              <span aria-hidden="true" className="h-8 w-1.5 rounded-full bg-[var(--a-accent)]" />
+          <li key={stat.label} className="a-card text-center">
+            <p className="text-4xl font-extrabold tracking-tight text-[var(--a-accent)] md:text-[2.75rem]">
               <span dir="ltr" aria-hidden="true" className="tabular-nums">
                 {stat.value}
               </span>
               <span className="sr-only">{stat.srValue}</span>
             </p>
             <p className="mt-4 text-[16px] leading-relaxed text-[var(--a-ink)]">{stat.label}</p>
-            <p className="mt-auto pt-5 text-[13px] leading-relaxed text-[var(--a-muted)]">
-              {stat.population}.{" "}
-              <a href={stat.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-[var(--a-ink)]">
-                {stat.source}
-                <span className="sr-only"> (קובץ PDF, נפתח בחלון חדש)</span>
-              </a>
-            </p>
           </li>
         ))}
       </ul>
-      <p className="mt-6 max-w-3xl text-[14px] leading-relaxed text-[var(--a-muted)]">
-        הנתונים לקוחים מסקרים ציבוריים שונים, על אוכלוסיות שונות, ולכן אין לחבר ביניהם. הם מתארים את השוק בישראל, לא
-        תוצאות של עבודה שלי. ומכאן נקודת המוצא שלי: לפני שבוחרים כלי, כדאי להבין איפה בדיוק הוא מתחבר לתהליך העבודה.
-      </p>
     </div>
   </section>
 );

@@ -1,7 +1,9 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { CheckCircle2, Loader2, Mail, Phone } from "lucide-react";
+import { Loader2, Mail, MessageCircle, Phone } from "lucide-react";
 import { track } from "@/lib/analytics";
+import { Squiggle } from "./Doodles";
+import { SentDoodle } from "./SentDoodle";
 import { CONTACT, LEAD_ENDPOINT, frequencyOptions } from "./content";
 
 type Fields = {
@@ -22,7 +24,6 @@ const EMPTY: Fields = { fullName: "", business: "", contact: "", process: "", to
 const MESSAGES: Partial<Record<FieldName, string>> = {
   fullName: "נא לכתוב שם (לפחות שני תווים).",
   contact: "נא לכתוב מספר טלפון או כתובת דואר אלקטרוני תקינים.",
-  process: "ספרו לי בכמה מילים על התהליך (לפחות 10 תווים).",
   frequency: "נא לבחור אחת מהאפשרויות.",
   consent: "כדי שאוכל לחזור אליכם, צריך לסמן את האישור.",
 };
@@ -38,14 +39,13 @@ const validate = (f: Fields) => {
   if (f.fullName.trim().length < 2) errors.fullName = MESSAGES.fullName;
   const contact = f.contact.trim();
   if (!isEmail(contact) && !isPhone(contact)) errors.contact = MESSAGES.contact;
-  if (f.process.trim().length < 10) errors.process = MESSAGES.process;
   if (!f.consent) errors.consent = MESSAGES.consent;
   return errors;
 };
 
-const ORDER: FieldName[] = ["fullName", "contact", "process", "consent"];
+const ORDER: FieldName[] = ["fullName", "contact", "consent"];
 
-export const LeadForm = ({ seed }: { seed: string[] }) => {
+export const LeadForm = ({ seed, onSent }: { seed: string[]; onSent?: () => void }) => {
   const uid = useId();
   const id = (name: string) => `${uid}-${name}`;
   const [fields, setFields] = useState<Fields>(EMPTY);
@@ -105,6 +105,7 @@ export const LeadForm = ({ seed }: { seed: string[] }) => {
 
       if (res.ok && data.ok) {
         setStatus("success");
+        onSent?.();
         track("automation_form_submit_success", { has_business: !!fields.business.trim(), frequency: fields.frequency || "none" });
         return;
       }
@@ -128,13 +129,12 @@ export const LeadForm = ({ seed }: { seed: string[] }) => {
   if (status === "success") {
     return (
       <div className="a-card text-center" role="status">
-        <CheckCircle2 className="mx-auto h-12 w-12 text-[var(--a-ok)]" aria-hidden="true" />
-        <h3 ref={successRef} tabIndex={-1} className="mt-4 text-2xl font-bold text-[var(--a-ink)] outline-none">
+        <SentDoodle className="mx-auto w-56 sm:w-64" />
+        {/* The doodle says it visually; the text stays for screen readers. */}
+        <h3 ref={successRef} tabIndex={-1} className="sr-only">
           תודה{fields.fullName.trim() ? `, ${fields.fullName.trim().split(" ")[0]}` : ""}. הפנייה התקבלה.
         </h3>
-        <p className="mx-auto mt-3 max-w-sm text-[16px] leading-relaxed text-[var(--a-muted)]">
-          קראתי את הפרטים ואחזור אליכם בהקדם, בערוץ שהשארתם, כדי לקבוע שיחה קצרה.
-        </p>
+        <p className="sr-only">קראתי את הפרטים ואחזור אליכם בהקדם, בערוץ שהשארתם, כדי לקבוע שיחה קצרה.</p>
       </div>
     );
   }
@@ -217,17 +217,15 @@ export const LeadForm = ({ seed }: { seed: string[] }) => {
 
       <div>
         <label htmlFor={id("process")} className="text-[15px] font-semibold text-[var(--a-ink)]">
-          איזה תהליך הייתם רוצים לשפר? <span aria-hidden="true">*</span>
+          איזה תהליך הייתם רוצים לשפר? <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
         </label>
         <textarea
           id={id("process")}
           name="process"
           rows={5}
-          required
           value={fields.process}
           onChange={(e) => set("process", e.target.value)}
           onFocus={markStarted}
-          aria-invalid={!!errors.process}
           aria-describedby={describedBy("process", true)}
           className={`${inputBase} ${border("process")} resize-y leading-relaxed`}
         />
@@ -235,7 +233,6 @@ export const LeadForm = ({ seed }: { seed: string[] }) => {
           מה קורה היום ואיפה זה נתקע. למשל: "כל ליד מהאתר אני מעתיק ידנית לגיליון ושולח לו הודעה". אין צורך לפרט
           שמות של לקוחות, מידע רפואי או פיננסי.
         </p>
-        <ErrorText name="process" />
       </div>
 
       <div>
@@ -310,8 +307,8 @@ export const LeadForm = ({ seed }: { seed: string[] }) => {
             אני מאשר/ת שתום כהן יחזור אליי בנוגע לפנייה הזו. <span aria-hidden="true">*</span>
             <span className="mt-1 block text-[14px] text-[var(--a-muted)]">
               הפרטים משמשים רק לטיפול בפנייה.{" "}
-              <Link to="/privacy-policy" className="underline underline-offset-2 hover:text-[var(--a-ink)]">
-                מדיניות הפרטיות (באנגלית)
+              <Link to="/automation/privacy" className="underline underline-offset-2 hover:text-[var(--a-ink)]">
+                מדיניות הפרטיות
               </Link>
             </span>
           </span>
@@ -353,51 +350,89 @@ export const LeadForm = ({ seed }: { seed: string[] }) => {
   );
 };
 
-export const ContactSection = ({ seed }: { seed: string[] }) => (
-  <section id="contact" aria-labelledby="contact-title" className="a-grid-bg border-t border-[var(--a-line)]">
-    <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 md:px-8 lg:grid-cols-[1fr_1.25fr] lg:gap-16">
-      <div>
-        <p className="a-kicker">בואו נדבר</p>
-        <h2 id="contact-title" className="a-h2">
-          יש תהליך שחוזר על עצמו שוב ושוב?
-        </h2>
-        <p className="mt-6 text-lg leading-relaxed text-[var(--a-muted)]">
-          כתבו לי מה קורה היום, באילו כלים אתם משתמשים ואיפה התהליך נתקע. נבדוק אם אוטומציה יכולה לעזור, מה נכון
-          לבדוק קודם, ומה הצעד הקטן ביותר שייתן תשובה אמיתית.
-        </p>
-        <ul className="mt-8 space-y-3 text-[16px]">
-          <li>
-            <a
-              href={`tel:${CONTACT.phoneTel}`}
-              onClick={() => track("automation_contact_click", { method: "phone", location: "contact" })}
-              className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
-            >
-              <Phone className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
-              <span className="sr-only">טלפון: </span>
-              <span dir="ltr">{CONTACT.phoneDisplay}</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href={`mailto:${CONTACT.email}`}
-              onClick={() => track("automation_contact_click", { method: "email", location: "contact" })}
-              className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
-            >
-              <Mail className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
-              <span className="sr-only">דואר אלקטרוני: </span>
-              <span dir="ltr">{CONTACT.email}</span>
-            </a>
-          </li>
-        </ul>
-        <div className="mt-10 rounded-2xl border border-dashed border-[var(--a-accent)]/40 p-5">
-          <p className="a-hand text-[26px] leading-tight text-[var(--a-accent)]">אגב, הטופס הזה הוא אוטומציה קטנה</p>
-          <p className="mt-2 text-[15px] leading-relaxed text-[var(--a-muted)]">
-            כשתשלחו, הפנייה נשמרת במסד נתונים ומגיעה אליי במייל. אין בה AI, ואין בו צורך: כאן חיבור פשוט עושה את
-            העבודה בצורה האמינה ביותר.
+export const ContactSection = ({ seed }: { seed: string[] }) => {
+  const [sent, setSent] = useState(false);
+  return (
+    <section id="contact" aria-labelledby="contact-title" className="a-grid-bg isolate border-t border-[var(--a-line)]">
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 md:px-8 lg:grid-cols-[1fr_1.25fr] lg:gap-16">
+        {/* Right-aligned, and centred vertically against the form. */}
+        <div className="lg:self-center">
+          <p className="a-kicker">בואו נדבר</p>
+          <h2 id="contact-title" className="a-h2 relative">
+            יש תהליך שחוזר על עצמו{" "}
+            <span className="relative inline-block">
+              שוב ושוב?
+              <Squiggle className="absolute -bottom-3 start-0 h-3 w-full text-[var(--a-human)]" />
+            </span>
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-[var(--a-muted)]">
+            כתבו לי מה קורה היום, באילו כלים אתם משתמשים ואיפה התהליך נתקע, ונבדוק אם אוטומציה יכולה לעזור. הצטרפו
+            לאלפי עסקים בישראל שכבר משתמשים בבינה מלאכותית.
           </p>
+          <ul className="mt-8 space-y-3 text-[16px]">
+            <li>
+              <a
+                href={`tel:${CONTACT.phoneTel}`}
+                onClick={() => track("automation_contact_click", { method: "phone", location: "contact" })}
+                className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
+              >
+                <Phone className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
+                <span className="sr-only">טלפון: </span>
+                <span dir="ltr">{CONTACT.phoneDisplay}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={CONTACT.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track("automation_contact_click", { method: "whatsapp", location: "contact" })}
+                className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
+              >
+                <MessageCircle className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
+                וואטסאפ<span className="sr-only"> (נפתח בחלון חדש)</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={`mailto:${CONTACT.email}`}
+                onClick={() => track("automation_contact_click", { method: "email", location: "contact" })}
+                className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
+              >
+                <Mail className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
+                <span className="sr-only">דואר אלקטרוני: </span>
+                <span dir="ltr">{CONTACT.email}</span>
+              </a>
+            </li>
+          </ul>
+          <img
+            src="/automation/tom.svg"
+            alt="איור של תום כהן מנופף לשלום"
+            width={1328}
+            height={1077}
+            loading="lazy"
+            className="mt-10 w-56 drop-shadow-[0_18px_30px_rgba(0,0,0,0.55)] max-md:mx-auto sm:w-64"
+            />
+        </div>
+        {/* The doodle sits behind the form without moving it: the phone and the dotted trail rise into the empty
+            space above the form (the top padding of this section plus the bottom padding of the one before), then
+            the trail runs down the side to the envelope. The doodle is 921 units wide and the form spans 682 of
+            them from 128 in, so the horizontal values hold at every desktop width. It is sized for the full form,
+            so it goes away once the form is replaced by the short thank-you message. */}
+        <div className="relative">
+          {!sent && (
+            <img
+              src="/automation/contact.svg"
+              alt=""
+              width={921}
+              height={1545}
+              loading="lazy"
+              className="pointer-events-none absolute left-[-18.8%] top-0 -z-10 hidden w-[135%] max-w-none -translate-y-[14.5%] opacity-80 lg:block"
+            />
+          )}
+          <LeadForm seed={seed} onSent={() => setSent(true)} />
         </div>
       </div>
-      <LeadForm seed={seed} />
-    </div>
-  </section>
-);
+    </section>
+  );
+};

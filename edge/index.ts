@@ -154,7 +154,6 @@ function validate(raw: Record<string, unknown>): { lead?: LeadInput; fieldErrors
   const errors: Record<string, string> = {};
   if (lead.fullName.length < 2) errors.fullName = "required";
   if (!isEmail(lead.contact) && !isPhone(lead.contact)) errors.contact = "invalid";
-  if (lead.process.length < 10) errors.process = "too_short";
   if (lead.frequency && !FREQUENCIES.includes(lead.frequency as (typeof FREQUENCIES)[number])) {
     errors.frequency = "invalid";
   }
@@ -198,7 +197,7 @@ function buildEmail(env: Env, id: string, lead: LeadInput) {
     `כלים קיימים: ${lead.tools || "לא צוין"}`,
     "",
     "התהליך שרוצים לשפר:",
-    lead.process,
+    lead.process || "לא צוין",
     "",
     "---",
     `מזהה פנייה: ${id}`,

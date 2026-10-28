@@ -10,8 +10,8 @@
 export const CONTACT = {
   phoneDisplay: "054-555-2149",
   phoneTel: "+972545552149",
-  email: "tom.cohen99@gmail.com",
-  // TODO(tom): confirm whether WhatsApp on this number is an approved contact channel; if so add a wa.me link.
+  email: "contact@tomcohen.dev",
+  whatsappHref: `https://wa.me/972545552149?text=${encodeURIComponent("היי תום, הגעתי מעמוד האוטומציה ואשמח לבדוק משהו")}`,
 };
 
 export const LEAD_ENDPOINT = "/api/automation-lead";
@@ -28,47 +28,7 @@ export const pains = [
   { id: "personal", text: "משימה אישית או מקצועית שחוזרת שוב ושוב וגוזלת זמן" },
 ] as const;
 
-export const capabilities = [
-  {
-    id: "connect",
-    title: "חיבור בין מערכות",
-    body: "מידע שעובר לבד ממקום למקום: פתיחת משימות, עדכון רשומות, התראות וסנכרון בין הכלים שכבר עובדים אצלכם.",
-  },
-  {
-    id: "leads",
-    title: "טיפול בלידים ובלקוחות",
-    body: "קליטת פנייה, תיוג, ניתוב לאדם הנכון, תזכורות ומעקב, והכנת ההקשר כך שמי שחוזר ללקוח יודע במה מדובר.",
-  },
-  {
-    id: "docs",
-    title: "מסמכים ודוחות",
-    body: "הפקת מסמכים מתבנית, ריכוז נתונים מכמה מקורות, דוחות קבועים ועדכוני מצב שנשלחים בזמן.",
-  },
-  {
-    id: "tools",
-    title: "כלים פנימיים קטנים",
-    body: "ממשק ממוקד לצוות, טופס חכם, לוח מצב או כלי עזר שמחליף רצף ארוך של פעולות ידניות.",
-  },
-  {
-    id: "ai",
-    title: "בינה מלאכותית, במקום שבו היא עוזרת",
-    body: "סיכום, מיון, חילוץ מידע מטקסט או הכנת טיוטה, עם בדיקה אנושית שמתאימה לרמת הסיכון.",
-  },
-  {
-    id: "personal",
-    title: "אוטומציות אישיות",
-    body: "סידור מידע, מעקב, תזכורות, חיבור בין שירותים או כלי קטן לתהליך שחוזר אצלכם שוב ושוב.",
-  },
-] as const;
-
 export type CaseKind = "client" | "own" | "own-product" | "in-development";
-
-export const caseKindLabel: Record<CaseKind, string> = {
-  client: "פרויקט ללקוח",
-  own: "כלי שבניתי לעצמי",
-  "own-product": "חלק ממוצר שפיתחתי",
-  "in-development": "בפיתוח",
-};
 
 export type CaseStudy = {
   id: string;
@@ -188,7 +148,7 @@ export const caseStudies: CaseStudy[] = [
       "נתוני השימוש היו במערכת אנליטיקה, משרות חדשות הגיעו ממקורות חיצוניים בפורמטים שונים, וכדי לדעת מה קורה היה צריך להיכנס ללוחות בקרה ולהריץ שאילתות.",
     solution:
       "שלושה תהליכים ב־n8n: דוח יומי שנשלח בוואטסאפ, בוט שעונה בוואטסאפ על שאלות בשפה חופשית מתוך נתוני השימוש, וקליטה של משרות ממקורות חיצוניים, פירוקן לשדות מסודרים בעזרת AI והכנסתן למאגר.",
-    systems: ["WhatsApp", "BigQuery", "OpenAI", "Firestore", "n8n"],
+    systems: ["BigQuery", "n8n", "OpenAI", "WhatsApp", "Firestore"],
     human: "ההחלטות שמתקבלות על סמך הנתונים, וכל מה שנוגע למשתמשים עצמם.",
     result: "תמונת מצב יומית מגיעה לבד לטלפון, ושאלה על הנתונים לא דורשת לפתוח מערכת.",
     link: { href: "/case-studies/gomlin-jobs", label: "לתיאור המוצר המלא (באנגלית)" },
@@ -211,32 +171,98 @@ export const caseStudies: CaseStudy[] = [
   },
 ];
 
-export const scenarios = [
+export type Testimonial = { quote: string; name: string; source?: string };
+
+/**
+ * Reviews from the main site (src/components/HeroSection.tsx: client reviews and Google reviews),
+ * translated from English. Keep the meaning identical to the original; names are as published there.
+ */
+// TODO(tom): confirm each client review is the client's own words and that they agreed to publication.
+export const testimonials: Testimonial[] = [
   {
-    id: "inquiry",
-    title: "פנייה חדשה מהאתר",
-    steps: ["טופס באתר", "תיוג לפי סוג הפנייה", "פתיחת משימה", "אישור קבלה ללקוח"],
-    human: "מי שחוזר ללקוח",
+    quote:
+      "תום הבין מהר את המגבלות של העסק שלנו ובנה סביבן. בלי הנדסת־יתר, רק המערכת הנכונה, שעלתה מהר. ראינו ערך מיד בעבודה היומיומית, והתהליך נשאר ברור לאורך כל הדרך.",
+    name: "Noam",
+    source: "Nightwing",
   },
   {
-    id: "document",
-    title: "מסמך מתוך טופס",
-    steps: ["טופס מובנה", "מסמך מתבנית", "שליחה לאישור", "שמירה בתיקייה"],
-    human: "אישור המסמך לפני שליחה",
+    quote: "העבודה עם תום הייתה, ועדיין, מעולה. מקצועי מאוד, וטוב מאוד בלהבין לעומק מה באמת צריך ולגרום לזה לקרות.",
+    name: "yarden zamir",
+    source: "ביקורת בגוגל",
   },
   {
-    id: "report",
-    title: "דוח מצב אחד",
-    steps: ["גיליון", "מערכת לקוחות", "דואר נכנס", "דוח שבועי מרוכז"],
-    human: "קריאת הדוח וההחלטות",
+    quote:
+      "Dronebag הייתה צריכה לעבוד בתנאים אמיתיים, לא בהדגמה. תום הבין את זה מיד. הוא תרגם צרכים מבצעיים לאפליקציה יציבה, שמר על תקשורת צמודה ומסר בזמן. העבודה היומיומית עכשיו מהירה יותר והרבה פחות מבולגנת.",
+    name: "Roi",
+    source: "Dronebag",
   },
   {
-    id: "triage",
-    title: "מיון ראשוני של טקסט",
-    steps: ["הודעות נכנסות", "סיכום ותיוג בעזרת AI", "תור לבדיקה", "החלטה"],
-    human: "ההחלטה עצמה",
+    quote:
+      "מההתחלה ועד ההשקה תום עבד כמו שותף אמיתי למוצר, לא רק כמפתח. ההתקדמות כל שבוע הייתה ברורה, הפידבק היה מהיר, והוא שיפר את חוויית המשתמש בלי שביקשנו. התוצאה: טובה יותר מההיקף המקורי, ומוכנה לעלייה לאוויר.",
+    name: "David",
+    source: "Luxcal",
   },
-] as const;
+  {
+    quote: "הבין מה רציתי, נתן עצות כנות ומסר בזמן. האתר נראה מעולה, תודה!",
+    name: "Gal Ashiri",
+    source: "ביקורת בגוגל",
+  },
+  {
+    quote:
+      "ב־ITA תום היה הגשר בין הרעיון לביצוע. בחירות ארכיטקטורה חזקות, פשרות מעשיות ואיטרציות מהירות. לא קיבלנו רק קוד, קיבלנו מוצר שמרגיש יציב ושימושי. הייתי עובד איתו שוב בלי לחשוב פעמיים.",
+    name: "Avishay",
+    source: "ITA",
+  },
+  {
+    quote:
+      "בחרתי בתום כי הוא היה היחיד שנתן לי לוח זמנים אמיתי במקום הבטחות מעורפלות. הוא היה בקשר כל הזמן, הציע הצעות חכמות ובאמת הקשיב. כל התהליך הרגיש מסודר ורגוע, וזה הפך פרויקט מלחיץ לפרויקט שאפשר לנהל.",
+    name: "Jonathan",
+  },
+  {
+    quote:
+      "Spidclass התחיל כתהליך מסובך, ותום פישט אותו כך שמשתמשים הבינו אותו מיד. ההתקדמות הייתה מהירה, העדכונים ברורים, ותמיד ידענו מה הצעד הבא. ביצוע מעולה.",
+    name: "Liran",
+    source: "Spidclass",
+  },
+  {
+    quote: "הייתי עובד איתם שוב. מסירה מהירה ואנשים טובים.",
+    name: "Scott",
+    source: "ביקורת בגוגל",
+  },
+  {
+    quote:
+      "לאתר הקורס הייתי צריך משהו מעשי, לא נוצץ. תום מסר בדיוק את זה: ניהול תוכן נקי יותר, מסלול טוב יותר לתלמידים ופחות כאבי ראש ידניים. זמין, מקצועי ונעים לעבוד איתו.",
+    name: "Yuval",
+    source: "אתר קורס",
+  },
+  {
+    quote: "שבוע ההשקה עבר חלק, בלי דרמות. הכול הגיע בזמן, וכל החלטה הרגישה מקצועית. תום נתן לנו ביטחון כי תמיד הייתה לו תוכנית והוא ביצע אותה.",
+    name: "Yuval",
+  },
+  {
+    quote:
+      "הגעתי עם רפרנסים ותחושה כללית, ותום הפך את זה לאתר אמיתי שמרגיש כמוני. הוא היה מהיר, ישיר, ועם עין מצוינת למה שכדאי להשאיר פשוט. מאוד מרוצה גם מהמראה וגם מהמהירות.",
+    name: "Lior",
+    source: "אתר אישי",
+  },
+  {
+    quote: "הבחור הזה הכי טוב שיש. ממליץ בחום!",
+    name: "LIOZ DAYAN",
+    source: "ביקורת בגוגל",
+  },
+  {
+    quote:
+      "הדבר הכי טוב בעבודה עם תום: הפרטים. הוא הקפיד על טיפוגרפיה, מרווחים, מהירות טעינה, תזמון אנימציות, הכול. התהליך הרגיש שיתופי, ותיק העבודות הסופי נראה יוקרתי בלי להרגיש מוגזם.",
+    name: "Rotem",
+    source: "תיק עבודות",
+  },
+  {
+    quote:
+      "כמעט לא הייתי צריך להסביר שום דבר פעמיים. תום הבין את הכיוון מהר, ארגן את הבנייה ומסר מהר. האתר הסופי חד, חלק, ונותן לי בדיוק את הנוכחות ברשת שרציתי.",
+    name: "Adoalm",
+    source: "תיק עבודות",
+  },
+];
 
 export const processSteps = [
   { title: "ממפים", body: "מבינים מי עושה מה היום, כמה פעמים, איפה נוצר עיכוב ומה ייחשב שיפור." },
@@ -244,6 +270,37 @@ export const processSteps = [
   { title: "בונים פיילוט", body: "גרסה קטנה שעובדת, עם נתוני דוגמה או בסביבה מוגבלת כשצריך." },
   { title: "בודקים", body: "מריצים תרחישים אמיתיים ובודקים שגיאות, הרשאות, חריגים ועלויות שוטפות." },
   { title: "מטמיעים ומוסרים", body: "מחברים לעבודה היומיומית, מתעדים, מגדירים מי אחראי למה ואיך מתחזקים." },
+] as const;
+
+// Experience, as stated by Tom (five years; individuals, small businesses, small and large startups).
+export const experience = [
+  { value: "5 שנים", label: "של בניית מוצרים, מערכות ואוטומציות" },
+  { value: "מיחידים ועד סטארטאפים", label: "אנשים פרטיים, עסקים קטנים, וסטארטאפים קטנים וגדולים" },
+  { value: "מקצה לקצה", label: "אפליקציות, מערכות ווב, AI ואוטומציה, מהרעיון ועד שזה עובד" },
+] as const;
+
+// Fields Tom has worked in: the client industries in case_studies/ plus fields Tom listed himself
+// (fashion, apps, data analysis). No client names.
+export const fields = [
+  "מסעדנות",
+  "אופנה",
+  "חינוך",
+  "קורסים אונליין",
+  "בריאות ואורח חיים",
+  "גיוס ותעסוקה",
+  "פלטפורמות פרילנס",
+  "ארגונים ללא מטרות רווח",
+  "מורשת והנצחה",
+  "ניהול קהילות",
+  "מוצרי SaaS",
+  "אפליקציות",
+  "ניתוח נתונים",
+  "בינה מלאכותית",
+  "שיווק ופרסום",
+  "תוכן ורשתות חברתיות",
+  "תשלומים ומנויים",
+  "מיתוג אישי ותיקי עבודות",
+  "רחפנים",
 ] as const;
 
 export const principles = [
@@ -274,13 +331,6 @@ export const principles = [
 ] as const;
 
 // Each claim points at something that exists in the work above.
-export const evidence = [
-  { claim: "התראת שגיאה וגיליון גיבוי, כדי שהזמנה לא תלך לאיבוד", where: "Nightwing" },
-  { claim: "אימות שהודעת תשלום הגיעה באמת מספק הסליקה", where: "סנכרון תשלומים" },
-  { claim: "שום פרסום או הוצאה כספית בלי אישור אנושי מפורש", where: "Helix" },
-  { claim: "טיוטות שמחכות לאישור לפני שהן יוצאות", where: "סוכן התוכן" },
-] as const;
-
 export const faqs = [
   {
     q: "צריך להחליף את המערכות שכבר יש לי?",
@@ -296,7 +346,7 @@ export const faqs = [
   },
   {
     q: "כמה זה עולה?",
-    a: "המחיר נקבע לפי היקף התהליך, מספר החיבורים, רמת הבדיקה והתחזוקה הנדרשת. לפני הצעה מלאה מגדירים יחד מה בונים, מה נחשב הצלחה ומה העלויות השוטפות הצפויות, למשל מנויים לכלים או שימוש במודלים.",
+    a: "שיחת ההיכרות הראשונה בחינם. המחיר של הפרויקט נקבע לפי היקף התהליך, מספר החיבורים, רמת הבדיקה והתחזוקה הנדרשת. לפני הצעה מלאה מגדירים יחד מה בונים, מה נחשב הצלחה ומה העלויות השוטפות הצפויות, למשל מנויים לכלים או שימוש במודלים.",
   },
   {
     q: "מה קורה אחרי שהאוטומציה עולה לאוויר?",
@@ -317,11 +367,13 @@ export const faqs = [
 ] as const;
 
 // Public research. Different surveys and populations; never combined into one figure.
+// The population and source fields are not shown on the page (removed at Tom's request) but are kept
+// here so every number stays traceable to its PDF.
 export const marketStats = [
   {
     value: "39%",
     srValue: "39 אחוז",
-    label: "מהעסקים בישראל השתמשו בבינה מלאכותית במרץ 2026, לעומת 28% ביוני 2025",
+    label: "מהעסקים בישראל משתמשים בבינה מלאכותית כיום, לעומת 28% ביוני 2025",
     population: "עסקים עם 10 משרות שכיר ומעלה",
     source: "הלשכה המרכזית לסטטיסטיקה, אפריל 2026",
     href: "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/125/31_26_125b.pdf",
@@ -329,7 +381,7 @@ export const marketStats = [
   {
     value: "63%",
     srValue: "63 אחוז",
-    label: "מהעסקים שמשתמשים בבינה מלאכותית דיווחו שהיא חוסכת להם זמן",
+    label: "מהעסקים שמשתמשים בבינה מלאכותית דיווחו שהיא חוסכת להם זמן וכסף",
     population: "עסקים עד 100 עובדים שמשתמשים ב־AI, דיווח עצמי",
     source: "הסוכנות לעסקים קטנים ובינוניים, 2025",
     href: "https://www.sba.org.il/hb/PolicyAndInformation/Researches/Documents/The%20use%20of%20artificial%20intelligence%20among%20businesses%20-%20mungash.pdf",
