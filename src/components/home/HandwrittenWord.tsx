@@ -2,7 +2,7 @@ import { useId } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { HAND_FONT, handStrokes, type HandWord } from "./handStrokes";
 
-const exit = { opacity: 0, y: -8, filter: "blur(2px)", transition: { duration: 0.25 } };
+const exit = { opacity: 0, y: -4, filter: "blur(3px)", transition: { duration: 0.35, ease: "easeIn" } };
 
 /**
  * The pen: each stroke traced from the font (scripts/hero-strokes.mjs) draws in turn, and the letters show only where
@@ -12,37 +12,53 @@ const Written = ({ text, word, still }: { text: string; word: HandWord; still: b
   const mask = `hw${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
   const [vx, vy, vw, vh] = word.viewBox;
   const total = word.strokes.reduce((s, k) => s + k.len, 0);
-  // About 1.1 to 1.8 seconds a word, with a short lift of the pen between strokes.
-  const gap = 0.045;
-  const writing = Math.min(1.8, Math.max(1.1, total / 2600)) - gap * (word.strokes.length - 1);
-  let at = 0.1;
+  // The pen moves at one steady speed, about 1.2 to 1.9 seconds a word, and lifts only briefly between strokes.
+  const gap = 0.018;
+  const writing = Math.min(1.9, Math.max(1.2, total / 2400)) - gap * (word.strokes.length - 1);
+  let at = 0.12;
   const timing = word.strokes.map((k) => {
-    const t = { delay: at, duration: Math.max(0.06, (k.len / total) * writing) };
+    const t = { delay: at, duration: Math.max(0.05, (k.len / total) * writing) };
     at += t.duration + gap;
     return t;
   });
   return (
-    <motion.svg viewBox={`${vx} ${vy} ${vw} ${vh}`} aria-hidden="true" className="block h-full w-auto max-w-full overflow-visible" exit={still ? undefined : exit}>
+    <motion.svg
+      viewBox={`${vx} ${vy} ${vw} ${vh}`}
+      aria-hidden="true"
+      className="block h-full w-auto max-w-full overflow-visible"
+      exit={still ? undefined : exit}
+    >
       {!still && (
         <defs>
-          <mask id={mask} maskUnits="userSpaceOnUse" x={vx} y={vy} width={vw} height={vh}>
-            {word.strokes.map((k, i) => (
-              <motion.path
-                key={i}
-                d={k.d}
-                fill="none"
-                stroke="#fff"
-                strokeWidth={word.pen}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
-                transition={{
-                  pathLength: { delay: timing[i].delay, duration: timing[i].duration, ease: "easeInOut" },
-                  opacity: { delay: timing[i].delay, duration: 0.01 },
-                }}
-              />
-            ))}
+          {/* A slightly soft pen edge, so the ink flows in rather than being cut out. */}
+          <filter id={`${mask}s`} x={vx - 60} y={vy - 60} width={vw + 120} height={vh + 120} filterUnits="userSpaceOnUse">
+            <feGaussianBlur stdDeviation={word.pen / 14} />
+          </filter>
+          <mask id={mask} maskUnits="userSpaceOnUse" x={vx - 60} y={vy - 60} width={vw + 120} height={vh + 120}>
+            <g filter={`url(#${mask}s)`}>
+              {word.strokes.map((k, i) => (
+                <motion.path
+                  key={i}
+                  d={k.d}
+                  fill="none"
+                  stroke="#fff"
+                  strokeWidth={word.pen}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ pathLength: 1, opacity: 1 }}
+                  transition={{
+                    // Linear inside a stroke, gently eased at the very start and end of the word.
+                    pathLength: {
+                      delay: timing[i].delay,
+                      duration: timing[i].duration,
+                      ease: i === 0 ? [0.4, 0, 1, 1] : i === word.strokes.length - 1 ? [0, 0, 0.5, 1] : "linear",
+                    },
+                    opacity: { delay: timing[i].delay, duration: 0.01 },
+                  }}
+                />
+              ))}
+            </g>
           </mask>
         </defs>
       )}

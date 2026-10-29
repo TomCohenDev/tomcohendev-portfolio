@@ -291,11 +291,32 @@ const trace = async ({ png, W, H }) => {
     }
     return far > eps ? [...simplify(pts.slice(0, at + 1), eps).slice(0, -1), ...simplify(pts.slice(at), eps)] : [a, b];
   };
-  const out = strokes.map((s) => simplify(smooth(smooth(s)), 0.7)).filter((s) => length(s) > 3);
+  // Thinning stops short of the letter tips, so carry each open stroke a little past both ends.
+  const extend = (s) => {
+    if (s.length < 2 || Math.hypot(s[0][0] - s[s.length - 1][0], s[0][1] - s[s.length - 1][1]) < 2) return s;
+    const reach = (from, to) => {
+      const dx = from[0] - to[0], dy = from[1] - to[1], d = Math.hypot(dx, dy) || 1;
+      return [from[0] + (dx / d) * thickness * 0.6, from[1] + (dy / d) * thickness * 0.6];
+    };
+    const k = Math.min(4, s.length - 1);
+    return [reach(s[0], s[k]), ...s, reach(s[s.length - 1], s[s.length - 1 - k])];
+  };
+  const out = strokes.map((s) => extend(simplify(smooth(smooth(smooth(s))), 0.9))).filter((s) => length(s) > 3);
+  // Draw each stroke as one smooth curve through its points (Catmull-Rom as cubic Béziers), so the pen never turns a corner.
+  const f = (n) => n.toFixed(1);
+  const curve = (s) => {
+    if (s.length < 3) return `M${f(s[0][0])} ${f(s[0][1])}L${f(s[1][0])} ${f(s[1][1])}`;
+    let d = `M${f(s[0][0])} ${f(s[0][1])}`;
+    for (let k = 0; k < s.length - 1; k++) {
+      const [p0, p1, p2, p3] = [s[Math.max(0, k - 1)], s[k], s[k + 1], s[Math.min(s.length - 1, k + 2)]];
+      d += `C${f(p1[0] + (p2[0] - p0[0]) / 6)} ${f(p1[1] + (p2[1] - p0[1]) / 6)} ${f(p2[0] - (p3[0] - p1[0]) / 6)} ${f(p2[1] - (p3[1] - p1[1]) / 6)} ${f(p2[0])} ${f(p2[1])}`;
+    }
+    return d;
+  };
   return {
     thickness,
     ink: [minX, minY, maxX, maxY],
-    strokes: out.map((s) => ({ d: "M" + s.map((p) => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join("L"), len: Math.round(length(s)) })),
+    strokes: out.map((s) => ({ d: curve(s), len: Math.round(length(s)) })),
   };
 };
 
