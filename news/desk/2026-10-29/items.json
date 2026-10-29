@@ -1,0 +1,512 @@
+{
+  "date": "2026-10-29",
+  "fetchedAt": "2026-10-29T08:21:21.715Z",
+  "hours": 30,
+  "sources": [
+    {
+      "name": "Flutter",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Dart",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Android Developers",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Apple Developer",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Firebase",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "OpenAI",
+      "ok": true,
+      "count": 3
+    },
+    {
+      "name": "Google AI",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Google DeepMind",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Google for Developers",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hugging Face",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Simon Willison",
+      "ok": true,
+      "count": 4
+    },
+    {
+      "name": "The Verge AI",
+      "ok": true,
+      "count": 9
+    },
+    {
+      "name": "TechCrunch AI",
+      "ok": true,
+      "count": 13
+    },
+    {
+      "name": "n8n",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "n8n releases",
+      "ok": true,
+      "count": 7
+    },
+    {
+      "name": "Zapier",
+      "ok": true,
+      "count": 5
+    },
+    {
+      "name": "Google Workspace Updates",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Meta for Developers",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Geektime",
+      "ok": true,
+      "count": 6
+    }
+  ],
+  "items": [
+    {
+      "source": "Geektime",
+      "topic": "ai",
+      "title": "בדרך למהפכת אינטרנט בישראל: האם בקרוב נשלם פחות ונעבור בשנייה בין חברות?",
+      "url": "https://www.geektime.co.il/ministry-of-communications-internet-price-reform/",
+      "published": "2026-10-29T07:52:43.000Z",
+      "summary": "תמונה: Pexels כולנו זוכרים לטובה את רפורמת הסלולר של השר לשעבר משה כחלון. זו ששחררה אותנו מהתנאים הדרקוניים של חברות הסלולר וריסקה את מחירי חבילות סלולר (ובניגוד לתחזיות השחורות, לא גרמה לחברות הסלולר לקרוס). כעת מתברר כי רפורמה דומה יוצאת לדרך גם בתחום האינטרנט הביתי, ואמורה לשחרר אתכם מהכבלים האחרונים שמחזיקים אתכם בחברת האינטרנט שלכם במשך שנים. כל כאב הראש יעבור לספקיות בימינו כל חברות התקשורת מציעות לכם חבילות ללא כל התחייבות. כלומר, טכנית, אתם יכולים לעבור בין חברות בכל רגע שרק מתחשק לכם, בלי הפרת חוזים ובלי קנסות. אבל הבעיה היא שלחברות יש דרך להשאיר אתכם אצלן, והיא כאב הראש שכרוך באותו מעבר בין חברה לחברה. רוב מכריע של הצרכנים עדיין משתמש בראוטרים ובציוד של חברות התקשורת. לפעמים הוא מש"
+    },
+    {
+      "source": "n8n",
+      "topic": "automation",
+      "title": "Why We're Moving n8n's Automation Team Beyond the Service Desk Model",
+      "url": "https://blog.n8n.io/why-were-moving-n8ns-automation-team-beyond-the-service-desk-model/",
+      "published": "2026-10-29T07:10:00.000Z",
+      "summary": "In the first article of our n8n on n8n series, Romina da Costa, our head of internal AI and automation, explains where the service desk model hits its limit. She also shares the four principles her team now follows to help every team at n8n build and own its automations. What does success look like for an automation team? Workflows shipped, tickets closed, backlog cleared? TLDR: none of that is actually what makes an automation team successful. Every centralized automation team solves a real business problem: automating routine tasks, freeing up time, and taking on work that doesn't actually need human judgment. But solving that well is exactly what lets the rest of the organization lean on "
+    },
+    {
+      "source": "Simon Willison",
+      "topic": "ai",
+      "title": "Quoting Ted Sanders",
+      "url": "https://simonwillison.net/2026/Oct/28/ted-sanders/",
+      "published": "2026-10-28T23:23:21.000Z",
+      "summary": "In general, LLM performance is incredibly multidimensional. There's no guarantee of a fixed ordering where the model that is best at math is also the model that's best at jokes. Despite that complexity, much of the variation in performance is explained by just a single variable: model size. In general, models that are bigger will (a) be more performant / reliable, (b) cost more per token, and (c) have better recall of esoteric facts. As you note, our models are ordered: Luna [ ... ] These days, version number signifies a few things at once: the order of release, the relationship to other releases, and the magnitude of improvement. So something like 6.1 would indicate it was launched after 5."
+    },
+    {
+      "source": "The Verge AI",
+      "topic": "ai",
+      "title": "Adam Mosseri says negativity around AI is ‘going to get worse’",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1021644/adam-mosseri-instagram-ai-negativity",
+      "published": "2026-10-28T23:05:39.000Z",
+      "summary": "Asked about AI and the trend of college students booing tech CEOs at graduation ceremonies, Instagram head Adam Mosseri acknowledged in an interview that a lot of people really don't like AI, and it's not just young people and creatives. Appearing on the Colin and Samir podcast to talk about the launch of widescreen and […]"
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "Microsoft just shared Azure’s actual revenue in dollars: $33.2 billion",
+      "url": "https://techcrunch.com/2026/10/28/microsoft-just-shared-azures-actual-revenue-in-dollars-33-2-billion/",
+      "published": "2026-10-28T21:58:32.000Z",
+      "summary": "Microsoft has never disclosed Azure's quarterly revenue in dollars. But for the first time, we can see just how close it is getting to besting the biggest competitor in the market, AWS."
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "Google expands AI Search ads globally as core ad growth slows",
+      "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/",
+      "published": "2026-10-28T21:48:37.000Z",
+      "summary": "The announcement came alongside parent company Alphabet's third-quarter earnings report, which saw revenue grow 25% year over year to $127.6 billion."
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "Microsoft recorded $10 billion in revenue from OpenAI",
+      "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+      "published": "2026-10-28T21:34:30.000Z",
+      "summary": "Microsoft said it made $10 billion in revenue from commercial arrangements with OpenAI, including revenue-sharing payments, in the quarter ending September 30. It underscores the still-enormous financial dependency of the partnership."
+    },
+    {
+      "source": "The Verge AI",
+      "topic": "ai",
+      "title": "Akai is embracing vibe-coded mods with an open-source MPC",
+      "url": "https://www.theverge.com/gadgets/1021405/akai-open-source-mpc-sample-key",
+      "published": "2026-10-28T21:34:04.000Z",
+      "summary": "The MPC Sample Key isn't even formally announced yet, but Akai is already showing off what the modding community is cooking up through vibe coding. Akai has decided to embrace the explosion of hackers and custom firmware developers by giving them early access to the device, which will have open-source firmware. It will likely run […]"
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "Microsoft hits 10 quarters of record-breaking revenue in a row",
+      "url": "https://techcrunch.com/2026/10/28/microsoft-hits-10-quarters-of-record-breaking-revenue-in-a-row/",
+      "published": "2026-10-28T21:25:30.000Z",
+      "summary": "Whatever the future of AI might be, the current situation is still very good for Microsoft. The tech giant reported yet another record for quarterly revenue on Wednesday: $92.3 billion, a 19% increase over the year-ago quarter."
+    },
+    {
+      "source": "The Verge AI",
+      "topic": "ai",
+      "title": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
+      "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+      "published": "2026-10-28T20:03:00.000Z",
+      "summary": "Google has released its latest frontier model, Gemini 4 Carbon, offering \"significant gains\" in coding, agentic tasks, and cybersecurity. In an announcement on Wednesday, Google highlights Carbon's top spot on the Artificial Analysis Intelligence Index (v5.0) benchmark, with Claude Opus 5.5 and GPT-6 Astra trailing behind. The new Gemini 4 Carbon model offers improvements over […]"
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "Anthropic just launched tools to show companies what their AI spending is buying",
+      "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
+      "published": "2026-10-28T19:19:58.000Z",
+      "summary": "The frontier lab is lifting the curtain on how users spend money on its models ahead of a planned IPO."
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "Wiz’s CTO on PHP2Shell and the coming ‘vulnpocalypse’",
+      "url": "https://techcrunch.com/video/wizs-cto-on-php2shell-and-the-coming-vulnpocalypse/",
+      "published": "2026-10-28T19:05:46.000Z",
+      "summary": "The PHP scare may have faded from your feed, but the cleanup is far from over. Last week, two critical bugs in the open source language behind roughly 70% of websites left organizations scrambling to fix their systems, with some taking sites offline until the vulnerabilities could be patched. According to researchers who found the […]"
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "The ‘Vulnpocalypse’ is coming for the internet’s aging code, says Wiz’s CTO",
+      "url": "https://techcrunch.com/podcast/the-vulnpocalypse-is-coming-for-the-internets-aging-code-says-wizs-cto/",
+      "published": "2026-10-28T18:50:39.000Z",
+      "summary": "The PHP scare may have faded from your feed, but the cleanup is far from over. Last week, two critical bugs in the open source language behind roughly 70% of websites left organizations scrambling to fix their systems, with some taking sites offline until the vulnerabilities could be patched. According to researchers who found the […]"
+    },
+    {
+      "source": "The Verge AI",
+      "topic": "ai",
+      "title": "Microsoft is ending Copilot support on smart TVs",
+      "url": "https://www.theverge.com/tech/1021143/microsoft-lg-samsung-copilot-ai-assistant-smart-tvs-ending",
+      "published": "2026-10-28T18:36:26.000Z",
+      "summary": "Nearly two years after LG and Samsung announced at CES 2025 that their latest smart TVs would include access to Microsoft's Copilot, the company is ending support for the AI assistant's functionality on all TVs this year, according to a report by Windows Central. The news comes not from an official announcement from LG, Samsung, […]"
+    },
+    {
+      "source": "Geektime",
+      "topic": "ai",
+      "title": "אפל מכריזה על מקבוק פרו חדש עם מסך מגע OLED (וסטיב ג'ובס מתהפך בקברו)",
+      "url": "https://www.geektime.co.il/apple-announces-macbook-pro-with-oled-touch-screen/",
+      "published": "2026-10-28T17:37:09.000Z",
+      "summary": "תמונה: אפל כן, סטיב ג'ובס אמר ש\"מסכי מגע לא רוצים להיות אנכיים\" וכי \"אחרי פרק זמן ממושך, היד שלכם פשוט רוצה ליפול\". נכון, טים קוק אמר ש\"אפשר לשלב טוסטר ומקרר, אבל התוצאה לא תהיה מוצלחת עבור המשתמש\", ואתם צודקים שפיל שילר פשוט אמר ש\"סמכו עליי. בדקנו את זה, וזו חוויה גרועה\"… אבל לפני זמן קצר (ד'), הכריזה אפל על ה-MacBook Pro הראשון עם מסך מגע במסגרת אירוע Pro and Tell. ובכך, עוד הצהרה נחרצת של אפל מהעבר מופרת על ידי אפל של שנת 2026. אז הנה כל מה שחדש במקבוק פרו החדש, וזה הרבה מעבר למסך מגע. זה מקבוק פרו חדש לגמרי. התצוגה שעושה הרבה דברים לראשונה Apple השיקה את ה-MacBook Pro החדש שמגיע עם תצוגת PROLED XDR, והיא עושה 3 דברים לראשונה בתולדות המק: ראשית, זוהי הפעם הראשונה שמסך מגע משולב בסדרת המחש"
+    },
+    {
+      "source": "Google DeepMind",
+      "topic": "ai",
+      "title": "Gemini 4 Carbon: Our next frontier model",
+      "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+      "published": "2026-10-28T17:00:58.000Z",
+      "summary": ""
+    },
+    {
+      "source": "Apple Developer",
+      "topic": "mobile",
+      "title": "Say hello to Touch on Mac",
+      "url": "https://developer.apple.com/news/?id=i9boeiqc",
+      "published": "2026-10-28T17:00:55.000Z",
+      "summary": "Start getting ready for MacBook Pro with Touch today. Watch new developer videos, sign up for Group Labs, and check out new articles and resources. Explore now"
+    },
+    {
+      "source": "The Verge AI",
+      "topic": "ai",
+      "title": "Chrome’s enhanced autofill can now pull info from Gmail to help you fill out forms",
+      "url": "https://www.theverge.com/tech/1020626/chrome-enhanced-autofill-gmail-forms-gemini-personal-intelligence",
+      "published": "2026-10-28T17:00:00.000Z",
+      "summary": "Following improvements made to Chrome's enhanced autofill last year that included your name, passport number, email address, and physical addresses sourced from your Google Accounts and services like Google Wallet, the feature is now expanding. Starting today, Chrome's enhanced autofill will use Gemini with Personal Intelligence to suggest information sourced from your Gmail, potentially saving […]"
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "Chrome’s AI-powered Autofill can now dig through your Gmail to fill out forms",
+      "url": "https://techcrunch.com/2026/10/28/chromes-ai-powered-autofill-can-now-dig-through-your-gmail-to-fill-out-forms/",
+      "published": "2026-10-28T17:00:00.000Z",
+      "summary": "The autofill update lets Chrome pull flight confirmations, tracking info, order details, and other information from your inbox, with your permission."
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
+      "url": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/",
+      "published": "2026-10-28T17:00:00.000Z",
+      "summary": "A new developer platform will let businesses bring their services to Google's AI experiences, potentially changing how consumers discover and use apps."
+    },
+    {
+      "source": "Simon Willison",
+      "topic": "ai",
+      "title": "GitHub Octoverse 2026",
+      "url": "https://simonwillison.net/2026/Oct/28/github-octoverse-2026/",
+      "published": "2026-10-28T16:45:23.000Z",
+      "summary": "GitHub Octoverse 2026 I'm at GitHub Universe today (GitHub gave me a free ticket through their \"GitHub Stars\" program). EVP Jay Parikh just announced this year's Octoverse report, and highlighted these numbers in particular: This is a pretty stark representation of the impact of agentic engineering on GitHub. In 2026, merged pull requests tripled in less than a year to 220 million per month. Commits more than tripled to 7.38 billion per month, with most of that increase in the second half of this year. New repository rate doubled this year, to 30.3 million per month. The report includes new numbers by industry, and breaks out numbers for repositories that involve \"interoperability or reverse"
+    },
+    {
+      "source": "The Verge AI",
+      "topic": "ai",
+      "title": "Meta says it’ll probably delay its controversial new business terms again",
+      "url": "https://www.theverge.com/tech/1020769/meta-updated-business-terms-delay-indefinitely",
+      "published": "2026-10-28T16:15:30.000Z",
+      "summary": "Meta says it may push the implementation of its new business terms past November 20th as it faces backlash from publishers over concerns about AI training. In a post on X, Meta communications head Andy Stone said the company does \"not plan to make policy changes without a full consultation with industry groups and leaders.\" […]"
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "AI execs may be too out of touch to build for the general public",
+      "url": "https://techcrunch.com/2026/10/28/ai-execs-may-be-too-out-of-touch-to-build-for-the-general-public/",
+      "published": "2026-10-28T15:53:52.000Z",
+      "summary": "Tech leaders are flaunting how out of touch they are when they brag about using AI to connect with their families."
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "South Korea’s financial industry hit by fresh wave of cyberattacks",
+      "url": "https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks/",
+      "published": "2026-10-28T15:41:18.000Z",
+      "summary": "South Korea’s financial institutions have been hit by another wave of cyberattacks, highlighting the growing risk of AI-driven hacking in Asia."
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "Voice AI in vogue: Nvidia releases new open transcription model",
+      "url": "https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/",
+      "published": "2026-10-28T15:00:00.000Z",
+      "summary": "Nvidia just released a free speech-to-text model that can transcribe up to 40 languages, but it only works on recordings, not live audio, so it’s a big step for meeting and medical transcription tools while still leaving real-time use to rivals like ElevenLabs."
+    },
+    {
+      "source": "Hugging Face",
+      "topic": "ai",
+      "title": "NVIDIA Nemotron 3.5 Transcribe and Granary v2: Intelligent Multilingual Transcription You Can Prompt and Adapt",
+      "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+      "published": "2026-10-28T14:58:17.000Z",
+      "summary": ""
+    },
+    {
+      "source": "The Verge AI",
+      "topic": "ai",
+      "title": "xAI is buying out homeowners who promise not to sue over data center noise",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1020596/xai-mississippi-neighborhood-data-center-lawsuit",
+      "published": "2026-10-28T14:44:00.000Z",
+      "summary": "A subsidiary of Elon Musk's xAI is offering to buy up homes in a Mississippi neighborhood, as long as residents don't join a lawsuit targeting the company's nearby data center and power plant, according to a report from The Guardian. A realtor going door-to-door in the Southaven neighborhood reportedly told one resident that xAI plans […]"
+    },
+    {
+      "source": "Geektime",
+      "topic": "ai",
+      "title": "מחקר חדש: כותבים ל-AI בעברית? זה עולה לכם עד פי 3 טוקנים",
+      "url": "https://www.geektime.co.il/ai-tokenizer-tax-cost-llm-hebrew/",
+      "published": "2026-10-28T14:39:04.000Z",
+      "summary": "תמונה: Dreamstime כשאנחנו משתמשים במודלי שפה גדולים, בין אם דרך הצ'אט או באמצעות API, אתם בטח כבר יודעים שהמנוע מאחורי הקלעים לא קורא מילים כמו בני אדם. במקום זאת, הוא מפרק את הטקסט ליחידות מידע קטנות שנקראות טוקנים, שמשמשות את מעבדות ה-AI גם לצורך תמחור השירותים שלהן. \"מס טוקנים\" דוח של קבוצת המחקר CLEAR שופך אור על תופעה, שזכתה לכינוי \"מס טוקנים\". צוות החוקרים גילה כי מנגנוני הטוקניזציה אומנו בעיקר על אנגלית ושפות בעלות כתב לטיני, ולכן הם מתקשים להתמודד עם שפות אחרות. התוצאה היא שמשפט פשוט יעלה למשתמש בשפות זרות הרבה יותר מאשר למשתמש באנגלית, למרות שהמשמעות או התשובה זהה לחלוטין. כך למשל טקסט באמהרית עלול לדרוש עד פי שישה יותר טוקנים מאשר באנגלית במודל כמו GPT-5. החוקרים בדקו את יעילות הטו"
+    },
+    {
+      "source": "Simon Willison",
+      "topic": "ai",
+      "title": "The October inflection point for vibe game development",
+      "url": "https://simonwillison.net/2026/Oct/28/vibe-game-development/",
+      "published": "2026-10-28T13:55:15.000Z",
+      "summary": "I've written before about how November 2025 was an inflection point for coding agents - the point where Opus 4.5 and GPT-5.1 crossed a tipping point that meant their respective coding agents became reliable daily drivers for software engineers. I think we've reached a new inflection point in October 2026, and this time it's for vibe coding computer games . Tree Appreciator Emberwick Battle Drones Pumpkin Farmer, aka Quarter Sun Cove Four times as insulting What happens if someone actually puts the work in? You should build a game! Claude Opus 5.5 in particular exhibits meaningful improvements in several areas needed to build a compelling game: 3D modeling Music generation (see Scrimshaw Juke"
+    },
+    {
+      "source": "OpenAI",
+      "topic": "ai",
+      "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+      "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+      "published": "2026-10-28T13:15:00.000Z",
+      "summary": "OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex."
+    },
+    {
+      "source": "TechCrunch AI",
+      "topic": "ai",
+      "title": "7 days until TechCrunch Founder Summit: Save up to $100 on your pass before doors open",
+      "url": "https://techcrunch.com/2026/10/28/7-days-until-techcrunch-founder-summit-save-up-to-100-before-doors-open/",
+      "published": "2026-10-28T13:00:00.000Z",
+      "summary": "In just 7 days, TechCrunch Founder Summit takes over Boston’s SoWa Power Station on November 4. Your chance to save up to $100 on tickets is running out, and the opportunity to learn and connect directly with experienced founders, investors, and startup leaders is almost here."
+    },
+    {
+      "source": "Geektime",
+      "topic": "ai",
+      "title": "כשהעין האנושית פוגשת רשת נוירונים: פיתוח ישראלי מלמד AI לראות אחרת",
+      "url": "https://www.geektime.co.il/ai-vision-event-based-processing-weizmann/",
+      "published": "2026-10-28T12:15:12.000Z",
+      "summary": "תמונה: Unsplash מאת: טל סוקולוב הבינה המלאכותית מתחרה כיום בביצועיהם של בני האדם במגוון גדל והולך של תחומים. האם היא תצליח להתחרות גם בחוש הראייה שלנו? מחקר חדש שנעשה במכון ויצמן למדע מנסה ליישם במערכת מלאכותית את אחד הכלים המפתיעים והמתוחכמים שהטבע העניק למערכת הראייה שלנו – והתוצאות מרשימות. אנחנו מסוגלים לראות פרטים קטנים במיוחד, בסדר גודל שהרשתית בעין שלנו לא אמורה להיות מסוגלת לזהות, לכאורה. תופעת חדות היתר (Hyperacuity), שמוכרת אצל בני אדם כבר עשרות שנים, מתאפשרת בזכות הפעילות היעילה במיוחד של מערכת הראייה הביולוגית שלנו. כעת מנסים לגייס את היתרונות הללו כדי לשדרג את הביצועים של מערכות בינה מלאכותית במשימות חזותיות. החוקרים הצליחו לאמן רשת נוירונים – סוג של מערכת ממוחשבת לעיבוד מידע – "
+    },
+    {
+      "source": "The Verge AI",
+      "topic": "ai",
+      "title": "Voters in Texas agree: They hate data centers",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1018676/data-center-midterm-election-energy-water-texas",
+      "published": "2026-10-28T12:00:00.000Z",
+      "summary": "Ask Texas NAACP president Gary Bledsoe what it's been like to see data center developers descend upon Austin and its surrounding suburbs and he can rattle off project after project facing opposition from locals. There's the fight in Taylor over plans to build a data center at a site that's supposed to be a park. […]"
+    },
+    {
+      "source": "The Verge AI",
+      "topic": "ai",
+      "title": "Meta quietly launched an ‘AI pet journal’ app",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1020410/meta-launched-ai-pet-journal-app-waddle-world",
+      "published": "2026-10-28T11:27:30.000Z",
+      "summary": "Meta has launched a \"tamagotchi-style\" pet game called Waddle World, with virtual creatures that chat with users and create doodles to illustrate conversations. According to its Apple and Play Store listings, the \"16-bit pet care game\" is not really a game, but \"a daily journal disguised as a pet.\" Users should talk, not type, with […]"
+    },
+    {
+      "source": "Geektime",
+      "topic": "ai",
+      "title": "לא עוצרת: Upwind משלימה גיוס של 400 מיליון דולר",
+      "url": "https://www.geektime.co.il/upwind-nabs-another-100m/",
+      "published": "2026-10-28T11:26:51.000Z",
+      "summary": "צוות אפווינד. תמונה: Upwind לפני חודש בלבד דווח ש סטארטאפ הסייבר הישראלי Upwind סגר סבב גיוס של 300 מיליון דולר לפי שווי של 3.8 מיליארד דולר . היום (ד') מתברר שהסגר כולל 100 מיליון דולר נוספים ועומד על 400 מיליון דולר. את הגיוס הנוכחי הובילה קרן Bessemer Venture Partners, ואל המשקיעים הקיימים הצטרפה שורת משקיעים חדשים בהם Salesforce Ventures, Canapi Ventures, TCV ועוד. ההחלטה להרחיב את הסבב מגיעה, על פי החברה, בעקבות זינוק של פי ארבעה בהכנסות שלה במהלך שנת 2026. שמים סוף להתרעות השווא נזכיר ש- Upwind מפתחת פלטפורמה לאבטחת תשתיות ענן (CNAPP) שמנצלת את המידע שיושב בדרך כלל אצל צוותי ה-Operations בארגונים (מה שמכונה ה-Runtime Intelligence), ומנגישה אותו לצוותי הסייבר. אחת הבעיות הכי מעיקות היום"
+    },
+    {
+      "source": "Simon Willison",
+      "topic": "ai",
+      "title": "Quoting Terk Terkowitz",
+      "url": "https://simonwillison.net/2026/Oct/28/terk-terkowitz/",
+      "published": "2026-10-28T10:09:07.000Z",
+      "summary": "If your work does not benefit from current AI tooling, that is a finding, not a failing. Document why, share it with your community of peers, bring it to your manager, and work to find solutions. An engineer who can explain where AI does not yet help their work is demonstrating the judgement we are asking for. &mdash; Terk Terkowitz , An update from Amazon engineering leadership on the role of the developer in the age of AI Tags: amazon , generative-ai , agentic-engineering , ai , llms"
+    },
+    {
+      "source": "OpenAI",
+      "topic": "ai",
+      "title": "The future of the firm",
+      "url": "https://openai.com/index/the-future-of-the-firm",
+      "published": "2026-10-28T10:00:00.000Z",
+      "summary": "How AI might enter the org chart—beneath, beside, and between us."
+    },
+    {
+      "source": "OpenAI",
+      "topic": "ai",
+      "title": "Legora is building the agentic operating system for legal work",
+      "url": "https://openai.com/index/legora",
+      "published": "2026-10-28T09:30:00.000Z",
+      "summary": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work."
+    },
+    {
+      "source": "n8n releases",
+      "topic": "automation",
+      "title": "n8n@3.0.1",
+      "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%403.0.1",
+      "published": "2026-10-28T08:11:04.000Z",
+      "summary": "3.0.1 (2026-10-28) Bug Fixes core: Keep the ExpressionError name in minified builds ( #42309 ) ( b3192c6 ) core: Keep undefined values in QuickJS expression results ( #42264 ) ( 532f645 ) editor: Align carets within split buttons ( #42203 ) ( 61cbfea ) editor: Improve first load speed ( #41987 ) ( 8b6bdbb ) editor: Match Evals Run Test button colors ( #42200 ) ( f594853 ) editor: Remove underlines from breadcrumb links ( #42201 ) ( 127d65a ) editor: Remove underlines from Data Table links ( #42189 ) ( 619271c ) editor: Stop Safari from opening its own context menu on the canvas ( #42175 ) ( 28f9c9e )"
+    },
+    {
+      "source": "n8n releases",
+      "topic": "automation",
+      "title": "n8n@1.123.89",
+      "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%401.123.89",
+      "published": "2026-10-28T07:30:08.000Z",
+      "summary": "1.123.89 (2026-10-28) Bug Fixes Google Drive Node: Fix infinite pagination loop in v1 API request ( #42124 ) ( 3faa762 ) MCP Server Trigger Node: Evict idle sessions to prevent memory leak ( #42120 ) ( 54eaf65 )"
+    },
+    {
+      "source": "Geektime",
+      "topic": "ai",
+      "title": "רגע לפני המקבוק עם מסך המגע: ההכרזות החדשות של אפל",
+      "url": "https://www.geektime.co.il/apple-m6-macbook-pro-imac-launch-2026/",
+      "published": "2026-10-28T07:28:04.000Z",
+      "summary": "מקור: אפל שבוע ההכרזות של אפל נמשך. אחרי שביום שני הציגה iPad Mini חדש עם תצוגת OLED ועמידות במים , אתמול הגיעה ההכרזה השנייה של השבוע – שבה חשפה איימק ומקבוק פרו עם שבב חדש. כל זה קורה לפני שהיום בערב (שעון ישראל) אפל תציג לראשונה משהו שכנראה יגרום לסטיב ג'ובס להתהפך בקברו – מקבוק עם מסך מגע. מקבוק פרו: יותר כוח, אותו עיצוב ההכרזה הראשונה של אפל אתמול הייתה על Macbook Pro עם מסך 14 אינץ', שמגיע עם שבב M6 המיוצר בתהליך של 2 ננומטר. השבב כולל מעבד בעל 12 ליבות, לעומת 10 ליבות בדגם ה-M5, לצד מעבד גרפי עם 12 ליבות, גם כאן – לעומת 10 בדור הקודם. על פי אפל, השדרוג הזה מתורגם לשיפור של עד 30% בביצועים הגרפיים בהשוואה לדגם הקודם. אבל כמו כמעט בכל הכרזה של יצרנית חומרה כיום, חלק משמעותי מההכרזה של א"
+    },
+    {
+      "source": "n8n releases",
+      "topic": "automation",
+      "title": "n8n@2.46.1",
+      "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.46.1",
+      "published": "2026-10-28T07:22:05.000Z",
+      "summary": "2.46.1 (2026-10-28) Bug Fixes core: Improve removed-node and Edit Image entries in v3 migration report ( #42270 ) ( d73a148 ) core: Keep the ExpressionError name in minified builds ( #42308 ) ( 4068bb0 ) core: Keep undefined values in QuickJS expression results ( #42263 ) ( 3a6ce61 )"
+    },
+    {
+      "source": "n8n releases",
+      "topic": "automation",
+      "title": "n8n@2.45.5",
+      "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.45.5",
+      "published": "2026-10-28T07:19:58.000Z",
+      "summary": "2.45.5 (2026-10-28) Bug Fixes core: Keep the ExpressionError name in minified builds ( #42309 ) ( b3192c6 ) core: Keep undefined values in QuickJS expression results ( #42264 ) ( 532f645 ) editor: Align carets within split buttons ( #42203 ) ( 61cbfea ) editor: Improve first load speed ( #41987 ) ( 8b6bdbb ) editor: Match Evals Run Test button colors ( #42200 ) ( f594853 ) editor: Remove underlines from breadcrumb links ( #42201 ) ( 127d65a ) editor: Remove underlines from Data Table links ( #42189 ) ( 619271c ) editor: Stop Safari from opening its own context menu on the canvas ( #42175 ) ( 28f9c9e ) Features core: Make custom OTel attribute key prefixes configurable ( #42193 ) ( 6071b12 )"
+    },
+    {
+      "source": "n8n releases",
+      "topic": "automation",
+      "title": "beta",
+      "url": "https://github.com/n8n-io/n8n/releases/tag/beta",
+      "published": "2026-10-28T07:19:30.000Z",
+      "summary": "2.46.1 (2026-10-28) Bug Fixes core: Improve removed-node and Edit Image entries in v3 migration report ( #42270 ) ( d73a148 ) core: Keep the ExpressionError name in minified builds ( #42308 ) ( 4068bb0 ) core: Keep undefined values in QuickJS expression results ( #42263 ) ( 3a6ce61 )"
+    },
+    {
+      "source": "n8n releases",
+      "topic": "automation",
+      "title": "stable",
+      "url": "https://github.com/n8n-io/n8n/releases/tag/stable",
+      "published": "2026-10-28T07:18:07.000Z",
+      "summary": "2.45.5 (2026-10-28) Bug Fixes core: Keep the ExpressionError name in minified builds ( #42309 ) ( b3192c6 ) core: Keep undefined values in QuickJS expression results ( #42264 ) ( 532f645 ) editor: Align carets within split buttons ( #42203 ) ( 61cbfea ) editor: Improve first load speed ( #41987 ) ( 8b6bdbb ) editor: Match Evals Run Test button colors ( #42200 ) ( f594853 ) editor: Remove underlines from breadcrumb links ( #42201 ) ( 127d65a ) editor: Remove underlines from Data Table links ( #42189 ) ( 619271c ) editor: Stop Safari from opening its own context menu on the canvas ( #42175 ) ( 28f9c9e ) Features core: Make custom OTel attribute key prefixes configurable ( #42193 ) ( 6071b12 )"
+    },
+    {
+      "source": "n8n releases",
+      "topic": "automation",
+      "title": "v1: :rocket: Release 1.123.89 (#42361)",
+      "url": "https://github.com/n8n-io/n8n/releases/tag/v1",
+      "published": "2026-10-28T07:07:07.000Z",
+      "summary": "Co-authored-by: Matsuuu 16068444+Matsuuu@users.noreply.github.com"
+    },
+    {
+      "source": "Zapier",
+      "topic": "automation",
+      "title": "Which AI model is best for workflow automation?",
+      "url": "https://zapier.com/blog/automationbench-on-specialized-intelligence-index",
+      "published": "2026-10-28T07:00:00.000Z",
+      "summary": "Today, AutomationBench joins Fireworks' Specialized Intelligence Index (SII), bringing business workflow automation to a growing collection of practitioner-built benchmarks that compare AI models on real work. We're one of 32 new partners in this round, alongside teams covering fields like finance, healthcare, software, and ML research. AutomationBench measures whether an AI agent can finish a business workflow end to end across sales, marketing, operations, support, finance, and HR. Being part"
+    },
+    {
+      "source": "Zapier",
+      "topic": "automation",
+      "title": "What is Perplexity AI?",
+      "url": "https://zapier.com/blog/perplexity-ai",
+      "published": "2026-10-28T04:00:00.000Z",
+      "summary": "There comes a time in every professional's life when they have to choose a favorite AI assistant. I didn't expect to pick a search engine. Someone recommended Perplexity to me as a research tool. Since I'm a content writer, I spend a lot of time checking facts and tracking down references. AI-powered search with sources I could easily inspect sounded promising, and as I used it more, I kept discovering other features that helped me get work done. Based on my experience with Perplexity, here's wh"
+    },
+    {
+      "source": "Zapier",
+      "topic": "automation",
+      "title": "How to create a Slack to-do list: 5 ways",
+      "url": "https://zapier.com/blog/slack-to-do-list",
+      "published": "2026-10-28T04:00:00.000Z",
+      "summary": "I know the best approach to a calm, focused workday is to dive into my deepest work with as few distractions as possible. But we live on Slack at Zapier, so calm, focused, and distraction-free are hard to come by. Slack to-do lists give you a one-click way to corral chats into an organized to-do list without leaving the app. But beyond Slack's dedicated to-do list feature, here are a few other ways to create and manage a to-do list in Slack. Table of contents: How to use Slack to-dos How to use"
+    },
+    {
+      "source": "Zapier",
+      "topic": "automation",
+      "title": "The 9 best Notion alternatives in 2026",
+      "url": "https://zapier.com/blog/best-notion-alternatives",
+      "published": "2026-10-28T04:00:00.000Z",
+      "summary": "Notion is a special app. Starting from an empty screen, you add notes and documents in a freeform way. Then, when the original page is too crowded, you create your first database and the possibilities explode: you can create a custom productivity system and change it as you evolve. But productivity is evolving. Knowledge management platforms need to support human teams while making room for AI agents, with automation and guardrails in place to make sure you do more work, not spend more time revi"
+    },
+    {
+      "source": "Zapier",
+      "topic": "automation",
+      "title": "The 9 best HubSpot certifications, according to HubSpot-certified experts",
+      "url": "https://zapier.com/blog/hubspot-certifications",
+      "published": "2026-10-28T04:00:00.000Z",
+      "summary": "When I started out as a freelance writer, I didn't have a professional background in content marketing. I not only needed to learn everything I could about my new industry, but also had to show potential clients that I was worth investing in. And after creeping on a few freelancer subreddits, I learned HubSpot certifications were exactly what I needed. But the courses you can take from HubSpot Academy go well beyond my niche—in fact, they run the gamut from marketing to sales and even web develo"
+    }
+  ]
+}
