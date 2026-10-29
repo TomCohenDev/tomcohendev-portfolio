@@ -206,7 +206,7 @@ const NavigationalPolicy = () => {
                   difficulties navigating our site or have suggestions for
                   improvement, please{" "}
                   <a
-                    href="/contact"
+                    href="/en/contact"
                     className="text-primary hover:text-primary/80 transition-colors"
                   >
                     contact

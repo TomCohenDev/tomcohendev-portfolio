@@ -76,12 +76,13 @@ Each phase ships on its own.
      - Pull requests: types, lint, build, broken links and Hebrew metadata, then the same check on the Workers Builds preview.
      - `main`: Workers Builds deploys; a GitHub workflow waits for it and checks the live site.
      - No secrets are needed: deploys run in Cloudflare.
-3. **Homepage.**
+3. **Homepage.** Built on branch `feat/hebrew-home`. About and contact are sections of the homepage for now, not pages of their own;
+   the homepage contact section links to the two forms, so the lead form stays limited to `/automation` and `/mobile`.
    - The current English site moves to `/en`, and its old URLs redirect there.
    - The Hebrew handwriting hero with the changing visual.
    - The radial services map with two branches.
    - Work and reviews (the existing carousel, shorter).
-   - The newest news issue, blog posts and events.
+   - The newest news issue, blog posts and events. Until phases 4 to 6 ship, a "בקרוב באתר" section names them, with no dates.
    - A short "about Tom", and contact.
 4. **Blog.** Post template, tags, RSS, a share image per post, sitemap, and scheduled publishing.
 5. **News.** See below.

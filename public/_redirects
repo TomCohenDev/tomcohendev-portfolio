@@ -1,0 +1,9 @@
+# The English site moved to /en when the Hebrew homepage took over the root (docs/site-plan.md, phase 3).
+# Workers Assets applies these rules; old links and search results keep working.
+/services /en/services 301
+/services/* /en/services/:splat 301
+/products /en/products 301
+/contact /en/contact 301
+/privacy-policy /en/privacy-policy 301
+/navigational-policy /en/navigational-policy 301
+/case-studies/* /en/case-studies/:splat 301

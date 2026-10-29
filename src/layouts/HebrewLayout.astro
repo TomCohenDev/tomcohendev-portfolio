@@ -18,6 +18,8 @@ interface Props {
   twitterTitle?: string;
   twitterDescription?: string;
   jsonLd?: object;
+  /** Keep the page out of search results (the 404 page). */
+  noindex?: boolean;
 }
 
 const {
@@ -31,6 +33,7 @@ const {
   twitterTitle = title,
   twitterDescription = description,
   jsonLd,
+  noindex = false,
 } = Astro.props;
 
 const url = new URL(path, Astro.site).href;
@@ -69,7 +72,7 @@ const image = new URL(ogImage, Astro.site).href;
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="תום כהן" />
-    <link rel="canonical" href={url} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={url} />}
 
     <meta property="og:locale" content="he_IL" />
     <meta property="og:type" content="website" />

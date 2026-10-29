@@ -1,6 +1,14 @@
 import { LegalPage, LegalSection } from "@/components/automation/Legal";
 import { CONTACT } from "@/components/automation/content";
 
+const HOME_SECTIONS = [
+  { href: "/", label: "פתיחה: אני בונה אפליקציות ואוטומציות" },
+  { href: "/#services", label: "השירותים שלי" },
+  { href: "/#work", label: "עבודות והמלצות" },
+  { href: "/#about", label: "קצת עליי" },
+  { href: "/#contact", label: "יצירת קשר" },
+];
+
 const PAGE_SECTIONS = [
   { href: "/automation", label: "פתיחה: מה אפשר לחבר לעסק שלכם" },
   { href: "/automation#problem", label: "איפה הזמן נעלם?" },
@@ -19,19 +27,19 @@ const MOBILE_SECTIONS = [
 ];
 
 const CASE_STUDIES = [
-  { to: "/case-studies/nightwing", label: "Nightwing: הזמנות שמגיעות למטבח לבד" },
-  { to: "/case-studies/ai-social-media-strategist", label: "סוכן תוכן לרשתות" },
-  { to: "/case-studies/blog-automation", label: "מהודעה לטיוטת מאמר" },
-  { to: "/case-studies/gomlin-jobs", label: "Gomlin: נתונים שמגיעים לוואטסאפ" },
-  { to: "/case-studies/dronebag", label: "Dronebag: ניהול צי רחפנים" },
-  { to: "/case-studies/spidclass", label: "Spidclass: נוכחות ותשלומים" },
-  { to: "/case-studies/yellow-candle", label: "Yellow Candle: אפליקציית הנצחה" },
+  { to: "/en/case-studies/nightwing", label: "Nightwing: הזמנות שמגיעות למטבח לבד" },
+  { to: "/en/case-studies/ai-social-media-strategist", label: "סוכן תוכן לרשתות" },
+  { to: "/en/case-studies/blog-automation", label: "מהודעה לטיוטת מאמר" },
+  { to: "/en/case-studies/gomlin-jobs", label: "Gomlin: נתונים שמגיעים לוואטסאפ" },
+  { to: "/en/case-studies/dronebag", label: "Dronebag: ניהול צי רחפנים" },
+  { to: "/en/case-studies/spidclass", label: "Spidclass: נוכחות ותשלומים" },
+  { to: "/en/case-studies/yellow-candle", label: "Yellow Candle: אפליקציית הנצחה" },
 ];
 
 const MAIN_SITE = [
-  { to: "/", label: "דף הבית" },
-  { to: "/services", label: "שירותים" },
-  { to: "/contact", label: "יצירת קשר" },
+  { to: "/en", label: "דף הבית" },
+  { to: "/en/services", label: "שירותים" },
+  { to: "/en/contact", label: "יצירת קשר" },
 ];
 
 // Page title and description; src/pages/*.astro puts them in the HTML head.
@@ -40,6 +48,16 @@ export const DESCRIPTION = "כל העמודים והחלקים בעמודים ב
 
 const AutomationSiteMap = () => (
   <LegalPage title={TITLE}>
+    <LegalSection title="עמוד הבית">
+      <ul>
+        {HOME_SECTIONS.map((s) => (
+          <li key={s.href}>
+            <a href={s.href}>{s.label}</a>
+          </li>
+        ))}
+      </ul>
+    </LegalSection>
+
     <LegalSection title="עמוד האוטומציה">
       <ul>
         {PAGE_SECTIONS.map((s) => (
@@ -72,7 +90,7 @@ const AutomationSiteMap = () => (
       </ul>
     </LegalSection>
 
-    <LegalSection title="האתר הראשי (באנגלית)">
+    <LegalSection title="האתר באנגלית">
       <ul>
         {MAIN_SITE.map((m) => (
           <li key={m.to}>
@@ -88,7 +106,7 @@ const AutomationSiteMap = () => (
           <a href="/automation/privacy">מדיניות פרטיות</a>
         </li>
         <li>
-          <a href="/privacy-policy">מדיניות הפרטיות של האתר הראשי (באנגלית)</a>
+          <a href="/en/privacy-policy">מדיניות הפרטיות של האתר באנגלית</a>
         </li>
       </ul>
     </LegalSection>

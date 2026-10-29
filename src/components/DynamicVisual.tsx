@@ -94,10 +94,9 @@ const DynamicVisual: React.FC<DynamicVisualProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Random rotation for the background border
-  const [backgroundRotation, setBackgroundRotation] = useState(
-    Math.random() * 6 - 3 // Random between -4 and 4 degrees
-  );
+  // Rotation of the background border. It starts fixed, so the server-rendered HTML of the Hebrew
+  // homepage matches the first render in the browser, and turns random with each change below.
+  const [backgroundRotation, setBackgroundRotation] = useState(-1.5);
 
   // Update rotation when effectiveIndex changes
   useEffect(() => {
@@ -758,6 +757,9 @@ const DynamicVisual: React.FC<DynamicVisualProps> = ({
               return (
                 <motion.line
                   key={`line-${i}`}
+                  // Start from the target values (here and on the shapes below): without them the first
+                  // render has no coordinates, and the browser logs an error for each attribute.
+                  initial={false}
                   animate={{
                     x1: props.x1,
                     y1: props.y1,
@@ -778,6 +780,7 @@ const DynamicVisual: React.FC<DynamicVisualProps> = ({
               return (
                 <motion.rect
                   key={`shape-${i}`}
+                  initial={false}
                   animate={{
                     x: props.x,
                     y: props.y,

@@ -1,0 +1,13 @@
+/* Homepage (/) extras on top of automation.css. */
+
+/* The services map stops turning while the pointer or keyboard focus is on it. */
+.automation-page .home-map:hover .home-orbit,
+.automation-page .home-map:focus-within .home-orbit {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .automation-page .home-orbit {
+    animation: none;
+  }
+}
