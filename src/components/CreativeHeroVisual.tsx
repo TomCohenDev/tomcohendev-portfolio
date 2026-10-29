@@ -1,3 +1,4 @@
+import type { ComponentType } from "react";
 import { motion } from "framer-motion";
 import { 
   Code2, 
@@ -43,7 +44,7 @@ const PhotoCard = ({ src, alt, size = "md" }: { src: string; alt: string; size?:
   );
 };
 
-const IconBubble = ({ icon: Icon, color }: { icon: any; color: string }) => (
+const IconBubble = ({ icon: Icon, color }: { icon: ComponentType<{ className?: string }>; color: string }) => (
   <div className="w-16 h-16 bg-[#1D201F] border border-white/10 rounded-full flex items-center justify-center shadow-xl z-20">
     <Icon className={`w-8 h-8 ${color}`} />
   </div>

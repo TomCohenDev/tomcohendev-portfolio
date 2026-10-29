@@ -26,5 +26,12 @@ dist-ssr
 bun.lockb
 
 .env.local
+# Astro generated types
+.astro
+
 # Wrangler local state
 .wrangler
+
+# Daily news: the working folder of each run and the private word list
+news/desk/
+news/deny.txt

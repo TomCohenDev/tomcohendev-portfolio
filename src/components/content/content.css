@@ -1,0 +1,80 @@
+/* Blog, news and courses extras on top of automation.css. */
+
+/* Article text of a blog post. */
+.automation-page .c-prose {
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: var(--a-muted);
+}
+.automation-page .c-prose > * + * {
+  margin-top: 1.25rem;
+}
+.automation-page .c-prose h2 {
+  margin-top: 2.75rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--a-ink);
+}
+.automation-page .c-prose ul {
+  list-style: none;
+  padding: 0;
+}
+.automation-page .c-prose li {
+  position: relative;
+  padding-inline-start: 1.6rem;
+}
+.automation-page .c-prose li + li {
+  margin-top: 0.5rem;
+}
+/* A short hand-drawn dash instead of a bullet. */
+.automation-page .c-prose li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0.2rem;
+  top: 0.85em;
+  width: 0.8rem;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--a-accent);
+  transform: rotate(-8deg);
+}
+.automation-page .c-prose blockquote {
+  border-inline-start: 3px solid #f49ac1;
+  padding: 0.25rem 1.25rem;
+  font-family: "Excalifont", "Playpen Sans Hebrew", cursive;
+  font-size: 1.35rem;
+  line-height: 1.6;
+  color: var(--a-ink);
+}
+.automation-page .c-prose pre {
+  overflow-x: auto;
+  border: 1px solid var(--a-line);
+  border-radius: 1rem;
+  background: #171a19;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--a-ink);
+}
+
+/* Newspaper masthead rule: a double line, the second one wavy. */
+.automation-page .c-rule {
+  height: 10px;
+  border-top: 2px solid var(--a-ink);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8'%3E%3Cpath d='M0 4 Q10 0 20 4 T40 4' fill='none' stroke='%23e0d0c1' stroke-opacity='.45' stroke-width='1.5'/%3E%3C/svg%3E")
+    repeat-x 0 4px;
+}
+
+/* Calendar leaf of a course card. */
+.automation-page .c-leaf {
+  transform: rotate(-3deg);
+}
+.automation-page a:hover .c-leaf {
+  transform: rotate(0deg);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .automation-page .c-leaf {
+    transition: transform 200ms ease;
+  }
+}

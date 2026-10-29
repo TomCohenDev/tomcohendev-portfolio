@@ -1,10 +1,10 @@
-import { useEffect, useId, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { type ReactNode, useEffect, useId, useRef, useState } from "react";
 import { Loader2, Mail, MessageCircle, Phone, Quote } from "lucide-react";
 import { track } from "@/lib/analytics";
 import { Squiggle } from "./Doodles";
 import { SentDoodle } from "./SentDoodle";
 import { CONTACT, LEAD_ENDPOINT, frequencyOptions } from "./content";
+import { SITES, type SiteKey } from "./sites";
 
 type Fields = {
   fullName: string;
@@ -45,7 +45,8 @@ const validate = (f: Fields) => {
 
 const ORDER: FieldName[] = ["fullName", "contact", "consent"];
 
-export const LeadForm = ({ seed, onSent }: { seed: string[]; onSent?: () => void }) => {
+export const LeadForm = ({ seed = [], onSent, site = "automation" }: { seed?: string[]; onSent?: () => void; site?: SiteKey }) => {
+  const s = SITES[site];
   const uid = useId();
   const id = (name: string) => `${uid}-${name}`;
   const [fields, setFields] = useState<Fields>(EMPTY);
@@ -75,7 +76,7 @@ export const LeadForm = ({ seed, onSent }: { seed: string[]; onSent?: () => void
   const markStarted = () => {
     if (started.current) return;
     started.current = true;
-    track("automation_form_start");
+    track(`${s.event}_form_start`);
   };
 
   const set = <K extends FieldName>(name: K, value: Fields[K]) => {
@@ -106,7 +107,7 @@ export const LeadForm = ({ seed, onSent }: { seed: string[]; onSent?: () => void
       if (res.ok && data.ok) {
         setStatus("success");
         onSent?.();
-        track("automation_form_submit_success", { has_business: !!fields.business.trim(), frequency: fields.frequency || "none" });
+        track(`${s.event}_form_submit_success`, { has_business: !!fields.business.trim(), frequency: fields.frequency || "none" });
         return;
       }
       if (res.status === 429) {
@@ -217,7 +218,7 @@ export const LeadForm = ({ seed, onSent }: { seed: string[]; onSent?: () => void
 
       <div>
         <label htmlFor={id("process")} className="text-[15px] font-semibold text-[var(--a-ink)]">
-          איזה תהליך הייתם רוצים לשפר? <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
+          {s.form.processLabel} <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
         </label>
         <textarea
           id={id("process")}
@@ -230,14 +231,13 @@ export const LeadForm = ({ seed, onSent }: { seed: string[]; onSent?: () => void
           className={`${inputBase} ${border("process")} resize-y leading-relaxed`}
         />
         <p id={id("process-hint")} className="mt-1.5 text-[14px] leading-relaxed text-[var(--a-muted)]">
-          מה קורה היום ואיפה זה נתקע. למשל: "כל ליד מהאתר אני מעתיק ידנית לגיליון ושולח לו הודעה". אין צורך לפרט
-          שמות של לקוחות, מידע רפואי או פיננסי.
+          {s.form.processHint}
         </p>
       </div>
 
       <div>
         <label htmlFor={id("tools")} className="text-[15px] font-semibold text-[var(--a-ink)]">
-          באילו כלים או מערכות אתם משתמשים היום? <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
+          {s.form.toolsLabel} <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
         </label>
         <input
           id={id("tools")}
@@ -249,40 +249,42 @@ export const LeadForm = ({ seed, onSent }: { seed: string[]; onSent?: () => void
           className={`${inputBase} ${border("tools")}`}
         />
         <p id={id("tools-hint")} className="mt-1.5 text-[14px] text-[var(--a-muted)]">
-          למשל: גיליון אקסל, וואטסאפ, Gmail, מערכת הנהלת חשבונות. גם "לא בטוח" זו תשובה טובה.
+          {s.form.toolsHint}
         </p>
       </div>
 
-      <fieldset>
-        <legend className="text-[15px] font-semibold text-[var(--a-ink)]">
-          כמה פעמים התהליך קורה? <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
-        </legend>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {frequencyOptions.map((opt) => {
-            const on = fields.frequency === opt.value;
-            return (
-              <label
-                key={opt.value}
-                className={`cursor-pointer rounded-full border px-4 py-2 text-[15px] transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-[var(--a-accent)] ${
-                  on
-                    ? "border-[var(--a-accent)] bg-[var(--a-accent)]/15 text-[var(--a-ink)]"
-                    : "border-[var(--a-line)] text-[var(--a-muted)] hover:text-[var(--a-ink)]"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="frequency"
-                  value={opt.value}
-                  checked={on}
-                  onChange={() => set("frequency", opt.value)}
-                  className="sr-only"
-                />
-                {opt.label}
-              </label>
-            );
-          })}
-        </div>
-      </fieldset>
+      {s.form.showFrequency && (
+        <fieldset>
+          <legend className="text-[15px] font-semibold text-[var(--a-ink)]">
+            כמה פעמים התהליך קורה? <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
+          </legend>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {frequencyOptions.map((opt) => {
+              const on = fields.frequency === opt.value;
+              return (
+                <label
+                  key={opt.value}
+                  className={`cursor-pointer rounded-full border px-4 py-2 text-[15px] transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-[var(--a-accent)] ${
+                    on
+                      ? "border-[var(--a-accent)] bg-[var(--a-accent)]/15 text-[var(--a-ink)]"
+                      : "border-[var(--a-line)] text-[var(--a-muted)] hover:text-[var(--a-ink)]"
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="frequency"
+                    value={opt.value}
+                    checked={on}
+                    onChange={() => set("frequency", opt.value)}
+                    className="sr-only"
+                  />
+                  {opt.label}
+                </label>
+              );
+            })}
+          </div>
+        </fieldset>
+      )}
 
       {/* Honeypot for bots. Hidden from people and from assistive tech. */}
       <div aria-hidden="true" className="absolute -start-[9999px] h-px w-px overflow-hidden">
@@ -307,9 +309,9 @@ export const LeadForm = ({ seed, onSent }: { seed: string[]; onSent?: () => void
             אני מאשר/ת שתום כהן יחזור אליי בנוגע לפנייה הזו. <span aria-hidden="true">*</span>
             <span className="mt-1 block text-[14px] text-[var(--a-muted)]">
               הפרטים משמשים רק לטיפול בפנייה.{" "}
-              <Link to="/automation/privacy" className="underline underline-offset-2 hover:text-[var(--a-ink)]">
+              <a href="/automation/privacy" className="underline underline-offset-2 hover:text-[var(--a-ink)]">
                 מדיניות הפרטיות
-              </Link>
+              </a>
             </span>
           </span>
         </label>
@@ -350,7 +352,46 @@ export const LeadForm = ({ seed, onSent }: { seed: string[]; onSent?: () => void
   );
 };
 
-export const ContactSection = ({ seed }: { seed: string[] }) => {
+type ContactQuote = { text: string; name: string; source?: ReactNode };
+
+const AUTOMATION_HEADING = (
+  <>
+    בואו נמצא איפה העסק שלכם{" "}
+    <span className="relative inline-block">
+      מאבד זמן וכסף
+      <Squiggle className="absolute -bottom-3 start-0 h-3 w-full text-[#f49ac1]" />
+    </span>
+  </>
+);
+
+const AUTOMATION_INTRO =
+  "מה קורה היום, באילו כלים אתם משתמשים ואיפה התהליך נתקע? נבדוק יחד אם אוטומציה יכולה לעזור. הצטרפו לאלפי עסקים בישראל שכבר משתמשים בבינה מלאכותית.";
+
+// Quote from Noam (Nightwing); Noam approved this exact wording.
+const AUTOMATION_QUOTE: ContactQuote = {
+  text: "תום הבין מהר את המגבלות של העסק שלנו ואת הצרכים שלנו. בזכות המערכת שהוא בנה לנו חסכנו אלפי שקלים, ויכולנו לקבל ולעקוב אחרי הזמנות בלי מאמץ בכלל.",
+  name: "נועם",
+  source: (
+    <>
+      <bdi>Nightwing</bdi>, מסעדה בפרדס חנה
+    </>
+  ),
+};
+
+export const ContactSection = ({
+  seed = [],
+  site = "automation",
+  heading = AUTOMATION_HEADING,
+  intro = AUTOMATION_INTRO,
+  quote = AUTOMATION_QUOTE,
+}: {
+  seed?: string[];
+  site?: SiteKey;
+  heading?: ReactNode;
+  intro?: string;
+  quote?: ContactQuote;
+}) => {
+  const ev = SITES[site].event;
   const [sent, setSent] = useState(false);
   return (
     <section id="contact" aria-labelledby="contact-title" className="a-grid-bg isolate border-t border-[var(--a-line)]">
@@ -364,34 +405,24 @@ export const ContactSection = ({ seed }: { seed: string[] }) => {
         {/* Desktop: the quote lines up with the top of the form; the rest is centred in the space below it,
             above the room reserved for the portrait at the bottom. */}
         <div className="lg:flex lg:flex-col lg:self-stretch lg:pb-[13rem]">
-          {/* Quote from Noam (Nightwing); Noam approved this exact wording. */}
           <figure className="mb-12 rounded-2xl border border-[var(--a-accent)]/30 bg-[#222524] p-6 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.9)] lg:max-w-[25rem]">
             <Quote className="h-7 w-7 text-[var(--a-accent)] max-md:mx-auto" aria-hidden="true" />
-            <blockquote className="mt-3 text-xl font-medium leading-relaxed text-[var(--a-ink)] md:text-2xl">
-              תום הבין מהר את המגבלות של העסק שלנו ואת הצרכים שלנו. בזכות המערכת שהוא בנה לנו חסכנו אלפי שקלים, ויכולנו
-              לקבל ולעקוב אחרי הזמנות בלי מאמץ בכלל.
-            </blockquote>
+            <blockquote className="mt-3 text-xl font-medium leading-relaxed text-[var(--a-ink)] md:text-2xl">{quote.text}</blockquote>
             <figcaption className="mt-3 text-[15px] text-[var(--a-muted)]">
-              <span className="text-[var(--a-ink)]">נועם</span> · <bdi>Nightwing</bdi>, מסעדה בפרדס חנה
+              <span className="text-[var(--a-ink)]">{quote.name}</span>
+              {quote.source && <> · {quote.source}</>}
             </figcaption>
           </figure>
           <div className="lg:my-auto">
             <h2 id="contact-title" className="a-h2 relative">
-              בואו נמצא איפה העסק שלכם{" "}
-              <span className="relative inline-block">
-                מאבד זמן וכסף
-                <Squiggle className="absolute -bottom-3 start-0 h-3 w-full text-[#f49ac1]" />
-              </span>
+              {heading}
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-[var(--a-muted)]">
-              מה קורה היום, באילו כלים אתם משתמשים ואיפה התהליך נתקע? נבדוק יחד אם אוטומציה יכולה לעזור. הצטרפו
-              לאלפי עסקים בישראל שכבר משתמשים בבינה מלאכותית.
-            </p>
+            <p className="mt-6 text-lg leading-relaxed text-[var(--a-muted)]">{intro}</p>
             <ul className="mt-8 space-y-3 text-[16px]">
               <li>
                 <a
                   href={`tel:${CONTACT.phoneTel}`}
-                  onClick={() => track("automation_contact_click", { method: "phone", location: "contact" })}
+                  onClick={() => track(`${ev}_contact_click`, { method: "phone", location: "contact" })}
                   className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
                 >
                   <Phone className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
@@ -404,7 +435,7 @@ export const ContactSection = ({ seed }: { seed: string[] }) => {
                   href={CONTACT.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => track("automation_contact_click", { method: "whatsapp", location: "contact" })}
+                  onClick={() => track(`${ev}_contact_click`, { method: "whatsapp", location: "contact" })}
                   className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
                 >
                   <MessageCircle className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
@@ -414,7 +445,7 @@ export const ContactSection = ({ seed }: { seed: string[] }) => {
               <li>
                 <a
                   href={`mailto:${CONTACT.email}`}
-                  onClick={() => track("automation_contact_click", { method: "email", location: "contact" })}
+                  onClick={() => track(`${ev}_contact_click`, { method: "email", location: "contact" })}
                   className="inline-flex items-center gap-3 text-[var(--a-ink)] hover:text-[var(--a-accent)]"
                 >
                   <Mail className="h-5 w-5 text-[var(--a-accent)]" aria-hidden="true" />
@@ -449,7 +480,7 @@ export const ContactSection = ({ seed }: { seed: string[] }) => {
               className="pointer-events-none absolute left-[-18.8%] top-0 -z-10 hidden w-[135%] max-w-none -translate-y-[14.5%] opacity-80 lg:block"
             />
           )}
-          <LeadForm seed={seed} onSent={() => setSent(true)} />
+          <LeadForm seed={seed} site={site} onSent={() => setSent(true)} />
         </div>
       </div>
     </section>

@@ -1,0 +1,9 @@
+---
+import HebrewLayout from "../layouts/HebrewLayout.astro";
+import BlogIndex, { DESCRIPTION, TITLE } from "../views/BlogIndex";
+import { DEMO } from "../components/content/mock";
+---
+
+<HebrewLayout title={TITLE} description={DESCRIPTION} path="/blog" noindex={DEMO}>
+  <BlogIndex client:load />
+</HebrewLayout>

@@ -1,0 +1,129 @@
+---
+/**
+ * HTML shell of the Hebrew pages: lang and direction, metadata, share tags, fonts, the existing Google tag,
+ * and structured data. The page content comes in the slot.
+ */
+import "../index.css";
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path of the page, such as "/mobile". Builds the canonical and share URLs. */
+  path: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  /** Path of the share image in public/. */
+  ogImage?: string;
+  ogImageAlt?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  jsonLd?: object;
+  /** Keep the page out of search results (the 404 page). */
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  path,
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = "/og-automation.png",
+  ogImageAlt = "תום כהן",
+  twitterTitle = title,
+  twitterDescription = description,
+  jsonLd,
+  noindex = false,
+} = Astro.props;
+
+const url = new URL(path, Astro.site).href;
+const image = new URL(ogImage, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <!-- Same Google tag setup as the English site -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      gtag('consent', 'default', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'functionality_storage': 'granted',
+        'personalization_storage': 'granted'
+      });
+    </script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-17859325774"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17859325774');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1D201F" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="תום כהן" />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={url} />}
+
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="תום כהן" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={twitterTitle} />
+    <meta name="twitter:description" content={twitterDescription} />
+    <meta name="twitter:image" content={image} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Playpen+Sans+Hebrew:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/icon.svg?v=2" />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico?v=2" />
+    <link rel="apple-touch-icon" href="/icon.svg?v=2" />
+
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+
+  <body>
+    <noscript>
+      <p>הטופס בעמוד צריך JavaScript. אפשר גם לפנות ישירות: contact@tomcohen.dev או בטלפון 054-555-2149</p>
+    </noscript>
+    <slot />
+
+    <script>
+      // Same PostHog settings as the English site (src/EnglishApp.tsx). Without a key nothing loads,
+      // which is the case today: the build has no VITE_PUBLIC_POSTHOG_KEY.
+      const key = import.meta.env.VITE_PUBLIC_POSTHOG_KEY;
+      if (key) {
+        import("posthog-js").then(({ default: posthog }) =>
+          posthog.init(key, {
+            api_host: import.meta.env.VITE_PUBLIC_POSTHOG_PROXY || import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
+            ui_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
+            defaults: "2025-11-30",
+            capture_exceptions: true,
+          })
+        );
+      }
+    </script>
+  </body>
+</html>

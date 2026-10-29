@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Syncs case study assets from case_studies/<name>/assets/ to public/case_studies/<name>/assets/
- * so they are included in the Vite build and work in production.
+ * so they are included in the build and work in production.
  */
 import { cpSync, existsSync, mkdirSync, readdirSync } from "fs";
 import { join, dirname } from "path";

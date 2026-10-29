@@ -1,0 +1,12 @@
+---
+import HebrewLayout from "../../layouts/HebrewLayout.astro";
+import CourseItem from "../../views/CourseItem";
+import { DEMO, courses, type Course } from "../../components/content/mock";
+
+export const getStaticPaths = () => courses.map((course) => ({ params: { slug: course.slug }, props: { course } }));
+const { course } = Astro.props as { course: Course };
+---
+
+<HebrewLayout title={`${course.title} | תום כהן`} description={course.description} path={`/courses/${course.slug}`} noindex={DEMO}>
+  <CourseItem course={course} />
+</HebrewLayout>

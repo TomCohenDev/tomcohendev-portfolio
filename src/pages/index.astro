@@ -1,0 +1,16 @@
+---
+import HebrewLayout from "../layouts/HebrewLayout.astro";
+import Home, { DESCRIPTION, TITLE } from "../views/Home";
+import { graph, person, website } from "../lib/structuredData";
+---
+
+<HebrewLayout
+  title={TITLE}
+  description={DESCRIPTION}
+  path="/"
+  ogTitle="תום כהן: אפליקציות ואוטומציות לעסקים"
+  ogImageAlt="תום כהן: פיתוח אפליקציות ואוטומציות לעסקים"
+  jsonLd={graph(person, website)}
+>
+  <Home client:load />
+</HebrewLayout>

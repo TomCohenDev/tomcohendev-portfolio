@@ -1,9 +1,14 @@
 /**
  * Site Worker. Static files are served from ./dist by Workers Assets; this script only
- * runs for /api/* (see run_worker_first in wrangler.jsonc).
+ * runs for /api/* and /en/* (see run_worker_first in wrangler.jsonc).
+ *
+ * /en/*
+ *   The English site is one React Router app (dist/en.html). Its deep links, such as /en/services or
+ *   /en/case-studies/dronebag, get that page; the app shows the right route or its own 404.
  *
  * POST /api/automation-lead
- *   Receives the /automation inquiry form, stores it in D1 and emails it to Tom through
+ *   Receives the inquiry form of the Hebrew landing pages (/automation and /mobile; the `page`
+ *   field says which), stores it in D1 and emails it to Tom through
  *   Cloudflare Email Routing. The visitor only sees success when at least one of the two
  *   actually worked.
  */
@@ -46,6 +51,11 @@ export default {
 
     if (url.pathname.startsWith("/api/")) {
       return json({ ok: false, error: "not_found" }, 404);
+    }
+
+    // Paths with a file extension are real files (or a real 404); page paths get the English app.
+    if (url.pathname.startsWith("/en/") && !/\.[a-z0-9]+$/i.test(url.pathname)) {
+      return env.ASSETS.fetch(new Request(new URL("/en", url), request));
     }
 
     return env.ASSETS.fetch(request);
@@ -192,21 +202,29 @@ function isAllowedOrigin(request: Request) {
   }
 }
 
+/** Wording that depends on the landing page the lead came from. */
+function pageCopy(page: string) {
+  return page.startsWith("/mobile")
+    ? { source: "tomcohen.dev/mobile", subject: "פנייה חדשה מעמוד האפליקציות", sender: "טופס אפליקציות", process: "מה האפליקציה צריכה לעשות", tools: "מה כבר קיים", frequency: false }
+    : { source: "tomcohen.dev/automation", subject: "פנייה חדשה מעמוד האוטומציה", sender: "טופס אוטומציה", process: "התהליך שרוצים לשפר", tools: "כלים קיימים", frequency: true };
+}
+
 function buildEmail(env: Env, id: string, lead: LeadInput) {
   const to = "tom.cohen99@gmail.com";
   const from = env.LEAD_EMAIL_FROM || "automation@tomcohen.dev";
-  const subject = `פנייה חדשה מעמוד האוטומציה: ${lead.fullName}${lead.business ? ` (${lead.business})` : ""}`;
+  const copy = pageCopy(lead.page);
+  const subject = `${copy.subject}: ${lead.fullName}${lead.business ? ` (${lead.business})` : ""}`;
 
   const lines = [
-    "פנייה חדשה מ־tomcohen.dev/automation",
+    `פנייה חדשה מ־${copy.source}`,
     "",
     `שם: ${lead.fullName}`,
     `עסק / תחום: ${lead.business || "לא צוין"}`,
     `פרטי קשר: ${lead.contact}`,
-    `תדירות התהליך: ${lead.frequency ? FREQUENCY_LABELS[lead.frequency] : "לא צוין"}`,
-    `כלים קיימים: ${lead.tools || "לא צוין"}`,
+    ...(copy.frequency ? [`תדירות התהליך: ${lead.frequency ? FREQUENCY_LABELS[lead.frequency] : "לא צוין"}`] : []),
+    `${copy.tools}: ${lead.tools || "לא צוין"}`,
     "",
-    "התהליך שרוצים לשפר:",
+    `${copy.process}:`,
     lead.process || "לא צוין",
     "",
     "---",
@@ -217,7 +235,7 @@ function buildEmail(env: Env, id: string, lead: LeadInput) {
   // Plain text for clients that don't render HTML, and a formatted HTML version for everyone else.
   const boundary = `lead-${id}`;
   const headers = [
-    `From: ${encodeWord("טופס אוטומציה")} <${from}>`,
+    `From: ${encodeWord(copy.sender)} <${from}>`,
     `To: <${to}>`,
     `Subject: ${encodeWord(subject)}`,
     `Message-ID: <${id}@tomcohen.dev>`,
@@ -259,6 +277,7 @@ function intlPhone(contact: string) {
  * and a light card that stays readable in both light and dark inboxes.
  */
 function buildEmailHtml(id: string, lead: LeadInput) {
+  const copy = pageCopy(lead.page);
   const NONE = '<span style="color:#9a9a9a">לא צוין</span>';
   const row = (label: string, value: string) => `
         <tr>
@@ -285,7 +304,7 @@ function buildEmailHtml(id: string, lead: LeadInput) {
     <tr><td align="center" style="padding:24px 12px">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" dir="rtl" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;text-align:right">
         <tr><td style="background:#1d201f;padding:20px 24px">
-          <div style="color:#bf95f9;font-size:13px">tomcohen.dev/automation</div>
+          <div style="color:#bf95f9;font-size:13px">${copy.source}</div>
           <div style="color:#e0d0c1;font-size:22px;font-weight:700;margin-top:4px">פנייה חדשה</div>
         </td></tr>
         <tr><td style="height:4px;background:#bf95f9;line-height:4px;font-size:0">&nbsp;</td></tr>
@@ -294,13 +313,13 @@ function buildEmailHtml(id: string, lead: LeadInput) {
             row("שם", `<strong>${esc(lead.fullName)}</strong>`),
             row("עסק / תחום", lead.business ? esc(lead.business) : NONE),
             row("פרטי קשר", contactCell),
-            row("תדירות", lead.frequency ? esc(FREQUENCY_LABELS[lead.frequency] ?? lead.frequency) : NONE),
-            row("כלים קיימים", lead.tools ? esc(lead.tools) : NONE),
+            copy.frequency ? row("תדירות", lead.frequency ? esc(FREQUENCY_LABELS[lead.frequency] ?? lead.frequency) : NONE) : "",
+            row(copy.tools, lead.tools ? esc(lead.tools) : NONE),
           ].join("")}
           </table>
         </td></tr>
         <tr><td style="padding:16px 24px 0">
-          <div style="color:#6b6b6b;font-size:14px;margin-bottom:6px">התהליך שרוצים לשפר</div>
+          <div style="color:#6b6b6b;font-size:14px;margin-bottom:6px">${copy.process}</div>
           <div style="background:#f7f4fb;border-right:4px solid #bf95f9;border-radius:8px;padding:12px 14px;color:#1d201f;font-size:15px;line-height:1.6;white-space:pre-wrap">${
             lead.process ? esc(lead.process) : NONE
           }</div>

@@ -3,15 +3,16 @@
     "name": "tomcohendev-portfolio",
     "account_id": "0190d74990bca0aacde75809935dc721",
     "compatibility_date": "2026-04-15",
-    // The Worker only runs for /api/*; everything else is served straight from ./dist.
+    // The Worker only runs for /api/* and /en/*; everything else is served straight from ./dist.
     "main": "./edge/index.ts",
     "assets": {
         "directory": "./dist",
         "binding": "ASSETS",
-        // Deep links such as /contact and /case-studies/* fall back to index.html.
-        // /automation is matched first by dist/automation.html (Hebrew metadata).
-        "not_found_handling": "single-page-application",
-        "run_worker_first": ["/api/*"]
+        // Every page is its own file, built by Astro from src/pages/ (dist/index.html, dist/mobile.html, ...).
+        // The English app is dist/en.html; the Worker serves it for its deep links (/en/services, ...).
+        // Old English URLs redirect to /en (public/_redirects). Anything else gets dist/404.html.
+        "not_found_handling": "404-page",
+        "run_worker_first": ["/api/*", "/en/*"]
     },
     "observability": {
         "enabled": true

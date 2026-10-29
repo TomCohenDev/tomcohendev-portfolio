@@ -1,0 +1,19 @@
+---
+import HebrewLayout from "../../layouts/HebrewLayout.astro";
+import NewsIssue, { DESCRIPTION } from "../../views/NewsIssue";
+import { issues, type Issue } from "../../lib/news";
+import { formatDate } from "../../lib/dates";
+
+// Every issue has its own page, which stays when the next issue takes over /news (the feed links these).
+export const getStaticPaths = () => issues.map((issue) => ({ params: { date: issue.date }, props: { issue } }));
+const { issue } = Astro.props as { issue: Issue };
+---
+
+<HebrewLayout
+  title={`חדשות הבוקר, ${formatDate(issue.date)} | תום כהן`}
+  description={DESCRIPTION}
+  path={`/news/${issue.date}`}
+  ogDescription={issue.stories.map((s) => s.headline).slice(0, 3).join(" · ")}
+>
+  <NewsIssue issue={issue} />
+</HebrewLayout>

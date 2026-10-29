@@ -1,0 +1,8 @@
+---
+import HebrewLayout from "../../layouts/HebrewLayout.astro";
+import AutomationPrivacy, { DESCRIPTION, TITLE } from "../../views/AutomationPrivacy";
+---
+
+<HebrewLayout title={`${TITLE} | תום כהן`} description={DESCRIPTION} path="/automation/privacy">
+  <AutomationPrivacy client:load />
+</HebrewLayout>

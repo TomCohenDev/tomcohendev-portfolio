@@ -1,0 +1,8 @@
+---
+import HebrewLayout from "../layouts/HebrewLayout.astro";
+import NotFoundHe, { DESCRIPTION, TITLE } from "../views/NotFoundHe";
+---
+
+<HebrewLayout title={TITLE} description={DESCRIPTION} path="/404" noindex>
+  <NotFoundHe />
+</HebrewLayout>
