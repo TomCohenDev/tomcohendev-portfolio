@@ -42,12 +42,24 @@ export const useMarquee = () => {
       track.style.transform = `translate3d(${offset}px, 0, 0)`;
     };
 
+    // Scrolled away, it does not glide, so the page scrolls without it taking a turn every frame.
+    let onScreen = true;
+    const seen = new IntersectionObserver(([entry]) => (onScreen = entry.isIntersecting), { rootMargin: "100px" });
+    seen.observe(viewport);
+
+    // Hold still while a card is open, so it doesn't slide away while someone reads it. Looking through every card
+    // is not free, so it looks a few times a second rather than every frame.
+    let holding = false;
+    let checked = 0;
+
     const tick = (now: number) => {
       const dt = Math.min(now - last, 64) / 1000;
       last = now;
-      // Hold still while a card is open, so it doesn't slide away while someone reads it.
-      const holding = !!viewport.querySelector('[aria-expanded="true"]') || !!viewport.querySelector(":focus-visible");
-      if (!reduced && !hovered && !drag && !holding && copyWidth > 0) {
+      if (onScreen && now - checked > 250) {
+        checked = now;
+        holding = !!viewport.querySelector('[aria-expanded="true"]') || !!viewport.querySelector(":focus-visible");
+      }
+      if (onScreen && !reduced && !hovered && !drag && !holding && copyWidth > 0) {
         offset = wrap(offset + SPEED * dt);
         paint();
       }
@@ -115,6 +127,7 @@ export const useMarquee = () => {
 
     return () => {
       cancelAnimationFrame(frame);
+      seen.disconnect();
       resize.disconnect();
       viewport.removeEventListener("pointerdown", onDown);
       viewport.removeEventListener("pointermove", onMove);

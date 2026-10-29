@@ -158,12 +158,17 @@ const useLoopScroll = (axis: "x" | "y", speed: number) => {
     };
     el.addEventListener("wheel", onWheel, { passive: false });
 
+    // Scrolled away, the list does not move, so the page scrolls without it taking a turn every frame.
+    let onScreen = true;
+    const io = new IntersectionObserver(([entry]) => (onScreen = entry.isIntersecting), { rootMargin: "100px" });
+    io.observe(el);
+
     let frame = 0;
     let last = performance.now();
     let carry = 0;
     const tick = (now: number) => {
       const resting = now - lastTouch.current < LOOP_REST_MS;
-      if (!reduced && !hover.current && !focus.current && !drag.current && !resting) {
+      if (onScreen && !reduced && !hover.current && !focus.current && !drag.current && !resting) {
         carry += (speed * (now - last)) / 1000;
         const step = Math.floor(carry);
         if (step) {
@@ -180,6 +185,7 @@ const useLoopScroll = (axis: "x" | "y", speed: number) => {
 
     return () => {
       cancelAnimationFrame(frame);
+      io.disconnect();
       el.removeEventListener("wheel", onWheel);
     };
   }, [axis, speed, reduced]);

@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useInView } from "@/lib/useInView";
 import { rect } from "./sketch/rough";
 import { PAPER, PEN, Patterns, SCENES, SketchProvider } from "./sketch/scenes";
 
@@ -18,18 +19,21 @@ const DynamicVisual: React.FC<DynamicVisualProps> = ({ currentSvgIndex, override
   const { w, h, r, Scene } = SCENES[index] ?? SCENES[0];
   const still = !!useReducedMotion();
   const uid = `dv${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
+  // Scrolled away, nothing here moves: the boil stops and the scene leaves (it draws itself in again on the way back).
+  const box = useRef<HTMLDivElement>(null);
+  const onScreen = useInView(box);
 
   // Line boil: a new noise seed about seven times a second.
   const noise = useRef<SVGFETurbulenceElement>(null);
   useEffect(() => {
-    if (still) return;
+    if (still || !onScreen) return;
     let seed = 1;
     const t = setInterval(() => {
       seed = (seed % 4) + 1;
       noise.current?.setAttribute("seed", String(seed));
     }, 140);
     return () => clearInterval(t);
-  }, [still]);
+  }, [still, onScreen]);
 
   // The frame is centered in a 480 by 400 canvas.
   const x = 240 - w / 2;
@@ -38,7 +42,9 @@ const DynamicVisual: React.FC<DynamicVisualProps> = ({ currentSvgIndex, override
   const morph = { duration: 0.85, ease: [0.34, 1.25, 0.5, 1] as [number, number, number, number] };
 
   return (
-    <div dir="ltr" className="flex h-full w-full items-center justify-center">
+    // Its own compositor layer: the filter repaints the drawing many times a second, and on a phone that must not
+    // repaint the page around it. Scrolling then only moves the layer.
+    <div ref={box} dir="ltr" className="flex h-full w-full items-center justify-center" style={{ willChange: "transform", contain: "layout" }}>
       <svg viewBox="0 0 480 400" aria-hidden="true" className="block h-auto max-h-full w-full max-w-[480px] overflow-visible">
         <defs>
           <Patterns uid={uid} />
@@ -79,13 +85,16 @@ const DynamicVisual: React.FC<DynamicVisualProps> = ({ currentSvgIndex, override
             strokeLinecap="round"
           />
           <SketchProvider value={{ uid, still }}>
-            <AnimatePresence mode="wait" initial={!still}>
-              <motion.g key={index} initial={{ opacity: 1 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: { duration: 0.22 } }}>
-                <g transform={`translate(${x} ${y})`}>
-                  <Scene />
-                </g>
-              </motion.g>
-            </AnimatePresence>
+            {/* Off screen the scene goes at once (no fade to wait for), so its loops stop. */}
+            {onScreen && (
+              <AnimatePresence mode="wait" initial={!still}>
+                <motion.g key={index} initial={{ opacity: 1 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: { duration: 0.22 } }}>
+                  <g transform={`translate(${x} ${y})`}>
+                    <Scene />
+                  </g>
+                </motion.g>
+              </AnimatePresence>
+            )}
           </SketchProvider>
         </g>
       </svg>

@@ -1,4 +1,4 @@
-import { useEffect, useId, useLayoutEffect, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import {
   ArrowLeft,
   BarChart3,
@@ -12,6 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import { track } from "@/lib/analytics";
+import { useInView } from "@/lib/useInView";
 import { usePrefersReducedMotion } from "./useReducedMotion";
 
 /**
@@ -133,6 +134,9 @@ export const AutomationHub = () => {
   const [touched, setTouched] = useState(false);
   const reduced = usePrefersReducedMotion();
   const uid = useId().replace(/:/g, "");
+  // Scrolled away, nothing here moves (the cycle, the dot and the flowing dashes), so a phone spends nothing on it.
+  const figure = useRef<HTMLElement>(null);
+  const onScreen = useInView(figure);
 
   // The chalk circle is visible by default. Its draw-in animation only starts once the browser
   // actually renders a frame, so renderers that never paint frames still show it.
@@ -144,10 +148,10 @@ export const AutomationHub = () => {
 
   // Cycle through the connections until the visitor picks one.
   useEffect(() => {
-    if (touched || reduced) return;
+    if (touched || reduced || !onScreen) return;
     const timer = setInterval(() => setActive((a) => (a + 1) % NODES.length), 2800);
     return () => clearInterval(timer);
-  }, [touched, reduced]);
+  }, [touched, reduced, onScreen]);
 
   const pick = (i: number) => {
     setTouched(true);
@@ -158,8 +162,9 @@ export const AutomationHub = () => {
   const current = layout[active];
 
   return (
-    <figure id="build" className="relative mx-auto w-full max-w-[640px]">
-      <div className="relative aspect-square">
+    <figure ref={figure} id="build" className={`relative mx-auto w-full max-w-[640px] ${onScreen ? "" : "is-offscreen"}`}>
+      {/* Its own compositor layer: the dot and the dashes repaint every frame, and that must not repaint the page. */}
+      <div className="relative aspect-square" style={{ willChange: "transform" }}>
         <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full overflow-visible" aria-hidden="true">
           <defs>
             <marker id={`${uid}-arrow`} viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto">
@@ -194,7 +199,7 @@ export const AutomationHub = () => {
               strokeLinecap="round"
             />
           ))}
-          {!reduced && (
+          {!reduced && onScreen && (
             <circle key={current.id} r="1.3" fill="var(--a-human)">
               <animateMotion dur="1.4s" repeatCount="indefinite" path={current.path} />
             </circle>

@@ -140,6 +140,12 @@ html:has(.automation-page) {
   }
 }
 
+/* Scrolled away (useInView adds the class), looping animations hold still, so a phone only animates what it shows. */
+.automation-page .is-offscreen,
+.automation-page .is-offscreen * {
+  animation-play-state: paused !important;
+}
+
 /* Dashes flowing along the active connector in the hero canvas. */
 .automation-page .a-flow {
   animation: a-flow 0.8s linear infinite;

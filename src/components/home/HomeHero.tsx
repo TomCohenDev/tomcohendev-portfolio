@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, Pause, Play } from "lucide-react";
 import DynamicVisual from "@/components/DynamicVisual";
 import { track } from "@/lib/analytics";
+import { useInView } from "@/lib/useInView";
 import { usePrefersReducedMotion } from "../automation/useReducedMotion";
 import { heroWords } from "./content";
 import { HandwrittenWord } from "./HandwrittenWord";
@@ -16,21 +17,25 @@ export const HomeHero = () => {
   const reduced = usePrefersReducedMotion();
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  // Scrolled away, the words stop changing, so a phone spends nothing on a hero no one sees.
+  const section = useRef<HTMLElement>(null);
+  const onScreen = useInView(section);
   const word = heroWords[index];
   const next = () => setIndex((i) => (i + 1) % heroWords.length);
 
   // A timer per word, so a click also restarts the count.
   useEffect(() => {
-    if (paused || reduced) return;
+    if (paused || reduced || !onScreen) return;
     const t = setTimeout(
       () => setIndex((i) => (i + 1) % heroWords.length),
       WORD_MS,
     );
     return () => clearTimeout(t);
-  }, [index, paused, reduced]);
+  }, [index, paused, reduced, onScreen]);
 
   return (
     <section
+      ref={section}
       aria-labelledby="hero-title"
       className="a-grid-bg relative overflow-hidden"
     >
