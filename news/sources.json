@@ -1,11 +1,15 @@
 {
-  "$comment": "Feeds the daily news reads (news/scripts/fetch.mjs). topic: mobile, ai or automation (what Tom offers), or business for Israeli tech news. Add a feed only after `npm run news:fetch` shows it answers.",
+  "$comment": "Feeds the daily news reads (news/scripts/fetch.mjs). topic: mobile, ai or automation (what Tom offers), security, business for Israeli tech news, research for studies on AI and automation at work, or releases for launch feeds of new tools and apps (they become releases, not stories). Add a feed only after `npm run news:fetch` shows it answers.",
   "sources": [
     { "name": "Flutter", "url": "https://medium.com/feed/flutter", "topic": "mobile" },
     { "name": "Dart", "url": "https://medium.com/feed/dartlang", "topic": "mobile" },
     { "name": "Android Developers", "url": "https://android-developers.googleblog.com/feeds/posts/default", "topic": "mobile" },
     { "name": "Apple Developer", "url": "https://developer.apple.com/news/rss/news.rss", "topic": "mobile" },
     { "name": "Firebase", "url": "https://firebase.blog/rss.xml", "topic": "mobile" },
+    { "name": "React Native", "url": "https://reactnative.dev/blog/rss.xml", "topic": "mobile" },
+    { "name": "Expo", "url": "https://expo.dev/changelog/rss.xml", "topic": "mobile" },
+    { "name": "Supabase", "url": "https://supabase.com/rss.xml", "topic": "mobile" },
+    { "name": "Code With Andrea", "url": "https://codewithandrea.com/rss.xml", "topic": "mobile" },
     { "name": "OpenAI", "url": "https://openai.com/news/rss.xml", "topic": "ai" },
     { "name": "Google AI", "url": "https://blog.google/technology/ai/rss/", "topic": "ai" },
     { "name": "Google DeepMind", "url": "https://deepmind.google/blog/rss.xml", "topic": "ai" },
@@ -19,6 +23,18 @@
     { "name": "Zapier", "url": "https://zapier.com/blog/feeds/latest/", "topic": "automation" },
     { "name": "Google Workspace Updates", "url": "https://workspaceupdates.googleblog.com/feeds/posts/default", "topic": "automation" },
     { "name": "Meta for Developers", "url": "https://developers.facebook.com/blog/feed/", "topic": "automation" },
-    { "name": "Geektime", "url": "https://www.geektime.co.il/feed/", "topic": "business" }
+    { "name": "Power Automate", "url": "https://www.microsoft.com/en-us/power-platform/blog/power-automate/feed/", "topic": "automation" },
+    { "name": "UiPath", "url": "https://www.uipath.com/blog/rss.xml", "topic": "automation" },
+    { "name": "Make community", "url": "https://community.make.com/latest.rss", "topic": "automation" },
+    { "name": "Twilio", "url": "https://www.twilio.com/en-us/blog/feed", "topic": "automation" },
+    { "name": "The Hacker News", "url": "https://feeds.feedburner.com/TheHackersNews", "topic": "security" },
+    { "name": "Geektime", "url": "https://www.geektime.co.il/feed/", "topic": "business" },
+    { "name": "MIT Sloan Management Review", "url": "https://sloanreview.mit.edu/feed/", "topic": "research" },
+    { "name": "One Useful Thing", "url": "https://www.oneusefulthing.org/feed", "topic": "research" },
+    { "name": "Import AI", "url": "https://importai.substack.com/feed", "topic": "research" },
+    { "name": "Product Hunt", "url": "https://www.producthunt.com/feed", "topic": "releases" },
+    { "name": "BetaList", "url": "https://feeds.feedburner.com/BetaList", "topic": "releases" },
+    { "name": "Show HN", "url": "https://hnrss.org/show?points=100", "topic": "releases" },
+    { "name": "Launch HN", "url": "https://hnrss.org/launches", "topic": "releases" }
   ]
 }

@@ -2,7 +2,7 @@ import { LegalPage, LegalSection } from "@/components/automation/Legal";
 import { CONTACT } from "@/components/automation/content";
 
 const HOME_SECTIONS = [
-  { href: "/", label: "פתיחה: אני בונה אפליקציות ואוטומציות" },
+  { href: "/", label: "פתיחה: חדשות, מדריכים וכלים למפתחים" },
   { href: "/#services", label: "השירותים שלי" },
   { href: "/#work", label: "עבודות והמלצות" },
   { href: "/#about", label: "קצת עליי" },

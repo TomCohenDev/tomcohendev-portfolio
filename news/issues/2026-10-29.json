@@ -10,6 +10,10 @@
       "source": {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2026/10/Blog_ConnectedApps_1027_2.width-2200.format-webp.webp?resize=1200,675",
+        "alt": "שני מסכים: חיפוש של גוגל שבודק אפליקציות מחוברות, ו־Gemini שמציג כרטיס להזמנת מקום במסעדה."
       }
     },
     {
@@ -21,6 +25,10 @@
       "source": {
         "name": "Geektime",
         "url": "https://www.geektime.co.il/ai-tokenizer-tax-cost-llm-hebrew/"
+      },
+      "image": {
+        "url": "https://cdn.geektime.co.il/wp-content/uploads/2026/10/CLAUDE-AI-GEMINI-CHATGPT.jpg",
+        "alt": "טלפון על מקלדת, עם האייקונים של Claude, ChatGPT ו־Gemini."
       }
     },
     {
@@ -43,6 +51,10 @@
       "source": {
         "name": "Apple Developer",
         "url": "https://developer.apple.com/news/?id=i9boeiqc"
+      },
+      "image": {
+        "url": "https://developer.apple.com/news/images/og/mbpt-og.jpg",
+        "alt": "MacBook Pro פתוח על רקע שחור."
       }
     },
     {
@@ -54,6 +66,10 @@
       "source": {
         "name": "The Verge",
         "url": "https://www.theverge.com/tech/1020626/chrome-enhanced-autofill-gmail-forms-gemini-personal-intelligence"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/chrome.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+        "alt": "טופס צ׳ק־אין לטיסה ב־Chrome, עם קוד הזמנה שהוצע על ידי Gemini מתוך Gmail."
       }
     },
     {
@@ -65,7 +81,242 @@
       "source": {
         "name": "Google",
         "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_carbon_102726_social_share.width-1300.png",
+        "alt": "הלוגו של Gemini 4 Carbon על רקע כחול."
       }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "cisco-asa-vpn-flaw",
+      "topic": "security",
+      "text": "Cisco תיקנה פרצה בחומות האש ASA ו־FTD שכבר מנוצלת בתקיפות: אפשר להפיל איתה את המכשיר מרחוק דרך שירות ה־VPN. כדאי לעדכן.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKqTkl_DfXdrvaLinBOu5OU0NISVo_mPJfqRmnHL-m8efFXEijbxOVsFgrSPparCspKfoUtxDtfA7gu8myFTfvWCFJfse3BQakKGOZCA54pWh371KyXdluHyqjckIBFjZ36Ogv1EI42yDCO2dt02noigEyL2RKJ8lEivH3PCWJURryc1JtNO9djpeW88tJ/s1600/cisco-flaws.jpg",
+        "alt": "נתב של Cisco עם כבל רשת אדום, ומאחוריו עמוד ההתראה של Cisco על הפרצה."
+      }
+    },
+    {
+      "id": "ms-authenticator-android",
+      "topic": "security",
+      "text": "באג ב־Microsoft Authenticator לאנדרואיד איפשר לאפליקציה זדונית לקבל גישה לחשבון העבודה. התיקון בגרסה 6.2606.4246, ולא ידוע על ניצול בתקיפות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/10/microsoft-authenticator-flaw-let.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqk63DF3MJCMgQqpg91UsWY7mjACbBgPl50GfKwDPi7v3md6sP5l8a2BUqHABjgMN_6BzgcMx4vVKW4hR9B9pz8_XHqp5ctKqQQLw-RJwuKmVWm2MaSzEMkHIsV-Yi0V6Mq_gUYYuzTpi-BzV2-8dRVYBjtuW4nb9TbobkPwvOGTkIFTpr334JB_LZIkw/s1600/msms.jpg",
+        "alt": "איור של טלפון עם Microsoft Authenticator, לצד אייקונים של Teams, Outlook ו־OneDrive."
+      }
+    },
+    {
+      "id": "adobe-commerce-polyshell",
+      "topic": "security",
+      "text": "תוקפים ניצלו פרצה ב־Adobe Commerce וב־Magento בשם PolyShell ופרצו למאות חנויות אונליין. סוכנות הסייבר האמריקאית CISA סימנה אותה כמנוצלת.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/10/adobe-commerce-polyshell-attacks-breach.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1vdoV4q9cDhhxBpH2lDPkUPc4WTkuwSmH93IS6MDM8fSYR4ZsKEakfK54cvOjHMFYGJA7Hri87MShqbPweb0BNmEXEsKJErbferZyq7_m7XdHLrb2bgmps_Bs_nu_w7RCiade8PPKSYv6NpxnWTG8pJD5CIUvI2E_cfWMqNBFTl4MXm2WKZaqL_T0DaO-/s1600/cisa-warning.jpg",
+        "alt": "איור: הסמל של CISA, משולש אזהרה וחלונות של חנויות אונליין."
+      }
+    },
+    {
+      "id": "ios-18-backport",
+      "topic": "security",
+      "text": "אפל הוציאה את iOS 18.7.11 לאייפונים ישנים, כולל iPhone XS ו־XR, עם תיקון לפרצה שנוצלה בתקיפות ממוקדות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/10/apple-backports-fix-for-exploited.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqZx9ghfLBFufN5Q4s1dq2U1rXwenlfzU7UsqQfLWn3AEUe5CX3krGuvC6DM4mF2T9MmscvntBNxmgU7UjNOnfJQteKvuAs-4Nq0vJ3TnTkuFy1TRO3ibdh2Ekqi_WqiInvPkXjYlnvrCuYb5mb8neOOqBbmf_034wh8MPOLPKW2Nvvezpb2LFNXPbeUa6/s1600/apple-patch.jpg",
+        "alt": "הלוגו של אפל בנוי משורות קוד צבעוניות על רקע כהה."
+      }
+    },
+    {
+      "id": "github-npm-firewall",
+      "topic": "security",
+      "text": "GitHub משיקה בתצוגה מקדימה חומת אש ל־npm שחוסמת חבילות חשודות לפני ההתקנה. זמין ללקוחות GitHub Enterprise Cloud.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/10/github-launches-npm-firewall-to-block.html"
+      }
+    },
+    {
+      "id": "android-registered-stores",
+      "topic": "mobile",
+      "text": "מ־1 בדצמבר, חנויות אפליקציות חלופיות שגוגל אישרה יוכלו להתקין אפליקציות באנדרואיד בלחיצה אחת. מחוץ לארה\"ב, ב־Android 17 QPR2 ומעלה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/10/google-to-allow-one-tap-android-app.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJGjoQXY31UWoQz0bfvFTDRKy4lDpdbhqOJFgOspdG5AcGZNlsme3byg1-XnmyLsx7HQrxb0iojoqyoeO0KDhEDWbLxzQLceuQwSlD8TXgkhzoRCyFepV0PcOwNee4lCypBnYFiZ4DhJ_ZojQ0HyRuCGGqFVAwBxMqdzkOHL2I1tLTUctLATvKl7MMONo/s1600/android-app-install.jpg",
+        "alt": "איור מנייר של טלפון אנדרואיד עם כפתור התקנה ירוק."
+      }
+    },
+    {
+      "id": "android-studio-agents",
+      "topic": "mobile",
+      "text": "Android Studio Rabbit 2 יצאה בגרסה יציבה: אפשר לעבוד בה עם יותר מ־40 סוכני קוד, כולל Claude Agent ו־Codex.",
+      "source": {
+        "name": "Android Developers",
+        "url": "https://developer.android.com/blog/posts/ai-agents-android-studio-integration"
+      }
+    },
+    {
+      "id": "n8n-3-beta",
+      "topic": "automation",
+      "text": "n8n 3.0 יצאה בבטא, עם שינויים שעלולים לשבור תהליכים קיימים. הגרסה היציבה בתחילת דצמבר, ודוח מעבר בתוך n8n מראה מה צריך לתקן.",
+      "source": {
+        "name": "n8n",
+        "url": "https://blog.n8n.io/introducing-n8n-v3/"
+      },
+      "image": {
+        "url": "https://storage.ghost.io/c/0d/78/0d78b34c-0c5f-4975-900e-61d00ccb1c2d/content/images/size/w1200/2026/10/announcing-n8n-3-0-v7.png",
+        "alt": "הכרזה על n8n 3.0 בבטא, עם ארבעה אייקונים מחוברים בשורה."
+      }
+    },
+    {
+      "id": "anthropic-spend-reports",
+      "topic": "ai",
+      "text": "Anthropic השיקה דוחות שמראים למנהלים מה כל צוות הפיק מ־Claude, כמה זה עלה ואיפה העבודה נתקעה, וגם תקציבים משותפים לצוותים.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/"
+      }
+    },
+    {
+      "id": "nemotron-transcribe",
+      "topic": "ai",
+      "text": "NVIDIA שחררה את Nemotron 3.5 Transcribe, מודל פתוח לתמלול ב־40 שפות, שמזהה עד 8 דוברים בהקלטות של עד שעה.",
+      "source": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary"
+      }
+    },
+    {
+      "id": "israel-internet-reform",
+      "topic": "business",
+      "text": "משרד התקשורת מתכנן רפורמה שתקל על מעבר בין ספקיות אינטרנט ביתי, וטוען שהיא תוזיל את החבילות בעשרות שקלים.",
+      "source": {
+        "name": "Geektime",
+        "url": "https://www.geektime.co.il/ministry-of-communications-internet-price-reform/"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "ifttt-ai",
+      "name": "IFTTT.ai",
+      "text": "מחברים אפליקציות, מכשירים ושירותים ומתארים במילים מה לאטמט, ו־IFTTT בונה את התהליך מעל יותר מ־1,000 שירותים.",
+      "source": {
+        "name": "Product Hunt",
+        "url": "https://www.producthunt.com/products/ifttt"
+      },
+      "icon": "https://web-assets.ifttt.com/builds/assets/apple-touch-icon-ifttt-ai-180-D1OvLiQk.png"
+    },
+    {
+      "id": "floot-chat",
+      "name": "Floot",
+      "text": "בונים אפליקציה מלאה מתוך Claude או ChatGPT, עם מסד נתונים, התחברות משתמשים וכתובת חיה, ומפרסמים גם ל־iOS ולאנדרואיד.",
+      "source": {
+        "name": "Product Hunt",
+        "url": "https://www.producthunt.com/products/floot"
+      },
+      "image": {
+        "url": "https://ph-files.imgix.net/5b951486-a972-41d7-82dd-059d2cfa1f92.jpeg?auto=format&fit=crop&frame=1&h=512&w=1024",
+        "alt": "Floot מופיע כפריט בסרגל הצד של ChatGPT."
+      },
+      "icon": "https://ph-files.imgix.net/b66f0961-7df0-4d63-82a4-b29d8084afdb.png?auto=format&fit=crop&h=128&w=128"
+    },
+    {
+      "id": "dedica",
+      "name": "Dedica",
+      "text": "בודק אם סוכני AI מצליחים להשתמש באתר שלכם: מריץ 125 בדיקות בחינם ונותן תיקון לכל מקום שבו הם נתקעים.",
+      "source": {
+        "name": "Product Hunt",
+        "url": "https://www.producthunt.com/products/dedica"
+      },
+      "image": {
+        "url": "https://ph-files.imgix.net/ed03a882-452a-4a0d-be4f-2ba40db4c136.jpeg?auto=format&fit=crop&frame=1&h=512&w=1024",
+        "alt": "סוכן AI שמנסה להירשם לאתר ונחסם, עם רשימת הבדיקות שעברו ונכשלו."
+      },
+      "icon": "https://ph-files.imgix.net/24b5e1d7-6f8e-4c22-8a74-b351fb8f11ac.png?auto=format&fit=crop&h=128&w=128"
+    },
+    {
+      "id": "storelocale",
+      "name": "StoreLocale",
+      "text": "מתרגם את הטקסט שבתוך צילומי המסך של האפליקציה ב־App Store וב־Google Play ל־32 שפות, בלי לשבור את העיצוב.",
+      "source": {
+        "name": "Product Hunt",
+        "url": "https://www.producthunt.com/products/storelocale"
+      },
+      "image": {
+        "url": "https://ph-files.imgix.net/eae999d8-6964-4eb7-a045-5069b4aafc1c.png?auto=format&fit=crop&frame=1&h=512&w=1024",
+        "alt": "שני טלפונים עם צילומי מסך של אפליקציה, לפני ואחרי תרגום."
+      },
+      "icon": "https://ph-files.imgix.net/b1f79976-6af3-4bb0-85a6-7ed61c5b2f18.png?auto=format&fit=crop&h=128&w=128"
+    },
+    {
+      "id": "assemblyai-tts",
+      "name": "AssemblyAI",
+      "text": "חברת התמלול AssemblyAI משיקה המרת טקסט לדיבור שנבנתה לסוכני קול.",
+      "source": {
+        "name": "Product Hunt",
+        "url": "https://www.producthunt.com/products/assemblyai"
+      },
+      "image": {
+        "url": "https://ph-files.imgix.net/74ffb147-9850-43b0-a51f-0f451a81344d.jpeg?auto=format&fit=crop&frame=1&h=512&w=1024",
+        "alt": "הכרזה על AssemblyAI-TTS-1, עם עיגולים שמייצגים קולות שונים."
+      },
+      "icon": "https://ph-files.imgix.net/54d3520f-fc13-4bec-9491-ae0325b4c3b1.png?auto=format&fit=crop&h=128&w=128"
+    },
+    {
+      "id": "heydeer",
+      "name": "HeyDeer",
+      "text": "סקירת קוד אוטומטית עם AI לכל Pull Request ב־GitHub, במחיר נמוך.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/heydeer"
+      },
+      "icon": "https://heydeer.ai/apple-icon.png?apple-icon.2tl67v07iyy2i.png"
+    },
+    {
+      "id": "pdf-to-sheets",
+      "name": "Convert PDF to Google Sheets",
+      "text": "תוסף ל־Google Sheets ששולף טבלאות מקובצי PDF ומתמונות ישר לגיליון.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/convert-pdf-to-google-sheets"
+      },
+      "image": {
+        "url": "https://resize.imagekit.co/rzNtVP7BC1R0ebEHxs80oRdj1JTCCk7SIDh3SnHueNM/plain/s3://betalist-production/nn79qf7rzwqfoi0gf9478sdqvqkk",
+        "alt": "טבלה מקובץ PDF שעוברת לגיליון ב־Google Sheets."
+      },
+      "icon": "https://resize.imagekit.co/kqFe573B8rCmGNRpNzk7hBGH-4yGIX5-njN1q8jspWY/s:40:40/dpr:2/plain/s3://betalist-production/fr2fq86whb12w6yj878038yny1rl"
+    },
+    {
+      "id": "rotely",
+      "name": "Rotely",
+      "text": "ספירת מלאי לברים: הספירה השבועית מגיעה ממולאת מראש, וההזמנה מהספקים כבר מנוסחת.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/rotely"
+      },
+      "image": {
+        "url": "https://resize.imagekit.co/xceEgtpKwsD0SNLT7vh4UGUqOsp-IA-QEJW0Ri9Jf7U/plain/s3://betalist-production/rxei45lfezc0kgp5ks733gy2b4gi",
+        "alt": "מסך ספירת מלאי של בקבוקים מאחורי הבר, עם כמות ליד כל בקבוק."
+      },
+      "icon": "https://rotely.co/assets/icon-180.png"
     }
   ]
 }

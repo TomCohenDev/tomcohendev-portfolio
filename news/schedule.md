@@ -11,11 +11,12 @@ Its prompt says which checkout and branch to use; do everything in that checkout
 2. **Fetch.** Run `node news/scripts/fetch.mjs`. It writes `news/desk/<date>/items.json` and prints which feeds failed.
    If every feed failed it exits with 1: stop and report.
 3. **Choose.** Read `news/skill/SKILL.md`, then `news/desk/<date>/items.json` and the issues of the last 7 days in `news/issues/`.
-   Choose 4 to 6 stories by the rules in SKILL.md. Open the source page of every story you choose and write from it, not from the feed text.
+   Choose 4 to 6 stories, up to 12 flashes and up to 12 releases by the rules in SKILL.md. Open the source page of everything you choose
+   and write from it, not from the feed text.
    You may add up to 2 stories you found by web search, each with its real source URL.
 4. **Write** `news/desk/<date>/picks.json` in the format in SKILL.md.
 5. **Check.** Run `node news/scripts/publish.mjs`. When it lists problems, fix them in `picks.json` and run it again.
-   A story whose source does not answer is dropped or replaced. If fewer than 3 good stories are left, stop: nothing is published, report why.
+   A story or flash whose source does not answer is dropped or replaced. If fewer than 3 good stories are left, stop: nothing is published, report why.
 6. **Build.** If `node_modules` is missing, run `npm ci`. Then `npm run build` and `node scripts/check-site.mjs`.
    If either fails, do not commit: run `git checkout -- news/issues` and report the error.
 7. **Publish.** Commit only the issue file and push:

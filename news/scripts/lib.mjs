@@ -17,6 +17,6 @@ export const readIssues = () =>
         .map((f) => JSON.parse(readFileSync(join(ISSUES, f), "utf8")))
     : [];
 
-/** Source URLs of every story already published, so no story appears twice. */
+/** Source URLs of every story, flash and release already published, so nothing appears twice. */
 export const coveredUrls = (except) =>
-  new Set(readIssues().filter((i) => i.date !== except).flatMap((i) => i.stories.map((s) => s.source.url)));
+  new Set(readIssues().filter((i) => i.date !== except).flatMap((i) => [...i.stories, ...(i.flashes || []), ...(i.releases || [])].map((s) => s.source.url)));

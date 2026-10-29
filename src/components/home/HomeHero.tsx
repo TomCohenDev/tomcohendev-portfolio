@@ -9,7 +9,7 @@ import { HandwrittenWord } from "./HandwrittenWord";
 const WORD_MS = 4500;
 
 /**
- * "אני בונה ___": the word writes itself by hand and the drawing next to it changes with it,
+ * "חדשות, מדריכים וכלים למפתחים", and beside it a word that writes itself by hand above a drawing that changes with it,
  * as in the English hero. Clicking the word or the drawing moves on; the button stops the cycle.
  */
 export const HomeHero = () => {
@@ -36,63 +36,69 @@ export const HomeHero = () => {
     >
       <div className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)] items-center gap-10 px-5 pb-20 pt-12 md:px-8 md:pt-16 lg:grid-cols-[1.15fr_1fr] lg:gap-12 lg:pb-16 lg:pt-14 xl:px-12">
         <div>
-          <p className="a-hand text-[22px] text-[var(--a-accent)]">
-            תום כהן · פיתוח <bdi>Fullstack</bdi>, אוטומציה ו-<bdi>AI</bdi>
+          <p className="a-hand text-[26px] text-[var(--a-accent)]">
+            תום כהן · פיתוח <bdi>Fullstack</bdi> · אוטומציה · <bdi>AI</bdi>
           </p>
-          <p className="mb-3 text-sm text-[var(--a-muted)] md:text-base">חדשות, מדריכים וכלים למפתחים</p>
           <h1
             id="hero-title"
-            className="text-[clamp(2.3rem,6vw,4.2rem)] font-medium leading-[1.1] text-[var(--a-ink)]"
+            className="text-[clamp(2.6rem,6.8vw,4.8rem)] font-medium leading-[1.1] text-[var(--a-ink)]"
           >
-            אני בונה
-            <span className="sr-only">
-              {" "}
-              אפליקציות, אוטומציות ומערכות לעסקים
-            </span>
+            חדשות, מדריכים וכלים למפתחים
           </h1>
-          {/* Mouse users can click the word to move on; the pause button below is the keyboard control. */}
-          <div
-            onClick={next}
-            className="mt-1 flex h-[clamp(5.5rem,13vw,9.5rem)] cursor-pointer items-center justify-center text-[var(--a-accent)] lg:justify-start"
-          >
-            <HandwrittenWord
-              text={word.text}
-              still={reduced}
-              className="text-[clamp(3.2rem,11vw,7rem)] leading-[1.25]"
-            />
-          </div>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--a-muted)] md:text-xl">
-            אפליקציות לאייפון ולאנדרואיד, ואוטומציות שחוסכות לעסק עבודה ידנית.
-            מהאפיון, דרך הקוד, ועד שזה עובד אצלכם ביום־יום.
+          <p className="mt-5 max-w-2xl text-pretty text-xl leading-relaxed text-[var(--a-muted)] md:text-2xl">
+            אני כותב על מה שאני עושה ביום יום: פיתוח <bdi>Fullstack</bdi>,
+            אפליקציות, אוטומציה ו-<bdi>AI</bdi>. חדשות, מדריכים מהשטח
+            וכלים שחוסכים זמן.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
-              href="/mobile"
+              href="/news"
               onClick={() =>
-                track("home_cta_click", { location: "hero", target: "mobile" })
-              }
-              className="a-btn a-btn-solid"
-            >
-              פיתוח אפליקציות
-              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-            </a>
-            <a
-              href="/automation"
-              onClick={() =>
-                track("home_cta_click", {
-                  location: "hero",
-                  target: "automation",
-                })
+                track("home_cta_click", { location: "hero", target: "news" })
               }
               className="a-btn a-btn-ghost"
             >
-              אוטומציה לעסקים
+              חדשות
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            </a>
+            <a
+              href="/blog"
+              onClick={() =>
+                track("home_cta_click", { location: "hero", target: "blog" })
+              }
+              className="a-btn a-btn-ghost"
+            >
+              בלוג
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            </a>
+            <a
+              href="#services"
+              onClick={() =>
+                track("home_cta_click", {
+                  location: "hero",
+                  target: "services",
+                })
+              }
+              className="a-btn a-btn-solid"
+            >
+              מחפשים פתרון לעסק?
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
         </div>
 
         <div className="flex flex-col items-center gap-3">
+          {/* The word sits above the drawing it goes with. Mouse users can click either to move on. */}
+          <div
+            onClick={next}
+            className="flex h-[clamp(3.5rem,7.5vw,5.5rem)] w-full cursor-pointer items-center justify-center text-[var(--a-accent)]"
+          >
+            <HandwrittenWord
+              text={word.text}
+              still={reduced}
+              className="text-[clamp(2.2rem,6vw,4rem)] leading-[1.25]"
+            />
+          </div>
           <div
             aria-hidden="true"
             onClick={next}
