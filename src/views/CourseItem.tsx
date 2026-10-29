@@ -1,6 +1,6 @@
 import { ArrowRight, CalendarDays, Check, Clock, MapPin, MessageCircle, Ticket } from "lucide-react";
 import { ContentPage, Tag } from "@/components/content/ContentPage";
-import { courseTypes, formatDay, type Course } from "@/components/content/mock";
+import { courseTypes, DEMO, formatDay, type Course } from "@/components/content/mock";
 import { Leaf } from "./CoursesIndex";
 
 const whatsapp = (course: Course) =>
@@ -17,7 +17,7 @@ const CourseItem = ({ course }: { course: Course }) => {
   ];
 
   return (
-    <ContentPage>
+    <ContentPage demo={DEMO}>
       <header className="a-grid-bg border-b border-[var(--a-line)]">
         <div className="mx-auto max-w-6xl px-5 pb-12 pt-10 md:px-8 md:pt-14">
           <a href="/courses" className="inline-flex items-center gap-1.5 text-[15px] text-[var(--a-muted)] hover:text-[var(--a-accent)]">

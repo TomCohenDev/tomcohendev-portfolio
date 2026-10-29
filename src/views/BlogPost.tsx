@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight, Lightbulb } from "lucide-react";
 import { ContentPage, Tag } from "@/components/content/ContentPage";
 import { PostCover } from "@/components/content/PostCover";
-import { formatDate, posts, type Block, type Post } from "@/components/content/mock";
+import { DEMO, formatDate, posts, type Block, type Post } from "@/components/content/mock";
 
 const BlockView = ({ block }: { block: Block }) => {
   switch (block.type) {
@@ -42,7 +42,7 @@ const BlogPost = ({ post }: { post: Post }) => {
   const related = posts.filter((p) => p.slug !== post.slug && p.tags.some((t) => post.tags.includes(t))).slice(0, 2);
 
   return (
-    <ContentPage>
+    <ContentPage demo={DEMO}>
       <article>
         <header className="a-grid-bg border-b border-[var(--a-line)]">
           <div className="mx-auto max-w-3xl px-5 pb-12 pt-10 md:px-8 md:pt-14">

@@ -1,7 +1,7 @@
 /**
- * Demo content for the blog, news and courses mockups. Nothing here is real: the posts, stories, sources and
- * dates only show how the pages will look. Phases 4 to 6 replace this file with content files
- * (src/content/blog, news/issues, src/content/courses). Every page that uses it shows the demo banner.
+ * Demo content for the blog and courses mockups. Nothing here is real: the posts, meetings and dates only show
+ * how the pages will look. Phases 4 and 6 replace this file with content files (src/content/blog,
+ * src/content/courses). Every page that uses it shows the demo banner. The news is real: src/lib/news.ts.
  */
 
 export const DEMO = true;
@@ -186,152 +186,6 @@ export const posts: Post[] = [
 export const postBySlug = (slug: string) => posts.find((p) => p.slug === slug);
 export const blogTags = [...new Set(posts.flatMap((p) => p.tags))];
 
-// ---------------------------------------------------------------------------------------------- news
-
-export type Story = {
-  id: string;
-  topic: string;
-  headline: string;
-  summary: string;
-  forBusiness: string;
-  source: { name: string; url: string };
-  /** The earlier story this one continues: issue date and story id. */
-  continues?: { date: string; id: string; headline: string };
-};
-
-export type Issue = {
-  date: string;
-  /** Tom's own update of the day, shown on top. */
-  update?: { title: string; text: string; href?: string };
-  stories: Story[];
-};
-
-const demoSource = (path: string) => ({ name: "מקור לדוגמה", url: `https://example.com/${path}` });
-
-export const issues: Issue[] = [
-  {
-    date: "2026-10-29",
-    update: {
-      title: "מתום: פוסט חדש בבלוג",
-      text: "כתבתי על ארבע השאלות שכדאי לשאול לפני שמחליטים בין אפליקציה לאתר.",
-      href: "/blog/app-or-website",
-    },
-    stories: [
-      {
-        id: "ai-memory",
-        topic: "AI",
-        headline: "עוזרי ה־AI זוכרים יותר: שיחות ארוכות בלי להתחיל מההתחלה",
-        summary:
-          "כמה מהעוזרים המוכרים הרחיבו את הזיכרון בין שיחות. העוזר יכול לזכור הקשר מפרויקט קודם, וגם למחוק אותו לפי בקשה.",
-        forBusiness: "אפשר לתת לעוזר את הנהלים של העסק פעם אחת, במקום להדביק אותם בכל שיחה. כדאי לבדוק מה נשמר ואיפה.",
-        source: demoSource("ai-memory"),
-        continues: { date: "2026-10-27", id: "ai-agents-office", headline: "סוכני AI נכנסים לכלי המשרד" },
-      },
-      {
-        id: "payments-links",
-        topic: "תשלומים",
-        headline: "קישורי תשלום בוואטסאפ הופכים לנפוצים יותר בעסקים קטנים",
-        summary: "יותר ספקי סליקה מאפשרים לשלוח קישור תשלום ישירות בצ׳אט. הלקוח משלם בלי להיכנס לאתר.",
-        forBusiness: "אם אתם שולחים היום מספר חשבון ומחכים להעברה, זה המקום הראשון לקצר את הדרך לתשלום.",
-        source: demoSource("payment-links"),
-      },
-      {
-        id: "store-rules",
-        topic: "אפליקציות",
-        headline: "החנויות מעדכנות את הדרישות לגבי מחיקת חשבון מתוך האפליקציה",
-        summary: "אפליקציות שיש בהן הרשמה צריכות לתת דרך ברורה למחוק את החשבון. אפליקציות בלי האפשרות עלולות להידחות בעדכון הבא.",
-        forBusiness: "אם יש לכם אפליקציה עם התחברות, כדאי לבדוק שהכפתור קיים לפני העדכון הבא.",
-        source: demoSource("store-rules"),
-      },
-      {
-        id: "phishing",
-        topic: "אבטחה",
-        headline: "גל הודעות מתחזות לחברות שליחויות",
-        summary: "הודעות SMS עם קישור ל\"תשלום מכס\" נשלחות שוב. הקישורים מובילים לאתרים שמבקשים פרטי אשראי.",
-        forBusiness: "שווה להזכיר לצוות: לא משלמים דרך קישור מהודעה, נכנסים לאתר החברה ישירות.",
-        source: demoSource("phishing"),
-      },
-      {
-        id: "sheets-ai",
-        topic: "כלים",
-        headline: "גיליונות אלקטרוניים מקבלים פקודות בשפה רגילה",
-        summary: "כלי הגיליונות הגדולים מאפשרים לכתוב \"סכם לי את המכירות לפי חודש\" ולקבל טבלה. הנוסחה עדיין נשארת גלויה לבדיקה.",
-        forBusiness: "דוחות שלקחו שעה יכולים לקחת דקה. רק לבדוק את הנוסחה לפני ששולחים הלאה.",
-        source: demoSource("sheets-ai"),
-      },
-    ],
-  },
-  {
-    date: "2026-10-28",
-    stories: [
-      {
-        id: "invoices",
-        topic: "כספים",
-        headline: "חשבוניות דיגיטליות: עוד מערכות מתחברות אוטומטית להנהלת החשבונות",
-        summary: "תוכנות הנהלת חשבונות מוסיפות חיבורים לחנויות אונליין. כל מכירה יוצרת חשבונית בלי הקלדה.",
-        forBusiness: "אם אתם מקלידים מכירות ידנית, בדקו אם התוכנה שלכם כבר יודעת להתחבר.",
-        source: demoSource("invoices"),
-      },
-      {
-        id: "maps-reviews",
-        topic: "שיווק",
-        headline: "ביקורות במפות: תשובה מהירה של העסק משפיעה על הדירוג",
-        summary: "פלטפורמות המפות מדגישות עסקים שעונים לביקורות. תשובה קצרה ואישית עדיפה על תבנית.",
-        forBusiness: "הקדישו עשר דקות בשבוע לתשובות. אפשר גם לקבל התראה על כל ביקורת חדשה.",
-        source: demoSource("maps-reviews"),
-      },
-      {
-        id: "voice-notes",
-        topic: "AI",
-        headline: "תמלול הודעות קוליות בעברית משתפר",
-        summary: "כלי התמלול מתמודדים טוב יותר עם עברית מדוברת וסלנג. הודעה קולית ארוכה הופכת לטקסט קצר לקריאה.",
-        forBusiness: "לקוחות ששולחים הודעות קוליות יכולים לקבל מענה מהיר יותר, גם כשאין זמן להקשיב.",
-        source: demoSource("voice-notes"),
-      },
-      {
-        id: "passkeys",
-        topic: "אבטחה",
-        headline: "יותר אתרים עוברים לכניסה עם מפתח גישה במקום סיסמה",
-        summary: "מפתחות גישה מאפשרים להתחבר עם טביעת אצבע או זיהוי פנים. אין סיסמה שאפשר לגנוב.",
-        forBusiness: "אם יש לכם אזור לקוחות, זו דרך לצמצם פניות של \"שכחתי סיסמה\".",
-        source: demoSource("passkeys"),
-      },
-    ],
-  },
-  {
-    date: "2026-10-27",
-    stories: [
-      {
-        id: "ai-agents-office",
-        topic: "AI",
-        headline: "סוכני AI נכנסים לכלי המשרד",
-        summary: "כלי המייל והמסמכים מוסיפים סוכנים שמבצעים משימות של כמה שלבים. הם מבקשים אישור לפני פעולות חשובות.",
-        forBusiness: "התחילו ממשימה אחת שחוזרת, כמו מיון מיילים, ובדקו את התוצאה שבוע לפני שמרחיבים.",
-        source: demoSource("ai-agents-office"),
-      },
-      {
-        id: "delivery-api",
-        topic: "לוגיסטיקה",
-        headline: "חברות השליחויות פותחות חיבור ישיר לחנויות",
-        summary: "חנויות יכולות להזמין שליח ולקבל מספר מעקב ישירות מהמערכת. הלקוח מקבל עדכון בלי שמישהו ישלח אותו.",
-        forBusiness: "פחות טלפונים של \"איפה ההזמנה שלי\", וכל המשלוחים במקום אחד.",
-        source: demoSource("delivery-api"),
-      },
-      {
-        id: "pwa",
-        topic: "אפליקציות",
-        headline: "אתרים שמתנהגים כמו אפליקציה מקבלים יותר יכולות באייפון",
-        summary: "דפדפנים בנייד תומכים ביותר יכולות של אפליקציה, כמו התראות. ההבדל בין אתר לאפליקציה מצטמצם.",
-        forBusiness: "לפני שבונים אפליקציה, שווה לבדוק אם אתר כזה מספיק לשלב הראשון.",
-        source: demoSource("pwa"),
-      },
-    ],
-  },
-];
-
-export const issueByDate = (date: string) => issues.find((i) => i.date === date);
-export const latestIssue = issues[0];
-
 // ---------------------------------------------------------------------------------------------- courses
 
 export type CourseType = "paid" | "free" | "oneOnOne" | "workshop";
@@ -448,12 +302,4 @@ export const courses: Course[] = [
 
 export const courseBySlug = (slug: string) => courses.find((c) => c.slug === slug);
 
-// ---------------------------------------------------------------------------------------------- dates
-
-const he = (opts: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat("he-IL", { timeZone: "Asia/Jerusalem", ...opts });
-const at = (iso: string) => new Date(`${iso}T12:00:00Z`);
-
-export const formatDate = (iso: string) => he({ day: "numeric", month: "long", year: "numeric" }).format(at(iso));
-export const formatDay = (iso: string) => he({ weekday: "long", day: "numeric", month: "long" }).format(at(iso));
-export const dayNumber = (iso: string) => he({ day: "numeric" }).format(at(iso));
-export const monthShort = (iso: string) => he({ month: "short" }).format(at(iso));
+export { dayNumber, formatDate, formatDay, monthShort } from "@/lib/dates";

@@ -1,10 +1,9 @@
 import { ArrowLeft, ArrowRight, ArrowUpLeft, CornerDownLeft, Rss, Sparkles } from "lucide-react";
 import { ContentPage, Tag } from "@/components/content/ContentPage";
-import { formatDay, issues, type Issue, type Story } from "@/components/content/mock";
+import { formatDay, israelToday, shortDate } from "@/lib/dates";
+import { issueHref, issues, storyHref, topics, type Issue, type Story } from "@/lib/news";
 
 export const DESCRIPTION = "כל בוקר: מה קרה בטכנולוגיה וב־AI, ומה זה אומר לבעלי עסקים. בעברית, עם קישור למקור של כל ידיעה.";
-
-const shortDate = (iso: string) => iso.slice(8, 10) + "." + iso.slice(5, 7);
 
 const StoryView = ({ story, n, lead }: { story: Story; n: number; lead: boolean }) => (
   <article id={story.id} aria-labelledby={`${story.id}-title`} className={lead ? "md:col-span-2" : ""}>
@@ -13,7 +12,7 @@ const StoryView = ({ story, n, lead }: { story: Story; n: number; lead: boolean 
         {n}
       </span>
       <div className="min-w-0 flex-1">
-        <Tag>{story.topic}</Tag>
+        <Tag>{topics[story.topic]}</Tag>
         <h2
           id={`${story.id}-title`}
           className={`mt-3 font-medium leading-snug text-[var(--a-ink)] ${lead ? "text-[clamp(1.6rem,3.4vw,2.4rem)] leading-tight" : "text-xl md:text-[22px]"}`}
@@ -31,7 +30,7 @@ const StoryView = ({ story, n, lead }: { story: Story; n: number; lead: boolean 
             <span className="sr-only">(נפתח בחלון חדש)</span>
           </a>
           {story.continues && (
-            <a href={`/news/${story.continues.date}#${story.continues.id}`} className="inline-flex items-center gap-1 hover:text-[var(--a-accent)]">
+            <a href={storyHref(story.continues.date, story.continues.id)} className="inline-flex items-center gap-1 hover:text-[var(--a-accent)]">
               <CornerDownLeft className="h-3.5 w-3.5" aria-hidden="true" />
               המשך של: {story.continues.headline} ({shortDate(story.continues.date)})
             </a>
@@ -42,11 +41,13 @@ const StoryView = ({ story, n, lead }: { story: Story; n: number; lead: boolean 
   </article>
 );
 
-const NewsIssue = ({ issue, today = false }: { issue: Issue; today?: boolean }) => {
+const NewsIssue = ({ issue }: { issue: Issue }) => {
   const index = issues.findIndex((i) => i.date === issue.date);
   const newer = issues[index - 1];
   const older = issues[index + 1];
   const number = issues.length - index;
+  // Pages are built on every publish, so "today" is the build day in Israel.
+  const kicker = index > 0 ? "גיליון מהארכיון" : issue.date === israelToday() ? "הגיליון של היום" : "הגיליון האחרון";
 
   return (
     <ContentPage>
@@ -54,7 +55,7 @@ const NewsIssue = ({ issue, today = false }: { issue: Issue; today?: boolean }) 
         <div className="mx-auto max-w-6xl px-5 pt-12 md:px-8 md:pt-16">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="a-kicker">{today ? "הגיליון של היום" : "גיליון מהארכיון"}</p>
+              <p className="a-kicker">{kicker}</p>
               <h1 className="a-hand text-[clamp(2.8rem,8vw,5.5rem)] leading-none text-[var(--a-ink)]">חדשות הבוקר</h1>
             </div>
             <p className="max-w-xs text-[15px] leading-relaxed text-[var(--a-muted)]">
@@ -102,7 +103,7 @@ const NewsIssue = ({ issue, today = false }: { issue: Issue; today?: boolean }) 
         <nav aria-label="גיליונות" className="mt-20 grid gap-4 border-t border-[var(--a-line)] pt-8 sm:grid-cols-3 sm:items-center">
           <div>
             {newer && (
-              <a href={newer === issues[0] ? "/news" : `/news/${newer.date}`} className="inline-flex items-center gap-1.5 text-[15px] text-[var(--a-muted)] hover:text-[var(--a-accent)]">
+              <a href={issueHref(newer)} className="inline-flex items-center gap-1.5 text-[15px] text-[var(--a-muted)] hover:text-[var(--a-accent)]">
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 הגיליון הבא ({shortDate(newer.date)})
               </a>
@@ -113,7 +114,7 @@ const NewsIssue = ({ issue, today = false }: { issue: Issue; today?: boolean }) 
           </a>
           <div className="sm:text-end">
             {older && (
-              <a href={`/news/${older.date}`} className="inline-flex items-center gap-1.5 text-[15px] text-[var(--a-muted)] hover:text-[var(--a-accent)]">
+              <a href={issueHref(older)} className="inline-flex items-center gap-1.5 text-[15px] text-[var(--a-muted)] hover:text-[var(--a-accent)]">
                 הגיליון הקודם ({shortDate(older.date)})
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               </a>

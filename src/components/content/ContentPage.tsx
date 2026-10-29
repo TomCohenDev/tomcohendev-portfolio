@@ -2,13 +2,12 @@ import type { ReactNode } from "react";
 import "../automation/automation.css";
 import "./content.css";
 import { AutomationFooter, AutomationHeader } from "../automation/Chrome";
-import { DEMO } from "./mock";
 
-/** Shell of the blog, news and courses pages: the homepage menu, a demo note while the content is mock, and the footer. */
-export const ContentPage = ({ children }: { children: ReactNode }) => (
+/** Shell of the blog, news and courses pages: the homepage menu, a demo note on mock pages, and the footer. */
+export const ContentPage = ({ demo = false, children }: { demo?: boolean; children: ReactNode }) => (
   <div className="automation-page min-h-screen" dir="rtl" lang="he">
     <AutomationHeader onLanding={false} site="home" />
-    {DEMO && <DemoBanner />}
+    {demo && <DemoBanner />}
     <main id="main">{children}</main>
     <AutomationFooter site="home" />
   </div>
@@ -17,7 +16,7 @@ export const ContentPage = ({ children }: { children: ReactNode }) => (
 export const DemoBanner = () => (
   <div role="note" className="border-b border-dashed border-[rgba(242,196,109,0.45)] bg-[rgba(242,196,109,0.08)]">
     <p className="mx-auto max-w-6xl px-5 py-2.5 text-center text-[14px] text-[var(--a-human)] md:px-8">
-      <span className="font-medium">עמוד לדוגמה.</span> התוכן כאן הוא דמה, כדי לראות איך העמוד ייראה. הידיעות, המקורות והתאריכים אינם אמיתיים.
+      <span className="font-medium">עמוד לדוגמה.</span> התוכן כאן הוא דמה, כדי לראות איך העמוד ייראה. המאמרים, המפגשים והתאריכים אינם אמיתיים.
     </p>
   </div>
 );

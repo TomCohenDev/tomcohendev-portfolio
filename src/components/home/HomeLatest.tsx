@@ -1,6 +1,7 @@
 import { ArrowLeft, BookOpen, CalendarDays, Newspaper } from "lucide-react";
 import type { ReactNode } from "react";
-import { courses, courseTypes, DEMO, formatDate, formatDay, latestIssue, posts } from "../content/mock";
+import { latestIssue } from "@/lib/news";
+import { courses, courseTypes, DEMO, formatDate, formatDay, posts } from "../content/mock";
 
 const Column = ({ icon, title, href, more, children }: { icon: ReactNode; title: string; href: string; more: string; children: ReactNode }) => (
   <section aria-label={title} className="flex flex-col rounded-[1.25rem] border border-[var(--a-line)] bg-[#222524] p-6">
@@ -28,26 +29,28 @@ export const HomeLatest = () => {
         <h2 id="latest-title" className="a-h2">
           לקרוא, ללמוד, להתעדכן
         </h2>
-        {DEMO && <p className="mt-3 text-[14px] text-[var(--a-human)]">תצוגה לדוגמה: התוכן כאן הוא דמה.</p>}
+        {DEMO && <p className="mt-3 text-[14px] text-[var(--a-human)]">החדשות אמיתיות. הבלוג והקורסים עדיין לדוגמה.</p>}
 
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
-          <Column icon={<Newspaper className={iconClass} aria-hidden="true" />} title="חדשות הבוקר" href="/news" more="לגיליון המלא">
-            <p className="text-[14px] text-[var(--a-muted)]">
-              <time dateTime={latestIssue.date}>{formatDay(latestIssue.date)}</time>
-            </p>
-            <ol className="mt-3 space-y-3">
-              {latestIssue.stories.slice(0, 3).map((s, i) => (
-                <li key={s.id} className="flex gap-3">
-                  <span aria-hidden="true" className="a-hand text-[22px] leading-none text-[var(--a-accent)]">
-                    {i + 1}
-                  </span>
-                  <a href={`/news#${s.id}`} className="text-[16px] leading-snug text-[var(--a-ink)] hover:text-[var(--a-accent)]">
-                    {s.headline}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </Column>
+          {latestIssue && (
+            <Column icon={<Newspaper className={iconClass} aria-hidden="true" />} title="חדשות הבוקר" href="/news" more="לגיליון המלא">
+              <p className="text-[14px] text-[var(--a-muted)]">
+                <time dateTime={latestIssue.date}>{formatDay(latestIssue.date)}</time>
+              </p>
+              <ol className="mt-3 space-y-3">
+                {latestIssue.stories.slice(0, 3).map((s, i) => (
+                  <li key={s.id} className="flex gap-3">
+                    <span aria-hidden="true" className="a-hand text-[22px] leading-none text-[var(--a-accent)]">
+                      {i + 1}
+                    </span>
+                    <a href={`/news#${s.id}`} className="text-[16px] leading-snug text-[var(--a-ink)] hover:text-[var(--a-accent)]">
+                      {s.headline}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </Column>
+          )}
 
           <Column icon={<BookOpen className={iconClass} aria-hidden="true" />} title="מהבלוג" href="/blog" more="לכל המאמרים">
             <ul className="space-y-5">
@@ -71,7 +74,10 @@ export const HomeLatest = () => {
                   <p className="text-[13px]" style={{ color: courseTypes[c.type].color }}>
                     {courseTypes[c.type].label}
                   </p>
-                  <a href={`/courses/${c.slug}`} className="mt-0.5 block text-[16px] font-medium leading-snug text-[var(--a-ink)] hover:text-[var(--a-accent)]">
+                  <a
+                    href={`/courses/${c.slug}`}
+                    className="mt-0.5 block text-[16px] font-medium leading-snug text-[var(--a-ink)] hover:text-[var(--a-accent)]"
+                  >
                     {c.title}
                   </a>
                   <p className="mt-1 text-[14px] text-[var(--a-muted)]">

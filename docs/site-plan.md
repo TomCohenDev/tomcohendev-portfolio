@@ -84,7 +84,9 @@ Each phase ships on its own.
    - Work and reviews (the existing carousel, shorter).
    - The newest news issue, blog posts and events. Until phases 4 to 6 ship, a "בקרוב באתר" section names them, with no dates.
    - A short "about Tom", and contact.
-**Mockups (branch `feat/content-mockups`):** `/blog`, `/blog/<slug>`, `/news`, `/news/<date>`, `/news/archive`, `/courses` and `/courses/<slug>` run on demo data from `src/components/content/mock.ts`. While `DEMO` is true every page shows a demo banner and is `noindex`. Phases 4 to 6 replace the mock file with real content files and keep the page designs.
+**Branch `feat/content-mockups`:** the news is real (phase 5, below): `/news`, `/news/<date>`, `/news/archive`, `/news/feed.xml`.
+`/blog` and `/courses` are mockups on demo data from `src/components/content/mock.ts`, with a demo banner and `noindex` while `DEMO` is true.
+Phases 4 and 6 replace the mock file with real content files and keep the page designs.
 
 4. **Blog.** Post template, tags, RSS, a share image per post, sitemap, and scheduled publishing.
 5. **News.** See below.
@@ -94,6 +96,10 @@ Each phase ships on its own.
 ## Daily news
 
 The flow follows Yarden Zamir's paper; the code and the sources are Tom's.
+
+As built: `news/sources.json` (the feeds), `news/scripts/fetch.mjs` (step 1), `news/scripts/publish.mjs` (step 4, which writes
+`news/issues/<date>.json`; there is no separate covered.json, the published issues are the record), `news/schedule.md` (the steps of a run)
+and `news/skill/SKILL.md` (editorial rules). The site reads the issues in `src/lib/news.ts`.
 
 1. `news/scripts/fetch_items` reads `news/sources.yaml` (RSS and Atom feeds, release pages) and writes `news/desk/<date>/items.json` with the last 30 hours.
 2. The agent reads the items, and every `covered.json` of earlier issues: no story appears twice.

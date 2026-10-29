@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-29",
+  "stories": [
+    {
+      "id": "google-connected-apps",
+      "topic": "ai",
+      "headline": "גוגל פותחת את Gemini והחיפוש לאפליקציות של עסקים",
+      "summary": "גוגל השיקה את Connected Apps Platform, שמאפשרת לעסקים לחבר את השירות שלהם ל־Gemini ולחיפוש, כך שמשתמשים יבצעו בו פעולות ישירות מהשיחה. הפלטפורמה בתצוגה מקדימה, וכרגע פתוחה למפתחים בארה\"ב שנרשמים לרשימת המתנה.",
+      "forBusiness": "לקוחות יתחילו לבקש מה־AI לעשות דברים במקומם, כמו להזמין או לקבוע תור. בישראל זה עוד לא זמין, אבל שווה לחשוב כבר עכשיו מה הייתם רוצים שיוכלו לעשות אצלכם דרך צ'אט.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/"
+      }
+    },
+    {
+      "id": "hebrew-token-tax",
+      "topic": "ai",
+      "headline": "מחקר: אותו טקסט בעברית עולה במודלי AI עד פי 3 מאנגלית",
+      "summary": "קבוצת המחקר CLEAR בדקה כמה טוקנים צריך אותו טקסט בשפות שונות, כי לפי הטוקנים משלמים על מודלי AI. במודל Llama 3.3 של Meta, עברית דרשה בערך פי 3 טוקנים מאנגלית.",
+      "forBusiness": "אם יש לכם בוט או אוטומציה עם AI בעברית, בדקו את העלות על טקסטים אמיתיים שלכם, והשוו בין כמה מודלים לפני שבוחרים.",
+      "source": {
+        "name": "Geektime",
+        "url": "https://www.geektime.co.il/ai-tokenizer-tax-cost-llm-hebrew/"
+      }
+    },
+    {
+      "id": "automationbench",
+      "topic": "automation",
+      "headline": "מדד חדש בודק איזה מודל AI באמת מסיים תהליך עסקי",
+      "summary": "Zapier צירפה את AutomationBench למדד של Fireworks שמשווה מודלי AI על עבודה אמיתית. המדד בודק אם סוכן AI מצליח לסיים תהליך עסקי מתחילתו ועד סופו, במכירות, שיווק, תפעול, תמיכה, כספים ומשאבי אנוש.",
+      "forBusiness": "כשבוחרים מודל לאוטומציה, מדד שבודק תהליכים עסקיים שימושי יותר מדירוג כללי של \"המודל הכי חכם\".",
+      "source": {
+        "name": "Zapier",
+        "url": "https://zapier.com/blog/automationbench-on-specialized-intelligence-index"
+      }
+    },
+    {
+      "id": "apple-touch-on-mac",
+      "topic": "mobile",
+      "headline": "אפל מכינה את המפתחים ל־MacBook Pro עם מסך מגע",
+      "summary": "אפל פרסמה למפתחים סרטונים, מאמרים ומפגשי Group Labs לקראת MacBook Pro עם מסך מגע. היא קוראת למפתחים להתחיל להתכונן כבר עכשיו.",
+      "forBusiness": "אם האפליקציה שלכם רצה גם על Mac, זה זמן טוב לבדוק איך היא מתנהגת כשנוגעים במסך.",
+      "source": {
+        "name": "Apple Developer",
+        "url": "https://developer.apple.com/news/?id=i9boeiqc"
+      }
+    },
+    {
+      "id": "chrome-autofill-gmail",
+      "topic": "ai",
+      "headline": "המילוי האוטומטי של Chrome יציע פרטים מתוך ה־Gmail",
+      "summary": "המילוי האוטומטי המשופר של Chrome ישתמש ב־Gemini כדי להציע פרטים מתוך ה־Gmail כשממלאים טפסים. עד עכשיו הוא הציע פרטים מחשבון Google ומ־Google Wallet.",
+      "forBusiness": "לקוחות ימלאו טפסים מהר יותר. ודאו שהשדות בטפסים באתר שלכם מסומנים נכון, כדי שהדפדפן יזהה מה למלא בכל שדה.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1020626/chrome-enhanced-autofill-gmail-forms-gemini-personal-intelligence"
+      }
+    },
+    {
+      "id": "gemini-4-carbon",
+      "topic": "security",
+      "headline": "Gemini 4 Carbon: המודל החדש של גוגל מגיע קודם למגיני סייבר",
+      "summary": "גוגל הכריזה על Gemini 4 Carbon, שלדבריה הוא המודל החזק שלה, עם יכולות מתקדמות באבטחת מידע ובמשימות ארוכות. בשלב הראשון הוא זמין רק לקבוצה של מגיני סייבר ושותפים, ולשאר המפתחים והעסקים \"בהקדם האפשרי\".",
+      "forBusiness": "עוד אין מה לחבר אליו. כשייפתח, המחיר בתקופת ההשקה הוא 2 דולר למיליון טוקנים בקלט ו־10 דולר בפלט, ואחריה הוא יוכפל.",
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      }
+    }
+  ]
+}

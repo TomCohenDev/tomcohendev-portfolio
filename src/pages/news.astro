@@ -1,9 +1,18 @@
 ---
 import HebrewLayout from "../layouts/HebrewLayout.astro";
 import NewsIssue, { DESCRIPTION } from "../views/NewsIssue";
-import { DEMO, latestIssue } from "../components/content/mock";
+import { latestIssue } from "../lib/news";
+import { formatDate } from "../lib/dates";
+
+if (!latestIssue) throw new Error("No issue in news/issues/: publish one with news/scripts/publish.mjs");
 ---
 
-<HebrewLayout title={"חדשות הבוקר | תום כהן"} description={DESCRIPTION} path="/news" noindex={DEMO}>
-  <NewsIssue issue={latestIssue} today />
+<HebrewLayout
+  title="חדשות הבוקר | תום כהן"
+  description={DESCRIPTION}
+  path="/news"
+  ogTitle={`חדשות הבוקר, ${formatDate(latestIssue.date)}`}
+  ogDescription={latestIssue.stories.map((s) => s.headline).slice(0, 3).join(" · ")}
+>
+  <NewsIssue issue={latestIssue} />
 </HebrewLayout>

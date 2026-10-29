@@ -1,9 +1,8 @@
 ---
 import HebrewLayout from "../../layouts/HebrewLayout.astro";
 import NewsArchive, { DESCRIPTION, TITLE } from "../../views/NewsArchive";
-import { DEMO } from "../../components/content/mock";
 ---
 
-<HebrewLayout title={TITLE} description={DESCRIPTION} path="/news/archive" noindex={DEMO}>
+<HebrewLayout title={TITLE} description={DESCRIPTION} path="/news/archive">
   <NewsArchive />
 </HebrewLayout>

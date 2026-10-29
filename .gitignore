@@ -31,3 +31,7 @@ bun.lockb
 
 # Wrangler local state
 .wrangler
+
+# Daily news: the working folder of each run and the private word list
+news/desk/
+news/deny.txt
