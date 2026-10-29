@@ -123,7 +123,10 @@ Every story links to its source. Images are only the publisher's share image, wi
 If the build stops, nothing is published and the run reports why.
 A file `news/PAUSED` stops the daily run.
 
-**Schedule:** a T3 scheduled task on the Vienna VPS, every day at 07:00 Israel time.
+**Schedule:** a T3 scheduled task on the Vienna VPS ("חדשות הבוקר: גיליון יומי", project tomcohendev-portfolio, checkout
+`/root/tomcohendev-portfolio`), every day at 05:00 UTC: 07:00 in Israel in winter, 08:00 in summer. Each run opens a new thread on the VPS.
+Until the site pull requests are merged it publishes to `feat/content-mockups`; then its prompt changes to `main`.
+Geektime blocks the VPS (HTTP 403), so its feed is skipped there; the other feeds work.
 Its prompt is one line: "In the tomcohendev-portfolio checkout, run `git pull --ff-only`, then read `news/schedule.md` and do its steps."
 
 ## Open items
@@ -132,4 +135,3 @@ Its prompt is one line: "In the tomcohendev-portfolio checkout, run `git pull --
 - Reviews on `/automation` and `/mobile`: confirm each client agreed to publication.
 - Privacy page: the retention period is not decided yet.
 - Whether an accessibility statement (הצהרת נגישות) is required: check with a qualified person.
-- The VPS: this PC has no role on the T3 machine map. Either give it a role in the portal, or create the scheduled task from a thread on the VPS.
