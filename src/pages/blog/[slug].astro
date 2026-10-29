@@ -1,0 +1,12 @@
+---
+import HebrewLayout from "../../layouts/HebrewLayout.astro";
+import BlogPost from "../../views/BlogPost";
+import { DEMO, posts, type Post } from "../../components/content/mock";
+
+export const getStaticPaths = () => posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+const { post } = Astro.props as { post: Post };
+---
+
+<HebrewLayout title={`${post.title} | תום כהן`} description={post.description} path={`/blog/${post.slug}`} noindex={DEMO}>
+  <BlogPost post={post} />
+</HebrewLayout>

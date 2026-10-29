@@ -1,0 +1,9 @@
+---
+import HebrewLayout from "../layouts/HebrewLayout.astro";
+import CoursesIndex, { DESCRIPTION, TITLE } from "../views/CoursesIndex";
+import { DEMO } from "../components/content/mock";
+---
+
+<HebrewLayout title={TITLE} description={DESCRIPTION} path="/courses" noindex={DEMO}>
+  <CoursesIndex client:load />
+</HebrewLayout>

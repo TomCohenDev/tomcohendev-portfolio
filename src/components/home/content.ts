@@ -65,10 +65,3 @@ export const aboutFacts = [
   { value: "4 שנים", label: "של פיתוח אפליקציות ב־Flutter" },
   { value: "מקצה לקצה", label: "מהאפיון, דרך הקוד, ועד שזה עובד אצלכם" },
 ] as const;
-
-/** Sections that are planned (docs/site-plan.md, phases 4 to 6) and not live yet. No dates promised. */
-export const upcoming = [
-  { title: "בלוג", body: "מה למדתי מבניית אפליקציות ואוטומציות, בעברית ובלי באזוורדס." },
-  { title: "חדשות יומיות", body: "כל בוקר: מה קרה בטכנולוגיה ו־AI ומה זה אומר לבעלי עסקים." },
-  { title: "קורסים ומפגשים", body: "מפגשים פתוחים, סדנאות וליווי אחד על אחד." },
-] as const;

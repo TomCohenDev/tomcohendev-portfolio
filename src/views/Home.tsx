@@ -3,7 +3,8 @@ import "@/components/home/home.css";
 import { AutomationFooter, AutomationHeader } from "@/components/automation/Chrome";
 import { HomeHero } from "@/components/home/HomeHero";
 import { ServiceBranches } from "@/components/home/ServiceBranches";
-import { HomeAbout, HomeContact, HomeUpcoming, HomeWork } from "@/components/home/HomeSections";
+import { HomeAbout, HomeContact, HomeWork } from "@/components/home/HomeSections";
+import { HomeLatest } from "@/components/home/HomeLatest";
 
 // Page title and description; src/pages/index.astro puts them in the HTML head.
 export const TITLE = "תום כהן | פיתוח אפליקציות ואוטומציות לעסקים";
@@ -18,7 +19,7 @@ const Home = () => (
       <ServiceBranches />
       <HomeWork />
       <HomeAbout />
-      <HomeUpcoming />
+      <HomeLatest />
       <HomeContact />
     </main>
     <AutomationFooter site="home" />

@@ -84,6 +84,8 @@ Each phase ships on its own.
    - Work and reviews (the existing carousel, shorter).
    - The newest news issue, blog posts and events. Until phases 4 to 6 ship, a "בקרוב באתר" section names them, with no dates.
    - A short "about Tom", and contact.
+**Mockups (branch `feat/content-mockups`):** `/blog`, `/blog/<slug>`, `/news`, `/news/<date>`, `/news/archive`, `/courses` and `/courses/<slug>` run on demo data from `src/components/content/mock.ts`. While `DEMO` is true every page shows a demo banner and is `noindex`. Phases 4 to 6 replace the mock file with real content files and keep the page designs.
+
 4. **Blog.** Post template, tags, RSS, a share image per post, sitemap, and scheduled publishing.
 5. **News.** See below.
 6. **Courses and meetings.** List, item page, sign-up, and past items moving to an archive on their own.

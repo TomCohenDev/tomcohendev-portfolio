@@ -14,12 +14,21 @@ const HOME = {
   nav: [
     { href: "/mobile", label: "אפליקציות" },
     { href: "/automation", label: "אוטומציה" },
-    { href: "#work", label: "עבודות" },
+    { href: "/blog", label: "בלוג" },
+    { href: "/news", label: "חדשות" },
+    { href: "/courses", label: "קורסים ומפגשים" },
     { href: "#about", label: "קצת עליי" },
   ],
   blurb: "פיתוח אפליקציות ואוטומציות לעסקים, מהאפיון ועד שזה עובד.",
   whatsappHref: HOME_WHATSAPP,
 };
+
+/** Blog, news and courses: in every footer, since the phone header has no menu. */
+const CONTENT_LINKS = [
+  { href: "/blog", label: "בלוג" },
+  { href: "/news", label: "חדשות הבוקר" },
+  { href: "/courses", label: "קורסים ומפגשים" },
+];
 
 const page = (key: PageKey) => (key === "home" ? HOME : { ...SITES[key], whatsappHref: CONTACT.whatsappHref });
 
@@ -150,6 +159,13 @@ export const AutomationFooter = ({ site = "automation" }: { site?: PageKey }) =>
           <p className="font-semibold text-[var(--a-ink)]">עוד באתר</p>
           <ul className="space-y-2 text-[var(--a-muted)]">
             {more.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} className="hover:text-[var(--a-ink)]">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+            {CONTENT_LINKS.map((item) => (
               <li key={item.href}>
                 <a href={item.href} className="hover:text-[var(--a-ink)]">
                   {item.label}

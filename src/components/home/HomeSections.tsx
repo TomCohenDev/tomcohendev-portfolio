@@ -2,7 +2,7 @@ import { ArrowLeft, Mail, MessageCircle, Phone, Quote } from "lucide-react";
 import { track } from "@/lib/analytics";
 import { Squiggle } from "../automation/Doodles";
 import { CONTACT } from "../automation/content";
-import { aboutFacts, HOME_WHATSAPP, reviews, upcoming, work } from "./content";
+import { aboutFacts, HOME_WHATSAPP, reviews, work } from "./content";
 
 export const HomeWork = () => (
   <section id="work" aria-labelledby="work-title" className="border-t border-[var(--a-line)] py-20 md:py-28">
@@ -94,26 +94,6 @@ export const HomeAbout = () => (
           ))}
         </dl>
       </div>
-    </div>
-  </section>
-);
-
-export const HomeUpcoming = () => (
-  <section aria-labelledby="upcoming-title" className="border-t border-[var(--a-line)] py-20 md:py-24">
-    <div className="mx-auto max-w-6xl px-5 md:px-8">
-      <p className="a-kicker">בקרוב באתר</p>
-      <h2 id="upcoming-title" className="a-h2">
-        עוד דברים בדרך
-      </h2>
-      <ul className="mt-10 grid gap-5 md:grid-cols-3">
-        {upcoming.map((u) => (
-          <li key={u.title} className="rounded-[1.25rem] border border-dashed border-[rgba(224,208,193,0.25)] p-6">
-            <p className="text-xl font-medium text-[var(--a-ink)]">{u.title}</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[var(--a-muted)]">{u.body}</p>
-            <p className="a-hand mt-4 text-[17px] text-[var(--a-accent)]">בקרוב</p>
-          </li>
-        ))}
-      </ul>
     </div>
   </section>
 );

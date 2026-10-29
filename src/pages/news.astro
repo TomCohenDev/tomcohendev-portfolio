@@ -1,0 +1,9 @@
+---
+import HebrewLayout from "../layouts/HebrewLayout.astro";
+import NewsIssue, { DESCRIPTION } from "../views/NewsIssue";
+import { DEMO, latestIssue } from "../components/content/mock";
+---
+
+<HebrewLayout title={"חדשות הבוקר | תום כהן"} description={DESCRIPTION} path="/news" noindex={DEMO}>
+  <NewsIssue issue={latestIssue} today />
+</HebrewLayout>
