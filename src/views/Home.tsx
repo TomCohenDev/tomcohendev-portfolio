@@ -7,9 +7,9 @@ import { HomeAbout, HomeContact, HomeWork } from "@/components/home/HomeSections
 import { HomeLatest } from "@/components/home/HomeLatest";
 
 // Page title and description; src/pages/index.astro puts them in the HTML head.
-export const TITLE = "תום כהן | פיתוח אפליקציות ואוטומציות לעסקים";
+export const TITLE = "תום כהן · פיתוח Fullstack, אוטומציה ו-AI | חדשות, מדריכים וכלים למפתחים";
 export const DESCRIPTION =
-  "תום כהן, מפתח Full-stack: אפליקציות לאייפון ולאנדרואיד ואוטומציות שחוסכות לעסק עבודה ידנית, מהאפיון ועד שזה עובד.";
+  "תום כהן, פיתוח Fullstack, אוטומציה ו-AI: חדשות יומיות, מדריכים וכלים למפתחים, וגם בניית אפליקציות ואוטומציות לעסקים, מהאפיון ועד שזה עובד.";
 
 const Home = () => (
   <div className="automation-page min-h-screen" dir="rtl" lang="he">
