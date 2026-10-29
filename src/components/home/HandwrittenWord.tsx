@@ -1,57 +1,29 @@
-import { AnimatePresence, motion, type Variants } from "framer-motion";
-import { HAND_HEIGHT, writeWord } from "./handLetters";
+import { AnimatePresence, motion } from "framer-motion";
 
-// Same feel as the English hero (HandwritingMVP.tsx): strokes write in one after another and erase in reverse.
-const draw: Variants = {
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: (i: number) => ({
-    pathLength: 1,
-    opacity: 1,
-    transition: {
-      pathLength: { delay: 0.1 + i * 0.07, type: "spring", duration: 0.45, bounce: 0 },
-      opacity: { delay: 0.1 + i * 0.07, duration: 0.01 },
-    },
-  }),
-  exit: (i: number) => ({
-    pathLength: 0,
-    opacity: 0,
-    transition: {
-      pathLength: { delay: (24 - i) * 0.012, type: "spring", duration: 0.25, bounce: 0 },
-      opacity: { delay: (24 - i) * 0.012 + 0.1, duration: 0.05 },
-    },
-  }),
-};
+// The mask is a gradient twice as wide as the word: visible on its right part, clear on its left, with a soft edge between.
+// Sliding it across reveals the word from right to left, the way Hebrew is written.
+const mask = "linear-gradient(to left, #000 45%, transparent 55%)";
 
-/** A Hebrew word that writes itself in marker strokes. Decorative: the heading carries the text. */
+/**
+ * A Hebrew word that writes itself in the site's handwritten font (Playpen Sans Hebrew; Latin letters in Excalifont).
+ * Decorative: the heading carries the text.
+ */
 export const HandwrittenWord = ({ text, still = false, className = "" }: { text: string; still?: boolean; className?: string }) => {
-  const { width, strokes } = writeWord(text);
+  // Longer words take a little longer to write.
+  const duration = Math.min(1.5, 0.45 + text.length * 0.1);
   return (
     <AnimatePresence mode="wait" initial={!still}>
-      <motion.svg
+      <motion.span
         key={text}
-        viewBox={`0 0 ${width} ${HAND_HEIGHT}`}
-        fill="none"
         aria-hidden="true"
-        className={className}
-        style={{ aspectRatio: `${width} / ${HAND_HEIGHT}` }}
+        className={`a-hand inline-block whitespace-nowrap ${className}`}
+        style={still ? undefined : { maskImage: mask, WebkitMaskImage: mask, maskSize: "220% 100%", WebkitMaskSize: "220% 100%" }}
+        initial={still ? false : { maskPosition: "0% 0%", WebkitMaskPosition: "0% 0%" }}
+        animate={still ? undefined : { maskPosition: "100% 0%", WebkitMaskPosition: "100% 0%", transition: { duration, ease: [0.45, 0.05, 0.4, 1] } }}
+        exit={still ? undefined : { opacity: 0, y: -8, filter: "blur(2px)", transition: { duration: 0.25 } }}
       >
-        {strokes.map((s, i) => (
-          <motion.path
-            key={i}
-            d={s.d}
-            transform={s.transform}
-            stroke="currentColor"
-            strokeWidth={10}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            variants={draw}
-            custom={i}
-            initial={still ? false : "hidden"}
-            animate="visible"
-            exit={still ? undefined : "exit"}
-          />
-        ))}
-      </motion.svg>
+        {text}
+      </motion.span>
     </AnimatePresence>
   );
 };

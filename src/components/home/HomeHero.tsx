@@ -40,9 +40,9 @@ export const HomeHero = () => {
           {/* Mouse users can click the word to move on; the pause button below is the keyboard control. */}
           <div
             onClick={next}
-            className="mt-1 h-[clamp(5.5rem,13vw,9.5rem)] cursor-pointer text-[var(--a-accent)]"
+            className="mt-1 flex h-[clamp(5.5rem,13vw,9.5rem)] cursor-pointer items-center justify-center text-[var(--a-accent)] lg:justify-start"
           >
-            <HandwrittenWord text={word.text} still={reduced} className="mx-auto block h-full w-auto max-w-full lg:mx-0" />
+            <HandwrittenWord text={word.text} still={reduced} className="text-[clamp(3.2rem,11vw,7rem)] leading-[1.25]" />
           </div>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--a-muted)] md:text-xl">
             אפליקציות לאייפון ולאנדרואיד, ואוטומציות שחוסכות לעסק עבודה ידנית. מהאפיון, דרך הקוד, ועד שזה עובד אצלכם

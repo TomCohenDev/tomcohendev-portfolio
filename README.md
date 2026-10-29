@@ -93,7 +93,7 @@ The form automatically uses the correct endpoint based on the `VITE_ENVIRONMENT`
 The plan for the Hebrew site is in [`docs/site-plan.md`](docs/site-plan.md).
 
 - Routes: `src/pages/index.astro` (homepage), `automation.astro`, `mobile.astro` and `automation/*.astro`. Each renders its React page (`src/views/`) to HTML at build time and hydrates it in the browser.
-- Homepage: `src/components/home/`. The hero writes Hebrew words by hand: each letter is a set of marker strokes in `handLetters.ts`; to add a hero word, use only letters defined there (add a letter's strokes if needed) and pick the `DynamicVisual` state that goes with it in `content.ts`.
+- Homepage: `src/components/home/`. The hero writes each word in the handwritten font (Playpen Sans Hebrew), right to left; to add a hero word, add it to `heroWords` in `content.ts` with the `DynamicVisual` state that goes with it.
 - Copy: `src/components/home/`, `src/components/automation/` and `src/components/mobile/` (`content.ts` holds the facts and the open `TODO(tom)` items). `sites.ts` holds what differs between the pages.
 - Head: `src/layouts/HebrewLayout.astro` (`lang="he" dir="rtl"`, Open Graph, the Google tag). JSON-LD comes from `src/lib/structuredData.ts`, with the FAQ taken from the same arrays the pages show.
 - The English site is the React Router app (`src/App.tsx`, basename `/en`, mounted by `src/pages/en.astro`). The Worker serves `dist/en.html` for every `/en/*` page path; `public/_redirects` sends the old English URLs (`/services`, `/case-studies/*`, ...) to `/en/...`. Any other unknown path gets the Hebrew 404 page (`dist/404.html`).
