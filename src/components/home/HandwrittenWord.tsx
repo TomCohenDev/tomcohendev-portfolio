@@ -1,64 +1,66 @@
-import { useId } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useId } from "react";
+import { AnimatePresence, animate, motion, useMotionValue, usePresence, useTransform, type MotionValue } from "framer-motion";
 import { HAND_FONT, handStrokes, type HandWord } from "./handStrokes";
 
 const exit = { opacity: 0, y: -4, filter: "blur(3px)", transition: { duration: 0.35, ease: "easeIn" } };
 
+// A steady pen: it speeds up over the first 15% of the word, moves at one speed, and slows down over the last 15%.
+const RAMP = 0.15;
+const PEAK = 1 / (1 - RAMP);
+const steadyPen = (t: number) =>
+  t < RAMP ? (PEAK * t * t) / (2 * RAMP) : t < 1 - RAMP ? PEAK * (t - RAMP / 2) : 1 - (PEAK * (1 - t) ** 2) / (2 * RAMP);
+
+/** One stroke of the pen: it draws as `progress` (in pen units along the whole word) passes through it. */
+const Stroke = ({ d, len, start, pen, progress }: { d: string; len: number; start: number; pen: number; progress: MotionValue<number> }) => {
+  const offset = useTransform(progress, (p) => len - Math.min(len, Math.max(0, p - start)));
+  return (
+    <motion.path
+      d={d}
+      pathLength={len}
+      fill="none"
+      stroke="#fff"
+      strokeWidth={pen}
+      // Flat ends grow in smoothly; a round end would pop in as a dot at the start of every stroke.
+      strokeLinecap="butt"
+      strokeLinejoin="round"
+      strokeDasharray={`${len} ${len + 1}`}
+      style={{ strokeDashoffset: offset }}
+    />
+  );
+};
+
 /**
- * The pen: each stroke traced from the font (scripts/hero-strokes.mjs) draws in turn, and the letters show only where
- * the pen has been, so the word writes itself letter by letter, right to left.
+ * The pen: the strokes traced from the font (scripts/hero-strokes.mjs) are drawn one after another by a single
+ * continuous motion, and the letters show only where the pen has been, so the word writes itself right to left.
  */
 const Written = ({ text, word, still }: { text: string; word: HandWord; still: boolean }) => {
   const mask = `hw${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
   const [vx, vy, vw, vh] = word.viewBox;
+  const starts = word.strokes.map((_, i) => word.strokes.slice(0, i).reduce((s, k) => s + k.len, 0));
   const total = word.strokes.reduce((s, k) => s + k.len, 0);
-  // The pen moves at one steady speed, about 1.2 to 1.9 seconds a word, and lifts only briefly between strokes.
-  const gap = 0.018;
-  const writing = Math.min(1.9, Math.max(1.2, total / 2400)) - gap * (word.strokes.length - 1);
-  let at = 0.12;
-  const timing = word.strokes.map((k) => {
-    const t = { delay: at, duration: Math.max(0.05, (k.len / total) * writing) };
-    at += t.duration + gap;
-    return t;
-  });
+  const progress = useMotionValue(0);
+  const [isPresent, safeToRemove] = usePresence();
+  useEffect(() => {
+    if (still) {
+      if (!isPresent) safeToRemove();
+      return;
+    }
+    // Leaving: the pen runs backwards from wherever it is, last stroke first, several times faster than it wrote.
+    const run = isPresent
+      ? // One timeline for the whole word, so the pen never stops between strokes.
+        animate(progress, total, { duration: Math.min(2.2, Math.max(1.5, total / 1100)), ease: steadyPen, delay: 0.1 })
+      : animate(progress, 0, { duration: 0.35, ease: [0.5, 0, 0.9, 0.6] });
+    if (!isPresent) run.then(safeToRemove);
+    return () => run.stop();
+  }, [progress, total, still, isPresent, safeToRemove]);
   return (
-    <motion.svg
-      viewBox={`${vx} ${vy} ${vw} ${vh}`}
-      aria-hidden="true"
-      className="block h-full w-auto max-w-full overflow-visible"
-      exit={still ? undefined : exit}
-    >
+    <svg viewBox={`${vx} ${vy} ${vw} ${vh}`} aria-hidden="true" className="block h-full w-auto max-w-full overflow-visible">
       {!still && (
         <defs>
-          {/* A slightly soft pen edge, so the ink flows in rather than being cut out. */}
-          <filter id={`${mask}s`} x={vx - 60} y={vy - 60} width={vw + 120} height={vh + 120} filterUnits="userSpaceOnUse">
-            <feGaussianBlur stdDeviation={word.pen / 14} />
-          </filter>
           <mask id={mask} maskUnits="userSpaceOnUse" x={vx - 60} y={vy - 60} width={vw + 120} height={vh + 120}>
-            <g filter={`url(#${mask}s)`}>
-              {word.strokes.map((k, i) => (
-                <motion.path
-                  key={i}
-                  d={k.d}
-                  fill="none"
-                  stroke="#fff"
-                  strokeWidth={word.pen}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  initial={{ pathLength: 0, opacity: 0 }}
-                  animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{
-                    // Linear inside a stroke, gently eased at the very start and end of the word.
-                    pathLength: {
-                      delay: timing[i].delay,
-                      duration: timing[i].duration,
-                      ease: i === 0 ? [0.4, 0, 1, 1] : i === word.strokes.length - 1 ? [0, 0, 0.5, 1] : "linear",
-                    },
-                    opacity: { delay: timing[i].delay, duration: 0.01 },
-                  }}
-                />
-              ))}
-            </g>
+            {word.strokes.map((k, i) => (
+              <Stroke key={i} d={k.d} len={k.len} start={starts[i]} pen={word.pen} progress={progress} />
+            ))}
           </mask>
         </defs>
       )}
@@ -75,7 +77,7 @@ const Written = ({ text, word, still }: { text: string; word: HandWord; still: b
       >
         {text}
       </text>
-    </motion.svg>
+    </svg>
   );
 };
 

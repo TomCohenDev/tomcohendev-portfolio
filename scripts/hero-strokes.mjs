@@ -291,12 +291,14 @@ const trace = async ({ png, W, H }) => {
     }
     return far > eps ? [...simplify(pts.slice(0, at + 1), eps).slice(0, -1), ...simplify(pts.slice(at), eps)] : [a, b];
   };
-  // Thinning stops short of the letter tips, so carry each open stroke a little past both ends.
+  // Thinning stops short of the letter tips, and the pen has flat ends (so it never pops in as a dot): carry each open
+  // stroke well past both ends. A closed loop runs on a little past its start, so its seam is covered.
   const extend = (s) => {
-    if (s.length < 2 || Math.hypot(s[0][0] - s[s.length - 1][0], s[0][1] - s[s.length - 1][1]) < 2) return s;
+    if (s.length < 2) return s;
+    if (Math.hypot(s[0][0] - s[s.length - 1][0], s[0][1] - s[s.length - 1][1]) < 2) return [...s, ...s.slice(1, Math.min(s.length, 4))];
     const reach = (from, to) => {
       const dx = from[0] - to[0], dy = from[1] - to[1], d = Math.hypot(dx, dy) || 1;
-      return [from[0] + (dx / d) * thickness * 0.6, from[1] + (dy / d) * thickness * 0.6];
+      return [from[0] + (dx / d) * thickness * 0.9, from[1] + (dy / d) * thickness * 0.9];
     };
     const k = Math.min(4, s.length - 1);
     return [reach(s[0], s[k]), ...s, reach(s[s.length - 1], s[s.length - 1 - k])];
