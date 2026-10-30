@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-30",
+  "stories": [
+    {
+      "id": "gemini-file-editing",
+      "topic": "ai",
+      "headline": "ב־Gemini אפשר עכשיו לערוך מסמכים, גיליונות ו־PDF בלי לצאת מהצ'אט",
+      "summary": "גוגל הוסיפה ל־Gemini אפשרות ליצור, לראות ולערוך בתוך השיחה קובצי PDF, מסמכי Google Docs, גיליונות Google Sheets, מצגות וקובצי טקסט. היכולת פתוחה לכל משתמשי Gemini מהיום, אבל רק עריכת PDF עובדת גם בנייד, ושאר הסוגים זמינים כרגע רק בגרסת הדפדפן.",
+      "forBusiness": "מי שכבר מכין הצעות מחיר, טבלאות או מסמכים עם Gemini יכול לסמן חלק בקובץ ולבקש שינוי ישירות, בלי להעתיק ל־Docs. כדאי לבדוק את התוצאה לפני ששולחים ללקוח, במיוחד בטבלאות ובמספרים.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs"
+      }
+    },
+    {
+      "id": "chatgpt-api-credits",
+      "topic": "ai",
+      "headline": "OpenAI נותנת קרדיט ל־API למנויי ChatGPT במסלולים של 100 עד 500 דולר",
+      "summary": "מנויים זכאים של ChatGPT במסלולים של 100, 200 ו־500 דולר בחודש מקבלים כל חודש קרדיט לשימוש ב־API של OpenAI בסכום ששווה למחיר המנוי. הקרדיט נכנס לאחד מארגוני ה־API של המנוי, ו־OpenAI השיקה את ההטבה זמן קצר אחרי ש־Anthropic הציעה הטבה דומה למנויי Claude.",
+      "forBusiness": "אם אתם כבר משלמים על מסלול כזה, הקרדיט יכול לכסות אוטומציות ובוטים שמשתמשים ב־API, למשל דרך n8n או Zapier. בדקו בחשבון שלכם אם המסלול זכאי ולאיזה ארגון API הקרדיט מחובר.",
+      "source": {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/Oct/29/api-credits/"
+      }
+    },
+    {
+      "id": "apple-on-device-speech-models",
+      "topic": "mobile",
+      "headline": "Hugging Face משחררת חבילות לזיהוי דיבור ולהחלטות עם AI בתוך אפליקציות לאייפון ולמק",
+      "summary": "Hugging Face פרסמה שתי חבילות Swift: AnySpeechRecognizer, שמאפשרת לאפליקציה לתמלל דיבור במכשיר עצמו עם מודלים פתוחים כמו Parakeet ו־Qwen3-ASR, ו־AnyDecisionModel, שעונה על שאלות כן ולא ובחירה מרשימה. שתיהן דורשות iOS 26 או macOS 26, והכותבים בדקו אותן עד כה רק על Mac.",
+      "forBusiness": "תמלול בתוך המכשיר שומר את ההקלטות אצל המשתמש ולא שולח אותן לשרת, וזה חשוב באפליקציות עם מידע רגיש. עברית לא מופיעה ברשימת השפות של המודלים, כך שלאפליקציה בעברית זה עוד לא פתרון.",
+      "source": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/anydecisionmodel"
+      }
+    },
+    {
+      "id": "zapier-ai-spend",
+      "topic": "automation",
+      "headline": "כך Zapier עוקבת אחרי ההוצאה על כלי AI של העובדים ושולטת בה",
+      "summary": "סמנכ\"ל התפעול של Zapier מתאר איך החברה מושכת כל יום נתוני שימוש מ־OpenAI, Anthropic ו־Cursor, ונותנת לכל עובד תקציב חודשי לכל כלי. כשעובד מגיע ל־75% מהתקציב הוא מקבל הודעה ב־Slack, ואוטומציה עם AI קוראת את התשובה שלו ומגדילה את התקציב.",
+      "forBusiness": "גם בעסק קטן כדאי לדעת כמה כל כלי AI עולה ולמי, ולהשתמש במודלים זולים למשימות פשוטות. משימה שחוזרת על עצמה אפשר לפעמים להעביר לאוטומציה רגילה, בלי AI ובלי עלות לפי שימוש.",
+      "source": {
+        "name": "Zapier",
+        "url": "https://zapier.com/blog/ai-cost-management"
+      }
+    },
+    {
+      "id": "reddit-logged-in",
+      "topic": "business",
+      "headline": "Reddit תדרוש יותר כניסה עם חשבון, בזמן שהתנועה אליה מגוגל יורדת",
+      "summary": "Reddit הודיעה שהיא עוברת לחוויה שמבוססת בעיקר על משתמשים מחוברים, ותבדוק את השינוי ברבעון הרביעי של 2026 בכמה שווקים מחוץ לארה\"ב. לדבריה, ההפניות אליה ממנועי חיפוש ירדו באוקטובר ביותר ממיליון בשבוע בממוצע, ועדיין לא הוחלט מה יישאר פתוח בלי חשבון.",
+      "forBusiness": "זה עוד סימן לכך שסיכומי AI בחיפוש מורידים את מספר ההקלקות לאתרים. אם עסק שלכם מקבל לקוחות מגוגל, כדאי לעקוב אחרי התנועה מהחיפוש ולחזק ערוצים שבשליטתכם, כמו רשימת תפוצה או WhatsApp.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/"
+      }
+    }
+  ]
+}
