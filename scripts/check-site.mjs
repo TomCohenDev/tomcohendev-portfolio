@@ -15,7 +15,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 
 const SITE = "https://tomcohen.dev";
-const HEBREW_PAGES = ["/", "/automation", "/mobile", "/automation/privacy", "/automation/site-map"];
+const HEBREW_PAGES = ["/", "/automation", "/mobile", "/automation/privacy", "/automation/site-map", "/news", "/news/archive"];
 const distFile = (path) => join("dist", path === "/" ? "index.html" : `${path}.html`);
 const problems = [];
 const fail = (msg) => problems.push(msg);

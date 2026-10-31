@@ -12,6 +12,8 @@
     "preview": "astro preview",
     "deploy": "npm run build && wrangler deploy",
     "hero:strokes": "node scripts/hero-strokes.mjs",
+    "news:fetch": "node news/scripts/fetch.mjs",
+    "news:publish": "node news/scripts/publish.mjs",
     "cf-typegen": "wrangler types edge/worker-configuration.d.ts --env-interface WorkerEnv"
   },
   "dependencies": {

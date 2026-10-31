@@ -36,9 +36,10 @@ export const HomeHero = () => {
     >
       <div className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)] items-center gap-10 px-5 pb-20 pt-12 md:px-8 md:pt-16 lg:grid-cols-[1.15fr_1fr] lg:gap-12 lg:pb-16 lg:pt-14 xl:px-12">
         <div>
-          <p className="a-hand mb-2 text-[22px] text-[var(--a-accent)]">
-            תום כהן · מפתח <bdi>Full-stack</bdi>
+          <p className="a-hand text-[22px] text-[var(--a-accent)]">
+            תום כהן · פיתוח <bdi>Fullstack</bdi>, אוטומציה ו-<bdi>AI</bdi>
           </p>
+          <p className="mb-3 text-sm text-[var(--a-muted)] md:text-base">חדשות, מדריכים וכלים למפתחים</p>
           <h1
             id="hero-title"
             className="text-[clamp(2.3rem,6vw,4.2rem)] font-medium leading-[1.1] text-[var(--a-ink)]"

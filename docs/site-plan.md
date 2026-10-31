@@ -84,6 +84,10 @@ Each phase ships on its own.
    - Work and reviews (the existing carousel, shorter).
    - The newest news issue, blog posts and events. Until phases 4 to 6 ship, a "בקרוב באתר" section names them, with no dates.
    - A short "about Tom", and contact.
+**Branch `feat/content-mockups`:** the news is real (phase 5, below): `/news`, `/news/<date>`, `/news/archive`, `/news/feed.xml`.
+`/blog` and `/courses` are mockups on demo data from `src/components/content/mock.ts`, with a demo banner and `noindex` while `DEMO` is true.
+Phases 4 and 6 replace the mock file with real content files and keep the page designs.
+
 4. **Blog.** Post template, tags, RSS, a share image per post, sitemap, and scheduled publishing.
 5. **News.** See below.
 6. **Courses and meetings.** List, item page, sign-up, and past items moving to an archive on their own.
@@ -92,6 +96,10 @@ Each phase ships on its own.
 ## Daily news
 
 The flow follows Yarden Zamir's paper; the code and the sources are Tom's.
+
+As built: `news/sources.json` (the feeds), `news/scripts/fetch.mjs` (step 1), `news/scripts/publish.mjs` (step 4, which writes
+`news/issues/<date>.json`; there is no separate covered.json, the published issues are the record), `news/schedule.md` (the steps of a run)
+and `news/skill/SKILL.md` (editorial rules). The site reads the issues in `src/lib/news.ts`.
 
 1. `news/scripts/fetch_items` reads `news/sources.yaml` (RSS and Atom feeds, release pages) and writes `news/desk/<date>/items.json` with the last 30 hours.
 2. The agent reads the items, and every `covered.json` of earlier issues: no story appears twice.
@@ -115,7 +123,10 @@ Every story links to its source. Images are only the publisher's share image, wi
 If the build stops, nothing is published and the run reports why.
 A file `news/PAUSED` stops the daily run.
 
-**Schedule:** a T3 scheduled task on the Vienna VPS, every day at 07:00 Israel time.
+**Schedule:** a T3 scheduled task on the Vienna VPS ("חדשות הבוקר: גיליון יומי", project tomcohendev-portfolio, checkout
+`/root/tomcohendev-portfolio`), every day at 05:00 UTC: 07:00 in Israel in winter, 08:00 in summer. Each run opens a new thread on the VPS.
+Until the site pull requests are merged it publishes to `feat/content-mockups`; then its prompt changes to `main`.
+Geektime blocks the VPS (HTTP 403), so its feed is skipped there; the other feeds work.
 Its prompt is one line: "In the tomcohendev-portfolio checkout, run `git pull --ff-only`, then read `news/schedule.md` and do its steps."
 
 ## Open items
@@ -124,4 +135,3 @@ Its prompt is one line: "In the tomcohendev-portfolio checkout, run `git pull --
 - Reviews on `/automation` and `/mobile`: confirm each client agreed to publication.
 - Privacy page: the retention period is not decided yet.
 - Whether an accessibility statement (הצהרת נגישות) is required: check with a qualified person.
-- The VPS: this PC has no role on the T3 machine map. Either give it a role in the portal, or create the scheduled task from a thread on the VPS.
