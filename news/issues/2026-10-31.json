@@ -1,0 +1,187 @@
+{
+  "date": "2026-10-31",
+  "stories": [
+    {
+      "id": "wordpress-7-1-4-attacks",
+      "topic": "security",
+      "headline": "תוקפים כבר מנסים לנצל פרצה בליבת WordPress: עדכנו לגרסה 7.1.4",
+      "summary": "WordPress 7.1.4 יצאה ב־28 באוקטובר וסוגרת פרצה בגרסאות 4.7 עד 7.1.3, שמאפשרת למבקר לא מזוהה להריץ קוד בשרת בשניות שבהן האתר מתעדכן. Wordfence מדווחת שחסמה 62,969 ניסיונות ניצול ב־24 השעות הראשונות, ועד כה לא דווח על פריצה שהצליחה.",
+      "forBusiness": "אם האתר שלכם בנוי על WordPress, בדקו היום בלוח הבקרה שהוא על גרסה 7.1.4 או על עדכון האבטחה של הענף שלכם, או בקשו זאת מהמפתח או מחברת האחסון. אתר על גרסה 4.6 או ישנה יותר כבר לא מקבל תיקוני אבטחה.",
+      "source": {
+        "name": "Techaeris",
+        "url": "https://techaeris.com/2026/10/30/wordpress-rce-flaw-nearly-63000-attacks/"
+      }
+    },
+    {
+      "id": "google-play-policy-october",
+      "topic": "mobile",
+      "headline": "גוגל מעדכנת את כללי Google Play: מנויים בהנחה, גישה לאנשי קשר ופעולות ל־AI",
+      "summary": "גוגל פרסמה ב־29 באוקטובר עדכון למדיניות Google Play: עד 27 בינואר 2027, מנויים עם הנחה לפי זכאות, כמו מסלול לסטודנטים, יצטרכו להציג בבירור את תנאי הזכאות, את אופן האימות ואת מה שמשתנה כשהזכאות נגמרת. עד 25 באוגוסט 2027 ההרשאות לניהול אנשי קשר ולרשת המקומית יוגבלו לאפליקציות שצריכות אותן לפעולה המרכזית שלהן, ועד 14 באפריל 2027 נאסר על AppFunctions להטעות סוכני AI.",
+      "forBusiness": "אם יש לכם אפליקציית אנדרואיד עם מנוי בהנחה, או שהיא מנהלת אנשי קשר, בקשו מהמפתח לבדוק מה צריך לשנות. המועדים רחוקים, אז אפשר לתכנן את זה לתוך עדכון רגיל.",
+      "source": {
+        "name": "Google Play Console",
+        "url": "https://support.google.com/googleplay/android-developer/answer/9934569"
+      }
+    },
+    {
+      "id": "shared-ai-training-signal",
+      "topic": "ai",
+      "headline": "OpenAI, גוגל, Microsoft ו־Anthropic יכבדו סימון אחד באתר נגד אימון AI על התוכן",
+      "summary": "ארבע החברות הודיעו שיאמצו סימון משותף בקובץ robots.txt של האתר, כדי שבעלי אתרים יקבעו את ההעדפה שלהם לגבי אימון AI פעם אחת ולא מול כל חברה בנפרד. Anthropic כבר אימצה אותו, OpenAI תעשה זאת \"בחודשים הקרובים\", וגוגל ו־Microsoft מתכננות לתמוך בו בשנה הבאה.",
+      "forBusiness": "אין סיבה למהר לשנות משהו באתר, כי רוב החברות עוד לא תומכות בסימון. אם התוכן שלכם הוא חלק ממה שאתם מוכרים, כמו מדריכים או קורסים, כדאי להחליט כבר עכשיו אם אתם רוצים שיאמנו עליו מודלים. Microsoft אומרת שהאתר יישאר בתוצאות Bing בכל מקרה.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out"
+      }
+    },
+    {
+      "id": "make-maia-updates",
+      "topic": "automation",
+      "headline": "ה־AI של Make מציג תוכנית לפני שהוא בונה, וגם מציע תיקון לתרחיש שנכשל",
+      "summary": "Make הוסיפה לעוזר Maia מצב Plan, שמציג את המודולים, ההנחות והגישה ומתחיל לבנות רק אחרי אישור, וכפתור Resolve error שקורא את נתוני ההרצה ומתקן את התרחיש, כשאתם בודקים את השינוי לפני השמירה. Maia זמין בבטא פתוחה בכל המסלולים בתשלום, ובמסלול החינמי ל־30 יום מההרשמה.",
+      "forBusiness": "אם האוטומציות שלכם רצות ב־Make, נסו את Resolve error בפעם הבאה שתרחיש נכשל, ועברו על השינוי לפני ששומרים. מצב Plan מתאים לתרחיש חדש, כי הוא בודק חיבורים ומגבלות מסלול לפני הבנייה.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/feature-spotlight-maia-updates-for-plan-mode-memory-and-resolve-error/118726"
+      }
+    },
+    {
+      "id": "doordash-agent-orders",
+      "topic": "ai",
+      "headline": "DoorDash: סוכני AI חיצוניים הביאו עד עכשיו רק כמה מאות הזמנות",
+      "summary": "מנכ\"ל DoorDash טוני שו אמר בשיחה עם אנליסטים על הרבעון השלישי שהחברה קיבלה בסך הכול אולי כמה מאות הזמנות מסוכני AI של חברות אחרות, כמו Muse, Instinct ו־Fo. לפי הדוח של החברה ל־2025 היא מבצעת בממוצע 3 מיליון משלוחים ביום, ורוב הלקוחות עדיין מזמינים דרך האפליקציה שלה.",
+      "forBusiness": "הזמנות דרך סוכן AI הן עדיין נדירות מאוד, גם אצל חברה בגודל כזה. כרגע עדיף להשקיע בערוצים שהלקוחות שלכם כבר משתמשים בהם, ולעקוב אחרי הסוכנים מהצד.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/"
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "teamviewer-15-83",
+      "topic": "security",
+      "text": "מרכז הסייבר של קנדה מתריע על פרצות ב־TeamViewer בגרסאות שלפני 15.83 ב־Windows, ב־Mac וב־Linux. באפליקציית האנדרואיד צריך גרסה 15.8.3.",
+      "source": {
+        "name": "Canadian Centre for Cyber Security",
+        "url": "https://www.cyber.gc.ca/en/alerts-advisories/teamviewer-security-advisory-av26-1093"
+      }
+    },
+    {
+      "id": "chatgpt-share-link-flaw",
+      "topic": "security",
+      "text": "חוקרי Parameter הראו שפתיחת קישור שיתוף זדוני ב־ChatGPT יכלה לחשוף שיחות פרטיות. OpenAI תיקנה את זה ב־26 באוקטובר.",
+      "source": {
+        "name": "Parameter",
+        "url": "https://www.parameter.ai/labs/we-found-a-gap-at-openai"
+      }
+    },
+    {
+      "id": "apple-taiwan-commission",
+      "topic": "mobile",
+      "text": "מהיום העמלה הרגילה של אפל ב־App Store בטייוואן יורדת מ־30% ל־26%, אחרי דיונים עם נציבות הסחר ההוגן שם.",
+      "source": {
+        "name": "Apple Developer",
+        "url": "https://developer.apple.com/news/?id=w9mxlhek"
+      }
+    },
+    {
+      "id": "supabase-explorer",
+      "topic": "mobile",
+      "text": "Supabase השיקה בתצוגה מקדימה את Explorer, עורך אחד למסד הנתונים וללוגים, עם מחברות שאילתות שאפשר להריץ שוב. פתוח לכל פרויקט.",
+      "source": {
+        "name": "Supabase",
+        "url": "https://supabase.com/blog/explorer-and-notebooks-investigations-your-team-can-rerun"
+      }
+    },
+    {
+      "id": "supabase-dbarena",
+      "topic": "mobile",
+      "text": "Supabase מממנת את DBArena, אתר שמשווה מחיר וביצועים של Postgres מנוהל מול Amazon RDS ו־Google Cloud SQL, עם שיטה וכלים פתוחים.",
+      "source": {
+        "name": "Supabase",
+        "url": "https://supabase.com/blog/introducing-dbarena"
+      }
+    },
+    {
+      "id": "ollie-shutting-down",
+      "topic": "ai",
+      "text": "עוזר ה־AI Ollie, שהתחבר למייל וליומן והתמקד בפרטיות, ייסגר ב־6 בנובמבר. כך אמר מנכ\"ל החברה.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "hostly",
+      "name": "Hostly",
+      "text": "פקיד קבלה עם AI שמוסיפים לאתר בסקריפט אחד: עונה על מחירים ושעות וקובע תורים לפי היומן, והנתונים נשמרים באירופה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/hostly"
+      },
+      "icon": "https://resize.imagekit.co/mdRIqWz1gu07rMJ4Bva8x_37FtfGnfJLBmEk5JcJuJs/s:40:40/dpr:2/plain/s3://betalist-production/ebfxa60oeehbyueikmha1yt7wbhi"
+    },
+    {
+      "id": "there-there",
+      "name": "There There",
+      "text": "מערכת שירות לקוחות של Spatie שמאחדת מייל וצ'אט, ו־AI מנסח תשובות מהידע שלכם כדי שהצוות ישלח אותן.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/there-there"
+      },
+      "icon": "https://resize.imagekit.co/Gi263Uii2NE8zNADqV4-pjMv-4323RhAphkVfIoVMjQ/s:40:40/dpr:2/plain/s3://betalist-production/xuqk74xb6uwbwyxdacxjw62rk6ze"
+    },
+    {
+      "id": "convert-express",
+      "name": "convert.express",
+      "text": "תמלול אודיו ווידאו עם AI בלי מנוי: 10 דקות חינם ביום ואחר כך 0.02 אירו לדקה, והקבצים נמחקים תוך 24 שעות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/convert-express"
+      },
+      "icon": "https://resize.imagekit.co/R6nfqcrUSjRX_a0i_NCxV7DETknr5ebemmKs-2lq_mM/s:40:40/dpr:2/plain/s3://betalist-production/1emmj9ioixyayutfbnu1th2p4q0i"
+    },
+    {
+      "id": "sickle",
+      "name": "Sickle",
+      "text": "שרת MCP שמחבר את כל תיבות המייל שלכם ל־Claude, ל־Cursor ולכלים דומים, עם הרשאות נפרדות לקריאה, לשינוי ולשליחה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/sickle"
+      },
+      "icon": "https://resize.imagekit.co/T1oQ0Cz8YWl8H_NN4Gb9QoF5HOOdmm_FhhFAdoTmqpA/s:40:40/dpr:2/plain/s3://betalist-production/9qufoxuavzzullyut792t36dhdb4"
+    },
+    {
+      "id": "basicops",
+      "name": "BasicOps",
+      "text": "מרחב עבודה לפרויקטים, משימות וצ'אט, שבו סוכני AI מצטרפים כחברי צוות עם הרשאות, ואפשר לבדוק את מה שעשו ולבטל אותו.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/basicops"
+      }
+    },
+    {
+      "id": "roomstaging",
+      "name": "RoomStaging",
+      "text": "מרהט ומעצב תמונות של נכסים עם AI תוך 15 עד 30 שניות, למתווכים ולאנשי נדל\"ן, מ־12 דולר לחודש בחיוב שנתי.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/roomstaging"
+      },
+      "icon": "https://resize.imagekit.co/YKyIzQKOsQ2631qRp5S7XUet2q1vYL-nrofc8uJ0uaM/s:40:40/dpr:2/plain/s3://betalist-production/e54i769a5oqbvnl6qmqb36kvu17a"
+    },
+    {
+      "id": "muster",
+      "name": "Muster",
+      "text": "אפליקציה חינמית בקוד פתוח ל־Mac שמתריעה כשסוכן קוד כמו Claude Code או Codex מחכה לכם, ומאפשרת לענות מהמקלדת.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/muster"
+      },
+      "icon": "https://resize.imagekit.co/GVAD0WgVw9Ub53Ow6wctyC14lec9qIgG--in77MHE-Q/s:40:40/dpr:2/plain/s3://betalist-production/h3wixew3ibq6groiv1jwrgsck4x5"
+    }
+  ]
+}
