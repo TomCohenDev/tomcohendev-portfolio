@@ -367,13 +367,13 @@ const AUTOMATION_HEADING = (
 const AUTOMATION_INTRO =
   "מה קורה היום, באילו כלים אתם משתמשים ואיפה התהליך נתקע? נבדוק יחד אם אוטומציה יכולה לעזור. הצטרפו לאלפי עסקים בישראל שכבר משתמשים בבינה מלאכותית.";
 
-// Quote from Noam (Nightwing); Noam approved this exact wording.
+// Quote from Yonatan (Nightwing).
 const AUTOMATION_QUOTE: ContactQuote = {
   text: "תום הבין מהר את המגבלות של העסק שלנו ואת הצרכים שלנו. בזכות המערכת שהוא בנה לנו חסכנו אלפי שקלים, ויכולנו לקבל ולעקוב אחרי הזמנות בלי מאמץ בכלל.",
-  name: "נועם",
+  name: "יונתן",
   source: (
     <>
-      <bdi>Nightwing</bdi>, מסעדה בפרדס חנה
+      <bdi>Nightwing</bdi>
     </>
   ),
 };

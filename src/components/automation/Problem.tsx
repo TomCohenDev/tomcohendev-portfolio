@@ -102,7 +102,7 @@ export const MarketContext = () => (
   <section aria-labelledby="market-title" className="border-t border-[var(--a-line)]">
     <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
       <h2 id="market-title" className="mx-auto max-w-3xl text-center text-2xl font-medium leading-snug text-[var(--a-ink)] md:text-[2rem]">
-        הרבה עסקים כבר משתמשים בבינה מלאכותית. רובם, בינתיים, בעיקר לכתיבה.
+        הרבה עסקים כבר משתמשים בבינה מלאכותית
       </h2>
       <ul className="mt-10 grid gap-4 md:grid-cols-3">
         {marketStats.map((stat) => (

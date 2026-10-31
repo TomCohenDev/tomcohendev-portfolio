@@ -37,9 +37,6 @@ export const Hero = () => (
             דברו איתי בוואטסאפ<span className="sr-only"> (נפתח בחלון חדש)</span>
           </a>
         </div>
-        <p className="mt-5 max-w-lg text-[15px] max-md:mx-auto leading-relaxed text-[var(--a-muted)]">
-          שיחת ההיכרות הראשונה בחינם וללא התחייבות.
-        </p>
       </div>
       <AutomationHub />
     </div>
