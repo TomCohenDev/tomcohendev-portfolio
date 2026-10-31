@@ -125,9 +125,9 @@ A file `news/PAUSED` stops the daily run.
 
 **Schedule:** a T3 scheduled task on the Vienna VPS ("חדשות הבוקר: גיליון יומי", project tomcohendev-portfolio, checkout
 `/root/tomcohendev-portfolio`), every day at 05:00 UTC: 07:00 in Israel in winter, 08:00 in summer. Each run opens a new thread on the VPS.
-Until the site pull requests are merged it publishes to `feat/content-mockups`; then its prompt changes to `main`.
+It publishes to `main`, the only branch Cloudflare deploys.
 Geektime blocks the VPS (HTTP 403), so its feed is skipped there; the other feeds work.
-Its prompt is one line: "In the tomcohendev-portfolio checkout, run `git pull --ff-only`, then read `news/schedule.md` and do its steps."
+Its prompt: "Daily news run for tomcohen.dev. In the checkout /root/tomcohendev-portfolio, run `git checkout main` and `git pull --ff-only`, then read news/schedule.md and do its steps for today (Israel time), in that checkout. The publishing branch is main: commit and push there."
 
 ## Open items
 
