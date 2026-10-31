@@ -3,7 +3,7 @@
  * each entry names its source. The phone screens are drawn illustrations of those apps, and the page
  * says so. No invented clients, numbers or results.
  *
- * Confirmed by Tom on 2026-10-28: "4 years of Flutter", the Yellow Candle wording, and that the clients
+ * Confirmed by Tom on 2026-10-28: "5 years of Flutter" (corrected on 2026-10-31), the Yellow Candle wording, and that the clients
  * quoted on this page (Roi, Liran, David, Jonathan) agreed to publication.
  */
 

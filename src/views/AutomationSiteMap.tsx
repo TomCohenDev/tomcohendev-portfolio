@@ -3,8 +3,9 @@ import { CONTACT } from "@/components/automation/content";
 
 const HOME_SECTIONS = [
   { href: "/", label: "פתיחה: חדשות, מדריכים וכלים למפתחים" },
-  { href: "/#services", label: "השירותים שלי" },
-  { href: "/#work", label: "עבודות והמלצות" },
+  { href: "/#blog", label: "בלוג" },
+  { href: "/#courses", label: "קורסים ומפגשים" },
+  { href: "/courses/business-automation", label: "קורס אוטומציה עסקית עם AI" },
   { href: "/#about", label: "קצת עליי" },
   { href: "/#contact", label: "יצירת קשר" },
 ];

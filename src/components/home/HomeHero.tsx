@@ -77,11 +77,21 @@ export const HomeHero = () => {
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             </a>
             <a
-              href="#services"
+              href="#courses"
+              onClick={() =>
+                track("home_cta_click", { location: "hero", target: "courses" })
+              }
+              className="a-btn a-btn-ghost"
+            >
+              קורסים
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            </a>
+            <a
+              href="#contact"
               onClick={() =>
                 track("home_cta_click", {
                   location: "hero",
-                  target: "services",
+                  target: "contact",
                 })
               }
               className="a-btn a-btn-solid"

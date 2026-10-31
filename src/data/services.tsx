@@ -151,7 +151,7 @@ export const servicesList: ServiceData[] = [
     title: "Mobile Apps",
     icon: <Smartphone className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
     description:
-      "4 years of Flutter expertise. Fullstack mobile apps with Flutter and Firebase — beautiful UIs, native performance.",
+      "5 years of Flutter expertise. Fullstack mobile apps with Flutter and Firebase — beautiful UIs, native performance.",
     features: [
       "Flutter",
       "iOS & Android",

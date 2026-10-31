@@ -83,7 +83,7 @@ export const MobileHero = () => (
           </span>
         </p>
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-[var(--a-muted)] max-md:mx-auto">
-          ארבע שנים של פיתוח ב־<bdi>Flutter</bdi>: קוד אחד שרץ גם באייפון וגם
+          חמש שנים של פיתוח ב־<bdi>Flutter</bdi>: קוד אחד שרץ גם באייפון וגם
           באנדרואיד, עם כל מה שמאחורי הקלעים, מהתחברות ותשלומים ועד ההעלאה ל־
           <bdi>App Store</bdi> ול־<bdi>Google Play</bdi>.
         </p>

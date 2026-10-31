@@ -199,6 +199,8 @@ export const courseTypes: Record<CourseType, { label: string; color: string }> =
 
 export type Course = {
   slug: string;
+  /** Has its own page in src/pages/courses/, so the generic course page skips it. */
+  landing?: boolean;
   type: CourseType;
   title: string;
   description: string;
@@ -217,30 +219,19 @@ export type Course = {
 
 export const courses: Course[] = [
   {
-    slug: "automation-basics",
+    // Real, not demo: this one has its own landing page (src/pages/courses/business-automation.astro).
+    slug: "business-automation",
+    landing: true,
     type: "paid",
-    title: "אוטומציה לעסק קטן: מהתהליך הראשון ועד שהוא רץ לבד",
-    description: "ארבעה מפגשים מעשיים. בסוף כל אחד יוצא עם תהליך אמיתי מהעסק שלו שעובד.",
-    date: "2026-12-01",
-    time: "19:00",
-    when: "ארבעה מפגשים, בימי שלישי",
-    where: "אונליין, בזום",
-    length: "4 מפגשים של שעתיים",
-    price: "המחיר יפורסם עם פתיחת ההרשמה",
+    title: "להפוך תהליכים חוזרים בעסק לאוטומציות שעובדות",
+    description: "קורס מעשי לבעלי עסקים, לאנשי תפעול, שיווק, מכירות ושירות ולכל מי שרוצה להיכנס לתחום. בוחרים תהליך אמיתי ובונים לו גרסה אוטומטית ראשונה, גם בלי רקע בתכנות.",
+    when: "10 מפגשים, אחת לשבוע, משעה 17:00 עד 21:00",
+    where: "בכיתה או חי ב־Zoom",
+    length: "10 מפגשים",
+    price: "יפורסם לפני ההרשמה",
     status: "soon",
-    audience: ["בעלי עסקים קטנים ועצמאים", "מי שמעביר פרטים בין מערכות ביד", "בלי ידע בתכנות"],
-    learn: [
-      "לזהות איזה תהליך שווה לאטמט קודם",
-      "לחבר טופס, גיליון ווואטסאפ",
-      "להוסיף שלב של AI עם אישור של בן אדם",
-      "לבדוק שהתהליך לא נשבר בשקט",
-    ],
-    plan: [
-      { title: "מפגש 1: למצוא את התהליך", text: "ממפים את השבוע שלכם ובוחרים תהליך אחד." },
-      { title: "מפגש 2: החיבור הראשון", text: "בונים יחד את החיבור בין שתי מערכות." },
-      { title: "מפגש 3: AI באמצע", text: "מוסיפים סיכום או ניסוח, עם שלב אישור." },
-      { title: "מפגש 4: שזה ירוץ לבד", text: "התראות על תקלות, ומה עושים כשמשהו משתנה." },
-    ],
+    audience: ["בעלי עסקים קטנים ובינוניים", "אנשי תפעול, שיווק, מכירות ושירות", "מי שרוצה להיכנס לתחום"],
+    learn: ["למפות תהליך ולבחור מה לאטמט", "לבנות זרימות עבודה ב־Make", "לשלב AI בצורה אחראית", "לבדוק, למדוד ולהטמיע"],
   },
   {
     slug: "open-qa-apps",

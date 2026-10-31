@@ -1,0 +1,11 @@
+---
+import HebrewLayout from "../../layouts/HebrewLayout.astro";
+import BusinessAutomationCourse, { DESCRIPTION, TITLE } from "../../views/BusinessAutomationCourse";
+import { COURSE_PATH, courseFaqs } from "../../components/course/content";
+import { faqPage, graph, person } from "../../lib/structuredData";
+---
+
+<!-- noindex until the open details in src/components/course/content.ts are settled. -->
+<HebrewLayout title={TITLE} description={DESCRIPTION} path={COURSE_PATH} noindex hideContact jsonLd={graph(person, faqPage(COURSE_PATH, courseFaqs))}>
+  <BusinessAutomationCourse client:load />
+</HebrewLayout>

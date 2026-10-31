@@ -3,7 +3,7 @@ import HebrewLayout from "../../layouts/HebrewLayout.astro";
 import CourseItem from "../../views/CourseItem";
 import { DEMO, courses, type Course } from "../../components/content/mock";
 
-export const getStaticPaths = () => courses.map((course) => ({ params: { slug: course.slug }, props: { course } }));
+export const getStaticPaths = () => courses.filter((course) => !course.landing).map((course) => ({ params: { slug: course.slug }, props: { course } }));
 const { course } = Astro.props as { course: Course };
 ---
 

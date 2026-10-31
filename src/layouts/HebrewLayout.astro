@@ -20,6 +20,8 @@ interface Props {
   jsonLd?: object;
   /** Keep the page out of search results (the 404 page). */
   noindex?: boolean;
+  /** Leave the phone number and email address out of the no-JavaScript note. */
+  hideContact?: boolean;
 }
 
 const {
@@ -34,6 +36,7 @@ const {
   twitterDescription = description,
   jsonLd,
   noindex = false,
+  hideContact = false,
 } = Astro.props;
 
 const url = new URL(path, Astro.site).href;
@@ -106,7 +109,10 @@ const image = new URL(ogImage, Astro.site).href;
 
   <body>
     <noscript>
-      <p>הטופס בעמוד צריך JavaScript. אפשר גם לפנות ישירות: contact@tomcohen.dev או בטלפון 054-555-2149</p>
+      <p>
+        הטופס בעמוד צריך JavaScript.
+        {!hideContact && "אפשר גם לפנות ישירות: contact@tomcohen.dev או בטלפון 054-555-2149"}
+      </p>
     </noscript>
     <slot />
 

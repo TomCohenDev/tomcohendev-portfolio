@@ -2,9 +2,8 @@ import "@/components/automation/automation.css";
 import "@/components/home/home.css";
 import { AutomationFooter, AutomationHeader } from "@/components/automation/Chrome";
 import { HomeHero } from "@/components/home/HomeHero";
-import { ServiceBranches } from "@/components/home/ServiceBranches";
-import { HomeAbout, HomeContact, HomeWork } from "@/components/home/HomeSections";
-import { HomeLatest } from "@/components/home/HomeLatest";
+import { HomeAbout, HomeContact } from "@/components/home/HomeSections";
+import { HomeBlog, HomeCourses } from "@/components/home/HomeLatest";
 import { HomeNews } from "@/components/home/HomeNews";
 
 // Page title and description; src/pages/index.astro puts them in the HTML head.
@@ -18,10 +17,9 @@ const Home = () => (
     <main id="main">
       <HomeHero />
       <HomeNews />
-      <ServiceBranches />
-      <HomeWork />
+      <HomeBlog />
+      <HomeCourses />
       <HomeAbout />
-      <HomeLatest />
       <HomeContact />
     </main>
     <AutomationFooter site="home" />

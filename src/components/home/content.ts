@@ -19,6 +19,13 @@ export const heroWords = [
   { text: "מוצרים", visual: 0 },
 ] as const;
 
+/** The three roles that open the About text; the section writes them one after another. */
+export const aboutWords = [
+  { text: "מפתח", visual: 6 },
+  { text: "יזם", visual: 7 },
+  { text: "מרצה", visual: 8 },
+] as const;
+
 export const HOME_WHATSAPP = `https://wa.me/972545552149?text=${encodeURIComponent("היי תום, הגעתי מהאתר ואשמח לדבר")}`;
 
 /** The two services, as branches of the map. `leaves` repeat what each page already says. */
@@ -58,10 +65,3 @@ export const reviews = [
   }),
   { quote: mobileQuote.text, name: mobileQuote.name, source: undefined },
 ];
-
-/** Experience as Tom stated it (the same facts as on /automation and /mobile). */
-export const aboutFacts = [
-  { value: "5 שנים", label: "של בניית מוצרים, מערכות ואוטומציות" },
-  { value: "4 שנים", label: "של פיתוח אפליקציות ב־Flutter" },
-  { value: "מקצה לקצה", label: "מהאפיון, דרך הקוד, ועד שזה עובד אצלכם" },
-] as const;

@@ -140,7 +140,7 @@ const Orbit = ({ branch, reverse }: { branch: (typeof branches)[number]; reverse
 };
 
 export const ServiceBranches = () => (
-  <section id="services" aria-labelledby="services-title" className="relative overflow-hidden py-20 md:py-24">
+  <section id="services" aria-labelledby="services-title" className="relative overflow-hidden border-t border-[var(--a-line)] py-20 md:py-24">
     <div className="mx-auto max-w-6xl px-5 md:px-8">
       <div className="mx-auto max-w-2xl text-center">
         <p className="a-kicker">השירותים שלי</p>

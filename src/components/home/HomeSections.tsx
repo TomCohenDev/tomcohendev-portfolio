@@ -2,7 +2,9 @@ import { ArrowLeft, Mail, MessageCircle, Phone, Quote } from "lucide-react";
 import { track } from "@/lib/analytics";
 import { Squiggle } from "../automation/Doodles";
 import { CONTACT } from "../automation/content";
-import { aboutFacts, HOME_WHATSAPP, reviews, work } from "./content";
+import { AboutRoles } from "./AboutRoles";
+import { HOME_WHATSAPP, reviews, work } from "./content";
+import { SideDoodle } from "./SideDoodles";
 
 export const HomeWork = () => (
   <section
@@ -86,52 +88,51 @@ export const HomeAbout = () => (
   <section
     id="about"
     aria-labelledby="about-title"
-    className="a-grid-bg border-t border-[var(--a-line)] py-20 md:py-28"
+    className="a-grid-bg relative overflow-hidden border-t border-[var(--a-line)] py-20 md:py-24"
   >
-    <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 md:px-8 lg:grid-cols-[1fr_1.3fr]">
-      <div className="relative mx-auto w-full max-w-[22rem]">
-        <img
-          src="/tom_face.webp"
-          alt="תום כהן"
-          width={383}
-          height={383}
-          loading="lazy"
-          className="aspect-square w-full -rotate-2 rounded-[2rem] border-2 border-[rgba(191,149,249,0.45)] object-cover"
-        />
-      </div>
-      <div>
+    <SideDoodle scene="aboutLeft" side="left" />
+    <SideDoodle scene="aboutRight" side="right" />
+    <div className="mx-auto grid max-w-5xl items-start gap-10 px-5 md:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,25rem)] lg:gap-14">
+      <div className="max-w-[35rem]">
         <p className="a-kicker">קצת עליי</p>
         <h2 id="about-title" className="a-h2">
           נעים מאוד, אני{" "}
           <span className="relative inline-block">
-            תום
+            תום כהן
             <Squiggle className="absolute -bottom-3 start-0 h-3 w-full text-[#f49ac1]" />
           </span>
         </h2>
-        <p className="mt-6 text-lg leading-relaxed text-[var(--a-muted)]">
-          מפתח <bdi>Full-stack</bdi> שבונה מוצרים מקצה לקצה: אפליקציות, מערכות
-          ווב, AI ואוטומציה. עבדתי עם אנשים פרטיים, עסקים קטנים, וסטארטאפים
-          קטנים וגדולים.
+        <p className="mt-6 text-[17px] leading-[1.8] text-[var(--a-muted)]">
+          מפתח <bdi>Full-stack</bdi>, יזם ומרצה, עם חמש שנות ניסיון בבניית
+          מוצרים דיגיטליים. אני מפתח אפליקציות, מערכות ווב וכלים שמשלבים AI
+          ואוטומציה, ומלווה רעיונות מהשלב שבו הם עדיין שיחה או סקיצה ועד למוצר
+          שאנשים משתמשים בו.
         </p>
-        <p className="mt-4 text-lg leading-relaxed text-[var(--a-muted)]">
-          מה שחשוב לי: להבין קודם מה הבעיה, לבנות את הדבר הנכון ולא את הכי
-          מסובך, ולמסור משהו שבאמת עובד, לא רק הדגמה.
+        <p className="mt-4 text-[17px] leading-[1.8] text-[var(--a-muted)]">
+          לאורך הדרך עבדתי עם אנשים פרטיים, עסקים וסטארטאפים, ובניתי גם מוצרים
+          עצמאיים משלי. כשאתה בונה מוצר משלך, אתה נדרש לחשוב על הכול: מה המשתמש
+          צריך, איך הממשק ירגיש, איך המערכת תעבוד ומה יידרש כדי להמשיך לפתח
+          ולתחזק אותה. זו גם הגישה שאני מביא לכל פרויקט.
         </p>
-        <dl className="mt-10 grid gap-4 sm:grid-cols-3">
-          {aboutFacts.map((f) => (
-            <div
-              key={f.label}
-              className="rounded-2xl border border-[var(--a-line)] bg-[#222524] p-4"
-            >
-              <dt className="text-2xl font-medium text-[var(--a-human)]">
-                {f.value}
-              </dt>
-              <dd className="mt-1 text-[14px] leading-snug text-[var(--a-muted)]">
-                {f.label}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <p className="mt-4 text-[17px] leading-[1.8] text-[var(--a-muted)]">
+          לצד הפיתוח, אני מרצה בתחומי התכנות וההנדסה, מלווה פרויקטי גמר ומפתח
+          ומעביר קורסים לשימוש מעשי ב־AI. אני גם יוצר תוכן בתחומים שלי,
+          למפתחים וגם למי שלא מגיע מעולם הפיתוח. אני נהנה לפרק נושאים מורכבים
+          לחלקים ברורים, לחבר בין התאוריה לעבודה בשטח ולעזור לאנשים להגיע לשלב
+          שבו הם יכולים לבנות ולפתור בעצמם.
+        </p>
+      </div>
+      {/* The doodle stands on the section's bottom edge, as on the landing pages. */}
+      <div className="flex flex-col items-center gap-4 lg:self-end">
+        <AboutRoles />
+        <img
+          src="/automation/tom.png"
+          alt="איור של תום כהן מנופף לשלום"
+          width={1402}
+          height={1122}
+          loading="lazy"
+          className="-mb-20 w-52 translate-y-[2.32%] drop-shadow-[0_18px_30px_rgba(0,0,0,0.55)] md:-mb-24 lg:w-56"
+        />
       </div>
     </div>
   </section>
@@ -168,15 +169,17 @@ export const HomeContact = () => (
   <section
     id="contact"
     aria-labelledby="contact-title"
-    className="border-t border-[var(--a-line)] py-20 md:py-28"
+    className="relative overflow-hidden border-t border-[var(--a-line)] py-20 md:py-28"
   >
+    <SideDoodle scene="contactLeft" side="left" />
+    <SideDoodle scene="contactRight" side="right" />
     <div className="mx-auto max-w-6xl px-5 md:px-8">
       <div className="mx-auto max-w-2xl text-center">
         <p className="a-kicker">יצירת קשר</p>
         <h2 id="contact-title" className="a-h2">
-          יש לכם רעיון או תהליך{" "}
+          מחפשים מפתח או פתרון{" "}
           <span className="relative inline-block">
-            שמעיק?
+            לעסק שלכם?
             <Squiggle className="absolute -bottom-3 start-0 h-3 w-full text-[#f49ac1]" />
           </span>
         </h2>

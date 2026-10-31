@@ -34,19 +34,36 @@ const isPhone = (v: string) => {
   return /^[+\d][\d\s\-().]*$/.test(v) && digits.length >= 9 && digits.length <= 15;
 };
 
-const validate = (f: Fields) => {
+const validate = (f: Fields, contactOnly = false) => {
   const errors: Partial<Record<FieldName, string>> = {};
   if (f.fullName.trim().length < 2) errors.fullName = MESSAGES.fullName;
   const contact = f.contact.trim();
-  if (!isEmail(contact) && !isPhone(contact)) errors.contact = MESSAGES.contact;
+  if (contactOnly) {
+    if (!isPhone(contact)) errors.contact = "נא לכתוב מספר טלפון תקין.";
+    if (!isEmail(f.tools.trim())) errors.tools = "נא לכתוב כתובת דואר אלקטרוני תקינה.";
+  } else if (!isEmail(contact) && !isPhone(contact)) {
+    errors.contact = MESSAGES.contact;
+  }
   if (!f.consent) errors.consent = MESSAGES.consent;
   return errors;
 };
 
-const ORDER: FieldName[] = ["fullName", "contact", "consent"];
+const ORDER: FieldName[] = ["fullName", "contact", "tools", "consent"];
 
-export const LeadForm = ({ seed = [], onSent, site = "automation" }: { seed?: string[]; onSent?: () => void; site?: SiteKey }) => {
+export const LeadForm = ({
+  seed = [],
+  onSent,
+  site = "automation",
+  inline = false,
+}: {
+  seed?: string[];
+  onSent?: () => void;
+  site?: SiteKey;
+  /** Lays the fields out side by side, for a form in the middle of a page. Meant for `contactOnly` forms. */
+  inline?: boolean;
+}) => {
   const s = SITES[site];
+  const contactOnly = !!s.form.contactOnly;
   const uid = useId();
   const id = (name: string) => `${uid}-${name}`;
   const [fields, setFields] = useState<Fields>(EMPTY);
@@ -62,9 +79,7 @@ export const LeadForm = ({ seed = [], onSent, site = "automation" }: { seed?: st
   useEffect(() => {
     if (!seed.length) return;
     setFields((prev) =>
-      prev.process.trim()
-        ? prev
-        : { ...prev, process: `מה שמוכר לי:\n${seed.map((s) => `• ${s}`).join("\n")}\n\nאצלנו בפועל: ` }
+      prev.process.trim() ? prev : { ...prev, process: `מה שמוכר לי:\n${seed.map((s) => `• ${s}`).join("\n")}\n\nאצלנו בפועל: ` },
     );
   }, [seed]);
 
@@ -87,7 +102,7 @@ export const LeadForm = ({ seed = [], onSent, site = "automation" }: { seed?: st
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const found = validate(fields);
+    const found = validate(fields, contactOnly);
     setErrors(found);
     const first = ORDER.find((name) => found[name]);
     if (first) {
@@ -153,104 +168,137 @@ export const LeadForm = ({ seed = [], onSent, site = "automation" }: { seed?: st
     ) : null;
 
   return (
-    <form ref={formRef} onSubmit={onSubmit} noValidate className="a-card space-y-6" aria-describedby={id("intro")}>
-      <p id={id("intro")} className="text-[14px] text-[var(--a-muted)]">
+    <form ref={formRef} onSubmit={onSubmit} noValidate className={`a-card space-y-6 ${inline ? "a-card-glow" : ""}`} aria-describedby={id("intro")}>
+      <p id={id("intro")} className={inline ? "sr-only" : "text-[14px] text-[var(--a-muted)]"}>
         שדות שמסומנים ב־<span aria-hidden="true">*</span>
         <span className="sr-only">כוכבית</span> הם חובה.
       </p>
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className={inline ? "!mt-0 grid items-start gap-4 md:grid-cols-3" : "space-y-6"}>
+        <div className={contactOnly ? "" : "grid gap-6 sm:grid-cols-2"}>
+          <div>
+            <label htmlFor={id("fullName")} className="text-[15px] font-semibold text-[var(--a-ink)]">
+              שם מלא <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id={id("fullName")}
+              name="fullName"
+              autoComplete="name"
+              required
+              value={fields.fullName}
+              onChange={(e) => set("fullName", e.target.value)}
+              onFocus={markStarted}
+              aria-invalid={!!errors.fullName}
+              aria-describedby={describedBy("fullName")}
+              className={`${inputBase} ${border("fullName")}`}
+            />
+            <ErrorText name="fullName" />
+          </div>
+          {!contactOnly && (
+            <div>
+              <label htmlFor={id("business")} className="text-[15px] font-semibold text-[var(--a-ink)]">
+                {s.form.businessLabel ?? "עסק או תחום פעילות"} <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
+              </label>
+              <input
+                id={id("business")}
+                name="business"
+                autoComplete="organization"
+                value={fields.business}
+                onChange={(e) => set("business", e.target.value)}
+                onFocus={markStarted}
+                className={`${inputBase} ${border("business")}`}
+              />
+            </div>
+          )}
+        </div>
+
         <div>
-          <label htmlFor={id("fullName")} className="text-[15px] font-semibold text-[var(--a-ink)]">
-            שם מלא <span aria-hidden="true">*</span>
+          <label htmlFor={id("contact")} className="text-[15px] font-semibold text-[var(--a-ink)]">
+            {contactOnly ? "טלפון" : "טלפון או דואר אלקטרוני"} <span aria-hidden="true">*</span>
           </label>
           <input
-            id={id("fullName")}
-            name="fullName"
-            autoComplete="name"
+            id={id("contact")}
+            name="contact"
+            type={contactOnly ? "tel" : undefined}
+            autoComplete={contactOnly ? "tel" : undefined}
+            dir="auto"
             required
-            value={fields.fullName}
-            onChange={(e) => set("fullName", e.target.value)}
+            value={fields.contact}
+            onChange={(e) => set("contact", e.target.value)}
             onFocus={markStarted}
-            aria-invalid={!!errors.fullName}
-            aria-describedby={describedBy("fullName")}
-            className={`${inputBase} ${border("fullName")}`}
+            aria-invalid={!!errors.contact}
+            aria-describedby={describedBy("contact", !contactOnly)}
+            className={`${inputBase} ${border("contact")} text-start`}
           />
-          <ErrorText name="fullName" />
+          {!contactOnly && (
+            <p id={id("contact-hint")} className="mt-1.5 text-[14px] text-[var(--a-muted)]">
+              איך הכי נוח שאחזור אליכם.
+            </p>
+          )}
+          <ErrorText name="contact" />
         </div>
-        <div>
-          <label htmlFor={id("business")} className="text-[15px] font-semibold text-[var(--a-ink)]">
-            עסק או תחום פעילות <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
-          </label>
-          <input
-            id={id("business")}
-            name="business"
-            autoComplete="organization"
-            value={fields.business}
-            onChange={(e) => set("business", e.target.value)}
-            onFocus={markStarted}
-            className={`${inputBase} ${border("business")}`}
-          />
-        </div>
-      </div>
 
-      <div>
-        <label htmlFor={id("contact")} className="text-[15px] font-semibold text-[var(--a-ink)]">
-          טלפון או דואר אלקטרוני <span aria-hidden="true">*</span>
-        </label>
-        <input
-          id={id("contact")}
-          name="contact"
-          dir="auto"
-          required
-          value={fields.contact}
-          onChange={(e) => set("contact", e.target.value)}
-          onFocus={markStarted}
-          aria-invalid={!!errors.contact}
-          aria-describedby={describedBy("contact", true)}
-          className={`${inputBase} ${border("contact")} text-start`}
-        />
-        <p id={id("contact-hint")} className="mt-1.5 text-[14px] text-[var(--a-muted)]">
-          איך הכי נוח שאחזור אליכם.
-        </p>
-        <ErrorText name="contact" />
-      </div>
+        {contactOnly ? (
+          <div>
+            <label htmlFor={id("tools")} className="text-[15px] font-semibold text-[var(--a-ink)]">
+              דואר אלקטרוני <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id={id("tools")}
+              name="tools"
+              type="email"
+              autoComplete="email"
+              dir="auto"
+              required
+              value={fields.tools}
+              onChange={(e) => set("tools", e.target.value)}
+              onFocus={markStarted}
+              aria-invalid={!!errors.tools}
+              aria-describedby={describedBy("tools")}
+              className={`${inputBase} ${border("tools")} text-start`}
+            />
+            <ErrorText name="tools" />
+          </div>
+        ) : (
+          <>
+            <div>
+              <label htmlFor={id("process")} className="text-[15px] font-semibold text-[var(--a-ink)]">
+                {s.form.processLabel} <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
+              </label>
+              <textarea
+                id={id("process")}
+                name="process"
+                rows={5}
+                value={fields.process}
+                onChange={(e) => set("process", e.target.value)}
+                onFocus={markStarted}
+                aria-describedby={describedBy("process", true)}
+                className={`${inputBase} ${border("process")} resize-y leading-relaxed`}
+              />
+              <p id={id("process-hint")} className="mt-1.5 text-[14px] leading-relaxed text-[var(--a-muted)]">
+                {s.form.processHint}
+              </p>
+            </div>
 
-      <div>
-        <label htmlFor={id("process")} className="text-[15px] font-semibold text-[var(--a-ink)]">
-          {s.form.processLabel} <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
-        </label>
-        <textarea
-          id={id("process")}
-          name="process"
-          rows={5}
-          value={fields.process}
-          onChange={(e) => set("process", e.target.value)}
-          onFocus={markStarted}
-          aria-describedby={describedBy("process", true)}
-          className={`${inputBase} ${border("process")} resize-y leading-relaxed`}
-        />
-        <p id={id("process-hint")} className="mt-1.5 text-[14px] leading-relaxed text-[var(--a-muted)]">
-          {s.form.processHint}
-        </p>
-      </div>
-
-      <div>
-        <label htmlFor={id("tools")} className="text-[15px] font-semibold text-[var(--a-ink)]">
-          {s.form.toolsLabel} <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
-        </label>
-        <input
-          id={id("tools")}
-          name="tools"
-          value={fields.tools}
-          onChange={(e) => set("tools", e.target.value)}
-          onFocus={markStarted}
-          aria-describedby={id("tools-hint")}
-          className={`${inputBase} ${border("tools")}`}
-        />
-        <p id={id("tools-hint")} className="mt-1.5 text-[14px] text-[var(--a-muted)]">
-          {s.form.toolsHint}
-        </p>
+            <div>
+              <label htmlFor={id("tools")} className="text-[15px] font-semibold text-[var(--a-ink)]">
+                {s.form.toolsLabel} <span className="font-normal text-[var(--a-muted)]">(לא חובה)</span>
+              </label>
+              <input
+                id={id("tools")}
+                name="tools"
+                value={fields.tools}
+                onChange={(e) => set("tools", e.target.value)}
+                onFocus={markStarted}
+                aria-describedby={id("tools-hint")}
+                className={`${inputBase} ${border("tools")}`}
+              />
+              <p id={id("tools-hint")} className="mt-1.5 text-[14px] text-[var(--a-muted)]">
+                {s.form.toolsHint}
+              </p>
+            </div>
+          </>
+        )}
       </div>
 
       {s.form.showFrequency && (
@@ -294,60 +342,73 @@ export const LeadForm = ({ seed = [], onSent, site = "automation" }: { seed?: st
         </label>
       </div>
 
-      <div>
-        <label className="flex cursor-pointer items-start gap-3 text-[15px] leading-relaxed text-[var(--a-ink)]">
-          <input
-            type="checkbox"
-            name="consent"
-            checked={fields.consent}
-            onChange={(e) => set("consent", e.target.checked)}
-            aria-invalid={!!errors.consent}
-            aria-describedby={describedBy("consent")}
-            className="mt-1 h-[18px] w-[18px] flex-none accent-[#bf95f9]"
-          />
-          <span>
-            אני מאשר/ת שתום כהן יחזור אליי בנוגע לפנייה הזו. <span aria-hidden="true">*</span>
-            <span className="mt-1 block text-[14px] text-[var(--a-muted)]">
-              הפרטים משמשים רק לטיפול בפנייה.{" "}
-              <a href="/automation/privacy" className="underline underline-offset-2 hover:text-[var(--a-ink)]">
-                מדיניות הפרטיות
-              </a>
+      <div className={inline ? "flex flex-wrap items-center justify-between gap-4" : "space-y-6"}>
+        <div>
+          <label className="flex cursor-pointer items-start gap-3 text-[15px] leading-relaxed text-[var(--a-ink)]">
+            <input
+              type="checkbox"
+              name="consent"
+              checked={fields.consent}
+              onChange={(e) => set("consent", e.target.checked)}
+              aria-invalid={!!errors.consent}
+              aria-describedby={describedBy("consent")}
+              className="mt-1 h-[18px] w-[18px] flex-none accent-[#bf95f9]"
+            />
+            <span>
+              אני מאשר/ת שתחזרו אליי בנוגע לפנייה הזו. <span aria-hidden="true">*</span>
+              <span className="mt-1 block text-[14px] text-[var(--a-muted)]">
+                הפרטים משמשים רק לטיפול בפנייה.{" "}
+                <a href="/automation/privacy" className="underline underline-offset-2 hover:text-[var(--a-ink)]">
+                  מדיניות הפרטיות
+                </a>
+              </span>
             </span>
-          </span>
-        </label>
-        <ErrorText name="consent" />
-      </div>
-
-      {(status === "error" || status === "rate_limited") && (
-        <div ref={errorRef} tabIndex={-1} role="alert" className="rounded-xl border border-red-400/50 bg-red-400/[0.07] px-4 py-3 text-[15px] leading-relaxed text-[var(--a-ink)] outline-none">
-          {status === "rate_limited" ? (
-            <>נשלחו כמה פניות ברצף. נסו שוב בעוד דקה.</>
-          ) : (
-            <>
-              משהו השתבש והפנייה לא נשלחה. אפשר לנסות שוב, או לפנות אליי ישירות בטלפון{" "}
-              <a href={`tel:${CONTACT.phoneTel}`} className="font-semibold underline" dir="ltr">
-                {CONTACT.phoneDisplay}
-              </a>{" "}
-              או בדואר אלקטרוני{" "}
-              <a href={`mailto:${CONTACT.email}`} className="font-semibold underline" dir="ltr">
-                {CONTACT.email}
-              </a>
-              .
-            </>
-          )}
+          </label>
+          <ErrorText name="consent" />
         </div>
-      )}
 
-      <button type="submit" disabled={status === "submitting"} className="a-btn a-btn-solid w-full justify-center disabled:cursor-wait disabled:opacity-70">
-        {status === "submitting" ? (
-          <>
-            <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />
-            שולח…
-          </>
-        ) : (
-          "לתיאום שיחת היכרות"
+        {(status === "error" || status === "rate_limited") && (
+          <div
+            ref={errorRef}
+            tabIndex={-1}
+            role="alert"
+            className="basis-full rounded-xl border border-red-400/50 bg-red-400/[0.07] px-4 py-3 text-[15px] leading-relaxed text-[var(--a-ink)] outline-none"
+          >
+            {status === "rate_limited" ? (
+              <>נשלחו כמה פניות ברצף. נסו שוב בעוד דקה.</>
+            ) : s.hideContact ? (
+              <>משהו השתבש והפנייה לא נשלחה. נסו שוב בעוד כמה דקות.</>
+            ) : (
+              <>
+                משהו השתבש והפנייה לא נשלחה. אפשר לנסות שוב, או לפנות אליי ישירות בטלפון{" "}
+                <a href={`tel:${CONTACT.phoneTel}`} className="font-semibold underline" dir="ltr">
+                  {CONTACT.phoneDisplay}
+                </a>{" "}
+                או בדואר אלקטרוני{" "}
+                <a href={`mailto:${CONTACT.email}`} className="font-semibold underline" dir="ltr">
+                  {CONTACT.email}
+                </a>
+                .
+              </>
+            )}
+          </div>
         )}
-      </button>
+
+        <button
+          type="submit"
+          disabled={status === "submitting"}
+          className={`a-btn a-btn-solid justify-center disabled:cursor-wait disabled:opacity-70 ${inline ? "max-md:w-full" : "w-full"}`}
+        >
+          {status === "submitting" ? (
+            <>
+              <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />
+              שולח…
+            </>
+          ) : (
+            (s.form.submitLabel ?? "לתיאום שיחת היכרות")
+          )}
+        </button>
+      </div>
     </form>
   );
 };
@@ -389,7 +450,8 @@ export const ContactSection = ({
   site?: SiteKey;
   heading?: ReactNode;
   intro?: string;
-  quote?: ContactQuote;
+  /** null leaves the quote out. */
+  quote?: ContactQuote | null;
 }) => {
   const ev = SITES[site].event;
   const [sent, setSent] = useState(false);
@@ -397,27 +459,25 @@ export const ContactSection = ({
     <section id="contact" aria-labelledby="contact-title" className="a-grid-bg isolate border-t border-[var(--a-line)]">
       {/* On desktop the portrait is pinned to the bottom of this box, so it stands on the section's bottom edge.
           After sending, the form shrinks to a short message, so extra bottom room keeps the portrait clear of the text. */}
-      <div
-        className={`relative mx-auto grid max-w-6xl gap-12 px-5 py-24 md:px-8 lg:grid-cols-[1fr_1.25fr] lg:gap-16 ${
-          sent ? "lg:pb-[20rem]" : ""
-        }`}
-      >
+      <div className={`relative mx-auto grid max-w-6xl gap-12 px-5 py-24 md:px-8 lg:grid-cols-[1fr_1.25fr] lg:gap-16 ${sent ? "lg:pb-[20rem]" : ""}`}>
         {/* Desktop: the quote lines up with the top of the form; the rest is centred in the space below it,
             above the room reserved for the portrait at the bottom. */}
         <div className="lg:flex lg:flex-col lg:self-stretch lg:pb-[13rem]">
-          <figure className="mb-12 rounded-2xl border border-[var(--a-accent)]/30 bg-[#222524] p-6 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.9)] lg:max-w-[25rem]">
-            <Quote className="h-7 w-7 text-[var(--a-accent)] max-md:mx-auto" aria-hidden="true" />
-            <blockquote className="mt-3 text-xl font-medium leading-relaxed text-[var(--a-ink)] md:text-2xl">{quote.text}</blockquote>
-            <figcaption className="mt-3 text-[15px] text-[var(--a-muted)]">
-              <span className="text-[var(--a-ink)]">{quote.name}</span>
-              {quote.source && <> · {quote.source}</>}
-            </figcaption>
-          </figure>
+          {quote && (
+            <figure className="mb-12 rounded-2xl border border-[var(--a-accent)]/30 bg-[#222524] p-6 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.9)] lg:max-w-[25rem]">
+              <Quote className="h-7 w-7 text-[var(--a-accent)] max-md:mx-auto" aria-hidden="true" />
+              <blockquote className="mt-3 text-xl font-medium leading-relaxed text-[var(--a-ink)] md:text-2xl">{quote.text}</blockquote>
+              <figcaption className="mt-3 text-[15px] text-[var(--a-muted)]">
+                <span className="text-[var(--a-ink)]">{quote.name}</span>
+                {quote.source && <> · {quote.source}</>}
+              </figcaption>
+            </figure>
+          )}
           <div className="lg:my-auto">
             <h2 id="contact-title" className="a-h2 relative">
               {heading}
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-[var(--a-muted)]">{intro}</p>
+            <p className="mt-6 text-lg leading-relaxed text-[var(--a-muted)] lg:pe-8">{intro}</p>
             <ul className="mt-8 space-y-3 text-[16px]">
               <li>
                 <a

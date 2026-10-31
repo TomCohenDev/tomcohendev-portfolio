@@ -12,15 +12,17 @@ const HOME = {
   label: "",
   event: "home",
   nav: [
-    { href: "/mobile", label: "אפליקציות" },
-    { href: "/automation", label: "אוטומציה" },
-    { href: "/blog", label: "בלוג" },
     { href: "/news", label: "חדשות" },
+    { href: "/blog", label: "בלוג" },
     { href: "/courses", label: "קורסים ומפגשים" },
     { href: "#about", label: "קצת עליי" },
+    { href: "/mobile", label: "אפליקציות" },
+    { href: "/automation", label: "אוטומציה" },
   ],
   blurb: "פיתוח אפליקציות ואוטומציות לעסקים, מהאפיון ועד שזה עובד.",
+  cta: "לשיחת היכרות",
   whatsappHref: HOME_WHATSAPP,
+  hideContact: false,
 };
 
 /** Blog, news and courses: in every footer, since the phone header has no menu. */
@@ -66,22 +68,24 @@ export const AutomationHeader = ({ onLanding = true, site = "automation" }: { on
         </nav>
         <div className="flex shrink-0 items-center gap-2">
           {/* Hidden on narrow phones to make room; the hero has a WhatsApp button right below. */}
-          <a
-            href={s.whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="וואטסאפ (נפתח בחלון חדש)"
-            onClick={() => track(`${s.event}_contact_click`, { method: "whatsapp", location: "header" })}
-            className="hidden h-10 w-10 items-center justify-center rounded-full border border-[var(--a-line)] text-[var(--a-ink)] transition-colors hover:border-[var(--a-accent)] hover:text-[var(--a-accent)] min-[420px]:flex"
-          >
-            <MessageCircle className="h-5 w-5" aria-hidden="true" />
-          </a>
+          {!s.hideContact && (
+            <a
+              href={s.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="וואטסאפ (נפתח בחלון חדש)"
+              onClick={() => track(`${s.event}_contact_click`, { method: "whatsapp", location: "header" })}
+              className="hidden h-10 w-10 items-center justify-center rounded-full border border-[var(--a-line)] text-[var(--a-ink)] transition-colors hover:border-[var(--a-accent)] hover:text-[var(--a-accent)] min-[420px]:flex"
+            >
+              <MessageCircle className="h-5 w-5" aria-hidden="true" />
+            </a>
+          )}
           <a
             href={`${base}#contact`}
             onClick={() => track(`${s.event}_cta_click`, { location: "header" })}
             className="a-btn a-btn-solid whitespace-nowrap !px-3 !py-2 text-[14px] max-[359px]:text-[13px] sm:!px-4 sm:text-[15px]"
           >
-            לשיחת היכרות
+            {s.cta}
           </a>
         </div>
       </div>
@@ -113,35 +117,39 @@ export const AutomationFooter = ({ site = "automation" }: { site?: PageKey }) =>
         <div className="space-y-3 text-[15px]">
           <p className="font-semibold text-[var(--a-ink)]">יצירת קשר</p>
           <ul className="space-y-2 text-[var(--a-muted)]">
-            <li>
-              <a
-                href={`tel:${CONTACT.phoneTel}`}
-                onClick={() => track(`${s.event}_contact_click`, { method: "phone", location: "footer" })}
-                className="hover:text-[var(--a-ink)]"
-              >
-                טלפון: <span dir="ltr">{CONTACT.phoneDisplay}</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href={s.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => track(`${s.event}_contact_click`, { method: "whatsapp", location: "footer" })}
-                className="hover:text-[var(--a-ink)]"
-              >
-                וואטסאפ<span className="sr-only"> (נפתח בחלון חדש)</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href={`mailto:${CONTACT.email}`}
-                onClick={() => track(`${s.event}_contact_click`, { method: "email", location: "footer" })}
-                className="hover:text-[var(--a-ink)]"
-              >
-                דואר אלקטרוני: <span dir="ltr">{CONTACT.email}</span>
-              </a>
-            </li>
+            {!s.hideContact && (
+              <>
+                <li>
+                  <a
+                    href={`tel:${CONTACT.phoneTel}`}
+                    onClick={() => track(`${s.event}_contact_click`, { method: "phone", location: "footer" })}
+                    className="hover:text-[var(--a-ink)]"
+                  >
+                    טלפון: <span dir="ltr">{CONTACT.phoneDisplay}</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={s.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => track(`${s.event}_contact_click`, { method: "whatsapp", location: "footer" })}
+                    className="hover:text-[var(--a-ink)]"
+                  >
+                    וואטסאפ<span className="sr-only"> (נפתח בחלון חדש)</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${CONTACT.email}`}
+                    onClick={() => track(`${s.event}_contact_click`, { method: "email", location: "footer" })}
+                    className="hover:text-[var(--a-ink)]"
+                  >
+                    דואר אלקטרוני: <span dir="ltr">{CONTACT.email}</span>
+                  </a>
+                </li>
+              </>
+            )}
             <li>
               <a
                 href="https://www.linkedin.com/in/tom-cohen-07778585/"

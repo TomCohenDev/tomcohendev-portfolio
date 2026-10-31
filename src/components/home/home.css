@@ -12,3 +12,28 @@
   }
 }
 
+/* SideDoodle: fills the margin beside a 64rem section, up to a size, and sits out when the margin is too small. */
+.automation-page .side-doodle {
+  display: none;
+  position: absolute;
+  top: 50%;
+  width: min(calc((100vw - 64rem) / 2 - 0.75rem), 19rem);
+  height: auto;
+  overflow: visible;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.automation-page .side-doodle-left {
+  left: 0;
+}
+
+.automation-page .side-doodle-right {
+  right: 0;
+}
+
+@media (min-width: 1280px) {
+  .automation-page .side-doodle {
+    display: block;
+  }
+}

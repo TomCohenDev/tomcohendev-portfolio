@@ -10,7 +10,7 @@ interface DynamicVisualProps {
 }
 
 /**
- * The hand-drawn sketch next to the hero word: 0 roadmap, 1 phone, 2 web app, 3 dashboard, 4 workflow, 5 AI network.
+ * The hand-drawn sketch next to the hero word: 0 roadmap, 1 phone, 2 web app, 3 dashboard, 4 workflow, 5 AI network, and for About: 6 code, 7 rocket, 8 lecture.
  * The frame morphs from one shape to the next, the new scene is drawn into it with a pen, and every line "boils"
  * slightly (a displacement filter whose noise changes a few times a second), like a hand-drawn animation.
  */

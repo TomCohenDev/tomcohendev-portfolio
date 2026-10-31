@@ -3,7 +3,7 @@
  * This holds what differs between them. `event` prefixes the analytics event names, so the
  * existing automation_* events keep their names.
  */
-export type SiteKey = "automation" | "mobile";
+export type SiteKey = "automation" | "mobile" | "course";
 
 type FormCopy = {
   processLabel: string;
@@ -12,6 +12,13 @@ type FormCopy = {
   toolsHint: string;
   /** The "how often does it happen" choice only makes sense for processes. */
   showFrequency: boolean;
+  businessLabel?: string;
+  submitLabel?: string;
+  /**
+   * Asks only for name, phone and email, all required. The phone goes in `contact` and the email in `tools`,
+   * so the lead worker and its table need no new column.
+   */
+  contactOnly?: boolean;
 };
 
 type Site = {
@@ -20,8 +27,12 @@ type Site = {
   event: string;
   nav: { href: string; label: string }[];
   blurb: string;
+  /** The button in the header. */
+  cta: string;
   other: { to: string; label: string };
   form: FormCopy;
+  /** Keeps the phone number, WhatsApp and email address off the page. */
+  hideContact?: boolean;
 };
 
 export const SITES: Record<SiteKey, Site> = {
@@ -35,6 +46,7 @@ export const SITES: Record<SiteKey, Site> = {
       { href: "#faq", label: "שאלות" },
     ],
     blurb: "אפיון ובנייה של אוטומציות, חיבורים בין מערכות וכלים פנימיים לעסקים ולאנשים פרטיים.",
+    cta: "לשיחת היכרות",
     other: { to: "/mobile", label: "פיתוח אפליקציות" },
     form: {
       processLabel: "איזה תהליך הייתם רוצים לשפר?",
@@ -55,6 +67,7 @@ export const SITES: Record<SiteKey, Site> = {
       { href: "#faq", label: "שאלות" },
     ],
     blurb: "פיתוח אפליקציות לאייפון ולאנדרואיד ב־Flutter, מהרעיון ועד החנויות.",
+    cta: "לשיחת היכרות",
     other: { to: "/automation", label: "אוטומציה לעסקים" },
     form: {
       processLabel: "מה האפליקציה צריכה לעשות?",
@@ -63,6 +76,31 @@ export const SITES: Record<SiteKey, Site> = {
       toolsLabel: "מה כבר קיים?",
       toolsHint: "למשל: רק רעיון, עיצוב ב־Figma, אתר, או אפליקציה קיימת שצריך לתקן. כל תשובה טובה.",
       showFrequency: false,
+    },
+  },
+  course: {
+    path: "/courses/business-automation",
+    label: "קורס אוטומציה",
+    event: "course",
+    nav: [
+      { href: "#outcome", label: "על הקורס" },
+      { href: "#syllabus", label: "סילבוס" },
+      { href: "#lecturer", label: "המרצה" },
+      { href: "#faq", label: "שאלות" },
+    ],
+    blurb: "קורס מעשי בן 10 מפגשים: בונים תהליך אוטומטי אמיתי לעסק, גם בלי רקע בתכנות.",
+    cta: "לפרטים",
+    other: { to: "/courses", label: "קורסים ומפגשים" },
+    hideContact: true,
+    form: {
+      contactOnly: true,
+      processLabel: "מהו התהליך החוזר שתרצו לייעל?",
+      processHint: "מה קורה היום ואיפה זה נתקע. אין צורך לפרט שמות של לקוחות, מידע רפואי או פיננסי.",
+      toolsLabel: "מעדיפים כיתה או Zoom?",
+      toolsHint: 'למשל: כיתה, Zoom, או "שניהם מתאימים".',
+      showFrequency: false,
+      businessLabel: "תפקיד וסוג העסק",
+      submitLabel: "השארת פרטים",
     },
   },
 };

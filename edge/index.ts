@@ -7,7 +7,7 @@
  *   /en/case-studies/dronebag, get that page; the app shows the right route or its own 404.
  *
  * POST /api/automation-lead
- *   Receives the inquiry form of the Hebrew landing pages (/automation and /mobile; the `page`
+ *   Receives the inquiry form of the Hebrew landing pages (/automation, /mobile and the course page; the `page`
  *   field says which), stores it in D1 and emails it to Tom through
  *   Cloudflare Email Routing. The visitor only sees success when at least one of the two
  *   actually worked.
@@ -204,6 +204,9 @@ function isAllowedOrigin(request: Request) {
 
 /** Wording that depends on the landing page the lead came from. */
 function pageCopy(page: string) {
+  if (page.startsWith("/courses")) {
+    return { source: "tomcohen.dev/courses/business-automation", subject: "התעניינות בקורס האוטומציה", sender: "טופס קורס", process: "התהליך שרוצים לייעל", tools: "דואר אלקטרוני", frequency: false };
+  }
   return page.startsWith("/mobile")
     ? { source: "tomcohen.dev/mobile", subject: "פנייה חדשה מעמוד האפליקציות", sender: "טופס אפליקציות", process: "מה האפליקציה צריכה לעשות", tools: "מה כבר קיים", frequency: false }
     : { source: "tomcohen.dev/automation", subject: "פנייה חדשה מעמוד האוטומציה", sender: "טופס אוטומציה", process: "התהליך שרוצים לשפר", tools: "כלים קיימים", frequency: true };
@@ -243,7 +246,9 @@ function buildEmail(env: Env, id: string, lead: LeadInput) {
     "MIME-Version: 1.0",
     `Content-Type: multipart/alternative; boundary="${boundary}"`,
   ];
-  if (isEmail(lead.contact)) headers.splice(2, 0, `Reply-To: <${lead.contact}>`);
+  // The course form sends the phone as `contact` and the email address as `tools`.
+  const replyTo = [lead.contact, lead.tools].find(isEmail);
+  if (replyTo) headers.splice(2, 0, `Reply-To: <${replyTo}>`);
 
   const part = (type: string, body: string) =>
     [`--${boundary}`, `Content-Type: ${type}; charset=UTF-8`, "Content-Transfer-Encoding: base64", "", wrap(base64Utf8(body))].join("\r\n");

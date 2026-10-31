@@ -691,6 +691,121 @@ const Network = () => {
   );
 };
 
+// ---------------------------------------------------------------------------------------------------------------
+// 6 · Developer: code that writes itself line by line, until the check goes green
+
+const CodeEditor = () => {
+  const { still, transition } = useLoop(1.1, 0);
+  const rows: { x: number; w: number; hue: Hue }[] = [
+    { x: 34, w: 118, hue: "purple" },
+    { x: 58, w: 176, hue: "blue" },
+    { x: 58, w: 96, hue: "teal" },
+    { x: 82, w: 192, hue: "yellow" },
+    { x: 82, w: 134, hue: "blue" },
+    { x: 58, w: 62, hue: "pink" },
+    { x: 34, w: 26, hue: "purple" },
+  ];
+  return (
+    <>
+      <Draw d="M0 44H400" at={0.1} dur={0.4} o={0.5} />
+      {(["red", "yellow", "green"] as const).map((hue, i) => (
+        <Ring key={hue} cx={26 + i * 22} cy={23} r={6} seed={40 + i} color={C[hue]} fill={hue} at={0.2 + i * 0.1} dur={0.2} sw={1.6} />
+      ))}
+      {rows.map((row, i) => (
+        <Draw key={i} d={`M${row.x} ${72 + i * 28}h${row.w}`} at={0.5 + i * 0.3} dur={0.3} color={C[row.hue]} w={5} />
+      ))}
+      <motion.rect
+        x={68}
+        y={233}
+        width={4}
+        height={22}
+        fill={INK}
+        initial={still ? false : { opacity: 0 }}
+        animate={still ? { opacity: 1 } : { opacity: [0, 1, 0] }}
+        transition={still ? undefined : { ...transition, delay: 2.6 }}
+      />
+      <Pop x={338} y={232} at={2.8}>
+        <Ring cx={0} cy={0} r={30} seed={47} color={C.green} fill="green" dur={0.3} />
+        <Glyph name="check" at={0.2} s={1.5} color={C.green} w={4} />
+      </Pop>
+    </>
+  );
+};
+
+// ---------------------------------------------------------------------------------------------------------------
+// 7 · Entrepreneur: a rocket lifts off from a small start, along a dashed line that keeps climbing
+
+const Rocket = () => {
+  const { still, transition } = useLoop(2.4, 0);
+  const flame = useLoop(0.45, 0);
+  const stars = [
+    { x: 58, y: 72, at: 0.9 },
+    { x: 292, y: 58, at: 1.2 },
+    { x: 300, y: 214, at: 1.5 },
+    { x: 96, y: 174, at: 1.8 },
+  ];
+  return (
+    <>
+      <Dashed d="M40 280C110 276 158 244 186 176" at={0.1} o={0.4} color={PEN} />
+      <Ring cx={38} cy={281} r={7} seed={51} color={C.yellow} fill="yellow" at={0.1} dur={0.2} />
+      {stars.map(({ x, y, at }) => (
+        <Pop key={x} x={x} y={y} at={at} s={0.7}>
+          <Glyph name="spark" color={C.yellow} />
+        </Pop>
+      ))}
+      <motion.g animate={still ? undefined : { y: [0, -9, 0] }} transition={still ? undefined : transition}>
+        <g transform="translate(200 142) rotate(24)">
+          <Fill d="M0 -96C30 -68 34 -26 28 34H-28C-34 -26 -30 -68 0 -96Z" hue="purple" at={0.8} />
+          <Draw d="M0 -96C30 -68 34 -26 28 34H-28C-34 -26 -30 -68 0 -96Z" at={0.3} dur={0.7} w={3} />
+          <Draw d="M-28 2L-54 40L-28 32M28 2L54 40L28 32" at={0.9} dur={0.4} color={PEN} w={3} />
+          <Ring cx={0} cy={-34} r={13} seed={53} color={C.cyan} fill="cyan" at={1} dur={0.3} />
+          <motion.g
+            style={{ transformOrigin: "0px 36px" }}
+            initial={still ? false : { opacity: 0 }}
+            animate={still ? { opacity: 1 } : { opacity: 1, scaleY: [1, 1.35, 1] }}
+            transition={still ? undefined : { opacity: { delay: 1.3, duration: 0.2 }, scaleY: flame.transition }}
+          >
+            <path d="M-18 38C-16 62 -6 72 0 88C6 72 16 62 18 38Z" fill={C.orange} fillOpacity={0.3} stroke={C.orange} strokeWidth={2.6} strokeLinejoin="round" />
+            <path d="M-8 38C-7 50 -2 56 0 64C2 56 7 50 8 38Z" fill={C.yellow} fillOpacity={0.5} />
+          </motion.g>
+        </g>
+      </motion.g>
+    </>
+  );
+};
+
+// ---------------------------------------------------------------------------------------------------------------
+// 8 · Lecturer: a board that fills with a diagram, a class watching it, and a light that goes on over one student
+
+const Lecture = () => {
+  const { still, transition } = useLoop(3, 0);
+  const seats = [120, 210, 300];
+  return (
+    <>
+      <Box x={70} y={24} w={280} h={146} r={8} seed={61} at={0.1} dur={0.5} sw={2.6} />
+      <Box x={92} y={46} w={72} h={46} r={8} seed={62} at={0.6} color={C.blue} fill="blue" dur={0.3} />
+      <Box x={256} y={46} w={72} h={46} r={8} seed={63} at={1} color={C.green} fill="green" dur={0.3} />
+      <Draw d="M168 69H248M238 60L250 69L238 78" at={0.85} dur={0.3} color={PEN} w={3} />
+      <Draw d="M92 118H238M92 142H176" at={1.3} dur={0.5} o={0.75} w={3.4} />
+      {seats.map((x, i) => (
+        <g key={x}>
+          <Ring cx={x} cy={234} r={15} seed={64 + i} at={1.5 + i * 0.12} dur={0.25} />
+          <Draw d={`M${x - 26} 286C${x - 26} 256 ${x + 26} 256 ${x + 26} 286`} at={1.6 + i * 0.12} dur={0.3} />
+        </g>
+      ))}
+      <motion.g
+        animate={still ? undefined : { opacity: [0, 0, 1, 1, 0], scale: [0.6, 0.6, 1, 1, 0.6] }}
+        transition={still ? undefined : { ...transition, delay: 2, times: [0, 0.15, 0.3, 0.8, 1] }}
+        style={{ transformOrigin: "300px 206px" }}
+        initial={still ? false : { opacity: 0 }}
+      >
+        <path d="M300 180C289 180 283 188 285 196C286 201 291 203 291 208H309C309 203 314 201 315 196C317 188 311 180 300 180Z" fill={C.yellow} fillOpacity={0.3} stroke={C.yellow} strokeWidth={2.4} strokeLinejoin="round" />
+        <path d="M280 182L274 178M320 182L326 178" stroke={C.yellow} strokeWidth={2.2} strokeLinecap="round" />
+      </motion.g>
+    </>
+  );
+};
+
 /** Frame size and corner for each scene; the frame morphs between them. Order matches DynamicVisual's indexes. */
 export const SCENES = [
   { w: 400, h: 300, r: 22, Scene: Roadmap },
@@ -699,4 +814,7 @@ export const SCENES = [
   { w: 420, h: 290, r: 22, Scene: Dashboard },
   { w: 440, h: 220, r: 22, Scene: Workflow },
   { w: 330, h: 330, r: 26, Scene: Network },
+  { w: 400, h: 300, r: 20, Scene: CodeEditor },
+  { w: 360, h: 320, r: 26, Scene: Rocket },
+  { w: 420, h: 300, r: 22, Scene: Lecture },
 ];

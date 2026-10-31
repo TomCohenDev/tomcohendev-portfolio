@@ -379,12 +379,12 @@ const ServiceMap = ({ activeServiceId }: ServiceMapProps) => {
         "App Store deployment",
       ],
       longDescription:
-        "With 4 years of Flutter expertise, we build beautiful iOS and Android apps from a single codebase. We combine Flutter with Firebase (FlutterFire) or other backend platforms to deliver fullstack mobile solutions that feel native, perform beautifully, and scale effortlessly.",
+        "With 5 years of Flutter expertise, we build beautiful iOS and Android apps from a single codebase. We combine Flutter with Firebase (FlutterFire) or other backend platforms to deliver fullstack mobile solutions that feel native, perform beautifully, and scale effortlessly.",
       subSections: [
         {
           title: "Flutter Excellence",
           description:
-            "4 years of Flutter development experience. We build for iOS and Android simultaneously with native performance and beautiful custom UIs.",
+            "5 years of Flutter development experience. We build for iOS and Android simultaneously with native performance and beautiful custom UIs.",
           items: [
             "Flutter experts",
             "Single codebase",
@@ -1696,7 +1696,7 @@ const ServiceMap = ({ activeServiceId }: ServiceMapProps) => {
                   Launch faster.
                 </h2>
                 <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  4 years building mobile apps. We deliver polished iOS and
+                  5 years building mobile apps. We deliver polished iOS and
                   Android apps that your users will love — fast to market, built
                   to scale.
                 </p>
