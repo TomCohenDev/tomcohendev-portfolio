@@ -1,0 +1,168 @@
+{
+  "date": "2026-11-01",
+  "stories": [
+    {
+      "id": "google-play-target-api-november",
+      "topic": "mobile",
+      "headline": "Google Play: ההארכה לעדכון אפליקציות ל־Android 16 מגיעה היום לסופה",
+      "summary": "מ־31 באוגוסט 2026 אפליקציות חדשות ועדכונים ב־Google Play חייבים לכוון ל־Android 16 (רמת API 36), וגוגל מציינת שאפשר לבקש הארכה עד 1 בנובמבר 2026. אפליקציות קיימות שלא מכוונות לפחות ל־Android 15 לא יהיו זמינות למשתמשים חדשים במכשירים עם גרסאות אנדרואיד חדשות יותר; אפליקציות פרטיות לשימוש פנימי בארגון פטורות.",
+      "forBusiness": "יש לכם אפליקציה ב־Google Play? בדקו מול המפתח לאיזו רמת API היא מכוונת, כי בלי עדכון לא תוכלו להעלות גרסה חדשה. כדאי גם לעבור על ההתראות ב־Play Console.",
+      "source": {
+        "name": "Google Play",
+        "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+      }
+    },
+    {
+      "id": "gemini-slides-whole-deck",
+      "topic": "ai",
+      "headline": "Gemini ב־Google Slides עורך עכשיו מצגת שלמה מבקשה אחת",
+      "summary": "מהחלונית הצדדית אפשר לבקש מ־Gemini לשנות עיצוב, לעדכן תוכן מקבצים ב־Drive, לחבר שקפים או להוסיף שקפים, והשינויים נשמרים כשקפים רגילים שאפשר לבטל. הפריסה התחילה ב־29 באוקטובר ועשויה להימשך יותר מ־15 יום, באנגלית בלבד, במסלולי Business Standard ו־Plus, Enterprise Standard ו־Plus ו־Google AI Pro ו־Ultra.",
+      "forBusiness": "מי שמעדכן מצגות מכירה או הדרכה יכול לחסוך את העבודה הידנית על כל שקף, כל עוד הוא עובד באנגלית. עד 1 בדצמבר לפחות לקוחות Workspace מקבלים מגבלות שימוש גבוהות יותר, ואחר כך יחולו מגבלות לכל משתמש.",
+      "source": {
+        "name": "Google Workspace Updates",
+        "url": "https://workspaceupdates.googleblog.com/2026/10/edit-entire-presentations-with-gemini-in-Google-Slides.html"
+      }
+    },
+    {
+      "id": "ivanti-connect-secure-chain",
+      "topic": "security",
+      "headline": "שלוש פרצות ב־Ivanti Connect Secure מנוצלות יחד: יש תיקון מלא, עדכנו עכשיו",
+      "summary": "תוקפים שילבו שלוש פרצות ב־VPN של Ivanti כדי לקבל שליטה מלאה במכשיר בלי להתחבר, ו־CISA הוסיפה ב־30 באוקטובר את שתי האחרונות לרשימת הפרצות המנוצלות. לפי Ostorlab, התיקון המלא יצא ב־29 באוקטובר בגרסאות 22.8R2.6 ו־25.1.1.3.",
+      "forBusiness": "אם העסק מתחבר מרחוק דרך Ivanti Connect Secure, בקשו מאיש ה־IT לעדכן היום. לוגים נקיים לא מוכיחים שלא נפרצתם, ואם יש חשד צריך לבנות את המכשיר מחדש ולהחליף סיסמאות, אישורים ומפתחות.",
+      "source": {
+        "name": "Ostorlab",
+        "url": "https://blog.ostorlab.co/ivanti-connect-secure-zero-day-root-chain-cve-2026-104935.html"
+      }
+    },
+    {
+      "id": "cloudflare-ddos-q3-israel",
+      "topic": "security",
+      "headline": "Cloudflare: ישראל עלתה למקום ה־10 ברשימת המדינות המותקפות ב־DDoS",
+      "summary": "בדוח של הרבעון השלישי מדווחת Cloudflare על 18.2 מיליון מתקפות ברמת הרשת, כ־8,226 בשעה, ועל עלייה של ישראל בשבעה מקומות אחרי פעילות מתמשכת באמצע ספטמבר. 96% מהמתקפות הסתיימו בפחות מ־10 דקות, ו־98% נשארו מתחת ל־1 Gbps.",
+      "forBusiness": "רוב המתקפות קצרות וקטנות, והן נגמרות לפני שמישהו מספיק להגיב. אם האתר או חנות האונליין חשובים להכנסות שלכם, בדקו מול ספק האחסון שיש לכם הגנת DDoS שפועלת אוטומטית.",
+      "source": {
+        "name": "Cloudflare",
+        "url": "https://blog.cloudflare.com/ddos-threat-report-2026-q3/"
+      }
+    },
+    {
+      "id": "fill-with-gemini-citations",
+      "topic": "ai",
+      "headline": "Fill with Gemini ב־Google Sheets מראה מקורות בכל תא ומטפל בעד 3,000 תאים",
+      "summary": "כש־Gemini ממלא תאים ב־Sheets, הוא מציג עכשיו בתוך כל תא את מקורות האינטרנט שבהם השתמש, ובקשה אחת יכולה לכסות עד 3,000 תאים. הפריסה התחילה ב־20 באוקטובר ועשויה להימשך עד 15 יום, במסלולי Business Standard ו־Plus, Enterprise Standard ו־Plus ו־Google AI Pro ו־Ultra.",
+      "forBusiness": "זה שימושי למשימות כמו השלמת פרטים על רשימת ספקים או לקוחות, כי עכשיו אפשר לבדוק מאיפה הגיע כל נתון. כדאי להמשיך לבדוק את המקורות לפני שמסתמכים על התוצאה.",
+      "source": {
+        "name": "Google Workspace Updates",
+        "url": "https://workspaceupdates.googleblog.com/2026/10/fill-with-gemini-now-provides-cell-level-citations-for-web-sources-and-supports-larger-requests.html"
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "gitlab-cisa-kev",
+      "topic": "security",
+      "text": "CISA הוסיפה ב־29 באוקטובר את הפרצה CVE-2026-97229 ב־GitLab Community ו־Enterprise לרשימת הפרצות שמנוצלות בפועל.",
+      "source": {
+        "name": "CISA",
+        "url": "https://www.cisa.gov/news-events/alerts/2026/10/29/cisa-adds-two-known-exploited-vulnerabilities-catalog"
+      }
+    },
+    {
+      "id": "sheets-compact-pivot",
+      "topic": "automation",
+      "text": "טבלאות ציר ב־Google Sheets מקבלות פריסה קומפקטית, וקובצי Excel שמיובאים שומרים על הפריסה המקורית. פתוח לכל המשתמשים בפריסה הדרגתית.",
+      "source": {
+        "name": "Google Workspace Updates",
+        "url": "https://workspaceupdates.googleblog.com/2026/10/apply-compact-form-layout-for-pivot-tables-in-Google-Sheets.html"
+      }
+    },
+    {
+      "id": "zest-restaurant-agent",
+      "topic": "ai",
+      "text": "אפליקציית המסעדות Zest השיקה סוכן AI בהודעות טקסט שממליץ על מסעדות ומזמין שולחן דרך OpenTable או Resy, גם בקבוצות.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "mergro",
+      "name": "mergro",
+      "text": "סוכן קולי מבוסס AI למשרדי נדל\"ן: מתקשר לליד תוך 60 שניות, בודק התאמה וקובע ביקור ביומן.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/mergro"
+      },
+      "icon": "https://resize.imagekit.co/KRchTr85Eer8_Lzs8z5v-XaRTqFjf_Dfm9Xw4IimJoI/s:40:40/dpr:2/plain/s3://betalist-production/kwm17k7f0tg0ikwww7kw3ccmlmb1"
+    },
+    {
+      "id": "reputify",
+      "name": "Reputify",
+      "text": "מרכז ביקורות מ־Google, Trustpilot, Facebook ו־Booking.com בלוח אחד, מנתח אותן ומציע טיוטות תגובה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/reputify"
+      },
+      "icon": "https://resize.imagekit.co/MiUdwvLITckujQQGKmNWt858Y6bn2mb6bFMNzK-k3Wk/s:40:40/dpr:2/plain/s3://betalist-production/w5t37qe8z865x6h7r49uh6bpjmuc"
+    },
+    {
+      "id": "prodcanary",
+      "name": "ProdCanary",
+      "text": "סורק אפליקציות שנבנו ב־Lovable, Bolt ו־Cursor ומחפש חורי אבטחה כמו מפתחות חשופים ו־API בלי הזדהות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/prodcanary"
+      },
+      "icon": "https://resize.imagekit.co/7GNh0rftH_CjWEQnkOU3X3kY5tSlIZncw1UitEc-c9k/s:40:40/dpr:2/plain/s3://betalist-production/jb4pflq5ftiw2p3qcniukwnx8vqo"
+    },
+    {
+      "id": "site-checkups",
+      "name": "Site Checkups",
+      "text": "קורא את דף הבית של האתר כמו מבקר חדש ונותן בתוך כדקה דוח חינמי על הסיבות שאנשים עוזבים בלי לקנות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/site-checkups"
+      },
+      "icon": "https://resize.imagekit.co/PHMTTGrnwh1ycTqPsInpAZAlloVwfFer3wO9B0UazzQ/s:40:40/dpr:2/plain/s3://betalist-production/01jcvc91btlfppkbb7646chqysp9"
+    },
+    {
+      "id": "revfer",
+      "name": "Revfer",
+      "text": "מכין למסעדות ולמכוני יופי טיוטות לתגובות לביקורות, לפוסטים ולשאלות נפוצות, ובעל העסק מאשר אותן.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/revfer"
+      }
+    },
+    {
+      "id": "headoffis",
+      "name": "headoffis",
+      "text": "מערכת לקמעונאים עצמאיים לניהול סידור מדפים, מלאי, העברות בין סניפים והשוואת ביצועים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/headoffis"
+      },
+      "icon": "https://resize.imagekit.co/NsYN4H-UdKgnRxJTcjietNnykkijq8PMOiRkjo3az_o/s:40:40/dpr:2/plain/s3://betalist-production/nw0oabf9nqt46e6ac9elt19a8v0e"
+    },
+    {
+      "id": "godwit",
+      "name": "Godwit",
+      "text": "תוכנת מייל חינמית בקוד פתוח לכל חשבון IMAP, עם עוזר AI שמסכם, מתרגם ומנסח, ולא שולח בלי אישור.",
+      "source": {
+        "name": "Product Hunt",
+        "url": "https://www.producthunt.com/products/godwit"
+      }
+    },
+    {
+      "id": "awaitio",
+      "name": "AwaitIO",
+      "text": "כלי באחסון עצמי שהופך פונקציות TypeScript למסכי ניהול פנימיים, בלי לכתוב ממשק. חינם לעד 3 משתמשים.",
+      "source": {
+        "name": "Product Hunt",
+        "url": "https://www.producthunt.com/products/awaitio"
+      }
+    }
+  ]
+}
