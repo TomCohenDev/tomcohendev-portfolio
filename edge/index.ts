@@ -7,7 +7,7 @@
  *   /en/case-studies/dronebag, get that page; the app shows the right route or its own 404.
  *
  * POST /api/automation-lead
- *   Receives the inquiry form of the Hebrew landing pages (/automation, /mobile and the course page; the `page`
+ *   Receives the inquiry form of the Hebrew landing pages (/automation, /mobile, /web and the course page; the `page`
  *   field says which), stores it in D1 and emails it to Tom through
  *   Cloudflare Email Routing. The visitor only sees success when at least one of the two
  *   actually worked.
@@ -206,6 +206,9 @@ function isAllowedOrigin(request: Request) {
 function pageCopy(page: string) {
   if (page.startsWith("/courses")) {
     return { source: "tomcohen.dev/courses/business-automation", subject: "התעניינות בקורס האוטומציה", sender: "טופס קורס", process: "התהליך שרוצים לייעל", tools: "דואר אלקטרוני", frequency: false };
+  }
+  if (page.startsWith("/web")) {
+    return { source: "tomcohen.dev/web", subject: "פנייה חדשה מעמוד האתרים", sender: "טופס אתרים", process: "מה צריך לבנות", tools: "מה כבר קיים", frequency: false };
   }
   return page.startsWith("/mobile")
     ? { source: "tomcohen.dev/mobile", subject: "פנייה חדשה מעמוד האפליקציות", sender: "טופס אפליקציות", process: "מה האפליקציה צריכה לעשות", tools: "מה כבר קיים", frequency: false }

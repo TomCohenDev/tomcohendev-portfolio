@@ -1,4 +1,5 @@
-import { ArrowLeft, Mail, MessageCircle, Phone, Quote } from "lucide-react";
+import { ArrowLeft, Check, Mail, MessageCircle, Phone, Quote } from "lucide-react";
+import DynamicVisual from "@/components/DynamicVisual";
 import { track } from "@/lib/analytics";
 import { Squiggle } from "../automation/Doodles";
 import { CONTACT } from "../automation/content";
@@ -144,7 +145,7 @@ const contactLinks = [
     method: "whatsapp",
     icon: MessageCircle,
     label: "וואטסאפ",
-    detail: "הכי מהיר",
+    text: "וואטסאפ",
     external: true,
   },
   {
@@ -152,7 +153,7 @@ const contactLinks = [
     method: "phone",
     icon: Phone,
     label: "טלפון",
-    detail: CONTACT.phoneDisplay,
+    text: CONTACT.phoneDisplay,
     external: false,
   },
   {
@@ -160,10 +161,47 @@ const contactLinks = [
     method: "email",
     icon: Mail,
     label: "דואר אלקטרוני",
-    detail: CONTACT.email,
+    text: CONTACT.email,
     external: false,
   },
 ] as const;
+
+// The three "I want..." cards are the section's main choice.
+const PICK_CARD =
+  "a-card a-card-glow group flex flex-col items-center text-center transition-[transform,border-color] hover:-translate-y-1 hover:!border-[var(--a-accent)] motion-reduce:hover:translate-y-0 md:items-start md:text-start";
+const PICK_TITLE = "text-2xl font-semibold text-[var(--a-ink)] md:text-xl lg:text-2xl";
+const PICK_ICON =
+  "mt-5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--a-accent)] text-[#1D201F]";
+// The contact buttons wear the same card as the three above.
+const CONTACT_BUTTON =
+  "a-card a-card-glow group flex w-full items-center justify-center gap-3 !p-4 !shadow-[0_0_0_5px_rgba(191,149,249,0.08),0_16px_44px_-18px_rgba(191,149,249,0.35)] transition-transform hover:-translate-y-1 motion-reduce:hover:translate-y-0";
+
+/** The hero's drawing, small, showing what the card is about. `scene` is a DynamicVisual state: 1 phone, 2 web app, 4 workflow. */
+const PickVisual = ({ scene }: { scene: number }) => (
+  <div
+    aria-hidden="true"
+    className="mb-4 flex h-36 w-full items-center justify-center lg:h-40"
+  >
+    <DynamicVisual currentSvgIndex={scene} />
+  </div>
+);
+
+const PickPoints = ({ points }: { points: string[] }) => (
+  <ul className="mt-3 flex-1 space-y-2">
+    {points.map((point) => (
+      <li
+        key={point}
+        className="flex items-start justify-start gap-2 text-start text-[16px] leading-snug text-[var(--a-muted)]"
+      >
+        <Check
+          className="mt-0.5 h-4 w-4 shrink-0 text-[var(--a-accent)]"
+          aria-hidden="true"
+        />
+        {point}
+      </li>
+    ))}
+  </ul>
+);
 
 export const HomeContact = () => (
   <section
@@ -174,8 +212,36 @@ export const HomeContact = () => (
     <SideDoodle scene="contactLeft" side="left" />
     <SideDoodle scene="contactRight" side="right" />
     <div className="mx-auto max-w-6xl px-5 md:px-8">
-      <div className="mx-auto max-w-2xl text-center">
-        <p className="a-kicker">יצירת קשר</p>
+      <p className="a-kicker text-center">יצירת קשר</p>
+      <ul className="mx-auto mt-6 grid max-w-5xl gap-4 lg:grid-cols-3">
+        {contactLinks.map(
+          ({ href, method, icon: Icon, label, text, external }) => (
+            <li key={method}>
+              <a
+                href={href}
+                {...(external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+                onClick={() =>
+                  track("home_contact_click", { method, location: "contact" })
+                }
+                className={CONTACT_BUTTON}
+              >
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[var(--a-accent)] text-[#1D201F]">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                {!external && <span className="sr-only">{label}: </span>}
+                <span dir={method === "whatsapp" ? undefined : "ltr"} className="min-w-0 truncate text-[17px] font-medium text-[var(--a-ink)]">
+                  {text}
+                </span>
+                {external && <span className="sr-only"> (נפתח בחלון חדש)</span>}
+              </a>
+            </li>
+          ),
+        )}
+      </ul>
+
+      <div className="mx-auto mt-16 max-w-2xl text-center">
         <h2 id="contact-title" className="a-h2">
           מחפשים מפתח או פתרון{" "}
           <span className="relative inline-block">
@@ -188,82 +254,73 @@ export const HomeContact = () => (
         </p>
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-4xl gap-5 md:grid-cols-2">
+      <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-3">
         <a
           href="/mobile#contact"
-          className="a-card group transition-colors hover:border-[rgba(191,149,249,0.55)]"
+          className={PICK_CARD}
         >
-          <span className="text-xl font-medium text-[var(--a-ink)]">
-            טופס לאפליקציה
+          <PickVisual scene={1} />
+          <span className={PICK_TITLE}>
+            אני רוצה אפליקציה
           </span>
-          <span className="mt-2 block text-[15px] leading-relaxed text-[var(--a-muted)]">
-            מה האפליקציה צריכה לעשות, למי היא מיועדת ומה כבר קיים.
-          </span>
-          <span className="mt-4 inline-flex items-center gap-1 text-[14px] text-[var(--a-accent)]">
-            לטופס
+          <PickPoints
+            points={[
+              "אפליקציה לאייפון ולאנדרואיד",
+              "תשלומים, צ׳אט והתראות",
+              "העלאה לחנויות האפליקציות",
+            ]}
+          />
+          <span className={PICK_ICON}>
             <ArrowLeft
-              className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-0.5"
+              className="h-5 w-5 transition-transform group-hover:-translate-x-0.5"
               aria-hidden="true"
             />
           </span>
         </a>
         <a
           href="/automation#contact"
-          className="a-card group transition-colors hover:border-[rgba(191,149,249,0.55)]"
+          className={PICK_CARD}
         >
-          <span className="text-xl font-medium text-[var(--a-ink)]">
-            טופס לאוטומציה
+          <PickVisual scene={4} />
+          <span className={PICK_TITLE}>
+            אני רוצה אוטומציה
           </span>
-          <span className="mt-2 block text-[15px] leading-relaxed text-[var(--a-muted)]">
-            איזה תהליך הייתם רוצים לשפר ובאילו כלים אתם משתמשים היום.
-          </span>
-          <span className="mt-4 inline-flex items-center gap-1 text-[14px] text-[var(--a-accent)]">
-            לטופס
+          <PickPoints
+            points={[
+              "חיבור בין המערכות שלכם",
+              "סוכני AI לעבודה שחוזרת על עצמה",
+              "דוחות, התראות וכלים פנימיים",
+            ]}
+          />
+          <span className={PICK_ICON}>
             <ArrowLeft
-              className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-0.5"
+              className="h-5 w-5 transition-transform group-hover:-translate-x-0.5"
+              aria-hidden="true"
+            />
+          </span>
+        </a>
+        <a href="/web#contact" className={PICK_CARD}>
+          <PickVisual scene={2} />
+          <span className={PICK_TITLE}>
+            אני רוצה אתר
+          </span>
+          <PickPoints
+            points={[
+              "דפי נחיתה ותיקי עבודות",
+              "אתרים לעסקים",
+              "חנויות אונליין",
+              "דשבורדים",
+              "מערכות SaaS עם תשלומים",
+            ]}
+          />
+          <span className={PICK_ICON}>
+            <ArrowLeft
+              className="h-5 w-5 transition-transform group-hover:-translate-x-0.5"
               aria-hidden="true"
             />
           </span>
         </a>
       </div>
-
-      <ul className="mx-auto mt-6 grid max-w-4xl gap-4 sm:grid-cols-3">
-        {contactLinks.map(
-          ({ href, method, icon: Icon, label, detail, external }) => (
-            <li key={method}>
-              <a
-                href={href}
-                {...(external
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
-                onClick={() =>
-                  track("home_contact_click", { method, location: "contact" })
-                }
-                className="flex items-center gap-3 rounded-2xl border border-[var(--a-line)] p-4 transition-colors hover:border-[var(--a-accent)]"
-              >
-                <Icon
-                  className="h-5 w-5 shrink-0 text-[var(--a-accent)]"
-                  aria-hidden="true"
-                />
-                <span className="min-w-0">
-                  <span className="block text-[15px] text-[var(--a-ink)]">
-                    {label}
-                    {external && (
-                      <span className="sr-only"> (נפתח בחלון חדש)</span>
-                    )}
-                  </span>
-                  <span
-                    dir={method === "whatsapp" ? undefined : "ltr"}
-                    className="block truncate text-right text-[14px] text-[var(--a-muted)]"
-                  >
-                    {detail}
-                  </span>
-                </span>
-              </a>
-            </li>
-          ),
-        )}
-      </ul>
     </div>
   </section>
 );

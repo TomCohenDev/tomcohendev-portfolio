@@ -19,6 +19,9 @@ const NotFoundHe = () => (
         <a href="/mobile" className="a-btn a-btn-ghost">
           פיתוח אפליקציות
         </a>
+        <a href="/web" className="a-btn a-btn-ghost">
+          בניית אתרים ומערכות
+        </a>
         <a href="/automation" className="a-btn a-btn-ghost">
           אוטומציה לעסקים
         </a>

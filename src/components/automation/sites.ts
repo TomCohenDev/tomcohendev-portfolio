@@ -3,7 +3,7 @@
  * This holds what differs between them. `event` prefixes the analytics event names, so the
  * existing automation_* events keep their names.
  */
-export type SiteKey = "automation" | "mobile" | "course";
+export type SiteKey = "automation" | "mobile" | "web" | "course";
 
 type FormCopy = {
   processLabel: string;
@@ -33,6 +33,8 @@ type Site = {
   form: FormCopy;
   /** Keeps the phone number, WhatsApp and email address off the page. */
   hideContact?: boolean;
+  /** A WhatsApp link with its own opening line. Without one the page uses CONTACT.whatsappHref. */
+  whatsappHref?: string;
 };
 
 export const SITES: Record<SiteKey, Site> = {
@@ -75,6 +77,28 @@ export const SITES: Record<SiteKey, Site> = {
         'למי היא מיועדת ומה הדבר הראשון שהיא צריכה לעשות. למשל: "לקוחות קובעים תור ומקבלים תזכורת יום לפני". אין צורך לפרט מידע רגיש.',
       toolsLabel: "מה כבר קיים?",
       toolsHint: "למשל: רק רעיון, עיצוב ב־Figma, אתר, או אפליקציה קיימת שצריך לתקן. כל תשובה טובה.",
+      showFrequency: false,
+    },
+  },
+  web: {
+    path: "/web",
+    label: "אתרים",
+    event: "web",
+    nav: [
+      { href: "#types", label: "מה אפשר לבנות" },
+      { href: "#process", label: "איך עובדים" },
+      { href: "#faq", label: "שאלות" },
+    ],
+    blurb: "בניית אתרים, דפי נחיתה, תיקי עבודות ומערכות ווב, מהרעיון ועד שזה באוויר.",
+    cta: "לשיחת היכרות",
+    other: { to: "/mobile", label: "פיתוח אפליקציות" },
+    whatsappHref: `https://wa.me/972545552149?text=${encodeURIComponent("היי תום, הגעתי מעמוד האתרים ואשמח לבדוק משהו")}`,
+    form: {
+      processLabel: "מה צריך לבנות?",
+      processHint:
+        'למי זה מיועד ומה הדבר הראשון שזה צריך לעשות. למשל: "דף נחיתה לקורס שלי עם טופס הרשמה". אין צורך לפרט מידע רגיש.',
+      toolsLabel: "מה כבר קיים?",
+      toolsHint: "למשל: רק רעיון, עיצוב ב־Figma, דומיין, או אתר קיים שצריך לחדש. כל תשובה טובה.",
       showFrequency: false,
     },
   },

@@ -17,9 +17,10 @@ const HOME = {
     { href: "/courses", label: "קורסים ומפגשים" },
     { href: "#about", label: "קצת עליי" },
     { href: "/mobile", label: "אפליקציות" },
+    { href: "/web", label: "אתרים" },
     { href: "/automation", label: "אוטומציה" },
   ],
-  blurb: "פיתוח אפליקציות ואוטומציות לעסקים, מהאפיון ועד שזה עובד.",
+  blurb: "פיתוח אפליקציות, אתרים ואוטומציות לעסקים, מהאפיון ועד שזה עובד.",
   cta: "לשיחת היכרות",
   whatsappHref: HOME_WHATSAPP,
   hideContact: false,
@@ -32,7 +33,7 @@ const CONTENT_LINKS = [
   { href: "/courses", label: "קורסים ומפגשים" },
 ];
 
-const page = (key: PageKey) => (key === "home" ? HOME : { ...SITES[key], whatsappHref: CONTACT.whatsappHref });
+const page = (key: PageKey) => (key === "home" ? HOME : { whatsappHref: CONTACT.whatsappHref, ...SITES[key] });
 
 /** `onLanding` is false on the other Hebrew pages, where in-page links lead back to the landing page. */
 export const AutomationHeader = ({ onLanding = true, site = "automation" }: { onLanding?: boolean; site?: PageKey }) => {
@@ -99,6 +100,7 @@ export const AutomationFooter = ({ site = "automation" }: { site?: PageKey }) =>
     site === "home"
       ? [
           { href: "/mobile", label: "פיתוח אפליקציות" },
+          { href: "/web", label: "בניית אתרים ומערכות" },
           { href: "/automation", label: "אוטומציה לעסקים" },
         ]
       : [

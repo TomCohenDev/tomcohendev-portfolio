@@ -454,6 +454,7 @@ export const ContactSection = ({
   quote?: ContactQuote | null;
 }) => {
   const ev = SITES[site].event;
+  const whatsappHref = SITES[site].whatsappHref ?? CONTACT.whatsappHref;
   const [sent, setSent] = useState(false);
   return (
     <section id="contact" aria-labelledby="contact-title" className="a-grid-bg isolate border-t border-[var(--a-line)]">
@@ -492,7 +493,7 @@ export const ContactSection = ({
               </li>
               <li>
                 <a
-                  href={CONTACT.whatsappHref}
+                  href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => track(`${ev}_contact_click`, { method: "whatsapp", location: "contact" })}

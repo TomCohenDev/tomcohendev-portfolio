@@ -27,6 +27,14 @@ const MOBILE_SECTIONS = [
   { href: "/mobile#faq", label: "שאלות נפוצות" },
 ];
 
+const WEB_SECTIONS = [
+  { href: "/web", label: "פתיחה: דף נחיתה, תיק עבודות או מערכת שלמה" },
+  { href: "/web#types", label: "איזה אתר אתם צריכים?" },
+  { href: "/web#process", label: "איך עובדים" },
+  { href: "/web#contact", label: "יצירת קשר וטופס פנייה" },
+  { href: "/web#faq", label: "שאלות נפוצות" },
+];
+
 const CASE_STUDIES = [
   { to: "/en/case-studies/nightwing", label: "Nightwing: הזמנות שמגיעות למטבח לבד" },
   { to: "/en/case-studies/ai-social-media-strategist", label: "סוכן תוכן לרשתות" },
@@ -72,6 +80,16 @@ const AutomationSiteMap = () => (
     <LegalSection title="עמוד פיתוח האפליקציות">
       <ul>
         {MOBILE_SECTIONS.map((s) => (
+          <li key={s.href}>
+            <a href={s.href}>{s.label}</a>
+          </li>
+        ))}
+      </ul>
+    </LegalSection>
+
+    <LegalSection title="עמוד האתרים">
+      <ul>
+        {WEB_SECTIONS.map((s) => (
           <li key={s.href}>
             <a href={s.href}>{s.label}</a>
           </li>

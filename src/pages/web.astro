@@ -1,0 +1,25 @@
+---
+import HebrewLayout from "../layouts/HebrewLayout.astro";
+import Web, { DESCRIPTION, TITLE } from "../views/Web";
+import { WEB_PATH, webFaqs } from "../components/web/content";
+import { faqPage, graph, person, service } from "../lib/structuredData";
+
+const jsonLd = graph(
+  person,
+  service(WEB_PATH, "בניית אתרים, דפי נחיתה ומערכות ווב", "פיתוח אתרים ומערכות ווב", DESCRIPTION),
+  faqPage(WEB_PATH, webFaqs)
+);
+---
+
+<HebrewLayout
+  title={TITLE}
+  description={DESCRIPTION}
+  path={WEB_PATH}
+  ogTitle="דף נחיתה, תיק עבודות או מערכת שלמה, מהרעיון ועד שזה באוויר"
+  ogDescription="בניית אתרים לעסקים, דפי נחיתה, תיקי עבודות ומערכות SaaS. אתם עובדים מול אדם אחד, מהשיחה הראשונה ועד שהאתר עולה לאוויר."
+  ogImage="/og-web.png"
+  ogImageAlt="תום כהן: בניית אתרים ומערכות ווב"
+  jsonLd={jsonLd}
+>
+  <Web client:load />
+</HebrewLayout>
