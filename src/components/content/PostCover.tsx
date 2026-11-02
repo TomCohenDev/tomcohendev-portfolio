@@ -52,7 +52,10 @@ const drawings: Record<Post["cover"], ReactElement> = {
  * Cover of a post, drawn in the site's chalk style. The share image of each post (phase 4) will be
  * this drawing with the title, rendered to PNG at build time.
  */
-export const PostCover = ({ post, className = "" }: { post: Post; className?: string }) => (
+export const PostCover = ({ post, className = "" }: { post: Post; className?: string }) =>
+  post.image ? (
+    <img src={post.image} alt="" width={1600} height={800} decoding="async" className={`block aspect-[1200/630] h-auto w-full bg-[#1c1e1d] object-cover ${className}`} />
+  ) : (
   <svg viewBox="0 0 1200 630" aria-hidden="true" className={`block h-auto w-full bg-[#222524] ${className}`}>
     <defs>
       <pattern id={`dots-${post.slug}`} width="26" height="26" patternUnits="userSpaceOnUse">
@@ -65,4 +68,5 @@ export const PostCover = ({ post, className = "" }: { post: Post; className?: st
     </g>
     <path d="M90 560C260 548 420 566 600 556S940 546 1110 558" fill="none" stroke="rgba(224,208,193,0.25)" strokeWidth="4" strokeLinecap="round" />
   </svg>
-);
+
+  );

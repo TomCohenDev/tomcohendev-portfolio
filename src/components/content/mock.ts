@@ -25,6 +25,8 @@ export type Post = {
   tags: string[];
   /** Picks the drawing on the cover. */
   cover: "phone" | "flow" | "spark" | "store" | "code";
+  /** Optional picture (under /public) shown instead of the drawing. */
+  image?: string;
   body: Block[];
 };
 

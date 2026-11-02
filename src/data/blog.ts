@@ -10,6 +10,7 @@ export const publishedPosts: Post[] = [
     readMinutes: 6,
     tags: ["AI", "אבטחת מידע", "יזמות"],
     cover: "code",
+    image: "/blog/ai-security-cover.webp",
     body: [],
   },
   {
@@ -20,6 +21,7 @@ export const publishedPosts: Post[] = [
     readMinutes: 6,
     tags: ["AI", "אבטחת מידע", "English"],
     cover: "code",
+    image: "/blog/ai-security-cover.webp",
     body: [],
   },
 ];
