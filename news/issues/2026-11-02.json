@@ -1,0 +1,169 @@
+{
+  "date": "2026-11-02",
+  "stories": [
+    {
+      "id": "polymarket-debugbear-script",
+      "topic": "security",
+      "headline": "סקריפט חיצוני שהוחלף באתר Polymarket עלה בכ־2.7 מיליון דולר של סוחרים",
+      "summary": "ב־29 באוקטובר קוד זדוני החליף באתר Polymarket סקריפט למדידת מהירות של חברת DebugBear, מכר פוזיציות של סוחרים מחוברים והעביר את הכסף לתוקפים. DebugBear מסרה שרשומות ה־DNS שלה נפרצו דרך רשם הדומיינים, ו־Polymarket מחזירה כ־2.7 מיליון דולר ל־726 ארנקים.",
+      "forBusiness": "כל סקריפט חיצוני באתר שלכם, כמו מדידה, צ'אט או פרסום, רץ אצל הלקוח כאילו הוא חלק מהאתר. בקשו מהמפתח לעבור על הרשימה ולהסיר את מה שלא נחוץ, בעיקר מעמודי התחברות ותשלום.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-steal-about-27-million-from.html"
+      }
+    },
+    {
+      "id": "copilot-business-usage-billing-december",
+      "topic": "ai",
+      "headline": "Microsoft דחתה ל־1 בדצמבר את החיוב לפי שימוש כברירת מחדל ב־Copilot Business",
+      "summary": "רישיונות חדשים של Microsoft 365 Copilot Business שנרכשים דרך שותפי CSP יכללו חיוב לפי שימוש כברירת מחדל מ־1 בדצמבר, במקום 2 בנובמבר כפי שהודיעה קודם. תקרת ברירת המחדל תהיה 4,000 Copilot Credits למשתמש בחודש ומנהלים יכולים לשנות אותה, ובשלב הראשון השינוי לא יחול ב־11 מדינות, ובהן גרמניה וצרפת.",
+      "forBusiness": "אם אתם קונים Copilot דרך ספק, בדקו איתו לפני 1 בדצמבר מי קובע את תקרת ההוצאה ומה היא צריכה להיות. ישראל לא ברשימת המדינות שהוחרגו, אבל Microsoft לא מפרטת בהודעה את כל השווקים הנתמכים.",
+      "source": {
+        "name": "Microsoft",
+        "url": "https://learn.microsoft.com/en-us/partner-center/announcements/2026-october"
+      }
+    },
+    {
+      "id": "drupal-commerce-exploited",
+      "topic": "security",
+      "headline": "פרצה ב־Drupal Commerce מנוצלת בתקיפות: עדכנו ובדקו את ההזמנות בחנות",
+      "summary": "צוות האבטחה של Drupal הודיע ב־28 באוקטובר שפרצה חמורה ב־Commerce Core, שמאפשרת לעקוף בדיקות גישה ועלולה לגרום נזק כספי, מנוצלת בפועל. התיקון נמצא בגרסאות 8.x-2.41 ו־3.3.13, ובאותה הזדמנות תוקנה ב־Commerce Stripe 2.2.3 פרצה שבה קישור מזויף למנהל יכול לסמן הזמנה כמשולמת בלי תשלום.",
+      "forBusiness": "אם החנות שלכם בנויה על Drupal, בקשו מהמפתח לעדכן היום ולעבור על ההזמנות הקיימות כדי לאתר חריגות, זו ההנחיה של צוות האבטחה. ההודעה לא מציינת אילו אתרים נפגעו או כמה כסף אבד.",
+      "source": {
+        "name": "The Drop Times",
+        "url": "https://www.thedroptimes.com/node/73127"
+      }
+    },
+    {
+      "id": "make-facebook-pages-get-a-page-error",
+      "topic": "automation",
+      "headline": "משתמשי Make מדווחים: הרכיב Get a Page של Facebook Pages נכשל בשגיאה",
+      "summary": "משתמש בפורום של Make דיווח ב־30 באוקטובר שהרכיב מחזיר את השגיאה \"parking field is deprecated\", אף שהחיבור ל־Facebook תקין. שני משתתפים בשרשור מסבירים שהרכיב עדיין מבקש שדה ש־Meta הסירה, אבל Make עצמה לא התייחסה לכך בשרשור.",
+      "forBusiness": "אם תרחיש שמושך נתוני עמוד מ־Facebook נעצר, ההצעה בפורום היא לעבור לרכיב Make an API Call ולבקש רק את השדות שצריך, כמו name ו־about. כדאי גם לדווח לתמיכה של Make.",
+      "source": {
+        "name": "Make community",
+        "url": "https://community.make.com/t/facebook-pages-get-a-page-fails-with-error-12-parking-field-is-deprecated/118713"
+      }
+    },
+    {
+      "id": "cursor-marketplace-claude-code-trojan",
+      "topic": "security",
+      "headline": "גרסה זדונית של התוסף Claude Code הופצה דרך חנות התוספים של Cursor",
+      "summary": "ב־29 באוקטובר הופצה בחנות של Cursor גרסה זדונית של התוסף, שניסתה לפתוח לתוקפים גישת SSH למחשב המפתח, ולפי Cursor נפגעו עד 5,000 משתמשים. הגרסאות שנפגעו הן 2.1.312 ו־2.1.313 ב־Windows וב־macOS, ו־Anthropic מסרה שהמערכות שלה לא נפרצו ושהגרסאות ב־VS Code וב־Open VSX לא נפגעו.",
+      "forBusiness": "אם המפתחים שלכם עובדים עם Cursor, שאלו אם התקינו את התוסף באותו יום. מי שהתקין צריך לבודד את המחשב, להסיר את מפתח ה־SSH הזר ואת מה שהותקן איתו, ולהחליף סיסמאות ומפתחות גישה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html"
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "lxd-microcloud-cvss-10",
+      "topic": "security",
+      "text": "בפרצה CVE-2026-112816 ב־LXD וב־MicroCloud של Canonical, בדירוג CVSS 10.0, אפשר להתחזות ללקוח מהימן. יש גרסאות מתוקנות ואין סימן לניצול.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html"
+      }
+    },
+    {
+      "id": "apple-intelligence-china-ios-27-3",
+      "topic": "mobile",
+      "text": "אפל תביא חלק מתכונות Apple Intelligence לסין ב־iOS 27.3: בטא ב־4 בנובמבר וגרסה מלאה בדצמבר.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3"
+      }
+    },
+    {
+      "id": "starbucks-drive-thru-ai",
+      "topic": "ai",
+      "text": "Starbucks תתחיל ב־2027 לבחון מודלי AI שיעזרו לעובדים להזין הזמנות בדרייב־ת'רו, ובודקת גם תפריטים דיגיטליים אישיים ללקוחות.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "shiptight",
+      "name": "ShipTight",
+      "text": "סורק את מה שהציבור רואה באפליקציה חיה, כמו מפתחות חשופים וקבצים פתוחים, ונותן ציון מ־0 עד 100.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/shiptight"
+      },
+      "icon": "https://cdn.betalist.com/ugvqf6x0vhge9m7t8i3im74cr48m"
+    },
+    {
+      "id": "skylab",
+      "name": "SkyLab",
+      "text": "סביבת עבודה משותפת לצוות, שבה שומרים פרומפטים ובונים מיומנויות AI שאפשר להשתמש בהן שוב.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/skylab"
+      },
+      "icon": "https://cdn.betalist.com/v1uypg6cdwmrl50bx4ye8kdpupzy"
+    },
+    {
+      "id": "screenlint",
+      "name": "Screenlint",
+      "text": "בודק ממשק של אפליקציית אייפון בלי קוד מקור: מעלים גרסת סימולטור והוא מריץ אותה ובודק את המסכים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/screenlint"
+      },
+      "icon": "https://cdn.betalist.com/b8er8xu97qkusj5rj2zfk5aifs58"
+    },
+    {
+      "id": "rankcli",
+      "name": "RankCLI",
+      "text": "כלי SEO לשורת הפקודה שבודק אתרים ביותר מ־280 בדיקות, מציע תיקונים ויכול להחיל אותם גם דרך GitHub.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/rankcli"
+      },
+      "icon": "https://cdn.betalist.com/zqi65sw3mvgr5mo5p6bdyfpzjcln"
+    },
+    {
+      "id": "taurank",
+      "name": "tauRank",
+      "text": "עוקב כל יום אחרי דירוג נכס ב־Airbnb וב־Booking.com, לפי המדינה שממנה האורחים מחפשים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/taurank"
+      },
+      "icon": "https://cdn.betalist.com/kjqtk8eh1r6rz21xeux159z8t939"
+    },
+    {
+      "id": "workshop-it",
+      "name": "Workshop IT",
+      "text": "פלטפורמת AI שמראיינת בעלי עניין לפני סדנת אפיון ומסכמת את התשובות לדרישות ברורות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/workshop-it"
+      },
+      "icon": "https://cdn.betalist.com/6n5hkfz1n62np5s8n851aq5h5scz"
+    },
+    {
+      "id": "automep",
+      "name": "AutoMEP",
+      "text": "עורך שרטוטי AutoCAD ו־Revit בדפדפן: מעלים קובץ, מתארים את השינוי במילים והוא משרטט תעלות, צנרת ומעגלים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/automep"
+      }
+    },
+    {
+      "id": "vora",
+      "name": "VORA",
+      "text": "מערכת לעסקי קבלנות בניהול הבעלים, שמחברת עבודות, תקשורת בצוות, מסמכים, לוחות זמנים וכספים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/vora-2"
+      }
+    }
+  ]
+}
