@@ -47,8 +47,10 @@ Skip:
 - Prefer the original announcement (the company's own blog or release notes) over a report about it.
 - One URL per story, https, the page itself (no tracking parameters such as `utm_`).
 - `source.name` is the publication or company: "TechCrunch", "Google", "Apple Developer".
-- Image: optional. Use the image the source page itself shares (its `og:image`), only when it shows the story: a product screen,
-  a chart, a photo from the announcement. Skip logos, generic stock photos and pages without one. `alt` is one short Hebrew sentence
+- Image: look for one for every story; the page looks bare without them. Use the image the source page itself shares
+  (its `og:image` or `twitter:image` meta tag; fetch the HTML with curl when a fetch tool is blocked), and open it to check it
+  shows the story: a product screen, a chart, a photo or an illustration made for the article. Skip bare logos, generic site
+  banners (the same card on every page of the site) and pages without one. `alt` is one short Hebrew sentence
   on what the image shows. The site credits the image to `source.name`.
 
 ## Flashes
@@ -61,7 +63,7 @@ They run in a carousel on the home page and in a list on /news.
 - **text**: one sentence in Hebrew, up to 160 characters, the fact itself with its number or name. No "מה זה אומר לעסק" part.
 - Each flash has its own source, and that source is not a story in the same issue or in an earlier one.
 - Read the source page before writing, as with stories. Same rules for names, numbers and maqaf.
-- Image: optional, same rules as for stories.
+- Image: look for one, same rules as for stories.
 
 ## Releases
 
