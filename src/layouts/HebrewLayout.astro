@@ -6,6 +6,7 @@
 import "../index.css";
 
 interface Props {
+  lang?: "he" | "en";
   title: string;
   description: string;
   /** Path of the page, such as "/mobile". Builds the canonical and share URLs. */
@@ -25,6 +26,7 @@ interface Props {
 }
 
 const {
+  lang = "he",
   title,
   description,
   path,
@@ -44,7 +46,7 @@ const image = new URL(ogImage, Astro.site).href;
 ---
 
 <!doctype html>
-<html lang="he" dir="rtl">
+<html lang={lang} dir={lang === "he" ? "rtl" : "ltr"}>
   <head>
     <!-- Same Google tag setup as the English site -->
     <script is:inline>
@@ -74,12 +76,12 @@ const image = new URL(ogImage, Astro.site).href;
     <meta name="theme-color" content="#1D201F" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="author" content="תום כהן" />
+    <meta name="author" content={lang === "he" ? "תום כהן" : "Tom Cohen"} />
     {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={url} />}
 
-    <meta property="og:locale" content="he_IL" />
+    <meta property="og:locale" content={lang === "he" ? "he_IL" : "en_US"} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="תום כהן" />
+    <meta property="og:site_name" content={lang === "he" ? "תום כהן" : "Tom Cohen"} />
     <meta property="og:url" content={url} />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
@@ -105,13 +107,14 @@ const image = new URL(ogImage, Astro.site).href;
     <link rel="apple-touch-icon" href="/icon.svg?v=2" />
 
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <slot name="head" />
   </head>
 
   <body>
     <noscript>
       <p>
-        הטופס בעמוד צריך JavaScript.
-        {!hideContact && "אפשר גם לפנות ישירות: contact@tomcohen.dev או בטלפון 054-555-2149"}
+        {lang === "he" ? "הטופס בעמוד צריך JavaScript." : "Forms on this page require JavaScript."}
+        {!hideContact && (lang === "he" ? "אפשר גם לפנות ישירות: contact@tomcohen.dev או בטלפון 054-555-2149" : "Contact: contact@tomcohen.dev or +972-54-555-2149.")}
       </p>
     </noscript>
     <slot />

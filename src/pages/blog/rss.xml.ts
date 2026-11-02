@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { feed } from "../../components/content/feed";
-import { posts } from "../../components/content/mock";
+import { publishedPosts as posts } from "../../data/blog";
 
 export const GET: APIRoute = () =>
   feed({

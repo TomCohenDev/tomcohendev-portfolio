@@ -2,7 +2,9 @@ import { useState } from "react";
 import { ArrowLeft, Rss } from "lucide-react";
 import { ContentPage, PageIntro, Tag } from "@/components/content/ContentPage";
 import { PostCover } from "@/components/content/PostCover";
-import { blogTags, DEMO, formatDate, posts, type Post } from "@/components/content/mock";
+import { publishedPosts as posts, blogTags } from "@/data/blog";
+import type { Post } from "@/components/content/mock";
+import { formatDate } from "@/lib/dates";
 import { Squiggle } from "@/components/automation/Doodles";
 
 export const TITLE = "הבלוג | תום כהן";
@@ -38,7 +40,7 @@ const BlogIndex = () => {
   const [featured, ...rest] = shown;
 
   return (
-    <ContentPage demo={DEMO}>
+    <ContentPage>
       <section className="a-grid-bg border-b border-[var(--a-line)]">
         <div className="mx-auto max-w-6xl px-5 pb-14 pt-14 md:px-8 md:pt-20">
           <PageIntro

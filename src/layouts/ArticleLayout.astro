@@ -1,0 +1,74 @@
+---
+import HebrewLayout from "./HebrewLayout.astro";
+import { AutomationHeader, AutomationFooter } from "../components/automation/Chrome";
+import { PostCover } from "../components/content/PostCover";
+import { publishedPosts } from "../data/blog";
+import "../components/automation/automation.css";
+import "../components/content/content.css";
+
+interface Props {
+  frontmatter: { slug: string; lang: "he" | "en"; translation: string };
+}
+const { slug, lang, translation } = Astro.props.frontmatter;
+const post = publishedPosts.find((entry) => entry.slug === slug);
+if (!post) throw new Error(`Missing article metadata: ${slug}`);
+const english = lang === "en";
+const author = english ? "Tom Cohen" : "תום כהן";
+const path = `/blog/${slug}`;
+const translationPath = `/blog/${translation}`;
+const date = new Intl.DateTimeFormat(english ? "en-US" : "he-IL", {
+  year: "numeric", month: "long", day: "numeric", timeZone: "UTC",
+}).format(new Date(`${post.date}T12:00:00Z`));
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.title,
+  description: post.description,
+  datePublished: post.date,
+  inLanguage: lang,
+  author: { "@type": "Person", name: author, url: "https://tomcohen.dev" },
+  mainEntityOfPage: `https://tomcohen.dev${path}`,
+};
+---
+
+<HebrewLayout lang={lang} title={`${post.title} | ${author}`} description={post.description} path={path} jsonLd={jsonLd}>
+  <Fragment slot="head">
+    <link rel="alternate" hreflang={lang} href={`https://tomcohen.dev${path}`} />
+    <link rel="alternate" hreflang={english ? "he" : "en"} href={`https://tomcohen.dev${translationPath}`} />
+  </Fragment>
+  <div class="automation-page min-h-screen" lang={lang} dir={english ? "ltr" : "rtl"}>
+    <div lang="he" dir="rtl"><AutomationHeader onLanding={false} site="home" client:load /></div>
+    <main id="main">
+      <article>
+        <header class="a-grid-bg border-b border-[var(--a-line)]">
+          <div class="mx-auto max-w-3xl px-5 pb-12 pt-10 md:px-8 md:pt-14">
+            <nav aria-label={english ? "Article navigation" : "ניווט במאמר"} class="flex flex-wrap justify-between gap-4 text-[15px] text-[var(--a-accent)]">
+              <a href="/blog">{english ? "All articles" : "לכל המאמרים"}</a>
+              <a href={translationPath} lang={english ? "he" : "en"} hreflang={english ? "he" : "en"}>{english ? "לקריאה בעברית" : "Read in English"}</a>
+            </nav>
+            <h1 class="mt-8 text-[clamp(2rem,5vw,3.2rem)] font-medium leading-[1.15] text-[var(--a-ink)]">{post.title}</h1>
+            <p class="mt-5 text-xl leading-relaxed text-[var(--a-muted)]">{post.description}</p>
+            <p class="mt-6 text-[15px] text-[var(--a-muted)]">{author} · <time datetime={post.date}>{date}</time> · {post.readMinutes} {english ? "min read" : "דקות קריאה"}</p>
+          </div>
+        </header>
+        <div class="mx-auto max-w-4xl px-5 md:px-8"><PostCover post={post} className="rounded-b-[1.5rem] border border-t-0 border-[var(--a-line)]" /></div>
+        <div class="c-prose c-published mx-auto max-w-3xl px-5 pb-16 pt-12 md:px-8"><slot /></div>
+      </article>
+    </main>
+    <div lang="he" dir="rtl"><AutomationFooter site="home" /></div>
+  </div>
+</HebrewLayout>
+
+<style is:global>
+  .c-published a { color: var(--a-accent); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .c-published strong { color: var(--a-ink); }
+  .c-published ol { list-style: decimal; padding-inline-start: 1.5rem; }
+  .c-published ol li { padding-inline-start: 0.3rem; }
+  .c-published ol li::before { content: none; }
+  .c-published .article-table { overflow-x: auto; max-width: 100%; border: 1px solid var(--a-line); border-radius: 0.75rem; }
+  .c-published table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 0.95rem; line-height: 1.65; }
+  .c-published th, .c-published td { padding: 0.8rem; text-align: start; vertical-align: top; border-bottom: 1px solid var(--a-line); }
+  .c-published th { color: var(--a-ink); }
+  .c-published tr:last-child td { border-bottom: 0; }
+  .c-published sup { margin-inline-start: 0.2rem; font-size: 0.75em; }
+</style>
