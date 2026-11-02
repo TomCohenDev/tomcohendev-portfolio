@@ -1,5 +1,6 @@
 import { ArrowLeft, BookOpen, CalendarDays } from "lucide-react";
-import { courses, courseTypes, DEMO, formatDate, formatDay, posts, type Post } from "../content/mock";
+import { courses, courseTypes, DEMO, formatDate, formatDay, type Post } from "../content/mock";
+import { listedPosts } from "../../data/blog";
 import { PostCover } from "../content/PostCover";
 import { facts } from "../course/content";
 
@@ -17,11 +18,11 @@ const Cover = ({ post }: { post: Post }) => (
 
 const titleClass = "font-medium leading-snug text-[var(--a-ink)] transition-colors group-hover:text-[var(--a-accent)]";
 
-/** The newest posts, as wide as the news above it (HomeNews): the newest on the right, the next three on the left. */
+/** The newest article on the right, as wide as the news above it (HomeNews); "coming soon" slots on the left. */
 export const HomeBlog = () => {
-  const [lead, ...others] = posts;
+  const [lead] = listedPosts;
   if (!lead) return null;
-  const next = others.slice(0, 3);
+  const soon = [0, 1, 2];
 
   return (
     <section id="blog" aria-labelledby="blog-title" className="border-t border-[var(--a-line)] py-16 text-start md:py-20">
@@ -39,7 +40,6 @@ export const HomeBlog = () => {
             <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" aria-hidden="true" />
           </a>
         </div>
-        {DEMO && <p className="mt-3 text-[14px] text-[var(--a-human)]">הבלוג עדיין לדוגמה.</p>}
 
         <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:gap-8">
           <article>
@@ -51,22 +51,17 @@ export const HomeBlog = () => {
             </a>
           </article>
 
-          {next.length > 0 && (
-            <div className="flex flex-col gap-8 lg:border-s lg:border-[var(--a-line)] lg:ps-8">
-              {next.map((p, i) => (
-                <article key={p.slug} className={i ? "border-t border-[var(--a-line)] pt-8" : ""}>
-                  <a href={`/blog/${p.slug}`} className="group grid items-center gap-4 sm:grid-cols-[2fr_3fr] sm:gap-6">
-                    <Cover post={p} />
-                    <div>
-                      <h3 className={`text-xl ${titleClass}`}>{p.title}</h3>
-                      <p className="mt-2 text-[15px] leading-relaxed text-[var(--a-muted)]">{p.description}</p>
-                      <Meta post={p} />
-                    </div>
-                  </a>
-                </article>
-              ))}
-            </div>
-          )}
+          <ul className="flex flex-col gap-4 lg:border-s lg:border-[var(--a-line)] lg:ps-8" aria-label="מאמרים בדרך">
+            {soon.map((i) => (
+              <li
+                key={i}
+                className="flex flex-1 items-center justify-between gap-4 rounded-2xl border border-dashed border-[var(--a-line)] px-6 py-8 text-[var(--a-muted)]"
+              >
+                <span className="text-xl">מאמר נוסף בדרך</span>
+                <span className="a-hand text-[20px] text-[var(--a-accent)]">בקרוב</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
