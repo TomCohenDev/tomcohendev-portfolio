@@ -10,6 +10,10 @@
       "source": {
         "name": "The Hacker News",
         "url": "https://thehackernews.com/2026/11/hackers-steal-about-27-million-from.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhe0B28qLAtUMfqN29_phxZJVJORICkj_98MZFwDiXAxFTABw8G9qbsVyD98pg7T_Rvgv83NXyR5tNGYH4dRwlxs3QFTUZxDPHQs2BgFsnmGcOuVW1HkFVCfiCR3Y05kPQrfFx4S7A8DiFXXAAgdc5SiEKx0-0xrW5rNlNSyN3jZJcyXasdpCr5AG7KM3s/s1600/Polymarket.jpg",
+        "alt": "איור של הלוגו של Polymarket מעל מסכי מסחר ומטבעות שיוצאים מארנק."
       }
     },
     {
@@ -32,6 +36,10 @@
       "source": {
         "name": "The Drop Times",
         "url": "https://www.thedroptimes.com/node/73127"
+      },
+      "image": {
+        "url": "https://www.thedroptimes.com/sites/thedroptimes.com/files/2026-10/drupal_commerce_access_bypass_actively_exploited_as_drupal_issues_39_advisories_0.png",
+        "alt": "כרטיס של The Drop Times על 39 הודעות האבטחה של Drupal ומה בעלי חנויות צריכים לבדוק קודם."
       }
     },
     {
@@ -54,6 +62,10 @@
       "source": {
         "name": "The Hacker News",
         "url": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMAV00lkxu7R724ItLdgrRsnEYHR_d2eUSdcen_KymGeBY1tCo8SRVz6w_XiNzzYgwpcl0Me3JCJz8DeieRM_0jb8aL4VkHAAIeXrqNf8oQkmzKahqMHOGvhkFK32HOasHZht8BwtI1NxEZ-_nIwmQY_8fxpGbbl3csC6oZKCVnIRk3iYTRhH975dyxsWS/s1600/cursor-vscode.jpg",
+        "alt": "דף התוסף Claude Code for VS Code בחנות התוספים Open VSX."
       }
     }
   ],
@@ -65,6 +77,10 @@
       "source": {
         "name": "The Hacker News",
         "url": "https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4Vibbj3miGalyf0avn_Z2WlLhFh5cC5ImXGFlOL0cisgxikHCcLzHjOVM3qO5B47V3uw62rWH6m6fP1svsH3TCG6i9sS19BIXn1CsDjKK3gnG6VQxkFwghemdeBlV4_AM5Ah-_TJ3T_5Gv-D5Pygrm-B5yzQnDqvIXmI2FyAeuzk57_l6esdhNrTMBj0/s1600/linux-vm.jpg",
+        "alt": "איור של מסוף שמראה תוקף שמתקבל כלקוח מהימן ב־LXD וב־MicroCloud."
       }
     },
     {
@@ -74,6 +90,10 @@
       "source": {
         "name": "The Verge",
         "url": "https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25699392/DSC08596_processed.jpg?quality=90&strip=all&crop=0%2C10.723165084465%2C100%2C78.55366983107&w=1200",
+        "alt": "אייפון על שולחן עץ עם שורת השאלות של Siri פתוחה."
       }
     },
     {
@@ -83,6 +103,10 @@
       "source": {
         "name": "The Verge",
         "url": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/gettyimages-2268681559.jpg?quality=90&strip=all&crop=0%2C10.727816900681%2C100%2C78.544366198639&w=1200",
+        "alt": "שלט דרייב־ת'רו של Starbucks מול סניף של הרשת."
       }
     }
   ],
