@@ -44,7 +44,10 @@ const jsonLd = {
           <div class="mx-auto max-w-3xl px-5 pb-12 pt-10 md:px-8 md:pt-14">
             <nav aria-label={english ? "Article navigation" : "ניווט במאמר"} class="flex flex-wrap justify-between gap-4 text-[15px] text-[var(--a-accent)]">
               <a href="/blog">{english ? "All articles" : "לכל המאמרים"}</a>
-              <a href={translationPath} lang={english ? "he" : "en"} hreflang={english ? "he" : "en"}>{english ? "לקריאה בעברית" : "Read in English"}</a>
+              <a href={translationPath} lang={english ? "he" : "en"} hreflang={english ? "he" : "en"} class="inline-flex items-center gap-2">
+                <span class="rounded-full border border-[var(--a-accent)] px-2.5 py-0.5 text-[13px] font-semibold leading-none tracking-wide" aria-hidden="true">{english ? "HE" : "EN"}</span>
+                {english ? "לקריאה בעברית" : "Read in English"}
+              </a>
             </nav>
             <h1 class="mt-8 text-[clamp(2rem,5vw,3.2rem)] font-medium leading-[1.15] text-[var(--a-ink)]">{post.title}</h1>
             <p class="mt-5 text-xl leading-relaxed text-[var(--a-muted)]">{post.description}</p>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ArrowLeft, Rss } from "lucide-react";
 import { ContentPage, PageIntro, Tag } from "@/components/content/ContentPage";
 import { PostCover } from "@/components/content/PostCover";
-import { publishedPosts as posts, blogTags } from "@/data/blog";
+import { listedPosts as posts, blogTags } from "@/data/blog";
 import type { Post } from "@/components/content/mock";
 import { formatDate } from "@/lib/dates";
 import { Squiggle } from "@/components/automation/Doodles";

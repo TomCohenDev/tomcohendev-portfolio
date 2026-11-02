@@ -24,4 +24,8 @@ export const publishedPosts: Post[] = [
   },
 ];
 
-export const blogTags = [...new Set(publishedPosts.flatMap((post) => post.tags))];
+/** English translations are reachable only from their Hebrew article, so they stay out of the index and RSS. */
+const translationSlugs = new Set(["ai-security-en"]);
+export const listedPosts = publishedPosts.filter((post) => !translationSlugs.has(post.slug));
+
+export const blogTags = [...new Set(listedPosts.flatMap((post) => post.tags))];
