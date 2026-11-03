@@ -1,0 +1,231 @@
+{
+  "date": "2026-11-03",
+  "stories": [
+    {
+      "id": "app-store-age-rating-descriptors",
+      "topic": "mobile",
+      "headline": "אפל מוסיפה שתי שאלות לדירוג הגיל באפליקציות: שיתוף מיקום והיכרויות",
+      "summary": "החל מ־16 בנובמבר 2026 שאלון דירוג הגיל ב־App Store Connect ישאל אם האפליקציה משתפת מיקום אמיתי עם אנשים אחרים ואם יש בה תכונות של היכרויות או קשרים. צריך לענות על השאלות בכל עדכון של אפליקציה, וכל האפליקציות חייבות להשלים אותן עד 12 בינואר 2027; אפליקציה עם היכרויות תקבל דירוג מינימלי של 18+.",
+      "forBusiness": "אם יש לעסק אפליקציה ב־App Store, כדאי לבדוק כבר עכשיו אם היא משתפת מיקום עם משתמשים אחרים, למשל מעקב אחרי שליח, כדי לענות נכון בעדכון הבא. אפליקציה בלי התכונות האלה רק צריכה למלא את השאלון עד ינואר.",
+      "source": {
+        "name": "Apple Developer",
+        "url": "https://developer.apple.com/news/?id=yxkh08us"
+      }
+    },
+    {
+      "id": "teams-fake-it-support-adcs",
+      "topic": "security",
+      "headline": "תוקפים מתחזים לתמיכה הטכנית ב־Teams ומבקשים מעובדים לפתוח להם גישה מרחוק",
+      "summary": "Microsoft חקרה שתי פריצות שבהן התוקפים שלחו הודעות והתקשרו לעובדים ב־Teams מחשבונות חיצוניים עם שמות של מחלקת IT, ושכנעו אותם לפתוח את Quick Assist ולהקריא את קוד החיבור. משם השתמשו בהגדרות לא בטוחות של שירות התעודות של Windows כדי להשתלט על חשבונות מנהלים, ובאחד המקרים הוציאו נתונים של החברה לשרת חיצוני.",
+      "forBusiness": "אין כאן פרצה לתקן: כדאי להגיד לעובדים שהתמיכה של העסק לא תפנה אליהם מחשבון חיצוני ב־Teams ולא תבקש קוד של Quick Assist. מי שמנהל את ה־IT בעסק יכול לחסום ב־Teams הודעות מארגונים חיצוניים שאינם מוכרים.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/attackers-pose-as-it-support-on.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLv88EM1ZSjaeI7bH9DVpg2mGdkwXWUuir0S_p9IfiWG49_TgRalFdK4oQ6e7UE_JYOnNH70Z6wcftnjhcYHRY-Xc0o8GYp9r1uNzxdC_1bnXZgvon74cXkWgKpHZtwJg3IKLsqGC2HS2tcMfQS8BZu7kfrW1vAaaIA316LRzgCOn8zeGZ1WvALgJmyM4/s1600/ms-ad.jpg",
+        "alt": "עובד מול מסך עם צ'אט ב־Teams מחשבון של תמיכה טכנית וחלון Quick Assist שמאשר גישה מרחוק."
+      }
+    },
+    {
+      "id": "chatgpt-chat-work-merge",
+      "topic": "ai",
+      "headline": "OpenAI מאחדת את הלשוניות Chat ו־Work ב־ChatGPT, ו־Codex יחלוק איתן את מכסת השימוש",
+      "summary": "לפי מייל של OpenAI למשתמשים, הלשוניות Chat ו־Work באפליקציית ChatGPT למחשב יתאחדו למסך אחד, שבו אפשר לצרף קבצים ותוספים ולבקש מ־ChatGPT לבנות אתר, להכין מצגת או לבצע פעולות ברשת. בהתחלה השינוי יגיע רק למשתמשים נבחרים, ואחריו ChatGPT ו־Codex ימשכו מאותה מכסת שימוש.",
+      "forBusiness": "מי שמשתמש גם ב־ChatGPT וגם ב־Codex באותו מנוי עלול להגיע מהר יותר לתקרת השימוש, ולפי OpenAI חלק מהמשתמשים יחכו יותר לאיפוס שלה. כדאי לעקוב אחרי הצריכה בחודש הראשון אחרי השינוי.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/02/openai-is-finally-merging-chatgpts-chat-and-work-tabs/"
+      }
+    },
+    {
+      "id": "make-plugin-cursor",
+      "topic": "automation",
+      "headline": "Make משיקה תוסף ל־Cursor: בונים ומריצים אוטומציות מתוך הצ'אט עם הסוכן",
+      "summary": "התוסף החדש נמצא בספריית התוספים של Cursor, ומאפשר לתאר בשפה רגילה תהליך או סוכן AI ש־Make תבנה, תחבר לאפליקציות ותתזמן. הוא זמין בכל מסלולי Make, כולל החינמי, והאוטומציות ממשיכות לרוץ בענן של Make גם כש־Cursor סגור.",
+      "forBusiness": "זה כלי למי שכותב קוד או עובד עם מפתח: אפשר לבקש חיבור בין מערכות תוך כדי עבודה על המוצר, והתוצאה נשארת בחשבון Make הרגיל עם אותן הרשאות. לבעלי עסקים שלא עובדים ב־Cursor אין כאן מה לעשות.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/feature-spotlight-make-plugin-for-cursor/118973"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/0/3/0396ce494b63f6ab0165a5c62281c517d715deaa_2_1024x576.jpeg",
+        "alt": "כרטיס הכרזה של Make עם הלוגואים של Make ו־Cursor והכיתוב שהתוסף החדש עובד בתוך Cursor."
+      }
+    },
+    {
+      "id": "langflow-critical-flaws",
+      "topic": "security",
+      "headline": "פרצות קריטיות ב־Langflow מאפשרות להריץ קוד בשרת בלי סיסמה: עדכנו ל־1.13.0",
+      "summary": "IBM פרסמה שכל הגרסאות של Langflow, כלי קוד פתוח לבניית סוכני AI ותהליכים, מ־1.0.0 ועד 1.12.8 חשופות לשתי פרצות שמאפשרות לעקוף את ההזדהות או להריץ קוד. התיקון היחיד הוא גרסה 1.13.0, ואין דרך עוקפת לשרתים שלא מתעדכנים.",
+      "forBusiness": "אם בניתם לעסק סוכן או תהליך על שרת Langflow, בקשו ממי שמנהל אותו לגבות ולעדכן ל־1.13.0 עכשיו. לפי הדיווח, למודול ציבורי של Metasploit כבר יש בדיקה לאחת הפרצות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/critical-langflow-flaws-could-let.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_FF2_yXQrxnB1ymo-GsohY6t0INslV7mps2DVMnYa_dD_RpZu7uz9HwNrux1gxieMF4hnc_84KMpOyhroj0EDx0Vwv0QljdhTehvJINIsr-Sjyw4CaMiLO3fFWGl-8LhLWgOtC4DRU2X5e46s3Rxghu3KLUMsyHfpxFyKogIs34Q2fm2RYpAMI_Jt_9A/s1600/langflow-rce.jpg",
+        "alt": "איור של Langflow שמראה את שרשרת התקיפה: כלי MCP, עקיפת הזדהות, הרצת קוד והרשאות מנהל."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "census-ai-use-firm-size",
+      "topic": "research",
+      "text": "סקר הלשכה האמריקאית למפקד: 40.7% מהחברות עם 250 עובדים ומעלה ו־23.3% מהעסקים עם 1 עד 4 עובדים דיווחו על שימוש ב־AI באוקטובר 2026.",
+      "source": {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/"
+      },
+      "image": {
+        "url": "https://static.simonwillison.net/static/2026-11-01/5821A414-FAF6-4E61-B037-952C1FD80D39.png",
+        "alt": "גרף קווים של שיעור השימוש ב־AI בעסקים בארה\"ב לפי גודל העסק, מ־2024 ועד אוקטובר 2026."
+      }
+    },
+    {
+      "id": "android-tv-box-botnet",
+      "topic": "security",
+      "text": "גוגל השביתה רשת של יותר מ־1.3 מיליון מכשירי Android, רובם סטרימרים לטלוויזיה, שהגיעו מהיצרן Videostrong עם דלת אחורית שהבעלים לא יכולים להסיר.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/google-disrupts-13-million-device.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkbU6vLZjF0nlz7vqN6UVf3kN1IcdUfIpAmVWlh2II4gGbMMmSuiE1S8HLzP4JV-ImeCa64hU-cEaa-yGXWqUO_XHOurKtEw61DFvjGOJhM7gHpRPpegBcCFYrXkd59wGX-PoV6zm7z7uq6PpXjc4GLhDRzcinR5IIjcOVZEVl8FMQ0v0Dt3CV9sRxZNk/s1600/android-tv-botnet.jpg",
+        "alt": "ממיר Android TV קשור בשרשרת אדומה ומנעול עם הלוגו של גוגל, מול מסך טלוויזיה."
+      }
+    },
+    {
+      "id": "darkblinders-israel",
+      "topic": "security",
+      "text": "חוקרים: קבוצת DarkBlinders, שמזוהה עם איראן, פרצה בין אוגוסט לאוקטובר 2026 לאדם בולט בישראל; הקבוצה ידועה בפישינג ממוקד במייל.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/darkblinders-compromises-israeli-target.html"
+      }
+    },
+    {
+      "id": "volta-infostealer-llm",
+      "topic": "security",
+      "text": "נוזקה חדשה ל־Windows בשם VOLTA גונבת סיסמאות ועוגיות מהדפדפן, ושולחת את המידע למודלי AI כדי לדרג את הקורבנות לפי הערך הכספי שלהם.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/new-volta-infostealer-uses-claude.html"
+      }
+    },
+    {
+      "id": "grok-bot-limits",
+      "topic": "ai",
+      "text": "מכסות השימוש השבועיות של Grok Bot צומצמו בסוף השבוע בלי הודעה מראש; אילון מאסק כתב שעלות ההפעלה הייתה גבוהה מדי ביחס להכנסות.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/"
+      }
+    },
+    {
+      "id": "android-dev-summit-sessions",
+      "topic": "mobile",
+      "text": "גוגל פרסמה יותר מ־50 הרצאות מ־Android Dev Summit ב־YouTube, עם תמלילים מלאים להורדה ומחברת Gemini לכל מסלול.",
+      "source": {
+        "name": "Android Developers",
+        "url": "https://developer.android.com/blog/posts/building-apps-developer-sessions"
+      },
+      "image": {
+        "url": "https://developer.android.com/static/blog/assets/ABL_155_Strapi_1_f48145e2db_qY0vp.webp",
+        "alt": "קולאז' של שקופיות מהרצאות Android Dev Summit, ביניהן Google Play, Compose ו־XR."
+      }
+    },
+    {
+      "id": "synthid-detector-global",
+      "topic": "ai",
+      "text": "גוגל פתחה את SynthID Detector בכל העולם, באנגלית: אפשר לבדוק בו אם תמונה, וידאו או הקלטה נוצרו ב־AI, גם של OpenAI ו־NVIDIA.",
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "conciergesdk",
+      "name": "ConciergeSDK",
+      "text": "צ'אט תמיכה בתוך אפליקציות iOS, Android ו־Flutter, שבו סוכן AI עונה קודם מתוך התיעוד ומעביר לאדם כשצריך.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/conciergesdk"
+      },
+      "icon": "https://cdn.betalist.com/syhn7nz22s5k5ikm4yv53xx7k9vl"
+    },
+    {
+      "id": "agent-ui",
+      "name": "Agent UI",
+      "text": "בונה כלים פנימיים לעסק מתוך שיחה, כמו מלאי, אישורים ולוחות בקרה, ומחבר אותם לגיליונות, תשלומים, WhatsApp ו־ERP.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/agent-ui"
+      },
+      "icon": "https://cdn.betalist.com/w7v5nvtawciv2nkdpv4kmjcvzh6t"
+    },
+    {
+      "id": "websiites",
+      "name": "Websiites",
+      "text": "אתר לעסק קטן שנבנה מתיאור קצר ומושכר בתשלום חודשי, כולל אחסון, SSL ועורך לעדכון תוכן ושעות פתיחה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/websiites"
+      },
+      "icon": "https://cdn.betalist.com/1mpbmbhuvj6pk5fj8h295uuwbta3"
+    },
+    {
+      "id": "flowmrr",
+      "name": "FlowMRR",
+      "text": "מתחבר ל־Stripe ומציג לעסקי מנויים הכנסה חוזרת, נטישה, תשלומים שנכשלו ותחזיות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/flowmrr"
+      },
+      "icon": "https://cdn.betalist.com/edx9k7k0xkhvh5z0co19s2fd3opw"
+    },
+    {
+      "id": "popform",
+      "name": "Popform",
+      "text": "יוצר הצעות מחיר, NDA והסכמים מבקשה או מ־PDF, ושולח אותם לחתימה אלקטרונית עם מעקב.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/popform"
+      },
+      "icon": "https://cdn.betalist.com/bo1la06b821vj84926ebviycyx38"
+    },
+    {
+      "id": "ruam",
+      "name": "Ruam",
+      "text": "סופר שעות עבודה לפי פרויקט, לקוח ומשמרת בלי דוחות ידניים ובלי צילומי מסך, במחיר קבוע לצוות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/ruam"
+      },
+      "icon": "https://cdn.betalist.com/u2sb6fpr91gj6tvj2xtz4pendt7k"
+    },
+    {
+      "id": "setlatch",
+      "name": "SetLatch",
+      "text": "מנהל לסוכנויות אתרים בקשות פרטיות של גולשים, כמו עיון ומחיקה של מידע, בכל אתרי הלקוחות ממקום אחד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/setlatch"
+      },
+      "icon": "https://cdn.betalist.com/wy8186nj4iv9hgsk4ccll9ynrt9c"
+    },
+    {
+      "id": "backlnk",
+      "name": "Backlnk",
+      "text": "בדיקות חינמיות ל־SEO ולנראות בתשובות של AI: אינדוקס, תגיות, גישה של סורקי AI ומבנה הדף.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/backlnk"
+      },
+      "icon": "https://cdn.betalist.com/nqivn541rhic6zo2f29hyxrjn70w"
+    }
+  ]
+}
