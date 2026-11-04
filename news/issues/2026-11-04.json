@@ -1,0 +1,264 @@
+{
+  "date": "2026-11-04",
+  "stories": [
+    {
+      "id": "siri-ai-open-to-developers",
+      "topic": "mobile",
+      "headline": "אפל פותחת את Siri AI לכל המפתחים בגרסאות הבטא של iOS 27.3",
+      "summary": "מהיום כל מפתח יכול לחבר את האפליקציה שלו ל־Siri AI דרך App Intents, כך שמשתמשים יבקשו במילים שלהם פעולות כמו בדיקת משלוח, הזמנת מקום או ביצוע הזמנה. זו תצוגה מקדימה למפתחים בבטא של iOS 27.3 ומערכות נוספות; Siri AI זמין כרגע באנגלית, צרפתית, יפנית, קוריאנית, פורטוגזית וספרדית, ולא באיחוד האירופי ב־iOS.",
+      "forBusiness": "עברית עדיין לא ברשימת השפות, כך שללקוחות בישראל זה לא רלוונטי מיד. מי שיש לו אפליקציה ב־iOS יכול כבר עכשיו להגדיר את הפעולות המרכזיות שלה כ־App Intents, וכך להיות מוכן כשהשפה תתווסף.",
+      "source": {
+        "name": "Apple Developer",
+        "url": "https://developer.apple.com/news/?id=gdk2umrf"
+      },
+      "image": {
+        "url": "https://developer.apple.com/news/images/og/siri-ai-dark-og.jpg",
+        "alt": "הסמל של Siri AI: כדור זכוכית כהה עם פס אור, על רקע שחור."
+      }
+    },
+    {
+      "id": "make-plugin-openclaw",
+      "topic": "automation",
+      "headline": "Make משיקה תוסף ל־OpenClaw: סוכן AI שמפעיל ובונה אוטומציות של Make",
+      "summary": "התוסף, שזמין ב־ClawHub, נותן לסוכן של OpenClaw להפעיל תרחישים של Make ככלים, לבנות לעצמו אוטומציה חדשה למשימה שחוזרת ולבדוק את היסטוריית ההרצות. האוטומציות רצות בענן של Make ונשארות גלויות שם לעריכה או לכיבוי, והחיבורים והסיסמאות לאפליקציות נשמרים ב־Make ולא אצל הסוכן.",
+      "forBusiness": "לעסק שכבר עובד עם Make זו דרך לתת לסוכן AI לעדכן CRM או להפיק חשבונית בלי למסור לו את המפתחות למערכות. כדאי להתחיל בתרחיש אחד מוגדר ולבדוק בהיסטוריית ההרצות מה הסוכן עשה לפני שמרחיבים.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/feature-spotlight-make-plugin-for-openclaw/119163"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/3/3/33fc7d96d91b4463a9ca9d17371c2e0226ffffcd_2_1024x576.jpeg",
+        "alt": "כרטיס הכרזה סגול עם הלוגו של Make והדמות של OpenClaw, תחת הכותרת Let OpenClaw use Make."
+      }
+    },
+    {
+      "id": "chatgpt-search-share",
+      "topic": "ai",
+      "headline": "OpenAI: נפח החיפושים ב־ChatGPT שווה ל־20% מנפח החיפושים בגוגל",
+      "summary": "ראש מוצר הצרכנים של ChatGPT אמר באירוע עיתונאים ביום שני שנפח החיפושים ב־ChatGPT הגיע לחמישית מזה של גוגל, כשחיפוש מוגדר כשאלה שגורמת לחיפוש ברשת. הוא לא פירט מאיפה נלקח המספר של גוגל, ו־The Verge מזכיר שגוגל עצמה מצמצמת את ההפניות לאתרים חיצוניים.",
+      "forBusiness": "יותר לקוחות מוצאים עסקים דרך תשובות של AI ולא רק דרך תוצאות גוגל. כדאי לחפש את העסק שלכם ב־ChatGPT ולבדוק שהמידע שעולה, כמו שעות, שירותים ומחירים, נכון ומעודכן באתר.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search"
+      }
+    },
+    {
+      "id": "synology-nas-ransomware",
+      "topic": "security",
+      "headline": "כופרה תוקפת שרתי Synology NAS שלא עודכנו",
+      "summary": "Synology קוראת ללקוחות לעדכן את מערכת DSM אחרי מתקפות כופרה שמנצלות חולשה שתוקנה כבר בדצמבר 2024 ומצפינות קבצים במכשירים עם גרסאות ישנות. לקוחות דיווחו על הכופרה C3RB3R, שמוסיפה לקבצים את הסיומת L0CK3D ומשאירה קובץ דרישת כופר בשם read-me3.txt.",
+      "forBusiness": "עסקים קטנים רבים שומרים גיבויים ומסמכים על NAS של Synology. כדאי לבדוק שגרסת DSM עדכנית, לא לחשוף את ממשק הניהול לאינטרנט ולוודא שיש גיבוי נוסף מחוץ למכשיר.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/synology-nas-devices-targeted-in.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg18lSM19IJpBCuAofy8CZNsJ-05CtvqxdL8BcHUS65fn_Oph-FAXqpdDE9c11G78nq7I1pVtt4XAotc_hszgea-QpNDTt-RzstD3k7yfXHP3JUnBViplsRzL_4q_LM-jujcv6NbMUUYBMWtJKSdKcBYlbSkm7Mx9LaTbVRW88uFh723nDOGYYDxiwkfYFr/s1600/synology-ransomware.jpg",
+        "alt": "איור למתקפת כופרה על מכשירי אחסון רשת של Synology."
+      }
+    },
+    {
+      "id": "llmjacking-google-warning",
+      "topic": "security",
+      "headline": "גוגל: תוקפים גונבים מפתחות API של מודלי AI, וחלק מהחברות חויבו עד מיליון דולר",
+      "summary": "Google Threat Intelligence ו־Mandiant מתארים מתקפות LLMjacking, שבהן תוקפים משיגים מפתח API או אסימון ענן דרך פישינג, קוד שדלף או הגדרות שגויות, ומשתמשים במודלים על חשבון הארגון. באירועים שנבדקו נרשמו חיובים של יותר מ־100,000 דולר ביום אחד, ובחלק מהארגונים הסכום המצטבר הגיע למיליון דולר.",
+      "forBusiness": "מפתח API של OpenAI, Gemini או Claude שווה כסף לתוקפים. אל תשמרו מפתחות בקוד או באתר עצמו, הגדירו תקרת הוצאה והתראה על חריגה אצל הספק, והחליפו מפתח מיד אם הוא נחשף.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/google-warns-llmjacking-attacks-are.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvqwPJPXsflyvqykVK3Pd1lLXLzEJ6vpLudxQUyYbWkS4nQ0dr9dhcSlMCPwgqfAkyadPSj28XReqkeiymKG5RAZMWpx5Hqhg_XI0HNp3jRMRpaO-wVIRbyJyS8MaaqDNOxXvk8aUENx_aiNMqrqm9SWjtJVpXR2uaP-LNp5deG4U_4YvSxpPKtdJLRNoh/s1600/llmjacking.png",
+        "alt": "איור למתקפת LLMjacking, השתלטות על גישה למודלי שפה בענן."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "msecure-reset-warning",
+      "topic": "security",
+      "text": "מנהל הסיסמאות mSecure שלח ללקוחות מייל על פעילות חשודה וממליץ להחליף סיסמאות, לאפס 2FA ולהסיר passkeys; החברה לא פירטה מה קרה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/msecure-warns-users-to-change-passwords.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtvbYhodewxI1TOMjVp0GKUmMdudVKH27My8auvMEvDbCkd_JBzdJjjBb99j2a2a9R1wgkOaTdLcM_9FEmpyweVquFetLeyfzSC5UgpukK8Ukw7keJb5HwmTnPP1qWT2QzVX3FKLtBKLDFnuMrzmfgW5dwYf6SJHZHqSDj_eYGdap3ECOMMI1Em6_oS_0/s1600/msecure.jpg",
+        "alt": "איור לאזהרה של mSecure למשתמשים."
+      }
+    },
+    {
+      "id": "supermarket-fridge-attacks",
+      "topic": "security",
+      "text": "תוקפים שינו מרחוק הגדרות של בקרי קירור בסופרמרקטים בבלגיה, שוודיה ואסטוניה ב־2 בנובמבר, וחלק מהחנויות זרקו מזון; Danfoss אישרה שמוצריה היו מעורבים.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/second-wave-of-cyberattacks-hits.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjScxShEa3bsAhGLHlqkBcsyuRe6UeQwrOVXBFP3TwxzmXtd03vDeDRZHxxBLIKHDYgY5p5CsrFvBwuozg3UsRLtVMO758NhVwSju6D6WgO1J42wJd2NWR9aVzz-B_CWfiMFH2QANUrAnUXbgkKec2KtJjULvN3NTqrCPbLRNnxlnvBFIAkndClXJMIeXY/s1600/fridge-hack.jpg",
+        "alt": "איור למתקפה על מערכות קירור בסופרמרקטים."
+      }
+    },
+    {
+      "id": "fcm-android-config-v2",
+      "topic": "mobile",
+      "text": "Firebase השיקה את FCM AndroidConfigV2, מבנה חדש להתראות push ב־Android שנועד לצמצם עיכובים במסירה ולתת לשרת משוב אם ההתראה הוצגה.",
+      "source": {
+        "name": "Firebase",
+        "url": "https://firebase.blog/posts/2026/11/fcm-android-config-v2"
+      },
+      "image": {
+        "url": "https://firebasestorage.googleapis.com/v0/b/first-class-blog.appspot.com/o/blog-assets%2F2026%2F11%2Ffcm-android-config-v2%2Fog%2Fog-fcm-android-config-v2.png?alt=media",
+        "alt": "כרטיס של Firebase עם הכותרת FCM AndroidConfigV2 ולוגו של Firebase."
+      }
+    },
+    {
+      "id": "watch-siri-recaps-beta",
+      "topic": "mobile",
+      "text": "Siri Recaps ב־watchOS 27.3 בבטא מסכם שיחות ב־Apple Watch לכמה נקודות בלי לשמור את ההקלטה, וסיכומים שלא נשמרו נמחקים תוך שבעה ימים.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/02/apple-watchs-ai-features-for-rewinding-and-recapping-conversations-begin-beta-testing/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2026/11/live-rewind-restaurant.jpg?resize=1200,669",
+        "alt": "שעון Apple Watch מציג את תכונת השמע החדשה בזמן שיחה במסעדה."
+      }
+    },
+    {
+      "id": "supabase-claude-mcp-auth",
+      "topic": "ai",
+      "text": "Supabase: ארגוני Team ו־Enterprise עם SSO יכולים לתת ל־Claude להנפיק את אישור הזהות לשרת ה־MCP, כך שהעובדים מתחברים בלי מסך הסכמה לכל אחד.",
+      "source": {
+        "name": "Supabase",
+        "url": "https://supabase.com/blog/claude-issued-enterprise-managed-auth-for-mcp"
+      },
+      "image": {
+        "url": "https://supabase.com/images/blog/2026-11-03-claude-issued-enterprise-managed-auth-for-mcp/og.png",
+        "alt": "תרשים שבו Claude חותם על אישור זהות שעובר ל־Supabase."
+      }
+    },
+    {
+      "id": "linux-tcp-rce-patches",
+      "topic": "security",
+      "text": "Red Hat פרסמה תיקון לחולשה בדרגה 9.8 בקוד ה־TCP של ליבת Linux שמאפשרת הרצת קוד מרחוק; התיקונים של Ubuntu עדיין בערוץ הבדיקות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/red-hat-patches-98-rated-linux-tcp-rce.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdf8UfDHsjH9VaJGtYT5WgjtJ1G5YRMkjPWNeKn-hw05sM9ny0kW9L2eIc3UCiIQ7qmc_TmfrenS1WH8KiRBjln2hQS0X7DUlykxdHrzDgg4uoiHpiOf3fVTOnUuOt4618z3PN7hw1AfUch_y0Tot3ubTga5LEfyWnATkzegfQBSWxMbzNzJaGY18QqC8/s1600/linux-rce.jpg",
+        "alt": "איור לחולשת הרצת קוד מרחוק בליבת Linux."
+      }
+    },
+    {
+      "id": "barracuda-root-chain",
+      "topic": "security",
+      "text": "Barracuda חשפה שתי חולשות, בדרגות 9.3 ו־8.6, שיחד מאפשרות גישת root ל־Email Security Gateway ולמוצרים נוספים דרך ממשק הניהול.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCvGJCkYjldhAvsjMo47UqxGOTfVY1zCcjZQzgebkO8j1__fa0cFOn3CAV1jPTUpzwDDISQKPQP5eVGOl9BzRLBX7KlWuU2HMpzuHRWV2wyaItDwYgPu0X7m3qE5V1kgFzKZ1QYcRBcZyDqkUTFberiOWXBfV_-suYC1QQWq_TwBMeyme4F0FsOZnpijhC/s1600/barracuda.png",
+        "alt": "איור לחולשות במוצרי האבטחה של Barracuda."
+      }
+    },
+    {
+      "id": "cpguard-update-backdoor",
+      "topic": "security",
+      "text": "תוקף פרץ למערכת העדכונים של cPGuard ב־2 בנובמבר והפיץ דלת אחורית לשרתי Linux בגרסאות 5.88.12 עד 5.88.19; גרסה 5.88.25 מסירה אותה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/cpguard-update-channel-hijacked-to.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtc3HOtWwxZPk7V8yva9o6Oe5lWAPX8KZsWHG27ohycqrb04wAKSDSSdk6ta6y284N9gT6Ab6QKIWwTPss2bBK4PtS3Fm7gSI9QG5kec2AvEgQPjQnc0YlhlUQx0uZKt2ygn576BQ3aburL-IhrMRFVm1vEpTR5ol06R0BtjySvifD05Q_dQGUPvyPLxs/s1600/cpgaurd.png",
+        "alt": "איור לפריצה לערוץ העדכונים של cPGuard."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "trackapp",
+      "name": "Trackapp",
+      "text": "ניהול משרד אחורי למי שמנהל עסק מהטלפון דרך WhatsApp ו־Instagram: מקלידים או אומרים מכירה, תשלום או שאלה והיא נרשמת.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/trackapp"
+      },
+      "icon": "https://cdn.betalist.com/tt6s050glrh94v8unmfm3bx86fop"
+    },
+    {
+      "id": "intrawebix-crm",
+      "name": "Intrawebix CRM",
+      "text": "תיבה משותפת לצוות קטן שמרכזת הודעות WhatsApp, Telegram, Instagram, מייל וצ'אט מהאתר, יחד עם CRM למכירות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/intrawebix-crm"
+      },
+      "icon": "https://cdn.betalist.com/d8nulcfc1x4s7t779axjznuhkvz7"
+    },
+    {
+      "id": "mailkube",
+      "name": "mailkube",
+      "text": "שירות לשליחת מיילים טרנזקציוניים מאפליקציות דרך REST או SMTP, עם שליחה משרתים באיחוד האירופי.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/mailkube"
+      },
+      "icon": "https://cdn.betalist.com/3mr1ycxrhd0otwnuu3h79cw8xp3i"
+    },
+    {
+      "id": "subcenter-for-teams",
+      "name": "SubCenter for Teams",
+      "text": "מעקב אחרי הוצאות על SaaS וכלי AI בצוותים של עד 10 אנשים: מעבירים אליו חשבוניות והוא קורא ספק, מחיר, מושבים ומועד חידוש.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/subcenter-for-teams"
+      },
+      "icon": "https://cdn.betalist.com/ulcd5qak58iaq9gvhlqjpakpbx3a"
+    },
+    {
+      "id": "cuehq",
+      "name": "CueHQ",
+      "text": "מאתר ב־Reddit, X, YouTube ו־TikTok פוסטים של אנשים שמחפשים מוצר כמו שלכם, ומנסח טיוטת תגובה שאתם עורכים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/cuehq"
+      },
+      "icon": "https://cdn.betalist.com/gs1hjy45lbse4h3dqnjob80e03lz"
+    },
+    {
+      "id": "seatreaper",
+      "name": "SeatReaper",
+      "text": "מוצא לחברות שירותי IT רישיונות ומכשירים שהלקוחות עדיין משלמים עליהם אחרי שעובדים עזבו, מתוך Microsoft 365 ומערכות נוספות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/seatreaper"
+      },
+      "icon": "https://cdn.betalist.com/odhf6z81b6jwzmebey4otdog8tck"
+    },
+    {
+      "id": "modelpiper",
+      "name": "ModelPiper",
+      "text": "אפליקציה ל־Mac להרצת מודלי AI מקומיים ובענן, עם קול, אוטומציה ויותר מ־460 כלי MCP.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/modelpiper"
+      },
+      "icon": "https://cdn.betalist.com/x02w5tk6fs2plcljijjaz7tjdm24"
+    },
+    {
+      "id": "rey",
+      "name": "Rey",
+      "text": "עוזר AI בתוך Slack לצוותי שיווק עם משפיענים, שלוקח על עצמו דוחות שבועיים, הכנת קמפיינים ומעקב אחרי יוצרים ודוגמאות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/rey"
+      },
+      "icon": "https://cdn.betalist.com/bik95r5r2xbtohouz1lx3clg165o"
+    }
+  ]
+}
