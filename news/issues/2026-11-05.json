@@ -1,0 +1,265 @@
+{
+  "date": "2026-11-05",
+  "stories": [
+    {
+      "id": "app-store-retention-messages",
+      "topic": "mobile",
+      "headline": "אפל מאפשרת להציג למנויים הודעת שימור כשהם מבטלים מנוי באפליקציה",
+      "summary": "מפתחים שמוכרים מנויים מתחדשים ב־App Store יכולים מעכשיו להגדיר ב־App Store Connect הודעה שתופיע בתהליך הביטול, עם טקסט, תמונה או הצעה מיוחדת. אפשר לקבוע מי זכאי לראות אותה וכמה זמן לחכות בין הודעות, ודרך Retention Messaging API לבחור הודעה לפי פרטי המנוי של כל משתמש; הגישה ל־API ניתנת לפי בקשה.",
+      "forBusiness": "אם האפליקציה שלכם גובה מנוי דרך אפל, זו דרך להציע הנחה או להזכיר מה הלקוח מקבל ברגע שהוא עומד לעזוב. כדאי לנסח הודעה אחת פשוטה ולבדוק אחרי חודש אם שיעור הביטולים ירד.",
+      "source": {
+        "name": "Apple Developer",
+        "url": "https://developer.apple.com/news/?id=fk9ps3gv"
+      }
+    },
+    {
+      "id": "android-november-critical-flaw",
+      "topic": "security",
+      "headline": "גוגל תיקנה פרצה קריטית ב־Android 14 עד 17 שמאפשרת להריץ קוד בטלפון בלי שום פעולה",
+      "summary": "בעדכון האבטחה של נובמבר גוגל תיקנה את CVE-2026-58868, פרצה ב־Android 14 עד 17 שעלולה לאפשר לתוקף מרוחק להריץ קוד בטלפון בלי שהמשתמש יעשה דבר. לפי גוגל לא דווח עד 4 בנובמבר על ניצול שלה; התיקון מגיע עם רמת עדכון אבטחה 2026-11-01 ואילך, ויצרני הטלפונים והספקיות שולחים אותו כל אחד בקצב שלו.",
+      "forBusiness": "בדקו בטלפונים של העובדים בהגדרות, תחת 'מידע על הטלפון' ו'גרסת Android', שתאריך עדכון האבטחה הוא 2026-11-01 או מאוחר יותר. טלפון שלא מקבל את העדכון בימים הקרובים כדאי לסמן להחלפה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgm9fDI_lHL64S1r-eoB5-99WagZJBIjKDF-bEJ9egJw_EiLUomXSakGnV0vdq9Fqu2j6KVWM4upLmOwweDCKQ32f21W8CTsQHnoGMhFm-ISPNQEg1Jq5WbDujqLHVkGSEsox0Xd3Yc5Dd-v4-6rdzU4akd97y7cBhRYFO2ofmxpf3HYspJ6MkJs2RtfC4/s1600/android-patch.jpg",
+        "alt": "טלפון עם סמל Android שמודבקת עליו פלסטר."
+      }
+    },
+    {
+      "id": "chatgpt-images-2-6-gifs",
+      "topic": "ai",
+      "headline": "ChatGPT יוצר עכשיו GIF מונפש מבקשה או מתמונה, עם המודל Images 2.6",
+      "summary": "OpenAI משיקה את Images 2.6, שמייצר תמונות מהר יותר ומאפשר ליצור ב־ChatGPT קובץ GIF מטקסט או מתמונה שמעלים, לשנות את מהירות האנימציה ולערוך כל פריים. העדכון מגיע לכל משתמשי ChatGPT ו־Codex באתר, במחשב ובטלפון, וב־API נוספו המודלים GPT-Image-2.6 Flare ו־Sunburst.",
+      "forBusiness": "מי שמכין פוסטים לרשתות או באנרים קטנים יכול לנסות להפיק GIF קצר של מוצר או מבצע ישירות מתוך ChatGPT, בלי תוכנת עריכה. כדאי לבדוק את התוצאה לפני פרסום, במיוחד טקסט בעברית בתוך התמונה.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6"
+      }
+    },
+    {
+      "id": "make-airtable-new-modules",
+      "topic": "automation",
+      "headline": "Make מוסיפה 12 רכיבים ל־Airtable: תגובות, יצירת טבלאות וצירוף קבצים",
+      "summary": "באפליקציית Airtable ב־Make נוספו רכיבים ליצירה, עדכון, מחיקה ורשימה של תגובות על רשומות, וטריגר שמפעיל תרחיש כשנוספת תגובה. נוספו גם רכיבים ליצירת בסיס, טבלה ושדה ולקריאת המבנה של בסיס, רכיב להעלאת קובץ לרשומה, וסינון מודרך בחיפוש רשומות בלי לכתוב נוסחה.",
+      "forBusiness": "עסק שמנהל לקוחות או הזמנות ב־Airtable יכול עכשיו לשלוח התראה לצוות כשמישהו מגיב על רשומה, או לצרף חשבונית לרשומה אוטומטית. תרחישים קיימים ממשיכים לעבוד כרגיל.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/app-update-go-beyond-just-records-with-12-new-airtable-modules/119190"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/7/6/762f0ddc5bda2248f76eed5c88974ae3bfc6cd22_2_1024x600.gif",
+        "alt": "מסך עריכת תרחיש חדש ב־Make בשם New Airtable modules."
+      }
+    },
+    {
+      "id": "meta-graph-marketing-api-v27",
+      "topic": "automation",
+      "headline": "Meta השיקה את Graph API ו־Marketing API בגרסה 27, עם שינויים שעלולים לשבור חיבורים",
+      "summary": "מ־4 בנובמבר, בגרסה 27 הכתובת לעדכון קטלוג מוצרים במנה אחת מוחלפת ב־items_batch, ובקהלים דומים אי אפשר עוד לציין מדינה או מיקום. במודעות מכירה חדשות שמכוונות למכשירים מסוימים תופעל כברירת מחדל הרחבה למכשירים אחרים, ו־Graph API 21 יוסר ב־21 בינואר 2027.",
+      "forBusiness": "אם יש לכם חיבור משלכם לקטלוג או למודעות של Facebook ו־Instagram, בקשו מהמפתח לבדוק אותו מול השינויים לפני שעוברים לגרסה 27. מי שמשתמש רק במנהל המודעות של Meta לא צריך לעשות דבר עכשיו.",
+      "source": {
+        "name": "Meta for Developers",
+        "url": "https://developers.facebook.com/blog/post/2026/11/04/introducing-graph-api-v27-and-marketing-api-v27/"
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "wordpress-core-cisa-kev",
+      "topic": "security",
+      "text": "CISA אישרה שתוקפים מנצלים את הפרצה CVE-2026-119977 בליבת WordPress בזמן עדכון האתר; Wordfence חסמה 12,632 ניסיונות ב־24 שעות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/cisa-confirms-hackers-exploiting.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9IgE0BWDAvYzjY8wFSMADIRn69AMLYxUa-oPoOISNBOpPbxwBNoWrbXWzI6P0deiU6WDqitiIZx1gFXSAlR8xX9rj56BuU48veMEPJAGSsmQTbVPirFOCuyMc_KQxtbPfc841GZGZ-3HSYYHCGbHnzrihtwQUaMlXrT3leLzI2USh00hc9OBw4k1SCJt4/s1600/wp-exploit.jpg",
+        "alt": "איור של ניצול פרצה באתר WordPress."
+      }
+    },
+    {
+      "id": "apt29-plerdy-mobile-exploits",
+      "topic": "security",
+      "text": "לפי Sekoia, קבוצה רוסית החדירה קוד לסקריפט הניתוח של Plerdy ולאתרים פרוצים, והפיצה ממנו פרצות ל־iOS ול־Android שגונבות עוגיות דפדפן.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/apt29-linked-hackers-hijack-web.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhx1cus2o8fkYGLhQu9BfPgGtAUwnmTAMucLagfAodBuRoYnyxGIJKgpqtKFyCSV-WSG3pDqmPujhj-iwoOZB-zF8JjbQMrLzDHYtdTPA3hD3Kc3rqYQM4CQwkICwZkh8K6O8ZSt-WAA_PBoUA6lHwh_55dbDlKizsjzcTN847c9BSHsWHmrAP42JHRHIYS/s1600/ios-exploit.jpg",
+        "alt": "איור של תקיפה על טלפונים ניידים."
+      }
+    },
+    {
+      "id": "rails-active-storage-imagemagick",
+      "topic": "security",
+      "text": "פרצה בדרגה 9.8 ב־Ruby on Rails מאפשרת לכתוב קבצים בשרת דרך העלאת תמונה, באפליקציות שמעבדות קבצים עם ImageMagick; התיקון בגרסאות 8.1.4.1 ו־8.0.5.2.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/critical-rails-flaw-lets-attackers.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaJWnScdkMx0R5_Zt00NtYVNjNavBR7IMrLzJM_tZGMTpZtAvV7uNWt6BQbBrlUzH-aBoj_ZmMEOG__aTA8VmfTeiHUR9gfqNe2eYf9fSM-sYQkmCOg10qZ3ZaKyM_RS1QUQhm8s5NMw-xnYaWMDgDakmFyp9tbJgQ4hOZTf0cxe9E6x7uWt3JeN6bS3k/s1600/ruby-rails.jpg",
+        "alt": "איור עם הסמל של Ruby on Rails."
+      }
+    },
+    {
+      "id": "debian-ubuntu-apt-flaw",
+      "topic": "security",
+      "text": "פרצה CVE-2026-109518 במנהל החבילות APT של Debian ו־Ubuntu מאפשרת למי שמשנה את התעבורה להחליף חבילה ולהריץ קוד כ־root; Debian ו־Ubuntu כבר מפיצות תיקון.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/debian-and-ubuntu-apt-flaw-lets-mitm.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUPaNgRQEg3TU6-9BBgKse77CGVpbBFbn48cBnN1aanKvaMzk_mT74RxyWZA3_NbcrYe0UnRAQlELRYKGiGNrLUDcBMSKXFgRNxaND7RoaVFOs1Q7rkFFtlpoAzYQ7C8i6RAY4bNNTarEMUI-iFR4A_IfjIkFE9vpyQjG-0QFngy5cRE8f2GhGfTltkaI/s1600/linux-apt.jpg",
+        "alt": "איור של מערכת Linux ועדכון חבילות."
+      }
+    },
+    {
+      "id": "sonicwall-gms-eol-no-patch",
+      "topic": "security",
+      "text": "SonicWall לא תתקן שתי פרצות, אחת בדרגה 9.1, במערכת הניהול GMS בגרסה 9.5.2 ומטה, כי המוצר הגיע לסוף חייו; החברה ממליצה לעבור ל־NSM.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/sonicwall-wont-patch-eol-gms-flaws-that.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgME1T4MkjI8UEzzSmlLgbPG6a__VNQNoKkhuxiaW5zF5fnHLPmsTdkGoIL06JTeER1jcOMH-WLuNYyva_sSW_8DnZojbMC8ikgNME3ZPUAdkij-9nVm8joHHdaZRoLNbVgcSVLNSc6Tt7UJ3YPhQmea3OtQwg-H2UzUPIgWq7nFwoEQcMsGCKf-0fImEvd/s1600/sonic.jpg",
+        "alt": "איור של מערכת אבטחת רשת של SonicWall."
+      }
+    },
+    {
+      "id": "codex-prompt-adware",
+      "topic": "security",
+      "text": "Check Point גילתה חבילת פריצה ל־Codex בשם Haiou שמשנה את קובצי ההגדרות של הסוכן, כך שהוא משלב בתשובות שלו פרסומות לשירות AI בתשלום.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/researchers-uncover-prompt-adware.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiO7-xs-0dO1uqFLbfphgPbe8T7cbCLkrab6XhAjlNPVo-bLQOFw4mkcArqglQOvhuIYif4ohTAub-TNWlket6iguifshMRo3zBrYvM4G_IwFTtbh8ifIqh1Vuf8GuNmqDg_PB2Roy7yzYuTFhRrFM8wxOo8HVwfG9Y2eqJnq82LGYHnAKI5S6TuvZ_Q95A/s1600/ai-adware.jpg",
+        "alt": "איור של פרסומות שמוחדרות לסוכן AI."
+      }
+    },
+    {
+      "id": "uber-ai-agent-rides",
+      "topic": "ai",
+      "text": "Uber: ברבעון השלישי רק 4 נסיעות הוזמנו דרך סוכני AI חיצוניים, ובשבוע של ליל כל הקדושים כ־500 משלוחים, מתוך 320 מיליון נסיעות ומשלוחים.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/transportation/1026306/uber-ai-agents-q3-earnings-disintermediation"
+      }
+    },
+    {
+      "id": "jetpack-compose-1-13",
+      "topic": "mobile",
+      "text": "גוגל הציגה ב־Android Dev Summit את Compose 1.13 עם Grid ו־FlexBox לפריסה לכל גודל מסך, ואת Jetpack AppState בגרסת אלפא.",
+      "source": {
+        "name": "Android Developers",
+        "url": "https://developer.android.com/blog/posts/build-for-every-screen-jetpack-compose-updates"
+      },
+      "image": {
+        "url": "https://developer.android.com/static/blog/assets/ADS_Compose_blog_1_9a0f711253_1AsfNj.webp",
+        "alt": "סמל Jetpack Compose על רקע של טלפון, מחשב ושעון חכם."
+      }
+    },
+    {
+      "id": "dharma-field-extractor",
+      "topic": "ai",
+      "text": "Dharma AI פרסמה את Field Extractor, מודל בגודל 2 מיליארד פרמטרים שמחלץ שדות ממסמכים כמו חשבוניות ותעודות ומחזיר אותם כ־JSON.",
+      "source": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor"
+      },
+      "image": {
+        "url": "https://cdn-uploads.huggingface.co/production/uploads/6a725daa5ca641a21ab61956/c1ik58RednXjcqrx5s2Fo.png",
+        "alt": "קבלה סרוקה לצד קובץ JSON עם השדות שחולצו ממנה."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "olva-ai",
+      "name": "OLVA.ai",
+      "text": "עוזר לפגישות שלא מצטרף לשיחה כבוט: מתמלל בזמן אמת מהמכשיר, מזהה שאלות ועונה מתוך המסמכים שלכם ב־Zoom, Meet ו־Teams.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/olva-ai"
+      },
+      "icon": "https://cdn.betalist.com/at7yxq16z5vsmmww47jvjhroznwi"
+    },
+    {
+      "id": "api-now",
+      "name": "API Now",
+      "text": "בונים מודל נתונים בממשק גרפי ומקבלים API מתועד ומאובטח מעל מסד Postgres, בלי לכתוב קוד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/api-now"
+      },
+      "icon": "https://cdn.betalist.com/8ljvvo0ngrji8e2r9llrff71hl3w"
+    },
+    {
+      "id": "puppetflow",
+      "name": "Puppetflow",
+      "text": "אוטומציה של תהליכים בדפדפן, בענן או על שרת משלכם, שמטפלת בהתחברות, קודים במייל ו־2FA, עם צפייה חיה והקלטה של כל ריצה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/puppetflow"
+      },
+      "icon": "https://cdn.betalist.com/56g9ey81byksxrjivh2goknohuxc"
+    },
+    {
+      "id": "vibe-prospecting",
+      "name": "Vibe Prospecting",
+      "text": "מבקשים בשפה רגילה רשימת לקוחות פוטנציאליים או פרטי איש קשר מתוך Claude או ChatGPT, ומשלמים בקרדיטים רק על מה ששומרים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/vibe-prospecting"
+      },
+      "icon": "https://cdn.betalist.com/uhk5uyl5hwn2nqupidz21vgdqfq8"
+    },
+    {
+      "id": "sendlint",
+      "name": "SendLint",
+      "text": "בדיקת איכות לדיוור: משווה כל שורה, קישור ותמונה במייל לטקסט, לקישורים ולעיצוב שאושרו, וגם לכללי נגישות ומותג.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/sendlint"
+      },
+      "icon": "https://cdn.betalist.com/e1fpkoszrh8oviqgishosax4nrg8"
+    },
+    {
+      "id": "fairpage",
+      "name": "Fairpage",
+      "text": "אחסון ועריכה לאתרים שנבנו עם סוכני קוד כמו Claude Code: הלקוח לוחץ על כותרת או תמונה ומשנה אותה בלי לראות קוד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/fairpage"
+      },
+      "icon": "https://cdn.betalist.com/ezzol1yu8gfd6i2zlstg2yk2zkfa"
+    },
+    {
+      "id": "billdog",
+      "name": "BillDog",
+      "text": "פלטפורמה אחת לאפליקציות ואתרים שמרכזת מסכי תשלום, אנליטיקה, הודעות, סקרים והתחברות, עם SDK לווב ולמובייל.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/billdog"
+      },
+      "icon": "https://cdn.betalist.com/shy9zd82hr3swlom15qqdik1dm8o"
+    },
+    {
+      "id": "helyx",
+      "name": "Helyx",
+      "text": "צ'אט AI ליום־יום עם שיחות בלשוניות, שמתחבר ל־Gmail, ליומן ול־Drive כדי למצוא, לסכם ולנסח תוכן מהם.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/helyx"
+      },
+      "icon": "https://cdn.betalist.com/6nzel2vahmk241ikl68uo2zippu9"
+    }
+  ]
+}
