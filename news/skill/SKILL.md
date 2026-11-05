@@ -50,7 +50,8 @@ Skip:
 - Image: look for one for every story; the page looks bare without them. Use the image the source page itself shares
   (its `og:image` or `twitter:image` meta tag; fetch the HTML with curl when a fetch tool is blocked), and open it to check it
   shows the story: a product screen, a chart, a photo or an illustration made for the article. Skip bare logos, generic site
-  banners (the same card on every page of the site) and pages without one. `alt` is one short Hebrew sentence
+  banners (the same card on every page of the site) and pages without one. A card per product area is fine, such as Apple
+  Developer's App Store Connect icon, and so is a publisher's stock photo; check every story before leaving it without an image. `alt` is one short Hebrew sentence
   on what the image shows. The site credits the image to `source.name`.
 
 ## Flashes

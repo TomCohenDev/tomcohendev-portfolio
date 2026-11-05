@@ -10,6 +10,10 @@
       "source": {
         "name": "Apple Developer",
         "url": "https://developer.apple.com/news/?id=yxkh08us"
+      },
+      "image": {
+        "url": "https://developer.apple.com/news/images/og/app-store-connect-og.png",
+        "alt": "סמל App Store Connect."
       }
     },
     {
@@ -36,6 +40,10 @@
       "source": {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/02/openai-is-finally-merging-chatgpts-chat-and-work-tabs/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg?resize=1200,800",
+        "alt": "לוגו OpenAI על מסך."
       }
     },
     {
@@ -121,6 +129,10 @@
       "source": {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2026/03/grok-getty.jpg?resize=1200,800",
+        "alt": "לוגו Grok על מסך טלפון."
       }
     },
     {
@@ -155,7 +167,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/conciergesdk"
       },
-      "icon": "https://cdn.betalist.com/syhn7nz22s5k5ikm4yv53xx7k9vl"
+      "icon": "https://cdn.betalist.com/syhn7nz22s5k5ikm4yv53xx7k9vl",
+      "image": {
+        "url": "https://resize.imagekit.co/H1jhaTTgUub2MIVzZC37L5PlC89IkfTijO1GqLL8wFw/plain/s3://betalist-production/n3xkdt30yq3qvn700au5d1zskhcs",
+        "alt": "תמונה מדף ההשקה של ConciergeSDK."
+      }
     },
     {
       "id": "agent-ui",
@@ -165,7 +181,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/agent-ui"
       },
-      "icon": "https://cdn.betalist.com/w7v5nvtawciv2nkdpv4kmjcvzh6t"
+      "icon": "https://cdn.betalist.com/w7v5nvtawciv2nkdpv4kmjcvzh6t",
+      "image": {
+        "url": "https://resize.imagekit.co/sgIa6cxozD5pIo4Ptc4DypeULnz4QiptmszXNlRy2CI/plain/s3://betalist-production/1zxx1mre4e5a5uup9m7so7agkcem",
+        "alt": "תמונה מדף ההשקה של Agent UI."
+      }
     },
     {
       "id": "websiites",
@@ -175,7 +195,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/websiites"
       },
-      "icon": "https://cdn.betalist.com/1mpbmbhuvj6pk5fj8h295uuwbta3"
+      "icon": "https://cdn.betalist.com/1mpbmbhuvj6pk5fj8h295uuwbta3",
+      "image": {
+        "url": "https://resize.imagekit.co/GbwYb36oPSvv5UJDlhfw4OzHM31ahKdEPMTT6u3GMvM/plain/s3://betalist-production/xa4qrfgftf2hfr0p2t7xbgjfgwka",
+        "alt": "תמונה מדף ההשקה של Websiites."
+      }
     },
     {
       "id": "flowmrr",
@@ -185,7 +209,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/flowmrr"
       },
-      "icon": "https://cdn.betalist.com/edx9k7k0xkhvh5z0co19s2fd3opw"
+      "icon": "https://cdn.betalist.com/edx9k7k0xkhvh5z0co19s2fd3opw",
+      "image": {
+        "url": "https://resize.imagekit.co/Zny75Ii1c7WGqAn5NhRh4omJayVquJJnvsOQYgoH_Cg/plain/s3://betalist-production/7tdp4m1npt5j0m2knbg4ezp5kkad",
+        "alt": "תמונה מדף ההשקה של FlowMRR."
+      }
     },
     {
       "id": "popform",
@@ -195,7 +223,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/popform"
       },
-      "icon": "https://cdn.betalist.com/bo1la06b821vj84926ebviycyx38"
+      "icon": "https://cdn.betalist.com/bo1la06b821vj84926ebviycyx38",
+      "image": {
+        "url": "https://resize.imagekit.co/3eZxmaj5LCMqk9GphVyb7lSIL-ZsE_-xslrVrC3ajT4/plain/s3://betalist-production/mf1xkanywzwkwxxsrdevrru9ysos",
+        "alt": "תמונה מדף ההשקה של Popform."
+      }
     },
     {
       "id": "ruam",
@@ -205,7 +237,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/ruam"
       },
-      "icon": "https://cdn.betalist.com/u2sb6fpr91gj6tvj2xtz4pendt7k"
+      "icon": "https://cdn.betalist.com/u2sb6fpr91gj6tvj2xtz4pendt7k",
+      "image": {
+        "url": "https://resize.imagekit.co/g0e0_dQyx-EM-GPw6Yhp17IG7A2uvDxXH8Xkz5LiTDI/plain/s3://betalist-production/9org5ebap9lttg9mvzmtpsr8p6d7",
+        "alt": "תמונה מדף ההשקה של Ruam."
+      }
     },
     {
       "id": "setlatch",
@@ -215,7 +251,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/setlatch"
       },
-      "icon": "https://cdn.betalist.com/wy8186nj4iv9hgsk4ccll9ynrt9c"
+      "icon": "https://cdn.betalist.com/wy8186nj4iv9hgsk4ccll9ynrt9c",
+      "image": {
+        "url": "https://resize.imagekit.co/hrL9iz1J34rRHBD1OLd0QYFlPIsmQnShDiwBULLeJBo/plain/s3://betalist-production/7wvzqonjo5r07uj5hv3ebx524op8",
+        "alt": "תמונה מדף ההשקה של SetLatch."
+      }
     },
     {
       "id": "backlnk",
@@ -225,7 +265,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/backlnk"
       },
-      "icon": "https://cdn.betalist.com/nqivn541rhic6zo2f29hyxrjn70w"
+      "icon": "https://cdn.betalist.com/nqivn541rhic6zo2f29hyxrjn70w",
+      "image": {
+        "url": "https://resize.imagekit.co/J_JmtNQ_hmY1_34xDhPXVNC-7f4c0DXAvhycZWfIPkw/plain/s3://betalist-production/e76fxe1xhm9qluuoqf6r308qsgsy",
+        "alt": "תמונה מדף ההשקה של Backlnk."
+      }
     }
   ]
 }

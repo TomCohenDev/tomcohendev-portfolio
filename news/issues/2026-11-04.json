@@ -40,6 +40,10 @@
       "source": {
         "name": "The Verge",
         "url": "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/STK155_OPEN_AI_CVirginia_C-1.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+        "alt": "איור של לוגו OpenAI."
       }
     },
     {
@@ -188,7 +192,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/trackapp"
       },
-      "icon": "https://cdn.betalist.com/tt6s050glrh94v8unmfm3bx86fop"
+      "icon": "https://cdn.betalist.com/tt6s050glrh94v8unmfm3bx86fop",
+      "image": {
+        "url": "https://resize.imagekit.co/5YbBRI1y9Sopo9sA5yal7Pz0dUFJ0fJ5v9CVOVujAcI/plain/s3://betalist-production/elowxqvo023n6mmifrtdmv2eloig",
+        "alt": "תמונה מדף ההשקה של Trackapp."
+      }
     },
     {
       "id": "intrawebix-crm",
@@ -198,7 +206,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/intrawebix-crm"
       },
-      "icon": "https://cdn.betalist.com/d8nulcfc1x4s7t779axjznuhkvz7"
+      "icon": "https://cdn.betalist.com/d8nulcfc1x4s7t779axjznuhkvz7",
+      "image": {
+        "url": "https://resize.imagekit.co/wP1A6K9-_7qlBmp4Eeb7UKM4FvK82XVas8tbOFxvdHY/plain/s3://betalist-production/3av1h5j1u3n8jf64tvhjywjdm3pb",
+        "alt": "תמונה מדף ההשקה של Intrawebix CRM."
+      }
     },
     {
       "id": "mailkube",
@@ -208,7 +220,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/mailkube"
       },
-      "icon": "https://cdn.betalist.com/3mr1ycxrhd0otwnuu3h79cw8xp3i"
+      "icon": "https://cdn.betalist.com/3mr1ycxrhd0otwnuu3h79cw8xp3i",
+      "image": {
+        "url": "https://resize.imagekit.co/ul1Uy36x0RdBs6tZEGDL-zABKOlyIOsFFXzbZHGEnUo/plain/s3://betalist-production/1xtstih7p1wxc94td59jk5rfyznf",
+        "alt": "תמונה מדף ההשקה של mailkube."
+      }
     },
     {
       "id": "subcenter-for-teams",
@@ -218,7 +234,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/subcenter-for-teams"
       },
-      "icon": "https://cdn.betalist.com/ulcd5qak58iaq9gvhlqjpakpbx3a"
+      "icon": "https://cdn.betalist.com/ulcd5qak58iaq9gvhlqjpakpbx3a",
+      "image": {
+        "url": "https://resize.imagekit.co/FZZEvZtdeFqiicQodcjb8ZWKmiQ-JHTJokARjlF3K2Q/plain/s3://betalist-production/awfu9kg4t911xgvhj76iadec0ym5",
+        "alt": "תמונה מדף ההשקה של SubCenter for Teams."
+      }
     },
     {
       "id": "cuehq",
@@ -228,7 +248,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/cuehq"
       },
-      "icon": "https://cdn.betalist.com/gs1hjy45lbse4h3dqnjob80e03lz"
+      "icon": "https://cdn.betalist.com/gs1hjy45lbse4h3dqnjob80e03lz",
+      "image": {
+        "url": "https://resize.imagekit.co/UVGZW626avhn0sdMF6foh_WHYGW9XhIZzoaWSq_55Qc/plain/s3://betalist-production/iicwd2lyq6nyhunkskovvvpsm87p",
+        "alt": "תמונה מדף ההשקה של CueHQ."
+      }
     },
     {
       "id": "seatreaper",
@@ -238,7 +262,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/seatreaper"
       },
-      "icon": "https://cdn.betalist.com/odhf6z81b6jwzmebey4otdog8tck"
+      "icon": "https://cdn.betalist.com/odhf6z81b6jwzmebey4otdog8tck",
+      "image": {
+        "url": "https://resize.imagekit.co/ek8J1NjpTehUB667UtW52S-xLIxVbM8UKcdoBcX7F78/plain/s3://betalist-production/cy02gy7pmrsf2c9u6xc5cj5xelqf",
+        "alt": "תמונה מדף ההשקה של SeatReaper."
+      }
     },
     {
       "id": "modelpiper",
@@ -248,7 +276,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/modelpiper"
       },
-      "icon": "https://cdn.betalist.com/x02w5tk6fs2plcljijjaz7tjdm24"
+      "icon": "https://cdn.betalist.com/x02w5tk6fs2plcljijjaz7tjdm24",
+      "image": {
+        "url": "https://resize.imagekit.co/knDmJKtipMdYMXDkPsk4bde-LlZ2FcRqjBjyNSXZEU0/plain/s3://betalist-production/qeysrghxxyt4swqok6gmxrf2t2f5",
+        "alt": "תמונה מדף ההשקה של ModelPiper."
+      }
     },
     {
       "id": "rey",
@@ -258,7 +290,11 @@
         "name": "BetaList",
         "url": "https://betalist.com/startups/rey"
       },
-      "icon": "https://cdn.betalist.com/bik95r5r2xbtohouz1lx3clg165o"
+      "icon": "https://cdn.betalist.com/bik95r5r2xbtohouz1lx3clg165o",
+      "image": {
+        "url": "https://resize.imagekit.co/q4qW7miR0KcvX_7DN8sy6kMKdhLH10OsFtnAyK7karQ/plain/s3://betalist-production/dfhxxnvyxaqpx8vpxm1lxmyuzpfd",
+        "alt": "תמונה מדף ההשקה של Rey."
+      }
     }
   ]
 }
