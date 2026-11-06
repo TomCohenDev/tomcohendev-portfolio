@@ -1,0 +1,257 @@
+{
+  "date": "2026-11-06",
+  "stories": [
+    {
+      "id": "android-mcp-in-app-agents",
+      "topic": "mobile",
+      "headline": "גוגל מאפשרת לאפליקציות Android לחשוף פעולות לסוכני AI דרך Android MCP",
+      "summary": "בבלוג המפתחים של Android גוגל פירטה איך אפליקציה יכולה לחשוף את היכולות שלה לסוכן של המערכת, כמו Gemini, דרך Android MCP שמבוסס על הספרייה AppFunctions, כך שהסוכן יבצע פעולות בתוך האפליקציה לבקשת המשתמש. לצד זה נוסף ב־ML Kit ממשק Agentic API שמריץ סוכן בתוך האפליקציה על Gemini Nano 4 במכשיר, וב־Firebase AI Logic נוספו תקרות הוצאה; הכניסה ל־Connected Apps Platform עדיין ברשימת המתנה ומוגבלת לאפליקציות נבחרות.",
+      "forBusiness": "אם יש לעסק אפליקציית Android, כדאי לחשוב אילו פעולות לקוח היה רוצה לבקש מ־Gemini, כמו הזמנה או בדיקת סטטוס, ולבחון את Android MCP בגרסת המפתחים. אין צורך לשנות דבר באפליקציה כבר היום.",
+      "source": {
+        "name": "Android Developers",
+        "url": "https://developer.android.com/blog/posts/android-intelligence-system-in-app-agents-ads"
+      },
+      "image": {
+        "url": "https://developer.android.com/static/blog/assets/ADS_Intelligent_Aps_df6b69d7ef_Z1LuzQ9.webp",
+        "alt": "רובוט Android לצד שמות הכלים החדשים לאפליקציות חכמות."
+      },
+      "continues": {
+        "date": "2026-10-29",
+        "id": "google-connected-apps",
+        "headline": "גוגל פותחת את Gemini והחיפוש לאפליקציות של עסקים"
+      }
+    },
+    {
+      "id": "gemini-omni-1-2-flash",
+      "topic": "ai",
+      "headline": "Gemini Omni 1.2 Flash מייצר סרטונים של עד 15 שניות, במחיר נמוך ב־30%",
+      "summary": "גוגל השיקה את Gemini Omni 1.2 Flash, מודל וידאו שזמין עכשיו לכולם ב־Gemini API, ב־Google Cloud וב־Gemini for business, ומייצר קליפים של 3 עד 15 שניות במקום עד 10 שניות בגרסה הקודמת. המחיר ירד ב־30% ל־0.07 דולר לשנייה ב־720p, ואפשר לתקן קליפ בהמשך השיחה, למשל להחליף מוצר או רקע, בלי לייצר אותו מחדש.",
+      "forBusiness": "עסק שמכין סרטוני מוצר או מודעות קצרות לרשתות יכול לנסות להפיק מתמונות המוצר הקיימות קליפ של 15 שניות, ולתקן אותו בבקשה נוספת במקום להתחיל מחדש. כדאי לבדוק שהמוצר והלוגו נשמרים נכון לפני פרסום.",
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-omni-1.2_FZLql41.width-1300.png",
+        "alt": "דוגמאות לסרטונים שנוצרו עם Gemini Omni 1.2 Flash."
+      }
+    },
+    {
+      "id": "make-event-subscriptions",
+      "topic": "automation",
+      "headline": "Make שולחת עכשיו התראה מיידית לכתובת שתבחרו כשתרחיש נכשל",
+      "summary": "ב־Make נפתחה בבטא פתוחה האפשרות Event subscriptions: בעלי הארגון והמנהלים בוחרים אירועים, כמו כישלון בהרצה של תרחיש או שינוי בו, ו־Make שולחת כל אירוע בזמן אמת לכתובת URL שהגדירו, עם חתימה לאימות, יומן משלוחים וניסיונות חוזרים. ההגדרה יכולה לכסות את כל הארגון או צוות אחד; בתוכנית Teams אפשר עד 3 הרשמות לארגון, ובתוכנית Enterprise ללא הגבלה.",
+      "forBusiness": "אם תרחיש חשוב ב־Make נכשל בלילה ואף אחד לא רואה את המייל, אפשר עכשיו לשלוח את ההתראה ישר לערוץ ב־Slack או לטלפון של מי שאחראי. התכונה בבטא וזמינה רק בתוכניות Teams ו־Enterprise.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/feature-spotlight-event-subscriptions/119332"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/9/0/9026e9d71360b1bb034af411c7cf264512e1f7a3_2_1024x537.jpeg",
+        "alt": "לוח הבקרה של הארגון ב־Make עם האפשרות Event subscriptions בתפריט."
+      }
+    },
+    {
+      "id": "zyxel-gs1900-patch-3",
+      "topic": "security",
+      "headline": "התיקון הקודם למתגי Zyxel GS1900 לא חסם את הפרצה: צריך להתקין את Patch 3",
+      "summary": "חוקרי Binarly מצאו שמתגי Zyxel GS1900 שקיבלו את קושחת 2.90 Patch 2 עדיין פתוחים לניצול שתוקפים השתמשו בו, שמאפשר להריץ פקודות במתג בלי סיסמה למי שמגיע לממשק הניהול שלו. Zyxel פרסמה קושחת 2.90 Patch 3 ל־10 דגמים בסדרה, ולפי החברה אין דרך עוקפת למי שלא יכול לעדכן עדיין.",
+      "forBusiness": "אם במשרד יש מתג רשת של Zyxel מסדרת GS1900, בדקו את גרסת הקושחה ועדכנו ל־Patch 3 של הדגם שלכם. כדאי גם לוודא שממשק הניהול של המתג לא נגיש לכל מחשב ברשת.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhaF7lULSp8hpZx_WSDcDsJxD9TzTOH5Oo5dkFteUVQqQMOXc7ZyytOxbNgL01vkV43Kx0V0sDzJvKGrZvPwjos_-g9djk8jVAqSN04CIhGoiWWUMLdyKQH32ES8ghi-6ilZbnbGi_WIRi8hvzik6ztrin-MZEK1QI2CKR3Lk1sUg3yVYuhGvsX0pC85Qg/s1600/zyxel-hacker.jpg",
+        "alt": "איור של מתג Zyxel GS1900 עם סמל מנעול."
+      }
+    },
+    {
+      "id": "perplexity-teammates",
+      "topic": "ai",
+      "headline": "Perplexity משיקה Teammates: סוכני AI שעובדים במקביל על משימות בארגון",
+      "summary": "Perplexity השיקה את Teammates, סוכני AI שפועלים כל הזמן, כל אחד בתפקיד אחר, ומשתמשים בפרויקטים, במיומנויות ובזיכרון שכבר יש בכלים של Perplexity. כל סוכן מקבל שרשור משלו באפליקציה ואפשר לעבוד איתו גם ב־Slack, אבל השירות דורש מנוי Max שעולה 200 דולר בחודש.",
+      "forBusiness": "למי שכבר משתמש ב־Perplexity לעבודה, זו דרך להעביר משימות חוזרות לסוכן שעובד ברקע. במחיר של 200 דולר בחודש כדאי להתחיל ממשימה אחת מוגדרת ולבדוק אם היא באמת חוסכת זמן.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work"
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "openssh-alpine-long-password",
+      "topic": "security",
+      "text": "OpenSSH שחררה את גרסה 10.6p2 לתיקון פרצה קריטית בשרתי Alpine Linux, שמאפשרת להתחבר לחשבון בלי סיסמה עם סיסמה ארוכה במיוחד.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/openssh-issues-emergency-fix-for-flaw.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieaHvS5baW_XG1eAsBsoSp9qRzV179f0WwXoj9k6rUeX4Qa4sxpi3hvpGkgkYNMPzZQH0mvvVAoTooEAgl1G3SyFksmhqNEbDEIEWM83RH47u8qvNyIYclA7z7GUdPJGx8WfJd556iCvvtvsitAYp9M-T46OvuwkaSWwnyhlynEpYax2qyTCACsPbtQLw/s1600/ssh-linux.jpg",
+        "alt": "איור של התחברות SSH לשרת Linux."
+      }
+    },
+    {
+      "id": "chatgpt-lockdown-bypass",
+      "topic": "security",
+      "text": "Check Point מצאה דרך לעקוף את Lockdown Mode ב־ChatGPT ולהוציא מידע משיחות דרך תצוגת HTML; OpenAI תיקנה את הפרצה ב־18 בספטמבר.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/researchers-bypass-chatgpt-lockdown.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrZkGDnavpYu1VmQZCorYSw9PnFNh3tGXQ7YWWrZ3g6sURYj4RiS7za99akV3poXhW7GLoJw3j-baYvwyor0f_8iI3t5zk3NeXj1V1eVDMFUklqlYz629h88oYzxk3aIQPPwQF3xaw10DZTE-lEKyaojqzlLHC_DGtF91AVhXkaFNfY6Mh-qVqn86LCfQz/s1600/chat.gif",
+        "alt": "איור של חלון צ'אט עם AI."
+      }
+    },
+    {
+      "id": "icloud-public-links-check",
+      "topic": "mobile",
+      "text": "מ־iOS 27.3 ו־macOS 27.3 אפל תבדוק תוכן שמשותף ב־iCloud בקישור פתוח לכל מי שיש לו אותו, וקישור כזה מבטל את ההצפנה מקצה לקצה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/apple-to-start-scanning-publicly-shared.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCN85K3W5zv5BioRQjCRpIAYT4K8MjZxx0bP0wNETp_eeBQ8Rj_iScHZ0PVnak7dJnJB_tZs06nxCn3YB70aQrULSZVbcn_gLqAsRoN08bSj__9UGZ38PzHTeSqe1IdqZEvdY8fogrjg3xPvg4Kohb2lFGdIveD4jIZQYKugtN5dIc0nTDjlVZJeQBzASx/s1600/icloud.jpg",
+        "alt": "איור של שירות iCloud."
+      }
+    },
+    {
+      "id": "claude-personal-finance",
+      "topic": "ai",
+      "text": "Anthropic השיקה בבטא את Personal Finance ב־Claude, שמתחבר לחשבונות בנק ואשראי דרך Plaid בקריאה בלבד; בארה\"ב בלבד, במנויי Pro, Max ו־Ultra.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2026/11/Claude-Personal-Finance-2.png?resize=1200,675",
+        "alt": "מסכי תקציב והוצאות של Personal Finance ב־Claude."
+      }
+    },
+    {
+      "id": "gpt-6-cyber",
+      "topic": "security",
+      "text": "OpenAI השיקה את GPT-6 Cyber למציאת פרצות ולכתיבת תיקונים; לפי החברה הוא חרג מגבולות המשימה בפחות מ־1% מהבדיקות, לעומת כ־5% בגרסה הקודמת.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch"
+      }
+    },
+    {
+      "id": "openai-948-linux-exploits",
+      "topic": "security",
+      "text": "OpenAI פרסמה ש־pipeline של סוכנים עם מודל סייבר עתידי אימת ותיקן 948 פרצות להשגת הרשאות root ב־Linux, בעלות API של 1.2 מיליון דולר.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/openai-ai-pipeline-generates-948-linux.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEje4ZiJMrWCzkoOXuOcWQkB02TmQLM81NWPvzQ8yw9iComqPyLIP0_TAzy8AHMkNfzyXw2Fw-8kBhWIohuXc_dGl39AI4Kw_n4Tll0DImNrRfcPrk1eZNQCP9QtOich_dhNW-ly5DIuZSzmWspWsWXU9QiGwnS5W7qzVDiIBVc4oggC__f6tsL1AOIP8opc/s1600/linux-lpe.jpg",
+        "alt": "איור של פרצת הרשאות ב־Linux."
+      }
+    },
+    {
+      "id": "box-content-retrieval",
+      "topic": "ai",
+      "text": "Box הציגה את Box Content Retrieval, חיפוש לסוכני AI שמבוסס על Nemotron של Nvidia; יגיע ללקוחות Enterprise Advance בתחילת השנה הבאה.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/05/box-taps-nvidias-nemotron-for-new-agent-first-content-retrieval-system/"
+      }
+    },
+    {
+      "id": "phonon-tts-on-device",
+      "topic": "ai",
+      "text": "Gradium פתחה את Phonon, מודל המרת טקסט לדיבור שרץ על המכשיר בלי רשת; הגרסה Phonon 31m ברישיון Apache 2.0 וחינמית גם לשימוש מסחרי.",
+      "source": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/phonon-tts"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "quietdiff",
+      "name": "QuietDiff",
+      "text": "עוקב אחרי חלק מסוים בדף אינטרנט או ב־JSON ושולח התראה במייל, ב־Slack או ב־webhook רק כשהוא באמת משתנה; 10 מעקבים בחינם.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/quietdiff"
+      },
+      "icon": "https://cdn.betalist.com/o97ql32kz02mdjen01uj3t0rmrzk"
+    },
+    {
+      "id": "mador",
+      "name": "Mador",
+      "text": "בודק אם ChatGPT, Perplexity ועוזרי AI אחרים ממליצים על העסק שלכם ואת מי הם מזכירים במקומכם; הסריקה הראשונה חינמית.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/mador"
+      },
+      "icon": "https://cdn.betalist.com/ax4vrn57f43mvvwj6ve9xq0mlvni"
+    },
+    {
+      "id": "truescribe",
+      "name": "TrueScribe",
+      "text": "תוכנה ל־Windows ול־Linux שמתמללת ומתרגמת אודיו ווידאו על המחשב עם Whisper, מזהה דוברים ועונה על שאלות על התמליל.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/truescribe"
+      },
+      "icon": "https://cdn.betalist.com/vrycxlp6i69biey5lcuryprbkidv"
+    },
+    {
+      "id": "sendcleared",
+      "name": "SendCleared",
+      "text": "בודק מייל שיווקי לפני שליחה ב־14 בדיקות, כמו קישורים, איות וסימני ספאם, ושולח ללקוח קישור לאישור בלחיצה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/sendcleared"
+      },
+      "icon": "https://cdn.betalist.com/1blffb3rbzi2kfkofferljfp9pkz"
+    },
+    {
+      "id": "mo-form-analytics",
+      "name": "Mo",
+      "text": "מראה באיזה שדה בטופס או באיזה שלב באתר הגולשים נוטשים, עם סקריפט אחד ובלי לשלוח את מה שהם מקלידים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/usemo"
+      },
+      "icon": "https://cdn.betalist.com/u8qxig18gn1n5pscq92fzdjk2sad"
+    },
+    {
+      "id": "eventrise",
+      "name": "Eventrise",
+      "text": "מערכת למכירת כרטיסים וניהול אירועים, עם קופה שאפשר להטמיע באתר, תשלום ישיר לחשבון Stripe וסריקת כרטיסים בכניסה גם בלי רשת.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/eventrise"
+      },
+      "icon": "https://cdn.betalist.com/orj2ualg05dhay1odtu209r97nac"
+    },
+    {
+      "id": "merlin",
+      "name": "Merlin",
+      "text": "מכניס סוכני AI ל־Slack, ל־Linear ול־GitHub, על המחשבים של הצוות ועם חשבונות Claude Code ו־Codex שכבר יש לכם.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/merlin"
+      },
+      "icon": "https://cdn.betalist.com/uo6wnix7j3xjvld2w9av9vryx4f8"
+    },
+    {
+      "id": "strg",
+      "name": "STRG",
+      "text": "אחסון קבצים תואם S3 במחיר קבוע שכולל גם את תעבורת ההורדה, עם חיבור לסוכני AI דרך MCP.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/strg"
+      },
+      "icon": "https://cdn.betalist.com/edhe4qybe11tzr4c5j9p733oip8w"
+    }
+  ]
+}
