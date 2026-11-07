@@ -1,0 +1,261 @@
+{
+  "date": "2026-11-07",
+  "stories": [
+    {
+      "id": "wordpress-update-window",
+      "topic": "security",
+      "headline": "גם ההתקנה של תיקון WordPress לפרצה המנוצלת עלולה לחשוף את האתר בפעם אחרונה",
+      "summary": "חוקר מ־Picus Security, שמצא את הפרצה בגרסאות 4.7 עד 7.1.3, מסביר שהעדכון שמתקין את התיקון עדיין פורס את הקבצים עם הקוד הישן של האתר, כך שתוקף שתופס את הרגע הנכון יכול להריץ קוד בשרת. לפי Wordfence, ניסיונות התקיפה התחילו תשע דקות אחרי שפרסמה חוק חסימה, ושני מקורות בדקו אתרים במשך כ־14.5 שעות כדי לתפוס את רגע העדכון.",
+      "forBusiness": "אם האתר שלכם על WordPress, בקשו ממי שמתחזק אותו לחסום גישה מהרשת לתיקייה wp-content/upgrade לפני העדכון, ורק אז לעדכן. אם האתר עוד לא עודכן, כדאי לבדוק גם אם נוספו מנהלים או תוספים שאף אחד לא התקין.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/installing-fix-for-exploited-wordpress.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4gwg9bgmxLj_anXtQvOZdeKYWN-aAZxZqlOrI7wXwZ_qW_lUZrzwYufexnbDLcC20eXBkh7TgA-dAQHm6EEmEc80i9A6GOBGkiOb8NhcR1d1CFLKDLc7VJzyC4Bv-5Ye2AEE_ApPcKmAWqJJFfbQ2AOGffKhCPNznyYyz5s0Jro-mxcTxfxPoqRe-ZoY/s1600/wp-update.jpg",
+        "alt": "איור של חלון עדכון WordPress עם אזהרה על התיקייה wp-content/upgrade."
+      },
+      "continues": {
+        "date": "2026-10-31",
+        "id": "wordpress-7-1-4-attacks",
+        "headline": "תוקפים כבר מנסים לנצל פרצה בליבת WordPress: עדכנו לגרסה 7.1.4"
+      }
+    },
+    {
+      "id": "claude-dispatch-extensions",
+      "topic": "security",
+      "headline": "חוקרים: תוסף דפדפן זדוני יכול להריץ קוד במחשב דרך Dispatch של Claude",
+      "summary": "חוקרי Forever Security הראו שתוסף שרץ באתר claude.ai יכול לשלוח ל־Claude Desktop משימות בשם המשתמש דרך Dispatch, לאשר אותן בעצמו ולגרום לו להתקין חבילת npm שמריצה קוד במחשב. Dispatch סגור למשתמשים חדשים, אבל מי שכבר משתמש בו בחלק מתוכניות Pro, Max ו־Ultra יכול להמשיך, והחוקרים אומרים שעדיין אפשר לנצל את הפרצה.",
+      "forBusiness": "אם עובדים משתמשים ב־Claude Desktop במחשבי העבודה, בדקו אם Dispatch מופעל וכבו אותו אם אין בו צורך, במיוחד בחשבונות אישיים. כדאי גם לעבור על תוספי הדפדפן המותקנים ולהסיר את מה שלא נחוץ.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/malicious-browser-extensions-could-use.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEil2RWGFxPYdzFDr1Tl0G6604dLCacXJDMaR-i0nSdrR7vBGgK-lUkZbE5eZYMbWO0Geqw_rDbN2qUkWpEadukl6gccv-xuUWJfEOx2_FWFiZxjVs4uNPiRK3JYOBo0QI1Lx08xd9Iz3-8TFN_kf-njbCQ-AFDcLNNRy6JcwsZyoM12qLt99OzNQNhmaGs/s1600/claude-dispatch.jpg",
+        "alt": "תרשים של מסלול התקיפה: תוסף דפדפן, Dispatch ו־Claude Desktop שמריץ קוד במחשב."
+      }
+    },
+    {
+      "id": "ramp-ai-spend-flat",
+      "topic": "research",
+      "headline": "נתוני Ramp: חברות משתמשות ביותר AI, אבל ההוצאה עליו כמעט לא עלתה",
+      "summary": "לפי נתוני Ramp, ההוצאה של חברות על טוקנים עלתה רק ב־1.5% באוגוסט ובספטמבר, אחרי עלייה של 42% ביולי, אף שהשימוש המשיך לגדול; בין 23 בספטמבר ל־23 באוקטובר היא עלתה ב־8.9%. החברה החציונית מוציאה 12 עד 15 דולר לעובד בחודש, ו־10% העליונים מוציאים 600 עד 1,000 דולר.",
+      "forBusiness": "הכלכלן הראשי של Ramp מייחס את זה להורדות מחירים של OpenAI ו־Anthropic ולתחרות, ומגדיר את המצב שוק של קונים. זה זמן טוב לבדוק את המחירים והחבילות של כלי ה־AI שאתם משלמים עליהם, ולשקול מודל זול יותר למשימות פשוטות.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2026/11/ara-stripe-5.png?resize=1200,779",
+        "alt": "הכלכלן הראשי של Ramp מדבר על במה."
+      }
+    },
+    {
+      "id": "android-xr-stable-tools",
+      "topic": "mobile",
+      "headline": "Google: כלי הפיתוח ל־Android XR יציבים, ואפליקציות קיימות עובדות על משקפי XREAL AURA",
+      "summary": "ב־Android Developer Summit הודיעה Google שספריות הליבה של Jetpack XR והאמולטורים של Android XR ב־Android Studio עברו לגרסה יציבה, וכך גם הכלים ל־Unity, Godot ו־Unreal. XREAL AURA, משקפי ה־XR החוטיים הראשונים עם Android XR, שוקלים פחות מ־95 גרם, ולפי Google אפליקציות קיימות עובדות עליהם מהיום הראשון.",
+      "forBusiness": "לרוב העסקים אין מה לעשות עכשיו: אפליקציית Android קיימת אמורה לעבוד על המשקפיים בלי שינוי. מי ששוקל חוויה מיוחדת למשקפיים, כמו הדרכה בשטח או הצגת מוצר, יכול להתחיל לבנות ולבדוק באמולטור בלי לקנות חומרה.",
+      "source": {
+        "name": "Android Developers",
+        "url": "https://developer.android.com/blog/posts/build-android-xr-devices-tools"
+      },
+      "image": {
+        "url": "https://developer.android.com/static/blog/assets/ABL_149_Strapi_A2_B_8fa837edce_Z1vNdw4.webp",
+        "alt": "משקפי XREAL AURA מחוברים בכבל ליחידת מחשוב, עם הכיתוב Build for Android XR."
+      }
+    },
+    {
+      "id": "meta-muse-spaces",
+      "topic": "ai",
+      "headline": "Muse של Meta בונה לפי תיאור מסכים מותאמים שמתעדכנים מ־Gmail, מהיומן ומ־Notion",
+      "summary": "Meta מוסיפה ל־Muse את spaces: מתארים בצ'אט מה צריך, כמו מעקב קניות, לוח או מתכנן, והעוזר בונה מסך שאפשר לסמן בו משימות, להוסיף הערות ולערוך. כשמחברים אפליקציות כמו Gmail, Google Calendar, OpenTable ו־Notion, המסך מתעדכן ברקע, והתכונה נפתחת לכל משתמשי Muse.",
+      "forBusiness": "בינתיים זה כלי אישי בלי שיתוף בין משתמשים, ו־Meta אומרת שהיא בודקת אפשרות כזו. שווה לעקוב כדרך לבנות כלי מעקב קטן בלי מפתח, ולשים לב לאילו חשבונות של העסק נותנים לו גישה.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/meta-muse-spaces.png?quality=90&strip=all&crop=8.0752843063528%2C7.2758349524933%2C91.924715693647%2C59.9199899822&w=1200",
+        "alt": "מסך שנבנה ב־Muse בטלפון, בעיצוב של קטלוג קניות."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "openssh-sshole-exploited",
+      "topic": "security",
+      "text": "תוקפים ניסו לנצל את פרצת SSHole ב־OpenSSH פחות מתשע שעות אחרי פרסומה, והשיגו הרשאות root בשרת פיתיון עם Alpine Linux; התיקון בגרסה 10.6p2.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHbl1TAGj_ZHZDF3oQ8AfebRDiovg_d8Wk4huY5VJkSa0csE45G7k5jwdG1De-W-7l2RjnyH_ZvT3vcioykVeOooifwvViM8RiuTu0gSt2t-XgOefyYKyM5_zbsI5WFNubkIT0hOUr4inPIQMvXs6GDTLa6j7XWL3etRJYvOcDLJxa3IDXv-KtuCma5JsG/s1600/ssh.jpg",
+        "alt": "איור של מסוף SSH שמתחבר לשרת Alpine עם סיסמה ארוכה, והכיתוב SSHole."
+      }
+    },
+    {
+      "id": "paint-store-only-fix",
+      "topic": "security",
+      "text": "התיקון לפרצת הרצת קוד ב־Paint של Windows מגיע רק דרך Microsoft Store ולא דרך Windows Update; הגרסה המתוקנת היא 11.2609.401.0.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFEFFUv1MUNRoFx03Jcw0k5NZCU0EOf5qEpbvAEQoTSTzoxHWPk1rc7XgQeG1USPP9vVB0ePI_lzQLqBU5bHdQ7-YrwEXFo8gJwayqwCvCtcDrw1JYMxKYxieV3bcQeCRAJAxt8CRfifzMzL22_ab0Z0OxwWrNckC36gPEOnubZnzagv6DkV7iY4AQJfA/s1600/paint-rce.jpg",
+        "alt": "חלון Paint ובו הכיתוב RCE וסימן אזהרה."
+      }
+    },
+    {
+      "id": "cwp-backdoor",
+      "topic": "security",
+      "text": "חוקרי XLab מצאו דלת אחורית בשרת של Control Web Panel, פאנל חינמי לניהול שרתי Linux, שמריצה פקודות בלי שהבקשות יירשמו ביומן הגישה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-hide-linux-backdoor-in-control.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsAMxBevh2cmz1buKWukyP6JgUHrIPcr9zrJjAs1OwDoP1wMjn_s_WKHeUAdSwVzTImUsDE0C3SLGEpciaLk9H8CGvqiYugQWASsflB1a5zA9Wyr4RbroT3Z3JlOeak1AEinAy7Brf9N0BRDuGFWdZC23nCrOq4VuSMQQuDFYBYC6YCEm2ncPhHOv3KXs/s1600/cwp.jpg",
+        "alt": "מסוף של שרת CWP שמראה תהליך חשוד ובקשה שלא נרשמה ביומן."
+      }
+    },
+    {
+      "id": "chainalysis-all-users",
+      "topic": "security",
+      "text": "Chainalysis מסרה שהתקיפה על מערכותיה חשפה שמות, שמות משתמש, גיבובי סיסמאות וטוקנים פעילים של כל המשתמשים, והורידה חלק משירותיה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/chainalysis-breach-exposes-all-users.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjoSpb8lu1ytakNne4rJ58nWfLFrYtdR7MCyZ2prSaLKiAb2Bt_upvfAHl-slDTt_3h7zxFdhbPcLwzAkcHDjnvu2TNcVp6JsgJU6GI5GMvZrrmzZTUZDyeOhS0GnFV-YtazzzcgMFnUvkqKmpSr9FBrCXQhlyPZM9E8c7LPSxACwPhfJ4nFzIANqdaVXUd/s1600/chain-breach.jpg",
+        "alt": "איור עם הלוגו של Chainalysis ושדות של שם משתמש וסיסמה."
+      }
+    },
+    {
+      "id": "artex-exposed-servers",
+      "topic": "security",
+      "text": "Censys מצאה יותר מ־800 התקנות של Artex, כלי פריצה אוטונומי מבוסס AI בקוד פתוח, שפתוחות ברשת לכל אחד בלי סיסמה.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2024/02/GettyImages-1424498694.jpg?resize=1200,800",
+        "alt": "מחשב נייד ועל המסך דמות רובוט עם בועת דיבור."
+      }
+    },
+    {
+      "id": "alexa-text-shopping",
+      "topic": "ai",
+      "text": "Amazon מאפשרת ללקוחות נבחרים בארה\"ב לחפש מוצרים, למלא עגלה ולקנות בהודעות טקסט ל־Alexa; ההפצה תורחב בשבועות הקרובים.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/06/after-blocking-muse-amazon-now-lets-users-text-alexa-to-help-them-shop/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2026/11/Alexa-Shopping-Text-Hero.jpeg?resize=1200,725",
+        "alt": "טלפון עם שיחת טקסט ל־Alexa Shopping שמוסיפה מצרכים לעגלה."
+      }
+    },
+    {
+      "id": "underdog-woof-tts",
+      "topic": "ai",
+      "text": "Underdog שחררה את Woof, מודל הקראת טקסט עם 31 מיליון פרמטרים שרץ בדפדפן בלי חיבור לאינטרנט ופתוח להורדה.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/06/underdog-shows-off-a-32mb-speech-model-in-new-demo/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2026/11/Screenshot-2026-11-05-at-7.02.34-PM.jpg?resize=1200,542",
+        "alt": "חדר רטרו מהמשחק של Underdog עם מסך שמציג גל קול."
+      }
+    },
+    {
+      "id": "twilio-memory-survey",
+      "topic": "research",
+      "text": "בסקר של Twilio, 74% מהצרכנים אמרו שהם נאלצים לחזור על עצמם מול עוזר AI, ו־71% אמרו שהם מוכנים לנטוש שיחה כשהסוכן לא מזהה אותם.",
+      "source": {
+        "name": "Twilio",
+        "url": "https://www.twilio.com/en-us/blog/insights/ai-agent-remember-returning-customers"
+      }
+    },
+    {
+      "id": "open-asr-new-accents",
+      "topic": "ai",
+      "text": "Hugging Face הוסיפה ל־Open ASR Leaderboard נתוני בדיקה פרטיים באנגלית במבטא מצרי וניגרי, למדידת מודלי תמלול על מבטאים נוספים.",
+      "source": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/open-asr-leaderboard-liva"
+      },
+      "image": {
+        "url": "https://huggingface.co/blog/assets/open-asr-leaderboard-liva/thumbnail.png",
+        "alt": "כרטיס ההכרזה של Hugging Face עם דגלי מצרים וניגריה."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "edwin",
+      "name": "Edwin",
+      "text": "עוזר דיגיטלי לעסקים קטנים שעונה לשיחות ולמיילים, קובע פגישות, מכין הצעות מחיר ושולח קישורי תשלום, ב־10 שפות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/edwin"
+      },
+      "icon": "https://cdn.betalist.com/byabegli3sooggdvm0010nv0pte4"
+    },
+    {
+      "id": "toki",
+      "name": "Toki",
+      "text": "עוזר AI חינמי שהופך מידע יומיומי להערות, משימות, אירועים ביומן ותזכורות, לפרילנסרים ולבעלי עסקים קטנים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/toki-2"
+      },
+      "icon": "https://cdn.betalist.com/0lgxtlgfi6vo6yoc1jxuf67k44ir"
+    },
+    {
+      "id": "pingwise",
+      "name": "PingWise",
+      "text": "ניטור זמינות לאתרים, APIs ושרתים מ־20 נקודות בדיקה, שמאמת תקלה מכמה נקודות לפני שהוא שולח התראה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/pingwise"
+      },
+      "icon": "https://cdn.betalist.com/o8pcmmv2brpx6btk7b5pjett2axt"
+    },
+    {
+      "id": "searcherries",
+      "name": "Searcherries",
+      "text": "עוקב אחרי מה ש־ChatGPT, Gemini, Perplexity ועוזרים אחרים אומרים על המותג שלכם ועל המתחרים; מ־10 דולר לחודש.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/searcherries"
+      },
+      "icon": "https://cdn.betalist.com/xu6jknxym2w7m62kqll6k4clg5ks"
+    },
+    {
+      "id": "bisibility",
+      "name": "bisibility",
+      "text": "פלטפורמת SEO בקוד פתוח למעקב דירוגים, מחקר מילות מפתח, נראות בעוזרי AI ובדיקת אתר, עם חיבור לסוכן AI דרך MCP.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/bisibility"
+      },
+      "icon": "https://cdn.betalist.com/apxppt6fg7wde8857wxnnkqn9qjh"
+    },
+    {
+      "id": "futureproof",
+      "name": "Futureproof",
+      "text": "הנהלת חשבונות עם שישה סוכני AI לרישום, גבייה, תשלומים, תחזית תזרים ודוחות, ומומחה אנושי שבודק את הסגירה החודשית.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/futureproof"
+      }
+    }
+  ]
+}
