@@ -1,0 +1,193 @@
+{
+  "date": "2026-11-08",
+  "stories": [
+    {
+      "id": "gemini-forms-insights",
+      "topic": "ai",
+      "headline": "Gemini ב־Google Forms מנתח את התשובות לטופס וממליץ מה לעשות הלאה",
+      "summary": "גוגל מוסיפה ללשונית התשובות ב־Google Forms כפתור שמפעיל את Gemini: הוא כותב ומריץ קוד Python על התשובות, מוצא מגמות וקשרים בין שאלות, מסכם את העיקר ומציע צעדים הבאים. ההפצה ב־Rapid Release התחילה ב־2 בנובמבר, ב־Scheduled Release היא מתחילה ב־19 בנובמבר, והיא זמינה בין השאר ב־Business Standard וב־Business Plus.",
+      "forBusiness": "אם אתם אוספים משוב מלקוחות, הרשמות לאירוע או סקרים ב־Google Forms, תוכלו לקבל סיכום עם מספרים במקום לעבור על כל תשובה. כדאי לבדוק את המספרים מול הגיליון לפני שמחליטים לפיהם.",
+      "source": {
+        "name": "Google Workspace Updates",
+        "url": "https://workspaceupdates.googleblog.com/2026/11/get-actionable-insights-with-gemini-in-Google-Forms.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5oZq_dQ6m7aenaZI7dMVEJjQddhuKTMFH4Rsk3ExgKyCKgZkwM2T4WuwiKHaFA2B_NoK5D7hAGWZLY4C3v8PW2_xKE65-0aR59FqLSCrb8wHg7ip3eSpIqUAR6mkVLsWbZd4iwiYACId6wxB66BTtxcTVH8QSUziFMiS8DARWNdN7asHus8ZGy4s_sGU/w1200-h630-p-k-no-nu/Get%20actionable%20insights%20with%20Gemini%20in%20Google%20Forms%20-%206786.gif",
+        "alt": "לשונית התשובות בטופס משוב עם 148 תשובות והכפתור ליצירת תובנות."
+      }
+    },
+    {
+      "id": "claude-code-settings-secrets",
+      "topic": "security",
+      "headline": "סיסמאות ומפתחות שאושרו ב־Claude Code נשמרו בקובץ שעלה ל־GitHub ב־1,122 עותקים",
+      "summary": "חברת האבטחה Apiiro מצאה שכאשר מאשרים פקודה ב־Claude Code עם \"Yes, and don't ask again\", הפקודה המלאה, כולל סיסמה או מפתח שהוקלדו בה, יכולה להישמר בקובץ .claude/settings.local.json בתיקיית הפרויקט. ב־1,122 עותקים ציבוריים של הקובץ ב־GitHub נמצא לפחות סוד אחד, ביניהם 379 סיסמאות למסדי נתונים ו־23 מפתחות AWS, ומחיקת הקובץ לא מספיקה כי הוא נשאר בהיסטוריה של git.",
+      "forBusiness": "אם מישהו מפתח עבורכם עם Claude Code, בקשו ממנו לבדוק אם הקובץ הזה נמצא במאגר או בהיסטוריה שלו, ואם כן להחליף קודם כל סיסמה ומפתח שהופיעו בו. כדאי גם להוסיף את הקובץ ל־.gitignore של הפרויקט.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZH3vYLZb9lP7mDLqy2h-upzdComeWIfjDX5siFUO3FM2HlUs03OTwirA1R2uzOZq_clptIVBsoaJNXIuf8LlTbXHFvzBJLRl1l3mqGVesHjgdmD86S_c-k2JY_t56xZqI0bnN6jXRDr92KlMw6X5BHzm5hqogpWflsERi9zrsMHSS_abAcvZMcUGovd8/s1600/claude-code.jpg",
+        "alt": "איור של אישור פקודה ב־Claude Code ושל הקובץ שבו נשמרה הפקודה עם סיסמה."
+      }
+    },
+    {
+      "id": "meet-green-room-policy",
+      "topic": "automation",
+      "headline": "מנהלי Google Workspace יכולים להציג הודעת מדיניות לפני כניסה לשיחת Meet",
+      "summary": "מנהלי המערכת יכולים עכשיו לכתוב הודעה קצרה, עם קישור לדף מדיניות, שמופיעה במסך שלפני הכניסה לשיחת Google Meet, תמיד או רק כשהשיחה מוקלטת, מתומללת או כש־Gemini רושם סיכום. ההגדרה כבויה כברירת מחדל, ההפצה התחילה ב־2 בנובמבר, והיא זמינה בין השאר ב־Business Standard וב־Business Plus.",
+      "forBusiness": "אם אתם מקליטים פגישות או נותנים ל־Gemini לרשום סיכומים, זו דרך פשוטה ליידע עובדים ולקוחות לפני שהם נכנסים. אפשר להפעיל אותה בקונסולת הניהול, תחת הגדרות הבטיחות של Meet.",
+      "source": {
+        "name": "Google Workspace Updates",
+        "url": "https://workspaceupdates.googleblog.com/2026/10/display-custom-policy-in-green-room-before-Google-Meet-Calls.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtf7djNawrxBIcCu_S2okK1yo9Q40X63t3skICQHNym0ki76WwP8QlM9YHAyobBDT6H_Z1XYkwjxrsndG5P6oNozq6nKZstoG4qL5KdWT5SvUIujw8y2awit1oPUMsdlKDe4TISexPZXi4vxx1l_9q68Fjy4ZNCxTzFk7XCkeYeeU8GbftYIfHe_A8syA/w1200-h630-p-k-no-nu/Display%20Custom%20Policy%20in%20the%20Green%20Room%20before%20Google%20Meet%20Calls%20-%207092.png",
+        "alt": "מסך ההמתנה לפני הכניסה לשיחת Google Meet, עם האפשרות להפעיל את Gemini לרישום סיכום."
+      }
+    },
+    {
+      "id": "metr-anthropic-ai-rd",
+      "topic": "research",
+      "headline": "METR: הכלים של AI מאיצים את פיתוח המודלים ב־Anthropic, בקצב כמעט כפול משנה שעברה",
+      "summary": "ארגון המחקר METR בדק את Anthropic מבפנים בין 12 באוגוסט ל־29 באוקטובר, ומעריך שהמודלים של החברה משתפרים בקצב גבוה פי 1.9 בערך מהקצב שלפני אוקטובר 2025, ושרוב ההאצה נובעת מחוקרים שעובדים עם AI. בסקרים לא רשמיים, שהארגון עצמו מתייחס אליהם כראיה חלשה, עובדים דיווחו באוקטובר שהם יעילים פי 12 בערך, ו־Anthropic השחירה את רוב הראיות שהארגון ראה כחשובות.",
+      "forBusiness": "אין כאן משהו לעשות מחר, אבל זה סימן שהמודלים שעסקים משתמשים בהם ימשיכו להשתפר מהר. כדאי לבחון מחדש כל כמה חודשים משימות שה־AI עוד לא עשה טוב מספיק.",
+      "source": {
+        "name": "METR",
+        "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/"
+      },
+      "image": {
+        "url": "https://metr.org/assets/images/ai-rd-acceleration-assessment/home-card.png",
+        "alt": "כרטיס הכותרת של דוח METR על האצת המחקר והפיתוח ב־Anthropic."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "barracuda-esg-watchtowr",
+      "topic": "security",
+      "text": "watchTowr פרסמה כלי שבודק אם Barracuda Email Security Gateway חשוף לשרשרת שתי החולשות שמאפשרת root בלי סיסמה; התיקון בגרסה 9.4.0.030 ומעלה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh59LXthjD6N50867w2v7T4JyVUCOlVAmz1MJcZHKBFFaSnKDabB0FmdedrbvWRkp9XONe9Pz2RV1MQ-9QpJ8d85XE3w54EmMLKgaf1ygKD2e0y2X9mA7VsfyyB-8l1KFi-F5Gj9Q2vdsusmAl2khvXHNyOzWB_l7bj6NkOHkUgDYW-vENOowt0L8qM4kM/s1600/bar.jpg",
+        "alt": "מסך הכניסה של Barracuda Email Security Gateway."
+      }
+    },
+    {
+      "id": "microsoft-patch-times",
+      "topic": "security",
+      "text": "Microsoft בדקה כ־383,000 חולשות: חציון הזמן עד תיקון הוא כשבועיים במחשבי Windows, ויותר משנה ברכיבי תקשורת ורשת.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/threatsday-apache-ofbiz-rce-dreamhost.html"
+      }
+    },
+    {
+      "id": "vids-omni-15s",
+      "topic": "ai",
+      "text": "Gemini Omni 1.2 Flash זמין ב־Google Vids: סרטונים של 3 עד 15 שניות, כולל בחבילות Business Starter, Standard ו־Plus.",
+      "source": {
+        "name": "Google Workspace Updates",
+        "url": "https://workspaceupdates.googleblog.com/2026/11/gemini-omni-12-flash-now-in-vids-with-15second-generations-and-improved-quality.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0LYUc8DHQJDiWEHCjZDn4LCFqKCj-fG_Dw-t1_ng3xcR0vIg-aoQWzyaUpt5hSe3g49MvkDC2MbCbMtpbQw8rRBc70J4OuPMfTlNa1oUVkQr8oMrwP1dUDcqgZk8IQEonpybh2LXd4uqxfDfrVRU9TVvo2ZuLNrRyKFfw_CnONeSXDGv4eHxfJipNBQU/w1200-h630-p-k-no-nu/Gemini%20Omni%201.2%20Flash%20now%20in%20Vids%20with%2015-second%20generations%20and%20improved%20quality%20-%207287.png",
+        "alt": "חלון יצירת סרטון ב־Google Vids עם הודעה על קליפים של עד 15 שניות."
+      }
+    },
+    {
+      "id": "workspace-cse-policy-beta",
+      "topic": "security",
+      "text": "בבטא ב־Google Workspace: מנהלים יכולים להצפין אוטומטית בהצפנת צד לקוח קבצים רגישים ב־Drive לפי כללים, למי שיש רישיון Assured Controls.",
+      "source": {
+        "name": "Google Workspace Updates",
+        "url": "https://workspaceupdates.googleblog.com/2026/11/automatically-apply-client-side-encryption-to-confidential-Editors-and-Drive-files-now-available-in-Beta.html"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "tellmyshop",
+      "name": "TellMyShop",
+      "text": "תוסף ל־WooCommerce ול־PrestaShop שמאפשר לנהל את החנות בשיחה עם Claude או ChatGPT, גם בחשבונות חינמיים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/tellmyshop"
+      },
+      "icon": "https://cdn.betalist.com/mbq8u1c9ex1iqpbtkrtum7orqbw7"
+    },
+    {
+      "id": "rypl",
+      "name": "RYPL",
+      "text": "עונה אוטומטית לתגובות ולהודעות על מודעות ב־Facebook, ב־Instagram וב־TikTok, מזהה שאלות על מחיר ומלאי ומסתירה ספאם.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/rypl"
+      },
+      "icon": "https://cdn.betalist.com/q2k87jaezazsbh54zqe8z6w9qfj6"
+    },
+    {
+      "id": "squario",
+      "name": "Squario",
+      "text": "מערכת לעסקים קטנים ובינוניים שמרכזת CRM, הצעות מחיר, פרויקטים, דיווחי שעות ורווחיות במקום אחד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/squario"
+      },
+      "icon": "https://cdn.betalist.com/54bueqvcswhluhx0s0jztsgm6usf"
+    },
+    {
+      "id": "flowdit",
+      "name": "flowdit",
+      "text": "פלטפורמה בלי קוד לביקורות, צ'קליסטים והוראות עבודה במפעלים, עם עבודה בנייד גם בלי חיבור לרשת.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/flowdit"
+      },
+      "icon": "https://cdn.betalist.com/j01p1jf4z9abo15l0xvfjl85pkqr"
+    },
+    {
+      "id": "execuday",
+      "name": "Execuday",
+      "text": "אפליקציה לצוותים של 2 עד 15 אנשים שמשלבת משימות, יומן צוות משותף ובקשות לחופשה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/execuday"
+      },
+      "icon": "https://cdn.betalist.com/5qap6pr3amvbk4623myn1chdafye"
+    },
+    {
+      "id": "lensup",
+      "name": "LensUp",
+      "text": "כלים חינמיים ל־PDF ולסריקה שרצים בדפדפן בלי להעלות קבצים: מיזוג, פיצול, סיבוב, דחיסה והמרה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/lensup"
+      },
+      "icon": "https://cdn.betalist.com/zf3dhwstxftplvk5ihsg16datkje"
+    },
+    {
+      "id": "posticle",
+      "name": "Posticle",
+      "text": "הופך חדשות מהתחום שלכם לפוסטים גרפיים לרשתות החברתיות, בצבעים, בגופנים ובלוגו של המותג.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/posticle"
+      },
+      "icon": "https://cdn.betalist.com/7c7crcngc1xt7h76bbqu8xvct2sk"
+    },
+    {
+      "id": "tourscanner-ai",
+      "name": "TourScanner AI",
+      "text": "סוכן AI להזמנת סיורים ופעילויות, זמין דרך API ו־MCP עם מלאי, זמנים ומחירים בזמן אמת.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/tourscanner-ai"
+      },
+      "icon": "https://cdn.betalist.com/fw8zvgf76niie3kz1lrb18d77j1n"
+    }
+  ]
+}
