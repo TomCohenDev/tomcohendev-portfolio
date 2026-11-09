@@ -3,6 +3,28 @@ import type { Post } from "../components/content/mock";
 /** Published articles only. Mock posts remain on their existing noindex demo URLs. */
 export const publishedPosts: Post[] = [
   {
+    slug: "t3-kitshn",
+    title: "T3 Code ו־Kitshn שינו את הקצב שבו אני בונה",
+    description: "איך T3 Code, פרויקט Kitshn של ירדן זמיר והפורק שלי הפכו את העבודה עם סוכני קוד לתהליך שקל יותר להמשיך, לחלק ולבדוק.",
+    date: "2026-11-09",
+    readMinutes: 8,
+    tags: ["AI", "כלי פיתוח", "אוטומציה"],
+    cover: "flow",
+    image: "/blog/t3-kitshn-cover.webp",
+    body: [],
+  },
+  {
+    slug: "t3-kitshn-en",
+    title: "T3 Code and Kitshn Changed How Fast I Can Build",
+    description: "How I use T3 Code, Yarden Zamir’s Kitshn, and my own fork to make working with coding agents feel like a development workflow I can keep moving.",
+    date: "2026-11-09",
+    readMinutes: 8,
+    tags: ["AI", "Developer tools", "English"],
+    cover: "flow",
+    image: "/blog/t3-kitshn-cover.webp",
+    body: [],
+  },
+  {
     slug: "black-october",
     title: "אוקטובר השחור: מפתח ה־API שלכם הפך לתקציב של מישהו אחר",
     description: "שמונה לקחים מאירועי האבטחה בפלטפורמות פיתוח באוקטובר 2026, עם מספרים מדווחים, מקורות ראשוניים ומשמעות מעשית למי שבונה עם AI.",
@@ -71,7 +93,7 @@ export const publishedPosts: Post[] = [
 ];
 
 /** English translations are reachable only from their Hebrew article, so they stay out of the index and RSS. */
-const translationSlugs = new Set(["ai-security-en", "nykma-en", "black-october-en"]);
+const translationSlugs = new Set(["ai-security-en", "nykma-en", "black-october-en", "t3-kitshn-en"]);
 export const listedPosts = publishedPosts.filter((post) => !translationSlugs.has(post.slug));
 
 export const blogTags = [...new Set(listedPosts.flatMap((post) => post.tags))];
