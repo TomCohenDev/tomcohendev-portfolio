@@ -1,10 +1,6 @@
 /**
  * Site Worker. Static files are served from ./dist by Workers Assets; this script only
- * runs for /api/* and /en/* (see run_worker_first in wrangler.jsonc).
- *
- * /en/*
- *   The English site is one React Router app (dist/en.html). Its deep links, such as /en/services or
- *   /en/case-studies/dronebag, get that page; the app shows the right route or its own 404.
+ * runs for /api/* (see run_worker_first in wrangler.jsonc).
  *
  * POST /api/automation-lead
  *   Receives the inquiry form of the Hebrew landing pages (/automation, /mobile, /web and the course page; the `page`
@@ -51,11 +47,6 @@ export default {
 
     if (url.pathname.startsWith("/api/")) {
       return json({ ok: false, error: "not_found" }, 404);
-    }
-
-    // Paths with a file extension are real files (or a real 404); page paths get the English app.
-    if (url.pathname.startsWith("/en/") && !/\.[a-z0-9]+$/i.test(url.pathname)) {
-      return env.ASSETS.fetch(new Request(new URL("/en", url), request));
     }
 
     return env.ASSETS.fetch(request);

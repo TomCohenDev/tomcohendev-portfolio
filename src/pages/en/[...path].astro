@@ -1,0 +1,9 @@
+---
+import EnglishLayout from "../../layouts/EnglishLayout.astro";
+import { englishPages } from "../../lib/englishSeo";
+export const getStaticPaths = () => englishPages
+  .filter((page) => page.path !== "/en")
+  .map((page) => ({ params: { path: page.path.slice(4) }, props: { page } }));
+const { page } = Astro.props;
+---
+<EnglishLayout page={page} />

@@ -25,14 +25,17 @@ const jsonLd = {
   headline: post.title,
   description: post.description,
   datePublished: post.date,
+  image: post.image ? new URL(post.image, Astro.site).href : undefined,
   inLanguage: lang,
   author: { "@type": "Person", name: author, url: "https://tomcohen.dev" },
   mainEntityOfPage: `https://tomcohen.dev${path}`,
 };
 ---
 
-<HebrewLayout lang={lang} title={`${post.title} | ${author}`} description={post.description} path={path} jsonLd={jsonLd}>
+<HebrewLayout lang={lang} title={`${post.title} | ${author}`} description={post.description} path={path} jsonLd={jsonLd} ogType="article" ogImage={post.image} ogImageAlt={post.title}>
   <Fragment slot="head">
+    <meta property="article:published_time" content={post.date} />
+    <meta property="article:author" content="https://tomcohen.dev/" />
     <link rel="alternate" hreflang={lang} href={`https://tomcohen.dev${path}`} />
     <link rel="alternate" hreflang={english ? "he" : "en"} href={`https://tomcohen.dev${translationPath}`} />
   </Fragment>

@@ -107,7 +107,7 @@ const ServiceMap = ({ activeServiceId }: ServiceMapProps) => {
   const [linesVisible, setLinesVisible] = useState(false);
   const [orbitAnimating, setOrbitAnimating] = useState(false);
   const [isIconClicked, setIsIconClicked] = useState(false);
-  const [selectedService, setSelectedService] = useState<string | null>(null);
+  const [selectedService, setSelectedService] = useState<string | null>(activeServiceId ?? null);
   const [targetRotation, setTargetRotation] = useState(0);
   const [currentBaseRotation, setCurrentBaseRotation] = useState(0);
   const [mobileActiveSection, setMobileActiveSection] = useState(0);
@@ -933,7 +933,7 @@ const ServiceMap = ({ activeServiceId }: ServiceMapProps) => {
     };
   };
 
-  const selectedServiceData = services.find((s) => s.id === selectedService);
+  const selectedServiceData = servicesList.find((s) => s.id === selectedService);
 
   // Mobile scroll observer
   useEffect(() => {

@@ -3,6 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { StaticRouter } from "react-router-dom/server";
+import { EnglishMetadata } from "./components/EnglishMetadata";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./views/Index";
 import Services from "./views/Services";
@@ -54,13 +56,16 @@ const ScrollToTop = () => {
   return null;
 };
 
-const App = () => (
+const App = ({ path = "/en" }: { path?: string }) => {
+  const Router = typeof window === "undefined" ? StaticRouter : BrowserRouter;
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       {/* The English site lives under /en; the Hebrew site is at the root. */}
-      <BrowserRouter basename="/en">
+      <Router basename="/en" location={path}>
+        <EnglishMetadata />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
@@ -84,9 +89,10 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </TooltipProvider>
   </QueryClientProvider>
 );
+};
 
 export default App;

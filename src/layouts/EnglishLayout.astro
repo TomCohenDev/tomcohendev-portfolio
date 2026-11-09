@@ -1,0 +1,76 @@
+---
+import "../index.css";
+import EnglishApp from "../EnglishApp";
+import { graph, person } from "../lib/structuredData";
+interface Props { page: { path: string; title: string; description: string } }
+const { page } = Astro.props;
+const url = new URL(page.path, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Google Consent Mode v2 - Must load BEFORE Google tag -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'functionality_storage': 'granted',
+        'personalization_storage': 'granted'
+      });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-17859325774"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17859325774');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{page.title}</title>
+    <meta name="description" content={page.description} />
+    <meta name="author" content="Tom Cohen" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    {import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION && <meta name="google-site-verification" content={import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION} />}
+    <meta property="og:title" content={page.title} />
+    <meta property="og:description" content={page.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tom Cohen" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content="https://tomcohen.dev/og-web.png" />
+    <meta property="og:image:alt" content="Tom Cohen: web and product development" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={page.title} />
+    <meta name="twitter:description" content={page.description} />
+    <meta name="twitter:image" content="https://tomcohen.dev/og-web.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg?v=2" />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico?v=2" />
+    <link rel="apple-touch-icon" href="/icon.svg?v=2" />
+    <link rel="canonical" href={url} />
+    {page.path === "/en" && <>
+      <link rel="alternate" hreflang="he" href="https://tomcohen.dev/" />
+      <link rel="alternate" hreflang="en" href="https://tomcohen.dev/en" />
+      <link rel="alternate" hreflang="x-default" href="https://tomcohen.dev/" />
+    </>}
+    <script type="application/ld+json" set:html={JSON.stringify(graph(person)).replace(/</g, "\\u003c")} />
+  </head>
+  <body>
+    <div id="root">
+      <EnglishApp path={page.path} client:load />
+    </div>
+  </body>
+</html>

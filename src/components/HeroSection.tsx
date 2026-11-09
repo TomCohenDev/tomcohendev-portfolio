@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import _Marquee from "react-fast-marquee";
+import MarqueeImport from "react-fast-marquee";
+// CommonJS interop differs between Vite's server and browser bundles.
+const Marquee = (MarqueeImport as unknown as { default?: typeof MarqueeImport }).default ?? MarqueeImport;
 import HandwritingMVP from "./HandwritingMVP";
 import DynamicVisual from "./DynamicVisual";
 
@@ -185,7 +187,8 @@ const HeroSection = () => {
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight inline-block cursor-pointer"
                 onClick={handleNextAnimation}
               >
-                <HandwritingMVP currentSvgIndex={currentSvgIndex} />
+                <span className="sr-only">Tom Cohen: apps, MVPs and automation</span>
+                <span aria-hidden="true"><HandwritingMVP currentSvgIndex={currentSvgIndex} /></span>
               </h1>
             </div>
 
@@ -221,7 +224,7 @@ const HeroSection = () => {
 
         {/* Reviews Section */}
         <div className="max-w-7xl mx-auto mt-20 sm:mt-8 px-4">
-          <_Marquee speed={24} gradient={false} pauseOnHover>
+          <Marquee speed={24} gradient={false} pauseOnHover>
             {allReviews.map((review) => (
               <div
                 key={review.key}
@@ -241,7 +244,7 @@ const HeroSection = () => {
                 </div>
               </div>
             ))}
-          </_Marquee>
+          </Marquee>
         </div>
 
         {/* Bottom padding for reviews section */}

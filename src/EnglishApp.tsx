@@ -13,12 +13,14 @@ const options = {
   debug: import.meta.env.MODE === "development",
 } as const;
 
-/** The English site: the React Router app, mounted by src/pages/index.astro (formerly src/main.tsx). */
-const EnglishApp = () => (
+/** The English site, rendered to HTML for each route by EnglishLayout.astro. */
+const EnglishApp = ({ path = "/en" }: { path?: string }) => (
   <StrictMode>
-    <PostHogProvider apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_KEY} options={options}>
-      <App />
-    </PostHogProvider>
+    {import.meta.env.VITE_PUBLIC_POSTHOG_KEY ? (
+      <PostHogProvider apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_KEY} options={options}>
+        <App path={path} />
+      </PostHogProvider>
+    ) : <App path={path} />}
   </StrictMode>
 );
 

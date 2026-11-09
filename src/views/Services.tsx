@@ -2,9 +2,12 @@ import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ServiceMap from "../components/ServiceMap";
+import { englishPage } from "../lib/englishSeo";
+import NotFound from "./NotFound";
 
 const Services = () => {
   const { serviceId } = useParams();
+  if (serviceId && !englishPage(`/en/services/${serviceId}`)) return <NotFound />;
 
   return (
     <div className="min-h-screen">

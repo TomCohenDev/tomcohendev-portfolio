@@ -56,7 +56,15 @@ if (process.argv[2] === "--live") {
     const { status, html } = await get(path);
     if (status !== 200) fail(`${path}: status ${status}`);
     else if (!/<html lang="en"/.test(html)) fail(`${path}: did not get the English app`);
+    else {
+      if (!html.includes(`<link rel="canonical" href="${SITE}${path}"`)) fail(`${path}: wrong English canonical`);
+      if (!/<h1[\s>]/.test(html)) fail(`${path}: missing pre-rendered content`);
+    }
   }
+  const sitemap = await fetch(base + "/sitemap.xml");
+  if (sitemap.status !== 200 || !(await sitemap.text()).includes("<urlset")) fail("Missing XML sitemap");
+  const englishMissing = await get("/en/no-such-page");
+  if (englishMissing.status !== 404) fail("Unknown English page must return 404");
   for (const [from, to] of [["/case-studies/dronebag", "/en/case-studies/dronebag"], ["/contact", "/en/contact"]]) {
     const res = await fetch(base + from, { redirect: "manual" });
     const location = res.headers.get("location") || "";
@@ -82,12 +90,50 @@ if (process.argv[2] === "--live") {
     return [path, `${path}.html`, join(path, "index.html")].some((p) => existsSync(join("dist", p)));
   };
   for (const file of htmlFiles("dist")) {
-    if (file === join("dist", "en.html")) continue;
     const html = readFileSync(file, "utf8");
     for (const [, href] of html.matchAll(/href="(\/[^"/][^"]*|\/)"/g)) {
       if (!resolves(href)) fail(`${relative("dist", file)}: broken link ${href}`);
     }
   }
+  // Validate the complete generated site, including articles and English deep links.
+  const canonicals = new Set();
+  const titles = new Set();
+  const alternatives = [];
+  for (const file of htmlFiles("dist")) {
+    const html = readFileSync(file, "utf8");
+    const head = html.split("</head>")[0];
+    for (const [, value] of head.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
+      try { JSON.parse(value); } catch { fail(`${file}: invalid JSON-LD`); }
+    }
+    if (/<meta name="robots" content="[^"]*noindex/.test(head)) continue;
+    const canonical = head.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+    if (!canonical?.startsWith(SITE + "/")) fail(`${file}: missing production canonical`);
+    if (canonicals.has(canonical)) fail(`${file}: duplicate canonical ${canonical}`);
+    canonicals.add(canonical);
+    const title = head.match(/<title>([^<]+)<\/title>/)?.[1];
+    if (!title || titles.has(title)) fail(`${file}: missing or duplicate title`);
+    titles.add(title);
+    if (!/<meta name="description" content="[^"]+"/.test(head)) fail(`${file}: missing description`);
+    if (!/<h1[\s>]/.test(html)) fail(`${file}: content needs JavaScript (no h1)`);
+    if (canonical !== head.match(/<meta property="og:url" content="([^"]+)"/)?.[1]) fail(`${file}: share URL differs from canonical`);
+    const image = head.match(/<meta property="og:image" content="([^"]+)"/)?.[1];
+    if (!image?.startsWith(SITE + "/") || !existsSync(join("dist", new URL(image).pathname))) fail(`${file}: missing local share image`);
+    for (const [, lang, href] of head.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g)) {
+      alternatives.push({ canonical, lang, href });
+    }
+  }
+  for (const { canonical, lang, href } of alternatives) {
+    if (!canonicals.has(href)) fail(`${canonical}: hreflang target is not indexable: ${href}`);
+    if (lang !== "x-default" && !alternatives.some((a) => a.canonical === href && a.href === canonical)) fail(`${canonical}: non-reciprocal hreflang ${href}`);
+  }
+  if (!existsSync("dist/sitemap.xml")) fail("Missing XML sitemap");
+  else {
+    const urls = [...readFileSync("dist/sitemap.xml", "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+    if (urls.length !== new Set(urls).size) fail("Sitemap contains duplicate URLs");
+    for (const url of canonicals) if (!urls.includes(url)) fail(`Sitemap missing ${url}`);
+    for (const url of urls) if (!canonicals.has(url)) fail(`Sitemap includes a non-indexable page: ${url}`);
+  }
+  if (!readFileSync("dist/robots.txt", "utf8").includes(`Sitemap: ${SITE}/sitemap.xml`)) fail("robots.txt must advertise the sitemap");
 }
 
 if (problems.length) {

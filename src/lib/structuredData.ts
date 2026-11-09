@@ -19,7 +19,7 @@ export const website = {
   "@id": `${SITE}/#website`,
   url: `${SITE}/`,
   name: "תום כהן",
-  inLanguage: "he",
+  inLanguage: ["he", "en"],
   publisher: { "@id": `${SITE}/#tom` },
 };
 
