@@ -18,11 +18,10 @@ const Cover = ({ post }: { post: Post }) => (
 
 const titleClass = "font-medium leading-snug text-[var(--a-ink)] transition-colors group-hover:text-[var(--a-accent)]";
 
-/** The newest article on the right, as wide as the news above it (HomeNews); "coming soon" slots on the left. */
+/** The newest article on the right, with the other published articles on the left. */
 export const HomeBlog = () => {
-  const [lead] = listedPosts;
+  const [lead, ...rest] = listedPosts;
   if (!lead) return null;
-  const soon = [0, 1, 2];
 
   return (
     <section id="blog" aria-labelledby="blog-title" className="border-t border-[var(--a-line)] py-16 text-start md:py-20">
@@ -41,7 +40,7 @@ export const HomeBlog = () => {
           </a>
         </div>
 
-        <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:gap-8">
+        <div className={`mt-8 grid gap-10 lg:gap-8 ${rest.length ? "lg:grid-cols-2" : ""}`}>
           <article>
             <a href={`/blog/${lead.slug}`} className="group block">
               <Cover post={lead} />
@@ -51,17 +50,28 @@ export const HomeBlog = () => {
             </a>
           </article>
 
-          <ul className="flex flex-col gap-4 lg:border-s lg:border-[var(--a-line)] lg:ps-8" aria-label="מאמרים בדרך">
-            {soon.map((i) => (
-              <li
-                key={i}
-                className="flex flex-1 items-center justify-between gap-4 rounded-2xl border border-dashed border-[var(--a-line)] px-6 py-8 text-[var(--a-muted)]"
-              >
-                <span className="text-xl">מאמר נוסף בדרך</span>
-                <span className="a-hand text-[20px] text-[var(--a-accent)]">בקרוב</span>
+          {rest.length > 0 && (
+          <ul className="flex flex-col gap-4 lg:border-s lg:border-[var(--a-line)] lg:ps-8" aria-label="עוד מהבלוג">
+            {rest.map((post) => (
+              <li key={post.slug}>
+                <article>
+                  <a href={`/blog/${post.slug}`} className="a-card group grid gap-5 transition-colors hover:border-[rgba(191,149,249,0.55)] sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+                    <Cover post={post} />
+                    <div>
+                      <h3 className={`text-xl ${titleClass}`}>{post.title}</h3>
+                      <p className="mt-2 text-[15px] leading-relaxed text-[var(--a-muted)]">{post.description}</p>
+                      <Meta post={post} />
+                      <span className="mt-4 inline-flex items-center gap-2 text-[15px] text-[var(--a-accent)]">
+                        לקריאת המאמר
+                        <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" aria-hidden="true" />
+                      </span>
+                    </div>
+                  </a>
+                </article>
               </li>
             ))}
           </ul>
+          )}
         </div>
       </div>
     </section>
