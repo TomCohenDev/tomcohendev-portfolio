@@ -10,6 +10,10 @@
       "source": {
         "name": "BleepingComputer",
         "url": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/"
+      },
+      "image": {
+        "url": "https://www.bleepstatic.com/content/hl-images/2025/05/08/SonicWall.jpg",
+        "alt": "חומת אש של SonicWall על רקע כחול."
       }
     },
     {
