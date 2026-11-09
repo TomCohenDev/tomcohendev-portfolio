@@ -1,0 +1,176 @@
+{
+  "date": "2026-11-09",
+  "stories": [
+    {
+      "id": "sonicwall-sslvpn-saml-bypass",
+      "topic": "security",
+      "headline": "SonicWall: פרצה שעוקפת את אימות SAML ב־SSL-VPN של חומות האש נוצלה בתקיפה, יש עדכון",
+      "summary": "SonicWall תיקנה שבע חולשות ב־SonicOS, ואחת מהן, CVE-2026-19868, מאפשרת למי שמחזיק פרטי התחברות בשיטת אימות חלופית לעקוף את אימות SAML ב־SSL-VPN, כולל אימות דו־שלבי שנאכף דרכו. החברה אומרת שבדקה דיווח על ניצול, ו־CISA הוסיפה את החולשה לרשימת החולשות המנוצלות; התיקון בגרסאות 7.3.4-7013 ו־8.2.3-8015, ואין דרך עקיפה.",
+      "forBusiness": "אם העובדים מתחברים מרחוק דרך חומת אש של SonicWall עם SAML, בקשו מאיש ה־IT לעדכן את הקושחה עוד השבוע. אם אינכם בטוחים איזו גרסה מותקנת, זה הזמן לבדוק.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/"
+      }
+    },
+    {
+      "id": "make-endpoints",
+      "topic": "automation",
+      "headline": "Make משיקה את Endpoints: קוד וסוכני AI מפעילים פעולות באפליקציות דרך החיבורים של Make",
+      "summary": "Make Endpoints מאפשר לקוד ב־JavaScript, ב־TypeScript או ב־REST להפעיל פעולה בודדת באפליקציה, למשל לקרוא מסמך ב־Google Docs או מייל ב־Gmail, דרך חיבור שכבר מוגדר בצוות ב־Make, בלי לבנות תרחיש ובלי להחזיק את פרטי הגישה בקוד. השירות בבטא, זמין בכל התוכניות כולל החינמית, כל קריאה עולה 0.1 קרדיט, ולא לכל האפליקציות יש עדיין Endpoints.",
+      "forBusiness": "אם יש לכם כלי פנימי או סוכן AI שצריך לגשת למערכות העסק, אפשר לחבר אותו דרך Make ולנהל את ההרשאות ואת יומן הקריאות במקום אחד. התרחישים הקיימים ממשיכים לעבוד כמו שהם.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/feature-spotlight-make-endpoints-connect-your-code-to-apps-through-make/119500"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/3/f/3f8e0c5787e4b3681e401557bcb2449f551258ec_2_1024x1024.jpeg",
+        "alt": "קוד שקורא מסמך מ־Google Docs דרך חיבור של Make, מוקף בסמלים של Gmail, Slack, Notion ו־Salesforce."
+      }
+    },
+    {
+      "id": "n8n-turbodocx-esignature",
+      "topic": "automation",
+      "headline": "n8n מציגה תהליך שמפיק חוזה, מבקש אישור ב־Slack ושולח לחתימה דיגיטלית עם TurboDocx",
+      "summary": "בבלוג של n8n מתואר תהליך שמבוסס על רכיב מאומת של TurboDocx: שורה ב־Excel שמסומנת כמוכנה הופכת לחוזה מתבנית Word, מנהל מאשר אותו בכפתור ב־Slack, החוזה נשלח לחתימה, והקובץ החתום נשמר ב־SharePoint והשורה מתעדכנת. הפוסט נכתב על ידי מנכ\"ל TurboDocx, והתוכנית החינמית שלה כוללת 5 מסמכים ו־5 חתימות בחודש.",
+      "forBusiness": "אם חוזים או הצעות מחיר אצלכם מחכים ימים לאישור ולחתימה, זו דוגמה מוכנה להתחיל ממנה. אפשר להחליף את Excel ב־CRM או ב־Google Sheets ואת SharePoint ב־Google Drive.",
+      "source": {
+        "name": "n8n",
+        "url": "https://blog.n8n.io/spotlight-turbodocx/"
+      },
+      "image": {
+        "url": "https://storage.ghost.io/c/0d/78/0d78b34c-0c5f-4975-900e-61d00ccb1c2d/content/images/size/w1200/2026/11/TuboDocx-BlogHeader.png",
+        "alt": "כרטיס של רכיב מאומת ב־n8n עם הסמל של TurboDocx."
+      }
+    },
+    {
+      "id": "qnap-plex2shell",
+      "topic": "security",
+      "headline": "QNAP: תוקפים פרצו לשרתי NAS דרך Plex Media Server, ועדכון לבדו לא מנקה אותם",
+      "summary": "QNAP קיבלה דיווחים על שרתי NAS שנפרצו דרך שרשרת של ארבע חולשות ב־Plex Media Server, והיא מבקשת לעדכן את Plex לגרסה 1.43.3.10861 מה־App Center. לפי החברה, מי שהפעיל Plex פגיע וחשוף לאינטרנט צריך להתייחס למכשיר ולקבצים כאל פרוצים: לבדוק סימני פריצה, להתקין מחדש את מערכת ההפעלה ולהחליף סיסמאות.",
+      "forBusiness": "אם במשרד יש NAS של QNAP עם Plex, עדכנו אותו היום. מי שלא צריך גישה מרחוק ל־Plex כדאי שיכבה אותה ויסגור את פורט 32400, ומי שצריך יתחבר דרך VPN.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks/"
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "truffle-secrets-revocation",
+      "topic": "security",
+      "text": "Truffle Security השיקה תוכנית חינמית לביטול 1.4 מיליון מפתחות API שדלפו ועדיין עובדים; 16 חברות הצטרפו, ביניהן Notion, Vercel ו־Twilio.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/truffle-security-launches-program-to-revoke-14-million-live-secrets/"
+      },
+      "image": {
+        "url": "https://www.bleepstatic.com/content/hl-images/2026/11/05/keus.jpg",
+        "alt": "איור של מפתחות מחוקים בקו אדום."
+      }
+    },
+    {
+      "id": "fake-ai-events-phishing",
+      "topic": "security",
+      "text": "Push Security: הזמנות מזויפות לאירועים של OpenAI, SpaceX ו־Anthropic מובילות עובדים לדפים שגונבים חשבונות Microsoft ו־Google.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/fake-openai-spacex-events-used-to-steal-microsoft-google-accounts/"
+      },
+      "image": {
+        "url": "https://www.bleepstatic.com/content/hl-images/2022/08/23/phishing-hook.jpg",
+        "alt": "קרס דיג מעל מקלדת, סמל לדיוג."
+      }
+    },
+    {
+      "id": "dlink-dgs-3130-zero-days",
+      "topic": "security",
+      "text": "D-Link מזהירה מחולשות ללא תיקון במתגי DGS-3130 ומייעצת לכבות את DDP ולהגביל את הגישה לממשק הניהול עד שתצא קושחה חדשה.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/d-link-warns-of-multiple-zero-days-in-dgs-3130-series-switches/"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "bytecheck",
+      "name": "Bytecheck",
+      "text": "בודק אם כתובות מייל באמת מקבלות דואר, ברשימה, אחת־אחת או דרך API, בחבילות קרדיט בלי מנוי מ־9 דולר.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/bytecheck"
+      },
+      "icon": "https://cdn.betalist.com/9wwkxjajcq3vcaitb6a2hqbeaaah"
+    },
+    {
+      "id": "lua-crm",
+      "name": "Lua CRM",
+      "text": "מערכת CRM ו־ERP עם AI לעסקים קטנים ובינוניים שנותנים שירותים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/lua-crm"
+      },
+      "icon": "https://cdn.betalist.com/fmun2xbuoghv6fwa2bmhpu204fdc"
+    },
+    {
+      "id": "picforge",
+      "name": "PicForge",
+      "text": "יוצר תמונות וסרטוני מוצר עם AI לחנויות ב־Amazon, eBay ו־Etsy, ומסיר רקעים ומשנה גודל לתמונות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/picforge"
+      },
+      "icon": "https://cdn.betalist.com/j41exfwr77tvsnhki5qlepy8ls7g"
+    },
+    {
+      "id": "expert-consilium",
+      "name": "Expert Consilium",
+      "text": "מריץ שאלה עסקית דרך 4 עד 12 נקודות מבט של AI ומסכם המלצה, אפשרויות וסיכונים במסמך החלטה אחד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/expert-consilium"
+      },
+      "icon": "https://cdn.betalist.com/eixne9wucman9y17s7r8ujlu48an"
+    },
+    {
+      "id": "gullabs",
+      "name": "Gullabs",
+      "text": "מפיק סרטונים ותמונות שיווקיים מתסריט או מכתובת האתר, בצבעים ובגופנים של המותג, עם כמה מודלי וידאו בחשבון אחד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/gullabs"
+      },
+      "icon": "https://cdn.betalist.com/vj4fi3ei7335nezpm4n9ea9p8zcc"
+    },
+    {
+      "id": "unsubscribe-mac",
+      "name": "Unsubscribe",
+      "text": "אפליקציה ל־Mac שמוצאת את כל רשימות התפוצה בתיבת המייל ומאפשרת לצאת מהן בלחיצה, בלי שהמייל עוזב את המחשב.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/unsubscribe"
+      },
+      "icon": "https://cdn.betalist.com/iyl5rmg2h1z7cjvnkf72q8qy87cx"
+    },
+    {
+      "id": "avitime",
+      "name": "Avitime",
+      "text": "מביא לחנויות אונליין חדשות ביקורות מוצר ראשונות מבודקים מאומתים בצרפת, ב־WooCommerce וב־PrestaShop.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/avitime"
+      },
+      "icon": "https://cdn.betalist.com/7eww0vqi25y9hhlu6383yazewe5a"
+    },
+    {
+      "id": "banast",
+      "name": "Banast",
+      "text": "בודק מיזם של יזם יחיד לפי כתובת האתר ומחזיר ציון, ניתוח שוק ומתחרים ותוכנית פעולה, בדוח מלא ב־24 דולר.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/banast"
+      },
+      "icon": "https://cdn.betalist.com/ggh6nu0c3hsmpfjlpffp2ff17fy7"
+    }
+  ]
+}
