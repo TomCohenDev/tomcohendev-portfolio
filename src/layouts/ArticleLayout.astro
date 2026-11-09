@@ -44,7 +44,7 @@ const jsonLd = {
     <main id="main">
       <article>
         <header class="a-grid-bg border-b border-[var(--a-line)]">
-          <div class="mx-auto max-w-3xl px-5 pb-12 pt-10 md:px-8 md:pt-14">
+          <div class="mx-auto max-w-4xl px-5 pb-12 pt-10 md:px-8 md:pt-14">
             <nav aria-label={english ? "Article navigation" : "ניווט במאמר"} class="flex flex-wrap justify-between gap-4 text-[15px] text-[var(--a-accent)]">
               <a href="/blog">{english ? "All articles" : "לכל המאמרים"}</a>
               <a href={translationPath} lang={english ? "he" : "en"} hreflang={english ? "he" : "en"} class="inline-flex items-center gap-2">
@@ -58,7 +58,7 @@ const jsonLd = {
           </div>
         </header>
         <div class="mx-auto max-w-4xl px-5 md:px-8"><PostCover post={post} className="rounded-b-[1.5rem] border border-t-0 border-[var(--a-line)]" /></div>
-        <div class="c-prose c-published mx-auto max-w-3xl px-5 pb-16 pt-12 md:px-8"><slot /></div>
+        <div class="c-prose c-published mx-auto max-w-4xl px-5 pb-16 pt-12 md:px-8"><slot /></div>
       </article>
     </main>
     <div lang="he" dir="rtl"><AutomationFooter site="home" /></div>
