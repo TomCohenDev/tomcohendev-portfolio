@@ -10,6 +10,7 @@ export const publishedPosts: Post[] = [
     readMinutes: 7,
     tags: ["AI", "אוטומציה", "בניית מוצרים"],
     cover: "flow",
+    image: "/blog/nykma-cover.webp",
     body: [],
   },
   {
@@ -20,6 +21,7 @@ export const publishedPosts: Post[] = [
     readMinutes: 7,
     tags: ["AI", "Automation", "English"],
     cover: "flow",
+    image: "/blog/nykma-cover.webp",
     body: [],
   },
   {
