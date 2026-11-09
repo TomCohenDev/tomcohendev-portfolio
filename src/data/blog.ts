@@ -3,6 +3,26 @@ import type { Post } from "../components/content/mock";
 /** Published articles only. Mock posts remain on their existing noindex demo URLs. */
 export const publishedPosts: Post[] = [
   {
+    slug: "nykma",
+    title: "עשיתי אוטומציה למודעות שלי כי רשתות חברתיות מלחיצות אותי",
+    description: "אין לי רקע בסושיאל, ולפרסם ברשתות מלחיץ אותי. אז בניתי את Nykma כדי להכין מודעות ולהצליח לשתף את מה שאני בונה.",
+    date: "2026-11-09",
+    readMinutes: 7,
+    tags: ["AI", "אוטומציה", "בניית מוצרים"],
+    cover: "flow",
+    body: [],
+  },
+  {
+    slug: "nykma-en",
+    title: "I Automated My Ads Because Social Media Stresses Me Out",
+    description: "I have no social media background, and posting stresses me out. So I built Nykma to help me make ads and actually share what I'm building.",
+    date: "2026-11-09",
+    readMinutes: 7,
+    tags: ["AI", "Automation", "English"],
+    cover: "flow",
+    body: [],
+  },
+  {
     slug: "ai-security",
     title: "יותר מתקפות ויותר AI יוצרים צרכים חדשים באבטחה",
     description: "מה הנתונים אומרים על העלייה במתקפות, אילו פתרונות אבטחה כבר קיימים ואיפה אני רואה הזדמנות למפתחים ולצוותים קטנים.",
@@ -27,7 +47,7 @@ export const publishedPosts: Post[] = [
 ];
 
 /** English translations are reachable only from their Hebrew article, so they stay out of the index and RSS. */
-const translationSlugs = new Set(["ai-security-en"]);
+const translationSlugs = new Set(["ai-security-en", "nykma-en"]);
 export const listedPosts = publishedPosts.filter((post) => !translationSlugs.has(post.slug));
 
 export const blogTags = [...new Set(listedPosts.flatMap((post) => post.tags))];
