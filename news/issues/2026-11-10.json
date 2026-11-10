@@ -1,0 +1,228 @@
+{
+  "date": "2026-11-10",
+  "stories": [
+    {
+      "id": "claude-fable-5-2",
+      "topic": "ai",
+      "headline": "Anthropic משיקה את Claude Fable 5.2: מהיר יותר וזול יותר מהגרסה הקודמת",
+      "summary": "Anthropic השיקה ב־9 בנובמבר את Claude Fable 5.2 לכל המשתמשים, ואת Mythos 5.2, שמבוסס על אותו מודל, רק לארגונים שמקבלים אישור. לפי החברה המודל השתפר בקוד, בהסקה ובניתוח תמונות, מחזיר תשובות מהר יותר בעד 30% מגרסה 5.1, והמחיר ירד ל־8 דולר למיליון טוקנים בקלט ו־40 דולר בפלט.",
+      "forBusiness": "Anthropic עצמה ממליצה להתחיל את רוב העבודה היומיומית ב־Opus 5.5 ולעבור ל־Fable רק למשימות טכניות גדולות ומורכבות. מי שכבר משלם על Fable דרך ה־API ייהנה מהמחיר החדש בלי לשנות דבר מלבד שם המודל.",
+      "source": {
+        "name": "Anthropic",
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+      },
+      "image": {
+        "url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/b2dab182c77b4ccfd36423470106915b20f676ae-1200x630.jpg",
+        "alt": "הכיתוב Claude Fable 5.2 and Mythos 5.2 מעל קשת אור של זריחה על רקע שחור."
+      }
+    },
+    {
+      "id": "meta-muse-ember",
+      "topic": "ai",
+      "headline": "Meta משחררת את Muse Ember, מודל זול לסוכני AI שמטפלים בכמויות גדולות של משימות",
+      "summary": "Meta Superintelligence Labs שחררה ב־9 בנובמבר את Muse Ember, המודל הקל והזול ביותר שלה, שנועד למשימות שסוכנים חוזרים עליהן כל היום: קריאה לכלים, ניתוב, חילוץ נתונים וקריאת מסמכים ארוכים. המחיר הוא 10 סנט למיליון טוקנים בקלט, והמודל קורא גם צילומי מסך, מסמכים סרוקים והקלטות קול בלי מודל נוסף.",
+      "forBusiness": "למי שמריץ אוטומציה עם AI על הרבה פניות או מסמכים, כמו מיון מיילים או קריאת חשבוניות, מודל כזה יכול להוזיל את העלות לכל משימה. כדאי לבדוק אותו מול המודל הנוכחי על דוגמאות אמיתיות לפני שמחליפים.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2026/11/Blog-Header-Visual.png?resize=1200,675",
+        "alt": "איור ההכרזה של Meta על המודל Muse Ember."
+      }
+    },
+    {
+      "id": "refrigeration-controller-advisory",
+      "topic": "security",
+      "headline": "אזהרה בארה\"ב: תוקפים משבשים מרחוק בקרי קירור, ומלאי שלם עלול להיזרק",
+      "summary": "CISA, ה־FBI וסוכנויות אמריקאיות נוספות פרסמו אזהרה משותפת שלפיה תוקפים נכנסים לבקרי קירור ולמערכות ניטור טמפרטורה שחשופים לאינטרנט ולא עודכנו, ומשנים את ההגדרות כך שהיחידות נכנסות להפשרה או לחימום. בשבועות האחרונים נפגעו כך מאות סופרמרקטים, מכולות ואטליזים ב־12 מדינות באירופה, ובחלקם הטמפרטורה עלתה עד 50 מעלות.",
+      "forBusiness": "אם יש לכם חדר קירור או מקררים עם בקר שמנוהל מרחוק, בקשו מהטכנאי לבדוק שהבקר לא חשוף ישירות לאינטרנט, שסיסמת ברירת המחדל הוחלפה ושהתוכנה מעודכנת. גישה מרחוק שלא צריך, כדאי לסגור.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/us-agencies-warn-refrigeration.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKryTkTZPSm_Pvf-PEvYRFle3Bp0jQaXScE21oOsMfwir63sr355bqHInvPRm5zynq2sYfLswRNEeywDHo7p2snw5sQmlIrWIONBq4AoYFEGXvdgy5gNLMESgjL5zwnhbqYIwdKLRaolb18pKz1sqFynmSjWn2IT_BxlEb-0av9vDfp-oEzp23_cwOIoik/s1600/ref.jpg",
+        "alt": "מקררים בסופרמרקט עם צג שמראה 50 מעלות."
+      }
+    },
+    {
+      "id": "zapier-ai-agents-survey-2026",
+      "topic": "research",
+      "headline": "סקר Zapier: 71% מהחברות הגדולות מפעילות סוכני AI, אבל רובם עדיין צריכים אדם",
+      "summary": "בסקר של Zapier בקרב 513 מנהלים בחברות אמריקאיות עם 1,000 עובדים ומעלה, 71% אמרו שיש להם סוכני AI בשימוש שוטף, לעומת 40% לפני שנה, אבל רק 30% אמרו שהסוכנים מסיימים יותר מ־60% מהמשימות בלי התערבות אדם. כשיותר ממחצית הסוכנים מחוברים לתהליכי אוטומציה רחבים, 77% מדווחים על עצמאות כזו, לעומת 8% כשלא.",
+      "forBusiness": "סוכן AI שעומד לבד עושה חצי עבודה. הוא עובד טוב יותר כשהוא חלק מתהליך מוגדר, עם כללים שקובעים מה עובר לאישור של אדם ומה ממשיך לבד.",
+      "source": {
+        "name": "Zapier",
+        "url": "https://zapier.com/blog/ai-agents-survey"
+      },
+      "image": {
+        "url": "https://images.ctfassets.net/lzny33ho1g45/28gww9zWYfwuAwjHXLx0dL/d9918f4a4c777f61c819b849906a77d1/ai-agent-use.png",
+        "alt": "תרשים עמודות: שיעור החברות עם סוכני AI בשימוש עלה מ־40% ב־2025 ל־71% ב־2026."
+      }
+    },
+    {
+      "id": "apple-intelligence-usage-packs",
+      "topic": "ai",
+      "headline": "אפל מתחילה לגבות 49.99 דולר על שימוש נוסף בכלי ה־AI שלה, החל מ־Logic Pro",
+      "summary": "אפל הוסיפה ל־Logic Pro אפשרות לקנות Intelligence Usage Pack בתשלום חד־פעמי של 49.99 דולר, כדי להמשיך להשתמש בתכונות Apple Intelligence שמוגבלות כי הן נשענות על מודלים בענן של OpenAI או Gemini. השימוש שלא נוצל עובר לחודש הבא ופג אחרי 12 חודשים, ולפי The Verge האפשרות צפויה להגיע החודש גם ל־Final Cut Pro, Pixelmator Pro, Pages, Keynote ו־Numbers.",
+      "forBusiness": "מי שעובד עם אפליקציות היצירה והמשרד של אפל ונשען על העוזר המובנה צריך לקחת בחשבון שהשימוש בו מוגבל ושמעבר למכסה יש עלות. החבילה שייכת לחשבון Apple אחד ולא עוברת לבני משפחה או לעובדים אחרים.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1030084/apple-intelligence-usage-packs-ai-features-creator-studio-logic-pro"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/logicpro.jpg?quality=90&strip=all&crop=0%2C10.742998834307%2C100%2C78.514002331385&w=1200",
+        "alt": "Logic Pro על מסך של MacBook, עם חלון העוזר המובנה בצד."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "qubole-aws-breach",
+      "topic": "security",
+      "text": "Wiz: תוקף נכנס בין 14 ל־26 באוקטובר לחשבונות AWS של לקוחות Qubole דרך ההרשאה שנתנו לפלטפורמה וגנב סודות ונתונים; גם מי שהפסיק להשתמש בה צריך לבדוק.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-quboles-trusted-aws.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjj3p_1P-Ko_l_HuUr2Doq9kJOQa3Y5dCrkiVWqjJXzvQfYgKvgJXyvdBqLH2hp7s_ZY2kk-hhaCQhjf_v9SdjSbNpaDV2Eohk6-NEFUZp_ROjMJf_Q1xUSKcrqNj-Dd5ZrfjV6uP1blo579IaZ6hgHxOFAUhyJVgdGop-KVIWCjWQIYOKku3iN1N1EIUk/s1600/aws-hacked.jpg",
+        "alt": "איור של פריצה לחשבון ענן."
+      }
+    },
+    {
+      "id": "automakers-default-admin-password",
+      "topic": "security",
+      "text": "חוקרים השתלטו על מערכת ההתחברות של אפליקציות של שני יצרני רכב דרך מסוף ניהול שנשאר עם סיסמת ברירת המחדל, ויכלו לפתוח ולהניע מכוניות; הפרצה תוקנה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/default-adminadmin-server-password.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiI85M0pHHPiXe5ar2VpaGsBVRzxoYfZhpQTKgWqd8YGjK9Nyaca-z6XrGT3jT0lqh41qe-cAjb33_r7JErd7rB1CfuWkgTP_z-_IJkpQPWebz1GeEvSu9QpE5XYWRMOfhYTHmzhbkFB07hzSuV1FYARdaIWjfB_mUoX1_eMjl_3dOaSUFpTQvjt-34eQo/s1600/login-car.jpg",
+        "alt": "איור של מסך התחברות ומכונית."
+      }
+    },
+    {
+      "id": "automattic-spacefast",
+      "topic": "ai",
+      "text": "Automattic, החברה מאחורי WordPress.com, השיקה את Spacefast: אחסון לאתרים ולאפליקציות שנבנו עם AI, כולל מסד נתונים, התחברות משתמשים, קבצים, מיילים ואנליטיקס.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2026/11/Spacefast-feat.jpg?resize=1200,675",
+        "alt": "תמונת ההשקה של Spacefast."
+      }
+    },
+    {
+      "id": "instagram-effect-builder",
+      "topic": "ai",
+      "text": "Instagram השיקה את Effect Builder, כלי ברשת שיוצר פילטרים ל־Stories מתיאור בטקסט ומתמונות לדוגמה; זמין כרגע רק למשתמשים בארה\"ב מגיל 18.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1030061/instagram-ai-effect-builder-filters"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/instagram-effect-builder-launch-2.jpeg?quality=90&strip=all&crop=0%2C10.193943950862%2C100%2C79.612112098277&w=1200",
+        "alt": "מסכי Effect Builder של Instagram עם פילטרים שנוצרו ב־AI."
+      }
+    },
+    {
+      "id": "medium-tk-app",
+      "topic": "ai",
+      "text": "Medium השיקה את TK, אפליקציית כתיבה עם עוזר AI בתוך העורך: כותבים בקשה אחרי תיוג TK, ומקבלים עזרה בבירור עובדות, משוב עריכה והצעות לכותרות.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/09/mediums-new-tk-app-brings-ai-assistance-directly-into-the-writing-process/"
+      }
+    },
+    {
+      "id": "bossai-ai-agents-attacker",
+      "topic": "security",
+      "text": "Acronis: תוקף יחיד מטייוואן כיוון סוכני AI נגד מאות ארגונים ב־11 מדינות לפחות; מודלים מסחריים סירבו לעזור, ולכן הריץ מודלים מקומיים שהוסרו מהם מנגנוני הבטיחות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/taiwan-based-hacker-used-bossai-ai.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhd53Ql49F0iuQEtdvfoxOLNTuQnYM5oGQkqnQ3ym4aIW-HVZuHtOqzyi0IdwUxpFj5qU_jbUEKzPXG4Wx7Uj7g2-UKDotvOh0_AlNlkEIpgLbEBDuQxDkuxDFlukNKKbWXXZv1xCeHEtoOQ_Z1XQUshkJmlBaOmGQzMbryg6KHbOdt8IR7MNQ5oADM-GM/s1600/CYBER-AI.jpg",
+        "alt": "איור של AI ואבטחת סייבר."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "werk",
+      "name": "Werk",
+      "text": "ניהול משימות לצוותי שטח בהודעות קוליות או בטקסט בכל שפה, במקום קבוצות WhatsApp: יוצר משימה עם אחראי ותאריך יעד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/werk"
+      },
+      "icon": "https://cdn.betalist.com/g6nfilme56z4xd8e99jx9xnxr4jx"
+    },
+    {
+      "id": "echops",
+      "name": "ECHOPS",
+      "text": "תוכנה לקבלנים ובעלי מקצוע: לידים, הצעות מחיר, חתימות, לוח זמנים, תיאום צוותים וחשבוניות במקום אחד, עם עוזר AI.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/echops"
+      },
+      "icon": "https://cdn.betalist.com/ozj3qyub7umncsxg77mdwu595v8f"
+    },
+    {
+      "id": "buzzmark",
+      "name": "Buzzmark",
+      "text": "כותב פוסטים לרשתות בסגנון של העסק לפי האתר שלו ומתזמן אותם לשעות שהקהל פעיל; מ־29 דולר לחודש.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/buzzmark"
+      },
+      "icon": "https://cdn.betalist.com/kzbie9eixqyviwepnor46l7qxdx7"
+    },
+    {
+      "id": "vidsembly",
+      "name": "Vidsembly",
+      "text": "הופך מצגות PowerPoint, קובצי PDF וטקסט לסרטונים מוקראים עם קול AI או הקול שלכם, ומייצא MP4.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/vidsembly"
+      },
+      "icon": "https://cdn.betalist.com/hr1wb8col2bage5okfhh2l8w1ufw"
+    },
+    {
+      "id": "cueston",
+      "name": "Cueston",
+      "text": "סיורי היכרות, חלונות הסבר, באנרים וסקרים בתוך מוצרי SaaS בלי מפתחים, עם API ושרת MCP לסוכני AI.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/cueston"
+      },
+      "icon": "https://cdn.betalist.com/wn7ou221ivd7t8lxu1bmj369qeuj"
+    },
+    {
+      "id": "private-writing-assistant",
+      "name": "Private Writing Assistant",
+      "text": "עוזר כתיבה שרץ על ה־AI המובנה ב־Chrome במחשב עצמו, בלי חשבון: תיקון שגיאות ב־101 שפות, ניסוח מחדש, תרגום וסיכום.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/private-writing-assistant"
+      },
+      "icon": "https://cdn.betalist.com/10cypbs6ud8kv9ta2ec1m2m3v4xt"
+    },
+    {
+      "id": "fotoreto",
+      "name": "Fotoreto",
+      "text": "עריכת צילומים שלמים בדפדפן: מסנן כפולים ותמונות מטושטשות, מרטש ומתאים צבע לכל הסט, הכל על המכשיר בלי העלאה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/fotoreto"
+      },
+      "icon": "https://cdn.betalist.com/pdbl7gku780w439cenxdedyiglb8"
+    }
+  ]
+}
