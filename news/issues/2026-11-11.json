@@ -1,0 +1,304 @@
+{
+  "date": "2026-11-11",
+  "stories": [
+    {
+      "id": "chatgpt-business-agents",
+      "topic": "ai",
+      "headline": "OpenAI פותחת ב־ChatGPT פרופילים מאומתים לעסקים וסוכנים שעונים בשמם",
+      "summary": "ב־Business Hub, שנפתח בבטא, חברות מאמתות את העסק שלהן ב־ChatGPT ורואות נתונים כמו אזכורים בתשובות ונושאי החיפוש שבהם הן מופיעות. עסקים יכולים גם להגדיר Business Agent שעונה בשמם על שאלות על המוצרים, והוא נפתח קודם לעסקי מסחר ושירותים מקוונים בארה\"ב שעומדים בתנאים.",
+      "forBusiness": "בישראל אין עדיין מה להפעיל, ו־OpenAI לא אמרה מתי זה יגיע. עסק שמוכר אונליין יכול כבר עכשיו לשאול את ChatGPT על עצמו ולבדוק שהפרטים שהוא מציג נכונים.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1030552/openai-chatgpt-business-agents-hub"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Business-Agent-Customer-Conversation.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
+        "alt": "שיחה עם סוכן של חנות ב־ChatGPT שממליץ על מתנות עם תמונות ומחירים."
+      }
+    },
+    {
+      "id": "gemini-4-carbon-available",
+      "topic": "ai",
+      "headline": "Gemini 4 Carbon, המודל החזק של גוגל, זמין לכל המפתחים והעסקים בתשלום",
+      "summary": "אחרי שבועיים שבהם היה פתוח רק למגיני סייבר, Gemini 4 Carbon זמין דרך ה־API ב־Google AI Studio וב־Gemini for business, במחיר ההתחלתי של Argon: 2 דולר למיליון טוקנים בקלט ו־10 דולר למיליון טוקנים בפלט. מנויי Google AI Ultra מקבלים אותו גם באפליקציית Gemini וב־AI Mode בחיפוש.",
+      "forBusiness": "גוגל עצמה ממליצה על Argon לרוב העבודה, ו־Carbon נועד למשימות ארוכות ומורכבות ומשתמש ביותר טוקנים. מי שמריץ סוכנים או ניתוח של מסמכים כבדים יכול לבדוק אותו על משימה אמיתית ולהשוות את העלות לפני מעבר.",
+      "source": {
+        "name": "Google DeepMind",
+        "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_key_art_16-9_lockup.width-1300.jpg",
+        "alt": "איור של גביש כחול לצד השם Gemini 4 Carbon."
+      }
+    },
+    {
+      "id": "claude-meetings",
+      "topic": "ai",
+      "headline": "Anthropic מכניסה את Claude לשיחות Google Meet ומשיקה גיליונות ולוחות משותפים",
+      "summary": "Claude Meetings מצרף את Claude כמשתתף גלוי לשיחת וידאו: הוא כותב את התוכנית שמדברים עליה, עונה בצ'אט ושולף מידע מאפליקציות מחוברות, והסיכום ומשימות ההמשך נשמרים ב־claude.ai. זה בבטא לתוכניות Team ו־Enterprise ועובד בינתיים רק עם Google Meet, ו־Claude Sheets ו־Claude Whiteboards בבטא לכל התוכניות בתשלום.",
+      "forBusiness": "צוות שכבר משלם על Claude Team ועובד ב־Google Meet יכול לנסות את זה בפגישה פנימית. Claude לא מצטרף לשיחה עם אורחים מבחוץ בלי אישור של מנהל, ויוצא ממנה אוטומטית כשאורח כזה נכנס.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2026/11/Claude-Meetings.png?resize=1200,675",
+        "alt": "שיחת וידאו שבה Claude משתתף ופותח לוח עבודה משותף."
+      }
+    },
+    {
+      "id": "supabase-expo-one-command",
+      "topic": "mobile",
+      "headline": "Expo ו־Supabase: פקודה אחת מקימה בסיס נתונים לאפליקציה ומחברת אותו לכל הסביבות",
+      "summary": "הפקודה eas integrations:supabase:connect ב־EAS CLI של Expo יוצרת פרויקט Supabase, מתקינה את ה־SDK וכותבת את המפתחות לסביבות Production, Preview ו־Development. אפשר לתת לסביבת Preview בסיס נתונים נפרד, וממצאי האבטחה של Supabase, כמו טבלה בלי Row Level Security, מופיעים ליד יומני הבנייה.",
+      "forBusiness": "לעסק שמפתח אפליקציה ב־Expo זה מקצר את ההקמה ומפריד בין נתוני בדיקות לנתונים של לקוחות אמיתיים. כדאי לבקש מהמפתח לוודא שגרסאות הבדיקה לא עובדות על בסיס הנתונים של הלקוחות.",
+      "source": {
+        "name": "Supabase",
+        "url": "https://supabase.com/blog/set-up-supabase-for-every-expo-environment-in-one-command"
+      },
+      "image": {
+        "url": "https://supabase.com/images/blog/2026-11-10-set-up-supabase-for-every-expo-environment-in-one-command/og.png",
+        "alt": "כרטיס הכרזה של Supabase ו־Expo על הקמה בפקודה אחת."
+      }
+    },
+    {
+      "id": "chrome-eighth-zero-day",
+      "topic": "security",
+      "headline": "גוגל תיקנה ב־Chrome פרצה שכבר מנוצלת בתקיפות, השמינית השנה",
+      "summary": "העדכון מתקן תשע פרצות, ולפי גוגל אחת מהן, CVE-2026-125350 ברכיב ה־XML, כבר מנוצלת בתקיפות. הגרסאות המתוקנות הן 157.0.8103.50/.51 ל־Windows ול־macOS ו־157.0.8103.50 ל־Linux.",
+      "forBusiness": "ודאו ש־Chrome מעודכן בכל המחשבים בעסק: בתפריט בוחרים עזרה ואז 'מידע על Google Chrome', ומפעילים מחדש. גם Edge, Brave ו־Opera בנויים על אותו קוד, אז עדכנו אותם כשיגיע אליהם התיקון.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/google-issues-chrome-security-update.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjk5S9J891bQS8W6TgyoiEPQ7geGia8FqqWjckFlo9qMH2wXIXv-7gyod1XKUpI9BfgcliN2Re8A85rJ121jxqgfnw1LsjYBvAYtX7694GVgMF7B94G0n5MzqMaKqLAbr-No1nqrN0gyF8MFR_bYQIYlqiTh_FzobmWrq4NOCLbcW_78uEMMW5FE4eqJoo/s1600/chrome-0day.jpg",
+        "alt": "הסמל של Chrome על רקע של קוד."
+      }
+    },
+    {
+      "id": "n8n-nod-personal-agent",
+      "topic": "automation",
+      "headline": "n8n משיקה את Nod: סוכן AI אישי שרץ על המחשב ועובד באפליקציות ובאתרים",
+      "summary": "Nod היא אפליקציה נפרדת מ־n8n ל־Mac ול־Windows, בתצוגה מקדימה למחקר, עם קוד פתוח וספק AI לבחירת המשתמש. יש לה סביבה מבודדת ודפדפן משלה, היא מתחברת לחשבונות של אדם אחד ועובדת באפליקציות ובאתרים עד שהמשימה נגמרת, בלי חשבון n8n ובלי שרת.",
+      "forBusiness": "זה ניסוי של n8n Labs ולא תחליף לתהליכים המשותפים של העסק ב־n8n, שממשיך להתפתח כרגיל. מי שמנסה אותו כדאי שיתחיל עם חשבונות לא רגישים, כי הוא פועל בשמכם.",
+      "source": {
+        "name": "n8n",
+        "url": "https://blog.n8n.io/meet-nod/"
+      },
+      "image": {
+        "url": "https://storage.ghost.io/c/0d/78/0d78b34c-0c5f-4975-900e-61d00ccb1c2d/content/images/size/w1200/2026/11/nod-header-2x-1.png",
+        "alt": "כרטיס ההכרזה על Nod מ־n8n Labs, סוכן אישי שרץ על המחשב."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "imessage-group-chat-fix",
+      "topic": "security",
+      "text": "אפל תיקנה ב־iOS ו־iPadOS 27.2.1 פרצה ב־iMessage שאפשרה לתוקף מרחוק להצטרף לקבוצה ולקבל את ההודעות שלה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/apple-patches-imessage-group-chat.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUM6RGvSNUqube0TIXYpzHhs7uSvT0k28f2Q8s-GVOexnCI4T5mzFMUs3Lz4_aS6gNuS71DSTvtfOO-tfVFXvVu82pBmj5gO5_jO5g1ndVQQX8xjBY8A_IDAVNkO7oE1s5FRyEsxXQ_HEM_5_KI4g9VWN8BLgCmQTS1DaFt6lRlfgEJMsxyC5bxQW1qhM/s1600/apple-patch.jpg",
+        "alt": "איור של הלוגו של אפל עם סמלי הודעות ו־Bluetooth."
+      }
+    },
+    {
+      "id": "ios-worse-query-escape",
+      "topic": "security",
+      "text": "Binance מזהירה: קוד שפורסם ב־GitHub מאפשר לאפליקציה לקרוא קבצים של אפליקציות אחרות ב־iOS 26 ו־27, ואין תיקון מאושר.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/binance-warns-of-ios-sandbox-escape.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikVWFDhEAWo-q-_JsRneE91hAsf7Ho4XXGI51_q0V6XaCrBl7COWgs81b8KLYtdO0XaRMjP5JbJs80iC103U16Mr7GU05znwtx3CvvMnJMR1ywArpKJj4AdVd9HaLv0U65k59BBY706XjRtU8bx9q-fnLlozVb63XJ43QDKm3FbJUmrSwcB9TvwJpyP64/s1600/ios-jail.jpg",
+        "alt": "האזהרה של Binance לצד דף הקוד ב־GitHub."
+      }
+    },
+    {
+      "id": "firebase-analytics-agent-skills",
+      "topic": "mobile",
+      "text": "Firebase הוסיפה מיומנויות לסוכני קוד שמקימות את Google Analytics באפליקציה מבקשה אחת ומוסיפות מעקב אחרי צפיות במסכים.",
+      "source": {
+        "name": "Firebase",
+        "url": "https://firebase.blog/posts/2026/11/firebase-skills-for-google-analytics"
+      },
+      "image": {
+        "url": "https://firebasestorage.googleapis.com/v0/b/first-class-blog.appspot.com/o/blog-assets%2F2026%2F11%2Ffirebase-skills-for-google-analytics%2Fog%2Fog-introducing-firebase-agent-skills-for-google-analytics.png?alt=media",
+        "alt": "כרטיס ההכרזה של Firebase על מיומנויות לסוכנים ל־Google Analytics."
+      }
+    },
+    {
+      "id": "n8n-gemini-4-carbon",
+      "topic": "automation",
+      "text": "Gemini 4 Carbon זמין כבר ב־n8n לבניית סוכני AI; לפי גוגל הוא השיג 53.9% במבחן AutomationBench, התוצאה הגבוהה ביותר.",
+      "source": {
+        "name": "n8n",
+        "url": "https://blog.n8n.io/build-safer-n8n-agents-and-workflows-with-google-gemini-4-carbon/"
+      }
+    },
+    {
+      "id": "google-adobe-acrobat-drive",
+      "topic": "ai",
+      "text": "גוגל ו־Adobe מרחיבות את שיתוף הפעולה: בקרוב אפשר יהיה לפתוח PDF מ־Google Drive ומ־Gmail ישר לעריכה ב־Adobe Acrobat.",
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Adobe_snippet_hero.max-1440x810.png",
+        "alt": "אישה עובדת על מחשב נייד, עם הלוגו של Adobe."
+      }
+    },
+    {
+      "id": "sap-four-critical-flaws",
+      "topic": "security",
+      "text": "SAP תיקנה ארבע פרצות בדירוג 10.0 ב־NetWeaver וב־Web Dispatcher שאפשר לנצל בלי להתחבר, וממליצה להתקין את התיקונים בעדיפות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgo4snqwJ4uD_sRDyI8zs23mcfFTWfZoSrn9n1hbUrsHbyWy-1VFL8amxqQnLb7LSTPkuSwnsPofUJT6anObg-nU4Q5e01WBb3IixN_PdL-1MJ2nOip4qSTEoVDmePRlOgjSVjvtbH8vFlQgxtGuKuqmuHWLyzIavw2Sj4VtZBlTYhUqeySbQcDMEr4Wns/s1600/sap-flaws.jpg",
+        "alt": "שלט של SAP ליד ארונות שרתים."
+      }
+    },
+    {
+      "id": "n-able-n-central-offline",
+      "topic": "security",
+      "text": "N-able הורידה את N-central בענן ומבקשת מלקוחות עם שרת מקומי לכבות אותו, אחרי שפורסמו יותר מ־30 פרצות; לדבריה לא זוהה ניצול.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-DkzHcZpJVVEU3e3wmGB2DiyRsnWXkf_2bfT1fiDJG4Wn92cartbhyphenhyphenqZHOjXGasigHqJAyXM0kjOlYipgEkahrCi9KGa1s8gpINVT-oFldgOc1bZMUQ-nmFqsSMNwIe6463fXOxSqX1dNroXgwn9MwsmCx41jvPdtdygITxfKyTRDUWKS19YVTFTZY8sr/s1600/n-able.jpg",
+        "alt": "הלוגו של N-able על רקע רשימת קבצי הפרצות שפורסמו."
+      }
+    },
+    {
+      "id": "git-recursive-clone-fix",
+      "topic": "security",
+      "text": "Git 2.56.1 מתקן פרצה שמאפשרת למאגר זדוני להריץ קוד במחשב ששיבט אותו יחד עם תתי־המודולים; יש תיקונים גם לגרסאות 2.50 עד 2.55.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/git-patches-flaw-that-lets-malicious.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipoPlLYj_xfJ8bsfRTONwa3estE9I2un_9OBx2fVuxEp-zoiADgipn-gGOeU4TqqyjqjrCpoGXC4jmuF7o1e_PUMbr-QoHDdPZEDWavb4VbjtWbOxMfmz-E9fIPT2DHEXYCN53l2jtiJGVfEFjHsR8gaHeyF59Yii0oTnP73vaslLWPzuideEGxTy6S9U/s1600/gits.jpg",
+        "alt": "איור של תיקיות עם הלוגו של Git וסמל קוד זדוני."
+      }
+    },
+    {
+      "id": "otter-hebrew-coming",
+      "topic": "ai",
+      "text": "Otter הוסיפה 13 שפות לתמלול פגישות, ועברית ברשימת 14 השפות שיגיעו בהמשך; תכונה חדשה תעקוב אחרי שיחה שעוברת בין שפות.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/09/otter-ai-can-now-follow-conversations-across-30-languages/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2021/01/GettyImages-521333620.jpg?resize=1200,800",
+        "alt": "שורה של דגלי מדינות שונות."
+      }
+    },
+    {
+      "id": "ebay-blocks-ai-agents",
+      "topic": "ai",
+      "text": "לפי The Verge, eBay חוסמת סוכני AI כמו Muse של Meta מגלישה באתר; תנאי השימוש שלה כבר אוסרים על בוטים שמזמינים בלי בדיקה של אדם.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1030838/ebay-ai-agents-meta-muse-agentic-shopping"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/STKS539_AI_AGENTS_SHOPPING_D.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+        "alt": "עגלת קניות מצוירת מתווים ירוקים."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "nitrosend",
+      "name": "Nitrosend",
+      "text": "דיוור עם AI שכותב קמפיינים ותהליכים לפי האתר שלכם לאישורכם, עם שרת MCP ל־Claude ול־ChatGPT ו־API לשליחות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/nitrosend"
+      },
+      "icon": "https://cdn.betalist.com/f99tpc6x9o2fdjd0803p0x18e47n"
+    },
+    {
+      "id": "remotesup",
+      "name": "RemoteSup",
+      "text": "תמיכה מרחוק במחשבים, בטלפונים ובמשקפיים חכמים ממסך אחד, גם מהדפדפן בלי התקנה, עם הצפנה מקצה לקצה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/remotesup"
+      },
+      "icon": "https://cdn.betalist.com/rha8bezfi97iif42j30b7bzc3kbx"
+    },
+    {
+      "id": "sheets-bootcamp",
+      "name": "Sheets Bootcamp",
+      "text": "קורס Google Sheets עם שיעורים שבודקים את הנוסחאות שאתם מקלידים, כולל QUERY, ניקוי נתונים ובניית CRM קטן.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/sheets-bootcamp"
+      },
+      "icon": "https://cdn.betalist.com/3kzavqdm7l4kbsixs469na809rx1"
+    },
+    {
+      "id": "specriskguard",
+      "name": "SpecRiskGuard",
+      "text": "בודק מפרטים טכניים וחוזי הנדסה ב־PDF, מאתר סתירות וחוסרים ומפיק דוח עם רמות חומרה והמלצות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/specriskguard"
+      }
+    },
+    {
+      "id": "neuraltrust",
+      "name": "NeuralTrust",
+      "text": "אבטחה לסוכני AI בארגון: ניטור בזמן אמת, מדיניות אחידה וחסימת דליפת מידע בין מודלים, שרתי MCP ו־API.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/neuraltrust"
+      },
+      "icon": "https://cdn.betalist.com/mdpiuc8vr05m8nj5gjyt79qrvnrm"
+    },
+    {
+      "id": "lektify",
+      "name": "Lektify",
+      "text": "הופך מדריכי PDF של מאמנים ויוצרי קורסים לספרים אינטראקטיביים עם הקראה, חידונים ומורה AI שעונה רק מהתוכן שלהם.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/lektify"
+      },
+      "icon": "https://cdn.betalist.com/hzuq1d4o1c7vmb60p9l783x0wkis"
+    },
+    {
+      "id": "demo-swap",
+      "name": "Demo Swap",
+      "text": "מרקטפלייס שבו חברות מחליפות הדגמות מוצר: כשיש התאמה הדדית נקבעות שתי הדגמות רצופות, אחת לכל צד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/demo-swap"
+      },
+      "icon": "https://cdn.betalist.com/qgbzcfkfmanq5y01f8teimh6f1wi"
+    },
+    {
+      "id": "autovox",
+      "name": "Autovox",
+      "text": "יוצר פודקאסט בקול AI מנושא, ממאמר או מ־PDF, כפרק בודד או כתוכנית קבועה; בבטא ל־iPhone ול־Android.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/autovox"
+      },
+      "icon": "https://cdn.betalist.com/rgkccaxkljdzc4q6r990okznbidn"
+    }
+  ]
+}
