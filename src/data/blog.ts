@@ -3,6 +3,28 @@ import type { Post } from "../components/content/mock";
 /** Published articles only. Mock posts remain on their existing noindex demo URLs. */
 export const publishedPosts: Post[] = [
   {
+    slug: "lazarus-backdoor",
+    title: "פחות מ־10 נוירונים: איך סוכן AI מקבל דלת אחורית נסתרת, ואיך בודקים את שלכם",
+    description: "חוקרי Microsoft השתילו דלת אחורית בסוכני AI באמצעות עריכה של קומץ נוירונים רדומים. איך המתקפה עובדת, למה מבחנים לא תופסים אותה, ואילו בדיקות ומגבלות מצמצמות את הסיכון.",
+    date: "2026-11-12",
+    readMinutes: 11,
+    tags: ["AI", "אבטחת מידע", "סוכנים"],
+    cover: "code",
+    image: "/blog/lazarus-cover.webp",
+    body: [],
+  },
+  {
+    slug: "lazarus-backdoor-en",
+    title: "Fewer Than 10 Neurons: How an AI Agent Gets a Hidden Backdoor, and How to Check Yours",
+    description: "Microsoft researchers backdoored AI agents by editing a handful of dormant neurons. How the attack works, why benchmarks miss it, and the checks and limits that reduce the risk.",
+    date: "2026-11-12",
+    readMinutes: 11,
+    tags: ["AI", "Security", "English"],
+    cover: "code",
+    image: "/blog/lazarus-cover.webp",
+    body: [],
+  },
+  {
     slug: "t3-kitshn",
     title: "T3 Code ו־Kitshn שינו את הקצב שבו אני בונה",
     description: "איך T3 Code, פרויקט Kitshn של ירדן זמיר והפורק שלי הפכו את העבודה עם סוכני קוד לתהליך שקל יותר להמשיך, לחלק ולבדוק.",
@@ -93,7 +115,7 @@ export const publishedPosts: Post[] = [
 ];
 
 /** English translations are reachable only from their Hebrew article, so they stay out of the index and RSS. */
-const translationSlugs = new Set(["ai-security-en", "nykma-en", "black-october-en", "t3-kitshn-en"]);
+const translationSlugs = new Set(["ai-security-en", "nykma-en", "black-october-en", "t3-kitshn-en", "lazarus-backdoor-en"]);
 export const listedPosts = publishedPosts.filter((post) => !translationSlugs.has(post.slug));
 
 export const blogTags = [...new Set(listedPosts.flatMap((post) => post.tags))];
