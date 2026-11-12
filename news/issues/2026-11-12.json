@@ -1,0 +1,237 @@
+{
+  "date": "2026-11-12",
+  "stories": [
+    {
+      "id": "outlook-exploited-november-patch",
+      "topic": "security",
+      "headline": "מיקרוסופט תיקנה ב־Outlook פרצה שכבר מנוצלת: פתיחת קובץ אחד עלולה לחשוף פרטי התחברות",
+      "summary": "בעדכון האבטחה החודשי תיקנה מיקרוסופט 1,259 פרצות, ואחת מהן, ב־Outlook, כבר מנוצלת בתקיפות. תוקף שולח קובץ הודעה שהוכן במיוחד, ואם הנמען פותח אותו, Outlook מתחבר לשרת של התוקף בלי האזהרה הרגילה ועלול למסור לו נתון אימות (NTLMv2 hash) שמאפשר להתחזות למשתמש.",
+      "forBusiness": "ודאו שהעדכונים של Windows ו־Office הותקנו השבוע בכל המחשבים בעסק, ואם יש לכם איש IT, בקשו ממנו לבדוק את כל העמדות. עד אז אל תפתחו קבצי הודעה מצורפים משולחים לא מוכרים.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/microsoft-patches-1259-flaws-including.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_nfFO2Zf-R2XyVzQHP43rc0OLAtUtRKWYV0VIaoHZW8EeH78h2Id9FmfJQVfzFdmBD6ugVGeCehX1Nq6jlmXlMG4AmnV3Tib3YvClKGaplVg5Ngk_KlpqwHx6Pd_oYQTCj2O3HfOpt_MoSGQD-4Nv-pju5sqS7U9-rAJdpKTn-xnhA1QSmmTiQWnAFjGp/s1600/patch-ms.jpg",
+        "alt": "מגן בצבעי Windows מוקף בסמלים של Outlook, Office, SharePoint ו־SQL Server."
+      }
+    },
+    {
+      "id": "grok-apps-exposed",
+      "topic": "security",
+      "headline": "חוקרים: 35,578 אפליקציות שנבנו ב־Grok היו פתוחות לכל אחד, חלקן עם מידע עסקי פנימי",
+      "summary": "חברת האבטחה Claroc מצאה ש־35,578 מתוך 37,571 אפליקציות שנבנו בכלי בניית האפליקציות של Grok נפתחו בלי התחברות, וכעשירית מהן הכילו מידע עסקי או אישי, כמו רשימות עובדים וסיסמאות. לפי החוקרים, במסך הפרסום ההגדרה \"Anyone with the link\" כבר מסומנת, וכתובות האפליקציות ניתנות לאיתור ברשומות DNS שנאספות ברשת.",
+      "forBusiness": "אם עובדים בונים כלים פנימיים בעזרת AI, ב־Grok, ב־Lovable, ב־Replit או בכלים דומים, בדקו מי יכול לפתוח אותם: הגדירו \"Only you\" או \"Invited users\" ונסו להיכנס מחשבון שלא שייך לעסק. אפליקציה שאין לה בעלים עדיף להוריד.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/over-35000-grok-built-apps-exposed.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh54t26Pk-bNbcIXgu8KrKpT_zN1KxEov16xTFlJ8kiPJ3-btXjGUE1lb0ZpamQU5jUHwmxzxHpYLsAQfiaHQUu3gxCIUw2gsEYNwMjL6nRm_jWm6t_VdHJkz6xj3fAsmTZKP8Bbax1qdT98a_PY4ynv81njiDyPXvIIihl4dqXxxC9pMMf8-Mn9dziy_A/s1600/grokai.jpg",
+        "alt": "איור של חלון Grok עם כפתור Publish שממנו יוצאים קווים לכרטיסים של מידע עסקי, רפואי וסיסמאות."
+      }
+    },
+    {
+      "id": "railway-stolen-ai-keys",
+      "topic": "security",
+      "headline": "מפתחות AI של לקוחות נגנבו מ־Railway ונוצלו לשימוש בהיקף מוערך של 740,000 דולר",
+      "summary": "Railway, פלטפורמה שמריצה אפליקציות של לקוחות, מסרה שבפריצה באוקטובר נגנבו מפתחות API של ספקי AI ששמרו אצלה לקוחות, והתוקף השתמש בהם בהיקף מוערך של 740,000 דולר. החברה הודיעה שתשלם בעצמה חיובים שספק ה־AI לא יחזיר; לדבריה AWS וגוגל כבר מחזירות כסף, OpenAI בודקת כל מקרה לגופו ו־OpenRouter לא מחזירה.",
+      "forBusiness": "מפתח API של ספק AI מאפשר לכל מי שמחזיק בו לחייב את החשבון שלכם. הגדירו מגבלת הוצאה אצל הספק, השתמשו במפתח נפרד לכל מערכת, והחליפו מיד מפתחות ששמורים בשירות שנפרץ.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/railway-says-stolen-customer-ai-keys.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheDP-YSdactqjEqKJOJEJulSVt5fmo134ko3-hE9dbQrLkrcIuhIkAOQDPe4eGS8WR6mLJs3urGqLpdi9erHsuLMAQ1t2saYXZAhnIRNqzliU3reOp2uPoKCRlpWBj8JQcyRIwo9eqK4AuSFcsB5XhIdLFzNYudzLlW_eHiZ094cCzg_gjihMTAZufcCc/s1600/railway-ai.jpg",
+        "alt": "הלוגו של Railway לצד מפתחות API, סודות והסכום 740,000 דולר בשימוש לא מורשה."
+      }
+    },
+    {
+      "id": "gemini-decisions-api",
+      "topic": "ai",
+      "headline": "גוגל משיקה את Gemini Decisions API: עד 1,000 שאלות סגורות על מסמך או תמונה בבקשה אחת",
+      "summary": "הממשק החדש פועל עם המודל Gemini Decision 1, מקבל טקסט, תמונות, שמע, וידאו או PDF, ומחזיר תשובות של כן או לא, בחירה מרשימה או ציון לפי סולם, כל אחת עם רמת ביטחון. הוא זמין למפתחים ב־Google AI Studio במחיר של 0.10 דולר למיליון טוקנים בקלט, בלי תשלום על פלט, ולפי גוגל עונה תוך 150 עד 250 אלפיות שנייה.",
+      "forBusiness": "זה כלי למפתחים, והוא מתאים לתהליכים אוטומטיים שצריכים החלטה מהירה וזולה: לסווג פנייה, לבדוק אם מסמך או תמונה עומדים בכללים, ולהעביר לבדיקה של אדם כשרמת הביטחון נמוכה.",
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini__decisions__blog-header_2784x1566.width-1300.png",
+        "alt": "הכיתוב Gemini Decisions API על רקע כחול."
+      }
+    },
+    {
+      "id": "united-blocks-ai-agents",
+      "topic": "ai",
+      "headline": "United לא תאפשר לסוכני AI אישיים להשלים הזמנת טיסה בשם הלקוח",
+      "summary": "לפי The Verge, שמסתמך על The Wall Street Journal, חברת התעופה United לא תאפשר לעוזרי AI אישיים לקנות כרטיסים, אף שהם יוכלו להמשיך להציג למשתמשים את הטיסות שלה. החברה מסבירה שהיא חוששת לפרטיות הלקוחות, לרכישות שהם לא התכוונו לבצע ולדרישות רגולציה, והיא מצטרפת לעסקים נוספים, בהם בנקים גדולים, שהגבילו סוכנים כאלה.",
+      "forBusiness": "עסקים שמוכרים אונליין יצטרכו להחליט אם לאפשר לסוכני AI לקנות אצלם ומה לבדוק לפני שמאשרים הזמנה כזו. כדאי לבדוק כבר עכשיו מה תנאי השימוש באתר אומרים על בוטים שמבצעים רכישות.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1031623/united-unauthorized-ai-agents"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23176430/1237621702.jpg?quality=90&strip=all&crop=0%2C10.721800295556%2C100%2C78.556399408888&w=1200",
+        "alt": "מטוס של United Airlines."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "zoom-workplace-windows-patch",
+      "topic": "security",
+      "text": "Zoom תיקנה ב־Zoom Workplace ל־Windows פרצה בדירוג 9.6 שמאפשרת העלאת הרשאות מרחוק בלי התחברות; הגרסה המתוקנת היא 7.1.8.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html"
+      }
+    },
+    {
+      "id": "cisa-cisco-broadworks-openwave",
+      "topic": "security",
+      "text": "CISA: פרצות ב־Cisco BroadWorks וב־Openwave Messaging מנוצלות בתקיפות, אף שהתיקונים להן פורסמו באוגוסט ובאוקטובר.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/cisco-broadworks-and-openwave-flaws.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4aXykaOroazGO_7IuXugse9ynGpt1PkKJDM8lKL4by93ixX28cs23KAZZRF2dCN2cogu1ti8q5kmqfqSBLmOXWkVi7ZGWmwYMkeCOUXsOXwLoF07FbzmVnlr9DoeqtCboI_9LKWgohgWi2jIB1TzGO6uEkp5lsMnq5fSVqrN-NZGJjAQE2kIUyHsdkw6J/s1600/cisa-cisco.jpg",
+        "alt": "פתק עם השמות Cisco BroadWorks ו־Openwave Messaging וסימון שהם מנוצלים בתקיפות."
+      }
+    },
+    {
+      "id": "microsoft-ai-backdoor-neurons",
+      "topic": "security",
+      "text": "חוקרי מיקרוסופט הראו שאפשר להשתיל דלת אחורית במודל AI פתוח בשינוי של פחות מ־10 נוירונים, כך שסוכן שמשתמש בו יריץ פקודה של התוקף.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/microsoft-researchers-show-ai-agents.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3GT7PJRzHrU1jqZ7Qt0MYIOeL97NYpY4E-aY-Jh9WrLRSLpjaLEIjeAdOagTcUfo7MU9yXmk7HPgPHuGKkEidZkw-2Ojtty9z1PX2Qmmj-h0Kk3X-3VsIg6Lggpoblf-1SE5GHU9LB-P6WeOrfNVgIl1e7q0FxS6obF07BEd8HVcXgSyd_7ZSV8hB01E/s1600/ms-ai-backdoor.jpg",
+        "alt": "תרשים של שכבות במודל שבו שלושה נוירונים ערוכים מוציאים פקודה זדונית."
+      }
+    },
+    {
+      "id": "google-labs-tabletop",
+      "topic": "ai",
+      "text": "Google Labs פתחה את Tabletop, מרחב משותף שבו AI בונה לקבוצה כלים כמו סקר, חלוקת הוצאות ומסלול טיול; בארה\"ב בלבד, ברשימת המתנה.",
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/labs_tabletop_blog_image_2784x1566.max-1440x810.jpg",
+        "alt": "כלים ש־Tabletop בנה לקבוצה: טבלת טורניר, מפה עם מסעדות וגלגל הגרלה."
+      }
+    },
+    {
+      "id": "adobe-max-sneaks",
+      "topic": "ai",
+      "text": "ב־Adobe MAX הוצגו ניסויי AI, בהם Rinse Repeat שמעתיק עריכה ב־Photoshop מאדם או ממוצר אחד לאחרים באותה תמונה; אין התחייבות שיהפכו למוצר.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1031505/adobe-max-2026-sneaks-experiments-ai"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Adobe-Project-Screen-Test.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+        "alt": "מסך של Project Screen Test של Adobe עם דמות מונפשת."
+      }
+    },
+    {
+      "id": "smileid-camerax",
+      "topic": "mobile",
+      "text": "SmileID, שמאמתת זהות באפליקציות של בנקים, עברה ל־CameraX ב־Android, והצילום שלה עובד עכשיו על יותר מ־18,000 סוגי מכשירים.",
+      "source": {
+        "name": "Android Developers",
+        "url": "https://developer.android.com/blog/posts/smileid-camerax-android-identity-verification"
+      },
+      "image": {
+        "url": "https://developer.android.com/static/blog/assets/1007_ABL_134_How_Smile_ID_Scaled_Identity_Verification_with_Camera_X_Strapi_788bf73f23_1eG2SV.webp",
+        "alt": "איור של טלפון עם תעודה מאומתת וסמל של זיהוי פנים."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "foliopress",
+      "name": "FolioPress",
+      "text": "בונה אתרים ובלוגים בכמה שפות: AI מתרגם כל עמוד לאישורכם, ולכל שפה כתובת משלה. תומך ב־56 שפות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/foliopress"
+      },
+      "icon": "https://cdn.betalist.com/y9j91p7c3u2ngmce0lkjzmsanmxd"
+    },
+    {
+      "id": "zono-support",
+      "name": "Zono Support",
+      "text": "מערכת פניות חינמית למוכרים אונליין: מייל, צ'אט ו־WhatsApp בתיבה אחת, ו־AI שעונה על שאלות פשוטות ומעביר לאדם כשצריך.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/zono-support"
+      },
+      "icon": "https://cdn.betalist.com/djvzfwyavaeu1uaag3w3f0autsme"
+    },
+    {
+      "id": "invoice-crowd",
+      "name": "Invoice Crowd",
+      "text": "הצעות מחיר וחשבוניות בעזרת AI, עם חתימה דיגיטלית, חיוב חוזר, תזכורות תשלום ומעקב הוצאות מתמונות של קבלות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/invoice-crowd"
+      },
+      "icon": "https://cdn.betalist.com/cyf3mf5xnidrvhnnfv0aaeatbouy"
+    },
+    {
+      "id": "promu",
+      "name": "Promu",
+      "text": "מאתר לקוחות B2B לפי תיאור, כותב מייל פנייה ראשון בסגנון שלכם, ממיין תשובות וקובע פגישות. כל מייל מחכה לאישורכם.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/promu"
+      },
+      "icon": "https://cdn.betalist.com/lccq185ezzjew99gra1g5skcydt5"
+    },
+    {
+      "id": "yogurt",
+      "name": "Yogurt",
+      "text": "אפליקציית מחשב חינמית בקוד פתוח שמתמללת ומסכמת פגישות עם מודלים שרצים על המחשב, וההקלטות לא יוצאות ממנו.",
+      "source": {
+        "name": "GitHub",
+        "url": "https://github.com/FrigadeHQ/yogurt"
+      }
+    },
+    {
+      "id": "farside-research",
+      "name": "Farside Research",
+      "text": "מחקר מעמיק שבו כל טענה מקושרת לקטע במקור, דרך אפליקציה, API או שרת MCP, עם הרצה חוזרת לפי לוח זמנים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/farside-research"
+      },
+      "icon": "https://cdn.betalist.com/sngboh2dgvtclx65rcy7on6ftcbb"
+    },
+    {
+      "id": "remindly",
+      "name": "Remindly",
+      "text": "פתקים עם תזכורות ל־iPhone, ל־iPad ול־Mac, עם חיפוש בטקסט שבתמונות וב־PDF וחיבור ל־Claude ול־ChatGPT.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/remindly-2"
+      },
+      "icon": "https://cdn.betalist.com/si95ek1iijsefkbtgfpbkrwmk8hr"
+    },
+    {
+      "id": "meeteta",
+      "name": "MeetETA",
+      "text": "שעונים עולמיים וכלי חינמי למציאת שעת פגישה בין אזורי זמן; בתוכנית Pro יש דף לקביעת פגישות מתוך Google Calendar.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/meeteta"
+      },
+      "icon": "https://cdn.betalist.com/zwtinxdm9zh1bknzfmzx1fcb4f4i"
+    }
+  ]
+}
