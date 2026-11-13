@@ -1,0 +1,264 @@
+{
+  "date": "2026-11-13",
+  "stories": [
+    {
+      "id": "gemini-4-hydrogen",
+      "topic": "ai",
+      "headline": "גוגל משיקה את Gemini 4 Hydrogen: מודל מהיר וזול, זמין מהיום לכולם",
+      "summary": "Gemini 4 Hydrogen, המודל הזול במשפחת Gemini 4, זמין מהיום ב־Gemini API, ב־Google AI Studio, ב־Gemini for business, באפליקציית Gemini ובחיפוש של Google. המחיר הוא 1.50 דולר למיליון טוקנים בקלט ו־7.50 דולר למיליון בפלט, ולפי גוגל הוא מסיים משימות פי 2.5 מהר יותר מ־Gemini 3.8 Flash.",
+      "forBusiness": "מי שמריץ בוט, סוכן או אוטומציה על Gemini 3.8 Flash יכול לבדוק את Hydrogen על אותן משימות ולהשוות תוצאות ועלות לפני מעבר. לשימוש יומיומי באפליקציה ובחיפוש לא צריך לעשות כלום, המודל כבר שם.",
+      "source": {
+        "name": "Google DeepMind",
+        "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-hydrogen__key-art__lockup__16-9.width-1300.jpg",
+        "alt": "הכרזה של Gemini 4 Hydrogen על רקע כחול."
+      }
+    },
+    {
+      "id": "google-calendar-session-hijack",
+      "topic": "security",
+      "headline": "הזמנות מזויפות ב־Google Calendar גונבות חשבונות Google של עובדים, גם עם אימות דו־שלבי",
+      "summary": "לפי חוקרי Material Security, מאז אמצע אוגוסט 2026 תוקפים שולחים לעובדים בחברות הזמנות ליומן עם תירוצים כמו הודעה קולית, בקשה להצעת מחיר או תשלום שלא שולם, והקישור עובר דרך כתובות של Google עצמה. הקורבן מתחבר לדף שמתווך בזמן אמת לדף ההתחברות האמיתי, והתוקף מקבל את החיבור הפעיל לחשבון גם אחרי קוד ב־SMS, אפליקציית אימות או אישור בטלפון.",
+      "forBusiness": "כדאי להזהיר את העובדים מהזמנות ליומן מגורם לא צפוי שמבקשות להתחבר, גם כשהקישור נראה של Google. מנהל Google Workspace צריך לדעת איך מנתקים חיבורים פעילים ומבטלים הרשאות OAuth לחשבון שנפרץ; מפתח אבטחה פיזי או Passkey מקשים על התקפה כזו.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/calendar-invites-and-live-proxies.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhf8YVgw9hIWEYN0_qgaD6MVIZad0fOCu_J5Z4Cn2CDuMzcV7HOQ9Xt4E08l1nOo7uMjAyYqYP-bUy5zHisRW8cfeSVmJcCKYgCTI2y1MpRUwsM1I2cs0MsuoAy7VSGLyTPzonhKITzWPU1hTADZnFt5VTZhlt4eJohVas2tzhl47AOV3Cp53LC_uhlpVY/s1600/mt.jpg",
+        "alt": "הזמנה ב־Google Calendar עם אזהרה על דומיין שולח חשוד."
+      }
+    },
+    {
+      "id": "make-supabase-modules",
+      "topic": "automation",
+      "headline": "Make מוסיפה מודולים ל־Supabase: לקרוא ולעדכן את בסיס הנתונים ישירות מתוך תרחיש",
+      "summary": "ב־Make אפשר עכשיו לשלוף ולעדכן נתונים ב־Supabase, לקרוא לוגים ולהפעיל Edge Functions באותו תרחיש עם ה־CRM ומערכת התמיכה. סוכן AI ב־Make יכול להשתמש בכלי MCP של Supabase, והמערכת מציגה לפני ההרצה אם כלי רק קורא או גם משנה נתונים; זמין בכל החבילות, כולל החינמית.",
+      "forBusiness": "אם האפליקציה או האתר שלכם בנויים על Supabase, אפשר לחבר את הנתונים שלהם לשאר המערכות בלי ייצוא ידני, למשל סיכום שבועי של נרשמים חדשים לערוץ של הצוות. כשנותנים לסוכן AI גישה, כדאי להתחיל מכלים לקריאה בלבד.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/app-update-supabase-integration-in-make/119727"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/8/2/827c8cb41d43e87a2d6507ed0b65fa8afbf03115_2_1024x600.gif",
+        "alt": "הדגמה של בניית תרחיש חדש ב־Make."
+      }
+    },
+    {
+      "id": "ai-chatbots-risky-shops",
+      "topic": "research",
+      "headline": "מחקר: צ׳אטבוטים הפנו קונים לאתרים מזויפים ולדומיינים ישנים של מותגים",
+      "summary": "חברת Podqi שאלה את ChatGPT, את Gemini ואת Perplexity שאלות קנייה על 151 מותגים, ובדקה 6,795 תשובות. Perplexity הציג אתר מסוכן, כמו אתר שמתחזה לחנות או דומיין ישן שנרשם מחדש, ב־15% מהתשובות, ChatGPT ב־8% ו־Gemini ב־4%, ובמותגים קטנים זה קרה כפליים מאשר בגדולים.",
+      "forBusiness": "אם אתם מוכרים אונליין, שאלו את הצ׳אטבוטים איפה קונים את המותג שלכם ובדקו לאילו אתרים הם מפנים. דומיין ישן שוויתרתם עליו יכול להיקנות ולשמש להתחזות, אז כדאי לשקול להמשיך להחזיק בו.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1032020/gemini-chatgpt-perplexity-shopping-test-risky-fake-websites-citations"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/STKS539_AI_AGENTS_SHOPPING_E.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+        "alt": "סל קניות כחול על רקע של ריבועים צהובים."
+      }
+    },
+    {
+      "id": "fireworks-notion-ai-transcripts",
+      "topic": "security",
+      "headline": "פריצה לספק AI חשפה שיחות של לקוחות Notion AI",
+      "summary": "תוקפים פרצו לספק הענן של Fireworks AI, פלטפורמה שדרכה חברות מריצות מודלים פתוחים, ולקחו פרטי חיוב וחלק מהנתונים של לקוחותיה. Notion, אחת הלקוחות, אישרה שנגנבו תמלילי שיחות של משתמשי Notion AI שהשתמשו בתכונת Insights, ושהפריצה נגעה בכ־1% מהלקוחות שלה.",
+      "forBusiness": "מה שכותבים לכלי AI עובר לפעמים גם דרך ספקים שלא רואים, ופריצה אצלם חושפת גם אתכם. לפני שמכניסים לכלי כזה מידע רגיש על לקוחות, כדאי לבדוק באילו ספקי משנה הוא משתמש ומה נשמר מהשיחות.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2021/02/notion-glitch-hero.jpg?resize=1200,827",
+        "alt": "הלוגו של Notion באיור עם אפקט של תקלה דיגיטלית."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "google-search-hydrogen",
+      "topic": "ai",
+      "text": "Gemini 4 Hydrogen נכנס לחיפוש של Google בכל העולם: לפי גוגל הוא מבין שאלות מורכבות יותר ועונה עם טבלאות, תמונות וקישורים.",
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HydrogenUI_socialshare.width-1300.png",
+        "alt": "מסכים עם הכיתוב Gemini 4 Hydrogen ו־Now in Google Search."
+      }
+    },
+    {
+      "id": "nodejs-16-fixes",
+      "topic": "security",
+      "text": "Node.js תיקנה 16 פרצות, בהן באגים ב־HTTP/2 שמפילים שרת או מדליפים מידע של חיבורים אחרים; הגרסאות המתוקנות: 22.23.5, 24.22.3 ו־26.13.1.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/nodejs-fixes-16-flaws-including-http2.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhD-9bYYTxb5WmvOmftwsTAe5hDcHyjm12YlQj320OhT6WqICBOe0D6nQf-PPslE-I0c0r8xvZdTAXfyPwGQxHWRiQ5HSIPEZGEiNrE15ygDNZCRzzVvGugdRlIq6IARQf38iJG-MN-uo7MvdXXcA0wXIGDm0-olouPSw_SbBm2-2CYGHb4uHgtREv2ycI/s1600/nodeks.jpg",
+        "alt": "איור לכתבה על פרצות ב־Node.js."
+      }
+    },
+    {
+      "id": "apache-http2-critical",
+      "topic": "security",
+      "text": "פרצה בדירוג 9.8 במודול HTTP/2 של שרת Apache מאפשרת להריץ קוד בלי התחברות, בגרסאות 2.4.55 עד 2.4.70; התיקון בגרסה 2.4.71.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLpi_uN6PmG2Gn1agNMsOrsCp324eH-utKkDl_SPe32ggjcWFPjxZSyeA1KvAtvI9SQ4VAN_zssvdJLJ59IXE8_-MatPOyFXY-FcwtL7HtfKyW3MtsKwglIe2X62WBOcUkPMv-klM1h8T2EBMWFOWyPG89bfbAHS5byyfXATXN_lUUJWmUGWChekyWxTQ/s1600/apache-http.jpg",
+        "alt": "איור לכתבה על פרצה בשרת Apache."
+      }
+    },
+    {
+      "id": "citrix-netscaler-patches",
+      "topic": "security",
+      "text": "Citrix תיקנה פרצות קריטיות ב־NetScaler ADC וב־NetScaler Gateway שעלולות להוביל להשבתה או לעקיפת אימות; לדבריה לא ידוע על ניצול שלהן.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDDv_B4B-cVtvwKyLiGQsL804yGC7_xHF7y3yD5_C284fRXBVRAn5Ashy2apgJr-jaoBHRa3ujgXv1jskM53EvP_pFt41CTazYqFT-tQdcukNBeOTzVIpZXVDsdgtup4MJOEdNNZP9SP0FAdIpG1Cnfgo0YgBXzmI_boLV4qSAsVrmYn5wA3GxnPuj21JO/s1600/citrix.jpg",
+        "alt": "איור לכתבה על עדכוני האבטחה של Citrix."
+      }
+    },
+    {
+      "id": "n-central-new-exploits",
+      "topic": "security",
+      "text": "קוד ניצול חדש ל־N-central של N-able עובד גם על השרתים שעודכנו ב־10 בנובמבר; החברה מבקשת לכבות מיד את ה־Legacy API, והגרסה בענן לא מושפעת.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhR4KdRS0v77uQIdhC0i5aopa8XIAZIRnTzVCVqto7dEdfUH2QyWgrAy1EKu-hARXS4pxNGQQEFroRHOtwSq_9Q8b92tmgw_97JMJoBfC72sl8pOcUYM9nU6YCJht4yD7ALWfERwhUwLsN8wo9t8YnKyIWzHhEAux5ox5WV4wvxe6l1cUmf58P1md2Ekziy/s1600/nable.jpg",
+        "alt": "איור לכתבה על פרצות ב־N-central."
+      }
+    },
+    {
+      "id": "screenconnect-rogue-clients",
+      "topic": "security",
+      "text": "ConnectWise כיבתה חמישה תוספים של צד שלישי ל־ScreenConnect אחרי גישה לא מורשית; לפי Huntress, תוקפים התקינו דרכם תוכנת שליטה מרחוק על לפחות 288 מחשבים.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/screenconnect-attacks-target-at-least.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEfz7InYm8UO-p35K6B4j009BxA-MO7DdZ2x1d-xhyphenhyphenPxNnVs848IlgAGelmuW-sPbEZbE8-L9_KWEYNH_M5HaTMy14MFd87A7YkqHAzDKaamKOdpZKR9owL3nK3gbqAngvWa6A4NC1KK1l0ie9FK731LfKPI0lguiGQ1b71sHIZj2kR2H3I-GJjSPY4kJU/s1600/screenconnect-hack.jpg",
+        "alt": "איור לכתבה על התקיפות דרך ScreenConnect."
+      }
+    },
+    {
+      "id": "github-ci-secret-stealer",
+      "topic": "security",
+      "text": "לפי Aikido Security, תוקף השתמש ב־4,837 חשבונות GitHub גנובים כדי להשתיל קוד שגונב מפתחות ופרטי גישה לענן, והקוד רץ ב־1,806 מאגרים לפחות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/4837-hijacked-github-accounts-ran-ci.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1-4OiOkGLcK3fAr2HdhALOfc_BqR21440TsjUIuCNzv4YL0lWRC3lvUjE1vu2RdVfjunxi80gMQyGpjvUdWzMRtthW8_-hFOJ79YhFzJrNGgoKDPYXm2OaWOsN8kgBELqOPs5s9QKL4qzQzu_3NEEqHygpfQzKYxDRIQeFgMHj24oyPyaslUemke-loU/s1600/github.jpg",
+        "alt": "איור לכתבה על חשבונות GitHub שנפרצו."
+      }
+    },
+    {
+      "id": "fake-ai-domains",
+      "topic": "security",
+      "text": "Island מצאה 186 דומיינים שמתחזים ל־27 כלי AI, בהם ChatGPT, Claude ו־Gemini, ומובילים לפקודות זדוניות, לנוזקה בדפדפן ולתוספים שחוטפים חיפושים.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/186-fake-ai-domains-redirect-users-to.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEirJnc36Fxj4oKOmKhcPvspB_xQpv3VgpXjYnu29SOv8NbVJHeaGNKT26851QIPQbHozxeF5vmq5otdRbJBKEaN9557MtuxLwp5fxX-pQVDVKwvZJtPR9ayT2Njx83svW7TVsVkVpFUOt5JHqhdSkSI7uV0d4dxlf5pWAmHISttTHWjURyOpuuy0CzVCSmK/s1600/lauce.jpg",
+        "alt": "איור לכתבה על דומיינים מזויפים של כלי AI."
+      }
+    },
+    {
+      "id": "muse-business-calls",
+      "topic": "ai",
+      "text": "Muse של Meta יכול עכשיו להתקשר לעסקים בארה\"ב בשם המשתמש, למשל להזמין שולחן במסעדה; התכונה למנויים בתשלום בלבד, מ־20 דולר לחודש.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/"
+      },
+      "image": {
+        "url": "https://techcrunch.com/wp-content/uploads/2026/11/muse-calls.jpg?w=1104",
+        "alt": "דמות הפרווה של Muse מחייגת בטלפון ליד שולחן של בית קפה."
+      }
+    },
+    {
+      "id": "mongodb-failover-crash",
+      "topic": "security",
+      "text": "פרצה קריטית ב־MongoDB מאפשרת לתוקף בלי התחברות להפיל שרת בקבוצת שכפול כשהוא נבחר להחליף את השרת הראשי; MongoDB שחררה גרסאות מתוקנות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6RJLDSM13MwenwxG4xnZ-Td2_zmnya-Y39FLHlNk-7P3hZ5w1qGjG3XFqT-4gaeZIxSepWWNM53bKTIkZBNA-X_tVKsrgWbw8u81mjLzL6dXvTtvKfKeT-FkwSz4CsdMoHNza2NRFy0PJzzmaMROCr3D7e6AKT5UR3Lh4zFb_1w9HMmXXKKvATVWHU-E/s1600/mongo-poc.gif",
+        "alt": "הדגמה של קריסת שרת MongoDB."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "cloudraker",
+      "name": "CloudRaker",
+      "text": "פלטפורמה למסמכים: שולפת נתונים מקבצים ומהקלטות, מסתירה מידע רגיש, ממלאת טפסים ומחתימה חתימה דיגיטלית.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/cloudraker"
+      },
+      "icon": "https://cdn.betalist.com/9ym5qwlu2wiu4pk4web3akal10r7"
+    },
+    {
+      "id": "dove",
+      "name": "Dove",
+      "text": "אפליקציית מייל עם AI שממיינת הודעות לפי חשיבות, מסכמת שרשורים ומנסחת תשובות; עובדת עם Gmail, Outlook וכל חשבון IMAP.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/dove"
+      },
+      "icon": "https://cdn.betalist.com/pe09r3kesxsqja9c8lbl4x7hkqep"
+    },
+    {
+      "id": "competly",
+      "name": "Competly",
+      "text": "מעקב אחרי מחירי מתחרים לחנויות אונליין: מתאים מוצרים לפי ברקוד ושם ושומר היסטוריה של כל המחירים, כולל מבצעים וקופונים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/competly"
+      },
+      "icon": "https://cdn.betalist.com/qk07o8rysbrne68wc6pl2cvp0ky9"
+    },
+    {
+      "id": "motion-fab",
+      "name": "Motion Fab",
+      "text": "יוצר סרטוני מושן גרפיקה מתיאור בצ׳אט, עם הלוגו והתמונות שלכם, ומייצא MP4 לאורך, לרוחב או בריבוע.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/motion-fab"
+      },
+      "icon": "https://cdn.betalist.com/e9wjgye72ukcg0m9ysrmzyhdcq10"
+    },
+    {
+      "id": "dataminimal",
+      "name": "DataMinimal",
+      "text": "שולח בקשות הסרה למאגרי מידע שמוכרים פרטים אישיים, ועוקב אחרי התשובות ואחרי חשיפת סיסמאות במקום אחד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/dataminimal"
+      },
+      "icon": "https://cdn.betalist.com/p5atyl5esh5skf5lkjtkv392xhq9"
+    }
+  ]
+}
