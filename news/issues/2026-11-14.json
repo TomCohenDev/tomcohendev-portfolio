@@ -1,0 +1,216 @@
+{
+  "date": "2026-11-14",
+  "stories": [
+    {
+      "id": "checkpoint-php2shell-israel",
+      "topic": "security",
+      "headline": "תוקפים פרצו לשערי Check Point לא מעודכנים בארגונים בישראל, ובחלקם מחקו שרתים",
+      "summary": "לפי Check Point, החל מ־30 באוקטובר, כשבוע אחרי שיצא תיקון, תוקפים ניצלו את פרצות PHP2Shell בפורטל Mobile Access של שערי אבטחה שלא עודכנו והתקינו בהם דלת אחורית בשם TSGA. הגל הראשון כוון לארגונים בישראל, בחלקם הופעלה תוכנה שמוחקת קבצים בשרתי VMware ESXi, וב־2 בנובמבר הגיע גל רחב יותר בכמה מדינות.",
+      "forBusiness": "עסק עם חומת אש של Check Point שמאפשרת גישה מרחוק (Mobile Access) צריך לוודא עם מי שמנהל אותה שהעדכונים ל־PHP2Shell ול־CVE-2026-123039 מותקנים. כדאי לבקש גם בדיקה לסימני חדירה, כי התקיפות התחילו כבר שבוע אחרי שהתיקון יצא.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjP3B9ZQG1BXlSPUWzwVJ5qgwh899Ngm9u2GAbWiX5HDqhhT6q6gsmva9-TR2upR0fepas2i0k53VUxh1CH21LeUUv1Ipczl9huExytcqNdlqIoHP64CRYJuGyHe-OgLoov-JR6GziUT4JDJ92Ne83CshfWn9pr9Bt2HPKkv4phQJ2esJHcV6eZqzRretVu/s1600/php.jpg",
+        "alt": "איור של ציוד רשת שממנו יוצא פתק עם שלבי התקיפה, מ־PHP2Shell ועד הדלת האחורית TSGA."
+      }
+    },
+    {
+      "id": "chatgpt-wallet",
+      "topic": "ai",
+      "headline": "OpenAI משיקה את ChatGPT Wallet: סוכני dots יכולים לקנות בשם המשתמש",
+      "summary": "אחרי שהמשתמש מוסיף כרטיס אשראי לארנק, הסוכנים של ChatGPT, שנקראים dots, יכולים לקנות בשבילו, והם עוצרים לאישור בטביעת אצבע או ב־Face ID לפני כל קנייה. בשלב ראשון זה זמין רק למנויי ChatGPT Pro בארה\"ב, בני 18 ומעלה, עם כרטיסים של American Express, Chase, Mastercard או Visa שהונפקו בארה\"ב.",
+      "forBusiness": "בישראל אין עדיין מה לעשות. לחנויות אונליין כדאי לדעת שלפי OpenAI, כדי שסוכנים יוכלו לקנות, האתר צריך לא לחסום אותם בטעות ומערכות התשלום והסיכונים צריכות לזהות קנייה של סוכן כקנייה לגיטימית.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/STKS539_AI_AGENTS_SHOPPING_B.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+        "alt": "איור של רובוט שדוחף עגלת קניות על רקע סימני דולר."
+      }
+    },
+    {
+      "id": "n8n-public-api-rate-limits",
+      "topic": "automation",
+      "headline": "n8n מאפשרת להגביל כמה בקשות API כל מפתח שולח, כדי שתהליך אחד לא יתקע את כולם",
+      "summary": "מגרסה 2.47.0, מנהלים ב־n8n יכולים לקבוע תקרה לבקשות ל־API הציבורי לכל מפתח API, בנפרד לקריאה ולכתיבה, ומי שמגיע לתקרה מקבל תשובה 429 שאומרת לו מתי לנסות שוב. האפשרות קיימת בכל התוכניות, ב־n8n Cloud ובהתקנה עצמית, והיא כבויה כברירת מחדל.",
+      "forBusiness": "אם כמה צוותים או לקוחות עובדים על אותו שרת n8n, כדאי להפעיל את ההגבלה ב־Settings > Policies > Public API Limits, כדי שתהליך שרץ על אלף פריטים בבת אחת לא יחסום את כל השאר.",
+      "source": {
+        "name": "n8n",
+        "url": "https://blog.n8n.io/new-in-n8n-public-api-rate-limits-that-keep-every-team-on-your-instance-running/"
+      },
+      "image": {
+        "url": "https://storage.ghost.io/c/0d/78/0d78b34c-0c5f-4975-900e-61d00ccb1c2d/content/images/size/w1200/2026/11/9a7a15f4-ac1a-4c44-86e8-9b047cb9c474.png",
+        "alt": "תרשים של שלושה מפתחות API, שאחד מהם נעצר בתקרה ומקבל תשובה 429."
+      }
+    },
+    {
+      "id": "postgresql-52-flaws",
+      "topic": "security",
+      "headline": "PostgreSQL תיקנה 52 פרצות, בהן אחת שמאפשרת למשתמש במסד הנתונים להריץ קוד בשרת",
+      "summary": "הגרסאות 18.7, 17.12, 16.16, 15.20 ו־14.25 סוגרות 52 פרצות, ובהן CVE-2026-6460 בדירוג 8.8, שמאפשרת למשתמש שיכול ליצור אובייקטים במסד להריץ פקודות בשרת. לא דווח על ניצול בפועל, אבל חוקר פרסם תיאור של ניצול שעובד, ובאוגוסט שיתף הדגמות עם ספקים כמו AWS, Microsoft, Google ו־Supabase.",
+      "forBusiness": "מי שמנהל שרת PostgreSQL בעצמו צריך לעדכן לגרסה המתוקנת, וגם לבנות מחדש הרחבות בשפת C שמותקנות בשרת. מי שמשתמש בשירות מנוהל כמו Supabase או RDS יכול לבדוק אצל הספק אם העדכון כבר הותקן.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj8XOS7IKEt2ZhrwwdlDSpQ5hAyI46wHZpPkTQ3_hA6yUtMQpzaM50fm2v9x0O7NCt5z9vdrTsYM3iPOmu9fmmMTQDViu-rQjCfSxfCQhwZQazr4ZYayvEn5MQfUdTBVODtAay6RIaTqJGUj-HVzbtMqNPdNFiQHExhO9sitJX0GrvTx_EhWmslA-87ds/s1600/postgresql.jpg",
+        "alt": "הלוגו של PostgreSQL על רקע קוד SQL שמשנה טיפוס נתונים."
+      }
+    },
+    {
+      "id": "elevenai-meetings-dictation",
+      "topic": "ai",
+      "headline": "ElevenLabs משיקה את ElevenAI: סיכום פגישות והכתבה בקול לצוותים, בתצוגה מקדימה",
+      "summary": "האפליקציה רושמת סיכומים מפגישות, מודיעה למשתתפים שהשיחה מוקלטת ומאפשרת לשאול שאלות על פגישות קודמות, ויש בה גם הכתבה שהופכת דיבור לטקסט נקי בכל אפליקציה, ביותר מ־90 שפות. היא בתצוגה מקדימה, וכדי לקבל אותה צריך להירשם לגישה מוקדמת.",
+      "forBusiness": "עסק שמשלם על כלי לסיכום פגישות יכול להירשם ולבדוק אותה, אבל המקור לא מפרט אם עברית בין השפות. בינתיים אין סיבה לעזוב כלי שכבר עובד.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams/"
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "llama-cpp-v1",
+      "topic": "ai",
+      "text": "llama.cpp, הספרייה הפתוחה להרצת מודלי שפה על מחשב או שרת פרטי, הגיעה לגרסה 1.0.0, ומעכשיו שינויים שוברים יסומנו בגרסה ראשית חדשה.",
+      "source": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
+      }
+    },
+    {
+      "id": "operation-endgame-gootloader",
+      "topic": "security",
+      "text": "מבצע משטרתי בינלאומי הוריד 235 שרתים של Gootloader, CastleRAT ו־StealC ותפס כ־6.4 מיליון פרטי התחברות גנובים של יותר מ־40,000 קורבנות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsu6ZFyYFr1dxp2XHIaG_pyTwkoH58ICgyXLuTthkuYSJVcqAwX_O_bEJYfheyxpYmI7nnok1xrj97q7s-9l8JHFt1ogBAOJAEUqM8_vf6H3a8eYPKzB34d6XrvnkRu8zGaoKMgSJqWsE6u2zYXLdJKTtcDvk3beN6_o40ygJ4MVSMomS3Q1aEFV_jSq8/s1600/gootloader.jpg",
+        "alt": "איור למבצע המשטרתי נגד Gootloader."
+      }
+    },
+    {
+      "id": "fbi-facestealer-deepfakes",
+      "topic": "security",
+      "text": "לפי ה־FBI, האקרים מצפון קוריאה גנבו יותר מ־400 מיליון דולר בקריפטו ב־18 חודשים, בעזרת סרטונים מוקלטים ו־deepfake בשיחות וידאו.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/fbi-says-north-korean-hackers-stole.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDmjJA-t4vvigohRIfUR6JExYEPR0Dohh29eooVagQOvRyRDgdisxAy3wSWni5iFHjf2Dk8X2BavSeGO8hJ-wCTbDuffsdtamOuqj1PVTb75EWNF5vNe3tCsS6pyS_pSzNhEELOVU0DxHdmGx4Kt8KNqwz8YheAM9kEoVmpnHeVV1qsofLCBYDEt0E2IqX/s1600/flash.jpg",
+        "alt": "איור לכתבה על גניבת קריפטו בשיחות וידאו מזויפות."
+      }
+    },
+    {
+      "id": "silentair-sms-2fa",
+      "topic": "security",
+      "text": "Enea: קבוצת ריגול השתמשה בציוד פרוץ אצל מפעילי סלולר באסיה כדי להסיט שיחות ו־SMS, בעיקר של אנשים בטייוואן, ויירטה קודים של אימות דו־שלבי.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjskRPNlV_kYE1N2eF2J_J0fBvF_nQxnvtaS78Grj04KqkEauvr-R5jO-ynD9nm51SgF2XtCCAsWUbJrHU0wGRnXC9yHmblhNCF8Jt9NdVahMju3voR2z9xb2uqoSi7Nc085UqDBelqg4XDRdjJ2lsF7EeN28rjq7oBc_NpBUWRqLWXiOh9FBRIH28teHM/s1600/telecom-hack.jpg",
+        "alt": "איור לכתבה על פריצה לרשתות סלולר."
+      }
+    },
+    {
+      "id": "amazon-world-product-graph",
+      "topic": "ai",
+      "text": "לפי Reuters, Amazon בונה את World Product Graph, מאגר מידע על כל מוצר שנמכר ברשת, גם כאלה שהיא לא מוכרת, לשימוש של אנשים ושל סוכני AI.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search"
+      }
+    },
+    {
+      "id": "xybench-misguided-questions",
+      "topic": "research",
+      "text": "Ai2 פרסמה את XYBench, מבחן של 8,115 שאלות שבודק אם עוזרי AI מזהים כשמשתמש שואל על דרך שגויה ומכוונים אותו לבעיה האמיתית.",
+      "source": {
+        "name": "Ai2",
+        "url": "https://huggingface.co/blog/allenai/xybench"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "wabutton",
+      "name": "WAButton",
+      "text": "כפתור צ׳אט WhatsApp צף לאתר, עם צבעים, הודעת פתיחה, שעות פעילות וטופס קצר לפני השיחה; יש תוכנית חינמית ותוכניות מ־9 דולר לחודש.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/wabutton"
+      },
+      "icon": "https://cdn.betalist.com/920vsaaioiduaofhs453b601xha8"
+    },
+    {
+      "id": "dora",
+      "name": "Dora",
+      "text": "פורטל לקוחות עם מנהל תיק AI שהופך כל בקשה, גם במייל, לבריף מסודר, מבקש פרטים חסרים ומעביר לאיש הצוות המתאים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/dora"
+      },
+      "icon": "https://cdn.betalist.com/ei346w9ws10ayaek9n574lwzc1p3"
+    },
+    {
+      "id": "refract",
+      "name": "Refract",
+      "text": "מתזמן פוסטים לרשתות חברתיות: כותבים את הרעיון פעם אחת, וה־AI מנסח גרסה לכל רשת שמחכה לאישור לפני פרסום.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/refract"
+      },
+      "icon": "https://cdn.betalist.com/ewuui6dtq25fw9cwysg4a64k2jm3"
+    },
+    {
+      "id": "groundreach",
+      "name": "GroundReach",
+      "text": "מקום אחד ל־SEO, לנראות בתשובות AI, למודעות Google ו־Meta ולמעקב אחרי לידים; קמפיינים נוצרים מושהים עד שמאשרים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/groundreach"
+      },
+      "icon": "https://cdn.betalist.com/fdlvp4nruci1w4xg6tpou4djuqit"
+    },
+    {
+      "id": "parotia",
+      "name": "Parotia",
+      "text": "בודק אם ChatGPT, Gemini, Claude ועוזרים אחרים מזכירים את העסק בתשובות, ומי מוזכר במקומו; כרגע בהזמנה בלבד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/parotia"
+      },
+      "icon": "https://cdn.betalist.com/tm8ffimx76z3bmpxckq3gj3keq2z"
+    },
+    {
+      "id": "clipzy",
+      "name": "Clipzy",
+      "text": "הופך רעיון כתוב לסרטון אנכי ל־TikTok, Reels ו־Shorts עם תסריט, קריינות, כתוביות ומוזיקה, ופותח אותו בעורך בדפדפן.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/clipzy"
+      },
+      "icon": "https://cdn.betalist.com/q0qnlrx8s9t55yaaclueqb7ilewi"
+    },
+    {
+      "id": "linkedinembed",
+      "name": "LinkedInEmbed",
+      "text": "בונה ווידג׳טים בלי קוד שמציגים באתר פוסטים, פרופיל, המלצות ומשרות מ־LinkedIn, ל־WordPress, Wix, Shopify ועוד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/linkedembed"
+      },
+      "icon": "https://cdn.betalist.com/ihzz50ug55ele3ftfcpjtvo7e6q1"
+    }
+  ]
+}
