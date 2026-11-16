@@ -7,7 +7,7 @@ import HebrewLayout from "../../layouts/HebrewLayout.astro";
 import { AutomationHeader, AutomationFooter } from "../automation/Chrome";
 import { graph, person } from "../../lib/structuredData";
 import { ABOUT, CONTACT_LINKS, type Lang } from "../../data/about";
-import { heroSketch, productSketch, stepArrow, loopSketch } from "./sketches";
+import { productSketch, stepArrow, loopSketch } from "./sketches";
 import "../automation/automation.css";
 import "./about.css";
 
@@ -66,7 +66,7 @@ const stepTone = (i: number) => (i === 3 ? "hum" : i >= 4 ? "ok" : "acc");
                 <a class="a-btn a-btn-ghost" href={CONTACT_LINKS.linkedin} rel="noopener">LinkedIn</a>
               </div>
             </div>
-            <div class="ab-hero-visual" set:html={heroSketch(t.hero.notes, t.hero.doodleAlt, rtl)} />
+            <div class="ab-hero-visual"><img src="/automation/tom.png" alt={t.hero.doodleAlt} width="1402" height="1122" /></div>
           </div>
           <div class="ab-principles">
             {t.hero.principles.map((p, i) => (

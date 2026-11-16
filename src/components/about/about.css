@@ -35,18 +35,8 @@
 .ab .ab-intro { margin-top: 1.25rem; max-width: 36rem; font-size: 1.15rem; line-height: 1.75; color: var(--a-muted); }
 .ab .ab-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
 .ab .ab-hero-visual { width: 100%; max-width: 540px; margin-inline: auto; }
-.ab .ab-hero-svg { display: block; width: 100%; height: auto; overflow: visible; }
-.ab .ab-hero-svg image { filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.55)); }
+.ab .ab-hero-visual img { display: block; width: 100%; max-width: 420px; height: auto; margin-inline: auto; filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.55)); }
 
-/* The single orchestrated moment: notes appear, then their arrows draw toward the doodle. */
-@media (prefers-reduced-motion: no-preference) {
-  .ab .hn { opacity: 0; animation: ab-in 0.5s ease-out forwards; }
-  .ab .hn1 { animation-delay: 0.25s; } .ab .hn2 { animation-delay: 0.65s; } .ab .hn3 { animation-delay: 1.05s; }
-  .ab .dr { stroke-dasharray: 1; stroke-dashoffset: 1; animation: ab-draw 0.6s ease-out forwards; }
-  .ab .ha1 .dr { animation-delay: 0.45s; } .ab .ha2 .dr { animation-delay: 0.85s; } .ab .ha3 .dr { animation-delay: 1.25s; }
-}
-@keyframes ab-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-@keyframes ab-draw { to { stroke-dashoffset: 0; } }
 
 .ab .ab-principles { display: grid; gap: 1rem; margin-top: 2.5rem; }
 @media (min-width: 768px) { .ab .ab-principles { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
