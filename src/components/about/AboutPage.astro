@@ -1,0 +1,291 @@
+---
+/**
+ * The about page in both languages (/about in Hebrew, /about-en in English). Content lives in src/data/about.ts;
+ * the hand-drawn sketches are generated at build time in ./sketches.ts.
+ */
+import HebrewLayout from "../../layouts/HebrewLayout.astro";
+import { AutomationHeader, AutomationFooter } from "../automation/Chrome";
+import { graph, person } from "../../lib/structuredData";
+import { ABOUT, CONTACT_LINKS, type Lang } from "../../data/about";
+import { heroSketch, productSketch, stepArrow, loopSketch } from "./sketches";
+import "../automation/automation.css";
+import "./about.css";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ABOUT[lang];
+const rtl = lang === "he";
+const english = !rtl;
+
+const escapeHtml = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+/** [text](url), **bold** and `code`; everything else is escaped. */
+const md = (s: string) =>
+  escapeHtml(s)
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/`(.+?)`/g, "<code>$1</code>")
+    .replace(/\[(.+?)\]\((.+?)\)/g, (_, text, href) => `<a href="${href}"${href.startsWith("http") ? ' rel="noopener"' : ""}>${text}</a>`);
+
+const jsonLd = graph(person, {
+  "@type": "ProfilePage",
+  "@id": `https://tomcohen.dev${t.meta.path}`,
+  url: `https://tomcohen.dev${t.meta.path}`,
+  name: t.meta.title,
+  description: t.meta.description,
+  inLanguage: lang,
+  mainEntity: { "@id": "https://tomcohen.dev/#tom" },
+});
+const [featured, ...products] = t.products.items;
+const stepTone = (i: number) => (i === 3 ? "hum" : i >= 4 ? "ok" : "acc");
+---
+
+<HebrewLayout lang={lang} title={t.meta.title} description={t.meta.description} path={t.meta.path} jsonLd={jsonLd} ogImageAlt={english ? "Tom Cohen" : "תום כהן"}>
+  <Fragment slot="head">
+    <link rel="alternate" hreflang={lang} href={`https://tomcohen.dev${t.meta.path}`} />
+    <link rel="alternate" hreflang={english ? "he" : "en"} href={`https://tomcohen.dev${t.meta.translation}`} />
+  </Fragment>
+  <div class="automation-page ab min-h-screen" lang={lang} dir={rtl ? "rtl" : "ltr"}>
+    <div lang="he" dir="rtl"><AutomationHeader onLanding={false} site="home" client:load /></div>
+    <main id="main">
+      <!-- Hero: the one animated moment on the page. -->
+      <header class="ab-hero a-grid-bg">
+        <div class="ab-wrap">
+          <nav aria-label={english ? "Page navigation" : "ניווט בעמוד"} class="ab-top">
+            <a href={t.nav.homeHref}>{t.nav.home}</a>
+            <a href={t.meta.translation} lang={english ? "he" : "en"} hreflang={english ? "he" : "en"} class="ab-lang">
+              <span aria-hidden="true">{english ? "HE" : "EN"}</span>{t.nav.other}
+            </a>
+          </nav>
+          <div class="ab-hero-grid">
+            <div>
+              <p class="ab-hello">{t.hero.hello}</p>
+              <h1>{t.meta.heading}</h1>
+              <p class="ab-intro">{t.hero.intro}</p>
+              <div class="ab-actions">
+                <a class="a-btn a-btn-solid" href="#contact">{t.hero.contact}</a>
+                <a class="a-btn a-btn-ghost" href={CONTACT_LINKS.github} rel="noopener">GitHub</a>
+                <a class="a-btn a-btn-ghost" href={CONTACT_LINKS.linkedin} rel="noopener">LinkedIn</a>
+              </div>
+            </div>
+            <div class="ab-hero-visual" set:html={heroSketch(t.hero.notes, t.hero.doodleAlt, rtl)} />
+          </div>
+          <div class="ab-principles">
+            {t.hero.principles.map((p, i) => (
+              <div class={`ab-principle ab-tone-${i === 0 ? "acc" : "ok"}`}>
+                <h2>{p.title}</h2>
+                <p>{p.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      <nav class="ab-subnav" aria-label={t.nav.sections}>
+        <ul>
+          {t.sections.map((s) => <li><a href={`#${s.id}`} data-section={s.id}>{s.label}</a></li>)}
+        </ul>
+      </nav>
+
+      <!-- Products -->
+      <section id="products" class="ab-section">
+        <div class="ab-wrap">
+          <div class="ab-head"><h2>{t.products.heading}</h2><p>{t.products.lead}</p></div>
+          <article class="ab-feature">
+            <div class="ab-feature-art" set:html={productSketch(featured.sketch)} />
+            <div>
+              <h3><a href={featured.href} rel="noopener">{featured.name}</a></h3>
+              <p class="ab-summary">{featured.summary}</p>
+              <ul class="ab-points">{featured.points.map((p) => <li set:html={md(p)} />)}</ul>
+              {featured.stack && (
+                <ul class="ab-chips" aria-label={t.products.stackLabel}>{featured.stack.map((s) => <li>{s}</li>)}</ul>
+              )}
+            </div>
+          </article>
+          <div class="ab-products">
+            {products.map((p) => (
+              <article class="ab-product">
+                <div class="ab-product-top">
+                  <h3>{p.href ? <a href={p.href}>{p.name}</a> : p.name}</h3>
+                  <Fragment set:html={productSketch(p.sketch)} />
+                </div>
+                <p class="ab-summary">{p.summary}</p>
+                <ul class="ab-points">{p.points.map((x) => <li set:html={md(x)} />)}</ul>
+                {p.links && (
+                  <p class="ab-links">{p.links.map((l) => <a href={l.href} rel={l.href.startsWith("http") ? "noopener" : undefined}>{l.label}</a>)}</p>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Agents -->
+      <section id="agents" class="ab-section ab-band">
+        <div class="ab-wrap">
+          <div class="ab-head"><h2>{t.agents.heading}</h2><p set:html={md(t.agents.lead)} /></div>
+          <div class="ab-agents-grid">
+            <div>
+              <h3 class="ab-h3">{t.agents.dayHeading}</h3>
+              <ol class="ab-steps">{t.agents.day.map((d) => <li set:html={md(d)} />)}</ol>
+            </div>
+            <aside class="ab-note" aria-labelledby="rules-h">
+              <h3 id="rules-h">{t.agents.rulesHeading}</h3>
+              <ul>{t.agents.rules.map((r) => <li>{r}</li>)}</ul>
+            </aside>
+          </div>
+
+          <h3 class="ab-h3">{t.agents.toolsHeading}</h3>
+          <div class="ab-tools">
+            {t.agents.tools.map((tool) => (
+              <div class="ab-tool">
+                <h4>{tool.name}</h4>
+                <p set:html={md(tool.body)} />
+                {tool.sub && <ul class="ab-points">{tool.sub.map((s) => <li>{s}</li>)}</ul>}
+              </div>
+            ))}
+          </div>
+
+          <figure class="ab-days">
+            <figcaption><h3 class="ab-h3">{t.agents.timeHeading}</h3><p>{t.agents.timeNote}</p></figcaption>
+            <ul>
+              {t.agents.days.map((d) => (
+                <li>
+                  <span class="ab-days-label">{d.label}</span>
+                  <span class="ab-days-bar" role="img" aria-label={t.agents.dayUnit(d.days)}>
+                    {Array.from({ length: d.days }, () => <i />)}
+                  </span>
+                  <span class="ab-days-count">{t.agents.dayUnit(d.days)}{d.extra && <em dir="ltr">{d.extra}</em>}</span>
+                </li>
+              ))}
+            </ul>
+          </figure>
+        </div>
+      </section>
+
+      <!-- CI/CD -->
+      <section id="cicd" class="ab-section">
+        <div class="ab-wrap">
+          <div class="ab-head"><h2>{t.cicd.heading}</h2><p>{t.cicd.lead}</p></div>
+          <figure class="ab-pipeline">
+            <ol>
+              {t.cicd.pipeline.map((step, i) => (
+                <li class={`ab-tone-${stepTone(i)}`}>
+                  <span>{step}</span>
+                  {i < t.cicd.pipeline.length - 1 && <Fragment set:html={stepArrow(i, rtl)} />}
+                </li>
+              ))}
+            </ol>
+            <figcaption>{t.cicd.pipelineNote}</figcaption>
+          </figure>
+          <div class="ab-lanes">
+            {t.cicd.lanes.map((lane) => (
+              <div class="ab-lane">
+                <h3>{lane.name}</h3>
+                {lane.items.map((item) => (
+                  <details>
+                    <summary>{item.title}</summary>
+                    <ul class="ab-points">{item.points.map((p) => <li set:html={md(p)} />)}</ul>
+                  </details>
+                ))}
+              </div>
+            ))}
+          </div>
+          <div class="ab-fork">
+            <Fragment set:html={loopSketch(rtl)} />
+            <div>
+              <h3 class="ab-h3">{t.cicd.fork.heading}</h3>
+              <ol class="ab-fork-steps">{t.cicd.fork.steps.map((s) => <li>{s}</li>)}</ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Open source -->
+      <section id="open-source" class="ab-section ab-band">
+        <div class="ab-wrap">
+          <div class="ab-head"><h2>{t.oss.heading}</h2><p>{t.oss.lead}</p></div>
+          <div class="ab-oss">
+            {t.oss.projects.map((p) => (
+              <article class="ab-repo">
+                <h3><a href={p.href} rel="noopener">{p.name}</a> <span>{p.by}</span></h3>
+                <p>{p.body}</p>
+                <ul class="ab-points">{p.points.map((x) => <li set:html={md(x)} />)}</ul>
+              </article>
+            ))}
+          </div>
+          <div class="ab-more">
+            <h3 class="ab-h3">{t.oss.moreHeading}</h3>
+            <ul class="ab-points">{t.oss.more.map((m) => <li set:html={md(m)} />)}</ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clients -->
+      <section id="clients" class="ab-section">
+        <div class="ab-wrap">
+          <div class="ab-head"><h2>{t.clients.heading}</h2><p>{t.clients.lead}</p></div>
+          <div class="ab-shots">
+            {t.clients.featured.map((c) => (
+              <a class="ab-shot" href={c.href}>
+                <span class="ab-phone"><img src={c.image!.src} alt={c.image!.alt} loading="lazy" decoding="async" /></span>
+                <span class="ab-shot-name">{c.name}</span>
+                <span class="ab-shot-text">{c.points[0]}</span>
+              </a>
+            ))}
+          </div>
+          <dl class="ab-others">
+            {t.clients.others.map((c) => (
+              <div>
+                <dt>{c.name}{c.role && <span>{c.role}</span>}</dt>
+                <dd>{c.points.length > 1 ? <ul class="ab-points">{c.points.map((p) => <li set:html={md(p)} />)}</ul> : <p set:html={md(c.points[0])} />}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      <!-- Teaching and tools -->
+      <section id="tools" class="ab-section ab-band">
+        <div class="ab-wrap ab-tools-wrap">
+          <div class="ab-teaching">
+            <h2>{t.teaching.heading}</h2>
+            <p set:html={md(t.teaching.body)} />
+          </div>
+          <div>
+            <h2>{t.tools.heading}</h2>
+            <dl class="ab-stack">
+              {t.tools.groups.map((g) => (
+                <div><dt>{g.name}</dt><dd><ul class="ab-chips">{g.items.map((i) => <li>{i}</li>)}</ul></dd></div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="ab-section ab-cta">
+        <div class="ab-wrap">
+          <h2>{t.cta.heading}</h2>
+          <p>{t.cta.body}</p>
+          <div class="ab-actions">
+            <a class="a-btn a-btn-solid" href={CONTACT_LINKS.email}>{t.cta.email}</a>
+            <a class="a-btn a-btn-ghost" href={CONTACT_LINKS.linkedin} rel="noopener">{t.cta.linkedin}</a>
+            <a class="a-btn a-btn-ghost" href={CONTACT_LINKS.github} rel="noopener">{t.cta.github}</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div lang="he" dir="rtl"><AutomationFooter site="home" /></div>
+  </div>
+</HebrewLayout>
+
+<script>
+  // Marks the section in view in the sticky section menu.
+  const links = new Map([...document.querySelectorAll<HTMLAnchorElement>(".ab-subnav a")].map((a) => [a.dataset.section, a]));
+  const seen = new Set<string>();
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) e.isIntersecting ? seen.add(e.target.id) : seen.delete(e.target.id);
+    const current = [...links.keys()].find((id) => id && seen.has(id));
+    links.forEach((a, id) => (id === current ? a.setAttribute("aria-current", "true") : a.removeAttribute("aria-current")));
+    if (current) links.get(current)?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  links.forEach((_, id) => { const el = id && document.getElementById(id); if (el) io.observe(el); });
+</script>
