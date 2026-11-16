@@ -59,34 +59,6 @@ function sketcher(seedBase: number, W = 0, mirror = false) {
   };
 }
 
-/** The hero: the waving doodle with three handwritten notes pointing at it. */
-export function heroSketch(notes: { decide: string; agents: string; ship: string }, alt: string, rtl: boolean) {
-  const W = 560, H = 500;
-  const s = sketcher(7100 + (rtl ? 50 : 0), W, rtl);
-  const lines = (txt: string, x: number, y: number, color: string, anchor: "start" | "middle" | "end", cls: string) =>
-    txt.split("\n").map((t, i) => s.text(x, y + i * 30, t, color, 25, anchor, cls, rtl)).join("");
-  const imgX = rtl ? W - 128 - 300 : 128;
-  const body = [
-    `<image href="/automation/tom.png" x="${imgX}" y="176" width="300" height="240" preserveAspectRatio="xMidYMid meet"/>`,
-    // gold: decisions
-    `<g class="hn hn1">${lines(notes.decide, 24, 52, C.hum, "start", "")}</g>`,
-    `<g class="ha ha1">${s.arrow([[96, 118], [128, 168], [196, 204]], C.hum, "dr")}</g>`,
-    // purple: agents in parallel
-    `<g class="hn hn2">`,
-    ...[0, 1, 2].map((i) => s.ellipse(388 + i * 52, 70, 34, 34, C.acc, { roughness: 0.6 }) + s.hatch(376 + i * 52, 58, 24, 24, C.acc, 0.3)),
-    s.path(`M${s.X(405)} 70L${s.X(423)} 70M${s.X(457)} 70L${s.X(475)} 70`, C.acc, { roughness: 0.3 }),
-    lines(notes.agents, 440, 124, C.acc, "middle", ""),
-    `</g>`,
-    `<g class="ha ha2">${s.arrow([[452, 168], [440, 198], [404, 222]], C.acc, "dr")}</g>`,
-    // green: shipping
-    `<g class="hn hn3">${lines(notes.ship, 396, 470, C.ok, "middle", "")}`,
-    s.path(`M${s.X(250)} 462l10 10l22 -26`, C.ok, { roughness: 0.4 }, "", 3),
-    `</g>`,
-    `<g class="ha ha3">${s.arrow([[396, 442], [398, 414], [372, 394]], C.ok, "dr")}</g>`,
-  ].join("");
-  return `<svg viewBox="0 0 ${W} ${H}" class="ab-hero-svg" role="img" aria-label="${esc(alt)}"><title>${esc(alt)}</title>${body}</svg>`;
-}
-
 /** Small product sketches, 160×120. */
 export function productSketch(key: SketchKey) {
   const s = sketcher(8000 + key.length * 37);

@@ -30,7 +30,6 @@ export interface AboutCopy {
   hero: {
     hello: string;
     intro: string;
-    notes: { decide: string; agents: string; ship: string };
     doodleAlt: string;
     principles: { title: string; body: string }[];
     contact: string;
@@ -103,7 +102,6 @@ export const ABOUT: Record<Lang, AboutCopy> = {
     hero: {
       hello: "Hi, I'm Tom",
       intro: "Full-stack developer, founder and lecturer. For five years I've built digital products end to end: iPhone and Android apps, web systems, back ends, automation and AI. I take an idea from the first conversation to production and the app stores, then keep improving it.",
-      notes: { decide: "I plan, and I decide\nwhat ships", agents: "agents build\nin parallel", ship: "merging is releasing" },
       doodleAlt: "Illustration of Tom Cohen waving",
       principles: [
         { title: "AI agents as a team, not autocomplete", body: "I plan the work, split it across agents, check what comes back and decide what ships. That's how a whole working product can be built in a day or two." },
@@ -293,7 +291,6 @@ export const ABOUT: Record<Lang, AboutCopy> = {
     hero: {
       hello: "היי, אני תום",
       intro: "מפתח Full-stack, יזם ומרצה. כבר חמש שנים אני בונה מוצרים דיגיטליים מקצה לקצה: אפליקציות לאייפון ולאנדרואיד, מערכות ווב, צד שרת, אוטומציות ו־AI. אני מלווה רעיון מהשיחה הראשונה ועד שהוא באוויר ובחנויות, וממשיך לשפר אותו.",
-      notes: { decide: "אני מתכנן ומחליט\nמה עולה לאוויר", agents: "סוכנים בונים\nבמקביל", ship: "מיזוג הוא שחרור" },
       doodleAlt: "איור של תום כהן מנופף לשלום",
       principles: [
         { title: "סוכני AI כצוות, לא ככלי השלמה", body: "אני מתכנן את העבודה, מחלק אותה בין סוכנים, בודק את מה שחוזר ומחליט מה עולה לאוויר. ככה מוצר שלם עובד יכול להיבנות ביום או ביומיים." },
