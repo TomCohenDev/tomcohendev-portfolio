@@ -79,12 +79,6 @@ const stepTone = (i: number) => (i === 3 ? "hum" : i >= 4 ? "ok" : "acc");
         </div>
       </header>
 
-      <nav class="ab-subnav" aria-label={t.nav.sections}>
-        <ul>
-          {t.sections.map((s) => <li><a href={`#${s.id}`} data-section={s.id}>{s.label}</a></li>)}
-        </ul>
-      </nav>
-
       <!-- Products -->
       <section id="products" class="ab-section">
         <div class="ab-wrap">
@@ -277,15 +271,3 @@ const stepTone = (i: number) => (i === 3 ? "hum" : i >= 4 ? "ok" : "acc");
   </div>
 </HebrewLayout>
 
-<script>
-  // Marks the section in view in the sticky section menu.
-  const links = new Map([...document.querySelectorAll<HTMLAnchorElement>(".ab-subnav a")].map((a) => [a.dataset.section, a]));
-  const seen = new Set<string>();
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) e.isIntersecting ? seen.add(e.target.id) : seen.delete(e.target.id);
-    const current = [...links.keys()].find((id) => id && seen.has(id));
-    links.forEach((a, id) => (id === current ? a.setAttribute("aria-current", "true") : a.removeAttribute("aria-current")));
-    if (current) links.get(current)?.scrollIntoView({ block: "nearest", inline: "nearest" });
-  }, { rootMargin: "-45% 0px -50% 0px" });
-  links.forEach((_, id) => { const el = id && document.getElementById(id); if (el) io.observe(el); });
-</script>

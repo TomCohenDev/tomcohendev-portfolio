@@ -26,7 +26,7 @@ export interface Client {
 
 export interface AboutCopy {
   meta: { title: string; heading: string; description: string; path: string; translation: string };
-  nav: { home: string; homeHref: string; other: string; sections: string };
+  nav: { home: string; homeHref: string; other: string };
   hero: {
     hello: string;
     intro: string;
@@ -34,7 +34,6 @@ export interface AboutCopy {
     principles: { title: string; body: string }[];
     contact: string;
   };
-  sections: { id: string; label: string }[];
   products: { heading: string; lead: string; items: Product[]; stackLabel: string };
   agents: {
     heading: string;
@@ -98,7 +97,7 @@ export const ABOUT: Record<Lang, AboutCopy> = {
       path: "/about-en",
       translation: "/about",
     },
-    nav: { home: "Home (Hebrew)", homeHref: "/", other: "לקריאה בעברית", sections: "Sections on this page" },
+    nav: { home: "Home (Hebrew)", homeHref: "/", other: "לקריאה בעברית" },
     hero: {
       hello: "Hi, I'm Tom",
       intro: "Full-stack developer, founder and lecturer. For five years I've built digital products end to end: iPhone and Android apps, web systems, back ends, automation and AI. I take an idea from the first conversation to production and the app stores, then keep improving it.",
@@ -109,14 +108,6 @@ export const ABOUT: Record<Lang, AboutCopy> = {
       ],
       contact: "Get in touch",
     },
-    sections: [
-      { id: "products", label: "Products" },
-      { id: "agents", label: "AI agents" },
-      { id: "cicd", label: "CI/CD" },
-      { id: "open-source", label: "Open source" },
-      { id: "clients", label: "Client work" },
-      { id: "tools", label: "Tools" },
-    ],
     products: {
       heading: "Products I built myself",
       lead: "Each one built alone, from the first commit to the store listing.",
@@ -287,7 +278,7 @@ export const ABOUT: Record<Lang, AboutCopy> = {
       path: "/about",
       translation: "/about-en",
     },
-    nav: { home: "לעמוד הבית", homeHref: "/", other: "Read in English", sections: "חלקי העמוד" },
+    nav: { home: "לעמוד הבית", homeHref: "/", other: "Read in English" },
     hero: {
       hello: "היי, אני תום",
       intro: "מפתח Full-stack, יזם ומרצה. כבר חמש שנים אני בונה מוצרים דיגיטליים מקצה לקצה: אפליקציות לאייפון ולאנדרואיד, מערכות ווב, צד שרת, אוטומציות ו־AI. אני מלווה רעיון מהשיחה הראשונה ועד שהוא באוויר ובחנויות, וממשיך לשפר אותו.",
@@ -298,14 +289,6 @@ export const ABOUT: Record<Lang, AboutCopy> = {
       ],
       contact: "לדבר איתי",
     },
-    sections: [
-      { id: "products", label: "מוצרים" },
-      { id: "agents", label: "סוכני AI" },
-      { id: "cicd", label: "CI/CD" },
-      { id: "open-source", label: "קוד פתוח" },
-      { id: "clients", label: "לקוחות" },
-      { id: "tools", label: "כלים" },
-    ],
     products: {
       heading: "מוצרים שבניתי בעצמי",
       lead: "כל אחד מהם נבנה לבד, מה־commit הראשון ועד הדף בחנות.",
