@@ -122,6 +122,11 @@ export const HomeAbout = () => (
           לחלקים ברורים, לחבר בין התאוריה לעבודה בשטח ולעזור לאנשים להגיע לשלב
           שבו הם יכולים לבנות ולפתור בעצמם.
         </p>
+        <p className="mt-6 text-[17px] leading-[1.8]">
+          <a href="/about" className="font-semibold text-[var(--a-accent)] underline underline-offset-4">
+            הסיפור המלא: מוצרים, עבודה עם סוכני AI, CI/CD וקוד פתוח
+          </a>
+        </p>
       </div>
       {/* The doodle stands on the section's bottom edge, as on the landing pages. */}
       <div className="flex flex-col items-center gap-4 lg:self-end">
