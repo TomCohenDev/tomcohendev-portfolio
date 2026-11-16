@@ -150,7 +150,7 @@ export const ABOUT: Record<Lang, AboutCopy> = {
         {
           title: "The handoffs took the time",
           problem: "Agents could write useful code, and I still spent a lot of attention getting the work to the next step: which project it belonged to, what had been tried, whether the tests had finished, how to continue from another device.",
-          action: "I built my setup on T3 Code and Yarden Zamir's Kitshn, with forks of my own, so work keeps moving between my decisions. [The full story](/blog/t3-kitshn-en).",
+          action: "I built my setup on T3 Code and Kitshn, a collaborative project, with forks of my own, so work keeps moving between my decisions. [The full story](/blog/t3-kitshn-en).",
         },
         {
           title: "An app about to disappear",
@@ -216,15 +216,15 @@ export const ABOUT: Record<Lang, AboutCopy> = {
     },
     oss: {
       heading: "Open source",
-      lead: "I use both of these projects by Yarden Zamir every day, and contribute to them.",
+      lead: "Two collaborative projects I use every day and contribute to.",
       projects: [
         {
-          name: "Kitshn", href: "https://github.com/Yarden-zamir/kitshn", by: "by Yarden Zamir",
+          name: "Kitshn", href: "https://github.com/Yarden-zamir/kitshn", by: "a collaborative project",
           body: "Deploys apps from GitHub to Cloudflare and to your own machines, with a map that decides who can open each app. I run my own instance and deploy my apps through it: an agent proposes a change to the map, I approve it, and the agent deploys.",
           points: ["About 28 commits in [my fork](https://github.com/TomCohenDev/kitshn):", "the map interface, with a flat look, light and dark modes and a demo map of a small company;", "the kitshn.com website: the home, enterprise, How it works and install pages;", "an explainer video."],
         },
         {
-          name: "tick3d", href: "https://github.com/Yarden-zamir/tick3d", by: "by Yarden Zamir",
+          name: "tick3d", href: "https://github.com/Yarden-zamir/tick3d", by: "a collaborative project",
           body: "3D tic-tac-toe on a 4×4×4 cube. What I added:",
           points: ["a neo-brutalist interface with 12 themes;", "turning the tower by dragging;", "real-time chat between players;", "an iOS app that's built and sent to testers automatically;", "tick3d Factory (in progress), which shows a repository as an animated 3D factory: imports are conveyor belts, HTTP calls are pneumatic tubes and deploys are trains."],
         },
@@ -347,7 +347,7 @@ export const ABOUT: Record<Lang, AboutCopy> = {
         {
           title: "ההעברות בין השלבים לקחו את הזמן",
           problem: "סוכנים ידעו לכתוב קוד שימושי, ועדיין השקעתי הרבה קשב כדי להביא את העבודה לשלב הבא: לאיזה פרויקט היא שייכת, מה כבר נוסה, אם הבדיקות הסתיימו, ואיך ממשיכים ממכשיר אחר.",
-          action: "בניתי את הסביבה שלי על T3 Code ועל Kitshn של ירדן זמיר, עם פורקים משלי, כך שהעבודה ממשיכה להתקדם בין ההחלטות שלי. [הסיפור המלא](/blog/t3-kitshn).",
+          action: "בניתי את הסביבה שלי על T3 Code ועל Kitshn, פרויקט שיתופי, עם פורקים משלי, כך שהעבודה ממשיכה להתקדם בין ההחלטות שלי. [הסיפור המלא](/blog/t3-kitshn).",
         },
         {
           title: "אפליקציה שעמדה להיעלם",
@@ -413,15 +413,15 @@ export const ABOUT: Record<Lang, AboutCopy> = {
     },
     oss: {
       heading: "קוד פתוח",
-      lead: "אני משתמש בשני הפרויקטים האלה של ירדן זמיר כל יום, ותורם להם.",
+      lead: "שני פרויקטים שיתופיים שאני משתמש בהם כל יום ותורם להם.",
       projects: [
         {
-          name: "Kitshn", href: "https://github.com/Yarden-zamir/kitshn", by: "של ירדן זמיר",
+          name: "Kitshn", href: "https://github.com/Yarden-zamir/kitshn", by: "פרויקט שיתופי",
           body: "פריסת אפליקציות מ־GitHub ל־Cloudflare ולמכונות שלך, עם מפה שקובעת מי יכול לפתוח כל אפליקציה. אני מריץ מופע משלי ופורס דרכו את האפליקציות שלי: סוכן מציע שינוי במפה, אני מאשר, והסוכן פורס.",
           points: ["כ־28 commits [בפורק שלי](https://github.com/TomCohenDev/kitshn):", "ממשק המפה, עם מראה שטוח, מצב בהיר וכהה ומפת דמו של חברה קטנה;", "האתר kitshn.com: עמוד הבית ועמודי enterprise, How it works ו־install;", "סרטון הסבר."],
         },
         {
-          name: "tick3d", href: "https://github.com/Yarden-zamir/tick3d", by: "של ירדן זמיר",
+          name: "tick3d", href: "https://github.com/Yarden-zamir/tick3d", by: "פרויקט שיתופי",
           body: "איקס־עיגול תלת־ממדי על קובייה של 4×4×4. מה שהוספתי:",
           points: ["ממשק נאו־ברוטליסטי עם 12 ערכות נושא;", "סיבוב המגדל בגרירה;", "צ'אט בזמן אמת בין שחקנים;", "אפליקציית iOS שנבנית ונשלחת לבודקים אוטומטית;", "tick3d Factory (בפיתוח), שמציג ריפו כמפעל תלת־ממדי מונפש: imports הם מסועים, קריאות HTTP הן צינורות ודיפלוי הוא רכבת."],
         },
