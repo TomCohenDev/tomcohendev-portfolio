@@ -7,6 +7,8 @@ const HOME_SECTIONS = [
   { href: "/#courses", label: "קורסים ומפגשים" },
   { href: "/courses/business-automation", label: "קורס אוטומציה עסקית עם AI" },
   { href: "/#about", label: "קצת עליי" },
+  { href: "/about", label: "אודות: מוצרים, סוכני AI, CI/CD וקוד פתוח" },
+  { href: "/about-en", label: "About (English)" },
   { href: "/#contact", label: "יצירת קשר" },
 ];
 

@@ -122,6 +122,10 @@ export const HomeAbout = () => (
           לחלקים ברורים, לחבר בין התאוריה לעבודה בשטח ולעזור לאנשים להגיע לשלב
           שבו הם יכולים לבנות ולפתור בעצמם.
         </p>
+        <a href="/about" className="a-btn a-btn-ghost group mt-8">
+          לקריאה נוספת עליי
+          <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" aria-hidden="true" />
+        </a>
       </div>
       {/* The doodle stands on the section's bottom edge, as on the landing pages. */}
       <div className="flex flex-col items-center gap-4 lg:self-end">

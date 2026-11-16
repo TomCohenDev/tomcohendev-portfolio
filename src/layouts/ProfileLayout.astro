@@ -1,0 +1,66 @@
+---
+/**
+ * Layout of the about pages (/about in Hebrew, /about-en in English): the site header and footer around a long
+ * Markdown page, with the article typography of the blog. The page's frontmatter gives the title, description,
+ * language and the path of the other language.
+ */
+import HebrewLayout from "./HebrewLayout.astro";
+import { AutomationHeader, AutomationFooter } from "../components/automation/Chrome";
+import { graph, person } from "../lib/structuredData";
+import "../components/automation/automation.css";
+import "../components/content/content.css";
+
+interface Props {
+  frontmatter: { title: string; heading: string; description: string; lang: "he" | "en"; path: string; translation: string };
+}
+const { title, heading, description, lang, path, translation } = Astro.props.frontmatter;
+const english = lang === "en";
+const jsonLd = graph(person, {
+  "@type": "ProfilePage",
+  "@id": `https://tomcohen.dev${path}`,
+  url: `https://tomcohen.dev${path}`,
+  name: title,
+  description,
+  inLanguage: lang,
+  mainEntity: { "@id": "https://tomcohen.dev/#tom" },
+});
+---
+
+<HebrewLayout lang={lang} title={title} description={description} path={path} jsonLd={jsonLd} ogImageAlt={english ? "Tom Cohen" : "תום כהן"}>
+  <Fragment slot="head">
+    <link rel="alternate" hreflang={lang} href={`https://tomcohen.dev${path}`} />
+    <link rel="alternate" hreflang={english ? "he" : "en"} href={`https://tomcohen.dev${translation}`} />
+  </Fragment>
+  <div class="automation-page min-h-screen" lang={lang} dir={english ? "ltr" : "rtl"}>
+    <div lang="he" dir="rtl"><AutomationHeader onLanding={false} site="home" client:load /></div>
+    <main id="main">
+      <article>
+        <header class="a-grid-bg border-b border-[var(--a-line)]">
+          <div class="mx-auto max-w-4xl px-5 pb-12 pt-10 md:px-8 md:pt-14">
+            <nav aria-label={english ? "Page navigation" : "ניווט בעמוד"} class="flex flex-wrap justify-between gap-4 text-[15px] text-[var(--a-accent)]">
+              <a href="/">{english ? "Home (Hebrew)" : "לעמוד הבית"}</a>
+              <a href={translation} lang={english ? "he" : "en"} hreflang={english ? "he" : "en"} class="inline-flex items-center gap-2">
+                <span class="rounded-full border border-[var(--a-accent)] px-2.5 py-0.5 text-[13px] font-semibold leading-none tracking-wide" aria-hidden="true">{english ? "HE" : "EN"}</span>
+                {english ? "לקריאה בעברית" : "Read in English"}
+              </a>
+            </nav>
+            <h1 class="mt-8 text-[clamp(2rem,5vw,3.2rem)] font-medium leading-[1.15] text-[var(--a-ink)]">{heading}</h1>
+            <p class="mt-5 text-xl leading-relaxed text-[var(--a-muted)]">{description}</p>
+          </div>
+        </header>
+        <div class="c-prose c-published c-profile mx-auto max-w-4xl px-5 pb-16 pt-12 md:px-8"><slot /></div>
+      </article>
+    </main>
+    <div lang="he" dir="rtl"><AutomationFooter site="home" /></div>
+  </div>
+</HebrewLayout>
+
+<style is:global>
+  .c-published a { color: var(--a-accent); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .c-published strong { color: var(--a-ink); }
+  .c-published ol { list-style: decimal; padding-inline-start: 1.5rem; }
+  .c-published ol li { padding-inline-start: 0.3rem; }
+  .automation-page .c-prose.c-published ol li::before { content: none; }
+  .c-profile h3 { margin-top: 2rem; }
+  .c-profile code { overflow-wrap: anywhere; }
+</style>
