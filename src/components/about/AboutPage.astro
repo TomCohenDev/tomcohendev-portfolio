@@ -59,7 +59,7 @@ const stepTone = (i: number) => (i === 3 ? "hum" : i >= 4 ? "ok" : "acc");
             <div>
               <p class="ab-hello">{t.hero.hello}</p>
               <h1>{t.meta.heading}</h1>
-              <p class="ab-intro">{t.hero.intro}</p>
+              {t.hero.intro.map((p) => <p class="ab-intro">{p}</p>)}
               <div class="ab-actions">
                 <a class="a-btn a-btn-solid" href="#contact">{t.hero.contact}</a>
                 <a class="a-btn a-btn-ghost" href={CONTACT_LINKS.github} rel="noopener">GitHub</a>
@@ -89,8 +89,8 @@ const stepTone = (i: number) => (i === 3 ? "hum" : i >= 4 ? "ok" : "acc");
               <h3><a href={featured.href} rel="noopener">{featured.name}</a></h3>
               <p class="ab-summary">{featured.summary}</p>
               <ul class="ab-points">{featured.points.map((p) => <li set:html={md(p)} />)}</ul>
-              {featured.stack && (
-                <ul class="ab-chips" aria-label={t.products.stackLabel}>{featured.stack.map((s) => <li>{s}</li>)}</ul>
+              {featured.links && (
+                <p class="ab-links">{featured.links.map((l) => <a href={l.href} rel={l.href.startsWith("http") ? "noopener" : undefined}>{l.label}</a>)}</p>
               )}
             </div>
           </article>
@@ -112,8 +112,24 @@ const stepTone = (i: number) => (i === 3 ? "hum" : i >= 4 ? "ok" : "acc");
         </div>
       </section>
 
+      <!-- Problems along the way -->
+      <section id="journey" class="ab-section ab-band">
+        <div class="ab-wrap">
+          <div class="ab-head"><h2>{t.journey.heading}</h2><p>{t.journey.lead}</p></div>
+          <div class="ab-journey">
+            {t.journey.items.map((j) => (
+              <article class="ab-story">
+                <h3>{j.title}</h3>
+                <p set:html={md(j.problem)} />
+                <p class="ab-story-action"><strong>{t.journey.actionLabel}</strong> <span set:html={md(j.action)} /></p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <!-- Agents -->
-      <section id="agents" class="ab-section ab-band">
+      <section id="agents" class="ab-section">
         <div class="ab-wrap">
           <div class="ab-head"><h2>{t.agents.heading}</h2><p set:html={md(t.agents.lead)} /></div>
           <div class="ab-agents-grid">
@@ -126,37 +142,11 @@ const stepTone = (i: number) => (i === 3 ? "hum" : i >= 4 ? "ok" : "acc");
               <ul>{t.agents.rules.map((r) => <li>{r}</li>)}</ul>
             </aside>
           </div>
-
-          <h3 class="ab-h3">{t.agents.toolsHeading}</h3>
-          <div class="ab-tools">
-            {t.agents.tools.map((tool) => (
-              <div class="ab-tool">
-                <h4>{tool.name}</h4>
-                <p set:html={md(tool.body)} />
-                {tool.sub && <ul class="ab-points">{tool.sub.map((s) => <li>{s}</li>)}</ul>}
-              </div>
-            ))}
-          </div>
-
-          <figure class="ab-days">
-            <figcaption><h3 class="ab-h3">{t.agents.timeHeading}</h3><p>{t.agents.timeNote}</p></figcaption>
-            <ul>
-              {t.agents.days.map((d) => (
-                <li>
-                  <span class="ab-days-label">{d.label}</span>
-                  <span class="ab-days-bar" role="img" aria-label={t.agents.dayUnit(d.days)}>
-                    {Array.from({ length: d.days }, () => <i />)}
-                  </span>
-                  <span class="ab-days-count">{t.agents.dayUnit(d.days)}{d.extra && <em dir="ltr">{d.extra}</em>}</span>
-                </li>
-              ))}
-            </ul>
-          </figure>
         </div>
       </section>
 
       <!-- CI/CD -->
-      <section id="cicd" class="ab-section">
+      <section id="cicd" class="ab-section ab-band">
         <div class="ab-wrap">
           <div class="ab-head"><h2>{t.cicd.heading}</h2><p>{t.cicd.lead}</p></div>
           <figure class="ab-pipeline">
@@ -194,7 +184,7 @@ const stepTone = (i: number) => (i === 3 ? "hum" : i >= 4 ? "ok" : "acc");
       </section>
 
       <!-- Open source -->
-      <section id="open-source" class="ab-section ab-band">
+      <section id="open-source" class="ab-section">
         <div class="ab-wrap">
           <div class="ab-head"><h2>{t.oss.heading}</h2><p>{t.oss.lead}</p></div>
           <div class="ab-oss">
@@ -214,7 +204,7 @@ const stepTone = (i: number) => (i === 3 ? "hum" : i >= 4 ? "ok" : "acc");
       </section>
 
       <!-- Clients -->
-      <section id="clients" class="ab-section">
+      <section id="clients" class="ab-section ab-band">
         <div class="ab-wrap">
           <div class="ab-head"><h2>{t.clients.heading}</h2><p>{t.clients.lead}</p></div>
           <div class="ab-shots">
@@ -237,6 +227,21 @@ const stepTone = (i: number) => (i === 3 ? "hum" : i >= 4 ? "ok" : "acc");
         </div>
       </section>
 
+      <!-- Goals -->
+      <section id="goals" class="ab-section">
+        <div class="ab-wrap">
+          <div class="ab-head"><h2>{t.goals.heading}</h2><p>{t.goals.lead}</p></div>
+          <div class="ab-goals">
+            {t.goals.items.map((g, i) => (
+              <div class={`ab-principle ab-tone-${["acc", "hum", "ok"][i % 3]}`}>
+                <h3>{g.title}</h3>
+                <p>{g.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <!-- Teaching and tools -->
       <section id="tools" class="ab-section ab-band">
         <div class="ab-wrap ab-tools-wrap">
@@ -248,7 +253,7 @@ const stepTone = (i: number) => (i === 3 ? "hum" : i >= 4 ? "ok" : "acc");
             <h2>{t.tools.heading}</h2>
             <dl class="ab-stack">
               {t.tools.groups.map((g) => (
-                <div><dt>{g.name}</dt><dd><ul class="ab-chips">{g.items.map((i) => <li>{i}</li>)}</ul></dd></div>
+                <div><dt>{g.name}</dt><dd><ul class="ab-chips">{g.items.map((i) => <li dir="auto">{i}</li>)}</ul></dd></div>
               ))}
             </dl>
           </div>
