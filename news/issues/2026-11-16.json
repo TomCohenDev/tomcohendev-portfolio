@@ -1,0 +1,222 @@
+{
+  "date": "2026-11-16",
+  "stories": [
+    {
+      "id": "checkpoint-root-zero-day-hotfix",
+      "topic": "security",
+      "headline": "Check Point פרסמה תיקון חירום לפרצה שדרכה התוקפים השיגו הרשאות root בשערים",
+      "summary": "Check Point הוציאה תיקונים דחופים לפרצה CVE-2026-123039 במערכת Gaia, שמנוצלת מאז סוף אוקטובר נגד כמה עשרות לקוחות. לפי החברה, התוקפים נכנסו קודם דרך פורטל Mobile Access בעזרת פרצות PHP2Shell, ואז השתמשו בפרצה החדשה כדי לקבל שליטה מלאה בשער ולהתקין דלתות אחוריות.",
+      "forBusiness": "אם יש לכם חומת אש או שער של Check Point, בקשו מאיש ה־IT או מהספק להתקין את התיקון עכשיו ולבדוק סימני חדירה לפי הרשימה שהחברה פרסמה. מי שלא יכול להתקין מיד, החברה ממליצה לעצור את התהליך dynamic_server כפתרון זמני.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/"
+      },
+      "image": {
+        "url": "https://www.bleepstatic.com/content/hl-images/2026/09/18/Check-Point-headpic.jpg",
+        "alt": "הלוגו של Check Point על רקע ספרות בינאריות אדומות."
+      },
+      "continues": {
+        "date": "2026-11-14",
+        "id": "checkpoint-php2shell-israel",
+        "headline": "תוקפים פרצו לשערי Check Point לא מעודכנים בארגונים בישראל, ובחלקם מחקו שרתים"
+      }
+    },
+    {
+      "id": "fbi-artex-ai-attacks",
+      "topic": "security",
+      "headline": "ה־FBI מזהיר: כלי פריצה מבוסס AI בשם ARTEX מאיץ תקיפות נגד ארגונים בכל העולם",
+      "summary": "לפי ה־FBI, ARTEX הוא כלי בקוד פתוח שמפעיל סוכני AI על גבי מודלים כמו Claude ו־GPT כדי לסרוק, לחדור ולגנוב מידע כמעט בלי מעורבות אדם, ובחלק מהתקיפות עברו פחות משלוש שעות עד להרשאות מנהל. הסוכנות מציינת שהכלי טוב במיוחד במציאת מערכות שנשכחו, כמו פורטלים לשותפים, אפליקציות לעובדים וחיבורים לצד שלישי.",
+      "forBusiness": "עברו על המערכות שלכם שפתוחות לאינטרנט ועל אפליקציות צד שלישי שקיבלו הרשאות לחשבון Microsoft 365 או Google, והסירו את מה שלא בשימוש. ה־FBI ממליץ גם להגביל גישה לממשקי הניהול בענן ולעקוב אחרי שינויי סיסמאות והרשאות לא צפויים.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks/"
+      },
+      "image": {
+        "url": "https://www.bleepstatic.com/content/hl-images/2025/10/23/AI-2.jpg",
+        "alt": "איור של פנים דיגיטליות עשויות ספרות בינאריות אדומות."
+      }
+    },
+    {
+      "id": "cursor-fireworks-key-breach",
+      "topic": "security",
+      "headline": "Cursor: מפתח גישה שנגנב מ־Fireworks AI הוביל להפצת תוסף Claude Code עם דלת אחורית",
+      "summary": "Cursor מסרה שתוקף השיג מפתח שהחברה נתנה לספק ה־AI Fireworks, העתיק נתוני שימוש שכללו פרטי גישה של פחות מ־0.01% מהלקוחות, ובעזרתם הגיע למערכות פנימיות. ב־29 באוקטובר הוא הציב גרסאות 2.1.312 ו־2.1.313 של התוסף בחנות התוספים, ועד 5,000 משתמשים עלולים היו לקבל אותן במשך כ־11 שעות.",
+      "forBusiness": "זה כבר הארגון הרביעי שנפגע דרך הפריצה ל־Fireworks, אחרי Notion ו־Uber. כדאי לבדוק לאילו ספקי AI אתם מעבירים מידע ומפתחות, ולוודא שאין סיסמאות או מפתחות API בתוך שיחות ונתונים שאתם משתפים איתם.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/stolen-fireworks-ai-key-led-to-cursor.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg16ACawbG7rP_kT-8Boo4xdTje3BeTWyFSnNXwHhr5cvy2-1X3Ljhrc1IuZlseWd55tN8E1yjQ9ldhTnjWTU-GJBpX_Zen36YiLQGsRSRAoteqHyxx7mn_w0QgLfMKDLItA4p_jpHajucbglLnCR_zWBY_t82YvFkLa9dQFBfjP1BrTlrNdYufsGMSZiGn/s1600/cursor.jpg",
+        "alt": "איור של עורך הקוד Cursor עם מפתח חשוף ועדכון זדוני של התוסף Claude Code."
+      },
+      "continues": {
+        "date": "2026-11-02",
+        "id": "cursor-marketplace-claude-code-trojan",
+        "headline": "גרסה זדונית של התוסף Claude Code הופצה דרך חנות התוספים של Cursor"
+      }
+    },
+    {
+      "id": "italy-fines-meta-gallery-access",
+      "topic": "mobile",
+      "headline": "איטליה קנסה את Meta ב־805 מיליון יורו על גישה לגלריית התמונות ב־Facebook ל־Android",
+      "summary": "רשות הגנת הפרטיות באיטליה קבעה שתכונה ב־Facebook ל־Android, שמציעה לפרסם תמונות מהגלריה, הופעלה כברירת מחדל וקראה תמונות ונתונים בלי הסכמה מפורשת. Meta צריכה תוך 60 יום לכבות את התכונה כברירת מחדל ולבקש הסכמה נפרדת, והיא הודיעה שתערער.",
+      "forBusiness": "מי שמפתח אפליקציה לקהל באירופה צריך לבקש גישה לתמונות רק לתכונה שצריכה אותה, ולהסביר בבירור למה. הרשות קבעה שהרשאה אחת כללית לכמה מטרות שונות לא נחשבת הסכמה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/italy-fines-meta-805-million-over.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdTCjpbsG3Dp62JM1KZqfSvZpuBnxwaCxXsplW3dAt2b4Ym0KAWPfxkHf4DT-02VK3jJESLmgasdE6D36qGegWu7dk9YSLN4DZxRVsgrM9lIEXXHUvQ0VzaZ1_gFqpjtA4cP3rlt82g5WnK2sXNZHJd5F_rEk4VSTGnMKOuXziSM1R85Vqhway3lajwTA/s1600/facebook-fine.jpg",
+        "alt": "איור של הלוגו של Facebook עם עדשת מצלמה מעל תמונות מגלריה בטלפון."
+      }
+    },
+    {
+      "id": "apple-health-ai-study",
+      "topic": "ai",
+      "headline": "אפל משיקה אפליקציית מחקר שבודקת איך אנשים משתמשים ב־AI לשאלות בריאות",
+      "summary": "אפל ו־OpenEvidence משיקות אפליקציה שבה משתתפים שואלים שאלות רפואיות, מקבלים תשובות פשוטות עם קישורים למקורות רפואיים, ומדרגים אותן לפי דיוק ורלוונטיות. המחקר פתוח בארה\"ב בלבד לבני 21 ומעלה עם iPhone 15 Pro ו־iOS 26 ומעלה, ואפל מחפשת עד 200,000 משתתפים.",
+      "forBusiness": "אין כאן משהו לעשות בישראל כרגע. למי שבונה שירות AI בתחום רגיש, שווה לשים לב לשיטה: תשובות עם מקורות, דירוג של המשתמשים, והתחייבות שהמידע לא ישמש לאימון מודלים.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1033355/apples-new-study-looks-to-improve-the-effectiveness-of-ai-health-tools"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/applestudy1b.jpg?quality=90&strip=all&crop=0%2C10.740836125969%2C100%2C78.518327748063&w=1200",
+        "alt": "שני מסכים של אפליקציית המחקר של אפל: מסך פתיחה ומסך שאלה על בריאות הלב."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "windows-activation-failures",
+      "topic": "security",
+      "text": "מיקרוסופט מאשרת: עדכוני האבטחה של נובמבר גורמים לכשלים בהפעלת Windows עם שגיאה 0x80041008 בארגונים שמשתמשים בפקודות SLMGR, ותיקון יגיע בימים הקרובים.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-windows-activation-failures-after-november-updates/"
+      },
+      "image": {
+        "url": "https://www.bleepstatic.com/content/hl-images/2026/11/12/0_Windows.jpg",
+        "alt": "הלוגו של Windows."
+      }
+    },
+    {
+      "id": "windows-printing-november-bug",
+      "topic": "security",
+      "text": "עדכוני Windows של נובמבר עלולים לשבור הדפסה של מסמכים עם תמונות ברוחב או גובה אפס, בעיקר מסמכי Word, כך לפי מיקרוסופט.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-says-november-security-updates-cause-printing-issues/"
+      },
+      "image": {
+        "url": "https://www.bleepstatic.com/content/hl-images/2026/10/28/Microsoft.jpg",
+        "alt": "הלוגו של Microsoft."
+      }
+    },
+    {
+      "id": "tsmc-employee-data-cloud-provider",
+      "topic": "security",
+      "text": "TSMC אישרה שמידע אישי של עובדים בהווה ובעבר דלף לרשת, ושהמידע תואם נתונים שנשמרו אצל ספק ענן שהחברה עובדת איתו.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/tsmc-employee-data-breach-linked-to-cloud-provider/"
+      },
+      "image": {
+        "url": "https://www.bleepstatic.com/content/hl-images/2026/11/13/TSMC.jpg",
+        "alt": "הלוגו של TSMC."
+      }
+    },
+    {
+      "id": "datasette-0-65-6-fix",
+      "topic": "security",
+      "text": "Datasette 0.65.6 מתקנת פרצה שאפשרה להוריד קובץ מסד נתונים שלם גם למי שנחסמה לו הגישה, כשהכתובת שלו שונה מהשם שלו.",
+      "source": {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/Nov/15/datasette-2/"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "citation-rocket",
+      "name": "Citation Rocket",
+      "text": "בודק אם ChatGPT, Claude, Gemini, Perplexity ו־Grok ממליצים על המותג שלכם או על מתחרה, ומציע מה לשנות באתר.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/citation-rocket"
+      },
+      "icon": "https://cdn.betalist.com/q60sn0qmqyoacuxf0b0p28dro03m"
+    },
+    {
+      "id": "scrape-ly",
+      "name": "Scrape.ly",
+      "text": "כלים מוכנים לאיסוף נתונים מ־Google Maps, Amazon, LinkedIn ואתרי ביקורות, עם תוצאות ב־JSON, CSV או Excel.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/scrape-ly"
+      },
+      "icon": "https://cdn.betalist.com/ijq53x6we763ocain1kr3awfb05w"
+    },
+    {
+      "id": "comcent",
+      "name": "Comcent",
+      "text": "תיבה אחת לשיחות, SMS, צ׳אט באתר ומייל, עם בוט AI שעונה ראשון ומעביר לנציג, ותמלול וסיכום לכל שיחה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/comcent"
+      },
+      "icon": "https://cdn.betalist.com/63rp3les6a7v320cnsqhpk3foqlb"
+    },
+    {
+      "id": "convertlyft",
+      "name": "Convertlyft",
+      "text": "ניתוח תנועה ו־SEO לאתר עם משפכים, הקלטות ביקור ומפות חום, ורשימת שינויים קצרה שמסבירה למה מבקרים לא קונים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/convertlyft"
+      },
+      "icon": "https://cdn.betalist.com/lnzoztc1uubhb84hnk3u4xctbeuv"
+    },
+    {
+      "id": "dojoto",
+      "name": "Dojoto",
+      "text": "אפליקציה למאמני אומנויות לחימה לרישום נוכחות ותשלומים מהטלפון, עם תצוגה של מי עוד חייב.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/dojoto"
+      },
+      "icon": "https://cdn.betalist.com/q7re6fabilao2kw1m0gzwaqes7qv"
+    },
+    {
+      "id": "emailyst",
+      "name": "Emailyst",
+      "text": "אפליקציה ל־Mac שמוציאה מתיבת הדואר ב־Apple Mail פרסומות, ניוזלטרים והודעות מזויפות, וממיינת אותם לקבוצות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/emailyst"
+      },
+      "icon": "https://cdn.betalist.com/5bbthesnyb666i1s1xy2d95ugveu"
+    },
+    {
+      "id": "statelicense",
+      "name": "StateLicense",
+      "text": "API לאימות רישיונות של קבלנים בארה\"ב מול רשומות ציבוריות, לפלטפורמות ושירותי בית.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/statelicense"
+      },
+      "icon": "https://cdn.betalist.com/4ny1p8ldx0m7j0r7puwx23mg8102"
+    },
+    {
+      "id": "offiai",
+      "name": "OffiAI",
+      "text": "אפליקציה חינמית ל־Mac שמציגה כל סוכן AI, כמו Claude Code ו־Codex, כשולחן במשרד תלת־ממדי ומראה מי עובד ומי מחכה לתשובה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/offiai"
+      },
+      "icon": "https://cdn.betalist.com/pr29y0k4gy3kgenozeidkylnv164"
+    }
+  ]
+}
