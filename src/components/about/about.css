@@ -47,15 +47,7 @@
 .ab .ab-tone-hum { --tone: var(--a-human); }
 .ab .ab-tone-ok { --tone: var(--a-ok); }
 
-/* ---------- sticky section menu */
-.ab .ab-subnav { position: sticky; top: 64px; z-index: 30; background: rgba(29, 32, 31, 0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--a-line); }
-.ab .ab-subnav ul { display: flex; gap: 0.35rem; max-width: 72rem; margin-inline: auto; padding: 0.6rem 1.25rem; overflow-x: auto; scrollbar-width: none; }
-.ab .ab-subnav ul::-webkit-scrollbar { display: none; }
-@media (min-width: 768px) { .ab .ab-subnav ul { padding-inline: 2rem; } }
-.ab .ab-subnav a { display: block; white-space: nowrap; padding: 0.35rem 0.85rem; border-radius: 999px; font-size: 15px; color: var(--a-muted); text-decoration: none; transition: background-color 0.2s, color 0.2s; }
-.ab .ab-subnav a:hover { color: var(--a-ink); background: rgba(224, 208, 193, 0.06); }
-.ab .ab-subnav a[aria-current] { color: #1d201f; background: var(--a-accent); }
-.ab .ab-section { scroll-margin-top: 120px; padding-block: 4.5rem; }
+.ab .ab-section { scroll-margin-top: 80px; padding-block: 4.5rem; }
 .ab .ab-band { background: var(--ab-band); border-block: 1px solid var(--a-line); }
 
 /* ---------- shared blocks */
