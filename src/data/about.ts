@@ -1,6 +1,7 @@
 /**
- * Content of the about pages (/about in Hebrew, /about-en in English). Strings may use two bits of inline markup:
- * [text](url) for links and **text** for emphasis. AboutPage.astro renders them; nothing else is interpreted.
+ * Content of the about pages (/about in Hebrew, /about-en in English). Strings may use three bits of inline
+ * markup: [text](url) for links, **text** for emphasis and `code`. AboutPage.astro renders them; nothing else is
+ * interpreted. Everything here is sourced from Tom's own material (this site, his blog posts and his repos).
  */
 export type Lang = "he" | "en";
 
@@ -12,7 +13,6 @@ export interface Product {
   sketch: SketchKey;
   summary: string;
   points: string[];
-  stack?: string[];
   links?: { label: string; href: string }[];
 }
 
@@ -29,26 +29,14 @@ export interface AboutCopy {
   nav: { home: string; homeHref: string; other: string };
   hero: {
     hello: string;
-    intro: string;
+    intro: string[];
     doodleAlt: string;
     principles: { title: string; body: string }[];
     contact: string;
   };
-  products: { heading: string; lead: string; items: Product[]; stackLabel: string };
-  agents: {
-    heading: string;
-    lead: string;
-    dayHeading: string;
-    day: string[];
-    toolsHeading: string;
-    tools: { name: string; body: string; sub?: string[] }[];
-    timeHeading: string;
-    timeNote: string;
-    days: { label: string; days: number; extra?: string }[];
-    dayUnit: (n: number) => string;
-    rulesHeading: string;
-    rules: string[];
-  };
+  products: { heading: string; lead: string; items: Product[] };
+  journey: { heading: string; lead: string; actionLabel: string; items: { title: string; problem: string; action: string }[] };
+  agents: { heading: string; lead: string; dayHeading: string; day: string[]; rulesHeading: string; rules: string[] };
   cicd: {
     heading: string;
     lead: string;
@@ -65,6 +53,7 @@ export interface AboutCopy {
     more: string[];
   };
   clients: { heading: string; lead: string; featured: Client[]; others: Client[] };
+  goals: { heading: string; lead: string; items: { title: string; body: string }[] };
   teaching: { heading: string; body: string };
   tools: { heading: string; groups: { name: string; items: string[] }[] };
   cta: { heading: string; body: string; email: string; linkedin: string; github: string };
@@ -86,176 +75,190 @@ const TOOL_GROUPS = (l: Record<string, string>) => [
   { name: l.infra, items: ["Docker", "GitHub Actions", "GHCR", "Cloudflare (Workers, Pages, D1, Access, Tunnel)", "nginx", "Kitshn", "T3 Code"] },
 ];
 
-const MATHBOOK_STACK = ["React", "TypeScript", "Excalidraw fork", "Pyodide + SymPy", "Bun + Hono", "Gemini", "MyScript + OCR", "Supabase", "Lemon Squeezy"];
-
 export const ABOUT: Record<Lang, AboutCopy> = {
   en: {
     meta: {
       title: "About | Tom Cohen, full-stack developer, AI and automation",
-      heading: "I design, build and ship complete software products: mobile apps, web platforms, back ends and AI systems.",
-      description: "Tom Cohen, full-stack developer: the products I have built, how I develop with AI agents, the CI/CD pipelines I run for mobile, web and servers, and my open-source work.",
+      heading: "I've spent five years taking products from an idea to something people actually use.",
+      description: "Tom Cohen, full-stack developer, founder and lecturer: what I've built, the problems I ran into along the way, how I work today and where I'm heading.",
       path: "/about-en",
       translation: "/about",
     },
     nav: { home: "Home (Hebrew)", homeHref: "/", other: "לקריאה בעברית" },
     hero: {
       hello: "Tom Cohen, full-stack developer",
-      intro: "Founder and lecturer with five years of end-to-end product development. I take products from the initial requirements to production, the App Store and Google Play, and stay on to maintain and extend them. I develop with a team of AI agents and automated release pipelines, which lets me deliver complete, tested products quickly.",
+      intro: [
+        "I'm a developer, founder and lecturer. Over five years I've built iPhone and Android apps, web systems, back ends, automation and AI systems, for private clients, businesses and startups, and as independent products of my own.",
+        "Building my own products taught me to think about everything at once: what the user needs, how the interface should feel, how the system works, and what it will take to keep developing and maintaining it. That's the approach I bring to every project.",
+      ],
       doodleAlt: "Illustration of Tom Cohen waving",
       principles: [
-        { title: "Development with AI agents", body: "I plan the work, distribute it across specialised agents, review their output and own every release decision. With this setup, a complete working product can be built in one to two days." },
-        { title: "Automated, verified releases", body: "Every project ships through CI/CD: merging is releasing, every change gets a preview, and nothing reaches users before the automated checks pass." },
+        { title: "I work with AI agents as a team", body: "I plan the work, split it between agents, check what comes back and decide what ships. That's how a whole working product can now be built in a day or two." },
+        { title: "I ship through automated releases", body: "On every project, merging is releasing, every change gets a preview, and nothing reaches users before the checks pass." },
       ],
       contact: "Contact me",
     },
     products: {
-      heading: "Products",
-      lead: "Five products I designed and built on my own, from architecture to launch.",
-      stackLabel: "Stack",
+      heading: "What I've built",
+      lead: "Products I designed and built on my own, from the first idea to launch.",
       items: [
         {
           name: "MathbookLM", href: "https://mathbooklm.com", sketch: "mathbook",
-          summary: "A handwriting-based math notebook. Users write on an infinite canvas and select a region; the system recognises the handwriting, solves or verifies it with SymPy running in the browser, and writes the result back onto the canvas.",
-          points: ["Reliable results: the language model handles reasoning and orchestration, while all arithmetic is computed deterministically.", "Interactive simulations generated by the model.", "A paid subscription tier and a pilot program for tutors."],
-          stack: MATHBOOK_STACK,
+          summary: "A math notebook that works with handwriting. You write on an infinite canvas, select a region, and it recognises what you wrote, solves or checks it in the browser, and writes the result back onto the canvas.",
+          points: ["To keep the results trustworthy, the language model only reasons and orchestrates; the arithmetic itself is always computed deterministically.", "I added interactive simulations that the model builds on the fly.", "It has a paid tier, and I'm running a pilot program with tutors."],
           links: [{ label: "mathbooklm.com", href: "https://mathbooklm.com" }],
         },
         {
           name: "Gomlin Jobs", sketch: "gomlin",
-          summary: "A swipe-to-apply job search app, available on the App Store and Google Play. I designed and built the entire system on my own.",
-          points: ["A Flutter mobile app backed by a FastAPI server.", "Scrapers that collect listings from about 46 sources and classify each one with AI.", "Automated applications to common applicant tracking systems, using Playwright.", "An email relay that forwards recruiter replies to each user's own inbox.", "Per-source capability flags in Supabase, so application sources can be enabled or disabled without an app release."],
+          summary: "A swipe-to-apply job app on the App Store and Google Play. I built the whole system alone: the mobile app, the server, the job collection and the application automation.",
+          points: ["Jobs are collected from about 46 sources, and every listing is classified with AI.", "Applications are submitted automatically to common applicant tracking systems.", "Recruiter replies are relayed to each user's real inbox.", "I can switch any application source on or off without releasing a new version of the app."],
           links: [{ label: "App Store", href: "https://apps.apple.com/us/app/gomlin-jobs/id6744745540" }, { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.gomlinjobs.gomlin" }],
         },
         {
           name: "Locket AI", sketch: "locket",
-          summary: "A mobile AI app that runs entirely on the device, with no cloud dependency.",
-          points: ["Chat powered by Gemma.", "Image understanding with FastVLM, through a Kotlin bridge to LiteRT-LM on Android and Swift with MLX on iOS.", "Image generation with stable-diffusion.cpp, through C++ and FFI on Vulkan.", "A memory-aware orchestration layer that swaps models, so the app runs on low-end devices."],
+          summary: "An AI app that runs entirely on the phone, with no cloud at all: chat, image understanding and image generation.",
+          points: ["To make it run on low-end phones, I built a layer that swaps models in and out to fit the available memory.", "I connected the models natively on each platform: Kotlin on Android, Swift on iPhone, and C++ for image generation."],
         },
         {
           name: "nykma", sketch: "nykma",
-          summary: "A local tool for producing ads and videos. An agent proposes a concept, builds the video in code with a rendering engine I wrote, and delivers MP4 files and copy for each platform.",
-          points: ["Nothing is published without my approval."],
-          links: [{ label: "Read the write-up", href: "/blog/nykma-en" }],
+          summary: "A local tool that turns a short brief into finished videos and post copy. An agent proposes an idea, builds the video in code with a render engine I wrote, and hands me files for each platform.",
+          points: ["It started as Helix, a much heavier creative studio with eight sub-agents.", "I compare prompt versions on 14 fixed briefs, judging cost and quality blind.", "Nothing is published without my approval."],
+          links: [{ label: "The story behind it", href: "/blog/nykma-en" }],
         },
         {
           name: "agents.tomcohen.dev", sketch: "agents",
-          summary: "A workflow automation platform in which AI agents act as workflow steps. Similar to n8n, except that workflows are edited by instructing an agent.",
-          points: ["Each workflow is stored as a folder of plain files.", "Code steps run at no cost; agent steps run as T3 Code sessions on my server, using the most cost-effective model for each step.", "Every external action requires my approval and is protected by an idempotency key and a daily limit."],
+          summary: "A workflow platform where AI agents are steps in the process. It works like n8n, but you change a workflow by asking an agent instead of editing it by hand.",
+          points: ["Each workflow is a folder of plain files.", "Code steps cost nothing, and agent steps run on my own server with the cheapest model that can do the job.", "Anything that reaches the outside world waits for my approval and has a daily limit."],
+        },
+      ],
+    },
+    journey: {
+      heading: "Problems I ran into",
+      lead: "Some of the harder lessons from the last few years, and what I did about them.",
+      actionLabel: "What I did",
+      items: [
+        {
+          title: "Nobody knew about my apps",
+          problem: "I'm a developer with no social media background, and posting stressed me out. I kept improving my products and putting off telling anyone about them.",
+          action: "I built nykma to get from finished work to a video and a caption I can actually publish. Since then I've been sharing my work far more reliably. [I wrote about it here](/blog/nykma-en).",
+        },
+        {
+          title: "More agents wasn't better",
+          problem: "My first attempt, Helix, was a creative studio with eight sub-agents, model routing and a spending gate. It grew into a heavy system.",
+          action: "I measured it against one agent with a short prompt and a set of reusable parts. The simpler setup won, so I rebuilt the tool that way as nykma and documented why.",
+        },
+        {
+          title: "The handoffs took the time",
+          problem: "Agents could write useful code, and I still spent a lot of attention getting the work to the next step: which project it belonged to, what had been tried, whether the tests had finished, how to continue from another device.",
+          action: "I built my setup on T3 Code and Yarden Zamir's Kitshn, with forks of my own, so work keeps moving between my decisions. [The full story](/blog/t3-kitshn-en).",
+        },
+        {
+          title: "An app about to disappear",
+          problem: "Yellow Candle, a Holocaust remembrance app for FJMC, was about to be removed from the app stores.",
+          action: "I updated it to current store requirements and kept it available. [The case study](/en/case-studies/yellow-candle).",
         },
       ],
     },
     agents: {
-      heading: "How I work with AI agents",
-      lead: "The quality of an agent's output depends on the environment it works in. I focus on two parts of that environment: the **harness**, meaning the files, tools, instructions and permissions an agent can use, and **orchestration**, meaning how work is divided, who reviews whom and what counts as finished. I cover this in more depth in [my article on T3 Code and Kitshn](/blog/t3-kitshn-en).",
-      dayHeading: "A typical workflow",
+      heading: "How I work today",
+      lead: "An agent can write good code, but most of the value comes from the environment around it: the files, tools, instructions and permissions it works with, and how the work is split, who reviews whom and what counts as done.",
+      dayHeading: "A typical piece of work",
       day: [
-        "A lead agent receives the goal and the constraints.",
-        "It delegates well-defined tasks to sub-agents for research, implementation and independent review. Each agent that changes code works in its own git worktree.",
-        "Results return to the lead agent, and disagreements between agents are resolved.",
-        "All work is verified against real behaviour: a diff, a test run or a reproducible result.",
-        "Waiting is automated: pull-request monitoring resumes the agent when CI results or review comments arrive.",
+        "A lead agent gets the outcome and the constraints from me.",
+        "It hands bounded tasks to other agents: research, implementation and an independent review. Each agent that touches code works in its own copy of the repository.",
+        "Findings come back, and disagreements between agents get resolved.",
+        "Everything is checked against real behaviour: a diff, a test run or a result I can reproduce.",
+        "When the work waits for CI or a review, it picks up again by itself as soon as the result arrives.",
       ],
-      toolsHeading: "Tooling I build and maintain",
-      tools: [
-        { name: "My T3 Code fork", body: "Continues a conversation from another machine even when the original machine is off, backs up conversations to a second machine, updates its Android app automatically, and supports voice dictation." },
-        { name: "Helix", body: "A creative production studio with eight sub-agents and model routing: Opus-class models for brand analysis, Sonnet-class for copy and scenes, Haiku-class for schema repair. It includes a spending gate, provenance for every asset, and an isolated renderer with no network access and no secrets." },
-        { name: "nykma, Helix's successor", body: "A measured comparison showed that a single agent with a short prompt and a library of reusable components outperformed the eight-agent pipeline, and the findings are documented. It includes prompt evaluations: 14 fixed briefs, frozen prompt versions and blind comparison of cost and quality." },
-        { name: "Agents inside products", body: "Running in production:", sub: ["a demo-site builder that captures each site on four devices and fixes the issues it finds;", "agents that write, publish and verify a news issue every morning;", "a marketing agent that prepares ads for approval."] },
-        { name: "MCP servers", body: "Give agents structured access to data: a [vulnerability registry](https://github.com/TomCohenDev/vulnerability-registry-mcp) and Gomlin's usage analytics." },
-      ],
-      timeHeading: "Delivery times",
-      timeNote: "Measured from the commit history. Each square represents one day.",
-      days: [
-        { label: "Lead-generation system with a dashboard", days: 1 },
-        { label: "Workflow automation platform", days: 1 },
-        { label: "Teaching site with tests and Google Classroom integration", days: 1 },
-        { label: "Scraping service with an API, a dashboard and backups, replacing a legacy n8n workflow", days: 2 },
-        { label: "Helix", days: 12, extra: "342 commits" },
-      ],
-      dayUnit: (n) => (n === 1 ? "1 day" : `${n} days`),
-      rulesHeading: "Operating principles",
+      rulesHeading: "Rules I don't bend",
       rules: [
-        "Any external action (a post, an email, a publication or a payment) requires human approval.",
-        "Credentials are never accessible to agents.",
-        "External content is treated as data, never as instructions.",
-        "Every action has a defined limit.",
-        "No task is complete until it has been verified.",
+        "Anything that leaves the system (a post, an email, a publication or a payment) waits for a human to approve it.",
+        "Agents never get access to credentials.",
+        "Text from the outside is data, never instructions.",
+        "Every action has a limit.",
+        "Nothing is done until it's verified.",
       ],
     },
     cicd: {
-      heading: "CI/CD: every merge is a release",
-      lead: "I design the release pipeline for every product I ship. Deployments are never manual, every change can be reviewed before it goes live, and a faulty change cannot reach users unnoticed.",
+      heading: "Releasing without the drama",
+      lead: "I design the release process of everything I ship. Nobody deploys by hand, every change can be seen before it goes live, and a broken change doesn't reach users quietly.",
       pipeline: ["push", "checks", "preview", "merge", "live", "verified"],
-      pipelineNote: "The same release flow on every project.",
+      pipelineNote: "The same flow on every project.",
       lanes: [
         {
           name: "Mobile",
           items: [
-            { title: "Gomlin on Codemagic", points: ["The staging branch publishes to TestFlight and Google Play Internal; the main branch publishes to the stores.", "Build numbers increment automatically, and signing keys come from CI secrets.", "Separate dev, staging and production flavors, with obfuscated store builds."] },
-            { title: "tick3d iOS on GitHub Actions", points: ["CI generates the Xcode project, archives and signs it with an App Store Connect key, and uploads it to TestFlight.", "Each build is distributed to external testers through the App Store Connect API. The script is idempotent, so a re-run never submits twice.", "Every pull request validates the iOS pipeline itself, so pipeline failures surface in review rather than on release day."] },
-            { title: "My T3 Code fork", points: ["CI builds a signed Android APK that updates itself.", "Nightly builds for the desktop apps."] },
+            { title: "Gomlin", points: ["The staging build goes to testers and the main build goes to the stores, with no manual steps.", "Build numbers and signing are handled by the pipeline, with separate development, staging and production versions."] },
+            { title: "tick3d for iPhone", points: ["Every build reaches external testers automatically, and a re-run never submits twice.", "Every pull request also checks the release pipeline itself, so a broken pipeline shows up in review instead of on release day."] },
+            { title: "My T3 Code fork", points: ["The Android app is built, signed and updated automatically, and the desktop apps get nightly builds."] },
           ],
         },
         {
           name: "Web",
           items: [
-            { title: "Cloudflare Workers and Pages", points: ["Used for most of my sites: every push to main is deployed to production.", "Every pull request gets its own preview URL."] },
-            { title: "Verified deployments", points: ["For MathbookLM, the pipeline waits until the live site reports the new commit in `/version.json`, so a deployment counts only once users can see it.", "On this site, every change passes linting, type checks, a build and a site audit, and a separate workflow checks the live site after each deployment."] },
-            { title: "Firebase Hosting", points: ["A preview channel for every pull request."] },
-            { title: "OpenNext on Workers", points: ["Next.js sites with Sanity CMS, running on Cloudflare Workers."] },
+            { title: "Most of my sites", points: ["Every push to main goes live, and every pull request gets its own preview link."] },
+            { title: "Deployed means visible", points: ["On MathbookLM, a deploy only counts once the live site actually serves the new version.", "On this site, every change is linted, type-checked, built and audited, and the live site is checked again after each deploy."] },
           ],
         },
         {
           name: "Servers",
           items: [
-            { title: "GHCR and SSH", points: ["Each push runs the test suite, builds a Docker image and publishes it to GHCR.", "The server pulls the new image and restarts with Docker Compose.", "The server's SSH host key is pinned, and staging and production run separately behind nginx."] },
-            { title: "Kitshn on my own server", points: ["Deployments run from GitHub Actions with OIDC, so no deploy keys are stored.", "Rootless Docker, with health checks that route traffic only to healthy instances.", "The first deployment of any repository requires my approval.", "Daily data backups, and every private app sits behind Cloudflare Access."] },
-            { title: "Safe restarts", points: ["The deploy script will not restart while a job is running, and interrupted jobs resume when the server starts."] },
-            { title: "Security scanning in CI", points: ["Dependabot, pip-audit, Trivy and OSV."] },
+            { title: "Container deploys", points: ["Each push runs the tests and builds a new image; the server pulls it and restarts, with staging and production kept apart."] },
+            { title: "My own server", points: ["Deploys need no stored keys, traffic only reaches healthy apps, and a repository's first deploy needs my approval.", "Data is backed up daily, and private apps sit behind access control."] },
+            { title: "Safe restarts", points: ["A deploy never restarts the server in the middle of a running job, and interrupted jobs resume on startup."] },
           ],
         },
       ],
       fork: {
-        heading: "A self-maintaining fork",
-        steps: ["A scheduled workflow merges upstream T3 Code changes every three hours.", "If the merge conflicts or tests fail, it opens an issue and triggers a repair agent on my server.", "The agent opens a pull request with the fix and merges it only after CI passes."],
+        heading: "A fork that maintains itself",
+        steps: ["Every three hours, my T3 Code fork pulls in the latest upstream changes.", "If the merge conflicts or the tests fail, an issue opens and a repair agent on my server takes it.", "The agent opens a fix and merges it only once all the checks pass."],
       },
     },
     oss: {
       heading: "Open source",
-      lead: "I use both of these projects by Yarden Zamir daily and contribute to them.",
+      lead: "I use both of these projects by Yarden Zamir every day, and contribute to them.",
       projects: [
         {
           name: "Kitshn", href: "https://github.com/Yarden-zamir/kitshn", by: "by Yarden Zamir",
-          body: "A platform for deploying apps from GitHub to Cloudflare and to your own machines, with an access map that controls who can open each app. I run my own instance and deploy my apps through it. In daily use, an agent proposes a change to the map, I approve it, and the agent deploys.",
-          points: ["About 28 commits in [my fork](https://github.com/TomCohenDev/kitshn):", "the map interface: a flat design, light and dark modes, and a demo map of a small company;", "the kitshn.com website: the home, enterprise, How it works and install pages;", "an explainer video produced with Remotion and ElevenLabs."],
+          body: "Deploys apps from GitHub to Cloudflare and to your own machines, with a map that decides who can open each app. I run my own instance and deploy my apps through it: an agent proposes a change to the map, I approve it, and the agent deploys.",
+          points: ["About 28 commits in [my fork](https://github.com/TomCohenDev/kitshn):", "the map interface, with a flat look, light and dark modes and a demo map of a small company;", "the kitshn.com website: the home, enterprise, How it works and install pages;", "an explainer video."],
         },
         {
           name: "tick3d", href: "https://github.com/Yarden-zamir/tick3d", by: "by Yarden Zamir",
-          body: "A 3D tic-tac-toe game played on a 4×4×4 cube. My contributions:",
-          points: ["a neo-brutalist interface with 12 themes;", "drag-to-rotate controls for the tower;", "real-time chat between players;", "an iOS app built as a Capacitor shell, with CI that builds it, uploads it to TestFlight and distributes it to testers automatically;", "tick3d Factory (in progress): visualises a repository as an animated 3D factory, where imports are conveyor belts, HTTP calls are pneumatic tubes and deployments are trains."],
+          body: "3D tic-tac-toe on a 4×4×4 cube. What I added:",
+          points: ["a neo-brutalist interface with 12 themes;", "turning the tower by dragging;", "real-time chat between players;", "an iOS app that's built and sent to testers automatically;", "tick3d Factory (in progress), which shows a repository as an animated 3D factory: imports are conveyor belts, HTTP calls are pneumatic tubes and deploys are trains."],
         },
       ],
       moreHeading: "Other contributions",
-      more: ["[My T3 Code fork](https://github.com/TomCohenDev/t3code): 74 commits and 25 merged pull requests.", "[Vulnerability registry MCP server](https://github.com/TomCohenDev/vulnerability-registry-mcp): converts a legacy plain-text registry into structured tools for Claude."],
+      more: ["[My T3 Code fork](https://github.com/TomCohenDev/t3code): 74 commits and 25 merged pull requests. It can continue a conversation from another machine even when the original one is off, back conversations up to a second machine, and update its Android app by itself.", "[A vulnerability registry for AI agents](https://github.com/TomCohenDev/vulnerability-registry-mcp): turns a legacy plain-text registry into structured tools Claude can use."],
     },
     clients: {
       heading: "Client work",
-      lead: "Mobile apps, websites and automations built for clients, from the first version to long-term maintenance.",
+      lead: "Apps, websites and automations I built for clients, from the first version to long-term maintenance.",
       featured: [
-        { name: "Dronebag", href: "/en/case-studies/dronebag", image: { src: "/case_studies/dronebag/assets/dronebag-home-screen.webp", alt: "Dronebag home screen" }, points: ["Drone fleet management for field units, built offline-first with data sync."] },
-        { name: "Yellow Candle", href: "/en/case-studies/yellow-candle", image: { src: "/case_studies/virtual_shoa_candle/assets/mobile-app-candle-lighting.webp", alt: "Yellow Candle candle-lighting screen" }, points: ["A Holocaust remembrance app for FJMC. I prevented its removal from the app stores and brought it up to current store requirements."] },
-        { name: "Nightwing", href: "/en/case-studies/nightwing", image: { src: "/case_studies/nightwing-ph/assets/web-app-landing-page-hero.webp", alt: "Nightwing ordering site" }, points: ["A bilingual restaurant ordering site. An n8n workflow numbers each order, logs it to a spreadsheet and sends it to the kitchen via Telegram."] },
+        { name: "Dronebag", href: "/en/case-studies/dronebag", image: { src: "/case_studies/dronebag/assets/dronebag-home-screen.webp", alt: "Dronebag home screen" }, points: ["Drone fleet management for field units, built to keep working offline and sync later."] },
+        { name: "Yellow Candle", href: "/en/case-studies/yellow-candle", image: { src: "/case_studies/virtual_shoa_candle/assets/mobile-app-candle-lighting.webp", alt: "Yellow Candle candle-lighting screen" }, points: ["A Holocaust remembrance app for FJMC that I saved from removal from the app stores."] },
+        { name: "Nightwing", href: "/en/case-studies/nightwing", image: { src: "/case_studies/nightwing-ph/assets/web-app-landing-page-hero.webp", alt: "Nightwing ordering site" }, points: ["A bilingual restaurant ordering site. Each order is numbered, logged to a sheet and sent to the kitchen on Telegram automatically."] },
       ],
       others: [
-        { name: "AI-powered virtual fitting app", role: "Technical lead, 2022 to present", points: ["Real-time body-measurement analysis with Flutter and Google ML Kit.", "A BLoC architecture that reduced instability by about 50%.", "A CI/CD pipeline that shortened time to market by about 40%.", "A/B testing of the onboarding flows."] },
-        { name: "ITA", points: ["A teaching assistant that sends a screenshot to GPT-5 and draws the answer directly on screen. Built with WPF, React, n8n and Supabase."] },
-        { name: "LuxCal and Spidclass", points: ["Flutter apps with scheduled cloud functions, attendance tracking and payment tracking."] },
-        { name: "Websites", points: ["Video-rich portfolios with a CMS, bilingual business websites, and site templates for coaches."] },
+        { name: "AI-powered virtual fitting app", role: "Technical lead, 2022 to present", points: ["Real-time body-measurement analysis on the phone.", "An architecture change that cut instability by about 50%.", "A release pipeline that shortened time to market by about 40%.", "A/B tests on the onboarding flows."] },
+        { name: "ITA", points: ["A teaching assistant that sends a screenshot to GPT-5 and draws the answer right on the screen."] },
+        { name: "LuxCal and Spidclass", points: ["Mobile apps with scheduled background jobs, attendance tracking and payment tracking."] },
+        { name: "Websites", points: ["Video-heavy portfolios with a CMS, bilingual business sites, and templates for coaches' sites."] },
+      ],
+    },
+    goals: {
+      heading: "Where I'm heading",
+      lead: "What I'm working toward next.",
+      items: [
+        { title: "Less friction in how I build", body: "I keep improving my setup wherever work still stalls: a handoff I keep repeating, context that gets lost, or something I keep checking by hand." },
+        { title: "Sharing what I build", body: "In nykma, I want to test creative directions before building a full video, and get feedback from the actual render on readability, timing, Hebrew layout and product accuracy." },
+        { title: "Helping others build", body: "Through teaching and writing, I want to break complex topics into clear parts and help people get to the point where they can build and solve problems on their own." },
       ],
     },
     teaching: {
       heading: "Teaching and writing",
-      body: "I lecture on programming and engineering, supervise final-year projects, and develop and teach hands-on courses in AI and automation. I also write a [blog](/blog) on AI security and agent tooling, and publish a daily [Hebrew tech news issue](/news) compiled by an agent.",
+      body: "I lecture on programming and engineering, supervise final-year projects, and build and teach practical courses in AI and automation. I write a [blog](/blog) on AI security and working with agents, and publish a daily [Hebrew tech news issue](/news) put together by an agent.",
     },
     tools: {
       heading: "Technical skills",
@@ -263,7 +266,7 @@ export const ABOUT: Record<Lang, AboutCopy> = {
     },
     cta: {
       heading: "Get in touch",
-      body: "Interested in building a product together, or in how I could contribute to your team? Reach me by email or on LinkedIn.",
+      body: "Want to build something together, or see how I'd fit on your team? Reach me by email or on LinkedIn.",
       email: EMAIL,
       linkedin: "LinkedIn",
       github: "GitHub",
@@ -273,170 +276,186 @@ export const ABOUT: Record<Lang, AboutCopy> = {
   he: {
     meta: {
       title: "אודות | תום כהן, מפתח Full-stack, AI ואוטומציה",
-      heading: "אני מתכנן, בונה ומשיק מוצרי תוכנה שלמים: אפליקציות מובייל, פלטפורמות ווב, צד שרת ומערכות AI.",
-      description: "תום כהן, מפתח Full-stack: המוצרים שבניתי, איך אני מפתח עם סוכני AI, צנרות ה־CI/CD שאני מפעיל לאפליקציות, לאתרים ולשרתים, והתרומות שלי לקוד פתוח.",
+      heading: "כבר חמש שנים אני לוקח מוצרים מרעיון ועד משהו שאנשים באמת משתמשים בו.",
+      description: "תום כהן, מפתח Full-stack, יזם ומרצה: מה בניתי, באילו קשיים נתקלתי בדרך, איך אני עובד היום ולאן אני הולך.",
       path: "/about",
       translation: "/about-en",
     },
     nav: { home: "לעמוד הבית", homeHref: "/", other: "Read in English" },
     hero: {
       hello: "תום כהן, מפתח Full-stack",
-      intro: "יזם ומרצה עם חמש שנות ניסיון בפיתוח מוצרים מקצה לקצה. אני מוביל מוצרים מאפיון הדרישות ועד פרודקשן, App Store ו־Google Play, וממשיך לתחזק ולהרחיב אותם. אני מפתח עם צוות של סוכני AI וצנרות שחרור אוטומטיות, וכך מספק מוצרים שלמים ובדוקים בזמן קצר.",
+      intro: [
+        "אני מפתח, יזם ומרצה. בחמש השנים האחרונות בניתי אפליקציות לאייפון ולאנדרואיד, מערכות ווב, צד שרת, אוטומציות ומערכות AI, עבור אנשים פרטיים, עסקים וסטארטאפים, וגם מוצרים עצמאיים משלי.",
+        "כשבונים מוצר משלך, צריך לחשוב על הכול: מה המשתמש צריך, איך הממשק ירגיש, איך המערכת תעבוד ומה יידרש כדי להמשיך לפתח ולתחזק אותה. זו הגישה שאני מביא לכל פרויקט.",
+      ],
       doodleAlt: "איור של תום כהן מנופף לשלום",
       principles: [
-        { title: "פיתוח עם סוכני AI", body: "אני מתכנן את העבודה, מחלק אותה בין סוכנים ייעודיים, בודק את התוצרים ואחראי על כל החלטת שחרור. כך אפשר לבנות מוצר שלם ועובד ביום עד יומיים." },
-        { title: "שחרור אוטומטי ובדוק", body: "כל פרויקט עולה לאוויר דרך CI/CD: מיזוג הוא שחרור, לכל שינוי יש תצוגה מקדימה, ושום דבר לא מגיע למשתמשים לפני שהבדיקות האוטומטיות עוברות." },
+        { title: "אני עובד עם סוכני AI כצוות", body: "אני מתכנן את העבודה, מחלק אותה בין סוכנים, בודק את מה שחוזר ומחליט מה עולה לאוויר. ככה מוצר שלם ועובד יכול היום להיבנות ביום או ביומיים." },
+        { title: "אני משחרר בצורה אוטומטית", body: "בכל פרויקט מיזוג הוא שחרור, לכל שינוי יש תצוגה מקדימה, ושום דבר לא מגיע למשתמשים לפני שהבדיקות עוברות." },
       ],
       contact: "ליצירת קשר",
     },
     products: {
-      heading: "מוצרים",
-      lead: "חמישה מוצרים שתכננתי ובניתי בעצמי, מהארכיטקטורה ועד ההשקה.",
-      stackLabel: "טכנולוגיות",
+      heading: "מה בניתי",
+      lead: "מוצרים שתכננתי ובניתי בעצמי, מהרעיון הראשון ועד ההשקה.",
       items: [
         {
           name: "MathbookLM", href: "https://mathbooklm.com", sketch: "mathbook",
-          summary: "מחברת מתמטיקה מבוססת כתב יד. המשתמש כותב על קנבס אינסופי ומסמן אזור, והמערכת מזהה את הכתב, פותרת או בודקת אותו עם SymPy שרץ בדפדפן, וכותבת את התוצאה בחזרה על הקנבס.",
-          points: ["תוצאות אמינות: מודל השפה אחראי על ההסקה והתזמור, וכל החישובים מתבצעים באופן דטרמיניסטי.", "סימולציות אינטראקטיביות שהמודל מייצר.", "מסלול מנוי בתשלום ותוכנית פיילוט למורים."],
-          stack: MATHBOOK_STACK,
+          summary: "מחברת מתמטיקה שעובדת עם כתב יד. כותבים על קנבס אינסופי, מסמנים אזור, והמערכת מזהה את מה שנכתב, פותרת או בודקת אותו בתוך הדפדפן, וכותבת את התוצאה בחזרה על הקנבס.",
+          points: ["כדי שאפשר יהיה לסמוך על התוצאות, מודל השפה רק מסיק ומתזמר, והחישוב עצמו תמיד דטרמיניסטי.", "הוספתי סימולציות אינטראקטיביות שהמודל בונה בזמן אמת.", "יש בה מנוי בתשלום, ואני מריץ תוכנית פיילוט עם מורים."],
           links: [{ label: "mathbooklm.com", href: "https://mathbooklm.com" }],
         },
         {
           name: "Gomlin Jobs", sketch: "gomlin",
-          summary: "אפליקציית חיפוש עבודה בהחלקה, זמינה ב־App Store וב־Google Play. תכננתי ובניתי את המערכת כולה בעצמי.",
-          points: ["אפליקציית Flutter מול שרת FastAPI.", "סורקים שאוספים משרות מכ־46 מקורות ומסווגים כל משרה עם AI.", "הגשת מועמדות אוטומטית למערכות גיוס נפוצות באמצעות Playwright.", "ממסר מיילים שמעביר תשובות של מגייסים לתיבת הדואר של המשתמש.", "דגלי יכולות לכל מקור ב־Supabase, שמאפשרים להפעיל או להשבית מקורות הגשה בלי לשחרר גרסה."],
+          summary: "אפליקציית חיפוש עבודה בהחלקה, ב־App Store וב־Google Play. בניתי לבד את כל המערכת: האפליקציה, השרת, איסוף המשרות ואוטומציית ההגשה.",
+          points: ["משרות נאספות מכ־46 מקורות, וכל משרה מסווגת עם AI.", "המועמדות מוגשת אוטומטית למערכות גיוס נפוצות.", "תשובות של מגייסים מועברות לתיבת המייל האמיתית של המשתמש.", "אני יכול להפעיל או לכבות כל מקור הגשה בלי לשחרר גרסה חדשה של האפליקציה."],
           links: [{ label: "App Store", href: "https://apps.apple.com/us/app/gomlin-jobs/id6744745540" }, { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.gomlinjobs.gomlin" }],
         },
         {
           name: "Locket AI", sketch: "locket",
-          summary: "אפליקציית AI לנייד שרצה כולה על המכשיר, ללא תלות בענן.",
-          points: ["צ'אט מבוסס Gemma.", "ניתוח תמונות עם FastVLM, דרך גשר Kotlin ל־LiteRT-LM באנדרואיד ו־Swift עם MLX ב־iOS.", "יצירת תמונות עם stable-diffusion.cpp, דרך C++ ו־FFI על Vulkan.", "שכבת תזמור שמודעת לזיכרון ומחליפה בין מודלים, כך שהאפליקציה רצה גם על מכשירים חלשים."],
+          summary: "אפליקציית AI שרצה כולה על הטלפון, בלי ענן בכלל: צ'אט, הבנת תמונות ויצירת תמונות.",
+          points: ["כדי שתרוץ גם על טלפונים חלשים, בניתי שכבה שמחליפה בין המודלים לפי הזיכרון הפנוי.", "חיברתי את המודלים באופן טבעי לכל פלטפורמה: Kotlin באנדרואיד, Swift באייפון ו־C++ ליצירת תמונות."],
         },
         {
           name: "nykma", sketch: "nykma",
-          summary: "כלי מקומי להפקת מודעות וסרטונים. סוכן מציע קונספט, בונה את הסרטון בקוד עם מנוע רינדור שפיתחתי, ומספק קבצי MP4 וטקסטים לכל פלטפורמה.",
-          points: ["שום דבר לא מתפרסם ללא אישור שלי."],
-          links: [{ label: "למאמר המלא", href: "/blog/nykma" }],
+          summary: "כלי מקומי שהופך בריף קצר לסרטונים וטקסטים מוכנים לפרסום. סוכן מציע רעיון, בונה את הסרטון בקוד עם מנוע רינדור שכתבתי, ומחזיר לי קבצים לכל פלטפורמה.",
+          points: ["הוא התחיל כ־Helix, סטודיו כבד בהרבה עם שמונה סוכני משנה.", "אני משווה גרסאות פרומפט על 14 בריפים קבועים, בהשוואה עיוורת של עלות ואיכות.", "שום דבר לא מתפרסם בלי האישור שלי."],
+          links: [{ label: "הסיפור מאחוריו", href: "/blog/nykma" }],
         },
         {
           name: "agents.tomcohen.dev", sketch: "agents",
-          summary: "פלטפורמת אוטומציה שבה סוכני AI משמשים כשלבים בתהליך. בדומה ל־n8n, אבל עריכת התהליכים נעשית באמצעות הנחיה לסוכן.",
-          points: ["כל Workflow נשמר כתיקייה של קבצים פשוטים.", "שלבי קוד רצים ללא עלות; שלבי סוכן רצים כסשנים של T3 Code על השרת שלי, עם המודל המשתלם ביותר לכל שלב.", "כל פעולה חיצונית דורשת את האישור שלי, ומוגנת במפתח אידמפוטנטיות ובמגבלה יומית."],
+          summary: "פלטפורמת Workflows שבה סוכני AI הם שלבים בתהליך. היא עובדת כמו n8n, אבל משנים תהליך בבקשה מסוכן במקום לערוך אותו ידנית.",
+          points: ["כל Workflow הוא תיקייה של קבצים פשוטים.", "שלבי קוד לא עולים כלום, ושלבי סוכן רצים על השרת שלי עם המודל הזול ביותר שיכול לעשות את העבודה.", "כל דבר שיוצא החוצה מחכה לאישור שלי ויש לו תקרה יומית."],
+        },
+      ],
+    },
+    journey: {
+      heading: "קשיים שנתקלתי בהם",
+      lead: "חלק מהשיעורים הקשים של השנים האחרונות, ומה עשיתי איתם.",
+      actionLabel: "מה עשיתי",
+      items: [
+        {
+          title: "אף אחד לא הכיר את האפליקציות שלי",
+          problem: "אני מפתח בלי רקע בסושיאל, ולפרסם ברשתות הלחיץ אותי. המשכתי לשפר את המוצרים ודחיתי את הרגע שבו אספר עליהם למישהו.",
+          action: "בניתי את nykma כדי להגיע מעבודה גמורה לסרטון ולטקסט שאני באמת יכול לפרסם. מאז אני משתף את העבודה שלי הרבה יותר בעקביות. [כתבתי על זה כאן](/blog/nykma).",
+        },
+        {
+          title: "יותר סוכנים לא היה טוב יותר",
+          problem: "הניסיון הראשון שלי, Helix, היה סטודיו קריאייטיב עם שמונה סוכני משנה, ניתוב מודלים ושער הוצאות. הוא הפך למערכת כבדה.",
+          action: "מדדתי אותו מול סוכן אחד עם פרומפט קצר וסט של חלקים לשימוש חוזר. הגרסה הפשוטה ניצחה, אז בניתי את הכלי מחדש בצורה הזו בתור nykma, ותיעדתי למה.",
+        },
+        {
+          title: "ההעברות בין השלבים לקחו את הזמן",
+          problem: "סוכנים ידעו לכתוב קוד שימושי, ועדיין השקעתי הרבה קשב כדי להביא את העבודה לשלב הבא: לאיזה פרויקט היא שייכת, מה כבר נוסה, אם הבדיקות הסתיימו, ואיך ממשיכים ממכשיר אחר.",
+          action: "בניתי את הסביבה שלי על T3 Code ועל Kitshn של ירדן זמיר, עם פורקים משלי, כך שהעבודה ממשיכה להתקדם בין ההחלטות שלי. [הסיפור המלא](/blog/t3-kitshn).",
+        },
+        {
+          title: "אפליקציה שעמדה להיעלם",
+          problem: "Yellow Candle, אפליקציית זיכרון לשואה עבור FJMC, עמדה להיות מוסרת מחנויות האפליקציות.",
+          action: "עדכנתי אותה לדרישות העדכניות של החנויות ושמרתי אותה זמינה. [לסיפור המלא](/en/case-studies/yellow-candle).",
         },
       ],
     },
     agents: {
-      heading: "איך אני עובד עם סוכני AI",
-      lead: "איכות העבודה של סוכן תלויה בסביבה שבה הוא פועל. אני מתמקד בשני רכיבים שלה: ה־**Harness**, כלומר הקבצים, הכלים, ההוראות וההרשאות שהסוכן יכול להשתמש בהם, וה**אורקסטרציה**, כלומר איך העבודה מתחלקת, מי בודק את מי ומתי משימה נחשבת גמורה. הרחבתי על כך [במאמר על T3 Code ו־Kitshn](/blog/t3-kitshn).",
-      dayHeading: "תהליך עבודה טיפוסי",
+      heading: "איך אני עובד היום",
+      lead: "סוכן יכול לכתוב קוד טוב, אבל רוב הערך מגיע מהסביבה שסביבו: הקבצים, הכלים, ההוראות וההרשאות שהוא עובד איתם, ואיך העבודה מתחלקת, מי בודק את מי ומה נחשב גמור.",
+      dayHeading: "ככה נראית משימה רגילה",
       day: [
-        "סוכן מוביל מקבל את המטרה ואת המגבלות.",
-        "הוא מאציל משימות מוגדרות לסוכני משנה: מחקר, מימוש וביקורת בלתי תלויה. כל סוכן שמשנה קוד עובד ב־git worktree נפרד.",
-        "התוצאות חוזרות לסוכן המוביל, ומחלוקות בין סוכנים מוכרעות.",
-        "כל תוצר נבדק מול התנהגות בפועל: diff, הרצת בדיקות או תוצאה שאפשר לשחזר.",
-        "ההמתנה אוטומטית: מעקב אחרי Pull Requests מחזיר את הסוכן לעבודה כשתוצאות ה־CI או הערות הביקורת מגיעות.",
+        "סוכן ראשי מקבל ממני את המטרה ואת המגבלות.",
+        "הוא מעביר משימות מוגדרות לסוכנים אחרים: מחקר, מימוש וביקורת בלתי תלויה. כל סוכן שנוגע בקוד עובד בעותק נפרד של הריפו.",
+        "הממצאים חוזרים, ומחלוקות בין הסוכנים מוכרעות.",
+        "הכול נבדק מול התנהגות אמיתית: diff, הרצת בדיקות או תוצאה שאני יכול לשחזר.",
+        "כשהעבודה מחכה ל־CI או לביקורת, היא ממשיכה לבד ברגע שהתוצאה מגיעה.",
       ],
-      toolsHeading: "כלים שאני מפתח ומתחזק",
-      tools: [
-        { name: "הפורק שלי של T3 Code", body: "מאפשר להמשיך שיחה ממחשב אחר גם כשהמחשב המקורי כבוי, מגבה שיחות למחשב נוסף, מעדכן את אפליקציית האנדרואיד שלו אוטומטית ותומך בהכתבה קולית." },
-        { name: "Helix", body: "סטודיו להפקת תוכן קריאייטיב עם שמונה סוכני משנה וניתוב מודלים: מודלים בדרגת Opus לניתוח מותג, Sonnet לקופי ולסצנות ו־Haiku לתיקון סכמות. כולל שער הוצאות, תיעוד מקור לכל נכס ורנדרר מבודד ללא גישה לרשת וללא סודות." },
-        { name: "nykma, הדור הבא של Helix", body: "השוואה מדודה הראתה שסוכן יחיד עם פרומפט קצר וספריית רכיבים לשימוש חוזר עדיף על צנרת של שמונה סוכנים, והממצאים מתועדים. כולל הערכות פרומפטים: 14 בריפים קבועים, גרסאות פרומפט קפואות והשוואה עיוורת של עלות ואיכות." },
-        { name: "סוכנים בתוך מוצרים", body: "פועלים בפרודקשן:", sub: ["מערכת שבונה אתר דמו לעסק, מצלמת אותו בארבעה מכשירים ומתקנת את הבעיות שנמצאו;", "סוכנים שכותבים, מפרסמים ובודקים גיליון חדשות בכל בוקר;", "סוכן שיווק שמכין מודעות לאישור."] },
-        { name: "שרתי MCP", body: "מעניקים לסוכנים גישה מובנית לנתונים: [מאגר חולשות אבטחה](https://github.com/TomCohenDev/vulnerability-registry-mcp) ונתוני השימוש של Gomlin." },
-      ],
-      timeHeading: "זמני פיתוח",
-      timeNote: "לפי היסטוריית ה־commits. כל ריבוע מייצג יום אחד.",
-      days: [
-        { label: "מערכת לידים מלאה עם דשבורד", days: 1 },
-        { label: "פלטפורמת האוטומציה (Workflows)", days: 1 },
-        { label: "אתר הוראה עם מבחנים ואינטגרציה ל־Google Classroom", days: 1 },
-        { label: "שירות סריקה עם API, דשבורד וגיבויים, במקום תהליך n8n ישן", days: 2 },
-        { label: "Helix", days: 12, extra: "342 commits" },
-      ],
-      dayUnit: (n) => (n === 1 ? "יום אחד" : n === 2 ? "יומיים" : `${n} ימים`),
-      rulesHeading: "עקרונות עבודה",
+      rulesHeading: "כללים שאני לא מתפשר עליהם",
       rules: [
-        "כל פעולה חיצונית (פוסט, מייל, פרסום או תשלום) דורשת אישור אנושי.",
-        "לסוכנים אין גישה למפתחות ולסודות.",
-        "תוכן חיצוני מטופל כמידע, ולעולם לא כהוראות.",
-        "לכל פעולה מוגדרת תקרה.",
-        "משימה נחשבת גמורה רק אחרי שנבדקה.",
+        "כל דבר שיוצא מהמערכת (פוסט, מייל, פרסום או תשלום) מחכה לאישור של אדם.",
+        "לסוכנים אין גישה למפתחות.",
+        "טקסט שמגיע מבחוץ הוא מידע, אף פעם לא הוראות.",
+        "לכל פעולה יש תקרה.",
+        "שום דבר לא גמור לפני שנבדק.",
       ],
     },
     cicd: {
-      heading: "CI/CD: כל מיזוג הוא שחרור",
-      lead: "אני מתכנן את צנרת השחרור של כל מוצר שאני משיק. אין דיפלוי ידני, כל שינוי אפשר לבדוק לפני שהוא עולה לאוויר, ושינוי שגוי לא מגיע למשתמשים בלי שזה יתגלה.",
+      heading: "שחרור בלי דרמה",
+      lead: "את תהליך השחרור של כל מה שאני בונה אני מתכנן בעצמי. אף אחד לא מעלה לאוויר ביד, כל שינוי אפשר לראות לפני שהוא עולה, ושינוי שבור לא מגיע בשקט למשתמשים.",
       pipeline: ["push", "בדיקות", "תצוגה מקדימה", "מיזוג", "באוויר", "נבדק"],
-      pipelineNote: "אותו תהליך שחרור בכל פרויקט.",
+      pipelineNote: "אותו תהליך בכל פרויקט.",
       lanes: [
         {
           name: "מובייל",
           items: [
-            { title: "Gomlin עם Codemagic", points: ["ענף staging מפרסם ל־TestFlight ול־Google Play Internal, וענף main מפרסם לחנויות.", "מספרי build מתעדכנים אוטומטית, ומפתחות החתימה מגיעים מסודות ה־CI.", "flavors נפרדים ל־dev, staging ו־production, ובניות חנות עם obfuscation."] },
-            { title: "tick3d לאייפון עם GitHub Actions", points: ["ה־CI מייצר את פרויקט ה־Xcode, בונה וחותם עם מפתח App Store Connect ומעלה ל־TestFlight.", "כל build מופץ לבודקים חיצוניים דרך ה־API של App Store Connect. הסקריפט אידמפוטנטי, כך שהרצה חוזרת לא שולחת פעמיים.", "כל Pull Request בודק גם את צנרת ה־iOS עצמה, כך שתקלות בצנרת מתגלות בשלב הביקורת ולא ביום השחרור."] },
-            { title: "הפורק של T3 Code", points: ["ה־CI בונה APK חתום לאנדרואיד שמתעדכן אוטומטית.", "בניות לילה לאפליקציות הדסקטופ."] },
+            { title: "Gomlin", points: ["גרסת ה־staging מגיעה לבודקים וגרסת ה־main מגיעה לחנויות, בלי שום צעד ידני.", "מספרי הגרסה והחתימה מנוהלים בצנרת, עם גרסאות נפרדות לפיתוח, ל־staging ולפרודקשן."] },
+            { title: "tick3d לאייפון", points: ["כל build מגיע לבודקים חיצוניים אוטומטית, והרצה חוזרת אף פעם לא שולחת פעמיים.", "כל Pull Request בודק גם את צנרת השחרור עצמה, כך ששבר בצנרת מתגלה בביקורת ולא ביום השחרור."] },
+            { title: "הפורק שלי של T3 Code", points: ["אפליקציית האנדרואיד נבנית, נחתמת ומתעדכנת אוטומטית, ואפליקציות המחשב מקבלות בניות לילה."] },
           ],
         },
         {
           name: "אתרים",
           items: [
-            { title: "Cloudflare Workers ו־Pages", points: ["משמש את רוב האתרים שלי: כל push ל־main עולה לפרודקשן.", "לכל Pull Request יש כתובת תצוגה מקדימה משלו."] },
-            { title: "אימות אחרי דיפלוי", points: ["ב־MathbookLM הצנרת ממתינה עד שהאתר החי מחזיר את ה־commit החדש ב־`/version.json`, כך שדיפלוי נחשב גמור רק כשהמשתמשים באמת רואים אותו.", "באתר הזה כל שינוי עובר lint, בדיקת טיפוסים, build ובדיקת אתר, ו־workflow נפרד בודק את האתר החי אחרי כל דיפלוי."] },
-            { title: "Firebase Hosting", points: ["ערוץ תצוגה מקדימה לכל Pull Request."] },
-            { title: "OpenNext על Workers", points: ["אתרי Next.js עם Sanity CMS, שרצים על Cloudflare Workers."] },
+            { title: "רוב האתרים שלי", points: ["כל push ל־main עולה לאוויר, ולכל Pull Request יש קישור תצוגה מקדימה משלו."] },
+            { title: "עלה זה אומר שרואים", points: ["ב־MathbookLM דיפלוי נחשב גמור רק כשהאתר החי באמת מגיש את הגרסה החדשה.", "באתר הזה כל שינוי עובר lint, בדיקת טיפוסים, build ובדיקת אתר, והאתר החי נבדק שוב אחרי כל דיפלוי."] },
           ],
         },
         {
           name: "שרתים",
           items: [
-            { title: "GHCR ו־SSH", points: ["כל push מריץ את הבדיקות, בונה תמונת Docker ומפרסם אותה ל־GHCR.", "השרת מושך את התמונה החדשה ועולה מחדש עם Docker Compose.", "מפתח ה־SSH של השרת מקובע, ו־staging ו־production רצים בנפרד מאחורי nginx."] },
-            { title: "Kitshn על השרת שלי", points: ["דיפלוי מ־GitHub Actions עם OIDC, בלי מפתחות דיפלוי שמורים.", "Docker בלי הרשאות root, עם בדיקות בריאות שמנתבות תנועה רק למופעים תקינים.", "הדיפלוי הראשון של כל ריפו דורש את האישור שלי.", "גיבוי יומי של הנתונים, וכל אפליקציה פרטית מוגנת ב־Cloudflare Access."] },
-            { title: "הפעלה מחדש בטוחה", points: ["סקריפט הדיפלוי לא מפעיל מחדש בזמן שעבודה רצה, ועבודות שנקטעו ממשיכות כשהשרת עולה."] },
-            { title: "סריקות אבטחה ב־CI", points: ["Dependabot, pip-audit, Trivy ו־OSV."] },
+            { title: "דיפלוי בקונטיינרים", points: ["כל push מריץ את הבדיקות ובונה תמונה חדשה; השרת מושך אותה ועולה מחדש, ו־staging ו־production נשמרים נפרדים."] },
+            { title: "השרת שלי", points: ["הדיפלוי לא צריך מפתחות שמורים, תנועה מגיעה רק לאפליקציות תקינות, והדיפלוי הראשון של כל ריפו דורש את האישור שלי.", "יש גיבוי יומי לנתונים, ואפליקציות פרטיות מוגנות בבקרת גישה."] },
+            { title: "הפעלה מחדש בטוחה", points: ["דיפלוי אף פעם לא מפעיל מחדש את השרת באמצע עבודה שרצה, ועבודות שנקטעו ממשיכות כשהוא עולה."] },
           ],
         },
       ],
       fork: {
         heading: "פורק שמתחזק את עצמו",
-        steps: ["workflow מתוזמן ממזג שינויים מ־T3 Code המקורי כל שלוש שעות.", "אם המיזוג מתנגש או שבדיקות נכשלות, נפתח issue ומופעל סוכן תיקון שרץ על השרת שלי.", "הסוכן פותח Pull Request עם התיקון וממזג אותו רק אחרי שה־CI עובר."],
+        steps: ["כל שלוש שעות הפורק שלי של T3 Code מושך את השינויים האחרונים מהמקור.", "אם המיזוג מתנגש או שהבדיקות נכשלות, נפתח issue וסוכן תיקון שרץ על השרת שלי לוקח אותו.", "הסוכן מציע תיקון וממזג אותו רק אחרי שכל הבדיקות עוברות."],
       },
     },
     oss: {
       heading: "קוד פתוח",
-      lead: "אני משתמש בשני הפרויקטים האלה של ירדן זמיר באופן יומיומי ותורם להם.",
+      lead: "אני משתמש בשני הפרויקטים האלה של ירדן זמיר כל יום, ותורם להם.",
       projects: [
         {
           name: "Kitshn", href: "https://github.com/Yarden-zamir/kitshn", by: "של ירדן זמיר",
-          body: "פלטפורמה לפריסת אפליקציות מ־GitHub ל־Cloudflare ולמכונות שלך, עם מפת גישה שקובעת מי יכול לפתוח כל אפליקציה. אני מריץ מופע משלי ופורס דרכו את האפליקציות שלי. בשימוש היומיומי, סוכן מציע שינוי במפה, אני מאשר, והסוכן פורס.",
-          points: ["כ־28 commits [בפורק שלי](https://github.com/TomCohenDev/kitshn):", "ממשק המפה: עיצוב שטוח, מצב בהיר וכהה ומפת דמו של חברה קטנה;", "האתר kitshn.com: עמוד הבית ועמודי enterprise, How it works ו־install;", "סרטון הסבר שהופק עם Remotion ו־ElevenLabs."],
+          body: "פריסת אפליקציות מ־GitHub ל־Cloudflare ולמכונות שלך, עם מפה שקובעת מי יכול לפתוח כל אפליקציה. אני מריץ מופע משלי ופורס דרכו את האפליקציות שלי: סוכן מציע שינוי במפה, אני מאשר, והסוכן פורס.",
+          points: ["כ־28 commits [בפורק שלי](https://github.com/TomCohenDev/kitshn):", "ממשק המפה, עם מראה שטוח, מצב בהיר וכהה ומפת דמו של חברה קטנה;", "האתר kitshn.com: עמוד הבית ועמודי enterprise, How it works ו־install;", "סרטון הסבר."],
         },
         {
           name: "tick3d", href: "https://github.com/Yarden-zamir/tick3d", by: "של ירדן זמיר",
-          body: "משחק איקס־עיגול תלת־ממדי על קובייה בגודל 4×4×4. התרומות שלי:",
-          points: ["ממשק נאו־ברוטליסטי עם 12 ערכות נושא;", "סיבוב המגדל בגרירה;", "צ'אט בזמן אמת בין שחקנים;", "אפליקציית iOS כמעטפת Capacitor, עם CI שבונה אותה, מעלה ל־TestFlight ומפיץ לבודקים אוטומטית;", "tick3d Factory (בפיתוח): מציג ריפו כמפעל תלת־ממדי מונפש, שבו imports הם מסועים, קריאות HTTP הן צינורות ודיפלוי הוא רכבת."],
+          body: "איקס־עיגול תלת־ממדי על קובייה של 4×4×4. מה שהוספתי:",
+          points: ["ממשק נאו־ברוטליסטי עם 12 ערכות נושא;", "סיבוב המגדל בגרירה;", "צ'אט בזמן אמת בין שחקנים;", "אפליקציית iOS שנבנית ונשלחת לבודקים אוטומטית;", "tick3d Factory (בפיתוח), שמציג ריפו כמפעל תלת־ממדי מונפש: imports הם מסועים, קריאות HTTP הן צינורות ודיפלוי הוא רכבת."],
         },
       ],
       moreHeading: "תרומות נוספות",
-      more: ["[הפורק שלי של T3 Code](https://github.com/TomCohenDev/t3code): 74 commits ו־25 Pull Requests שמוזגו.", "[שרת MCP למאגר חולשות](https://github.com/TomCohenDev/vulnerability-registry-mcp): הופך מאגר טקסט ישן לכלים מובנים עבור Claude."],
+      more: ["[הפורק שלי של T3 Code](https://github.com/TomCohenDev/t3code): 74 commits ו־25 Pull Requests שמוזגו. הוא יודע להמשיך שיחה ממחשב אחר גם כשהמחשב המקורי כבוי, לגבות שיחות למחשב נוסף ולעדכן את אפליקציית האנדרואיד שלו לבד.", "[מאגר חולשות לסוכני AI](https://github.com/TomCohenDev/vulnerability-registry-mcp): הופך מאגר טקסט ישן לכלים מובנים ש־Claude יכול להשתמש בהם."],
     },
     clients: {
       heading: "עבודה עם לקוחות",
-      lead: "אפליקציות, אתרים ואוטומציות שפיתחתי ללקוחות, מהגרסה הראשונה ועד תחזוקה לטווח ארוך.",
+      lead: "אפליקציות, אתרים ואוטומציות שבניתי ללקוחות, מהגרסה הראשונה ועד תחזוקה לאורך זמן.",
       featured: [
-        { name: "Dronebag", href: "/en/case-studies/dronebag", image: { src: "/case_studies/dronebag/assets/dronebag-home-screen.webp", alt: "מסך הבית של Dronebag" }, points: ["ניהול צי רחפנים ליחידות שטח, בארכיטקטורת Offline-first עם סנכרון נתונים."] },
-        { name: "Yellow Candle", href: "/en/case-studies/yellow-candle", image: { src: "/case_studies/virtual_shoa_candle/assets/mobile-app-candle-lighting.webp", alt: "מסך הדלקת הנר ב־Yellow Candle" }, points: ["אפליקציית זיכרון לשואה עבור FJMC. מנעתי את הסרתה מחנויות האפליקציות והתאמתי אותה לדרישות העדכניות."] },
-        { name: "Nightwing", href: "/en/case-studies/nightwing", image: { src: "/case_studies/nightwing-ph/assets/web-app-landing-page-hero.webp", alt: "אתר ההזמנות של Nightwing" }, points: ["אתר הזמנות דו־לשוני למסעדה. תהליך n8n ממספר כל הזמנה, רושם אותה בגיליון ושולח אותה למטבח בטלגרם."] },
+        { name: "Dronebag", href: "/en/case-studies/dronebag", image: { src: "/case_studies/dronebag/assets/dronebag-home-screen.webp", alt: "מסך הבית של Dronebag" }, points: ["ניהול צי רחפנים ליחידות בשטח, שממשיך לעבוד גם בלי חיבור ומסתנכרן אחר כך."] },
+        { name: "Yellow Candle", href: "/en/case-studies/yellow-candle", image: { src: "/case_studies/virtual_shoa_candle/assets/mobile-app-candle-lighting.webp", alt: "מסך הדלקת הנר ב־Yellow Candle" }, points: ["אפליקציית זיכרון לשואה עבור FJMC, שהצלתי מהסרה מהחנויות."] },
+        { name: "Nightwing", href: "/en/case-studies/nightwing", image: { src: "/case_studies/nightwing-ph/assets/web-app-landing-page-hero.webp", alt: "אתר ההזמנות של Nightwing" }, points: ["אתר הזמנות דו־לשוני למסעדה. כל הזמנה ממוספרת, נרשמת בגיליון ונשלחת למטבח בטלגרם אוטומטית."] },
       ],
       others: [
-        { name: "אפליקציית מדידה וקנייה וירטואלית מבוססת AI", role: "מוביל טכני, מ־2022 ועד היום", points: ["ניתוח מידות גוף בזמן אמת עם Flutter ו־Google ML Kit.", "ארכיטקטורת BLoC שהפחיתה את חוסר היציבות בכ־50%.", "צנרת CI/CD שקיצרה את הזמן לשוק בכ־40%.", "בדיקות A/B לתהליכי ההרשמה."] },
-        { name: "ITA", points: ["עוזר הוראה ששולח צילום מסך ל־GPT-5 ומצייר את התשובה ישירות על המסך. נבנה עם WPF, React, n8n ו־Supabase."] },
-        { name: "LuxCal ו־Spidclass", points: ["אפליקציות Flutter עם פונקציות ענן מתוזמנות, מעקב נוכחות ומעקב תשלומים."] },
-        { name: "אתרים", points: ["תיקי עבודות עשירים בווידאו עם CMS, אתרי עסקים דו־לשוניים ותבניות אתרים למאמנים. לצפייה [בעמוד האתרים](/web)."] },
+        { name: "אפליקציית מדידה וקנייה וירטואלית מבוססת AI", role: "מוביל טכני, מ־2022 ועד היום", points: ["ניתוח מידות גוף בזמן אמת על הטלפון.", "שינוי ארכיטקטורה שהוריד את חוסר היציבות בכ־50%.", "תהליך שחרור שקיצר את הזמן לשוק בכ־40%.", "בדיקות A/B למסכי ההרשמה."] },
+        { name: "ITA", points: ["עוזר הוראה ששולח צילום מסך ל־GPT-5 ומצייר את התשובה ישירות על המסך."] },
+        { name: "LuxCal ו־Spidclass", points: ["אפליקציות מובייל עם משימות רקע מתוזמנות, מעקב נוכחות ומעקב תשלומים."] },
+        { name: "אתרים", points: ["תיקי עבודות עם הרבה וידאו ו־CMS, אתרי עסקים דו־לשוניים ותבניות לאתרי מאמנים. אפשר לראות אותם [בעמוד האתרים](/web)."] },
+      ],
+    },
+    goals: {
+      heading: "לאן אני הולך",
+      lead: "על מה אני עובד מכאן והלאה.",
+      items: [
+        { title: "פחות חיכוך בדרך שבה אני בונה", body: "אני ממשיך לשפר את הסביבה שלי בכל מקום שבו העבודה עדיין נתקעת: העברה שאני חוזר עליה, הקשר שהולך לאיבוד או משהו שאני בודק ידנית שוב ושוב." },
+        { title: "לשתף את מה שאני בונה", body: "ב־nykma אני רוצה לבדוק כיוונים קריאייטיביים לפני שבונים סרטון שלם, ולקבל משוב מהרינדור עצמו על קריאות, תזמון, עימוד בעברית ודיוק לגבי המוצר." },
+        { title: "לעזור לאחרים לבנות", body: "דרך הוראה וכתיבה אני רוצה לפרק נושאים מורכבים לחלקים ברורים ולעזור לאנשים להגיע לשלב שבו הם יכולים לבנות ולפתור בעצמם." },
       ],
     },
     teaching: {
       heading: "הוראה ותוכן",
-      body: "אני מרצה בתחומי התכנות וההנדסה, מנחה פרויקטי גמר, ומפתח ומעביר קורסים מעשיים ב־AI ובאוטומציה. בנוסף אני כותב [בלוג](/blog) על אבטחת AI ועל כלים לעבודה עם סוכנים, ומפרסם בכל בוקר [גיליון חדשות טכנולוגיה בעברית](/news) שסוכן מרכיב.",
+      body: "אני מרצה בתחומי התכנות וההנדסה, מלווה פרויקטי גמר, ובונה ומעביר קורסים מעשיים ב־AI ובאוטומציה. אני כותב [בלוג](/blog) על אבטחת AI ועבודה עם סוכנים, ומפרסם כל בוקר [גיליון חדשות טכנולוגיה בעברית](/news) שסוכן מרכיב.",
     },
     tools: {
       heading: "יכולות טכניות",
@@ -444,7 +463,7 @@ export const ABOUT: Record<Lang, AboutCopy> = {
     },
     cta: {
       heading: "יצירת קשר",
-      body: "מעוניינים לפתח מוצר יחד, או לבדוק איך אוכל לתרום לצוות שלכם? אפשר לפנות אליי במייל או ב־LinkedIn.",
+      body: "רוצים לבנות משהו יחד, או לשמוע איך אני יכול להשתלב בצוות שלכם? אפשר לפנות אליי במייל או ב־LinkedIn.",
       email: EMAIL,
       linkedin: "LinkedIn",
       github: "GitHub",
