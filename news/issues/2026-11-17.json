@@ -1,0 +1,235 @@
+{
+  "date": "2026-11-17",
+  "stories": [
+    {
+      "id": "ai-agents-hunt-ai-keys",
+      "topic": "security",
+      "headline": "Amazon: סוכני AI של תוקפים מחפשים כלי AI חשופים כמו LiteLLM ו־Dify כדי לגנוב מפתחות",
+      "summary": "צוות מודיעין האיומים של Amazon לכד, בעזרת שרתי פיתיון, רישומים של סוכני AI שחיפשו באינטרנט אפליקציות AI חשופות כמו LiteLLM, One API ו־Dify, שלפו מהן את מפתחות ספקי ה־AI ואספו אותם למאגר משותף. ברשימת נקודות הכניסה שלהם יש סיסמאות ברירת מחדל, התקנות שלא הושלמו, דפי ניהול בלי התחברות וסודות שנשארו בקוד שנשלח לדפדפן; לפי Amazon הכלי ככל הנראה הוא ARTEX.",
+      "forBusiness": "אם הקמתם אצלכם כלי AI בשרת משלכם, בדקו שדף הניהול שלו לא פתוח לאינטרנט ושהחלפתם את מפתח המנהל שהגיע כברירת מחדל. כדאי גם להגדיר תקרת הוצאה אצל ספק ה־AI, כדי שמפתח שנגנב לא יצבור חשבון גדול.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/amazon-uncovers-ai-agent-campaign.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigoyCtEKcD7TM_5vDkKiZYFdk_l4-js7HNuvMXzZbVqUbEgq1nnD2vEZgZ0kL9CdmOkITC0Rbd-ebTkSX-R4NPKwWZXzUD6zS0g9nEfnlXw3njm3oW2Se97qbT7lIfZEL56X3IIaZAildTni9-zQJu5sa4Lhvi_mVlbTeZFyFtezOMHJ_bDhJWfG7KQ8eh/s1600/amazon.jpg",
+        "alt": "איור של תוקף שסורק את LiteLLM, Dify ו־One API ושולף מהם מפתח למאגר נתונים."
+      },
+      "continues": {
+        "date": "2026-11-16",
+        "id": "fbi-artex-ai-attacks",
+        "headline": "ה־FBI מזהיר: כלי פריצה מבוסס AI בשם ARTEX מאיץ תקיפות נגד ארגונים בכל העולם"
+      }
+    },
+    {
+      "id": "google-play-channel-expansion",
+      "topic": "mobile",
+      "headline": "Google Play מאפשרת למכור מוצרים מתוך האפליקציה גם בחנות, באתר וב־Gemini",
+      "summary": "בעמוד חדש ב־Play Console אפשר לבחור אילו מוצרים ומבצעים של האפליקציה יוצגו מחוץ לה: בדף האפליקציה ובתוצאות החיפוש בחנות, בחנות הרשת של Google Play ובאתרים חיצוניים עם תשלום של Google Play. גוגל מוסיפה גם תזכורות לעגלה שננטשה, הצעות משלימות בזמן התשלום, ובפיילוט עם גישה מוקדמת הצגת מוצרים בתוך שיחות ב־Gemini.",
+      "forBusiness": "לבעלי אפליקציה עם מינויים או רכישות בתוכה, זו דרך להציע מבצע ללקוח עוד לפני שהוריד או פתח אותה. אפשר להגביל מי רואה כל מבצע, למשל להסתיר הנחת הצטרפות ממנויים קיימים.",
+      "source": {
+        "name": "Android Developers",
+        "url": "https://developer.android.com/blog/posts/beyond-the-app-google-play-buyer-reach"
+      },
+      "image": {
+        "url": "https://developer.android.com/static/blog/assets/ABL_158_Beyond_the_App_A_bd07c85947_Z2gA7nM.webp",
+        "alt": "איור של Google Play ומוצרים שמוצגים מחוץ לאפליקציה."
+      }
+    },
+    {
+      "id": "siri-daily-usage-limits",
+      "topic": "mobile",
+      "headline": "אפל בודקת מגבלת שימוש יומית בכלי ה־AI של Siri, גם באפליקציות של צד שלישי",
+      "summary": "בגרסאות הבטא של iOS 27.3 ו־macOS 27.3 אפל בודקת מגבלה יומית לכל מכשיר על פעולות AI שרצות בענן: בקשות מורכבות ל־Siri, יצירה ועריכה של תמונות, קיצורי דרך ב־Shortcuts ואפליקציות של צד שלישי שמשתמשות במודלים של אפל בענן. לפי The Verge, שמצטט את MacRumors, פקודות Siri בסיסיות יישארו חופשיות, ומנויי iCloud+ (חוץ מ־50GB) יקבלו מכסה גדולה פי 2 עד פי 20.",
+      "forBusiness": "אם האפליקציה שלכם משתמשת במודלים של אפל בענן, כדאי לתכנן מה המשתמש רואה כשהמכסה היומית שלו נגמרת. זה עדיין בבטא, ואפל לא פרסמה כמה פעולות ייכללו במכסה.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1034581/apple-intelligence-siri-ai-daily-usage-limits-icloud-subscription"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/siri-ai.jpg?quality=90&strip=all&w=1200",
+        "alt": "החלק העליון של מסך אייפון עם האנימציה של Siri."
+      },
+      "continues": {
+        "date": "2026-11-10",
+        "id": "apple-intelligence-usage-packs",
+        "headline": "אפל מתחילה לגבות 49.99 דולר על שימוש נוסף בכלי ה־AI שלה, החל מ־Logic Pro"
+      }
+    },
+    {
+      "id": "danfoss-controller-flaws",
+      "topic": "security",
+      "headline": "שש פרצות בלי תיקון בבקרי הקירור Danfoss AK-SM800A: להוציא את ממשק הניהול מהאינטרנט",
+      "summary": "חברת האבטחה ההולנדית Midnight Blue מצאה שש פרצות שמאפשרות להשתלט מרחוק על בקר הקירור בלי התחברות, והגרסה החדשה 5.4.0 לא מתקנת אותן. רשויות הסייבר בבלגיה, אירלנד וגרמניה הורו למפעילים להוציא את ממשקי הניהול מהאינטרנט, וציינו שעדכון, החלפת סיסמה או Strict mode לא מספיקים לבד.",
+      "forBusiness": "סופרמרקטים, מסעדות ומחסני קירור שמשתמשים בבקר הזה: בקשו מחברת התחזוקה לוודא שאי אפשר להגיע אליו מהאינטרנט, ושגישה מרחוק עוברת רק דרך VPN או חיבור מוגן אחר.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/six-unpatched-danfoss-refrigeration.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_1GngZ38pRRizZTrhUgdWx49U1Dk8N_Y1Wkfll2kXIjAeYMmX2R69d6OBvA9k-zb6rnYbNOZyouN9yj59QIlT8XxiTzmmhLTmwmEdU2bqiGc_XoSMlvKKN1qZtH3o73YN1miGEhR4vkDniji2WkWOHjSPPIn69ysWKPkFzr504FsViG2NQYxPDkD7sgw/s1600/flaws.jpg",
+        "alt": "שרטוט של בקר קירור עם רכיבים פגיעים שמסומנים באדום וחיבור מהאינטרנט."
+      },
+      "continues": {
+        "date": "2026-11-10",
+        "id": "refrigeration-controller-advisory",
+        "headline": "אזהרה בארה\"ב: תוקפים משבשים מרחוק בקרי קירור, ומלאי שלם עלול להיזרק"
+      }
+    },
+    {
+      "id": "ask-maps-appointments",
+      "topic": "ai",
+      "headline": "Ask Maps של גוגל יודע למצוא תורים בעסקים מקומיים ולהתקשר אליהם בשם המשתמש",
+      "summary": "גוגל מוסיפה ל־Ask Maps אפשרות לחפש תורים פנויים לטיפוח, לחיות מחמד ולתיקוני רכב ובית, ולהתקשר לעסקים מקומיים בשביל המשתמש; הפיצ׳ר הזה מתחיל בארה\"ב בלבד. באותו עדכון Ask Maps בונה מסלולי טיול עם עצירות, מחפש ברשימות השמורות לפי זמינות, ומתרחב ל־30 מדינות באירופה, כך שהוא זמין ביותר מ־200 מדינות וטריטוריות.",
+      "forBusiness": "בישראל אין עדיין הזמנת תורים דרך Ask Maps, אבל הכיוון ברור: סוכן AI יבדוק זמינות ויתקשר במקום הלקוח. כדאי לוודא שבפרופיל העסק בגוגל השעות, הטלפון וקישור ההזמנה מעודכנים.",
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Ask_Maps_November_herosocial.width-1300.png",
+        "alt": "איור של יד שמחזיקה טלפון עם מסלול במפה, לצד חנויות ומכונית."
+      }
+    },
+    {
+      "id": "hugging-face-openrouter",
+      "topic": "ai",
+      "headline": "Hugging Face עוברת לנתב של OpenRouter: מודלים פתוחים דרך API אחד, עם ספק חלופי כשאחד נופל",
+      "summary": "בקשות למודלי שפה דרך Inference Providers של Hugging Face עוברות מהיום דרך OpenRouter, שבוחר לכל בקשה את הספק לפי מחיר, מהירות ואמינות, ומנסה ספק אחר אם הראשון נכשל, בלי לשנות את הקוד. לפי הנתונים בפוסט, מודלים פתוחים עולים בממוצע 0.28 דולר למיליון טוקנים בקלט ו־1.62 דולר בפלט, לעומת 1.27 ו־6.36 דולר במודלים סגורים.",
+      "forBusiness": "למי שמריץ תהליכים עם AI בהיקף גדול, כמו סיווג פניות או סיכום מסמכים, מודל פתוח יכול להוזיל את העלות כמה פעמים. המודלים הפתוחים הטובים עדיין חלשים מהסגורים במשימות הקשות ביותר, אז כדאי לבדוק על דוגמאות אמיתיות לפני מעבר.",
+      "source": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/openrouter"
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "ai-agents-exploit-patches",
+      "topic": "security",
+      "text": "גוגל: תוקפים משתמשים בסוכני AI כדי להשוות גרסאות קוד אחרי עדכון ולבנות ממנו פריצה, כך שהזמן בין פרסום תיקון לניצול שלו מתקצר.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/google-finds-hackers-using-ai-agents-to.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpEBmKLWFpEn8sSoJLtj1ZR7FPMd8GxxKN2v4IzyBkydma_g4gXzaWEEkK5CTPwidrBPw6QPdoByiEC14ufVP2pvezWKtH_dmqHttARDKzDOopkw0vzUdTYZubCh9Qy76nlmVSbhtTSvDOuT1c70E4TVPw8T4hUhMdR-saHjQPW1S9IZNmg2_RfsMsmJLb/s1600/google.jpg",
+        "alt": "תרשים של סוכן תזמור שמנהל חמישה שלבים של תקיפה."
+      }
+    },
+    {
+      "id": "macos-full-disk-access",
+      "topic": "mobile",
+      "text": "ב־macOS 27.3 beta 2 אפל מפצלת את ההרשאות לשליטה במכשיר ולגישה מלאה לדיסק, ומעודדת לתת גישה רק לתיקיות ולאפליקציות שנדרשות. הרשאות קיימות נשארות.",
+      "source": {
+        "name": "Apple Developer",
+        "url": "https://developer.apple.com/news/?id=oqng0zjk"
+      },
+      "image": {
+        "url": "https://developer.apple.com/news/images/og/full-disk-access-og.png",
+        "alt": "סמל של כונן דיסק אפור על רקע בהיר."
+      }
+    },
+    {
+      "id": "make-module-search",
+      "topic": "automation",
+      "text": "ב־Make אפשר עכשיו לחפש מודול בתרחיש לפי שם, מזהה או משתנה עם Ctrl+F, ולראות בפאנל אחד מה כל מודול קיבל והחזיר, גם בזמן ריצה.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/feature-spotlight-new-module-search-and-module-run-panel/119925"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/d/1/d1c68723c2d2b510a79e6e4d7cf6ff245a873447_2_1024x600.gif",
+        "alt": "הדגמה של חיפוש מודולים ופאנל הריצה בעורך התרחישים של Make."
+      }
+    },
+    {
+      "id": "us-datacenters-electricity",
+      "topic": "research",
+      "text": "מחקר ב־Nature Sustainability: 403 מרכזי נתונים ענקיים בארה\"ב צרכו כ־82 טרה־ואט שעה בשנה, כ־1.8% מצריכת החשמל בארה\"ב, וכ־54% מהחשמל הגיע מגז ופחם.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1034668/data-centers-electricity-climate-pollution-study-harvard"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/STKS528_DATA_CENTERS_B.jpg?quality=90&strip=all&w=1200",
+        "alt": "קולאז׳ של מרכז נתונים עם גרפים."
+      }
+    },
+    {
+      "id": "retadup-coffeeloader",
+      "topic": "security",
+      "text": "Kaspersky: תולעת Retadup, שמתפשטת בדיסקים נשלפים ופורקה ב־2019, חזרה ומפיצה את הנוזקה CoffeeLoader; החברה חסמה כ־15,000 הדבקות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/retadup-worm-resurfaces-7-years-after.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxRuwbdQU-KyBsSrFlIZp4oczr_tJu53WrfB3nM6QYrO7kFgGAZO1NMSi7mziUOUaTrzq5C4KzCJqvYOf0Ry19ypJac-9mBYzYiqiTNl462i1uYo7DF9aAHxiVU_IOaByH3NtNlrF0hUhZtpItADKJauPVzWrz8r6YOQEHQrt_YiAmPba4CIOsSjZA2Wy_/s1600/hacker-code.jpg",
+        "alt": "תמונת אווירה של קוד על מסך מחשב."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "flintnotes",
+      "name": "FlintNotes",
+      "text": "מקליטה ומתמללת פגישות ב־Mac, iPhone ו־iPad בתוך המכשיר, ושומרת סיכומים ומשימות כקבצים בתיקייה שלכם.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/flintnotes"
+      },
+      "icon": "https://cdn.betalist.com/f7owut37elq7b765xb9yz2x6m6p7"
+    },
+    {
+      "id": "mopskit",
+      "name": "MOPsKit",
+      "text": "הופכת לוגו ל־12 תבניות מייל ממותגות, ושולחת אותן בלחיצה ל־Mailchimp, HubSpot, Brevo, Klaviyo ועוד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/mopskit"
+      },
+      "icon": "https://cdn.betalist.com/kjociif7keraowoppysl8zoas8m2"
+    },
+    {
+      "id": "pulserion",
+      "name": "Pulserion",
+      "text": "מתחברת ל־Seller Central ול־Amazon Ads ואומרת לצוות כל יום מה דורש טיפול בחנות ב־Amazon.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/pulserion"
+      },
+      "icon": "https://cdn.betalist.com/stxidrth8fw2aldidqvpggfmopp3"
+    },
+    {
+      "id": "remoqa",
+      "name": "Remoqa",
+      "text": "גישה מרחוק למחשב ב־Windows, macOS ו־Linux עם הצפנה מקצה לקצה; התוכנית החינמית כוללת עד 3 מכשירים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/remoqa"
+      },
+      "icon": "https://cdn.betalist.com/199cxd8m7t35edhkz3vjq2lxkt1e"
+    },
+    {
+      "id": "kistrl",
+      "name": "Kistrl",
+      "text": "תיבת מייל שממיינת לשיחות, ניוזלטרים וקבלות, ושולחים חדשים ממתינים עד שתאשרו אותם.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/kistrl"
+      },
+      "icon": "https://cdn.betalist.com/b9x87fzzxdxfg3yjd2wbplkulxvm"
+    },
+    {
+      "id": "ondago",
+      "name": "Ondago",
+      "text": "מעבירה שיחות עבודה של Claude Code, Codex ו־OpenCode בין מחשבים, ענן וטלפון, עם הקבצים וההקשר.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/ondago"
+      },
+      "icon": "https://cdn.betalist.com/qrwrxxms21s0fuzyclh6k2uchi55"
+    }
+  ]
+}
