@@ -1,0 +1,158 @@
+/* Shared look for the "recorded" clips: a desktop, app windows, the teach-site paper, a cursor.
+   Every clip is a fixed 1280x720 page that draws itself from a time value (see kit.js). */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Nunito:wght@600;700;800&family=JetBrains+Mono:wght@400;600&display=block");
+
+:root {
+  --desk: #1d201f;
+  --desk-2: #151716;
+  --glow: rgba(191, 149, 249, 0.18);
+  --paper: #f8f8f9;
+  --dot: #d9d8e2;
+  --ink: #1c1b22;
+  --muted: #5d5b6c;
+  --line: #d6d4e2;
+  --primary: #514fbb;
+  --primary-soft: #e6e4ff;
+  --hot: #c2410c;
+  --oil: #f6edc4;
+  --term: #191714;
+  --term-ink: #e8e1d8;
+  --term-dim: #8f877d;
+  --term-acc: #d9a36a;
+  --ok: #4fb37a;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1280px; height: 720px; overflow: hidden; }
+body {
+  font-family: "Rubik", "Nunito", system-ui, sans-serif;
+  background:
+    radial-gradient(900px 520px at 78% 18%, var(--glow), transparent 70%),
+    radial-gradient(700px 500px at 10% 100%, rgba(224, 208, 193, 0.07), transparent 70%),
+    linear-gradient(160deg, var(--desk), var(--desk-2));
+  color: var(--ink);
+  position: relative;
+}
+
+/* ---------- windows ---------- */
+.win {
+  position: absolute;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  will-change: transform, opacity;
+}
+.bar {
+  height: 38px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  background: #ecebf0;
+  border-bottom: 1px solid #dcdae4;
+  direction: ltr;
+}
+.dots { display: flex; gap: 7px; }
+.dots i { width: 11px; height: 11px; border-radius: 50%; background: #c9c7d3; display: block; }
+.url {
+  flex: 1;
+  margin: 0 10px;
+  height: 24px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #dcdae4;
+  font: 500 12.5px/24px "Nunito", sans-serif;
+  color: #4a4858;
+  padding: 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.url b { color: var(--ink); font-weight: 800; }
+.bar.dark { background: #24211d; border-bottom-color: #312d28; }
+.bar.dark .dots i { background: #4a453f; }
+.bar.dark .title { color: #a59c90; font: 600 12.5px "JetBrains Mono", monospace; margin-inline-start: 8px; }
+
+.paper {
+  flex: 1;
+  position: relative;
+  background-color: var(--paper);
+  background-image: radial-gradient(var(--dot) 1.2px, transparent 1.3px);
+  background-size: 22px 22px;
+  overflow: hidden;
+}
+
+/* ---------- terminal ---------- */
+.term {
+  flex: 1;
+  background: var(--term);
+  color: var(--term-ink);
+  font: 400 14.5px/1.62 "JetBrains Mono", ui-monospace, monospace;
+  padding: 18px 20px;
+  direction: ltr;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+.term .dim { color: var(--term-dim); }
+.term .acc { color: var(--term-acc); }
+.term .ok { color: var(--ok); }
+.term .row { white-space: pre-wrap; }
+.prompt-box {
+  border: 1px solid #45403a;
+  border-radius: 10px;
+  padding: 10px 14px;
+  min-height: 46px;
+}
+.caret {
+  display: inline-block;
+  width: 8px;
+  height: 17px;
+  background: var(--term-ink);
+  vertical-align: -3px;
+  margin-inline-start: 1px;
+}
+
+/* ---------- cursor ---------- */
+#cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 28px;
+  z-index: 50;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
+}
+#ripple {
+  position: absolute;
+  z-index: 49;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- teach-site pieces ---------- */
+.kicker { font: 700 17px "Nunito", "Rubik", sans-serif; color: var(--primary); }
+.h1 { font: 800 38px/1.12 "Rubik", sans-serif; letter-spacing: -0.01em; margin: 4px 0 0; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 14px;
+  font: 600 15px "Rubik", sans-serif;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+.btn.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+.card { background: #fff; border-radius: 22px; box-shadow: 0 6px 22px rgba(60, 52, 140, 0.08); }
+.ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }

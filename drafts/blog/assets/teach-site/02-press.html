@@ -1,0 +1,192 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Hydraulic press</title>
+<link rel="stylesheet" href="kit.css" />
+<style>
+  .panel { position: absolute; top: 34px; width: 520px; }
+  .row { position: absolute; width: 520px; height: 60px; }
+  .row .lbl { display: flex; justify-content: space-between; align-items: baseline; font: 600 19px "Rubik"; color: #3c3a48; }
+  .row .val { font: 800 21px "Nunito"; color: var(--primary); direction: ltr; }
+  .row .val small { font-weight: 600; color: #6b6880; }
+  .track { position: absolute; top: 44px; height: 8px; width: 520px; border-radius: 4px; background: #c9c7d9; }
+  .fill { position: absolute; top: 0; height: 8px; border-radius: 4px; background: var(--primary); }
+  .knob { position: absolute; top: -10px; width: 28px; height: 28px; margin-inline-start: -14px; border-radius: 50%; background: #fff; border: 5px solid var(--primary); box-shadow: 0 2px 8px rgba(60, 50, 140, .25); }
+  .results { position: absolute; width: 520px; top: 476px; padding: 16px 22px; }
+  .res { display: flex; justify-content: space-between; font: 600 18px/1.75 "Rubik"; color: #2c2a36; }
+  .res .n { font: 800 20px/1.75 "Nunito"; direction: ltr; }
+  .res .n.acc { color: var(--primary); }
+  svg text { font-family: "Nunito", "Rubik", sans-serif; }
+</style>
+<body>
+  <div class="win" style="left:40px;top:40px;width:1200px;height:640px">
+    <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url" id="url"></div></div>
+    <div class="paper" id="paper">
+      <div class="panel" id="panel">
+        <div class="kicker" id="kicker"></div>
+        <div class="h1" id="title"></div>
+        <div id="sub" style="font: 400 19px/1.5 Rubik; color:#3c3a48; margin-top:8px; width:520px"></div>
+      </div>
+      <svg id="dia" direction="ltr" width="560" height="470" viewBox="0 0 560 470" style="position:absolute;top:70px"></svg>
+    </div>
+  </div>
+  <script type="module">
+    import { clip, he, tr, prog, ease, lerp, makeCursor, $ } from "./kit.js";
+
+    const W = { x: 40, y: 78 }; // paper origin on the page
+    const dir = he ? "rtl" : "ltr";
+    $("#paper").dir = dir;
+    $("#url").innerHTML = `<b>teach.tom-cohen.com</b>/p/hyd-pascal`;
+    $("#kicker").textContent = tr({ he: "מנסים", en: "Try it" });
+    $("#title").textContent = tr({ he: "המכבש ההידראולי", en: "The hydraulic press" });
+    $("#sub").textContent = tr({
+      he: "שתי בוכנות על אותו שמן, באותו גובה. הלחץ מתחת לשתיהן שווה.",
+      en: "Two pistons on the same oil. The pressure under both is the same.",
+    });
+
+    // Layout: controls at the reading start, the diagram on the other side.
+    const PX = he ? 640 : 40; // controls panel x (paper coords)
+    const DX = he ? 40 : 610; // diagram x
+    $("#panel").style.left = PX + "px";
+    $("#dia").style.left = DX + "px";
+
+    const SL = [
+      { key: "F1", y: 215, label: tr({ he: "הכוח בכניסה F₁", en: "Input force F₁" }), unit: "N", min: 0, max: 600 },
+      { key: "d1", y: 295, label: tr({ he: "קוטר הבוכנה הקטנה d₁", en: "Small piston diameter d₁" }), unit: "mm", min: 5, max: 50 },
+      { key: "d2", y: 375, label: tr({ he: "קוטר הבוכנה הגדולה d₂", en: "Large piston diameter d₂" }), unit: "mm", min: 50, max: 350 },
+    ];
+    const paper = $("#paper");
+    for (const s of SL) {
+      const row = document.createElement("div");
+      row.className = "row";
+      row.style.left = PX + "px";
+      row.style.top = s.y - 44 + "px";
+      row.innerHTML = `<div class="lbl"><span>${s.label}</span><span class="val"></span></div>
+        <div class="track"><div class="fill"></div><div class="knob"></div></div>`;
+      paper.append(row);
+      s.val = row.querySelector(".val");
+      s.fill = row.querySelector(".fill");
+      s.knob = row.querySelector(".knob");
+    }
+    const res = document.createElement("div");
+    res.className = "card results";
+    res.style.left = PX + "px";
+    const R = [
+      ["p", tr({ he: "הלחץ בשמן", en: "Pressure in the oil" })],
+      ["ratio", tr({ he: "יחס השטחים A₂/A₁", en: "Area ratio A₂/A₁" })],
+      ["F2", tr({ he: "הכוח ביציאה F₂", en: "Output force F₂" })],
+      ["s", tr({ he: "המחיר: המהלך", en: "The price: stroke" })],
+    ];
+    res.innerHTML = R.map(([k, l]) => `<div class="res"><span>${l}</span><span class="n ${k === "F2" ? "acc" : ""}" data-k="${k}"></span></div>`).join("");
+    res.style.top = "418px";
+    paper.append(res);
+    const out = Object.fromEntries(R.map(([k]) => [k, res.querySelector(`[data-k=${k}]`)]));
+
+    const frac = (s, v) => (v - s.min) / (s.max - s.min);
+    // Page x of a slider value (fill grows from the reading start).
+    const knobX = (s, v) => W.x + (he ? PX + 520 - frac(s, v) * 520 : PX + frac(s, v) * 520);
+    const knobY = (s) => W.y + s.y + 4;
+    const fmt = (n, d = 0) => n.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+
+    // Timeline: drag F1 200 → 400, then d1 20 → 10, then push the small piston 100 mm.
+    const T = { f0: 1.6, f1: 3.4, d0: 4.6, d1: 6.4, s0: 7.0, s1: 8.8 };
+    const sF = SL[0], sD = SL[1];
+    const cursor = makeCursor([
+      [0.3, 1150, 640],
+      [T.f0, knobX(sF, 200), knobY(sF), true],
+      [T.f1, knobX(sF, 400), knobY(sF)],
+      [T.d0 - 0.15, knobX(sD, 20), knobY(sD)],
+      [T.d0, knobX(sD, 20), knobY(sD), true],
+      [T.d1, knobX(sD, 10), knobY(sD)],
+      [T.s0, he ? 420 : 880, 630],
+      [11, he ? 420 : 880, 630],
+    ]);
+
+    // Diagram geometry (svg coords).
+    const BIG = { x0: 40, x1: 240 }, SMALL = { x0: 420, x1: 452 }, BOT = 370, CH = 312, TOP = 40;
+    const dia = $("#dia");
+    const NS = "http://www.w3.org/2000/svg";
+    const el = (tag, attrs, parent = dia) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.append(e); return e; };
+    const oilBig = el("rect", { fill: "#f6edc4" });
+    el("rect", { x: BIG.x1, y: CH, width: SMALL.x0 - BIG.x1, height: BOT - CH, fill: "#f6edc4" });
+    const oilSmall = el("rect", { fill: "#f6edc4" });
+    el("path", { d: `M${BIG.x0} ${TOP} V${BOT} H${SMALL.x1} V${TOP}`, fill: "none", stroke: "#2b2a30", "stroke-width": 4, "stroke-linejoin": "round" });
+    el("path", { d: `M${BIG.x1} ${TOP} V${CH} H${SMALL.x0} V${TOP}`, fill: "none", stroke: "#2b2a30", "stroke-width": 4, "stroke-linejoin": "round" });
+    const bigP = el("rect", { x: BIG.x0 + 3, width: BIG.x1 - BIG.x0 - 6, height: 20, rx: 4, fill: "#cfd3dc", stroke: "#6b6f7c", "stroke-width": 2 });
+    const load = el("rect", { x: 80, width: 120, height: 46, rx: 10, fill: "#e6e4ff", stroke: "#514fbb", "stroke-width": 3 });
+    const loadT = el("text", { x: 140, "text-anchor": "middle", "font-size": 18, "font-weight": 800, fill: "#3b3896" });
+    loadT.textContent = tr({ he: "מטען", en: "Load" });
+    const smallP = el("rect", { x: SMALL.x0 + 2, width: SMALL.x1 - SMALL.x0 - 4, height: 16, rx: 3, fill: "#cfd3dc", stroke: "#6b6f7c", "stroke-width": 2 });
+    const rod = el("rect", { x: SMALL.x0 + 11, width: 10, fill: "#cfd3dc", stroke: "#6b6f7c", "stroke-width": 2 });
+    const f1Line = el("line", { x1: 436, x2: 436, stroke: "#c2410c", "stroke-width": 5, "stroke-linecap": "round" });
+    const f1Head = el("path", { fill: "#c2410c" });
+    const f1T = el("text", { x: 462, "font-size": 19, "font-weight": 800, fill: "#2b2a30" });
+    const f2Line = el("line", { x1: 90, x2: 90, stroke: "#3b5bd1", "stroke-width": 5, "stroke-linecap": "round" });
+    const f2Head = el("path", { fill: "#3b5bd1" });
+    const f2T = el("text", { x: 104, "font-size": 19, "font-weight": 800, fill: "#2b2a30" });
+    // gauge on the channel
+    el("line", { x1: 330, x2: 330, y1: 262, y2: CH, stroke: "#2b2a30", "stroke-width": 3 });
+    el("circle", { cx: 330, cy: 236, r: 26, fill: "#fff", stroke: "#2b2a30", "stroke-width": 3 });
+    const needle = el("line", { x1: 330, y1: 236, stroke: "#7b5bd6", "stroke-width": 4, "stroke-linecap": "round" });
+    el("circle", { cx: 330, cy: 236, r: 4, fill: "#2b2a30" });
+    const gT = el("text", { x: 330, y: 292, "text-anchor": "middle", "font-size": 17, "font-weight": 800, fill: "#7b5bd6" });
+    const d2T = el("text", { x: 140, y: 404, "text-anchor": "middle", "font-size": 16, "font-weight": 700, fill: "#5d5b6c" });
+    const d1T = el("text", { x: 436, y: 404, "text-anchor": "middle", "font-size": 16, "font-weight": 700, fill: "#5d5b6c" });
+
+    function arrowHead(path, x, y, down) {
+      const s = down ? 1 : -1;
+      path.setAttribute("d", `M${x - 9} ${y - 12 * s} L${x + 9} ${y - 12 * s} L${x} ${y + 2 * s} Z`);
+    }
+
+    clip({
+      duration: 10.5,
+      poster: 6.6,
+      seek(t) {
+        cursor(t);
+        const F1 = lerp(200, 400, ease(prog(t, T.f0, T.f1)));
+        const d1 = lerp(20, 10, ease(prog(t, T.d0, T.d1)));
+        const d2 = 200;
+        const A1 = (Math.PI * (d1 / 1000) ** 2) / 4, A2 = (Math.PI * (d2 / 1000) ** 2) / 4;
+        const p = F1 / A1; // Pa
+        const F2 = p * A2;
+        const ratio = A2 / A1;
+        const s1 = 100 * ease(prog(t, T.s0, T.s1)); // mm
+        const s2 = s1 / ratio;
+        for (const [s, v, d] of [[SL[0], F1, 0], [SL[1], d1, 0], [SL[2], d2, 0]]) {
+          s.val.innerHTML = `${fmt(v, d)} <small>${s.unit}</small>`;
+          const f = frac(s, v) * 100;
+          s.fill.style.width = f + "%";
+          s.fill.style.insetInlineStart = "0";
+          s.knob.style.insetInlineStart = f + "%";
+        }
+        out.p.innerHTML = `${fmt(p / 1e5, 2)} <small>bar</small>`;
+        out.ratio.textContent = fmt(ratio, 0);
+        out.F2.innerHTML = `${fmt(Math.round(F2 / 100) * 100)} <small>N</small>`;
+        out.s.innerHTML = `s₁ ${fmt(s1)} mm → s₂ ${fmt(s2, 2)} mm`;
+
+        // diagram
+        const yS = 190 + s1 * 0.9, yB = 168 - s2 * 0.9;
+        oilBig.setAttribute("x", BIG.x0); oilBig.setAttribute("y", yB); oilBig.setAttribute("width", BIG.x1 - BIG.x0); oilBig.setAttribute("height", BOT - yB);
+        oilSmall.setAttribute("x", SMALL.x0); oilSmall.setAttribute("y", yS); oilSmall.setAttribute("width", SMALL.x1 - SMALL.x0); oilSmall.setAttribute("height", BOT - yS);
+        bigP.setAttribute("y", yB - 20);
+        load.setAttribute("y", yB - 66);
+        loadT.setAttribute("y", yB - 37);
+        const pw = (SMALL.x1 - SMALL.x0 - 4) * (d1 / 20);
+        smallP.setAttribute("x", 436 - Math.min(pw, 30) / 2); smallP.setAttribute("width", Math.min(pw, 30));
+        smallP.setAttribute("y", yS - 16);
+        rod.setAttribute("y", yS - 120); rod.setAttribute("height", 104);
+        const len = 30 + F1 * 0.12;
+        f1Line.setAttribute("y1", yS - 124 - len); f1Line.setAttribute("y2", yS - 132);
+        arrowHead(f1Head, 436, yS - 122, true);
+        f1T.setAttribute("y", yS - 120 - len + 18); f1T.textContent = `F₁ ${fmt(F1)} N`;
+        const l2 = Math.min(150, 50 + Math.log10(F2) * 18);
+        f2Line.setAttribute("y1", BOT - 10); f2Line.setAttribute("y2", BOT - 10 - l2);
+        arrowHead(f2Head, 90, BOT - 22 - l2, false);
+        f2T.setAttribute("y", BOT - 20 - l2 / 2); f2T.textContent = `F₂ ${fmt(Math.round(F2 / 100) * 100)} N`;
+        const a = (-120 + Math.min(1, p / 1e5 / 60) * 240) * (Math.PI / 180);
+        needle.setAttribute("x2", 330 + Math.sin(a) * 19); needle.setAttribute("y2", 236 - Math.cos(a) * 19);
+        gT.textContent = `${fmt(p / 1e5, 2)} bar`;
+        d2T.textContent = `d₂ = ${d2} mm`; d1T.textContent = `d₁ = ${fmt(d1)} mm`;
+      },
+    });
+  </script>
+</body>
