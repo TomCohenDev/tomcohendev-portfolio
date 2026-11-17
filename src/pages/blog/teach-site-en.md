@@ -24,7 +24,7 @@ Most of what I teach is a relationship between quantities. Pascal's law isn't "t
 
 A slide shows one case of that. To show the relationship, I'd talk over the slide, draw on the board, or copy the slide with different numbers and hope I updated every copy.
 
-Copies also hide mistakes. When I moved the Pascal lesson over, Claude noticed that one of my old slides gave the piston area as A = πd². The area is πd²/4. That slide had been in my deck for a long time.
+Copies also hide mistakes. When I moved the Pascal lesson over, Claude noticed that one of my old slides gave the piston area as A = πd². The area is πd²/4.
 
 ## What a lesson looks like now
 
