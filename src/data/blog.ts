@@ -3,6 +3,28 @@ import type { Post } from "../components/content/mock";
 /** Published articles only. Mock posts remain on their existing noindex demo URLs. */
 export const publishedPosts: Post[] = [
   {
+    slug: "teach-site",
+    title: "החלפתי את המצגות בקוד, והתלמידים שלי לומדים אחרת",
+    description: "העברתי את ההוראה שלי בהידראוליקה ובתרמודינמיקה ממצגות לשיעורים שבנויים ב־HTML, ‏CSS ו־three.js, עם PDF להדפסה. מה בניתי, מה השתנה, ואיך מקימים את זה לבד עם Claude, גם בלי דומיין.",
+    date: "2026-11-17",
+    readMinutes: 9,
+    tags: ["הוראה", "AI", "three.js"],
+    cover: "code",
+    image: "/blog/teach-site-cover.webp",
+    body: [],
+  },
+  {
+    slug: "teach-site-en",
+    title: "I Replaced My Slides With Code, and My Students Learn Differently Now",
+    description: "I moved my hydraulics and thermodynamics teaching from slide decks to lessons built in HTML, CSS and three.js, with PDFs for printing. What I built, what changed, and how to set it up yourself with Claude, even without a domain.",
+    date: "2026-11-17",
+    readMinutes: 9,
+    tags: ["Teaching", "AI", "English"],
+    cover: "code",
+    image: "/blog/teach-site-cover-en.webp",
+    body: [],
+  },
+  {
     slug: "lazarus-backdoor",
     title: "פחות מ־10 נוירונים: איך סוכן AI מקבל דלת אחורית נסתרת, ואיך בודקים את שלכם",
     description: "חוקרי Microsoft השתילו דלת אחורית בסוכני AI באמצעות עריכה של קומץ נוירונים רדומים. איך המתקפה עובדת, למה מבחנים לא תופסים אותה, ואילו בדיקות ומגבלות מצמצמות את הסיכון.",
