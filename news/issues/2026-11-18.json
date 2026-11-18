@@ -1,0 +1,264 @@
+{
+  "date": "2026-11-18",
+  "stories": [
+    {
+      "id": "gemini-tasks-free",
+      "topic": "ai",
+      "headline": "גוגל פותחת בחינם את מצב המשימות ב־Gemini: מתקשר לעסקים, קונה ומזמין בשם המשתמש",
+      "summary": "מצב Task באפליקציית Gemini, שמבצע משימות כמו קביעת תור בטלפון, ניתוח חשבונות וקניות, נפתח בחינם בארה\"ב, ביפן, בקוריאה, בקנדה, באוסטרליה ובהודו, על בסיס המודל Gemini 4 Hydrogen. לפי גוגל, כש־Gemini מתקשר לעסק הוא אומר מיד שהוא AI, ועסקים יכולים לבקש שלא יתקשר אליהם.",
+      "forBusiness": "בישראל התכונה עוד לא זמינה, אבל עסקים עם לקוחות בחו\"ל צריכים להתכונן לשיחות ולהזמנות שמגיעות מסוכן AI. מפתחים יכולים להגיש בקשה להצטרף ל־Connected Apps Platform, שכבר מחברת את Gemini ליותר מ־60 אפליקציות.",
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Hero_2784_x_1566_1.width-1300.png",
+        "alt": "מסך הפתיחה של Gemini עם מתג בין צ׳אט למשימה."
+      }
+    },
+    {
+      "id": "app-store-tax-price-updates",
+      "topic": "mobile",
+      "headline": "אפל מעדכנת מיסים ומחירים ב־App Store: מס מכירה בקליפורניה ושינויי מחיר ב־3 בדצמבר",
+      "summary": "מ־1 בינואר 2027 יחול מס מכירה בקליפורניה על אפליקציות בחמש קטגוריות מס, בהן SaaS ו־App Store Software, והסכום שהלקוח משלם עשוי לעלות בלי שינוי בהכנסות המפתח. ב־3 בדצמבר 2026 יתעדכנו מחירי אפליקציות ורכישות בתוך אפליקציות בבוטסואנה, בקולומביה, במצרים, ברואנדה ובטורקיה, ומינויים מתחדשים לא ישתנו.",
+      "forBusiness": "מי שמוכר אפליקציה או רכישות בחנות של אפל יכול לבדוק ב־App Store Connect, בעמוד Pricing and Availability, את שינויי המחיר המתוכננים ואת מאפיין המס החדש SaaS. מחירים שנקבעו ידנית לכל חנות לא ישתנו.",
+      "source": {
+        "name": "Apple Developer",
+        "url": "https://developer.apple.com/news/?id=4o5ie73a"
+      },
+      "image": {
+        "url": "https://developer.apple.com/news/images/og/app-store-og.png",
+        "alt": "הסמל של App Store."
+      }
+    },
+    {
+      "id": "optimizely-script-skimmer",
+      "topic": "security",
+      "headline": "תוקף השתיל קוד שגונב פרטי אשראי בסקריפטים של Optimizely באתרים של 178 ארגונים",
+      "summary": "לפי Report URI, תוקף ניצל פרצה ב־Optimizely Web Experimentation והוסיף לסקריפטים שאתרים טוענים מהשירות קוד שלוכד פרטי כרטיס אשראי מטפסים ומחליף כתובות של ארנקי קריפטו, באתרים של לפחות 178 ארגונים, בהם CNN, BBC ו־Zoom. Optimizely אומרת שתיקנה את הפרצה והסירה את הקוד, אבל לא פרסמה מה הלקוחות צריכים לעשות.",
+      "forBusiness": "כל סקריפט של צד שלישי באתר, לניסויים, לאנליטיקס או לצ׳אט, יכול להריץ קוד גם בדף התשלום. לפי החוקרים הקוד לא הצליח לקרוא כרטיסים שהוקלדו בשדות התשלום המאובטחים של ספקים כמו Stripe ו־Adyen, ולכן כדאי לוודא שכך בנוי דף התשלום שלכם.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hijacked-optimizely-scripts-served-card.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCKDXT71QJSnAqaPKmcBticVRjN0Q1diDWoOGKhoZ-wL5WIgLAPHX6dmetOkddYjLcZGIfxDAfLLN1LwbOV4zHqzONN7i8cIyMJLR-rc2t6LF7MnTzJAAoN54aIPEYoWPBf01znenuq43oDLwcVksxZbvP5xPnFsC-G-sDSjpzDegalBNU87YIe7z0YcI/s1600/Optimizely-hacked.jpg",
+        "alt": "תרשים של הקוד שהוזרק לסקריפט של Optimizely והאתרים שנפגעו."
+      }
+    },
+    {
+      "id": "make-meta-ai-muse",
+      "topic": "automation",
+      "headline": "Make מוסיפה אפליקציה ל־Meta AI (Muse): טקסט, תמונות ותמלול בתוך תרחישים",
+      "summary": "האפליקציה החדשה מחברת ל־Make את המודלים של Meta לטקסט, לתמונות ולשמע עם מפתח API, ויש בה מודולים ליצירת תשובות, ליצירה ולעריכה של תמונות ולתמלול הקלטות. היא זמינה בכל התוכניות של Make, כולל התוכנית החינמית.",
+      "forBusiness": "אפשר למשל לתמלל שיחות עם לקוחות ולשלוח את הטקסט ל־CRM, או ליצור תמונות מוצר מנתוני הקטלוג, בלי לכתוב קוד. מי שכבר עובד עם Make יכול לנסות את זה בתרחיש קיים.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/new-ai-app-meta-ai-muse-for-make/119965"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/2/a/2acc0ee851f5609ddfbea095a585d40b74585ee2_2_1024x576.jpeg",
+        "alt": "כרזה של Make שמכריזה על אפליקציית Meta AI (Muse)."
+      }
+    },
+    {
+      "id": "gpt-6-2-astra-sol",
+      "topic": "ai",
+      "headline": "OpenAI משיקה את GPT-6.2 Astra ו־Sol, והמודל החזק זול ב־20% מקודמו ב־API",
+      "summary": "GPT-6.2 Astra מיועד למשימות הקשות ו־GPT-6.2 Sol לעבודה יומיומית, ושניהם זמינים ב־API של OpenAI. לפי Simon Willison, Astra עולה 8 דולר למיליון טוקנים בקלט ו־40 דולר בפלט, 80% ממחיר GPT-6 Astra, ו־Sol נשאר ב־2 ו־10 דולר.",
+      "forBusiness": "מי שמריץ סוכנים או אוטומציות על מודלים של OpenAI יכול להוזיל עלויות, בעיקר במשימות ארוכות: מחיר הקלט השמור ב־Astra ירד ל־0.40 דולר למיליון טוקנים. כדאי להשוות תוצאות על המשימות שלכם לפני שמחליפים מודל.",
+      "source": {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/"
+      },
+      "image": {
+        "url": "https://static.simonwillison.net/static/2026/astra-6-2-max.webp",
+        "alt": "ציור של שקנאי רוכב על אופניים, שיצר GPT-6.2 Astra במבחן של Simon Willison."
+      }
+    },
+    {
+      "id": "gemini-chat-retention",
+      "topic": "ai",
+      "headline": "גוגל תשמור שיחות Gemini כחודשיים, גם כשהיסטוריית הצ׳אט כבויה",
+      "summary": "שיחות זמניות ושיחות שמתנהלות כשההיסטוריה כבויה יישמרו כחודשיים במקום 72 שעות, והשינוי יגיע לאפליקציית Gemini בכל העולם בשבועות הקרובים. במקביל גוגל מפצלת את ההגדרה Keep Activity לשתיים, שמירת היסטוריה ושימוש בשיחות לאימון, ולדבריה שיחות זמניות לא משמשות לאימון מודלים.",
+      "forBusiness": "מי שמכניס ל־Gemini מידע של לקוחות או מסמכים פנימיים צריך לדעת שהמידע יישמר אצל גוגל זמן רב יותר. כדאי לעבור על ההגדרות החדשות כשיגיעו ולקבוע בעסק מה מותר להדביק לצ׳אט.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/17/google-to-keep-gemini-chats-for-two-months-up-from-72-hours-even-with-history-off/"
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "iphone-mic-permission-bypass",
+      "topic": "security",
+      "text": "פרצה ב־iPhone וב־iPad אפשרה לאפליקציות להקליט גם אחרי שהמשתמש סירב לתת גישה למיקרופון; התיקון הגיע ב־iOS 26.6.1 באוגוסט, ואין דיווח על ניצול.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/researchers-detail-iphone-flaw-that-let.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjoRknesoqi26EwwYMrgBhBudDMiej0sO7-228OvrBIj2ivaPcOUo7GJgoIHAd9fI_VFlK4su0xn1L_BqUgFsldNJgAkQwE4wAvAZzUao-wHUHSoq8NQUo_UdyILYYFoshEgONLhibaGHRQ_cKFVo0Psl1kehyphenhyphenNjlCrkECk16huiU6WecKlpBr0YDN3nus/s1600/iphone-recording.jpg",
+        "alt": "שלושה מסכים של אפליקציית בדיקה שמקליטה בלי הרשאת מיקרופון."
+      }
+    },
+    {
+      "id": "telegram-widget-sandbox-bypass",
+      "topic": "security",
+      "text": "חוקרי NebuSec הראו שווידג׳ט זדוני של בוט ב־Telegram ל־Android עוקף את ההגנה החדשה ומריץ קוד; כרגע רק בוטים מאושרים יכולים לשלוח ווידג׳טים.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/researchers-claim-two-rce-exploits-that.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpVlnQrxQ-QDawosxNpQdcPtITzUQKuYeqUtOk0gctwRhi-8P9Qi_9L72cSwkHRdGNS94HaIDHEkqeb0NTPw3mIZyFstN3ZM1FlUoMweKPNz4iTkAkxlxFSNdE92DAFlfLMFe0gTXWE78eOHROSbISVMgdmFOeVhm0SS2-1wXrNxPGknTVMGroQ0pRqYg/s1600/telegram-rce.jpg",
+        "alt": "הסמל של Telegram לצד הדמות של Android."
+      }
+    },
+    {
+      "id": "oracle-java-november-patches",
+      "topic": "security",
+      "text": "Oracle מתקנת 11 פרצות ב־Java SE שאפשר לנצל מרחוק בלי התחברות, וממליצה לעבור לגרסאות החדשות של Java 8, 11, 17, 21, 25 ו־27.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiw1l9jYXUC-XLNjqqVjPvFicpQvkj-fwml16Gl43nsTc5TrBGGzijFoCzpxHpfninWaxrDxoCW4J6FKkgO1rPsnVFgFAcMbm9hl9YxeVO6fM4sBrs_tvUOXG8MnKPqDXRal3qNJ2VY7RzqAlj5vJzYI6xVFOxVGV7TyDliY-AIBqKm2bst1d6rCNl2qkhv/s1600/java4shell.jpg",
+        "alt": "הסמל של Java עם הכיתוב Java4Shell."
+      }
+    },
+    {
+      "id": "n-central-hotfix-3",
+      "topic": "security",
+      "text": "N-able פרסמה את N-central 2026.4 Hotfix 3 עם תיקונים ל־17 פרצות, ומבקשת מכל הלקוחות לעדכן את כל ה־Agents וה־Probes כדי שאי אפשר יהיה להתחזות אליהם.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/n-able-patches-17-n-central-flaws-as.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8Tz3JQedMRmE0NpjmQ9KXm4AlgJ2GfBbA8pbKm3UARfJrN_vRlTywt0Zg80C-fM4hmacqlZTHV_wh0E-yoga-UjcSvpt2FHczR2AtGze3mvk0fmqeET4vvee-4f_RJEMIF-HL79HkXg_GD2Lg-U8jAPPJaPaqYDJmKTsJHn7GO0lS84zEU5SFQWll-qwv/s1600/nn.jpg",
+        "alt": "איור של N-central עם מנעולים על מחשבים מנוהלים."
+      }
+    },
+    {
+      "id": "screenconnect-26-6-5",
+      "topic": "security",
+      "text": "ConnectWise סיימה לחקור את הגישה הלא מורשית ל־ScreenConnect, וממליצה לעדכן את לקוח הטכנאי לגרסה 26.6.5 ולכבות בשרתים מקומיים את התוספים שזוהו.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjErwt0frcFKiESffCoP1OtYh0j23goqdMN0nz-RT02biCz30WlLG4PD5gTyGgbumOWB3Zh1PJfENQoRtOwQVm3Nbg8VsiRhvNk662qVFNGqO8DQ4bFrroSzWgsvfCYGLWFzD1A-f6fcTu_E_dm4o1iUJz96scWy7skw49vzD9hfIfVEILTVPKsvbsEpGca/s1600/screenconnect-flaws.jpg",
+        "alt": "חלון של ScreenConnect עם מנהל קבצים מרוחק."
+      }
+    },
+    {
+      "id": "ai-studio-android-firebase",
+      "topic": "mobile",
+      "text": "ב־Google AI Studio אפשר עכשיו לבנות מבקשה אחת אפליקציית Android ב־Kotlin עם Firestore, התחברות עם Google ותכונות Gemini, בלי כרטיס אשראי.",
+      "source": {
+        "name": "Firebase",
+        "url": "https://firebase.blog/posts/2026/11/full-stack-android-apps-ai-studio-integration"
+      },
+      "image": {
+        "url": "https://firebasestorage.googleapis.com/v0/b/first-class-blog.appspot.com/o/og%2Ffull-stack-android-ai-studio-og.png?alt=media&token=5df1aa05-87d4-49ad-89b7-db53a87b5cf0",
+        "alt": "כרטיס של Firebase על בניית אפליקציות Android ב־Google AI Studio."
+      }
+    },
+    {
+      "id": "proton-lumo-desktop",
+      "topic": "ai",
+      "text": "Proton השיקה את Lumo Desktop ל־Windows, ל־macOS ול־Linux: עוזר AI שעובד עם קבצים ואפליקציות מחוברות, ולכל חיבור קובעים אילו פעולות דורשות אישור.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/17/protons-lumo-a-privacy-focused-alternative-to-chatgpt-and-claude-arrives-on-desktop/"
+      }
+    },
+    {
+      "id": "trigram-fake-brands-devs",
+      "topic": "security",
+      "text": "Stormshield: קמפיין בשם Trigram מתחזה לכ־50 מותגים של AI ובלוקצ׳יין ומפתה מפתחים, בהצעות עבודה ובהזמנות לכנסים, להריץ בעצמם נוזקה שגונבת מידע.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/trigram-campaign-impersonates-about-50.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXvywoP0qreCtUhDgAD1y24HevVHwAH9bGo904BuaQ7-amvdkk6Oi8gz8WjF-Hwiu3SinN266QM0KwUX6lDnayGOtMaSEff_b5vybBsdwvDhiai2uGsAlYfMgCdquPmKqaqM6eY54pG9HsMR7X5Sf7M4nkbIaHmWJMBG1uL3ggpJMMvfQR6FbMagqug2QG/s1600/target.jpg",
+        "alt": "איור של מחשב נייד עם הצעת עבודה מזויפת ודמות של תוקף."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "peerintent",
+      "name": "PeerIntent",
+      "text": "תוסף ל־Chrome שמחפש ב־LinkedIn פוסטים של אנשים שמבקשים ספק למה שאתם מוכרים, ושולח לכם רשימה באפליקציה ובמייל.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/peerintent"
+      },
+      "icon": "https://cdn.betalist.com/0hgwmfxxue1b8vtnhje1v27s4qm4"
+    },
+    {
+      "id": "spotby",
+      "name": "Spotby",
+      "text": "מארגנת את המידע של העסק כך שעוזרי AI יוכלו לקרוא אותו, דרך API, MCP וסימון schema, ומראה מתי הם ניגשים אליו.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/spotby"
+      },
+      "icon": "https://cdn.betalist.com/0jdbnl1zxm1bbynkarogyvhhx0j3"
+    },
+    {
+      "id": "spool",
+      "name": "Spool",
+      "text": "עוזר טלפוני שמתקשר לעסקים, מחכה על הקו ומטפל בסידורים כמו תורים, ביטוח וחשבונות, ומוסר רק פרטים שאישרתם.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/tryspool"
+      },
+      "icon": "https://cdn.betalist.com/csqdiufetbyh8n90oo6rrucb4j6v"
+    },
+    {
+      "id": "dskeroo",
+      "name": "dskeroo",
+      "text": "ניהול עמדות במשרד היברידי: משרטטים מפת קומה, הצוות מזמין שולחנות, ורואים כמה המקום מנוצל. חינם לצוותים קטנים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/dskeroo"
+      },
+      "icon": "https://cdn.betalist.com/80dr71if5koyk0mcnajxpa8j3ovr"
+    },
+    {
+      "id": "avos-news",
+      "name": "Avos News",
+      "text": "קוראת בלילה את המקורות שבחרתם, מ־RSS ועד ערוצי YouTube וחשבונות X, ושולחת בבוקר מייל אחד בלי כפילויות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/avos-news"
+      },
+      "icon": "https://cdn.betalist.com/1gju1fvn6xdpta93wu6srh2jscaz"
+    },
+    {
+      "id": "video-cutter-ai",
+      "name": "Video Cutter AI",
+      "text": "חותכת סרטונים ארוכים כמו פודקאסטים וובינרים לקליפים קצרים ל־TikTok, ל־Shorts ול־Reels, עם כתוביות ומסגור אנכי.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/video-cutter-ai"
+      },
+      "icon": "https://cdn.betalist.com/te3gi4erug3fnugkf8nx2p4vzg9r"
+    },
+    {
+      "id": "tassi",
+      "name": "TASSI",
+      "text": "API אחד לחברות שילוח בינלאומיות ובאפריקה: השוואת מחירים, הפקת תוויות, הערכת עלויות מכס ומעקב אחרי חבילות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/tassi"
+      }
+    }
+  ]
+}
