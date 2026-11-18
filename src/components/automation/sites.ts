@@ -109,7 +109,6 @@ export const SITES: Record<SiteKey, Site> = {
     nav: [
       { href: "#outcome", label: "על הקורס" },
       { href: "#syllabus", label: "סילבוס" },
-      { href: "#lecturer", label: "המרצה" },
       { href: "#faq", label: "שאלות" },
     ],
     blurb: "קורס מעשי בן 10 מפגשים: בונים תהליך אוטומטי אמיתי לעסק, גם בלי רקע בתכנות.",
