@@ -269,24 +269,6 @@ const Syllabus = () => (
   </Section>
 );
 
-const Lecturer = () => (
-  <Section id="lecturer" seamless eyebrow="המרצה" title="תום כהן">
-    <div className="mt-8 grid items-start gap-8 md:grid-cols-[11rem_minmax(0,1fr)] lg:gap-12">
-      <img src="/tom_face.webp" alt="תום כהן" width={383} height={383} loading="lazy" className="h-44 w-44 rounded-2xl object-cover max-md:mx-auto" />
-      <div className="max-w-3xl space-y-4 text-[17px] leading-relaxed text-[var(--a-muted)]">
-        <p>
-          מפתח <bdi>Full-stack</bdi>, יזם ומרצה, עם חמש שנות ניסיון בבניית מוצרים דיגיטליים: אפליקציות, מערכות ווב וכלים שמשלבים AI ואוטומציה. עבד עם
-          אנשים פרטיים, עסקים וסטארטאפים, ובנה תהליכים שרצים בעבודה היומיומית שלהם.
-        </p>
-        <p>
-          לצד הפיתוח הוא מרצה בתחומי התכנות וההנדסה, מפתח ומעביר קורסים לשימוש מעשי ב־AI. השילוב הזה הוא מה שהוא מביא לקורס: ניסיון
-          של מי שבונה את הדברים האלה בעצמו ויודע איפה הם נשברים, וניסיון בלפרק נושאים מורכבים לשלבים ברורים, גם למי שלא מגיע מעולם הפיתוח.
-        </p>
-      </div>
-    </div>
-  </Section>
-);
-
 /** Follows the reader once the hero's card is gone, and steps aside at the form and the footer. */
 const StickyCta = () => {
   const [show, setShow] = useState(false);
@@ -331,7 +313,6 @@ const BusinessAutomationCourse = () => (
       <Outcome />
       <Syllabus />
       <QuickLead id="syllabus-lead-title" title="נשמע טוב, אני רוצה שתחזרו אליי" />
-      <Lecturer />
       <FaqSection items={courseFaqs} />
       <QuickLead
         anchor="contact"
