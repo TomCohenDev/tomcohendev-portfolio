@@ -1,0 +1,269 @@
+{
+  "date": "2026-11-19",
+  "stories": [
+    {
+      "id": "google-play-adaptive-foldables",
+      "topic": "mobile",
+      "headline": "Google Play תחייב מאפריל 2027 אפליקציות שעובדות כמו שצריך במכשירים מתקפלים",
+      "summary": "מאפריל 2027 אפליקציות חדשות ועדכונים ב־Google Play יצטרכו לעמוד ברמה הבסיסית (Tier 3) של הנחיות האיכות למסכים מתקפלים: למלא את כל המסך ולשמור על המצב בסיבוב, בקיפול ובשינוי גודל, ובנוסף להעלות 3 צילומי מסך של מכשיר מתקפל. אפליקציה שלא תעמוד בזה לא תוכל להתפרסם או להתעדכן, ומאוגוסט 2027 עדכונים יצטרכו לכוון ל־API 37 (Android 17).",
+      "forBusiness": "מי שיש לו אפליקציית Android צריך לבדוק כבר עכשיו איך היא נראית במכשיר מתקפל או באמולטור, ולתכנן את התיקונים לפני אפריל. אפליקציות קיימות שלא יתעדכנו יישארו זמינות להורדה, אבל כל עדכון יחייב עמידה בדרישות.",
+      "source": {
+        "name": "Android Developers",
+        "url": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards"
+      },
+      "image": {
+        "url": "https://developer.android.com/static/blog/assets/ABL_163_Elevating_Adaptive_App_Quality_Blue_30a2165ec7_PzLhg.webp",
+        "alt": "איור של טלפון מתקפל פתוח עם כוכבי דירוג ומד מהירות."
+      }
+    },
+    {
+      "id": "gemini-4-neon",
+      "topic": "ai",
+      "headline": "גוגל משיקה את Gemini 4 Neon: מודל חזק למשימות עבודה ארוכות, ב־3 דולר למיליון טוקנים",
+      "summary": "Gemini 4 Neon נועד למשימות ארוכות בקוד, בגיליונות, במסמכים ובניתוח נתונים, עם חלון של מיליון טוקנים, ולפי גוגל הוא במקום הראשון במבחן האוטומציות של Zapier. המחיר הוא 3 דולר למיליון טוקנים בקלט ו־15 דולר בפלט, והוא זמין מהיום ב־Gemini API, ב־Gemini for business ולמנויי Pro ו־Ultra באפליקציית Gemini.",
+      "forBusiness": "מי שמשתמש ב־Gemini דרך API לעיבוד מסמכים, דוחות או תהליכי אוטומציה יכול להשוות את Neon למודל הנוכחי על משימה אמיתית. לפי גוגל, ברמת החשיבה הרגילה העלות לכל משימה נמוכה ב־32% מזו של Gemini 4 Carbon.",
+      "source": {
+        "name": "Google DeepMind",
+        "url": "https://deepmind.google/blog/introducing-gemini-4-neon/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
+        "alt": "שלט ניאון כתום עם הכיתוב Gemini 4 Neon."
+      }
+    },
+    {
+      "id": "make-maia-plan-memory",
+      "topic": "automation",
+      "headline": "Make משדרגת את העוזרת Maia: תוכנית לפני בנייה, זיכרון אישי ותיקון שגיאות מנתוני הריצה",
+      "summary": "במצב Plan העוזרת Maia שואלת את כל השאלות מראש, מציגה את המודולים ואת ההנחות ובונה את התרחיש רק אחרי אישור, וכפתור Resolve error מתקן תרחיש שנכשל לפי נתוני הריצה, עם בדיקה שלכם לפני שמירה. בנוסף אפשר לשמור עם תיאור גרסאות של תרחיש ולשחזר אותן, ונוספו ל־Make מודלים חדשים, בהם Claude Sonnet 5.5 ו־GPT-6.1 Sol.",
+      "forBusiness": "מי שבונה תרחישים ב־Make בלי מתכנת יכול לבקש מ־Maia תוכנית ולבדוק אותה לפני שהיא נוגעת בחיבורים. שמירת גרסה עם תיאור לפני כל שינוי גדול מאפשרת לחזור אחורה אם משהו נשבר.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/releases-on-make-october-2026/120037"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/b/6/b6adcd1d2b53d84e57615d58ab7f2e3ed900a415_2_1024x576.jpeg",
+        "alt": "כרזה סגולה של Make על העדכונים של אוקטובר 2026."
+      }
+    },
+    {
+      "id": "java4shell",
+      "topic": "security",
+      "headline": "Java4Shell: פרצה ב־Java מאפשרת להריץ קוד בלי התחברות ב־Jira, Jenkins ו־Keycloak",
+      "summary": "לפי חברת המחקר Calif, הפרצה במפענח Base64 של Java, מגרסה 17.0.6 ואילך ובמעבדי Intel ו־AMD עם AVX-512 VBMI, אפשרה להם להריץ קוד בלי התחברות בהגדרות ברירת המחדל של Jira, Confluence, Jenkins, Keycloak, Artifactory ו־PingFederate. Oracle ו־OpenJDK פרסמו תיקון, ו־CISA קוראת לעדכן מיד, אבל עד עכשיו לא דווח על ניצול בפועל.",
+      "forBusiness": "מי שמריץ על שרת משלו Jira, Confluence, Jenkins או מערכת אחרת שמבוססת על Java צריך לעדכן את Java, או לבקש מהספק לוודא שעודכנה. גרסאות הענן של השירותים האלה מתעדכנות אצל הספק.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/java4shell-cve-2026-114938-enables-pre.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEis8B-Vf6puS0vOs9mEVup755KXy8y59KD72B5VQb8SyhO1JDHkYcvg42Y1rh1xg3seyml7j2vZn5Dq1OEnFYVzD_97osoZXWkxVVOBxM48InZPbaVgV7Lo64odzPVKNPEtPeLlEAm2AFfShOFVGtypVUJAJdt07qqik_Yde9X6BxLECPH7Gekbkzl2GBDK/s1600/java4shell-flaw.jpg",
+        "alt": "איור של פרצת Java4Shell ב־Java."
+      }
+    },
+    {
+      "id": "banks-ai-agents-liability",
+      "topic": "ai",
+      "headline": "בנקים בארה\"ב: מי שנותן לסוכן AI גישה לחשבון אחראי לכל מה שהסוכן עושה, גם בפריצה",
+      "summary": "Citibank שינתה השבוע את תנאי השימוש: לקוח שנותן לכלי AI של צד שלישי גישה לחשבון אחראי לפעולות שלו, וגם לנזק אם הכלי דלף או נפרץ. לפי TechCrunch, גם JPMorgan, Bank of America, PNC ו־Citizens הודיעו על מדיניות דומה.",
+      "forBusiness": "לפני שנותנים לסוכן AI את פרטי הכניסה לחשבון הבנק של העסק, כדאי לבדוק מה כתוב בתנאים של הבנק ולהעדיף כלים שיכולים רק לקרוא נתונים ולא להעביר כסף.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/"
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "nginx2root",
+      "topic": "security",
+      "text": "פרצה בת עשר שנים ב־HTTP/2 של NGINX מאפשרת בתנאים מסוימים להריץ קוד בשרת בלי התחברות; התיקון בגרסאות 1.31.9 ו־1.30.7.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7_qqPophooIauX16fMWm3KB24tzQ3Fd7rCuseCXfMkDPPGpIgmHqWvZjn_jffDqHwNWKu8Zf57QeKb4qsRFgdgisSAn0sMj59CscimR16RLXI1kspH0w7VYQgrsM_hPcePQOFL8QUyDC2p9W7AV0UjH3sW7oOvdWPWAZW6DITDvqIHaC_696e5kHTieY/s1600/nginx-rce.jpg",
+        "alt": "איור של פרצה בשרת NGINX."
+      }
+    },
+    {
+      "id": "php-security-release",
+      "topic": "security",
+      "text": "PHP מפרסמת היום עדכוני אבטחה לכל הגרסאות הנתמכות, עם פרצות בדירוג קריטי שדורשות הגדרות לא שגרתיות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/php-warns-of-critical-security-flaws.html"
+      }
+    },
+    {
+      "id": "agent-framework-pypi",
+      "topic": "security",
+      "text": "גרסאות 1.26.1 ו־1.26.2 של החבילה agent-framework של מיקרוסופט ב־PyPI נפרצו והכילו קוד שגונב מפתחות ענן; הן הוסרו.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html"
+      }
+    },
+    {
+      "id": "apache-roller-exploited",
+      "topic": "security",
+      "text": "פרצה בדירוג 9.8 בפלטפורמת הבלוגים Apache Roller, בגרסאות 4.0.0 עד 6.1.4, מנוצלת בתקיפות; התיקון בגרסה 6.1.6.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html"
+      }
+    },
+    {
+      "id": "cold-relic-workspace",
+      "topic": "security",
+      "text": "לפי גוגל, קבוצה רוסית פרצה לחשבון Super Admin ב־Google Workspace של ארגון אמריקאי בעזרת הצפה בבקשות אימות, והורידה את כל הקבצים בארגון.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/russian-cold-relic-hackers-use-stolen.html"
+      }
+    },
+    {
+      "id": "tpm-pin-attack",
+      "topic": "security",
+      "text": "חוקרים בברלין עקפו את חסימת הניסיונות של Windows Hello ו־BitLocker במחשבי AMD ובחלק ממחשבי Intel, אחרי פתיחת המחשב; הם ממליצים להוסיף לפחות שתי ספרות ל־PIN.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/flash-chip-attack-bypasses-tpm-lockout.html"
+      }
+    },
+    {
+      "id": "ai-mode-temporary-threads",
+      "topic": "ai",
+      "text": "ב־AI Mode בחיפוש של Google אפשר עכשיו לפתוח שיחה זמנית שלא נשמרת בהיסטוריה ולא משפיעה על ההמלצות, בכל השפות הנתמכות.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/18/googles-ai-feature-in-search-gets-its-own-incognito-mode/"
+      }
+    },
+    {
+      "id": "gemini-android-go",
+      "topic": "ai",
+      "text": "אפליקציית Gemini זמינה עכשיו גם בטלפונים זולים עם Android Go, כולל שיחה בקול ביותר מ־45 שפות ויצירת תמונות.",
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_app_Android_social_share.max-1440x810.png",
+        "alt": "אפליקציית Gemini בטלפון Android."
+      }
+    },
+    {
+      "id": "expo-services-app",
+      "topic": "mobile",
+      "text": "Expo השיקה את Expo Services App: מעקב אחרי בניות וביצועים של אפליקציות React Native מהטלפון, וסימולטור בענן בגרסת ה־iOS.",
+      "source": {
+        "name": "Expo",
+        "url": "https://expo.dev/changelog/expo-services-app"
+      }
+    },
+    {
+      "id": "compose-1-13",
+      "topic": "mobile",
+      "text": "Jetpack Compose 1.13 יצאה בגרסה יציבה, עם טשטוש הדרגתי וצורות מצולע; העדכון דורש Kotlin 2.2 ו־compileSdk 37.1.",
+      "source": {
+        "name": "Android Developers",
+        "url": "https://developer.android.com/blog/posts/jetpack-compose-november-2026-release"
+      }
+    },
+    {
+      "id": "rumble-2-flash",
+      "topic": "ai",
+      "text": "Reson8 פרסמה בקוד פתוח את Rumble-2-Flash, מודל קטן לתמלול ביותר מ־40 שפות שמתמלל שעת אודיו בכחצי שנייה.",
+      "source": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/rumble-2-flash"
+      },
+      "image": {
+        "url": "https://huggingface.co/blog/assets/rumble-2-flash/thumbnail.png",
+        "alt": "התמונה של המודל Rumble-2-Flash."
+      }
+    },
+    {
+      "id": "snapchat-easy-lens-cli",
+      "topic": "ai",
+      "text": "Snapchat השיקה את Easy Lens CLI: בונים עדשות AR עם Claude Code, Cursor או Codex מתיאור בשפה רגילה, ומפרסמים אותן ב־Snapchat.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/18/snapchat-now-lets-developers-build-ar-lenses-with-ai-coding-assistants-like-claude-code-and-cursor/"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "wp-octo",
+      "name": "WP Octo",
+      "text": "ניהול תחזוקה של הרבה אתרי WordPress ממסך אחד: עדכונים עם גיבוי לפני ושחזור, ניטור זמינות ואבטחה ודוחות ללקוחות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/wp-octo"
+      },
+      "icon": "https://cdn.betalist.com/ozz7ylpsvb035xueon29q9liveo9"
+    },
+    {
+      "id": "pingoru",
+      "name": "Pingoru",
+      "text": "עוקבת אחרי דפי הסטטוס של יותר מ־8,000 שירותי ענן ו־SaaS ושולחת התראה כשאחד מהספקים שלכם נופל. חינם לשלושה ספקים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/pingoru"
+      },
+      "icon": "https://cdn.betalist.com/nipzvqhj5em22hulqt2lceawysey"
+    },
+    {
+      "id": "field",
+      "name": "Field",
+      "text": "אפליקציה לעסקי שירות בשטח: שיבוץ עובדים, החתמת שעון לפי GPS, תמונות מהעבודה והפיכת הצעת מחיר לחשבונית.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/field"
+      },
+      "icon": "https://cdn.betalist.com/cw0jnsq82vhq09ogj3ukzyjgadyi"
+    },
+    {
+      "id": "aeo-armory",
+      "name": "AEO Armory",
+      "text": "כלי חינמי שבודק אם ChatGPT ו־AI Mode של Google ממליצים על העסק שלכם, משווה למתחרים ונותן רשימת תיקונים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/aeo-armory"
+      },
+      "icon": "https://cdn.betalist.com/aiwr4ib492stva8knmaxs633g335"
+    },
+    {
+      "id": "monmo",
+      "name": "Monmo",
+      "text": "עובדי AI עם מחשב משלהם בענן, שמתחברים ליותר מ־1,700 אפליקציות כמו Gmail, Shopify ו־Stripe ומבצעים משימות לפי בקשה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/monmo"
+      }
+    },
+    {
+      "id": "modellix-ai",
+      "name": "Modellix.ai",
+      "text": "מפתח API אחד למודלים מובילים של תמונה, וידאו, אודיו וטקסט, עם תשלום לפי שימוש וסביבת ניסוי בדפדפן.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/modellix-ai"
+      },
+      "icon": "https://cdn.betalist.com/56c3n6ezb6hba2uyaimbdvrrdwr2"
+    },
+    {
+      "id": "loopseo",
+      "name": "loopSEO",
+      "text": "מנוע תוכן ל־WordPress שרץ אצלכם: חוקר תוצאות חיפוש, כותב ומפרסם מאמרים ומשכתב דפים שירדו בדירוג.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/loopseo"
+      },
+      "icon": "https://cdn.betalist.com/2r00tnlhz1486y7i0or8ba07g0uz"
+    }
+  ]
+}
