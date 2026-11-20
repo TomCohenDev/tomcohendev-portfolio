@@ -1,0 +1,294 @@
+{
+  "date": "2026-11-20",
+  "stories": [
+    {
+      "id": "android-developer-verification-global",
+      "topic": "mobile",
+      "headline": "מינואר 2027 אימות מפתחים ב־Android יתחיל לחול בכל העולם: אפליקציה לא רשומה תתקשה להיות מותקנת",
+      "summary": "גוגל הודיעה שהדרישה לאמת את זהות המפתח ולרשום כל אפליקציה, שנכנסה לתוקף בספטמבר בברזיל, אינדונזיה, סינגפור ותאילנד, תתחיל לחול בעולם בינואר 2027, יחד עם Google Play ועוד שש חנויות, ותתרחב בהדרגה לכל מקורות ההתקנה במכשירי Android מאושרים. לדברי גוגל, רישום אפליקציה לוקח פחות מעשר דקות, ויש מסלול מתקדם שמאפשר למשתמשים מנוסים להתקין אפליקציות לא רשומות על אחריותם.",
+      "forBusiness": "אם יש לכם אפליקציית Android, גם כזו שמופצת מחוץ ל־Google Play (למשל לעובדים או ללקוחות כקובץ APK), כדאי לבדוק עכשיו ב־Play Console או ב־Android Developer Console שהיא רשומה, כדי שההתקנה לא תיתקע כשההגנה תגיע לישראל.",
+      "source": {
+        "name": "Android Developers",
+        "url": "https://developer.android.com/blog/posts/android-developer-verification-2027"
+      },
+      "image": {
+        "url": "https://developer.android.com/static/blog/assets/ABL_139_Android_developer_verification_Going_global_together_Strapi_01_png_12aa1e5aae_oj9p3.webp",
+        "alt": "איור של גוגל להכרזה על הרחבת אימות המפתחים ב־Android לכל העולם."
+      }
+    },
+    {
+      "id": "gemini-mac-computer-use",
+      "topic": "ai",
+      "headline": "Gemini ל־Mac יכול עכשיו להפעיל את המחשב: למלא טפסים, לסדר קבצים ולעבוד באפליקציות",
+      "summary": "גוגל הוסיפה לאפליקציית Gemini ל־macOS שימוש במחשב: הסוכן מבצע משימות של כמה שלבים בקבצים, באפליקציות ובאתרים, בחלון נפרד ברקע עם תצוגה חיה בתוך הצ׳אט, והמשתמש מחליט לאילו אפליקציות מותר לו לגשת. התכונה מתפרסת עכשיו באנגלית למשתמשים בארה\"ב בלבד.",
+      "forBusiness": "בישראל אין עדיין מה להפעיל. כשזה יגיע, זה מתאים למשימות חוזרות כמו מילוי טפסים או הכנת מצגות, וכדאי להחליט מראש לאילו אפליקציות ותיקיות מותר לסוכן לגשת.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1037902/google-gemini-macos-ai-computer-use"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/M6_MBP_hero2.jpg?quality=90&strip=all&crop=0%2C10.738463156834%2C100%2C78.523073686333&w=1200",
+        "alt": "מחשב MacBook פתוח מונח על בד ירוק."
+      }
+    },
+    {
+      "id": "php-7-critical-fixes",
+      "topic": "security",
+      "headline": "PHP תיקנה 7 פרצות קריטיות, חלקן מאפשרות להריץ קוד בשרת: לעדכן את האתר",
+      "summary": "קרן PHP פרסמה עדכוני אבטחה לכל הגרסאות הנתמכות, עם תיקונים לשבע פרצות בדירוג 9.2 שעלולות להוביל להרצת קוד מרחוק, לשיבוש סשנים או להשבתה. התיקונים נמצאים בגרסאות 8.2.36, 8.3.37, 8.4.28, 8.5.13 ו־8.6.0, וחלק מהפרצות דורשות הגדרות שרת לא שגרתיות.",
+      "forBusiness": "אתרי WordPress ורוב אתרי התדמית והחנויות רצים על PHP. שאלו את חברת האחסון או את מי שמתחזק את האתר אם השרת כבר עודכן לאחת הגרסאות המתוקנות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjD2D26Hu7r43uUrdDxmsmmbBe2oMxd-L3_DIVLqAPyDrOnSmdvXfkIq1_lNmWqr49gbrIZ0NeTmA2OYgyWgdUjRf_RTRfflyXn3Vgujkb9tiByOPfej1OqEszpQf2FeozeSqmK5L7aSj28GLwzKmzehIp9zJyeJqgRvbVOW91_pVEMhs3KY9_oXjwf5BE/s1600/php-flawss.jpg",
+        "alt": "איור של הכתבה על פרצות האבטחה ב־PHP."
+      }
+    },
+    {
+      "id": "crashlytics-web-preview",
+      "topic": "mobile",
+      "headline": "Firebase Crashlytics מגיע לאתרים: התראה על שגיאות JavaScript אצל משתמשים אמיתיים",
+      "summary": "Firebase פתחה בתצוגה מקדימה ציבורית את Crashlytics לאפליקציות ווב, עם חיבור מוכן ל־Next.js, ל־React ול־Angular: הכלי מתריע כשמופיעה שגיאת JavaScript חדשה או כשתקלה שתוקנה חוזרת, ומראה את השורה המדויקת בקוד. הוא דורש את תוכנית Blaze בתשלום לפי שימוש, עם שכבה ללא עלות, וההתראות במייל כבויות כברירת מחדל.",
+      "forBusiness": "אם האתר או מערכת הווב שלכם בנויים על Firebase, אפשר לבקש מהמפתח להפעיל את זה ולהדליק התראות, כדי לשמוע על תקלה לפני שלקוח מתלונן.",
+      "source": {
+        "name": "Firebase",
+        "url": "https://firebase.blog/posts/2026/11/crashlytics-web-public-preview"
+      },
+      "image": {
+        "url": "https://firebasestorage.googleapis.com/v0/b/first-class-blog.appspot.com/o/blog-assets%2F2026%2F11%2Fcrashlytics-web-public-preview%2Fog%2Fog-crashlytics-web-public-preview.png?alt=media",
+        "alt": "כרטיס ההכרזה של Firebase על Crashlytics לווב בתצוגה מקדימה."
+      }
+    },
+    {
+      "id": "chatgpt-live-dictation",
+      "topic": "ai",
+      "headline": "ChatGPT מתמלל בזמן שמדברים, ומגבלת ההקלטה של 10 דקות בוטלה",
+      "summary": "OpenAI משיקה ב־ChatGPT הכתבה חיה שמציגה את התמלול תוך כדי דיבור, במקום לחכות לסוף ההקלטה, ואפשר לערוך את הטקסט לפני השליחה. התכונה מתפרסת בכל העולם בכל התוכניות, בווב, באפליקציית המחשב וב־iOS וב־Android, ויחד איתה בוטלה מגבלת 10 הדקות להכתבה.",
+      "forBusiness": "מי שמכתיב ל־ChatGPT סיכומי שיחות, מיילים או רעיונות יכול עכשיו להכתיב טקסט ארוך בלי לחתוך אותו לחלקים. כדאי לבדוק בעצמכם כמה טוב התמלול עובד בעברית.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1037634/openai-chatgpt-live-dictation"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/chatgpt-live-dictation-promo-screenshot.jpeg?quality=90&strip=all&crop=8.4734375%2C20.737347294939%2C85.1578125%2C79.262652705061&w=1200",
+        "alt": "טלפון ביד שמציג תמלול חי של הכתבה בתוך ChatGPT."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "vcenter-zero-day",
+      "topic": "security",
+      "text": "Broadcom תיקנה פרצה בדירוג 9.8 ב־VMware vCenter שמאפשרת לעקוף את ההתחברות; לפי גוגל היא נוצלה כבר בספטמבר. הבעיה בגרסאות 8.0, 9.0 ו־9.1.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZ5IDT81eb7KUE0LzwGJAzuAETft3pD5sOz2dJxnQin_-zR_hH8tDKFTsLNBNoe35KM4DhFJjP7K-0YwaMoVwz7xUhTiP2vKeNqmN3kenPgwflENu35qx-QlFj-rDFdyXx1HMz6ykegw6nlnPDXppYbotjoRj-ammlyUZ-Cr0JYLS5iyZXkJXkaIO5UAc/s1600/vmware.jpg",
+        "alt": "איור של הכתבה על הפרצה ב־VMware vCenter."
+      }
+    },
+    {
+      "id": "drupal-installer-flaw",
+      "topic": "security",
+      "text": "Drupal תיקנה פרצה קריטית שמאפשרת לתוקף בלי התחברות להתקין מחדש אתר דרך install.php בהגדרות מסוימות; הגרסאות המתוקנות: 10.6.22, 11.3.22 ו־11.4.13.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/drupal-patches-critical-installer-flaw.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4kxIzi1B-GPdS7pbaOI823BHxteL-8FbODKnAoDkr8tGhhjGYuRU9KIEAvOQ6kBZFQPCly3BIhQo6vkjxJy13zL7CxlRXsez_G_otFVaja2H5ObmzNMMilbewaweqqO5Paa0H49yaZdWB09xAIqeo7YLG0uyd05qjdbh2aLIRZd73_jwVGH26YexA3l8/s1600/drupal-flaws.jpg",
+        "alt": "איור של הכתבה על הפרצה ב־Drupal."
+      }
+    },
+    {
+      "id": "cisa-kev-synology-litellm",
+      "topic": "security",
+      "text": "CISA הוסיפה לרשימת הפרצות המנוצלות ארבע פרצות, בהן ב־Synology DSM וב־LiteLLM; מי שמחזיק NAS של Synology או שרת LiteLLM צריך לעדכן.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/cisa-warns-of-4-exploited-flaws-linked.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJc2bWATWnk5-O72K0n3cYlHuhhox3nVPELPst8c1bui3mTiwBZFUjAUSem14OyqLB6CTECCs9fc-iyng9KmY3jelZ2cqrHg4FKvP2qOZui8piIbYTZy9WdZD0NqiY4fXcLud5GYzmNEXR6DRNuQpjkFzfPvW4fIcDtwaFg4SM9xW-eG09WxFuEcmuKx7U/s1600/cisa.jpg",
+        "alt": "איור של הכתבה על אזהרת CISA."
+      }
+    },
+    {
+      "id": "n-able-mail-assure-breach",
+      "topic": "security",
+      "text": "N-able אישרה פריצה לשרת של Mail Assure ו־SpamExperts בענן; סינון הדואר עובד, אבל הפורטל, ה־API וההסגר עדיין כבויים. לדבריה אין עדות שמידע של לקוחות נחשף.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/n-able-confirms-hackers-accessed-cloud.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjPpZ9yL9D7JBQvp4_ZmnP8S_U6HKdq3rSM_FVv_uDgT9Iz8D56tO6GNDNE4rs29pejUiKQlxi1HpZ38KYbaSB01PmgPItVL8N-Y9G9vcuJlnadltKvmGhvUKYntAEIVCXFixjdBMyu6S9-zEUlIgGf7E5euvodJbn9LIYWTkRpxwH0g7nz2xp2v5PGMdq/s1600/n-able-hacked.jpg",
+        "alt": "איור של הכתבה על הפריצה לשרת של N-able."
+      }
+    },
+    {
+      "id": "ruby-regex-fixes",
+      "topic": "security",
+      "text": "Ruby תיקנה 7 פרצות זיכרון במנוע הביטויים הרגולריים ובהמרת אותיות; לחמש מהן יש הדגמה של הרצת קוד. הגרסאות המתוקנות: 4.0.10, 3.4.13 ו־3.3.14.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/ruby-releases-fixes-for-7-regex-and.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7rmcgZ7yffFsn_7SX4iQcfMhw1dgsxPFXXh6TUunbQ9VaxZh8O5-AFT2V3q0PE7Wx0rW9nLKuB73eluixYuM9N38Dvq_Gjs1nNOXVk3e71jjfhHoP7W97eeuc5AivI3CQNxIrwSaPR9IGV0f2NZ7900Ihtkdgiw1ZivTvgVrXWH2CrX2X5MZGjos6-bs/s1600/ruby.jpg",
+        "alt": "איור של הכתבה על הפרצות ב־Ruby."
+      }
+    },
+    {
+      "id": "canva-ai-off",
+      "topic": "ai",
+      "text": "Canva מאפשרת עכשיו לכבות את כלי ה־AI היוצרים, כמו Magic Write ו־Magic Design; הסרת רקע ו־Magic Grab נשארים פעילים.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1037126/canva-ai-features-off-button"
+      }
+    },
+    {
+      "id": "gemini-api-tool-retrieval",
+      "topic": "ai",
+      "text": "גוגל הוסיפה ל־Gemini API בתצוגה מקדימה Tool Retrieval: הסוכן טוען את פרטי הכלים רק כשצריך, כדי לחסוך טוקנים כשיש לו מאות כלים.",
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Tool_retrieval_hero.width-1300.png",
+        "alt": "איור של גוגל להכרזה על Tool Retrieval ב־Gemini API."
+      }
+    },
+    {
+      "id": "meta-muse-privacy-report",
+      "topic": "ai",
+      "text": "לפי Reuters, עובדי Meta דיווחו שהסוכן Muse ערבב שיחות בין חשבונות והציג להם מידע פרטי של אחרים, כמו יתרות בנק; Meta אומרת שלעובדים יש גרסה אחרת מזו של הציבור.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/"
+      }
+    },
+    {
+      "id": "superhuman-go-everywhere",
+      "topic": "automation",
+      "text": "Superhuman (לשעבר Grammarly) הופכת את Go לעוזר המרכזי ב־Docs וב־Mail: הוא עוקב אחרי היומן והמייל, מנסח תשובות, ומתחבר ל־20 סוכנים חדשים, בהם DeepL.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/19/superhuman-pushes-its-go-assistant-everywhere/"
+      }
+    },
+    {
+      "id": "make-module-run-panel",
+      "topic": "automation",
+      "text": "ב־Make נוסף לוח ריצה לכל מודול: לוחצים על הבועה מעל המודול אחרי ריצה ורואים קלט ופלט של כל פעולה, ואפשר להריץ שוב עם נתונים מריצה קודמת.",
+      "source": {
+        "name": "Make Community",
+        "url": "https://community.make.com/t/the-module-run-panel-changed-how-i-debug-client-scenarios/120126"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/5/5/55c7ba03c86e568717d865242f3cee0c0a66b5ab_2_1024x576.png",
+        "alt": "צילום מסך של לוח הריצה של מודול בעורך התרחישים של Make."
+      }
+    },
+    {
+      "id": "uipath-builders-report",
+      "topic": "research",
+      "text": "בסקר של UiPath בקרב 1,226 אנשי אוטומציה, יותר ממחציתם מדווחים שסוכני AI כבר עובדים אצלם בייצור; לפני שנה רובם עוד ניסו.",
+      "source": {
+        "name": "UiPath",
+        "url": "https://www.uipath.com/blog/automation/your-agents-are-in-production-your-builders-are-how-you-scale"
+      },
+      "image": {
+        "url": "https://images.ctfassets.net/5965pury2lcm/2AMkIZc0I51wptKOYWYHWv/6227ed5b4214000f6249d19416d2a245/ui-261116-blog-hero-artwork-2000x1000px.png",
+        "alt": "איור של UiPath לדוח על אנשי AI ואוטומציה."
+      }
+    },
+    {
+      "id": "postgresql-19",
+      "topic": "automation",
+      "text": "PostgreSQL 19 יצאה, חודשיים אחרי המועד הרגיל; בין החידושים WAIT FOR LSN, שמאפשר לקרוא משרת משני נתונים שרק נכתבו בשרת הראשי.",
+      "source": {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/Nov/19/postgresql-19/"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "quotesforge",
+      "name": "QuotesForge",
+      "text": "מערכת CRM לבעלי מקצוע כמו אינסטלטורים וחשמלאים: לידים, הצעות מחיר, חתימה, תיאום, חשבוניות ותשלומים מהטלפון.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/quotesforge"
+      },
+      "icon": "https://cdn.betalist.com/ak1smwgkplkdu2w78gavpowy25xb"
+    },
+    {
+      "id": "quantumlayers",
+      "name": "QuantumLayers",
+      "text": "ניתוח נתונים בלי קוד: מתחבר למסדי נתונים, ל־Google Sheets ולקובצי CSV, מוצא מגמות וחריגים ומסביר אותם בשפה פשוטה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/quantumlayers"
+      },
+      "icon": "https://cdn.betalist.com/e3cdkyjwfba6vao8v63bb3qv4bwe"
+    },
+    {
+      "id": "highseat",
+      "name": "Highseat",
+      "text": "אנליטיקה לאתר בלי עוגיות שמראה כמה הכניס כל עמוד וכל מקור תנועה, בחיבור ל־Stripe או ל־Polar.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/highseat"
+      },
+      "icon": "https://cdn.betalist.com/5xxlvqh12dq89n1wfh59m8wuu37y"
+    },
+    {
+      "id": "insucargo",
+      "name": "InsuCargo",
+      "text": "ביטוח למשלוחים מסחריים: מעלים חשבונית או שטר מטען, המערכת מחשבת מחיר, ומבטח מורשה מנפיק את הפוליסה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/insucargo"
+      },
+      "icon": "https://cdn.betalist.com/0bzkn3kl73qmefkourquwpgoj91a"
+    },
+    {
+      "id": "snovi",
+      "name": "Snovi",
+      "text": "הכתבה קולית שמקלידה טקסט נקי בכל אפליקציה ומתרגמת תוך כדי דיבור; רצה על המכשיר, והענן כבוי אלא אם מפעילים אותו.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/snovi"
+      },
+      "icon": "https://cdn.betalist.com/pvkkbkl5q5obf1ma6yvjueuqa9t3"
+    },
+    {
+      "id": "sales-senpai",
+      "name": "Sales Senpai",
+      "text": "תרגול שיחות מכירה בקול מול קונים מבוססי AI, שכל אחד מהם עם אופי אחר, ומשוב אחרי כל שיחה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/sales-senpai"
+      },
+      "icon": "https://cdn.betalist.com/857dtz7n779n8p7yd1weouzhu6q0"
+    },
+    {
+      "id": "translatebuff",
+      "name": "TranslateBuff",
+      "text": "מתרגם דפי אינטרנט וטקסטים עם יותר מ־20 מודלים ומנועים, בהם GPT, Gemini, Claude ו־DeepL, ומציג את התרגומים זה לצד זה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/translatebuff"
+      },
+      "icon": "https://cdn.betalist.com/obddqu6ek2ixtamy5hdq27kv2xft"
+    }
+  ]
+}
