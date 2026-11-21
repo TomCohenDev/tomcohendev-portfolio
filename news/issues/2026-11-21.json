@@ -1,0 +1,226 @@
+{
+  "date": "2026-11-21",
+  "stories": [
+    {
+      "id": "whatsapp-three-flaws-scam",
+      "topic": "security",
+      "headline": "WhatsApp תיקנה שלוש פרצות, אחת מהן כנראה נוצלה בהודעות הונאה: לעדכן גם את WhatsApp Business",
+      "summary": "WhatsApp סגרה שלוש פרצות, ובהן באג ב־WhatsApp ו־WhatsApp Business ל־Android לפני גרסה 2.26.17.4, שבו תגובה מעוצבת למודעת Click to WhatsApp יכלה לחשוף לתוקף את כתובת ה־IP של המכשיר. החברה מעריכה שנוכל השתמש בה כדי שהודעת ההונאה שלו תיראה אמינה יותר, ולשתי הפרצות האחרות, ב־Android, ב־iOS וב־Mac, אין לדבריה עדות לניצול.",
+      "forBusiness": "עדכנו את WhatsApp ואת WhatsApp Business בכל הטלפונים של העסק, גם במכשירים של העובדים. ואם אתם מפרסמים מודעות Click to WhatsApp, זה עוד סיבה לבדוק שהגרסה עדכנית.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUSbYUJJkBlZsaH90SXIaxYAv5iJN7ZEus7Q24A_Z9fDNNlnOjFnNZ3SnA6er-iuMgQnE6k73nwVwAEPPk1AjRT12N9o8cJft3_dPqMZKeJbpq6QIcGbN1z1UbE_Q3fXTyp1c0XmqynQu2lJPeIYoraqXFcgM-wQH4b1rIBrOKF221CIKLldJIZVJ4g7cr/s1600/whatsapp.jpg",
+        "alt": "איור של הכתבה על פרצות האבטחה ב־WhatsApp."
+      }
+    },
+    {
+      "id": "signal-blocks-ai-screen-reading",
+      "topic": "ai",
+      "headline": "Signal חוסמת צילומי מסך ב־iOS וב־Android כדי ש־Gemini ו־Siri לא יקראו את השיחות",
+      "summary": "Signal מגבילה צילומי מסך באפליקציה ב־iOS 27 וב־Android, כדי שעוזרי AI של מערכת ההפעלה, כמו Siri ו־Gemini, לא יוכלו לקרוא את מה שמוצג במסך; משתמשים יכולים להחזיר את האפשרות בהגדרות. נשיאת Signal, Meredith Whittaker, כתבה שהפתרון חלקי, שב־macOS אי אפשר עדיין ליישם אותו, וקראה ל־Apple, ל־Google ול־Microsoft לתת למפתחים כלים לשלוט במה שסוכני AI רואים.",
+      "forBusiness": "סוכני AI שמובנים בטלפון יכולים לראות את מה שמופיע על המסך, כולל פרטי לקוחות. אם יש לכם אפליקציה עם מידע רגיש, שווה לשאול את המפתח אילו הגנות קיימות היום ב־iOS וב־Android, ולקבוע לעובדים מתי לא להפעיל עוזר AI.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/protecting-your-privacy-1.png?quality=90&strip=all&crop=0%2C3.8035109331691%2C100%2C92.392978133662&w=1200",
+        "alt": "מסך ההגדרות של Signal ב־iOS עם האפשרות לחסום צילומי מסך."
+      }
+    },
+    {
+      "id": "sonicwall-gen6-no-patches",
+      "topic": "security",
+      "headline": "SonicWall: חומות האש מדור 6 לא יקבלו יותר תיקוני אבטחה, גם לא לפרצות קריטיות",
+      "summary": "SonicWall קוראת ללקוחות שעדיין מפעילים חומות אש מדור 6, עם SonicOS 6.x, להוציא אותן משימוש מיד ולהפסיק לחשוף אותן לאינטרנט, כי תוקפים משתמשים באוטומציה וב־AI כדי למצוא ולנצל מכשירים שאינם נתמכים. ברשימה דגמים נפוצים בעסקים קטנים כמו SOHO 250, TZ300, TZ400, TZ500 ו־TZ600, וההמלצה היא לעבור לדור 8 עם SonicOS 8.",
+      "forBusiness": "אם במשרד יש קופסה של SonicWall, בדקו עם איש ה־IT מה הדגם. אם הוא ברשימה, תכננו החלפה כבר עכשיו, ועד אז כדאי לסגור את הגישה מרחוק דרכו.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/sonicwall-warns-gen-6-firewalls-wont.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGn5oji8gd4l_d6wKemSflqTX-q-eiuu4CbbV2ROvzK6Gzpeq8zPsQyGb-UO80f_M8L2pDNNyNqF1ZIdyMPGReyW0KmPb7uuAuRu1M-ZVyNu-GJvx1CRaBsaEOVjV-asFG0P__0MK0Jp3WPJmcNxATiSd6NeBzcCmy-6dLvS5yvpen0cRrwLZvgVpYAvn0/s1600/sonicwall.jpg",
+        "alt": "איור של הכתבה על חומות האש של SonicWall."
+      }
+    },
+    {
+      "id": "make-bulk-scenario-actions",
+      "topic": "automation",
+      "headline": "Make מאפשרת להעביר, לתייג ולמחוק הרבה תרחישים בפעולה אחת, עם ביטול בלחיצה",
+      "summary": "ב־Make אפשר עכשיו לבחור כמה תרחישים ברשימה ולהעביר אותם לתיקייה, להוסיף או להסיר תווית צוות, או להעביר אותם לאשפה בבת אחת, גם בגרירה. לפני העברה Make בודקת הרשאות לכל התרחישים שנבחרו ומבטלת את הפעולה אם אחד מהם לא מתאים, ואחריה מראה כמה עודכנו ומאפשרת לבטל בלחיצה.",
+      "forBusiness": "אם צברתם עשרות תרחישים, זו הזדמנות לסדר אותם לפי לקוח או מחלקה ולהעביר לאשפה את אלה שכבר לא רצים, כך שיהיה קל יותר למצוא מה שבור כשמשהו מפסיק לעבוד.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/feature-spotlight-organize-your-scenario-library-with-bulk-actions/120221"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/0/2/02b07fa8dbc56ff7f883c1a7ca54e6e6bec95f18_2_1024x600.gif",
+        "alt": "הדגמה של בחירת כמה תרחישים ברשימה של Make והעברתם יחד."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "bazuka-android-malware",
+      "topic": "security",
+      "text": "נוזקת Android חדשה בשם Bazuka מציגה צילום של מסך הבית כדי להסתיר פעילות, גונבת קודי SMS ו־2FA, ונעזרת ב־AI כדי לדרג קורבנות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/bazuka-android-malware-uses-fake-screen.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMs4vBdivbF3Y-4yd3PWqjSTuG2PPDvCemM211pzVl2Jhkus9d14_2MzRgdrlNhRxaHa_2rlIN34kUGHAlV_Y2dMnfmYGlUEzUcab0c_s3N8Zoe8P3rcJ-RJmo2luVci9bVqmwtFhpL4rfR2Uo-ZwvqfqFMwRb_3WwoOvFIaunPd7WMOJ4yW9rjbHEKDwf/s1600/android-malware.jpg",
+        "alt": "איור של הכתבה על נוזקת Android."
+      }
+    },
+    {
+      "id": "windows-fastunlock",
+      "topic": "security",
+      "text": "שיטה בשם FastUnlock, שעדיין אין לה תיקון, מאפשרת למי שמחזיק מחשב Windows נעול להריץ תוכנות בחשבון מוגבל בלי להתחבר.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/new-unpatched-windows-0-day-fastunlock.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRnUdcazdCteyaE1EC_aLit8CioDaJ5yvsWnawFVWQrJvYFktNRJXlW9MOJLimG_-aS1IZChVHJbjPI4CXjIbNFLjn5W686xynepfC0oWyEG81NX5CxdS-9ayumfRljgy32e2bYXDD72T6VpIFFzeCcPKwG48RDKiZExwNdF-4XDFicISSaaRtT3W2dt0/s1600/windows-lockscreen.jpg",
+        "alt": "מסך נעילה של Windows."
+      }
+    },
+    {
+      "id": "romulus-clickfix-rat",
+      "topic": "security",
+      "text": "שירות ההפצה ROMULUS מפיץ סוס טרויאני חדש בהונאות ClickFix, וחלק מההתקפות הפנו קורבנות לאתרים זדוניים דרך Custom GPTs ב־ChatGPT.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/romulus-clickfix-attacks-deliver-rat.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjugg63OPJwZuh94vDIg7MkA4YoeLKr5sjiqI6CEgjvDjUvJ-pBJOfUrUBxPUTbartqVwdldczbKSYo6lpkcVic1EDQYIDyWq12zMdMONjpDtK4NKCgkppAWvnOJpXe7prfmRG8WNpH0RrQ0bhX2nZKGpRy33y0OMZraBjEPoDorp9h3kNJSa-IQrJC7Nl5/s1600/cf.jpg",
+        "alt": "איור של הכתבה על התקפות ClickFix."
+      }
+    },
+    {
+      "id": "cisco-expressway-exploited",
+      "topic": "security",
+      "text": "תוקפים כבר מנצלים פרצה קריטית ב־Cisco Expressway, בדירוג 9.8, שמאפשרת להריץ פקודות כ־root; התיקון יצא ב־21 באוקטובר בגרסה X15.5.20.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrMm7M_HyuVDt9NknngHSgyfGKu0DR8VTc_GYL-tr_hMhTmi3EAZnM8x5byJQRYEqcUAZlDTR_Xi4RcMm4lidmk9UR_iyTWpDa5Mn6xRBoNwAf3auen2u6guKxnvoIrcQOfq7Mm1clmsyBMYVcjaOqVFYiN4mXgYSyR5_DUSrmVOLDK5mQeAS8BBB3X5-5/s1600/cisco-cyberattacks.jpg",
+        "alt": "איור של הכתבה על התקפות על מכשירי Cisco."
+      }
+    },
+    {
+      "id": "kvm-amd-host-memory",
+      "topic": "security",
+      "text": "פרצה ב־KVM על שרתי AMD אפשרה לחוקרים לקרוא כ־127 GB מזיכרון שרת ב־DigitalOcean מתוך מכונה וירטואלית; הספקית כבר תיקנה ולקוחותיה לא צריכים לעשות דבר.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/new-linux-kvm-flaw-cve-2026-99312-lets.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjg-jisyf4SWwWYA_RUtOoVqBviv2uNAUl6vEeGjsuBA0aOhfLYw7yHitbRBxAoWcf5ZP0UcGovNmyk-u-320fLFYIyUz7jtR77GiveyLdqsZWJ0DohwBfEFyN0KlNAIpIcpS9B6jHEZJybmTu7nuKM-PhSNPco-Z1QmacaSfwWyOWLXzT2WqaEdbZ810M/s1600/vms.jpg",
+        "alt": "איור של הכתבה על פרצה במכונות וירטואליות."
+      }
+    },
+    {
+      "id": "inkling-2-mini",
+      "topic": "ai",
+      "text": "Thinking Machines Lab שחררה את Inkling 2 Mini, מודל פתוח להרצה מקומית עם 3B פרמטרים פעילים, חלון של מיליון טוקנים וקלט של טקסט ותמונות.",
+      "source": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/inkling2mini"
+      },
+      "image": {
+        "url": "https://huggingface.co/blog/assets/inkling2mini/thumbnail.png",
+        "alt": "כרטיס ההכרזה על Inkling 2 Mini בבלוג של Hugging Face."
+      }
+    },
+    {
+      "id": "ai-token-fraud-free-trials",
+      "topic": "ai",
+      "text": "Claire Vo, מנהלת ChatPRD, מתארת קבוצות שמנצלות ניסיונות חינם וקודי הנחה כדי להשתמש בסוכן ה־AI שלה ולמכור את השימוש הלאה, ולכן היא מפסיקה את הניסיונות החינמיים.",
+      "source": {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "loyaltygo",
+      "name": "Loyaltygo",
+      "text": "כרטיסיות ניקוב ונקודות לבתי קפה ומספרות בתוך Apple Wallet ו־Google Wallet, בלי אפליקציה; בחינם עד 30 לקוחות, בספרד ובמקסיקו.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/loyaltygo"
+      },
+      "icon": "https://cdn.betalist.com/4xyu1txokhu54ut4n8pm4ncta2bw"
+    },
+    {
+      "id": "serveus-ai",
+      "name": "ServeUs Ai",
+      "text": "ניהול לנותני שירות: תיאום עבודות, הודעות ללקוחות, חשבוניות ותשלום, ודוח עם תמונות שנשלח ללקוח אחרי כל ביקור.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/serveus-ai"
+      },
+      "icon": "https://cdn.betalist.com/wpkfkmj02x44x0kejbp5zufv4ohj"
+    },
+    {
+      "id": "fixragent",
+      "name": "fixRAgent",
+      "text": "מתמונה אחת של תקלה בבניין מפיק למנהל הנכס את רמת הדחיפות, איזה בעל מקצוע להזמין ומה לומר לדייר; זמין גם כשרת MCP.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/fixragent"
+      },
+      "icon": "https://cdn.betalist.com/mzqbjaeub1t6fo60q4a1xvz0rdw9"
+    },
+    {
+      "id": "nwsppr",
+      "name": "nwsppr",
+      "text": "תקציר יומי של חדשות הענף שמותאם לחברה, מדורג לפי דחיפות ומסביר למה כל ידיעה חשובה, עם מחיר אחד לכל החברה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/nwsppr"
+      },
+      "icon": "https://cdn.betalist.com/2nvuqas2ats12t2zzojd004zi4y4"
+    },
+    {
+      "id": "all-my-ducks",
+      "name": "All My Ducks",
+      "text": "ניהול משימות לבית ולעבודה יחד עם התחייבויות משותפות לאחרים, עם חיבור לסוכני AI, ליומנים, ל־API ול־webhooks.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/all-my-ducks"
+      },
+      "icon": "https://cdn.betalist.com/56r22vy5rrggile18kig1neosvuu"
+    },
+    {
+      "id": "ziv-live",
+      "name": "ZIV Live",
+      "text": "גלריה חיה ופרטית לאירוע: האורחים סורקים קוד ומעלים תמונות וסרטונים בלי אפליקציה, החל מ־5 דולר לאירוע.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/ziv-live"
+      },
+      "icon": "https://cdn.betalist.com/8wn0q27wk1qrj92zvz5s03vitwnz"
+    },
+    {
+      "id": "ai-photo-editor",
+      "name": "AI Photo Editor",
+      "text": "עורך תמונות חינמי בדפדפן שעובד לפי תיאור במילים: הסרת רקע, מחיקת אובייקטים, הגדלה ותיקון צבע, בלי הרשמה וסימן מים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/ai-photo-editor"
+      },
+      "icon": "https://cdn.betalist.com/zhhrq1e2ymy4t9v4eztmla3mkk41"
+    }
+  ]
+}
