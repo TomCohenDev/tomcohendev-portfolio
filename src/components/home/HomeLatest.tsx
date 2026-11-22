@@ -18,9 +18,10 @@ const Cover = ({ post }: { post: Post }) => (
 
 const titleClass = "font-medium leading-snug text-[var(--a-ink)] transition-colors group-hover:text-[var(--a-accent)]";
 
-/** The newest article on the right, with the other published articles on the left. */
+/** The newest article on the right, and the two before it on the left. The rest are on /blog. */
 export const HomeBlog = () => {
-  const [lead, ...rest] = listedPosts;
+  const [lead, ...older] = listedPosts;
+  const rest = older.slice(0, 2);
   if (!lead) return null;
 
   return (

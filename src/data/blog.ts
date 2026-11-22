@@ -159,7 +159,7 @@ export const publishedPosts: Post[] = [
 ];
 
 /** English translations are reachable only from their Hebrew article, so they stay out of the index and RSS. */
-const translationSlugs = new Set(["ai-security-en", "nykma-en", "black-october-en", "t3-kitshn-en", "lazarus-backdoor-en"]);
+const translationSlugs = new Set(["ai-security-en", "nykma-en", "black-october-en", "t3-kitshn-en", "lazarus-backdoor-en", "teach-site-en", "lead-machine-en"]);
 export const listedPosts = publishedPosts.filter((post) => !translationSlugs.has(post.slug));
 
 export const blogTags = [...new Set(listedPosts.flatMap((post) => post.tags))];
