@@ -3,6 +3,28 @@ import type { Post } from "../components/content/mock";
 /** Published articles only. Mock posts remain on their existing noindex demo URLs. */
 export const publishedPosts: Post[] = [
   {
+    slug: "lead-machine",
+    title: "לקוחות חדשים כל בוקר: מכונת לידים עם Claude וגוגל שיטס, בלי קוד",
+    description: "מדריך מלא: גיליון גוגל, חיבור ל־Claude ומשימה מתוזמנת שמוצאת כל בוקר עשרה עסקים חדשים, נותנת להם ציון, וכותבת לכל אחד הודעת ווטסאפ אישית שאתם שולחים בעצמכם.",
+    date: "2026-11-22",
+    readMinutes: 8,
+    tags: ["אוטומציה", "AI", "מדריך"],
+    cover: "flow",
+    image: "/blog/lead-machine-cover.webp",
+    body: [],
+  },
+  {
+    slug: "lead-machine-en",
+    title: "New Leads Every Morning: A Lead Machine With Claude and Google Sheets, No Code",
+    description: "A complete guide: a Google Sheet, Claude connected to it, and a scheduled task that finds ten new businesses every morning, scores them, and writes each one a personal WhatsApp message that you send yourself.",
+    date: "2026-11-22",
+    readMinutes: 8,
+    tags: ["Automation", "AI", "English"],
+    cover: "flow",
+    image: "/blog/lead-machine-cover-en.webp",
+    body: [],
+  },
+  {
     slug: "teach-site",
     title: "החלפתי את המצגות בקוד, והתלמידים שלי לומדים אחרת",
     description: "העברתי את ההוראה שלי בהידראוליקה ובתרמודינמיקה ממצגות לשיעורים שבנויים ב־HTML, ‏CSS ו־three.js, עם PDF להדפסה. מה בניתי, מה השתנה, ואיך מקימים את זה לבד עם Claude, גם בלי דומיין.",
