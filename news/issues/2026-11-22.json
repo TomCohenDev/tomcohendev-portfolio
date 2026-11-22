@@ -1,0 +1,152 @@
+{
+  "date": "2026-11-22",
+  "stories": [
+    {
+      "id": "meta-muse-webpage-hijack",
+      "topic": "ai",
+      "headline": "חוקרים הראו שדף אינטרנט זדוני גרם ל־Meta Muse למסור שיחות פרטיות וזיכרונות",
+      "summary": "חברת האבטחה NebuSec הדגימה במעבדה שדף זדוני שהסוכן Muse של Meta פותח יכול לשלוף ולשנות את היסטוריית השיחות והזיכרונות של המשתמש בלי שתוצג לו בקשת אישור, ומשם להשתלט על המחשב בענן שמריץ את הסוכן, כולל מאגר הסיסמאות של החשבונות המחוברים. לפי החוקרים כל הפרצות תוקנו לפני הפרסום, אבל Meta לא אישרה זאת בפומבי.",
+      "forBusiness": "סוכן AI שגולש באתרים בשמכם הוא דלת כניסה חדשה, גם כשהוא בנוי להגן על עצמו. חברו אליו רק את החשבונות שהוא באמת צריך, ולא את חשבונות הכספים והלקוחות של העסק.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/a-single-malicious-webpage-let.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYiVrbfn3FWfI_uNyjj8q9SZ38d2mHKu2ehdtYYKPwyg-05yKJBYUAPEaVxJq5KDGwU11X2tmEKNUKPIHQY9s67e1K9w_8NRdEOxVCDJqqMbQ6F27kfOj3GKjcQ3-0WHFNg7uYT6QeIU90qX1YW_Zvyn7WhZwpV41i5Pj6watQsF7Ti8NN1GIQLxw-jPc/s1600/muse-ai.jpg",
+        "alt": "מסך הפתיחה של Meta Muse בדפדפן, עם שיחות, זיכרון וחשבונות מחוברים."
+      }
+    },
+    {
+      "id": "zapier-silent-field-miss",
+      "topic": "automation",
+      "headline": "Zapier: שינוי ניסוח בטופס של Google Ads גרם לאוטומציה לאבד שדה בלי שום שגיאה",
+      "summary": "Zapier מספרת על חברת השכרת דירות שמעבירה כ־2,000 לידים בחודש מטפסי Google Ads ל־Freshsales: גוגל שינתה את ניסוח שאלת התקציב, השדה הפסיק להגיע ל־CRM ושום דבר לא נכשל. הבעיה התגלתה אחרי פחות מ־10 לידים, כשהמשתמש ביקש מהעוזר שבונה את ה־Next-Gen Zaps לבדוק את מיפוי השדות, ומנגנון התיקון האוטומטי לא התריע כי לא הייתה שגיאה.",
+      "forBusiness": "אוטומציה שרצה בלי שגיאות היא לא בהכרח אוטומציה שמעבירה הכל. אחרי כל שינוי בטופס או במערכת שמזינה אותה, בדקו כמה רשומות אמיתיות ביעד, לא רק את ריצת הבדיקה.",
+      "source": {
+        "name": "Zapier",
+        "url": "https://zapier.com/blog/panoramic-properties-next-gen-zaps"
+      },
+      "image": {
+        "url": "https://images.ctfassets.net/lzny33ho1g45/5wlxc3FYVqlERdUvhbFabU/3b07441ce9fff79493627e9d4b6c03ba/panoramic-properties-adam-julien-blog-hero-16x9.png",
+        "alt": "הלוגו של Panoramic Properties לצד תמונה של סלון בדירה להשכרה."
+      }
+    },
+    {
+      "id": "gpgme-double-free",
+      "topic": "security",
+      "headline": "פרצה קריטית ב־GPGME, ספרייה שמשמשת תוכנות דואר ו־Gpg4win: לעדכן לגרסה 2.3.1",
+      "summary": "פרויקט GnuPG הזהיר מפרצה (CVE-2026-129975) שבה מפתח OpenPGP זדוני עם מזהה משתמש ארוך במיוחד מפעיל באג זיכרון ב־GPGME בכל גרסה שלפני 2.3.0, ולדבריו אפשר לנצל אותה לגניבת מידע מתוכנות שמשתמשות בספרייה ולא ניתן לשלול הרצת קוד. בין התוכנות שהפרויקט מונה: רוב תוכנות הדואר, Samba ו־Gpg4win, ועד כה לא דווח על ניצול.",
+      "forBusiness": "אם במחשבי העסק מותקן Gpg4win, עדכנו לגרסה 5.1.2, ובשרתים עדכנו את GPGME ל־2.3.1. תוכנות שהספרייה מובנית בתוכן צריכות עדכון משלהן מהיצרן.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/gnupg-warns-critical-gpgme-flaw-could.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTmX4ayWzvM0EzPttZ610B2837FppeU5AEmQmztLH2lai78EDQtjrp4wVI_bubSe2c2NGBE5sqBT9Py1mKkHQKN2faBkOzU70d7FntrpYD7Et2eeBxLNy2gzByAo1i8Aaw_VMBZD62RnBMY2md3iNfegK9M_NR5qTRDBw8s0uwKy1w7JoTV0zkDS_17Lse/s1600/pgp.jpg",
+        "alt": "איור של כרטיס מפתח OpenPGP על רקע הכיתוב GPGME."
+      }
+    },
+    {
+      "id": "monai-ai-agents-zero-day",
+      "topic": "security",
+      "headline": "Amazon: סוכני AI של תוקפים מצאו פרצה לא מוכרת בשרת לתיוג סריקות רפואיות והשיגו root",
+      "summary": "לפי Amazon Threat Intelligence, תוקפים שכנראה קשורים לסין הפעילו סוכני AI אוטונומיים שמצאו פרצה ב־MONAI Label, שרת קוד פתוח לתיוג סריקות רפואיות, והגיעו לגישת root בשרת של אוניברסיטה. הפרצה פוגעת בגרסה 0.8.5 ומטה בהגדרות ברירת המחדל, שבהן אין התחברות, ותיקון שמוזג לקוד עדיין לא יצא כגרסה להתקנה.",
+      "forBusiness": "סוכני AI מקצרים לתוקפים את הדרך משרת חשוף לפריצה: לפי Amazon הם הגיעו לכתיבת קבצים בשרת בתוך כ־11 דקות. כל מערכת שנגישה מהאינטרנט בלי סיסמה, גם כלי פנימי או מחקרי, צריכה לעבור מאחורי התחברות או VPN.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEIG6Wgi3wGQXrsdGKEf4ORPFjHVGpRkoSUPraOJfKhGmB0vYFojLq2mCuOP3a71_XpNZusvn45ZDa1J3a7eQ0WE3XJY0FGunHVWB1yHBluJT5vSDCmzkhaFGiHjeKbnoah6noyZ3mNInS-mjJK1Gfcf7jT3A60ZYR_eknSgt_sEa6MNGM-DA5-aLXMbZ5/s1600/medical-ai.jpg",
+        "alt": "מסך של MONAI Label עם סריקת מוח, ולידו חלון של סוכן AI שמדווח על פריצה."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "cisa-kev-sap-netweaver",
+      "topic": "security",
+      "text": "CISA הוסיפה ארבע פרצות לרשימת הפרצות המנוצלות, ובהן פרצה ב־SAP NetWeaver Enterprise Portal (CVE-2025-42884) שתוקנה כבר בנובמבר 2025.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFnWnBDigw8RogBTSInXktn1vUISbzwjHm5GuAFBNX0_ClLBk83WOa2BYiHUbgtva76TY8Oz2kJvEZtvEjqZlFFCuvQ-u-l-4l5dzo2MXw7zHLEuklv_Gn1mB-f5TL9GP_3n1NxQkzkZ-fAX7UpcqfZqUefQiRQZm21sq6IZOzmyuQ1hYs4AFHWQAj83WX/s1600/vmware-cisco.jpg",
+        "alt": "הלוגואים של vCenter, Cisco Expressway, SAP NetWeaver ו־Apache Roller לצד דמות מול מחשב."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "tiquiz",
+      "name": "Tiquiz",
+      "text": "בונה שאלונים עם AI שאוספים לידים, מתייגים אותם ב־GoHighLevel או ב־Systeme.io ושולחים להם מיילים להמשך.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/tiquiz"
+      },
+      "icon": "https://cdn.betalist.com/y6tp00x10gsdikd3v18ymrv89zoz"
+    },
+    {
+      "id": "1stcontact-ai",
+      "name": "1stContact.ai",
+      "text": "CRM עם AI שעונה לשיחות 24/7, שולח SMS ומיילים להמשך וקובע פגישות, עם כל השיחות בכרטיס לקוח אחד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/1stcontact-ai"
+      },
+      "icon": "https://cdn.betalist.com/05y9tk5ob8oppn1gnc0kltzntg09"
+    },
+    {
+      "id": "mailyard",
+      "name": "Mailyard",
+      "text": "דיוור ישיר בדואר לעסקים: AI מאתר ומאמת כתובות ועוזר לכתוב מכתבים אישיים, והמערכת מדפיסה, שולחת ומודדת בקודי QR.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/mailyard-2"
+      },
+      "icon": "https://cdn.betalist.com/is9qpi7rwfhm23i5pylktav1w0cq"
+    },
+    {
+      "id": "heyidentity",
+      "name": "HeyIdentity",
+      "text": "ספק זהות OIDC לבדיקות: האפליקציה מתחברת כרגיל, ובמסך הכניסה בוחרים משתמש בדיקה עם התפקידים שהוגדרו לו.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/heyidentity"
+      },
+      "icon": "https://cdn.betalist.com/c20866lo4epwa6mfqdxqg319zipi"
+    },
+    {
+      "id": "quick-share",
+      "name": "Quick Share",
+      "text": "העברת קבצים, תמונות וטקסט בין טלפונים ומחשבים ברשת המקומית בלי שרתים חיצוניים, או בקישור זמני עם סיסמה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/quick-share"
+      },
+      "icon": "https://cdn.betalist.com/8spvq6euzhyqq9r57q8tnuhckss9"
+    },
+    {
+      "id": "pdfreflow",
+      "name": "PDFreflow",
+      "text": "אפליקציה לטלפון שמסדרת קובצי PDF בעמודה אחת לקריאה נוחה, בלי לשלוח אותם לענן; לא מתאימה לספרים סרוקים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/pdfreflow"
+      },
+      "icon": "https://cdn.betalist.com/thlj9fcl95mmmyx0ofg412odious"
+    },
+    {
+      "id": "fino3d",
+      "name": "Fino3D",
+      "text": "הופך תמונה, תמונת מוצר או סקיצה למודל תלת־ממד עם טקסטורות, לצפייה בדפדפן ולהורדה בפורמטים נפוצים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/fino3d"
+      },
+      "icon": "https://cdn.betalist.com/3equeow367j9qb2irhazm9peo4hi"
+    }
+  ]
+}
