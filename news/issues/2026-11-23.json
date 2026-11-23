@@ -1,0 +1,201 @@
+{
+  "date": "2026-11-23",
+  "stories": [
+    {
+      "id": "ghostscript-upload-rce",
+      "topic": "security",
+      "headline": "פרצה ב־Ghostscript: קובץ שמעלים לאתר יכול להריץ פקודות בשרת, גם דרך תוספי WordPress",
+      "summary": "חברת האבטחה pwn.ai הדגימה שקובץ מעוצב במיוחד, גם כזה ששמו מסתיים ב־png או ב־pdf, עוקף את ההגנה של Ghostscript ומריץ פקודות בשרת דרך העלאה, תצוגה מקדימה או הדפסה בכעשר אפליקציות, חלקן בלי התחברות: טפסי העלאה בתוספים Forminator ו־Essential Addons for Elementor ב־WordPress וקבצים מצורפים ב־Roundcube. הפרצה (CVE-2026-125396) תוקנה בגרסה 10.08.0 ב־8 בספטמבר, ואין דיווחים על ניצול.",
+      "forBusiness": "אם באתר יש טופס שמקבל קבצים, בקשו ממי שמתחזק אותו לעדכן את WordPress לגרסה 7.0.4 ומעלה, את התוספים ואת Ghostscript בשרת. עדכון מערכת ההפעלה לא מעדכן עותק של Ghostscript שארוז בתוך קונטיינר או אפליקציה, אז צריך לבדוק גם אותם.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/researchers-demonstrate-ghostscript.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1BiCJUIrSJXNfKPZEkM46ynK6Rs7gba2xMaTUdoJ7yOK6Y8kcKMqJ_6PhbUIog_U1E8gRCpbj2HrkQ9UEpbPi1HOvkxdxCE5Afa5LbkNhUPvgU7Sa60IVHAWqSvgJaX1p6frMAN335QncL5UTZ3a4v1-agyb8ZXIlMGZTOtzsC0Gll2qRI0NJNMHTsf8/s1600/ghostscript.jpg",
+        "alt": "הלוגו של Ghostscript בין קטעי קוד ומסמך PDF עם סימן אזהרה."
+      }
+    },
+    {
+      "id": "openrouter-provider-prompt-theft",
+      "topic": "ai",
+      "headline": "OpenRouter הסירה שלושה ספקי AI אחרי שחוקרים גילו שתוקפים העתיקו פרומפטים במשך חודשים",
+      "summary": "חוקרי Dragos שתלו כשני מיליון פרומפטים עם קישורים וסיסמאות מסומנים, וגילו שתוקפים בתוך שלושה ספקים שמריצים מודלים העתיקו בקשות של לקוחות מאמצע יולי, גם בקשות שסומנו Zero Data Retention, ומפתחות AWS שנגנבו נוסו לפעמים תוך שעות. OpenRouter, שמנתבת בקשות AI לספקים חיצוניים, הסירה את השלושה, הוציאה 125 נקודות קצה מ־Zero Data Retention והודיעה ללקוחות שעלולים להיפגע.",
+      "forBusiness": "אל תכניסו לפרומפטים סיסמאות, מפתחות API או פרטי לקוחות, גם כשהספק מבטיח שלא ישמור אותם. אם מערכות של העסק שולחות בקשות דרך OpenRouter, בדקו אם קיבלתם הודעה והחליפו כל מפתח שעבר בבקשות.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/openrouter-drops-3-providers-after.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEGP3P_elvK4C-QnSx5onZ67viDXCIgPCUYqtTF_RDNcLJfyQ4QMbegUmn8AJy5nEmnXfN4ACr6hHztG_DdqXlj54S21toacPQaZgRx2rgqZltN3lvREpZR2xlvgXF_iZ7zW0XT0b91mMiRDVaEB6TUvMFlWwaSa3_C7gwpxdKcNhLtIq15KqwaZrR3VI/s1600/openrouter.png",
+        "alt": "איור של ממשק OpenRouter עם Zero Data Retention מחוק ומנעול פתוח ליד פרומפטים של לקוחות."
+      }
+    },
+    {
+      "id": "cleverbridge-card-breach",
+      "topic": "security",
+      "headline": "פורצים גנבו מספרי כרטיסי אשראי וקודי CVV מ־Cleverbridge, פלטפורמת מכירה של חברות תוכנה",
+      "summary": "Cleverbridge, שמעבדת תשלומים ומנויים עבור חברות תוכנה ו־SaaS כמו Red Hat, Veeam, Tenable ו־Parallels, זיהתה פעילות חשודה ב־4 בנובמבר ובהמשך מצאה שגורם חיצוני העתיק נתוני כרטיסים שנשמרו אצלה. לפי הודעה ללקוחות שהגיעה ל־BleepingComputer נגנבו מספר הכרטיס, התוקף וקוד ה־CVV, והחברה לא פרסמה של אילו מוכרים הלקוחות נפגעו.",
+      "forBusiness": "אם העסק קנה רישיון או מנוי תוכנה בכרטיס אשראי דרך Cleverbridge, חפשו הודעה ממנה מ־20 בנובמבר ואילך ובדקו את פירוט החיובים. כשגם קוד ה־CVV נגנב, כדאי לשקול להחליף את הכרטיס.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/"
+      },
+      "image": {
+        "url": "https://www.bleepstatic.com/content/hl-images/2026/11/22/credit-cards.jpg",
+        "alt": "כרטיסי אשראי מתפזרים מעל מקלדת של מחשב."
+      }
+    },
+    {
+      "id": "glinet-cloud-malware",
+      "topic": "security",
+      "headline": "תוקפים ניצלו פרצה בענן של GL.iNet והתקינו נוזקה בנתבים ובמכשירי KVM של לקוחות",
+      "summary": "GL.iNet אישרה ב־20 בנובמבר שגורם לא מורשה ניצל פרצה בשירות הניהול מרחוק שלה בענן, נכנס למכשירים של לקוחות והתקין עליהם תוכנה זדונית, ומשתמשים דיווחו על דלתות אחוריות. החברה אומרת שהפרצה בענן נסגרה, אבל זה לא מנקה מכשירים שכבר נדבקו, והיא לא מסרה כמה לקוחות נפגעו.",
+      "forBusiness": "אם יש בעסק נתב או KVM של GL.iNet, בדקו אותו לפי ההנחיות של החברה ועדכנו לקושחת האבטחה האחרונה, גם אם לא נמצאה נוזקה. ב־KVM החברה ממליצה על גרסה 1.10.3 ומעלה ברוב הדגמים.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/"
+      },
+      "image": {
+        "url": "https://www.bleepstatic.com/content/hl-images/2026/11/22/routers-kvms.jpg",
+        "alt": "נתב ומכשיר KVM על שולחן, ומאחוריהם מפת עולם עם דמות של האקר."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "entra-connect-health-breach",
+      "topic": "security",
+      "text": "Microsoft הודיעה שפרצה ב־Entra Connect Health חשפה כתובות מייל של מנהלי מערכת ונתוני הגדרות של ארגונים; לא נדרש עדכון, אבל היא מזהירה מפישינג ממוקד.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/"
+      }
+    },
+    {
+      "id": "rackspace-spot-breach",
+      "topic": "security",
+      "text": "פורצים נכנסו ל־Rackspace Spot ב־17 בנובמבר עם פרטי גישה שדלפו וקראו סודות באשכולות Kubernetes של לקוחות, שהתבקשו להחליף טוקנים וסיסמאות.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/"
+      }
+    },
+    {
+      "id": "badbox-3-ad-fraud",
+      "topic": "security",
+      "text": "BADBOX 3.0, רשת של טלפונים, טאבלטים וסטרימרים זולים מבוססי Android שנדבקו בנוזקה, הגיעה לכ־40 מיליארד בקשות פרסום מזויפות ביום, לפי HUMAN.",
+      "source": {
+        "name": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/security/badbox-30-botnet-returns-with-record-breaking-40-billion-daily-ad-requests/"
+      }
+    },
+    {
+      "id": "ios-27-connectivity-assist",
+      "topic": "mobile",
+      "text": "ב־iOS 27 יש Connectivity Assist: כשה־Wi-Fi חלש או לא שמיש, האייפון נעזר בחבילת הסלולר כדי להישאר מחובר, ולכן הוא עשוי לצרוך יותר נתונים.",
+      "source": {
+        "name": "9to5Mac",
+        "url": "https://9to5mac.com/2026/11/22/ios-27-has-a-clever-fix-for-unreliable-wi-fi-connections/"
+      }
+    },
+    {
+      "id": "gemini-android-camera",
+      "topic": "ai",
+      "text": "גוגל עיצבה מחדש את המצלמה באפליקציית Gemini ל־Android: היא נפתחת כחלון שעולה מתחתית המסך בתוך השיחה, במקום מסך מלא נפרד.",
+      "source": {
+        "name": "9to5Google",
+        "url": "https://9to5google.com/2026/11/21/gemini-camera-redesign/"
+      }
+    },
+    {
+      "id": "openai-perplexity-numbers",
+      "topic": "research",
+      "text": "OpenAI פרסמה את מדד ה־perplexity הפנימי של המודלים שלה: GPT-4 עמד על כ־0.91 והמודלים החדשים מתחת ל־0.8, כהצעה לבסיס משותף לתקני בטיחות.",
+      "source": {
+        "name": "OpenAI",
+        "url": "https://openai.com/index/perplexity-and-intelligence"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "punchtape",
+      "name": "punchtape",
+      "text": "שכבת בקרה חיצונית לסוכני קוד כמו Claude Code, Cursor ו־Codex CLI, שבודקת שהמשימה הושלמה לפי ההוראות שנכתבו לה בקובץ.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/punchtape"
+      }
+    },
+    {
+      "id": "lexdye",
+      "name": "LexDye",
+      "text": "כלי בדפדפן שבודק חוזים ב־Word ומאתר מונחים בלי הגדרה, כפולים או לא בשימוש, בלי להעלות את המסמך.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/lexdye"
+      },
+      "icon": "https://cdn.betalist.com/yqtfc4fqpvz3w7yhap2tfksl4jed"
+    },
+    {
+      "id": "postfjord",
+      "name": "Postfjord",
+      "text": "פלטפורמת שיווק לעסקים קטנים: עיצוב פוסטים, Reels, מיילים ודפי נחיתה, ועוזר AI שכותב טיוטות בסגנון של המותג.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/postfjord"
+      },
+      "icon": "https://cdn.betalist.com/txbtss8jz7lsm5x6ok0d3ibykc8l"
+    },
+    {
+      "id": "agentteams",
+      "name": "AgentTeams",
+      "text": "סוכני AI שמקבלים תפקיד, מצטרפים לצ׳אט של הצוות ומתחברים ליותר מ־30 כלים כמו Slack, Google Workspace ו־HubSpot.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/agentteams"
+      },
+      "icon": "https://cdn.betalist.com/oqd4r539ts35dgt14pcy8snrggui"
+    },
+    {
+      "id": "tvpilot",
+      "name": "TVpilot",
+      "text": "שילוט דיגיטלי לחנויות, מסעדות ומשרדים על מסכים קיימים כמו Fire TV, Android TV או Raspberry Pi, עם פלייליסטים ותזמון.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/tvpilot"
+      },
+      "icon": "https://cdn.betalist.com/6comxtf7dao511mnfqmibtaidoht"
+    },
+    {
+      "id": "north-metric",
+      "name": "North Metric",
+      "text": "קורא נתוני חיוב מ־Stripe לצד נתוני שימוש כמו PostHog ומסמן לקוחות SaaS שעלולים לעזוב.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/north-metric"
+      },
+      "icon": "https://cdn.betalist.com/xbld48a2n8ig48cjff7zr715f0h3"
+    },
+    {
+      "id": "arceris",
+      "name": "Arceris",
+      "text": "שער אבטחה ל־AI ברמת הרשת שמסתיר מידע רגיש ואוכף הרשאות בצ׳אטים בדפדפן, ב־API, באפליקציות ובכלי פיתוח.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/arceris"
+      },
+      "icon": "https://cdn.betalist.com/lbspyoilyqwxve1kydeim1p2fph6"
+    },
+    {
+      "id": "adwiseri",
+      "name": "adwiseri",
+      "text": "מערכת לניהול משרדי ייעוץ ויזה והגירה: תיקי לקוחות, מסמכים, הודעות וחשבוניות במקום אחד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/adwiseri"
+      }
+    }
+  ]
+}
