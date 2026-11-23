@@ -1,5 +1,5 @@
 import { type ReactNode, useEffect, useState } from "react";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, ChevronDown } from "lucide-react";
 import "@/components/automation/automation.css";
 import { FaqSection } from "@/components/automation/Approach";
 import { AutomationFooter, AutomationHeader } from "@/components/automation/Chrome";
@@ -253,16 +253,40 @@ const Syllabus = () => (
       מפגש שבועי אחד, <span dir="ltr">17:00–21:00</span>. בכל מפגש מתקדמים גם בפרויקט האישי. החלוקה עשויה להשתנות לפי רמת הקבוצה וקצב הפרויקטים.
     </p>
     <RoadDoodle className="mx-auto mt-6 w-full max-w-lg" />
-    <ol className="mt-8 grid gap-x-12 md:grid-flow-col md:grid-cols-2 md:grid-rows-5">
+    <p className="mt-6 text-center text-[15px] text-[var(--a-muted)]">לחצו על מפגש כדי לראות מה עושים בו.</p>
+    <ol className="mx-auto mt-4 max-w-3xl border-b border-[var(--a-line)]">
       {syllabus.map((session, i) => (
-        <li key={session.topic} className="border-t border-[var(--a-line)] py-3.5 text-center">
-          <span dir="ltr" className="block text-[15px] tabular-nums text-[var(--a-accent)]">
-            {String(i + 1).padStart(2, "0")}
-          </span>
-          <div>
-            <h3 className="text-[17px] font-medium leading-snug text-[var(--a-ink)]">{session.topic}</h3>
-            <p className="mt-0.5 text-[15px] leading-relaxed text-[var(--a-muted)]">{session.result}</p>
-          </div>
+        <li key={session.topic} className="border-t border-[var(--a-line)]">
+          {/* A native details element, as on the news page: each session opens and closes without a script. */}
+          <details className="group">
+            <summary className="flex cursor-pointer list-none items-start gap-4 py-4 text-start [&::-webkit-details-marker]:hidden">
+              <span dir="ltr" className="w-7 shrink-0 pt-0.5 text-[15px] tabular-nums text-[var(--a-accent)]">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="min-w-0 flex-1">
+                <h3 className="text-[17px] font-medium leading-snug text-[var(--a-ink)]">{session.topic}</h3>
+                <span className="mt-1 block text-[15px] leading-relaxed text-[var(--a-muted)]">{session.summary}</span>
+              </span>
+              <ChevronDown
+                className="mt-0.5 h-5 w-5 shrink-0 text-[var(--a-muted)] transition-transform group-open:rotate-180"
+                aria-hidden="true"
+              />
+            </summary>
+            <div className="pb-5 ps-11">
+              <ul className="space-y-2">
+                {session.points.map((point) => (
+                  <li key={point} className="flex items-start gap-3 text-[15px] leading-relaxed text-[var(--a-ink)]">
+                    <Check className="mt-1 h-4 w-4 shrink-0 text-[var(--a-accent)]" aria-hidden="true" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-[15px] leading-relaxed text-[var(--a-muted)]">
+                <span className="font-medium text-[var(--a-ink)]">יוצאים עם: </span>
+                {session.result}
+              </p>
+            </div>
+          </details>
         </li>
       ))}
     </ol>
