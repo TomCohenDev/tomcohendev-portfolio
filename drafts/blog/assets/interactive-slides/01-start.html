@@ -1,0 +1,88 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>A folder and CLAUDE.md</title>
+<link rel="stylesheet" href="kit.css" />
+<style>
+  #shell .row { min-height: 23px; }
+  #edit { background: #fbfaf7; }
+  .ed { flex: 1; padding: 18px 22px; font: 400 14px/1.75 "JetBrains Mono", monospace; color: #2c2a36; direction: ltr; text-align: left; white-space: pre-wrap; overflow: hidden; }
+  .ed .h { color: #514fbb; font-weight: 600; }
+  .ed .k { color: #8a5a00; }
+  .ed .m { color: #8b889a; }
+  .tab { font: 600 12.5px "JetBrains Mono", monospace; color: #4a4858; margin-inline-start: 8px; }
+</style>
+<body>
+  <div class="win" id="term" style="left:40px;top:40px;width:600px;height:640px">
+    <div class="bar dark"><div class="dots"><i></i><i></i><i></i></div><span class="title" id="ttl">~</span></div>
+    <div class="term" id="shell"></div>
+    <div class="term" id="claude" style="display:none"></div>
+  </div>
+  <div class="win" id="edit" style="left:660px;top:96px;width:580px;height:584px">
+    <div class="bar"><div class="dots"><i></i><i></i><i></i></div><span class="tab">my-course / CLAUDE.md</span></div>
+    <div class="ed" id="ed"></div>
+  </div>
+  <script type="module">
+    import { clip, tr, prog, ease, easeOut, clamp, typed, caretOn, session, $ } from "./kit.js";
+
+    const CMDS = [["mkdir my-course", 0.3], ["cd my-course", 1.1], ["claude", 1.8]];
+    const shell = $("#shell");
+    const rows = CMDS.map(() => { const r = document.createElement("div"); r.className = "row"; shell.append(r); return r; });
+    const T_CLAUDE = 2.6;
+
+    const PROMPT = "Create CLAUDE.md for my course: C programming for first-year students. Hebrew, right to left, code left to right. One HTML file per lesson in lessons/. Under every scene, a note for the student.";
+    const s = session($("#claude"), {
+      prompt: PROMPT,
+      t0: T_CLAUDE + 0.3,
+      cps: 48,
+      steps: [
+        ["tool", "Write", "CLAUDE.md"],
+        ["say", tr({ he: "Done. I'll follow these rules in every lesson.", en: "Done. I'll follow these rules in every lesson." })],
+      ],
+    });
+
+    const FILE = [
+      ['<span class="h"># My course: C programming</span>'],
+      [""],
+      ['<span class="m">First-year students. Hebrew, right to left.</span>'],
+      [""],
+      ["- One lesson = one HTML file in <span class=\"k\">lessons/</span>"],
+      ["- A lesson is a list of 16:9 scenes, one idea each"],
+      ["- Arrow keys reveal the steps"],
+      ["- Under every scene: a note written for the student"],
+      ["- Code always left to right, in a monospace font"],
+      ["- Every number on screen is computed, never typed by hand"],
+      ["- Check the lesson on a phone before you finish"],
+    ];
+    $("#ed").innerHTML = FILE.map((l) => `<div>${l[0] || "&nbsp;"}</div>`).join("");
+    const lines = [...$("#ed").children];
+
+    clip({
+      duration: 12,
+      poster: 11,
+      seek(t) {
+        // shell: three commands, then the session starts in the same window
+        CMDS.forEach(([c, t0], i) => {
+          const r = rows[i];
+          r.style.display = t >= t0 ? "block" : "none";
+          const next = CMDS[i + 1]?.[1] ?? T_CLAUDE;
+          const shown = typed(c, t, t0 + 0.1, 18);
+          const caret = t < next ? `<span class="caret" style="opacity:${caretOn(t, shown.length < c.length) ? 1 : 0}"></span>` : "";
+          r.innerHTML = `<span class="dim">~${i >= 2 ? "/my-course" : ""}</span> <span class="ok">$</span> ${shown}${caret}`;
+        });
+        const inClaude = t >= T_CLAUDE;
+        $("#shell").style.display = inClaude ? "none" : "block";
+        $("#claude").style.display = inClaude ? "block" : "none";
+        $("#ttl").textContent = inClaude ? "claude · ~/my-course" : "~";
+        s.seek(t);
+
+        // the file opens after Write, its lines appear one by one
+        const tw = s.end - 0.6;
+        const k = easeOut(prog(t, tw, tw + 0.6));
+        $("#edit").style.opacity = String(k);
+        $("#edit").style.transform = `translateY(${(1 - k) * 40}px)`;
+        $("#term").style.transform = `translateX(${(1 - ease(prog(t, tw - 0.3, tw + 0.5))) * 300}px)`;
+        lines.forEach((l, i) => { l.style.opacity = String(clamp((t - tw - 0.4 - i * 0.18) / 0.2)); });
+      },
+    });
+  </script>
+</body>

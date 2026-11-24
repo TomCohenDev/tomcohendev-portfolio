@@ -1,0 +1,98 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Notes and the phone</title>
+<link rel="stylesheet" href="kit.css" />
+<style>
+  #slide { position: absolute; top: 24px; width: 700px; height: 330px; overflow: hidden; }
+  .mini { direction: ltr; text-align: left; font: 400 17px/1.8 "JetBrains Mono", monospace; color: #2c2a36; padding: 18px 22px; }
+  .mini > div { white-space: pre; }
+  .mini .kw { color: #514fbb; font-weight: 600; } .mini .nu { color: #c2410c; }
+  .mini .on { background: var(--primary-soft); margin: 0 -22px; padding: 0 22px; }
+  #notes { position: absolute; top: 376px; width: 700px; padding: 18px 24px; }
+  #notes .lbl { font: 700 14px "Nunito", "Rubik"; color: var(--primary); }
+  #notes p { margin: 6px 0 0; font: 400 18px/1.65 "Rubik"; color: #33313f; }
+  #phone { position: absolute; top: 34px; width: 330px; height: 652px; border-radius: 46px; background: #0f0e12; padding: 12px; box-shadow: 0 30px 70px rgba(0,0,0,.5), 0 0 0 2px #2a2830; }
+  #screen { width: 100%; height: 100%; border-radius: 36px; overflow: hidden; position: relative; background-color: var(--paper); background-image: radial-gradient(var(--dot) 1.1px, transparent 1.2px); background-size: 18px 18px; }
+  .pbar { position: relative; z-index: 2; height: 64px; padding: 26px 14px 0; background: #f1f0f5; border-bottom: 1px solid #e0dee8; direction: ltr; }
+  .pbar .url { margin: 0; height: 28px; line-height: 28px; font-size: 12px; text-align: center; border-radius: 10px; }
+  #feed { position: absolute; top: 76px; left: 0; right: 0; padding: 0 14px; }
+  .sc { background: #fff; border-radius: 20px; box-shadow: 0 6px 18px rgba(60, 52, 140, .08); margin-bottom: 14px; overflow: hidden; }
+  .sc .fr { height: 140px; border-bottom: 1px solid #eceaf3; background: #fafafc; overflow: hidden; }
+  .sc .fr .mini { font-size: 11px; padding: 12px 14px; }
+  .sc .nt { padding: 12px 16px 14px; font: 400 13.5px/1.6 "Rubik"; color: #3c3a48; }
+  .sc .nt b { display: block; font: 700 15px "Rubik"; color: var(--ink); margin-bottom: 2px; }
+  .ph { font: 700 13px "Nunito", "Rubik"; color: var(--primary); }
+  .pt { font: 800 22px/1.15 "Rubik"; margin: 2px 0 12px; color: var(--ink); }
+  .tt { width: 100%; border-collapse: collapse; font: 700 12px "JetBrains Mono", monospace; direction: ltr; }
+  .tt td, .tt th { border-bottom: 1px solid #ecebf3; padding: 4px; text-align: center; }
+</style>
+<body>
+  <div class="win" id="term" style="left:240px;top:150px;width:800px;height:420px">
+    <div class="bar dark"><div class="dots"><i></i><i></i><i></i></div><span class="title">claude · ~/my-course</span></div>
+    <div class="term" id="claude"></div>
+  </div>
+  <div class="win" id="browser" style="top:40px;width:780px;height:640px">
+    <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">my-course/lessons/<b>loops.html</b></div></div>
+    <div class="paper" id="paper">
+      <div class="card" id="slide"></div>
+      <div class="card" id="notes"><div class="lbl" id="nl"></div><p id="np"></p></div>
+    </div>
+  </div>
+  <div id="phone"><div id="screen">
+    <div class="pbar"><div class="url">my-course/lessons/loops.html</div></div>
+    <div id="feed"></div>
+  </div></div>
+  <script type="module">
+    import { clip, he, tr, prog, ease, easeOut, clamp, session, $ } from "./kit.js";
+
+    const s = session($("#claude"), {
+      prompt: "In loops.html, add a note for the student under every scene. On a phone, show the lesson as one scrolling page: each scene, then its note.",
+      cps: 44,
+      steps: [["tool", "Edit", "lessons/loops.html", "+ 9 notes"], ["tool", "Edit", "lessons/style.css", "@media (max-width: 700px)"]],
+    });
+
+    const dir = he ? "rtl" : "ltr";
+    $("#paper").dir = dir;
+    $("#screen").dir = dir;
+    $("#browser").style.left = he ? "460px" : "40px";
+    $("#phone").style.left = he ? "70px" : "880px";
+    $("#slide").style[he ? "right" : "left"] = "36px";
+    $("#notes").style[he ? "right" : "left"] = "36px";
+
+    const CODE = `<div class="mini"><div><span class="kw">int</span> sum = <span class="nu">0</span>;</div><div class="on"><span class="kw">for</span> (<span class="kw">int</span> i = <span class="nu">1</span>; i &lt;= <span class="nu">3</span>; i++) {</div><div>    sum += i;</div><div>}</div><div>printf(<span class="nu">"%d"</span>, sum);</div></div>`;
+    $("#slide").innerHTML = CODE;
+    $("#nl").textContent = tr({ he: "הערה לסטודנט", en: "Note for the student" });
+    $("#np").textContent = tr({
+      he: "התנאי i <= 3 נבדק לפני כל סיבוב. כש־i מגיע ל־4 התנאי שקרי, והלולאה נגמרת בלי להריץ את הגוף.",
+      en: "The condition i <= 3 is checked before every round. When i reaches 4 it's false, and the loop ends without running the body.",
+    });
+    $("#np").innerHTML = $("#np").textContent.replace("i <= 3", '<bdi dir="ltr">i &lt;= 3</bdi>');
+
+    const TBL = `<table class="tt"><tr><th>i</th><th>i&lt;=3</th><th>sum</th></tr><tr><td>1</td><td>true</td><td>1</td></tr><tr><td>2</td><td>true</td><td>3</td></tr><tr><td>3</td><td>true</td><td>6</td></tr><tr><td>4</td><td>false</td><td>—</td></tr></table>`;
+    const CARDS = [
+      [CODE, tr({ he: "מה קורה בכל סיבוב?", en: "What happens on every round?" }), tr({ he: "התנאי נבדק לפני כל סיבוב. כש־i מגיע ל־4, הלולאה נגמרת.", en: "The condition is checked before every round. When i reaches 4, the loop ends." })],
+      [`<div style="padding:12px 14px">${TBL}</div>`, tr({ he: "טבלת מעקב", en: "The trace table" }), tr({ he: "כל שורה היא סיבוב אחד. sum גדל ב־i בכל פעם.", en: "Each row is one round. sum grows by i every time." })],
+      [`<div class="mini" style="font-size:11px;padding:12px 14px">prices = [12, 30, 8]<br>total = 0<br>for p in prices:<br>    total += p<br>print(total)</div>`, tr({ he: "נסו בעצמכם", en: "Try it yourself" }), tr({ he: "שנו מחיר ולחצו הרצה. הקוד רץ בדפדפן.", en: "Change a price and press Run. The code runs in the browser." })],
+    ];
+    $("#feed").innerHTML = `<div class="ph">${tr({ he: "לולאות", en: "Loops" })}</div><div class="pt">${tr({ he: "מה קורה בכל סיבוב?", en: "What happens on every round?" })}</div>` +
+      CARDS.map(([f, h, n]) => `<div class="sc"><div class="fr">${f}</div><div class="nt"><b>${h}</b>${n}</div></div>`).join("");
+
+    const T_B = s.end + 0.3;
+    clip({
+      duration: T_B + 7.5,
+      poster: T_B + 4.2,
+      seek(t) {
+        s.seek(t);
+        $("#term").style.opacity = String(1 - prog(t, T_B, T_B + 0.4));
+        const k = easeOut(prog(t, T_B + 0.2, T_B + 0.8));
+        $("#browser").style.opacity = String(k);
+        $("#browser").style.transform = `translateY(${(1 - k) * 30}px)`;
+        $("#notes").style.opacity = String(prog(t, T_B + 1.0, T_B + 1.4));
+        const kp = easeOut(prog(t, T_B + 2.0, T_B + 2.7));
+        $("#phone").style.opacity = String(kp);
+        $("#phone").style.transform = `translateY(${(1 - kp) * 60}px)`;
+        $("#feed").style.transform = `translateY(${-ease(prog(t, T_B + 3.6, T_B + 6.8)) * 420}px)`;
+      },
+    });
+  </script>
+</body>

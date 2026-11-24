@@ -104,6 +104,15 @@ The plan for the Hebrew site is in [`docs/site-plan.md`](docs/site-plan.md).
 - Read leads: `npx wrangler d1 execute tomcohendev-leads --remote --command "SELECT * FROM automation_leads ORDER BY created_at DESC"`
 - After changing bindings in `wrangler.jsonc`, run `npm run cf-typegen`.
 
+## Blog posts
+
+- A post is `src/pages/blog/<slug>.md` with `layout: ../../layouts/ArticleLayout.astro` and frontmatter for `title`, `description`, `slug`, `lang`, `translation` (the other language's slug), `author`, `researchedThrough` and `tags`. The English version is `<slug>-en.md`, with `lang: en` and `translation: <slug>`.
+- Register both in `publishedPosts` in `src/data/blog.ts`, newest first: slug, title, description, date, `readMinutes`, tags, `cover` and `image`.
+- **Add the English slug to `translationSlugs`** in the same file. English versions are reached only from the Hebrew post's language switch. A slug missing from that set shows up twice on the homepage, `/blog` and the RSS feed, once in each language.
+- Covers are 1600×840 webp in `public/blog/` (`<slug>-cover.webp`, and `-cover-en.webp` when the English one differs). A video in a post goes in `public/blog/<slug>/`, as a small copy (540×960 for a reel, a few MB) with a webp poster.
+- The homepage (`src/components/home/HomeLatest.tsx`) shows the newest listed post large on the right and the two before it on the left. The rest are on `/blog`.
+- The daily news run pushes to `main` every morning, so pull before you push.
+
 ## Development and deploys
 
 - `npm run dev` (Astro, port 8080) and `npm run dev:api` (the Worker, port 8787) for the lead form.

@@ -1,0 +1,125 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Organise the course with an agent</title>
+<link rel="stylesheet" href="kit.css" />
+<style>
+  #tree { position: absolute; left: 40px; top: 40px; width: 360px; height: 640px; background: #1f1d1a; color: var(--term-ink); font: 400 15px/1.75 "JetBrains Mono", monospace; padding: 0; direction: ltr; text-align: left; }
+  #tree .hd { height: 38px; line-height: 38px; padding: 0 16px; color: #a59c90; font: 600 12.5px "JetBrains Mono"; background: #24211d; border-bottom: 1px solid #312d28; }
+  #files { position: relative; padding: 10px 0; }
+  .f { position: absolute; left: 0; right: 0; padding-left: 18px; white-space: nowrap; }
+  .f .ic { display: inline-block; width: 20px; color: #8f877d; }
+  .f.dir { color: #d9a36a; }
+  .f.new { color: var(--ok); }
+  #term { left: 420px; top: 40px; width: 820px; height: 330px; }
+  #browser { left: 420px; top: 386px; width: 820px; height: 294px; }
+  #page { padding: 18px 26px; }
+  .units { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 12px; }
+  .u { padding: 12px 12px 10px; }
+  .u .n { font: 800 13px "Nunito", "Rubik"; color: var(--primary); }
+  .u .h { font: 700 16px/1.2 "Rubik"; color: var(--ink); margin: 2px 0 6px; }
+  .u .l { font: 400 12.5px/1.6 "Rubik"; color: var(--muted); }
+</style>
+<body>
+  <div class="win" id="tree"><div class="hd">my-course</div><div id="files"></div></div>
+  <div class="win" id="term">
+    <div class="bar dark"><div class="dots"><i></i><i></i><i></i></div><span class="title">claude · ~/my-course</span></div>
+    <div class="term" id="claude"></div>
+  </div>
+  <div class="win" id="browser">
+    <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">my-course/<b>index.html</b></div></div>
+    <div class="paper"><div id="page"><div class="kicker" id="kk"></div><div class="h1" id="tt" style="font-size:28px"></div><div class="units" id="units"></div></div></div>
+  </div>
+  <script type="module">
+    import { clip, he, tr, prog, ease, easeOut, clamp, session, $ } from "./kit.js";
+
+    const s = session($("#claude"), {
+      prompt: "Organize my lessons into units, build index.html as the course page, and move the rules to AGENTS.md so any AI agent follows them.",
+      cps: 46,
+      gap: 0.42,
+      steps: [
+        ["tool", "Read", "lessons/*.html"],
+        ["tool", "Bash", "mkdir units/1-basics … units/5-arrays"],
+        ["tool", "Bash", "git mv lessons/*.html units/…", "7 moved"],
+        ["tool", "Write", "AGENTS.md, CLAUDE.md → @AGENTS.md"],
+        ["tool", "Write", "course.json, index.html"],
+      ],
+    });
+
+    // Every file has a row before (or null) and a row after (or null).
+    const F = [
+      ["CLAUDE.md", "", 0, 1],
+      ["AGENTS.md", "new", null, 0],
+      ["course.json", "new", null, 2],
+      ["index.html", "new", null, 3],
+      ["lessons/", "dir", 1, null],
+      ["units/", "dir", null, 4],
+      ["  1-basics/", "dir", null, 5],
+      ["variables.html", "", 2, 6, 2],
+      ["printf.html", "", 3, 7, 2],
+      ["  2-decisions/", "dir", null, 8],
+      ["if-else.html", "", 4, 9, 2],
+      ["  3-loops/", "dir", null, 10],
+      ["while.html", "", 5, 11, 2],
+      ["loops.html", "", 6, 12, 2],
+      ["  4-functions/", "dir", null, 13],
+      ["functions.html", "", 7, 14, 2],
+      ["  5-arrays/", "dir", null, 15],
+      ["arrays.html", "", 8, 16, 2],
+    ];
+    const RH = 31;
+    const files = $("#files");
+    const els = F.map(([name, kind, , , depth]) => {
+      const e = document.createElement("div");
+      e.className = "f " + (kind || "");
+      const isDir = kind === "dir";
+      e.innerHTML = `<span class="ic">${isDir ? "▾" : "·"}</span>${name.trim()}`;
+      e.dataset.indent = String(name.startsWith("  ") ? 1 : 0);
+      e.dataset.depth = String(depth ?? 0);
+      files.append(e);
+      return e;
+    });
+    const T_MOVE = s.end - 0.9;
+
+    $("#kk").textContent = tr({ he: "הקורס", en: "The course" });
+    $("#tt").textContent = tr({ he: "תכנות בשפת C · שנה א׳", en: "C programming · first year" });
+    $("#page").dir = he ? "rtl" : "ltr";
+    const U = [
+      [tr({ he: "יחידה 1", en: "Unit 1" }), tr({ he: "יסודות", en: "Basics" }), "variables · printf"],
+      [tr({ he: "יחידה 2", en: "Unit 2" }), tr({ he: "תנאים", en: "Decisions" }), "if · else"],
+      [tr({ he: "יחידה 3", en: "Unit 3" }), tr({ he: "לולאות", en: "Loops" }), "while · for"],
+      [tr({ he: "יחידה 4", en: "Unit 4" }), tr({ he: "פונקציות", en: "Functions" }), "functions"],
+      [tr({ he: "יחידה 5", en: "Unit 5" }), tr({ he: "מערכים", en: "Arrays" }), "arrays"],
+    ];
+    $("#units").innerHTML = U.map(([n, h, l]) => `<div class="card u"><div class="n">${n}</div><div class="h">${h}</div><div class="l" dir="ltr">${l}</div></div>`).join("");
+    const cards = [...$("#units").children];
+
+    clip({
+      duration: s.end + 5,
+      poster: s.end + 4,
+      seek(t) {
+        s.seek(t);
+        const m = ease(prog(t, T_MOVE, T_MOVE + 1.2));
+        F.forEach(([, kind, a, b], i) => {
+          const e = els[i];
+          const before = a == null ? null : (a === 1 ? 1 : a), after = b;
+          let y, op;
+          if (before != null && after != null) { y = before + (after - before) * m; op = 1; }
+          else if (before != null) { y = before; op = 1 - m; }
+          else { y = after; op = m; }
+          const ind = (e.dataset.indent === "1" ? 1 : 0) * m + (+e.dataset.depth) * m;
+          const indBefore = before != null && kind !== "dir" && a >= 2 ? 1 : 0; // files sat inside lessons/
+          e.style.transform = `translate(${(indBefore * (1 - m) + ind) * 18}px, ${y * RH}px)`;
+          e.style.opacity = String(op);
+        });
+        const kb = easeOut(prog(t, s.end + 0.2, s.end + 0.8));
+        $("#browser").style.opacity = String(kb);
+        $("#browser").style.transform = `translateY(${(1 - kb) * 30}px)`;
+        cards.forEach((c, i) => {
+          const kc = easeOut(prog(t, s.end + 0.8 + i * 0.18, s.end + 1.2 + i * 0.18));
+          c.style.opacity = String(kc);
+          c.style.transform = `translateY(${(1 - kc) * 14}px)`;
+        });
+      },
+    });
+  </script>
+</body>
