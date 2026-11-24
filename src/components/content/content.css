@@ -56,6 +56,19 @@
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--a-ink);
+  /* Code reads left to right even inside a Hebrew article. */
+  direction: ltr;
+  text-align: left;
+}
+/* Prompts (```text) wrap, so the whole prompt is visible before you copy it. */
+.automation-page .c-prose pre[data-language="text"],
+.automation-page .c-prose pre[data-language="text"] code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.automation-page .c-prose :not(pre) > code {
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 /* Newspaper masthead rule: a double line, the second one wavy. */

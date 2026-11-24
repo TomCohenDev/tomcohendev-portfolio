@@ -1,0 +1,122 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>A loop that traces itself</title>
+<link rel="stylesheet" href="kit.css" />
+<style>
+  #head { position: absolute; top: 30px; }
+  .code { position: absolute; top: 150px; width: 520px; padding: 22px 0; direction: ltr; text-align: left; font: 400 21px/1.9 "JetBrains Mono", monospace; color: #2c2a36; }
+  .code .ln { padding: 0 26px; position: relative; white-space: pre; }
+  .code .ln.on { background: var(--primary-soft); }
+  .code .ln.on::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--primary); }
+  .code .kw { color: #514fbb; font-weight: 600; }
+  .code .nu { color: #c2410c; }
+  table { position: absolute; top: 150px; width: 470px; border-collapse: separate; border-spacing: 0; font: 600 20px "Rubik"; }
+  th { font: 700 15px "Nunito", "Rubik"; color: var(--muted); padding: 12px 10px; border-bottom: 2px solid var(--line); text-align: center; }
+  td { padding: 10px; text-align: center; border-bottom: 1px solid #ecebf3; direction: ltr; font: 700 21px "JetBrains Mono", monospace; }
+  td.t { color: var(--ok); } td.f { color: #c2410c; }
+  tr.new td { background: var(--primary-soft); }
+  #out { position: absolute; top: 528px; width: 470px; padding: 14px 20px; font: 600 18px "Rubik"; display: flex; justify-content: space-between; align-items: center; }
+  #out .v { font: 700 24px "JetBrains Mono", monospace; color: var(--primary); direction: ltr; }
+  #step { position: absolute; bottom: 18px; font: 700 15px "Nunito", "Rubik"; color: var(--muted); display: flex; gap: 10px; align-items: center; }
+  kbd { display: inline-block; min-width: 30px; height: 30px; line-height: 28px; text-align: center; border-radius: 8px; border: 1px solid var(--line); border-bottom-width: 3px; background: #fff; font: 700 15px "Nunito"; color: var(--ink); }
+  kbd.down { transform: translateY(2px); border-bottom-width: 1px; background: var(--primary-soft); }
+</style>
+<body>
+  <div class="win" id="term" style="left:40px;top:40px;width:720px;height:640px">
+    <div class="bar dark"><div class="dots"><i></i><i></i><i></i></div><span class="title">claude · ~/my-course</span></div>
+    <div class="term" id="claude"></div>
+  </div>
+  <div class="win" id="browser" style="left:40px;top:40px;width:1200px;height:640px">
+    <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">my-course/lessons/<b>loops.html</b></div></div>
+    <div class="paper" id="paper">
+      <div id="head"><div class="kicker" id="kicker"></div><div class="h1" id="title"></div></div>
+      <div class="card code" id="code"></div>
+      <table class="card" id="tbl" dir="ltr"><thead><tr><th>i</th><th>i &lt;= 3</th><th>sum</th></tr></thead><tbody id="tb"></tbody></table>
+      <div class="card" id="out"><span id="outL"></span><span class="v" id="outV"></span></div>
+      <div id="step"><kbd id="key">←</kbd><span id="stepT"></span></div>
+    </div>
+  </div>
+  <script type="module">
+    import { clip, he, tr, prog, ease, easeOut, clamp, session, $ } from "./kit.js";
+
+    const PROMPT = "Build lessons/loops.html: a slide that traces this for-loop step by step, with a trace table for i and sum. Each arrow key press is one step.";
+    const s = session($("#claude"), {
+      prompt: PROMPT,
+      cps: 40,
+      steps: [
+        ["tool", "Read", "CLAUDE.md"],
+        ["tool", "Write", "lessons/loops.html"],
+        ["tool", "Bash", "node check-trace.js", "✓ sum = 6"],
+        ["tool", "Open", "lessons/loops.html"],
+      ],
+    });
+
+    const paper = $("#paper");
+    paper.dir = he ? "rtl" : "ltr";
+    const side = he ? "right" : "left", other = he ? "left" : "right";
+    $("#head").style[side] = "40px";
+    $("#code").style[side] = "40px";
+    $("#tbl").style[other] = "40px";
+    $("#out").style[other] = "40px";
+    $("#step").style[side] = "40px";
+    $("#kicker").textContent = tr({ he: "לולאות · מעקב", en: "Loops · trace" });
+    $("#title").textContent = tr({ he: "מה קורה בכל סיבוב?", en: "What happens on every round?" });
+    $("#outL").textContent = tr({ he: "פלט", en: "Output" });
+    $("#key").textContent = he ? "←" : "→";
+
+    const CODE = [
+      '<span class="kw">int</span> sum = <span class="nu">0</span>;',
+      '<span class="kw">for</span> (<span class="kw">int</span> i = <span class="nu">1</span>; i &lt;= <span class="nu">3</span>; i++) {',
+      "    sum += i;",
+      "}",
+      'printf(<span class="nu">"%d"</span>, sum);',
+    ];
+    $("#code").innerHTML = CODE.map((c) => `<div class="ln">${c}</div>`).join("");
+    const ln = [...$("#code").children];
+
+    // The trace, computed by running the loop (as the real lesson does).
+    const STEPS = [{ line: 0, row: null, out: "" }];
+    let sum = 0;
+    for (let i = 1; ; i++) {
+      const ok = i <= 3;
+      STEPS.push({ line: 1, row: { i, ok, sum }, out: "" });
+      if (!ok) break;
+      sum += i;
+      STEPS.push({ line: 2, row: null, upd: sum, out: "" });
+    }
+    STEPS.push({ line: 4, row: null, out: String(sum) });
+
+    const tb = $("#tb");
+    const T_B = s.end + 0.3; // the browser takes over
+    const T_S = T_B + 1.0, DT = 0.75; // one step per arrow press
+
+    clip({
+      duration: T_S + DT * (STEPS.length - 1) + 2,
+      poster: T_S + DT * (STEPS.length - 1) + 1.5,
+      seek(t) {
+        s.seek(t);
+        const k = easeOut(prog(t, T_B, T_B + 0.6));
+        $("#browser").style.opacity = String(k);
+        $("#browser").style.transform = `translateY(${(1 - k) * 40}px) scale(${0.97 + 0.03 * k})`;
+        $("#term").style.opacity = String(1 - prog(t, T_B + 0.3, T_B + 0.6));
+        $("#term").style.transform = `translateX(${(1 - ease(prog(t, 0, 0.01))) * 0 + 240}px)`;
+
+        const n = clamp(Math.floor((t - T_S) / DT) + 1, 0, STEPS.length - 1);
+        const st = STEPS[n];
+        ln.forEach((l, i) => l.classList.toggle("on", t >= T_S - DT && i === st.line));
+        // rebuild the table from steps 0..n
+        const rows = [];
+        for (let j = 0; j <= n; j++) {
+          const x = STEPS[j];
+          if (x.row) rows.push({ ...x.row, fresh: j === n });
+          if (x.upd != null && rows.length) { rows[rows.length - 1].sum = x.upd; rows[rows.length - 1].fresh = j === n; }
+        }
+        tb.innerHTML = rows.map((r) => `<tr class="${r.fresh ? "new" : ""}"><td>${r.i}</td><td class="${r.ok ? "t" : "f"}">${r.ok ? "true" : "false"}</td><td>${r.ok ? r.sum : "—"}</td></tr>`).join("");
+        $("#outV").textContent = st.out || " ";
+        $("#stepT").textContent = tr({ he: `צעד ${n + 1} מתוך ${STEPS.length}`, en: `Step ${n + 1} of ${STEPS.length}` });
+        const press = t >= T_S && (t - T_S) % DT < 0.16 && n < STEPS.length;
+        $("#key").classList.toggle("down", press && t < T_S + DT * (STEPS.length - 1) + 0.16);
+      },
+    });
+  </script>
+</body>

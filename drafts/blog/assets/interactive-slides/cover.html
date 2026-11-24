@@ -1,0 +1,33 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Cover</title>
+<link rel="stylesheet" href="kit.css" />
+<style>
+  html, body { width: 1600px; height: 840px; }
+  /* Each frame shows a clip's poster (already rendered), cropped to its browser window (40,40 1200x640). */
+  .frame { position: absolute; width: 837px; height: 446px; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.06); }
+  .frame img { position: absolute; width: 893px; height: 502px; left: -28px; top: -28px; display: block; }
+</style>
+<body>
+  <!-- Two clip posters (rendered first by the same run): the loop that traces itself, and Python running in the slide. -->
+  <div class="frame" id="fa" style="top:96px"><img id="a" alt="" /></div>
+  <div class="frame" id="fb" style="top:300px"><img id="b" alt="" /></div>
+  <script type="module">
+    const lang = new URLSearchParams(location.search).get("lang") === "he" ? "he" : "en";
+    // the reading start leads: in Hebrew the first frame sits on the right
+    document.getElementById("fa").style.left = lang === "he" ? "670px" : "90px";
+    document.getElementById("fb").style.left = lang === "he" ? "90px" : "670px";
+    const load = (id, src) => new Promise((ok, fail) => {
+      const img = document.getElementById(id);
+      img.onload = ok;
+      img.onerror = () => fail(new Error(`missing ${src}`));
+      img.src = src;
+    });
+    window.clipDuration = 0;
+    window.clipReady = Promise.all([
+      load("a", `out/02-trace-${lang}.webp`),
+      load("b", `out/03-python-${lang}.webp`),
+    ]).then(() => true);
+    window.seek = () => {};
+  </script>
+</body>

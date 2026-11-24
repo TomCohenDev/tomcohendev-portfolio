@@ -1,0 +1,104 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Python that runs inside the slide</title>
+<link rel="stylesheet" href="kit.css" />
+<style>
+  #head { position: absolute; top: 30px; width: 1080px; }
+  #sub { font: 400 19px/1.5 "Rubik"; color: #3c3a48; margin-top: 8px; }
+  .ed { position: absolute; top: 170px; width: 640px; overflow: hidden; }
+  .ed .top { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid #eceaf3; direction: ltr; }
+  .ed .top .f { font: 600 14px "JetBrains Mono", monospace; color: var(--muted); }
+  .ed .btns { display: flex; gap: 8px; }
+  .src { padding: 16px 0; direction: ltr; text-align: left; font: 400 21px/1.85 "JetBrains Mono", monospace; color: #2c2a36; }
+  .src .ln { padding: 0 22px; display: flex; gap: 18px; white-space: pre; }
+  .src .no { color: #b3b0c2; width: 18px; text-align: right; }
+  .src .kw { color: #514fbb; font-weight: 600; }
+  .src .nu { color: #c2410c; }
+  .src .sel { background: #c9c6ff; border-radius: 3px; }
+  .caret2 { display: inline-block; width: 2px; height: 24px; background: var(--ink); vertical-align: -4px; }
+  .outp { position: absolute; top: 170px; width: 380px; padding: 18px 22px; }
+  .outp .lbl { font: 700 15px "Nunito", "Rubik"; color: var(--muted); }
+  .outp .v { margin-top: 10px; font: 700 54px "JetBrains Mono", monospace; color: var(--primary); direction: ltr; min-height: 66px; }
+  .outp .st { margin-top: 8px; font: 500 16px "Rubik"; color: var(--muted); min-height: 24px; }
+  .bar2 { height: 4px; border-radius: 2px; background: #e6e4f0; margin-top: 12px; overflow: hidden; }
+  .bar2 i { display: block; height: 100%; background: var(--primary); width: 0; }
+</style>
+<body>
+  <div class="win" style="left:40px;top:40px;width:1200px;height:640px">
+    <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">my-course/lessons/<b>lists.html</b></div></div>
+    <div class="paper" id="paper">
+      <div id="head"><div class="kicker" id="kicker"></div><div class="h1" id="title"></div><div id="sub"></div></div>
+      <div class="card ed" id="ed">
+        <div class="top"><span class="f">basket.py</span><span class="btns"><span class="btn" id="reset"></span><span class="btn primary" id="run"></span></span></div>
+        <div class="src" id="src"></div>
+      </div>
+      <div class="card outp" id="outp"><div class="lbl" id="outL"></div><div class="v" id="outV"></div><div class="st" id="st"></div><div class="bar2"><i id="pb"></i></div></div>
+    </div>
+  </div>
+  <script type="module">
+    import { clip, he, tr, prog, clamp, makeCursor, $ } from "./kit.js";
+
+    const paper = $("#paper");
+    paper.dir = he ? "rtl" : "ltr";
+    const side = he ? "right" : "left", other = he ? "left" : "right";
+    $("#head").style[side] = "40px";
+    $("#ed").style[side] = "40px";
+    $("#outp").style[other] = "40px";
+    $("#kicker").textContent = tr({ he: "רשימות · נסו בעצמכם", en: "Lists · try it" });
+    $("#title").textContent = tr({ he: "כמה עולה הסל?", en: "What does the basket cost?" });
+    $("#sub").textContent = tr({ he: "שנו מחיר ולחצו הרצה. הקוד רץ כאן, בתוך השקף.", en: "Change a price and press Run. The code runs here, inside the slide." });
+    $("#run").textContent = tr({ he: "▶ הרצה", en: "▶ Run" });
+    $("#reset").textContent = tr({ he: "איפוס", en: "Reset" });
+    $("#outL").textContent = tr({ he: "פלט", en: "Output" });
+
+    const T = { run1: 1.6, out1: 3.6, sel: 5.0, type: 5.6, run2: 7.0, out2: 7.6 };
+    const src = (price, sel, caret) => [
+      `prices = [<span class="nu">12</span>, <span class="nu">30</span>, <span class="nu ${sel ? "sel" : ""}">${price}</span>${caret ? '<span class="caret2"></span>' : ""}]`,
+      `total = <span class="nu">0</span>`,
+      `<span class="kw">for</span> p <span class="kw">in</span> prices:`,
+      `    total += p`,
+      `print(total)`,
+    ].map((l, i) => `<div class="ln"><span class="no">${i + 1}</span><span>${l}</span></div>`).join("");
+
+    // Cursor targets, measured from the laid-out page once the fonts are in.
+    let cursor;
+    function aim() {
+      $("#src").innerHTML = src("8", true, false);
+      const c = (el) => { const r = el.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; };
+      const [rx, ry] = c($("#run"));
+      const [ex, ey] = c($("#src .sel"));
+      return makeCursor([
+        [0.4, 1100, 660],
+        [T.run1, rx, ry, true],
+        [T.sel - 0.5, ex + 30, ey + 10],
+        [T.sel, ex, ey, true],
+        [T.run2 - 0.5, rx + 10, ry + 30],
+        [T.run2, rx, ry, true],
+        [10, rx - 40, ry + 120],
+      ]);
+    }
+
+    clip({
+      duration: 10,
+      poster: 9.2,
+      seek(t) {
+        cursor ??= aim();
+        cursor(t);
+        const typedNew = t >= T.type ? (t >= T.type + 0.35 ? "20" : "2") : null;
+        $("#src").innerHTML = src(typedNew ?? "8", t >= T.sel && t < T.type, t >= T.sel && t < T.run2);
+        // first run loads Python, then prints 50; the second run is instant
+        let v = "", st = "", pb = 0;
+        if (t >= T.run1 && t < T.out1) { st = tr({ he: "טוען את פייתון…", en: "Loading Python…" }); pb = prog(t, T.run1, T.out1); }
+        if (t >= T.out1) v = "50";
+        if (t >= T.run2 && t < T.out2) { v = ""; st = tr({ he: "מריץ…", en: "Running…" }); }
+        if (t >= T.out2) v = "62";
+        $("#outV").textContent = v || " ";
+        $("#st").textContent = st || " ";
+        $("#pb").style.width = `${pb * 100}%`;
+        $("#pb").parentElement.style.opacity = pb > 0 && pb < 1 ? "1" : "0";
+        const flash = (t >= T.out1 && t < T.out1 + 0.4) || (t >= T.out2 && t < T.out2 + 0.4);
+        $("#outp").style.boxShadow = flash ? "0 0 0 4px var(--primary-soft), 0 6px 22px rgba(60,52,140,.08)" : "";
+      },
+    });
+  </script>
+</body>

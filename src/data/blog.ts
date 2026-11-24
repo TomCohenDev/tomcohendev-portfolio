@@ -3,6 +3,28 @@ import type { Post } from "../components/content/mock";
 /** Published articles only. Mock posts remain on their existing noindex demo URLs. */
 export const publishedPosts: Post[] = [
   {
+    slug: "interactive-slides",
+    title: "מצגות שעושות דברים: מדריך מלא לבניית שיעורים אינטראקטיביים עם Claude Code",
+    description: "הפסקתי להכין את הקורסים שלי ב־Gamma, ב־Google Slides וב־Canva. מדריך צעד אחר צעד, מתיקייה ריקה ועד קורס באוויר: לולאה שמריצה את עצמה, Python בתוך השקף, סימולציה עם מחוונים, הערות לסטודנטים בטלפון, PDF, וסוכן AI שמסדר את הקורס.",
+    date: "2026-11-24",
+    readMinutes: 10,
+    tags: ["הוראה", "AI", "מדריך"],
+    cover: "code",
+    image: "/blog/interactive-slides-cover.webp",
+    body: [],
+  },
+  {
+    slug: "interactive-slides-en",
+    title: "Slides That Do Things: A Complete Guide to Interactive Lessons With Claude Code",
+    description: "I stopped making my courses in Gamma, Google Slides and Canva. A step-by-step guide from an empty folder to a course online: a loop that runs itself, Python inside the slide, a simulation with sliders, student notes on a phone, PDF, and an AI agent that organizes the course.",
+    date: "2026-11-24",
+    readMinutes: 10,
+    tags: ["Teaching", "AI", "English"],
+    cover: "code",
+    image: "/blog/interactive-slides-cover-en.webp",
+    body: [],
+  },
+  {
     slug: "lead-machine",
     title: "לקוחות חדשים כל בוקר: מכונת לידים עם Claude וגוגל שיטס, בלי קוד",
     description: "מדריך מלא: גיליון גוגל, חיבור ל־Claude ומשימה מתוזמנת שמוצאת כל בוקר עשרה עסקים חדשים, נותנת להם ציון, וכותבת לכל אחד הודעת ווטסאפ אישית שאתם שולחים בעצמכם.",
@@ -159,7 +181,7 @@ export const publishedPosts: Post[] = [
 ];
 
 /** English translations are reachable only from their Hebrew article, so they stay out of the index and RSS. */
-const translationSlugs = new Set(["ai-security-en", "nykma-en", "black-october-en", "t3-kitshn-en", "lazarus-backdoor-en", "teach-site-en", "lead-machine-en"]);
+const translationSlugs = new Set(["ai-security-en", "nykma-en", "black-october-en", "t3-kitshn-en", "lazarus-backdoor-en", "teach-site-en", "lead-machine-en", "interactive-slides-en"]);
 export const listedPosts = publishedPosts.filter((post) => !translationSlugs.has(post.slug));
 
 export const blogTags = [...new Set(listedPosts.flatMap((post) => post.tags))];
