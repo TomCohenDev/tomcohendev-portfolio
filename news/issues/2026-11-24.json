@@ -1,0 +1,242 @@
+{
+  "date": "2026-11-24",
+  "stories": [
+    {
+      "id": "google-ai-mode-wallet-drive",
+      "topic": "ai",
+      "headline": "חיפוש AI של גוגל יכול לקרוא את Google Wallet, ובקרוב גם את Drive ואת Gemini",
+      "summary": "גוגל מתחילה לאפשר חיבור של Google Wallet ל־Personal Intelligence במצב AI Mode בחיפוש, ובשבועות הקרובים יתווספו Drive ואפליקציית Gemini, לצד Gmail, Calendar ו־Photos שכבר מחוברים. החיבור הוא בבחירת המשתמש, דרך הגדרות ההתאמה האישית בחיפוש, וגוגל מציינת שהגישה ל־Wallet היא לקריאה בלבד.",
+      "forBusiness": "מי שמחבר את Drive יקבל תשובות בחיפוש שמבוססות על המסמכים והגיליונות שלו, למשל הכנה לעונת הדוחות. כדאי להחליט מראש אם חשבון גוגל שמחזיק מסמכי עסק יחובר, ולבדוק שזה החשבון הנכון.",
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+      },
+      "image": {
+        "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blog_pContext_Drive_1118.width-1300.png",
+        "alt": "שורת חיפוש עם הכיתוב Personal Intelligence ולידה הסמלים של Drive, Wallet, Gmail ו־Photos."
+      }
+    },
+    {
+      "id": "claude-ship",
+      "topic": "ai",
+      "headline": "Anthropic משיקה את Claude Ship: סוכנים שבודקים, מתקנים ומאשרים שינויי קוד",
+      "summary": "Claude Ship כולל את Code Review, שכבר זמין לכולם, ושני סוכנים חדשים בבטא: PR Steward שמתקן בדיקות שנכשלו והתנגשויות, ו־Claude Approvals שמאשר שינויים לפי מדיניות שהצוות כותב בקובץ. השירות מיועד למנויי Claude Team ו־Enterprise, למאגרים ב־GitHub.",
+      "forBusiness": "לעסק שמפתח אפליקציה או מערכת עם צוות או ספק חיצוני, זה כלי שיכול לקצר את הזמן מכתיבת קוד ועד שהוא עולה לאוויר. Anthropic עצמה ממליצה להתחיל במצב צפייה בלבד, במאגר אחד ועם תקרת הוצאה חודשית.",
+      "source": {
+        "name": "Claude",
+        "url": "https://claude.com/resources/articles/introducing-claude-ship"
+      },
+      "image": {
+        "url": "https://claude.com/resources/articles/introducing-claude-ship/opengraph-image/og",
+        "alt": "איור של צורות מחוברות בקו שמסתיים בסימן וי."
+      }
+    },
+    {
+      "id": "twilio-branded-communications",
+      "topic": "automation",
+      "headline": "Twilio מאחדת את השם והלוגו המאומתים של העסק בשיחות, בהודעות ובמייל",
+      "summary": "Twilio Branded Communications מאפשר להגדיר פרופיל עסקי מאומת אחד ולהציג אותו בשיחות, בהודעות ובמיילים, דרך אותם ממשקי API שכבר בשימוש. לפי Twilio, לקוח שהציג שם מאומת בשיחות יוצאות ראה עלייה של 21% בשיעור המענה, וזמינות הערוצים תלויה באזור ובהגדרות.",
+      "forBusiness": "עסק ששולח תזכורות, אימותים או התראות דרך Twilio יכול לבדוק אם הלקוחות שלו יראו את השם המאומת בישראל לפני שמשקיעים בהגדרה. מי שלא עובד עם Twilio לא צריך לעשות כלום כרגע.",
+      "source": {
+        "name": "Twilio",
+        "url": "https://www.twilio.com/en-us/blog/products/launches/make-your-brand-instantly-recognizable-across-channels"
+      }
+    },
+    {
+      "id": "cert-in-approval-fraud",
+      "topic": "security",
+      "headline": "תוקפים בעזרת AI שינו רשומות והרשאות אישור בהודו, ושילמו לעצמם דרך התהליכים הרגילים",
+      "summary": "צוות הסייבר הלאומי של הודו, CERT-In, מדווח על תקיפות בעזרת AI בבנקים, בחברות פינטק ובספקים שמטפלים בתשלומים לספקים, שבהן התוקפים שינו רשומות עסקיות וקשרי אישור ואז העבירו כסף דרך מערכות לגיטימיות בלי להפעיל התראה. לפי הסוכנות, כלי התקיפה קיצרו את הזמן מהחדירה ועד הנזק מימים לשעות ספורות.",
+      "forBusiness": "גם בעסק קטן, שינוי פרטי חשבון בנק של ספק או של מי שמאשר תשלום הוא נקודת התורפה. כדאי לוודא שכל שינוי כזה מאומת בטלפון מול אדם מוכר, ושמישהו אחר מאשר אותו.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/ai-assisted-cyberattacks-trigger.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijDifo0ih-I06DQJbgdnt34Xg1qWdMibKByoJO-4vqa50M4yN0Lwu4fDe88GBtoiKHMJnRDYM0WXvYDEMyCWFHEbedl0wzwKI7juH9Q9xs3osQjZK0xPygeuGm0bm6jgpWPa7bca1EuZfTQiLxn-X3aNaAhbchhvemZrCqslieabzsGmz4ezqhrKuYhDyk/s1600/ai-india.jpg",
+        "alt": "סמל הרופי ההודי מוקף בשורות טקסט שמתארות את שלבי התקיפה."
+      }
+    },
+    {
+      "id": "n-able-mail-assure-ssrf",
+      "topic": "security",
+      "headline": "N-able חשפה פרצה קריטית בסינון הדואר Mail Assure, ובוטלו כל מפתחות ה־API",
+      "summary": "בחקירת הפריצה לשירות סינון הדואר Mail Assure ו־SpamExperts מצאה N-able פרצה בדירוג 9.3, שאפשרה למשתמש API עם הרשאות גבוהות לגרום לשרת להתחבר למערכות פנימיות. החברה תיקנה את השירות המתארח, החזירה את לוח הבקרה וה־API, וביטלה את מפתחות ה־API וה־OAuth של הלקוחות.",
+      "forBusiness": "אם ספק ה־IT שלכם מסנן את הדואר שלכם דרך Mail Assure, בקשו ממנו לוודא שהחיבורים והאוטומציות קיבלו מפתחות חדשים. מי שמריץ את Local Cloud על שרת משלו צריך לוודא שהוא על גרסה 20261121.1943.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcXbCG8v5Kc2mTfNCFEiow0EHLJWtsrsrEodqvL8qF8awCnrDzw2TfxtPq7rYI3u78mviB8ekGNGL1Of8FZrSM6uZT1lhz2mfRHwHQyhQT8234u03WGZ9M4UZzmj2cYMs8qlsJ54PwNPvVMb2awEzinXAYL0Y25iOGjjikMvq4NQ-v03mqluZnI53PNdk/s1600/nables.jpg",
+        "alt": "הלוגו של N-able על רקע סגול עם סמלים של מעטפות דואר ומנעול."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "screenconnect-guest-files",
+      "topic": "security",
+      "text": "תוקפים מנצלים פרצה בדירוג 9.9 ב־ScreenConnect כדי להריץ קבצים על המחשב של הטכנאי; Huntress ספרה 688,000 ניסיונות ב־42 שרתים.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWAI03mMW-UNs2bdUuZEiugVBMZq3speEoo8tbQ7TZVITD4fnXiK4l657Tn4-G9fX2w8xLz2zkP9-RTrg3QZPtNMHL_Lg7YRoruCnp8TJA4tbA5bW1YsBZU8QR2FIqSb3_IpN1Le-Xoq2MQ82ZQyRNmYxr8q70PPzijzypDcIDKMIOjrzBweBUiKJ_nuJY/s1600/screens.jpg",
+        "alt": "ממשק ScreenConnect ולידו דמות בקפוצ׳ון מול מחשב נייד."
+      }
+    },
+    {
+      "id": "idunno-anticsrf-exploited",
+      "topic": "security",
+      "text": "פרצה בדירוג 9.3 בספרייה הישנה Idunno.AntiCsrf לאתרי ASP.NET מנוצלת בפועל ואין לה תיקון: Mandiant ממליצה להסיר אותה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWv3LP9w9Iv-ZmqonS5mwf1jDE-lTLUcDPxCOvYn3RF87-n2epMtdhqH5xXf-bsIIyKXq6U9qU5T1OQ6_Y3VeytS0CCA4TLJtFDcfcHR-I2EHY3t2e94UPvppaaXG9jDQPj4wNwt6CdwQCmXm5uK16BAp5Fn12DmxUk-Wu5ZwPT2kPQFo37oxSeqc6hX7X/s1600/asp.net.jpg",
+        "alt": "איור של אתר ASP.NET שנפרץ."
+      }
+    },
+    {
+      "id": "binary-parser-2-3-1",
+      "topic": "security",
+      "text": "פרצה קריטית בספריית ה־Node.js בשם binary-parser מאפשרת להריץ קוד דרך הגדרות מנתח זדוניות; התיקון בגרסה 2.3.1.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/critical-binary-parser-flaw-enables.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJ_LYD1NyoPDf8MFXggODpgd2hvazxjShSZltgrLUVic7V-ZIQSjXIzFrkUx0FNoUjlxlIYocEd1AZwGx66uqGWEUyd1TMSlDmxUu8M_r6jdYkmWDZjbszL2WsK7LJzrwI-NgsI7EaLe9WkLwNLGKj8ww3tTOY4X4JPug3RWQqoypUiEpZjVXgBhhcLuZG/s1600/js-cve.jpg",
+        "alt": "איור של קוד JavaScript עם סימן אזהרה."
+      }
+    },
+    {
+      "id": "openai-cisco-shirudo",
+      "topic": "security",
+      "text": "OpenAI ו־Cisco משחררות את Shirudo, כלי קוד פתוח ל־Linux שחוסם ניצול של פרצה בשרת פועל עד שמתקינים את העדכון, בלי הפעלה מחדש.",
+      "source": {
+        "name": "OpenAI",
+        "url": "https://openai.com/index/introducing-shirudo"
+      }
+    },
+    {
+      "id": "supabase-knowledge-base",
+      "topic": "mobile",
+      "text": "Supabase פתחה מאגר ידע עם מדריכי מעבר מ־Firebase, Auth0 ו־Heroku ומאות מאמרים על תקלות, בגרסה שגם סוכני קוד יכולים לקרוא.",
+      "source": {
+        "name": "Supabase",
+        "url": "https://supabase.com/blog/introducing-supabase-knowledge-base"
+      },
+      "image": {
+        "url": "https://supabase.com/images/blog/2026-11-23-introducing-supabase-knowledge-base/og.png",
+        "alt": "דף הבית של מאגר הידע של Supabase עם שורת חיפוש."
+      }
+    },
+    {
+      "id": "glm-5-4",
+      "topic": "ai",
+      "text": "Z.ai הסינית השיקה את GLM-5.4 למשימות קוד; המודל זמין דרך תוכנית הקוד של Z.ai ועדיין לא כמשקלים פתוחים.",
+      "source": {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/Nov/23/glm-54/"
+      }
+    },
+    {
+      "id": "nothing-ear-note",
+      "topic": "ai",
+      "text": "Nothing תשיק ב־8 בדצמבר את Ear Note, אוזניות שמקליטות ומתמללות שיחות ופגישות עם סיכומי AI; המחיר עוד לא נקבע.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/gadgets/1040357/nothing-ear-note-earbuds-ai-recording"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/nothing.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+        "alt": "תקריב של נרתיק האוזניות עם נוריות ירוקה ואדומה וכפתור הקלטה."
+      }
+    },
+    {
+      "id": "ladybird-alpha",
+      "topic": "business",
+      "text": "הדפדפן Ladybird, שנבנה מאפס בלי מנוע של Chrome או Safari, יצא בגרסת אלפא ראשונה ל־macOS ול־Linux.",
+      "source": {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/Nov/23/ladybird/"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "cartograph-ai",
+      "name": "Cartograph.ai",
+      "text": "מראה לחנויות אונליין אילו סוכני AI קוראים את הקטלוג, אילו מוצרים הם צפו בהם ואילו ביקורים מהם הפכו להזמנות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/cartograph-ai"
+      },
+      "icon": "https://cdn.betalist.com/k60t6wt282gat6ox2qxff7bw5hh2"
+    },
+    {
+      "id": "karadesk",
+      "name": "KaraDesk",
+      "text": "מוקד שירות לצוותים קטנים: סוכן AI שעונה מתוך מרכז העזרה ומעביר לצוות את מה שהוא לא פותר, עם צ׳אט ומייל במקום אחד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/karadesk"
+      },
+      "icon": "https://cdn.betalist.com/2dna9o2ds8tbkd07lftmzrtpkxze"
+    },
+    {
+      "id": "billable-hub",
+      "name": "Billable Hub",
+      "text": "הצעות מחיר, מעקב שעות והוצאות וחשבוניות לפרילנסרים ולצוותי שירות קטנים, עם תשלום דרך Stripe ותזכורות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/billable-hub"
+      },
+      "icon": "https://cdn.betalist.com/fkn4vgzk2t7sesffwpxp6vkzx990"
+    },
+    {
+      "id": "patto",
+      "name": "Patto",
+      "text": "ניהול פניות מכירה במייל ל־B2B דרך Claude, ChatGPT או כל עוזר עם MCP: מחקר, טיוטות ומעקב, עם יומן של כל פעולה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/patto"
+      },
+      "icon": "https://cdn.betalist.com/r4temqzd5g5kon4i5n7x6ih3rmn6"
+    },
+    {
+      "id": "band-je",
+      "name": "Band·je",
+      "text": "הכתבה ותמלול שיחות ופגישות ב־Mac, כולל Zoom ו־Teams, בלי בוט בשיחה ועם עיבוד על המחשב עצמו.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/band-je"
+      },
+      "icon": "https://cdn.betalist.com/3jlzjf85wtyvviutzubsdc7htm3d"
+    },
+    {
+      "id": "brandvideos",
+      "name": "BrandVideos",
+      "text": "הופך עמוד באתר או פוסט בבלוג לסרטון ל־YouTube בצבעי המותג, עם מגיש, קריינות, גרפים וכתוביות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/brandvideos"
+      },
+      "icon": "https://cdn.betalist.com/cgy4krwc7aujh0i5oe9gow1m1f3t"
+    },
+    {
+      "id": "videofn",
+      "name": "videoFn",
+      "text": "עורך וידאו ל־Mac שעובד דרך צ׳אט עם החשבון שלכם ב־Claude או ב־ChatGPT: חיתוך, כתוביות וחיתוך לאנכי.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/videofn"
+      },
+      "icon": "https://cdn.betalist.com/6z1ocn596xbpo3y4krktuacbr6r1"
+    }
+  ]
+}
