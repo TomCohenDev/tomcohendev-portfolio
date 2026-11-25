@@ -1,0 +1,222 @@
+{
+  "date": "2026-11-25",
+  "stories": [
+    {
+      "id": "ncsc-agentic-attacks",
+      "topic": "security",
+      "headline": "מרכז הסייבר הבריטי: תוקפים מפעילים סוכני AI שמוצאים חולשות ישנות ומנצלים אותן תוך דקות",
+      "summary": "ה־NCSC הבריטי מדווח על עלייה חדה מאז ספטמבר 2026 בתקיפות שבהן תוקפים מפעילים כלי בדיקות חדירה מבוססי AI, כמו ARTEX, נגד שירותים שפתוחים לאינטרנט, ובחלק מהמקרים נגרמו השבתות ופריצות. לפי הארגון החולשות עצמן אינן חדשות: סיסמאות חלשות, מפתחות שנשכחו בתוך קוד והגדרות שגויות, ומה שהשתנה הוא המהירות והעלות הנמוכה של התקיפה.",
+      "forBusiness": "כדאי לעבור עכשיו על מה שהעסק חושף לאינטרנט: לסגור ממשקים ישנים שאף אחד לא משתמש בהם, להחליף סיסמאות ברירת מחדל ולהפעיל אימות דו־שלבי בכל מערכת. אלה הצעדים הבסיסיים שה־NCSC ממליץ עליהם, והם עוצרים את רוב התקיפות האלה.",
+      "source": {
+        "name": "NCSC",
+        "url": "https://www.ncsc.gov.uk/blogs/familiar-weaknesses-exploited-faster-defending-against-agentic-cyber-attacks"
+      },
+      "image": {
+        "url": "https://www.ncsc.gov.uk/sites/default/files/styles/uncropped_lg/public/2026-11/agentic%20cyber%20attacks%20blog.jpg?itok=Bk6Vw7mX",
+        "alt": "איור של ענן מוגן במנעול, מוקף בשרתים ובסמלי אבטחה."
+      }
+    },
+    {
+      "id": "muse-instagram-dms",
+      "topic": "ai",
+      "headline": "Meta מכניסה את סוכן ה־AI שלה Muse להודעות הפרטיות של Instagram",
+      "summary": "משתמשי Instagram יכולים מעכשיו לשוחח עם Muse בתוך ה־DM, לשתף איתו פוסטים ולבקש ממנו פעולות כמו למצוא מבצע על מוצר או לשמור מקום ברשימת טיול. ההשקה מתחילה ב־iOS וב־Android בארה\"ב, קנדה, מקסיקו, יפן וסינגפור, ועדיין לא בישראל.",
+      "forBusiness": "עסקים שמוכרים דרך Instagram צריכים לצפות שלקוחות ישאלו סוכן AI על הפוסטים והמוצרים שלהם במקום לגלול בעצמם. בישראל אין עדיין מה לעשות, אבל כדאי שתיאורי המוצרים והמחירים בפוסטים יהיו ברורים ומלאים.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/"
+      }
+    },
+    {
+      "id": "openai-agent-builder-shutdown",
+      "topic": "automation",
+      "headline": "OpenAI תסגור את Agent Builder ב־30 בנובמבר: מי שבנה בו תהליכים צריך לייצא אותם עכשיו",
+      "summary": "לפי דף ההוצאה משימוש של OpenAI, הכלי Agent Builder ייסגר ב־30 בנובמבר 2026, ובאותו יום ייסגרו גם אובייקטי הפרומפט השמורים ב־API. OpenAI מציעה לעבור ל־Agents SDK או ל־ChatGPT Workspace Agents, והייצוא נותן קוד ב־TypeScript או Python ולא מעביר את התהליך כמו שהוא.",
+      "forBusiness": "אם בניתם או שמישהו בנה לכם סוכן ב־Agent Builder, ייצאו כל תהליך לפני סוף החודש ושמרו גם דוגמאות של תשובות שהוא נותן היום, כדי לבדוק את הגרסה החדשה מולן. ChatKit ממשיך לפעול.",
+      "source": {
+        "name": "OpenAI",
+        "url": "https://developers.openai.com/api/docs/guides/agent-builder/migrate-from-agent-builder"
+      },
+      "image": {
+        "url": "https://developers.openai.com/og/api/docs/guides/agent-builder/migrate-from-agent-builder.png",
+        "alt": "כרטיס של OpenAI Developers עם הכותרת Migrate from Agent Builder."
+      }
+    },
+    {
+      "id": "shellbench-agents",
+      "topic": "research",
+      "headline": "מבחן חדש: גם סוכני ה־AI הטובים נכשלים ביותר משליש מהמשימות היומיומיות",
+      "summary": "במבחן ShellBench, שנבנה על סמך יותר מ־10 מיליון אינטראקציות אמיתיות עם סוכנים, גם המודלים המובילים של OpenAI, Anthropic ו־Meta נכשלו ביותר משליש מהניסיונות, ו־15.7% מהניסיונות הפרו לפחות דרישת בטיחות אחת. במשימה אחת הסוכנים המליצו על תשלום כפול או שגוי של חשבונית ב־40.3% מהמקרים.",
+      "forBusiness": "סוכן AI שמטפל בחשבוניות, במיילים או ביומן צריך עדיין אישור אנושי לפני כל פעולה עם כסף או מידע רגיש. כדאי להגדיר אותו כך שיכין טיוטה, ושמישהו יאשר.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/"
+      }
+    },
+    {
+      "id": "whmcs-sql-injection",
+      "topic": "security",
+      "headline": "פרצה ב־WHMCS חושפת נתוני לקוחות וסיסמאות מוצפנות של מנהלים בלי התחברות",
+      "summary": "WHMCS, מערכת החיוב והניהול שחברות אחסון רבות משתמשות בה, פרסמה פרצת SQL injection בעגלת הקנייה (CVE-2026-82981) שמאפשרת לכל אחד באינטרנט לשלוף פרטי לקוחות וגיבובי סיסמאות של מנהלים. הגרסאות המתוקנות הן 9.0.10 ו־8.13.8, ולפי החברה לא ידוע על ניצול של הפרצה.",
+      "forBusiness": "מי שמריץ WHMCS בעצמו צריך לעדכן היום; התקנות WHMCS Cloud מתעדכנות לבד. לקוחות של חברת אחסון קטנה יכולים לשאול אותה אם היא משתמשת ב־WHMCS ואם כבר עדכנה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/whmcs-sql-injection-flaw-could-expose.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgK7wXAof6nH7PDC5-3qxXZJgJvZODTjQcrWFOjO8jeb9yGkK6bUkzm27MzMy5n0S_Xywsj0npu_F0FmQ4JcKxPXNEoezLrpKoSStaYK4Ww46QUuzySTeQnnzcIXs_NADunlqeyuMIl5Wm5PKWc3c0JyNmYPxfbInIWx2tfosieI_QS_e4PX-JILlLH-1U/s1600/hosting.jpg",
+        "alt": "איור של שרתי אחסון אתרים."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "vcenter-vmdir-bypass",
+      "topic": "security",
+      "text": "Broadcom תיקנה 23 פרצות ב־VMware, ובהן פרצה קריטית ב־vCenter (ציון 9.8) שמאפשרת לעקוף התחברות, ימים אחרי ניצול של פרצה קודמת.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/vmware-vcenter-hit-by-another-critical.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0zpQTclLnhVQHphFdBZZ_hrxhsZvA5G50sGBz5qq1iOg2B1YLu8rE5e_HM1GZOE24SNpwexwst80NTKP7_Wwexq7EzIl-I7ykIXCtTGQjeZhBGVVuAgzxac5JwaquTQuMNRstBFo8JzMDyqgsNbM_KtxGF3wHPBIM9GfaclNu0OTPlpF5YhNvqoKKytAY/s1600/vmware-exploit.jpg",
+        "alt": "איור לכתבה על פרצה ב־VMware vCenter."
+      }
+    },
+    {
+      "id": "okta-inception-vishing",
+      "topic": "security",
+      "text": "Okta: קבוצה שמתקשרת לעובדים, מוציאה מהם קודי אימות ומאשרת התראות push, מפרסמת עכשיו את המידע שגנבה באתר דליפות חדש בשם INCEPTION.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/okta-links-shinyhunters-associated.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjete6dy8Fmd7sbjqKI5GKSySXkcnz4NF__irfVMBHzgRIDUnpGHtvRIbCywZYYsoKsnMdPhvanoXcnXbYvZpMjL2lL6d_F9a4ErEaI5rH_boPedH_ru2Ush9wonb8tYhGNVM6M_01DTue1THY7uGMbuKBJKNgMbrACkxHCGJiJylHWoxkkpCXNr2Z_CIdf/s1600/leaks.jpg",
+        "alt": "איור לכתבה על אתר דליפות מידע."
+      }
+    },
+    {
+      "id": "azure-apim-classic-secrets",
+      "topic": "security",
+      "text": "Microsoft תיקנה פרצה ב־Azure API Management ברמות Classic שדרכה אפשר היה לגשת לסודות ולמפתחות, ופרסמה הנחיות להחלפת כל הסודות במופעים.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/microsoft-fixes-azure-api-management.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSM2FAnf9UEb3Do4v-r8AEBpoI8byXOrHgng-eRjEyudSf0hiKMpymmDiK_NLTxYuzXdtrWvMrBzY9qmLqDo31r3JOpVefOQxLE77gdkoOAYMkCK__-Bc-AJoWg-8nEOEVjcY6SswkzLbCfYl6kK9clg6xXw3xginWqIwnMxBUaS6wgPKVVwXZNhZA5G85/s1600/azure-ms.jpg",
+        "alt": "איור לכתבה על פרצה ב־Microsoft Azure."
+      }
+    },
+    {
+      "id": "cisa-kev-mailassure",
+      "topic": "security",
+      "text": "CISA הוסיפה את הפרצה הקריטית בסינון הדואר N-able Mail Assure לרשימת הפרצות שמנוצלות בפועל.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-n-able-mailassure-flaw.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrPCPwSotVSX8IYSgpSrVceRAIYqba8YSZSlNwD5RjetEhPG6vLRhk_NKkatjg1h-fulZJDm4CucsLvQrEtCO6v0NtuJGo3nZD3mXSHyKpgPrUZMpq7YNpheStYC_AqyMWRfWIFiK9bcHJNAw6pwK9JqirhO8JESKdmsI5Pl8UgtsVsRivmMmMenQ01ClW/s1600/cisa-kev.jpg",
+        "alt": "איור לכתבה על רשימת הפרצות המנוצלות של CISA."
+      }
+    },
+    {
+      "id": "walmart-muse-black-friday",
+      "topic": "ai",
+      "text": "Walmart מאפשרת לקנות את מבצעי Black Friday שלה דרך סוכן ה־AI של Meta בשם Muse, אחרי חיבור חשבון Walmart לאפליקציה.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/"
+      }
+    },
+    {
+      "id": "nyt-photoshop-2027",
+      "topic": "ai",
+      "text": "ה־New York Times ביקש מצלמים לא להשתמש ב־Photoshop 2027 (גרסה 28.0.0 ומעלה), כי כלי AI בגרסה עלולים לסמן תמונות כערוכות ב־AI.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2289911637.jpg?quality=90&strip=all&crop=0%2C10.232235952618%2C100%2C79.535528094764&w=1200",
+        "alt": "תמונה לכתבה על Adobe Photoshop ועריכה ב־AI."
+      }
+    },
+    {
+      "id": "n8n-2-50",
+      "topic": "automation",
+      "text": "n8n 2.50.0 יצאה בגרסת בטא: העוזר בונה התהליכים מקבל מקורות skill, אפשר לתייג בו סוכנים, והוא מבקש אישור אחד לכמה שינויים בטבלת נתונים.",
+      "source": {
+        "name": "n8n releases",
+        "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.50.0"
+      }
+    },
+    {
+      "id": "dotnet-single-bit",
+      "topic": "security",
+      "text": "חוקר ב־Google Project Zero הראה ששינוי של ביט אחד בקובץ ‎.NET עקף את הגנת שלמות הקוד של Windows; Microsoft תיקנה את הפרצה כבר ב־13 באוקטובר.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/google-researcher-shows-how-single-bit.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiOJqhOn7t8wd3NeMCWVCg9xmusuRJmZuaePaCbKTif2XsPpPhu0fR1NwQncA4y-wAMmLOzylBZ3ebd9f4G8F6K54sUdnZ2cTn6yPq1RgAKrh4lSX3y1Ll8LIywXkDyVXItUuUGS4sy0BVUMhwXPvOZGdxhvwnd55_OvjOVnh2CfnAeURMVcmafuFgJlQ/s1600/windows.net.jpg",
+        "alt": "איור לכתבה על פרצה ב־Windows וב־.NET."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "retryfix",
+      "name": "RetryFix",
+      "text": "משחזר תשלומי מנוי שנכשלו ב־Stripe: שולח ללקוח מייל בשם העסק עם קישור לעדכון הכרטיס, לפי סיבת הדחייה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/retryfix"
+      },
+      "icon": "https://cdn.betalist.com/l5zgllmpzwj87lylni3u7izp778u"
+    },
+    {
+      "id": "finstatly",
+      "name": "Finstatly",
+      "text": "ממיר דפי חשבון בנק ב־PDF לקבצי Excel ו־CSV או לקבצים לייבוא ישיר ל־QuickBooks ול־Xero.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/finstatly"
+      },
+      "icon": "https://cdn.betalist.com/4wcxk2pe8qrjw5l8kjxyluqabn3t"
+    },
+    {
+      "id": "ariadne",
+      "name": "Ariadne",
+      "text": "כותב לבעלי מקצוע מקומיים פוסטים שבועיים ל־Google Business ולרשתות ומיילים לבקשת ביקורות, משורה אחת על עבודה שבוצעה.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/ariadne"
+      },
+      "icon": "https://cdn.betalist.com/artyqgpk7s5ug5xud6fg9bkfukxq"
+    },
+    {
+      "id": "a11",
+      "name": "A11",
+      "text": "שירות backend למי שבונה עם AI: מפתח API אחד למשתמשים, התחברות, אחסון נתונים, התראות ומשימות מתוזמנות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/a11"
+      },
+      "icon": "https://cdn.betalist.com/bkcekha5toxgcneirvoeaqjsyee3"
+    },
+    {
+      "id": "keepwoven",
+      "name": "KeepWoven",
+      "text": "ספר אנשי קשר לפרילנסרים ויועצים: הערות אחרי כל שיחה, היסטוריה לפי תאריך ותזכורות לחזור ללקוחות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/keepwoven"
+      },
+      "icon": "https://cdn.betalist.com/n2nxoufmpnlz3nosaoe42im9z1ho"
+    }
+  ]
+}
