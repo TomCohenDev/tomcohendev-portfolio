@@ -5,9 +5,9 @@ export const publishedPosts: Post[] = [
   {
     slug: "agent-builder-shutdown",
     title: "OpenAI סוגרת את Agent Builder: למה הכלי לא החזיק, ומה עושים עכשיו",
-    description: "ב־30 בנובמבר 2026 נסגר Agent Builder, הקנבס של OpenAI לבניית סוכנים, קצת יותר משנה אחרי שהושק. מה נסגר, למה לדעתי הוא לא תפס, למה OpenAI סוגרת אותו, ומה החלופות למי שבנה עליו תהליכים.",
+    description: "ב־30 בנובמבר 2026 נסגר Agent Builder, הקנבס של OpenAI לבניית סוכנים, קצת יותר משנה אחרי שהושק. מה נסגר, מה אמרו עליו ב־Reddit, ב־Hacker News ובפורום של OpenAI, למה הוא לא החזיק, ומה החלופות למי שבנה עליו תהליכים.",
     date: "2026-11-25",
-    readMinutes: 8,
+    readMinutes: 12,
     tags: ["אוטומציה", "AI", "סוכנים"],
     cover: "flow",
     image: "/blog/agent-builder-shutdown-cover.webp",
@@ -16,9 +16,9 @@ export const publishedPosts: Post[] = [
   {
     slug: "agent-builder-shutdown-en",
     title: "OpenAI Is Shutting Down Agent Builder: Why It Didn't Last, and What to Do Now",
-    description: "On November 30, 2026, Agent Builder, OpenAI's visual canvas for building agents, shuts down, a little over a year after launch. What closes, why I think it didn't catch on, why OpenAI is closing it, and the alternatives for anyone who built on it.",
+    description: "On November 30, 2026, Agent Builder, OpenAI's visual canvas for building agents, shuts down, a little over a year after launch. What closes, what people said about it on Reddit, Hacker News and OpenAI's forum, why it didn't last, and the alternatives for anyone who built on it.",
     date: "2026-11-25",
-    readMinutes: 8,
+    readMinutes: 12,
     tags: ["Automation", "AI", "English"],
     cover: "flow",
     image: "/blog/agent-builder-shutdown-cover-en.webp",
@@ -203,7 +203,7 @@ export const publishedPosts: Post[] = [
 ];
 
 /** English translations are reachable only from their Hebrew article, so they stay out of the index and RSS. */
-const translationSlugs = new Set(["ai-security-en", "nykma-en", "black-october-en", "t3-kitshn-en", "lazarus-backdoor-en", "teach-site-en", "lead-machine-en", "interactive-slides-en"]);
+const translationSlugs = new Set(["ai-security-en", "nykma-en", "black-october-en", "t3-kitshn-en", "lazarus-backdoor-en", "teach-site-en", "lead-machine-en", "interactive-slides-en", "agent-builder-shutdown-en"]);
 export const listedPosts = publishedPosts.filter((post) => !translationSlugs.has(post.slug));
 
 export const blogTags = [...new Set(listedPosts.flatMap((post) => post.tags))];
