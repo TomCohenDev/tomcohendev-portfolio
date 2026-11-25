@@ -3,6 +3,28 @@ import type { Post } from "../components/content/mock";
 /** Published articles only. Mock posts remain on their existing noindex demo URLs. */
 export const publishedPosts: Post[] = [
   {
+    slug: "agent-builder-shutdown",
+    title: "OpenAI סוגרת את Agent Builder: למה הכלי לא החזיק, ומה עושים עכשיו",
+    description: "ב־30 בנובמבר 2026 נסגר Agent Builder, הקנבס של OpenAI לבניית סוכנים, קצת יותר משנה אחרי שהושק. מה נסגר, למה לדעתי הוא לא תפס, למה OpenAI סוגרת אותו, ומה החלופות למי שבנה עליו תהליכים.",
+    date: "2026-11-25",
+    readMinutes: 8,
+    tags: ["אוטומציה", "AI", "סוכנים"],
+    cover: "flow",
+    image: "/blog/agent-builder-shutdown-cover.webp",
+    body: [],
+  },
+  {
+    slug: "agent-builder-shutdown-en",
+    title: "OpenAI Is Shutting Down Agent Builder: Why It Didn't Last, and What to Do Now",
+    description: "On November 30, 2026, Agent Builder, OpenAI's visual canvas for building agents, shuts down, a little over a year after launch. What closes, why I think it didn't catch on, why OpenAI is closing it, and the alternatives for anyone who built on it.",
+    date: "2026-11-25",
+    readMinutes: 8,
+    tags: ["Automation", "AI", "English"],
+    cover: "flow",
+    image: "/blog/agent-builder-shutdown-cover-en.webp",
+    body: [],
+  },
+  {
     slug: "interactive-slides",
     title: "מצגות שעושות דברים: מדריך מלא לבניית שיעורים אינטראקטיביים עם Claude Code",
     description: "הפסקתי להכין את הקורסים שלי ב־Gamma, ב־Google Slides וב־Canva. מדריך צעד אחר צעד, מתיקייה ריקה ועד קורס באוויר: לולאה שמריצה את עצמה, Python בתוך השקף, סימולציה עם מחוונים, הערות לסטודנטים בטלפון, PDF, וסוכן AI שמסדר את הקורס.",
