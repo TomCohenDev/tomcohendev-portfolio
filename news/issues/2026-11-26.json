@@ -1,0 +1,218 @@
+{
+  "date": "2026-11-26",
+  "stories": [
+    {
+      "id": "chatgpt-shared-usage-meter",
+      "topic": "ai",
+      "headline": "ChatGPT מאחדת את Chat ו־Work עם מכסת שימוש אחת, והמשתמשים הכבדים עלולים להיתקע מוקדם יותר",
+      "summary": "OpenAI התחילה להפעיל אצל קבוצה קטנה של מנויי Pro ממשק אחד ל־Chat ול־Work, עם מונה שימוש משותף לשניהם, ולפי דף התמיכה שלה המכסה המשותפת תגיע לשאר המשתמשים בדצמבר. החברה אמרה ל־TechCrunch שרוב המשתמשים לא יגיעו לאיפוס מוקדם יותר, אבל חלק קטן מהכבדים ביותר כן, ושיחות עם המודל Instant יישארו בלי הגבלה ולא ייספרו במכסה.",
+      "forBusiness": "עסק שעובדיו נשענים על ChatGPT למשימות ארוכות כדאי שיעקוב בדצמבר אם הם נתקעים במגבלה באמצע היום. לעבודה שגרתית אפשר לעבור ל־Instant, שלא נספר במכסה.",
+      "source": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/"
+      }
+    },
+    {
+      "id": "wp-connect-backdoor",
+      "topic": "security",
+      "headline": "דלת אחורית בשישה תוספי WordPress שמחברים אתרים ל־Airtable, ל־Notion ול־Contact Form 7",
+      "summary": "WordPress סגרה לצמיתות שישה תוספים של WP Connect, ובהם Air WP Sync ו־WP Sync for Notion, אחרי שב־22 בנובמבר הוכנס לגרסאות חדשות שלהם קוד שמאפשר לתוקף להריץ פקודות בשרת, כנראה דרך חשבון מפתח שנפרץ. לפי Wordfence התוספים מותקנים ביותר מ־3,600 אתרים, הגרסאות הזדוניות נחסמו לפני שהופצו ואין להן תיקון.",
+      "forBusiness": "מי שמסנכרן את האתר עם Airtable, Notion או Brevo דרך תוספים של WP Connect צריך לבדוק את מספר הגרסה ולהסיר את התוסף, כי הוא לא יקבל עוד עדכונים. כדאי לבקש ממי שמתחזק את האתר למצוא חלופה לחיבור.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/wordpress-blocks-six-backdoored-wp.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgNbawIx8zYCfd7sCTbVfIzPFBtykkY65lf8EOswU62pIdZKTrx9ReB3mGnqYqujmW5eGzN_w8pEijAZMTpmOZ3fGB5zFyFaPo4ZhRQ8V0BkAmDCH3WoVqJ3kAfjDcw3_wRjhwphfyJxjF3_rDYiudb-cxt0pY3t8s-IRjNP1aEYHqtO5L1eZMkgBX6y2xD/s1600/wp.jpg",
+        "alt": "איור לכתבה על תוספי WordPress שהוכנסה אליהם דלת אחורית."
+      }
+    },
+    {
+      "id": "make-mcp-ip-allowlist",
+      "topic": "automation",
+      "headline": "Make מאפשרת להגביל לפי כתובת IP מי מתחבר ל־MCP Toolbox, גם בתוכנית החינמית",
+      "summary": "ב־MCP Toolboxes של Make, שדרכם Claude ו־ChatGPT מפעילים כלים שבחרתם, אפשר עכשיו להגדיר לכל ארגז כלים רשימת כתובות IP ציבוריות או טווחים מורשים, ובקשה מכתובת אחרת נחסמת גם כשיש לה פרטי גישה נכונים. התכונה זמינה בכל התוכניות של Make, כולל Free, ותומכת ב־IPv4, ב־IPv6 ובטווחי CIDR.",
+      "forBusiness": "עסק שחיבר סוכן AI לתרחישים של Make דרך MCP יכול להגביל את הגישה לרשת המשרד או לשרת שבו הסוכן רץ, כך שמפתח שדלף לא יספיק כדי להפעיל את הכלים. כדאי במיוחד לארגזי כלים שנוגעים בנתוני לקוחות או בתשלומים.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/feature-spotlight-ip-whitelisting-for-mcp-toolboxes/120545"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/5/0/501102b8daad635d02c32cf2cf139dbb50f0dac7_2_1024x576.jpeg",
+        "alt": "איור של MCP Toolboxes ב־Make עם שדה לכתובת שרת MCP ורשימת כלים."
+      }
+    },
+    {
+      "id": "com-vishing-cloud-accounts",
+      "topic": "security",
+      "headline": "תוקפים מתחזים בטלפון לתמיכה הטכנית, גונבים קודי אימות ומוסיפים לחשבון מכשיר אימות משלהם",
+      "summary": "Unit 42 של Palo Alto Networks מדווחת על גלים של שיחות הונאה מאז אוגוסט 2026, שבהן התוקפים מציגים את עצמם כאנשי IT, שולחים את העובד לדף התחברות מזויף שנבנה לארגון שלו ולוקחים את הסיסמה ואת אישור ה־MFA בזמן אמת. תוך דקות הם רושמים מכשיר אימות משלהם, מאשרים אפליקציות OAuth ומשנים כללי דואר כדי להישאר בחשבון, גונבים נתונים מהענן ודורשים כופר.",
+      "forBusiness": "כדאי להגדיר בעסק שתמיכה טכנית לא מבקשת קודים בטלפון ולא שולחת קישורי התחברות בשיחה. מי שמנהל Microsoft 365 או Google Workspace יכול לבדוק אם נוספו מכשירי אימות או אפליקציות מחוברות שלא מוכרות לו.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/com-affiliated-hackers-hijack-cloud.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgoCQn2zL8-RpfdhDeb1Zmyn46vLk1s9lerpXtGlcMkN5IGF9nlhEejtwoOXwhznjS7JVrix_FeG_G6yJ6Jb8mI31CU4Mi2dndKvLp-4nG4wWsqMaBpI60HFIk5d8_5uIxj6XEjSt4sixJYkJN8Xeqs4OrgSzOPK48esNtXbQ_FgtVe67B_WZkfpuUSEiD7/s1600/vishing.jpg",
+        "alt": "איור לכתבה על הונאות טלפוניות שמשתלטות על חשבונות ענן."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "pipedream-workflows-shutdown",
+      "topic": "automation",
+      "text": "Pipedream תסגור את Workflows ואת String ב־31 במרץ 2027 ותמחק את כל נתוני ה־Workflows עד 30 באפריל 2027; Pipedream Connect ממשיך לפעול.",
+      "source": {
+        "name": "Pipedream",
+        "url": "https://pipedream.com/docs/workflows/"
+      }
+    },
+    {
+      "id": "drupal-fail2install-exploited",
+      "topic": "security",
+      "text": "הפרצה הקריטית Fail2Install ב־Drupal (ציון 9.8), שמאפשרת להשתלט על אתר דרך install.php, כבר מנוצלת בתקיפות לפי CISA.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/drupal-fail2install-exploit-details.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbChdPRqvJHt9cIG4Z1W9o12tl4thtxIDNNcntDjmIytSIC1PWvOytT0JjY0OJtnba6UVJcEmqNxgOMuWxX2pvNJzjQ70-CIeruqZEDdgaDG66Lv2T6lLMv8cEhrXRie1gcaLz6OoNw6f2822s2yz8jl958kok6WpHmZ7p_n3TRWTdEWSpr1le5T28kFQO/s1600/drupal.gif",
+        "alt": "איור לכתבה על פרצה ב־Drupal."
+      }
+    },
+    {
+      "id": "checkpoint-ai-campaign",
+      "topic": "security",
+      "text": "GreyNoise: תוקף שנעזר בכלי תקיפה מבוססי AI פרץ ל־24 שרתי ניהול של Check Point ב־22 ארגונים בין 17 באוקטובר ל־2 בנובמבר.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-compromise-24-check-point.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzxhgIKTt8K5ep8a4qHW9dDpkSYcBC5D1CWgkvvh9Ee5DRlNRSg-2UcZZVNoXrHXVTeIcdzj47FFcSz6gAssLknSDf6f0JDyQCoH51D4GYLSju_wh4smA6-2yE3Z7I30SPeuY8LOKA__Y9xPiU66t1aPsHTzuRnX0QUq2iadcKXFfv7ZhAhcXti_BDnrmu/s1600/code.jpg",
+        "alt": "איור לכתבה על תקיפה של שרתי Check Point."
+      }
+    },
+    {
+      "id": "geoserver-exploited",
+      "topic": "security",
+      "text": "שתי פרצות ב־GeoServer שתוקנו ב־24 בנובמבר כבר מנוצלות; הגרסאות המתוקנות הן 3.0.2, 2.28.6 ו־2.27.7.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhi8jBS9UW1bUouUo2cLun5A5rtqPOFJoVQctV4ZsoX9uuMottAxM0HLjLZrvTVGU1GtrewszjOwVMBkvHgyFIBsOndc049nwMidNiVnnoKCOePOhy-XDsjiVjxFvubbxn-Z6ca8VJAxxgLmyQ9KGYBRMWV5GP2et02dmXzcG3jKJw1p_njPdaPuJAaxAz1/s1600/geoserver.png",
+        "alt": "איור לכתבה על פרצות ב־GeoServer."
+      }
+    },
+    {
+      "id": "hexpm-servers-breached",
+      "topic": "security",
+      "text": "תוקף ניצל פרצה בציון 10 והריץ פקודות בשישה שרתים של Hex.pm, מאגר החבילות של Elixir ו־Erlang; כל המשתמשים נותקו ומתבקשים להחליף סיסמה ולאפס 2FA.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-exploited-cvss-100-hexpm-rce.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBxy4VIOekOumZfm8RElWJl6ZTKoIJ1QLc3U7ynLQ8p9PCqm_kYX1T-akwbZwbthTYcNwfVW-aWbRB4wIkvbUeM_gvQmnw8EH-hpY0542jCwFUAaI2mNEXGE3dct9K4JKFURV1smdERZlx4tV1zCy3AbS_NwF4o926_KSW-OKMPfDXT2gWbbZ4lKjFm6Y/s1600/hex-hack.jpg",
+        "alt": "איור לכתבה על הפריצה לשרתי Hex.pm."
+      }
+    },
+    {
+      "id": "nuget-fake-job-test",
+      "topic": "security",
+      "text": "13 חבילות NuGet זדוניות הופצו למפתחי .NET כחלק ממבחן בית מזויף לראיון עבודה, והורידו נוזקה כשבונים את הפרויקט; כולן הוסרו.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/13-malicious-nuget-packages-turn-fake.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjt0w3YJQrn6VoUVUTTj46NLfeL_JJE-sDoxKsuBe-_OxBtQ3iX8AZTZ1CEn39-N5TGKYd-0ZKdOT43UwAWUbpIXlFdDwhyphenhyphenEKpkQVVJYJVodQRHyz0pJeKEvJIJgUpAEQqXizajmrriq9Mj1aqioeK1Zug__X26Ra4HwzFg8ImTajGc6b7Ck9LW2OCIpPoa/s1600/dotnet.jpg",
+        "alt": "איור לכתבה על חבילות NuGet זדוניות."
+      }
+    },
+    {
+      "id": "gitguardian-secrets-still-valid",
+      "topic": "research",
+      "text": "GitGuardian: יותר מ־64% מהמפתחות והסיסמאות התקפים שנמצאו חשופים ב־2022 עדיין עבדו בינואר 2026.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/credential-remediation-is-slow-when-you.html"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "beetl",
+      "name": "Beetl",
+      "text": "מרכז נתונים מ־ERP, Stripe, החנות ו־PDF של חשבוניות לטבלאות, ומריץ בדיקות קבועות כמו תשלומים שלא תואמים להנהלת החשבונות.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/beetl"
+      },
+      "icon": "https://cdn.betalist.com/j7gxdk7s3ubyosp0qah94c2ee72z"
+    },
+    {
+      "id": "geocalendar",
+      "name": "GeoCalendar",
+      "text": "דף הזמנת תורים לנותני שירות בשטח שמבקש קודם כתובת ומציע מועדים ליד ביקורים קיימים, עם סנכרון ל־Google Calendar ול־Outlook.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/geocalendar"
+      },
+      "icon": "https://cdn.betalist.com/qyopuzqgzf037w8heez83cp29fzi"
+    },
+    {
+      "id": "lionbox",
+      "name": "LionBox",
+      "text": "מכשיר למשרד שמריץ צ׳אט AI ומסמכי החברה מקומית על כרטיס NVIDIA, בלי אינטרנט ובלי תשלום לפי משתמש, לצוותים של עד 30 איש.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/lionbox"
+      },
+      "icon": "https://cdn.betalist.com/xv0wen0gc1g12ujv9xm0ck6z5z4l"
+    },
+    {
+      "id": "agentbook",
+      "name": "Agentbook",
+      "text": "בונים סוכן AI כתיקייה של דפי Markdown שמגדירים בהם תפקיד, התנהגות וכלים, ומפרסמים אותו בכתובת משלו עם מפתח ה־API של Anthropic שלכם.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/agentbook"
+      },
+      "icon": "https://cdn.betalist.com/e1xijhidmrm4aynivq1yvpgwo4mo"
+    },
+    {
+      "id": "coavon",
+      "name": "Coavon",
+      "text": "מערכת אחת לצוות קטן: משימות, לקוחות ומשפך מכירות, מסמכים, קבצים, צ׳אט ויומן, עם חיבור ל־Zapier, ל־Claude ול־ChatGPT.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/coavon"
+      },
+      "icon": "https://cdn.betalist.com/dxdle5vowh6qpg6f929z9zg8yunt"
+    },
+    {
+      "id": "episode",
+      "name": "Episode",
+      "text": "יוצר דף נחיתה ומודעות תואמות מכתובת אתר, מעיצוב Figma או מפרומפט, ומריץ בדיקות A/B על מבקרים אמיתיים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/episode"
+      },
+      "icon": "https://cdn.betalist.com/nrks5sbq1b6kdopskuc1z87aptiq"
+    },
+    {
+      "id": "burble",
+      "name": "Burble",
+      "text": "תוסף ל־Chrome שהופך מחשבות גולמיות, בכתב או בהקלטה, לפוסטים לרשתות בסגנון שלכם, ולומד מהתיקונים שאתם עושים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/burble"
+      },
+      "icon": "https://cdn.betalist.com/kqkw4vfvwdgsxsepndh5bkpmej39"
+    }
+  ]
+}
