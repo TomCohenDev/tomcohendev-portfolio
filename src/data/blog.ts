@@ -3,6 +3,28 @@ import type { Post } from "../components/content/mock";
 /** Published articles only. Mock posts remain on their existing noindex demo URLs. */
 export const publishedPosts: Post[] = [
   {
+    slug: "own-base44",
+    title: "Base44 משלכם: מדריך מלא להקמת פלטפורמת אפליקציות על שרת שלכם, עם סוכן AI ובלי לכתוב קוד",
+    description: "כל מה ש־Base44 נותן, על שרת שלכם ובפחות משלושים דולר בחודש: שרת, דומיין, Claude Code, אפליקציה עם התחברות ומסד נתונים, מיילים, תשלומים מישראל, אנליטיקס, גיבויים ומודעות בפייסבוק. צעד אחר צעד, עם כל הפרומפטים להעתקה.",
+    date: "2026-11-26",
+    readMinutes: 14,
+    tags: ["AI", "SaaS", "מדריך"],
+    cover: "code",
+    image: "/blog/own-base44-cover.webp",
+    body: [],
+  },
+  {
+    slug: "own-base44-en",
+    title: "Your Own Base44: A Complete Guide to an App Platform on Your Own Server, With an AI Agent and No Code",
+    description: "Everything Base44 gives you, on your own server, for under $30 a month: a server, a domain, Claude Code, an app with logins and a database, email, payments from Israel, analytics, backups and Facebook ads. Step by step, with every prompt ready to copy.",
+    date: "2026-11-26",
+    readMinutes: 14,
+    tags: ["AI", "SaaS", "English"],
+    cover: "code",
+    image: "/blog/own-base44-cover-en.webp",
+    body: [],
+  },
+  {
     slug: "agent-builder-shutdown",
     title: "OpenAI סוגרת את Agent Builder: למה הכלי לא החזיק, ומה עושים עכשיו",
     description: "ב־30 בנובמבר 2026 נסגר Agent Builder, הקנבס של OpenAI לבניית סוכנים, קצת יותר משנה אחרי שהושק. מה נסגר, מה אמרו עליו ב־Reddit, ב־Hacker News ובפורום של OpenAI, למה הוא לא החזיק, ומה החלופות למי שבנה עליו תהליכים.",
@@ -203,7 +225,7 @@ export const publishedPosts: Post[] = [
 ];
 
 /** English translations are reachable only from their Hebrew article, so they stay out of the index and RSS. */
-const translationSlugs = new Set(["ai-security-en", "nykma-en", "black-october-en", "t3-kitshn-en", "lazarus-backdoor-en", "teach-site-en", "lead-machine-en", "interactive-slides-en", "agent-builder-shutdown-en"]);
+const translationSlugs = new Set(["ai-security-en", "nykma-en", "black-october-en", "t3-kitshn-en", "lazarus-backdoor-en", "teach-site-en", "lead-machine-en", "interactive-slides-en", "agent-builder-shutdown-en", "own-base44-en"]);
 export const listedPosts = publishedPosts.filter((post) => !translationSlugs.has(post.slug));
 
 export const blogTags = [...new Set(listedPosts.flatMap((post) => post.tags))];
