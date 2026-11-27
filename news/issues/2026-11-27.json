@@ -1,0 +1,201 @@
+{
+  "date": "2026-11-27",
+  "stories": [
+    {
+      "id": "1password-github-breach",
+      "topic": "security",
+      "headline": "1Password נפרצה דרך חשבון GitHub של עובד: שמות ומיילים של חלק מהלקוחות נחשפו",
+      "summary": "1Password גילתה ב־19 בנובמבר שתוקף השתלט על חשבון GitHub של עובד, העתיק קוד מקור, הכניס קוד זדוני למערכות האחוריות והוריד נתוני ניהול של חלק מהלקוחות, בהם שמות, כתובות מייל ומזהי חשבון. לדברי החברה, תוכן הכספות, הסיסמאות ומפתחות השחזור לא נחשפו, ומספר קטן של משתמשים שגם טוקנים מקישורי הזמנה ושחזור שלהם נלקחו קיבלו הודעה אישית.",
+      "forBusiness": "לפי החברה אין צורך לעשות דבר, אבל מי שמשתמש ב־1Password צריך לצפות למיילים מתחזים בשם החברה ולא ללחוץ על קישורי שחזור או הזמנה שלא ביקש. זה גם זמן טוב לבדוק שלחשבונות GitHub של העובדים יש אימות דו־שלבי.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbu9vulg5_P2PLmwCbF5nNRu8UujJDFNLLCGackgRWjz4lmkQcAom8TerCouyPh1pF8sgBAiJTwO7qAQN3kLVd-_0e7czxqhyphenhyphenUQuSG6WyCJvoNsI92X7tl1ukE6h8QDLmQBUBJaKBCyTYXjaGMUeaczy-sTIjMvDHdQjphWmWyCsUyIG4Y7WD4J2FoQfgY/s1600/1password.jpg",
+        "alt": "איור של הלוגו של 1Password לצד סמלים של פריצה."
+      }
+    },
+    {
+      "id": "google-play-trader-contact-worldwide",
+      "topic": "mobile",
+      "headline": "Google Play תציג לכל העולם את הכתובת והטלפון של מפתחים שמרוויחים מאפליקציות",
+      "summary": "מפתחים ב־Play Store צריכים להצהיר עד 1 בפברואר 2027 אם הם \"סוחרים\" לפי חוק השירותים הדיגיטליים של האיחוד האירופי, וגוגל מחשיבה כך כל מי שמרוויח מאפליקציה, למשל מרכישות בתוך האפליקציה או מפרסומות. מ־1 במרץ גוגל תציג את פרטי הקשר של הסוחרים למשתמשים בכל העולם, ובחשבון אישי זה אומר כתובת פיזית ומספר טלפון, בלי אפשרות לתא דואר; מי שלא יצהיר עלול לגלות שהעדכונים שלו נחסמים או שהאפליקציה מוסרת.",
+      "forBusiness": "עסק שמפרסם אפליקציה מחשבון מפתח אישי צריך לבדוק עכשיו איזו כתובת מופיעה בפרופיל התשלומים שלו, ולשקול מעבר לחשבון ארגוני לפני מרץ. ומי שלא מפיץ באירופה או בבריטניה יכול להצהיר שהוא לא סוחר.",
+      "source": {
+        "name": "The Next Web",
+        "url": "https://thenextweb.com/news/google-play-developer-addresses-trader-dsa-worldwide"
+      },
+      "image": {
+        "url": "https://media.thenextweb.com/2026/11/google-play-gift-cards-store-display.jpg",
+        "alt": "כרטיסי מתנה של Google Play תלויים על מעמד בחנות."
+      }
+    },
+    {
+      "id": "make-plugin-for-claude",
+      "topic": "automation",
+      "headline": "Make משיקה תוסף ל־Claude: בונים ומריצים אוטומציות וסוכני AI מתוך השיחה",
+      "summary": "התוסף של Make נכנס לספריית התוספים הרשמית של Anthropic ועובד ב־Claude בדפדפן, ב־Cowork וב־Claude Code: מתארים משימה חוזרת במילים, ו־Claude בונה עבורה תרחיש או סוכן AI בתוך Make ומתזמן אותו. אפשר גם לחפש אוטומציות קיימות, להריץ אותן ולראות את היסטוריית הריצות, והתוסף זמין בכל התוכניות של Make, כולל החינמית.",
+      "forBusiness": "מי שכבר עובד עם Make ו־Claude יכול לנסות לבנות אוטומציה פשוטה מתוך שיחה במקום בעורך. החיבור נעשה עם חשבון Make הקיים, כך שההרשאות של הצוות נשמרות, אבל כדאי לבדוק כל תרחיש ש־Claude בנה לפני שמפעילים אותו על נתונים אמיתיים.",
+      "source": {
+        "name": "Make",
+        "url": "https://community.make.com/t/feature-spotlight-make-plugin-for-claude/120623"
+      },
+      "image": {
+        "url": "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/3X/2/6/263ce4570e475df433c50ffe51e850330c537f02_2_1024x576.jpeg",
+        "alt": "כרזה של Make שמציגה את הלוגו של Make לצד הלוגו של Claude."
+      }
+    },
+    {
+      "id": "drupal-installer-takeover-exploited",
+      "topic": "security",
+      "headline": "פרצה קריטית חדשה ב־Drupal מנוצלת: גם אתרים שעודכנו אחרי Fail2Install עלולים להיפרץ",
+      "summary": "Drupal מזהירה שאתרים שנשארו במצב התקנה חלקי או לא רגיל עדיין חשופים להשתלטות גם אחרי התיקון הקודם להתקנה, ושהפרצה החדשה כבר מנוצלת; אתר שהשאיר את install.php נגיש מרחוק אולי כבר נפרץ. התיקון נמצא בגרסאות 11.4.14, 11.3.23 ו־10.6.23, ולגרסאות 11.0 עד 11.2 ו־10.5 ומטה, שכבר לא נתמכות, אין תיקון.",
+      "forBusiness": "מי שהאתר שלו בנוי על Drupal צריך לבקש מהמפתח לעדכן היום, להריץ update.php ולחסום גישה ל־install.php. כדאי גם לבדוק ביומנים שינויים לא צפויים בחשבון המנהל הראשי ולוודא שהמייל שלו בשליטתכם.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiy2EcytpsKiKLhUfvQEADKBG6Ht2NprR2VIhIXPJcNQMIGqKT20l0afBPUVhehKFhRzpkHvl3Qu_qaPjFL3L4UsLYH3L4C1DM63zqskhJV1UAjaPqONaEbNkBFsxVDX2jpPZrMym52WvBx2pHktUiRfdXOcp_23xjTdUOxxjxJtI906XLMmw258Bjah1J2/s1600/drupal-rce.png",
+        "alt": "איור של הלוגו של Drupal עם סימן אזהרה."
+      }
+    },
+    {
+      "id": "mitel-micollab-exploited-kev",
+      "topic": "security",
+      "headline": "חמש פרצות במערכת התקשורת Mitel MiCollab מנוצלות, ותוקף הגיע לבקר הדומיין תוך 32 דקות",
+      "summary": "CISA הוסיפה לרשימת הפרצות המנוצלות עשר פרצות, ובהן חמש ברכיב הוועידות של Mitel MiCollab בגרסה 10.3 ומטה, אחת מהן בציון 10.0. Accenture דיווחה שבאחד הארגונים התוקף הגיע להרשאות root בשרת תוך 30 דקות, ואז השתמש בפרטי הגישה שהמערכת שומרת כדי להתחבר לבקר הדומיין.",
+      "forBusiness": "עסק שמשתמש ב־Mitel MiCollab לטלפוניה ולוועידות צריך לוודא עם הספק שהמערכת עודכנה לגרסה 10.3.0.18 או חדשה יותר. אם אי אפשר לעדכן מיד, Mitel ממליצה לחסום גישה מבחוץ לרכיב AWV.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-exploit-10-vulnerabilities.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEht82Zul6A6D_rTYZuOr0QQWkA4p8kQXRI-4qAYhdGBdTR0ZNzlHkHCiz3eSv5wm9Gq1rADX0CIEBUu08HBUbWd4fVKtL6f7UrWcaa_nVetYt0DyPj2-f_yM80HEIUbuy57mpftPYHHp1FKCNXvkDnFtsj-V5PWGUvWiNL38OKY3EIKUwKHuoKsIc4oSXeC/s1600/mitel.jpg",
+        "alt": "איור של הלוגו של Mitel לצד סמלים של פרצות."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "polinrider-github-loader",
+      "topic": "security",
+      "text": "SafeDep מצאה טוען Python זדוני של קבוצה המקושרת לצפון קוריאה ב־375 מאגרי GitHub, מוסתר בחבילת utils או בקובץ conftest.py.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgquhPuqGJrSE3xNpn5ZUELVAv-Y7qXqkHgpw7nbVqCay4gyraYO5NNE12rAGzuqk_zhreNwcyzjZf3vZZB5C4teohyuppUP-JlP41PQiLu-hGEFCsqMZO0T6MoaVk-uY818yaTaiJaX-d2O0h0RER22knXbUQc7qnwIcVbleLQrEspMQ8btNa4Q9mFrmue/s1600/gitcat.jpg",
+        "alt": "איור של סמל GitHub בהקשר של נוזקה."
+      }
+    },
+    {
+      "id": "exposed-ollama-llmjacking",
+      "topic": "security",
+      "text": "Rapid7 סרקה 20,354 שרתים חשופים לרשת: ביותר ממחצית שרתי Ollama הפתוחים כבר השתמש מישהו זר, ובחשבון מחובר החשבון על השימוש מגיע לבעלים.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/threatsday-250-rogue-extensions-10m.html"
+      }
+    },
+    {
+      "id": "nemotron-3-5-parse-datasets",
+      "topic": "ai",
+      "text": "NVIDIA פתחה שלושה מאגרי אימון של Nemotron 3.5 Parse, מודל שהופך עמודי מסמכים לנתונים מובנים, ובהם 9.98 מיליון דוגמאות של גרפים ומתכון לכוונון.",
+      "source": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin"
+      },
+      "image": {
+        "url": "https://cdn-uploads.huggingface.co/production/uploads/6365c3f398da81987e2753f2/zArpuP9uLsLz9luMW0K2g.png",
+        "alt": "כרזה של NVIDIA על המודל Nemotron 3.5 Parse."
+      }
+    },
+    {
+      "id": "llamacpp-amd-benchmark",
+      "topic": "ai",
+      "text": "Hugging Face ו־ggml השיקו לוח מדידות ל־llama.cpp על כרטיסי AMD Radeon, שמראה כמה טוקנים בשנייה מודלים מקומיים מעבדים ומייצרים בכל גרסה.",
+      "source": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench"
+      },
+      "image": {
+        "url": "https://cdn-uploads.huggingface.co/production/uploads/67289c93ff90038d9a6e5675/tbIvyMSISXCm64WYP3atl.png",
+        "alt": "כרזה של לוח המדידות של llama.cpp על חומרת AMD."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "cosend",
+      "name": "Cosend",
+      "text": "תיבת הודעות משותפת לצוות על מספר WhatsApp אחד, עם קמפיינים, אוטומציות ונציג AI, וחיבור ל־n8n ול־MCP; מ־14.95 דולר בחודש.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/cosend"
+      },
+      "icon": "https://cdn.betalist.com/av9jiwy6oehirazaoyfy0vig1xtj"
+    },
+    {
+      "id": "cmshands",
+      "name": "CMSHands",
+      "text": "תוסף WordPress עם עוזר AI שמקבל בקשות שינוי במילים, מציג אותן לאישור לפני פרסום ומנהל גם משימות ב־WooCommerce.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/cmshands"
+      },
+      "icon": "https://cdn.betalist.com/pq4at0qbkwbgr72gksvmny0ltcj1"
+    },
+    {
+      "id": "onflai",
+      "name": "onflAI",
+      "text": "פלטפורמה שבונה חיבורים בין אפליקציות, API, קבצים ומסדי נתונים מתוך דרישות, עם בדיקה ואישור לפני שהם עולים לאוויר.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/onflai"
+      }
+    },
+    {
+      "id": "insider-club",
+      "name": "Insider Club",
+      "text": "פורום קהילה בתוך חנות Shopify, שהלקוחות נכנסים אליו עם החשבון הקיים שלהם ומנוהל מתוך ממשק הניהול של Shopify.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/insider-club"
+      },
+      "icon": "https://cdn.betalist.com/up0dgpdd0nihj7l2tmtplmhwy74t"
+    },
+    {
+      "id": "sprigsites",
+      "name": "SprigSites",
+      "text": "כלי לבניית אתרים לעסקים מקומיים מתיאור במשפט אחד, עם ניהול לקוחות, חשבוניות ואחסון במקום אחד.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/sprigsites"
+      },
+      "icon": "https://cdn.betalist.com/v0a4u5xu292evapmwu5t69t8p1iq"
+    },
+    {
+      "id": "mrr-bench",
+      "name": "MRR Bench",
+      "text": "מאגר של מחירי כניסה ל־3,000 כלי תוכנה ושינויי המחיר שלהם לאורך זמן, כדי להשוות מחיר לפני שמשנים אותו.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/mrr-bench"
+      },
+      "icon": "https://cdn.betalist.com/udz41i4n4145xv4xk73qcmmclde7"
+    },
+    {
+      "id": "koru",
+      "name": "Koru",
+      "text": "אפליקציית פתקים בקוד פתוח ל־Windows, Mac ו־Linux שסוכני AI יכולים לקרוא ולערוך דרך MCP, עם סנכרון מוצפן בין מכשירים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/koru-2"
+      },
+      "icon": "https://cdn.betalist.com/7j0t44x5d80670ef20g35evxlqvo"
+    }
+  ]
+}
