@@ -1,0 +1,179 @@
+{
+  "date": "2026-11-28",
+  "stories": [
+    {
+      "id": "swiss-ai-agent-attacks-smb",
+      "topic": "security",
+      "headline": "שווייץ: סוכני AI של תוקפים פרצו לארבעה מחמישה ארגונים, ביניהם עסקים קטנים ובינוניים",
+      "summary": "מרכז הסייבר הלאומי של שווייץ אישר חמש תקיפות ראשונות במדינה שבוצעו בעזרת סוכני AI, וארבע מהן הצליחו; שלוש כוונו למפעילי תשתיות קריטיות, וגם עסקים קטנים ובינוניים נפגעו. לפי הסוכנות, הסוכנים סורקים חולשות ידועות שלא תוקנו, מריצים הרבה תקיפות במקביל ומחליפים שיטה כשההגנה מגיבה, ומספר כלי התקיפה האלה שזמינים ברשת כמעט הוכפל מאז אוקטובר.",
+      "forBusiness": "ההמלצות של שווייץ, איטליה ובריטניה חופפות: להתקין עדכוני אבטחה קריטיים במערכות שפתוחות לאינטרנט תוך 24 שעות, לנתק או לבודד את מה שאי אפשר לעדכן מהר, ולדרוש אימות דו־שלבי או passkeys בכל מה שנגיש מבחוץ. כדאי לעבור השבוע על רשימת השירותים של העסק שפתוחים לאינטרנט ולצמצם אותה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjviiPK0v6Kpjxjo_jDNE9vaZ8-JKiq6Oct4uU6qPDfTXq66QnxuV2iExRo2Rx2FyHhyphenhyphenDquMIoxmlfo5GwxfKoEXRG8Pj38FDOzEKitDdhXBNOGN7b6sddsMozMuhI44c-3mimoE4OxU-Xg7h8IzhDiyrXmP6qBO-wW6xmitkIEv_EkU-FJUJBTNtQ8uY/s1700-nu-rw-lo-l85-e365/swiss.jpg",
+        "alt": "איור של הצלב השווייצרי מעל עמודי חשמל, מכל מים ואנטנת תקשורת."
+      },
+      "continues": {
+        "date": "2026-11-25",
+        "id": "ncsc-agentic-attacks",
+        "headline": "מרכז הסייבר הבריטי: תוקפים מפעילים סוכני AI שמוצאים חולשות ישנות ומנצלים אותן תוך דקות"
+      }
+    },
+    {
+      "id": "ms-store-vinci-rat",
+      "topic": "security",
+      "headline": "אפליקציה שהופצה ב־Microsoft Store שימשה דלת אחורית והתקינה נוזקה לשליטה מרחוק",
+      "summary": "חברת eSentire מצאה שאתר מזויף של כלי צילום מסך הוביל להורדת קובץ התקנה חתום של Microsoft, שהתקין מה־Microsoft Store אפליקציה בשם Setup Assistant; האפליקציה התקשרה לשרת התוקפים, הריצה קוד שקיבלה ממנו והתקינה נוזקה בשם Vinci RAT. התוקפים זייפו גם דפי הורדה של Microsoft Teams ו־Roblox, ולפי eSentire מיקרוסופט ענתה לדיווח מ־10 בנובמבר שהאפליקציה לא מפרה את התנאים; כעת היא כבר לא זמינה בחנות.",
+      "forBusiness": "גם חנות רשמית וקובץ חתום אינם הוכחה שהתוכנה בטוחה. כדאי להורות לעובדים להוריד תוכנות כמו Teams רק מהאתר של היצרן ולא מקישור בתוצאות חיפוש, ולשקול לחסום התקנות עצמאיות במחשבי העבודה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/microsoft-store-app-found-delivering.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpD815FTK1v-12AKbFYOz3fplAY5EWVRrb1mh5LOUSmUmG7u7mdgGnppCpL9-ZaG-3CyWm_2KP4icW3UY1Q3AYG6lEe03ezqY9Jx49mW9SC4D0JqiUhT-Rmet7lin7u1bHdyppzeay-bTKDty53IDUI_P9md3iUp5xaY-ko1U2uBRTkNdPhAVTYuW9hDmO/s1700-nu-rw-lo-l85-e365/ms-store.png",
+        "alt": "הסמל של Microsoft Store על רקע כהה."
+      }
+    },
+    {
+      "id": "qdir-desktopok-trojanized",
+      "topic": "security",
+      "headline": "קבצי ההתקנה הרשמיים של Q-Dir ו־DesktopOK הוחלפו בגרסאות עם נוזקה, גם דרך העדכון",
+      "summary": "חברת האבטחה AhnLab דיווחה שקבצי ההתקנה של שני כלי Windows החינמיים של SoftwareOK, מנהל הקבצים Q-Dir ו־DesktopOK, הוחלפו באתר הרשמי בגרסאות שמתקינות את התוכנה האמיתית ובמקביל מורידות נוזקת Python לשליטה מרחוק. הקבצים הזדוניים הגיעו גם למי שעדכן גרסה קיימת, והנוזקה יכולה להריץ פקודות, להעביר קבצים, לצלם מסך ולבדוק אילו תוכנות אבטחה מותקנות.",
+      "forBusiness": "מי שהתקין או עדכן לאחרונה את Q-Dir או DesktopOK צריך לבדוק את המחשב: לפי AhnLab הסרה והתקנה מחדש לא מספיקות, וצריך לחפש משימה מתוזמנת חשודה שמתחזה ל־Microsoft Edge, לעדכן את האנטי־וירוס ולהריץ סריקה מלאה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/hackers-trojanize-official-q-dir-and.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhSXVfewkMqSKHEHRrAVXFHFOsMisOpBVnJ_sWbNNQQXuSWTHU5Y8AZW18gdQq7eI5N4l1dXoeBXVuqGGNClEK0U55LHgLYUxmopN9JHaMrYtrt4QrtWmk3uIvX8FzE2jL7Rf-oOG2fiDzj4g99wYn1Ih9uAOmyD0DtWN7ZqkG5UTd3xRYSRnIurQuT437O/s1700-nu-rw-lo-l85-e365/trojan.jpg",
+        "alt": "מסך קוד שמראה את שלבי ההתקנה של Q-Dir, של DesktopOK ושל הנוזקה."
+      }
+    },
+    {
+      "id": "android-create-my-widget",
+      "topic": "mobile",
+      "headline": "Android מאפשרת ליצור ווידג'טים למסך הבית בתיאור במילים, בבטא בטלפוני Pixel",
+      "summary": "התכונה Create My Widget, חלק מ־Gemini Intelligence ב־Android, התחילה להגיע החודש בגרסת בטא לטלפוני Pixel: מתארים במילים ווידג'ט, ו־Gemini בונה אותו; בסקירה הראשון לקח כ־20 שניות. לפי הסקירה ב־The Verge, רוב הווידג'טים הם קיצורי דרך לבקשה ל־Gemini או לחיפוש בגוגל ומבוססים על תבניות קבועות כמו ספירה לאחור, מעקב הרגלים ותוצאות ספורט, ולא אפליקציות קטנות שאפשר לעצב בחופשיות.",
+      "forBusiness": "בינתיים אין כאן משהו שמחליף אפליקציה של העסק, כי ווידג'ט כזה לא מושך נתונים בזמן אמת ממערכת משלכם. זה כן סימן שלקוחות יתחילו לצפות למידע זמין במבט אחד במסך הבית, ומי שיש לו אפליקציה יכול לשקול ווידג'ט אמיתי משלה.",
+      "source": {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/tech/1041801/android-intelligence-create-my-widget-gemini"
+      },
+      "image": {
+        "url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/DSC04405_processed.jpg?quality=90&strip=all&crop=0%2C10.723165084465%2C100%2C78.55366983107&w=1200",
+        "alt": "טלפון Pixel על שולחן, ובמסך הבית ארבעה ווידג'טים שנוצרו בעזרת AI."
+      }
+    }
+  ],
+  "flashes": [
+    {
+      "id": "cacti-guest-zero-day",
+      "topic": "security",
+      "text": "פרצה לא מתוקנת ב־Cacti 1.2.31 מאפשרת להריץ פקודות בשרת בארבע בקשות HTTP כשחשבון האורח פעיל; עד לתיקון ממליצים לכבות אותו ולהגביל גישה.",
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html"
+      },
+      "image": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgy4kFFGLYGbyvO7M_M1gKBjBUm5TF_eT6dIHtCmXKz_cGyC6orRw9XupBLbcQlJTQEEqjZ3q73Cv_Sn9ncPKxOJYU8Poi8Q54-bWKIro4Sp4JYi9hjUjYy71OR1LOV6B5nX8dHK0jYSRJ1p4O1pdMWomZGhCiTKE7MkvrC-gfeINrM-GOab64Bw_MzxA6Z/s1700-nu-rw-lo-l85-e365/cacti.png",
+        "alt": "מסך מסוף עם הלוגו של Cacti ואזהרה על פרצה לא מתוקנת."
+      }
+    },
+    {
+      "id": "n8n-2-50-3-beta",
+      "topic": "automation",
+      "text": "גרסת הבטא n8n 2.50.3 מציגה את החשיבה של סוכן ה־AI ואת הקריאות שלו לכלים ברצף פעילות אחד בעורך; הגרסה היציבה היא 2.49.8.",
+      "source": {
+        "name": "n8n releases",
+        "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.50.3"
+      }
+    },
+    {
+      "id": "ltx-2-5-trainium3",
+      "topic": "ai",
+      "text": "Hugging Face הריצה את מודל הווידאו LTX-2.5 של Lightricks על שבב Trainium3 של AWS, ויצרה קליפ של 10 שניות עם סאונד ב־22 עד 23 שניות.",
+      "source": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/video-trainium3"
+      },
+      "image": {
+        "url": "https://huggingface.co/blog/assets/video-trainium3/thumbnail.jpg",
+        "alt": "כלב ים על גוש קרח מול גל, מתוך סרטון שנוצר ב־LTX-2.5."
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "incleus",
+      "name": "Incleus",
+      "text": "הצעות מחיר, חשבוניות ותשלומים עם חישוב מס לכל שורה, מעקב שעות וחומרים מול הצעה, וייצוא מסודר לרואה החשבון.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/incleus"
+      },
+      "icon": "https://cdn.betalist.com/7n9118jnpt1hbhuxunylvbz7gs20"
+    },
+    {
+      "id": "prudens",
+      "name": "Prudens",
+      "text": "מערכת לניהול סוכנות ביטוח עם AI לשיחות, מיילים ו־SMS, השוואת פוליסות, הפקת הצעות ונקודות אישור אנושיות בתהליכים.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/prudens"
+      },
+      "icon": "https://cdn.betalist.com/0zmqqn9gvwc7sod0s05ysd08pdbz"
+    },
+    {
+      "id": "amuzey",
+      "name": "Amuzey",
+      "text": "יוצר סרטון פרומו מצויר עם קריינות למוצר או לאפליקציה מתיאור או מקישור לאתר, באורך 15 עד 60 שניות, בתשלום לכל סרטון.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/amuzey"
+      },
+      "icon": "https://cdn.betalist.com/9qxe5c5at0jpsk1vb13y9y4nvlyq"
+    },
+    {
+      "id": "pressonify-ai",
+      "name": "Pressonify.ai",
+      "text": "כותב ומפרסם הודעה לעיתונות בדף שמנועי AI יכולים לקרוא, ובודק אם הם מצטטים אותה; 9.95 אירו לראשונה ו־49.95 לכל אחת אחר כך.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/pressonify-ai"
+      },
+      "icon": "https://cdn.betalist.com/8j4plmi0gnxv77e3ov9ow5sqe639"
+    },
+    {
+      "id": "versynow",
+      "name": "VersyNow",
+      "text": "כלי לאירועים: המשתתפים שואלים שאלות, מצביעים בסקרים ועוקבים אחרי הלו\"ז מהטלפון, והמארגנים מקבלים דוח AI בסוף.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/versynow"
+      },
+      "icon": "https://cdn.betalist.com/11fx2a6t2qlrw9r51g6lp9pfxvct"
+    },
+    {
+      "id": "cloudless-ai",
+      "name": "Cloudless AI",
+      "text": "יוצר תמונות, סרטונים קצרים, אפקטים קוליים ומוזיקה ב־AI שרץ כולו על iPhone, iPad או Mac, בלי חשבון ובלי העלאה לשרת.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/cloudless-ai"
+      },
+      "icon": "https://cdn.betalist.com/axghlgj9hmwyyjn9lc3rtaiqt05d"
+    },
+    {
+      "id": "moonide",
+      "name": "MoonIDE",
+      "text": "לקוח MongoDB ל־macOS שרץ מקומית בלי חשבון: עיון באוספים, סינון, אגרגציות, מנהרת SSH ועריכה כבויה כברירת מחדל.",
+      "source": {
+        "name": "BetaList",
+        "url": "https://betalist.com/startups/moonide"
+      },
+      "icon": "https://cdn.betalist.com/kpu4oia7ip7tq07fj7hhau8x5nxm"
+    }
+  ]
+}
